@@ -8,7 +8,7 @@ namespace PDC.Localization
     public class LocalizationManager : MonoBehaviour
     {
         [SerializeField] Loader _loader;
-        public static int languageID = 0;
+        public static int languageID = 2;
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
@@ -43,10 +43,15 @@ namespace PDC.Localization
         {
             { "[n]", "\n" },
             { "[/#]", "</color>" },
+            { "[/%]", "</size>" },
             { "[b]", "<b>" },
             { "[/b]", "</b>" },
             { "[i]", "<i>" },
             { "[/i]", "</i>" },
+            { "[s]", "<s>" },
+            { "[/s]", "</s>" },
+            { "[u]", "<u>" },
+            { "[/u]", "</u>" },
         };
         private static string SimplifyText(string text)
         {
@@ -66,10 +71,17 @@ namespace PDC.Localization
                     continue;
                 }
 
-                if(c.Length == 9 && c.Contains('#'))
+                if(c.Contains('#') && !c.Contains('/'))
                 {
                     var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("#", string.Empty);
                     t = t.Replace(c, $"<color=#{value}>");
+                    continue;
+                }
+
+                if (c.Contains('%') && !c.Contains('/'))
+                {
+                    var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("%", string.Empty);
+                    t = t.Replace(c, $"<size={value}%>");
                     continue;
                 }
 
