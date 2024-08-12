@@ -15,24 +15,30 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 94ebc9f6-24e4-436f-a6fb-21d31cc70fdb
     TargetNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
+  - BaseNodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+  - BaseNodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+  - BaseNodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
   - BaseNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
     TargetNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
   - BaseNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
-    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+    TargetNodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
   - BaseNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
-    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+    TargetNodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
   DialogueChoiceNodeDatas:
   - NodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
     Position: {x: 355, y: 0}
     DialogueNodePorts:
     - PortGuid: 4d00945a-6d7c-4074-b23c-9fcc1db63d1a
-      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      InputGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
       OutputGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
       TextLanguage:
       - languageEnum: 0
         LanguageGenericType: RAPH
     - PortGuid: b732072f-235c-4260-a65d-1358900c01fb
-      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      InputGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
       OutputGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
       TextLanguage:
       - languageEnum: 0
@@ -61,10 +67,42 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: EVERYONE_IS_HERE
     Duration: 0
-  TimerChoiceNodeDatas: []
+  TimerChoiceNodeDatas:
+  - NodeGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+    Position: {x: 706, y: 0}
+    DialogueNodePorts:
+    - PortGuid: 7095ccbf-15c8-4a14-adb9-dc7d7761946e
+      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      OutputGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: Choice 01
+    - PortGuid: 9824459d-275a-40eb-b7ca-7b6dd5462f0c
+      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      OutputGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: RYAN
+    - PortGuid: ee57f287-9eec-41b5-8ecb-0c523ab74d18
+      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      OutputGuid: 4660f5d4-4484-4817-afdb-02194a218b1d
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: ANTOINE
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cdefa7b6e09aaca48beb0df0624087d8, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EVERYONE_IS_HERE
+    Duration: 0
+    time: 10
   EndNodeDatas:
   - NodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
-    Position: {x: 730, y: -3}
+    Position: {x: 1080, y: 0}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas: []
