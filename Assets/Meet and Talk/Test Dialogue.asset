@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Test Dialogue
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 94ebc9f6-24e4-436f-a6fb-21d31cc70fdb
+    TargetNodeGuid: fa3f1c3f-7674-4203-a7de-229a9ef038d1
+  - BaseNodeGuid: fa3f1c3f-7674-4203-a7de-229a9ef038d1
+    TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: fa3f1c3f-7674-4203-a7de-229a9ef038d1
+    Position: {x: 117, y: 0}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    - languageEnum: 1
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: f33057471ba7cb745bb1196124241ef4, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EVERYONE_IS_HERE
+    - languageEnum: 1
+      LanguageGenericType: 
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+    Position: {x: 348, y: 0}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 94ebc9f6-24e4-436f-a6fb-21d31cc70fdb
+    Position: {x: 0, y: 0}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

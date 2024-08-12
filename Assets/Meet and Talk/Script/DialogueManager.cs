@@ -5,13 +5,14 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using MeetAndTalk.GlobalValue;
 using MeetAndTalk.Localization;
+using PDC.Localization;
 
 namespace MeetAndTalk
 {
     public class DialogueManager : DialogueGetData
     {
         [HideInInspector] public static DialogueManager Instance;
-        public LocalizationManager localizationManager;
+        public MeetAndTalk.Localization.LocalizationManager localizationManager;
 
         [HideInInspector] public DialogueUIManager dialogueUIManager;
         public AudioSource audioSource;
@@ -168,7 +169,11 @@ namespace MeetAndTalk
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText($"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}");
+            var t = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.TextType[0].LanguageGenericType);
+            //[#VALUE]
+            t = PDC.Localization.LocalizationManager.LocalizeText(t);
+
+            dialogueUIManager.SetFullText(t);
 
             // Character Avatar
             dialogueUIManager.SpriteLeft.SetActive(false); dialogueUIManager.SpriteRight.SetActive(false);
