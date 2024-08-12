@@ -47,7 +47,7 @@ namespace PDC.Localization
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
-            Debug.Log(data);
+            //Debug.Log(data);
 
             // Splitting the dataset in the end of line
             var splitDataset = data.Split("\r\n");
