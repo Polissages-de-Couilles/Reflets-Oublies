@@ -204,18 +204,30 @@ namespace MeetAndTalk
             GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
             manager.LoadFile();
 
+            var nameGlobal = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.CustomizedName.ValueName);
+            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + ": ";
+
+            var name = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.characterName[0].LanguageGenericType);
+            name = PDC.Localization.LocalizationManager.LocalizeText(name) + ": ";
+
             // Gloval Value Multiline
-            if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = $"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}</color>"; }
+            if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = nameGlobal; }
             // Normal Multiline
-            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = $"<color={_nodeData.Character.HexColor()}>{_nodeData.Character.characterName.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}</color>"; }
+            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = name; }
+            // No Change Character Multiline
+            else if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null) { dialogueUIManager.ResetText(""); }
             // Global Value Inline
-            else if (_nodeData.Character != null && _nodeData.Character.UseGlobalValue) dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{manager.Get<string>(GlobalValueType.String, _nodeData.Character.CustomizedName.ValueName)}: </color>");
+            else if (_nodeData.Character != null && _nodeData.Character.UseGlobalValue) dialogueUIManager.ResetText(nameGlobal);
             // Normal Inline
-            else if (_nodeData.Character != null) dialogueUIManager.ResetText($"<color={_nodeData.Character.HexColor()}>{_nodeData.Character.characterName.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}: </color>");
+            else if (_nodeData.Character != null) dialogueUIManager.ResetText(name);
             // Last Change
             else dialogueUIManager.ResetText("");
 
-            dialogueUIManager.SetFullText($"{_nodeData.TextType.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType}");
+            var t = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.TextType[0].LanguageGenericType);
+            //[#VALUE]
+            t = PDC.Localization.LocalizationManager.LocalizeText(t);
+
+            dialogueUIManager.SetFullText(t);
 
             // Character Avatar
             dialogueUIManager.SpriteLeft.SetActive(false); dialogueUIManager.SpriteRight.SetActive(false);
@@ -312,7 +324,11 @@ namespace MeetAndTalk
 
             foreach (DialogueNodePort nodePort in _nodePorts)
             {
-                texts.Add(nodePort.TextLanguage.Find(text => text.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+                var t = PDC.Localization.LocalizationManager.GetLocalizedText(nodePort.TextLanguage[0].LanguageGenericType);
+                //[#VALUE]
+                t = PDC.Localization.LocalizationManager.LocalizeText(t);
+
+                texts.Add(t);
                 UnityAction tempAction = null;
                 tempAction += () =>
                 {

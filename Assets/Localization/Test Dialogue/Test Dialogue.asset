@@ -16,12 +16,37 @@ MonoBehaviour:
   - BaseNodeGuid: 94ebc9f6-24e4-436f-a6fb-21d31cc70fdb
     TargetNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
   - BaseNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
+    TargetNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
+  - BaseNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
     TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
-  - BaseNodeGuid: 94ebc9f6-24e4-436f-a6fb-21d31cc70fdb
-    TargetNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
-  - BaseNodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
+  - BaseNodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
     TargetNodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
-  DialogueChoiceNodeDatas: []
+  DialogueChoiceNodeDatas:
+  - NodeGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
+    Position: {x: 355, y: 0}
+    DialogueNodePorts:
+    - PortGuid: 4d00945a-6d7c-4074-b23c-9fcc1db63d1a
+      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      OutputGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: RAPH
+    - PortGuid: b732072f-235c-4260-a65d-1358900c01fb
+      InputGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
+      OutputGuid: b5fe8d1f-c2c6-438d-adb3-31fc60a61de5
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: SULI
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: cdefa7b6e09aaca48beb0df0624087d8, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EVERYONE_IS_HERE
+    Duration: 0
   DialogueNodeDatas:
   - NodeGuid: 409dfa73-c8ad-456e-80e9-fc5d1904d581
     Position: {x: 115, y: 0}
@@ -39,7 +64,7 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f2c6753c-4b5b-4231-b1ff-575e3bb41b1a
-    Position: {x: 348, y: 0}
+    Position: {x: 730, y: -3}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas: []
