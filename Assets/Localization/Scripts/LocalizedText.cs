@@ -17,14 +17,19 @@ namespace PDC.Localization
 
         public void Start()
         {
-            m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
-            m_TextMeshProUGUI.text = GetLocalizedText(Key);
-            OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
+            LocalizationManager.OnLocalizationReady += () =>
+            {
+                m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
+                m_TextMeshProUGUI.text = GetLocalizedText(Key);
+                OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
+            };
         }
 
         public string GetLocalizedText(string key)
         {
-            return LocalizationManager.GetLocalizedText(key);
+            var t = LocalizationManager.GetLocalizedText(key);
+            //[#VALUE]
+            return LocalizationManager.LocalizeText(t);
         }
     }
 }

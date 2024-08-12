@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,11 +8,12 @@ namespace PDC.Localization
     public class LocalizationManager : MonoBehaviour
     {
         [SerializeField] Loader _loader;
-        public static int languageID = 1;
+        public static int languageID = 2;
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
+        public static Action OnLocalizationReady;
 
-        public void Start()
+        public void Awake()
         {
             _loader.Load();
         }
@@ -19,6 +21,7 @@ namespace PDC.Localization
         public static void SetLocalization(Dictionary<string, string[]> loca)
         {
             _localization = loca;
+            OnLocalizationReady?.Invoke();
         }
 
         public static void SetLanguage(List<string> languages)
