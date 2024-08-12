@@ -24,7 +24,7 @@ namespace PDC.Localization
 
         public string GetLocalizedText(string key)
         {
-            return GameLocalizationManager.GetLocalizedText(key);
+            return LocalizationManager.GetLocalizedText(key);
         }
     }
 }

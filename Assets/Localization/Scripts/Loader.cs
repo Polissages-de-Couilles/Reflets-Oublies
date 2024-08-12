@@ -54,7 +54,7 @@ namespace PDC.Localization
 
             var languages = splitDataset[0].Split(new char[] { ',' }).ToList();
             languages.Remove("Key");
-            GameLocalizationManager.SetLanguage(languages);
+            LocalizationManager.SetLanguage(languages);
 
             Dictionary<string, string[]> localization = new Dictionary<string, string[]>();
 
@@ -67,7 +67,7 @@ namespace PDC.Localization
                 list.Remove(key);
                 localization.Add(row[0], list.ToArray());
             }
-            GameLocalizationManager.SetLocalization(localization);
+            LocalizationManager.SetLocalization(localization);
         }
     }
 }

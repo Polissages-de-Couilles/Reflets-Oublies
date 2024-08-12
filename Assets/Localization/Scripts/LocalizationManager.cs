@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PDC.Localization
 {
-    public class GameLocalizationManager : MonoBehaviour
+    public class LocalizationManager : MonoBehaviour
     {
         [SerializeField] Loader _loader;
         public static int languageID = 1;
