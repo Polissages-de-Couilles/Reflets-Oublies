@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace PDC.Localization
 {
@@ -47,7 +45,7 @@ namespace PDC.Localization
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
-            Debug.Log(data);
+            //Debug.Log(data);
 
             // Splitting the dataset in the end of line
             var splitDataset = data.Split("\r\n");

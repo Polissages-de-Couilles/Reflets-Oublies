@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using MeetAndTalk;
 
 namespace PDC.Localization
 {
@@ -15,6 +16,8 @@ namespace PDC.Localization
 
         public Action OnLanguageChange { get; set; }
 
+        public DialogueContainerSO testDialogue;
+
         public void Start()
         {
             LocalizationManager.OnLocalizationReady += () =>
@@ -22,6 +25,8 @@ namespace PDC.Localization
                 m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
                 m_TextMeshProUGUI.text = GetLocalizedText(Key);
                 OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
+
+                DialogueManager.Instance.StartDialogue(testDialogue);
             };
         }
 

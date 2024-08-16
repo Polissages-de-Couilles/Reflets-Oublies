@@ -20,5 +20,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public LocalizationManager LocalizationManager => _localizationManager;
+    [SerializeField] LocalizationManager _localizationManager;
 }
