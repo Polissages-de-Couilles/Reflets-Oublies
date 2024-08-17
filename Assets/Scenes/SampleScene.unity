@@ -181,10 +181,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1257748176, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 580860580}
+      addedObject: {fileID: 580860583}
     - targetCorrespondingSourceObject: {fileID: 1919161077, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1910058208}
+      addedObject: {fileID: 1910058211}
   m_SourcePrefab: {fileID: 100100000, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
 --- !u!1 &354917030
 GameObject:
@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 354917034}
   - component: {fileID: 354917033}
   - component: {fileID: 354917032}
+  - component: {fileID: 354917035}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -326,7 +327,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: EVERYONE_IS_HERE
-  testDialogue: {fileID: 11400000, guid: 58ea56df02319cf4aa018ff2b7949888, type: 2}
 --- !u!222 &354917034
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -335,6 +335,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354917030}
   m_CullTransparentMesh: 1
+--- !u!114 &354917035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354917030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e17aece6729594e9035a4111bff040, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dialogue: {fileID: 11400000, guid: 58ea56df02319cf4aa018ff2b7949888, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,18 +445,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1257748176, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
   m_PrefabInstance: {fileID: 242831765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &580860578 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1257748178, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
-  m_PrefabInstance: {fileID: 242831765}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580860576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &580860580
+--- !u!114 &580860583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,11 +454,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 580860576}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1170d04435f524ebfe1aa364340eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIText: {fileID: 580860578}
-  textKey: DIALOGUE_SKIP
+  _key: DIALOGUE_SKIP
 --- !u!1 &982310677
 GameObject:
   m_ObjectHideFlags: 0
@@ -690,18 +691,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1919161077, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
   m_PrefabInstance: {fileID: 242831765}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1910058206 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1919161079, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
-  m_PrefabInstance: {fileID: 242831765}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910058204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1910058208
+--- !u!114 &1910058211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -710,11 +700,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1910058204}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1170d04435f524ebfe1aa364340eb3, type: 3}
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIText: {fileID: 1910058206}
-  textKey: DIALOGUE_EXIT
+  _key: DIALOGUE_EXIT
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
