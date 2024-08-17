@@ -12,6 +12,7 @@ namespace PDC.Localization
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
+        public static bool IsLocaReady = false;
 
         public void Awake()
         {
@@ -21,6 +22,7 @@ namespace PDC.Localization
         public static void SetLocalization(Dictionary<string, string[]> loca)
         {
             _localization = loca;
+            IsLocaReady = true;
             OnLocalizationReady?.Invoke();
         }
 
