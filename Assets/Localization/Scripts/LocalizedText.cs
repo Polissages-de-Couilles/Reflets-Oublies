@@ -12,24 +12,22 @@ namespace PDC.Localization
         TextMeshProUGUI m_TextMeshProUGUI;
         [SerializeField] string _key;
         public string Key => _key;
-
         public Action OnLanguageChange { get; set; }
 
         public void Start()
         {
             m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
+            OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
 
             if (LocalizationManager.IsLocaReady)
             {
                 m_TextMeshProUGUI.text = GetLocalizedText(Key);
-                OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
             }
-            else 
+            else
             {
                 LocalizationManager.OnLocalizationReady += () =>
                 {
                     m_TextMeshProUGUI.text = GetLocalizedText(Key);
-                    OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
                 };
             }
         }
