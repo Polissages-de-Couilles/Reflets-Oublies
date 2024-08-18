@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace PDC.Localization
@@ -12,15 +13,29 @@ namespace PDC.Localization
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
+        public static bool IsLocaReady = false;
 
         public void Awake()
         {
             _loader.Load();
         }
 
+        public void ChangeLanguage(int language)
+        {
+            if (language >= _languages.Count || !IsLocaReady)
+                return;
+            languageID = language;
+            ILocalization[] loca = FindObjectsOfType<MonoBehaviour>(true).OfType<ILocalization>().ToArray();
+            foreach (var l in loca)
+            {
+                l.OnLanguageChange?.Invoke();
+            }
+        }
+
         public static void SetLocalization(Dictionary<string, string[]> loca)
         {
             _localization = loca;
+            IsLocaReady = true;
             OnLocalizationReady?.Invoke();
         }
 

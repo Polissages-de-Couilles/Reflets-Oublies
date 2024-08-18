@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using MeetAndTalk;
 
 namespace PDC.Localization
 {
@@ -13,21 +12,24 @@ namespace PDC.Localization
         TextMeshProUGUI m_TextMeshProUGUI;
         [SerializeField] string _key;
         public string Key => _key;
-
         public Action OnLanguageChange { get; set; }
-
-        public DialogueContainerSO testDialogue;
 
         public void Start()
         {
-            LocalizationManager.OnLocalizationReady += () =>
-            {
-                m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
-                m_TextMeshProUGUI.text = GetLocalizedText(Key);
-                OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
+            m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
+            OnLanguageChange += () => m_TextMeshProUGUI.text = GetLocalizedText(Key);
 
-                DialogueManager.Instance.StartDialogue(testDialogue);
-            };
+            if (LocalizationManager.IsLocaReady)
+            {
+                m_TextMeshProUGUI.text = GetLocalizedText(Key);
+            }
+            else
+            {
+                LocalizationManager.OnLocalizationReady += () =>
+                {
+                    m_TextMeshProUGUI.text = GetLocalizedText(Key);
+                };
+            }
         }
 
         public string GetLocalizedText(string key)
