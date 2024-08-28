@@ -2,32 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
-public class PlayerInputEvent : MonoBehaviour
+public class InputBindings : MonoBehaviour
 {
-    private PlayerInput playerInput;
-    public PlayerInputAction PlayerInputAction => playerInputAction;
+    public PlayerInput playerInput;
+
+    public Text InteractionText;
+
     private PlayerInputAction playerInputAction;
     private void Awake()
     {
-        playerInput = GetComponent<PlayerInput>();
-
         playerInputAction = new PlayerInputAction();
-        playerInputAction.Player.Enable();
-        playerInputAction.Player.Interaction.performed += Interaction;
+        InteractionText.text = playerInputAction.Player.Interaction.GetBindingDisplayString();
+    }
 
+    public void InteractionRebind()
+    {
+        InteractionText.text = "Wait...";
         playerInputAction.Player.Disable();
         playerInputAction.Player.Interaction.PerformInteractiveRebinding()
             .OnComplete(callback => {
-                print(callback);
                 callback.Dispose();
                 playerInputAction.Player.Enable();
-
+                InteractionText.text = playerInputAction.Player.Interaction.GetBindingDisplayString();
             })
             .Start();
     }
-    public void Interaction(InputAction.CallbackContext context)
-    {
-        print("Bien jouer d'avoir intéragit");
-    } 
 }
