@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "Press(pressPoint=0.9)",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LolAction",
+                    "type": "Button",
+                    "id": "39de43b3-c1fb-4df1-bc29-d833bebc6d55",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -35,6 +44,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07dee0d1-7287-4931-8215-c06be8b8e958",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LolAction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

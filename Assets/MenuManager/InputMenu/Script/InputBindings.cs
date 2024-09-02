@@ -19,9 +19,11 @@ public class InputBindings : MonoBehaviour
 
     public void InteractionRebind()
     {
+        ///0 = KeyBoard / 1 = Gamepad
+
         InteractionText.text = "Wait...";
         playerInputAction.Player.Disable();
-        playerInputAction.Player.Interaction.PerformInteractiveRebinding()
+        playerInputAction.Player.Interaction.PerformInteractiveRebinding(0)
             .OnComplete(callback => {
                 callback.Dispose();
                 playerInputAction.Player.Enable();
