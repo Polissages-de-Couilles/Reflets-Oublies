@@ -56,7 +56,7 @@ public class CharacterMovements : MonoBehaviour
     void doMovement()
     {
         Vector2 LerpedVelocity = Vector2.Lerp(new Vector2(rb.velocity.x, rb.velocity.z), PIE.PlayerInputAction.Player.Movement.ReadValue<Vector2>() , 1f).normalized * walkSpeed;
-        rb.velocity = Quaternion.Euler(0, 45, 0) * new Vector3(LerpedVelocity.x, 0, LerpedVelocity.y);
+        rb.velocity = Quaternion.Euler(0, 45, 0) * new Vector3(LerpedVelocity.x, rb.velocity.y, LerpedVelocity.y);
     }
 
     void launchDash(InputAction.CallbackContext context)
