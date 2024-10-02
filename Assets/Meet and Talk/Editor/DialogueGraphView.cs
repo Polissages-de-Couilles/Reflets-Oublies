@@ -27,8 +27,8 @@ namespace MeetAndTalk.Editor
             this.AddManipulator(new RectangleSelector());
             this.AddManipulator(new FreehandSelector());
 
-            Debug.Log(canPaste);
-            Debug.Log(canCopySelection);
+            //Debug.Log(canPaste);
+            //Debug.Log(canCopySelection);
 
             GridBackground grid = new GridBackground();
             Insert(0, grid);
