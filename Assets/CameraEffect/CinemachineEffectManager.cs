@@ -15,6 +15,7 @@ public class CinemachineEffectManager : MonoBehaviour
     private VolumeProfile CamVolumeProfile => CamVolume.profile;
     bool isBloom = false;
     bool isFilmGrain = false;
+    bool isVignette = false;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class CinemachineEffectManager : MonoBehaviour
             var _threshold = bloom.threshold.value;
             var _intensity = bloom.intensity.value;
 
-            IEnumerator BloomCoroutine()
+            IEnumerator EffectCoroutine()
             {
                 if (snap)
                 {
@@ -76,7 +77,7 @@ public class CinemachineEffectManager : MonoBehaviour
                 isBloom = false;
             }
 
-            StartCoroutine(BloomCoroutine());
+            StartCoroutine(EffectCoroutine());
         }
     }
     public void FilmGrain(float intensity, float duration, bool snap = false)
@@ -88,7 +89,7 @@ public class CinemachineEffectManager : MonoBehaviour
         {
             var _intensity = filmGrain.intensity.value;
 
-            IEnumerator BloomCoroutine()
+            IEnumerator EffectCoroutine()
             {
                 if (snap)
                 {
@@ -110,7 +111,64 @@ public class CinemachineEffectManager : MonoBehaviour
                 isFilmGrain = false;
             }
 
-            StartCoroutine(BloomCoroutine());
+            StartCoroutine(EffectCoroutine());
+        }
+    }
+    public void Vignette(float intensity, float duration, bool snap = false, bool infini = false)
+    {
+        Vignette(Color.black, intensity, duration, snap, infini);
+    }
+    public void Vignette(Color color, float intensity, float duration, bool snap = false, bool infini = false)
+    {
+        if (isVignette) return;
+        isVignette = true;
+
+        if (CamVolumeProfile.TryGet(out Vignette vignette))
+        {
+            var _intensity = vignette.intensity.value;
+            var _color = vignette.color.value;
+
+            IEnumerator EffectCoroutine()
+            {
+                if (snap)
+                {
+                    vignette.color.value = color;
+                    vignette.intensity.value = intensity;
+                    if (!infini)
+                    {
+                        yield return new WaitForSeconds(duration);
+                        vignette.intensity.value = _intensity;
+                        vignette.color.value = _color;
+                    }
+                }
+                else
+                {
+                    Sequence s = DOTween.Sequence();
+
+                    var thresholdTween = DOTween.To(() => vignette.color.value, x => vignette.color.value = x, color, infini ? duration : duration / 2f).Play();
+                    s.Append(thresholdTween);
+
+                    var intensityTween = DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, intensity, infini ? duration : duration / 2f).Play();
+                    s.Append(intensityTween);
+
+                    if (!infini)
+                    {
+                        yield return s.WaitForCompletion();
+
+                        thresholdTween = DOTween.To(() => vignette.color.value, x => vignette.color.value = x, _color, duration / 2f).Play();
+                        s.Append(thresholdTween);
+
+                        intensityTween = DOTween.To(() => vignette.intensity.value, x => vignette.intensity.value = x, _intensity, duration / 2f).Play();
+                        s.Append(intensityTween);
+
+                        yield return s.WaitForCompletion();
+                    }
+                }
+                yield return null;
+                isVignette = false;
+            }
+
+            StartCoroutine(EffectCoroutine());
         }
     }
 }

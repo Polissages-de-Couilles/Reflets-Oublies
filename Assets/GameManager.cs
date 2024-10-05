@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            CamManager.FilmGrain(1f, 1f);
+            CamManager.Vignette(0.5f, 2f);
         }
     }
 }
