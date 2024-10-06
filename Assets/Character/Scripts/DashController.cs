@@ -8,7 +8,7 @@ public class DashController : MonoBehaviour
 {
     private CharacterController characterController;
     private MovementController movementController;
-    private PlayerInputEvent PIE;
+    private PlayerInputEventManager PIE;
 
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashTime = 0.1f;
@@ -22,11 +22,11 @@ public class DashController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         movementController = GetComponent<MovementController>();
-        PIE = GameObject.Find("InputManager").GetComponent<PlayerInputEvent>();
     }
 
     private void Start()
     {
+        PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Dash.performed += OnDash;
     }
 
