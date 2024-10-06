@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class DashController : MonoBehaviour
 {
     private CharacterController characterController;
+    private MovementController movementController;
     private PlayerInputEvent PIE;
 
     [SerializeField] private float dashForce = 20f;
@@ -20,6 +21,7 @@ public class DashController : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        movementController = GetComponent<MovementController>();
         PIE = GameObject.Find("InputManager").GetComponent<PlayerInputEvent>();
     }
 
@@ -39,13 +41,16 @@ public class DashController : MonoBehaviour
         canDash = false;
 
         isDashing = true;
+        Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
+        
         for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
         {
-            Vector3 dash = characterController.transform.forward * dashForce * Time.fixedDeltaTime;
+            Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
             dash += gravity * dashForce;
             characterController.Move(dash);
             yield return new WaitForFixedUpdate();
         }
+        
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);

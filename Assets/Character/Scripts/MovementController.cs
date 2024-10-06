@@ -12,6 +12,7 @@ public class MovementController : MonoBehaviour
 
     Vector2 currentMovementInput;
     Vector3 currentMovement;
+    public bool IsMovementPressed => isMovementPressed;
     bool isMovementPressed;
     float rotationFactorPerFrame = 15f;
 
@@ -19,7 +20,6 @@ public class MovementController : MonoBehaviour
     [SerializeField] private float speed = 5f;
 
     Vector3 gravity = new Vector3(0, -9.81f, 0);
-    
 
     private void Awake()
     {
