@@ -16,6 +16,8 @@ public class CinemachineEffectManager : MonoBehaviour
     bool isBloom = false;
     bool isFilmGrain = false;
     bool isVignette = false;
+    bool isChromaticAberration = false;
+    bool isColorAdjustments = false;
 
     private void Awake()
     {
@@ -166,6 +168,106 @@ public class CinemachineEffectManager : MonoBehaviour
                 }
                 yield return null;
                 isVignette = false;
+            }
+
+            StartCoroutine(EffectCoroutine());
+        }
+    }
+    public void ChromaticAberration(float intensity, float duration, bool snap = false)
+    {
+        if (isChromaticAberration) return;
+        isChromaticAberration = true;
+
+        if (CamVolumeProfile.TryGet(out ChromaticAberration chromaticAberration))
+        {
+            var _intensity = chromaticAberration.intensity.value;
+
+            IEnumerator EffectCoroutine()
+            {
+                if (snap)
+                {
+                    chromaticAberration.intensity.value = intensity;
+                    yield return new WaitForSeconds(duration);
+                    chromaticAberration.intensity.value = _intensity;
+                }
+                else
+                {
+                    var intensityTween = DOTween.To(() => chromaticAberration.intensity.value, x => chromaticAberration.intensity.value = x, intensity, duration / 2f).Play();
+
+                    yield return intensityTween.WaitForCompletion();
+
+                    intensityTween = DOTween.To(() => chromaticAberration.intensity.value, x => chromaticAberration.intensity.value = x, _intensity, duration / 2f).Play();
+
+                    yield return intensityTween.WaitForCompletion();
+                }
+                yield return null;
+                isChromaticAberration = false;
+            }
+
+            StartCoroutine(EffectCoroutine());
+        }
+    }
+    public void ColorAdjustments(float contrast, float saturation, float duration, bool snap = false, bool infini = false)
+    {
+        ColorAdjustments(Color.white, contrast, saturation, duration, snap, infini);
+    }
+    public void ColorAdjustments(Color colorFilter, float contrast, float saturation, float duration, bool snap = false, bool infini = false)
+    {
+        if (isColorAdjustments) return;
+        isColorAdjustments = true;
+
+        if (CamVolumeProfile.TryGet(out ColorAdjustments colorAdjustments))
+        {
+            var _contrast = colorAdjustments.contrast.value;
+            var _colorFilter = colorAdjustments.colorFilter.value;
+            var _saturation = colorAdjustments.saturation.value;
+
+            IEnumerator EffectCoroutine()
+            {
+                if (snap)
+                {
+                    colorAdjustments.colorFilter.value = colorFilter;
+                    colorAdjustments.contrast.value = contrast;
+                    colorAdjustments.saturation.value = saturation;
+                    if (!infini)
+                    {
+                        yield return new WaitForSeconds(duration);
+                        colorAdjustments.contrast.value = _contrast;
+                        colorAdjustments.colorFilter.value = _colorFilter;
+                        colorAdjustments.saturation.value = _saturation;
+                    }
+                }
+                else
+                {
+                    Sequence s = DOTween.Sequence();
+
+                    var thresholdTween = DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, colorFilter, infini ? duration : duration / 2f).Play();
+                    s.Append(thresholdTween);
+
+                    var intensityTween = DOTween.To(() => colorAdjustments.contrast.value, x => colorAdjustments.contrast.value = x, contrast, infini ? duration : duration / 2f).Play();
+                    s.Append(intensityTween);
+
+                    var saturationTween = DOTween.To(() => colorAdjustments.saturation.value, x => colorAdjustments.saturation.value = x, saturation, infini ? duration : duration / 2f).Play();
+                    s.Append(saturationTween);
+
+                    if (!infini)
+                    {
+                        yield return s.WaitForCompletion();
+
+                        thresholdTween = DOTween.To(() => colorAdjustments.colorFilter.value, x => colorAdjustments.colorFilter.value = x, _colorFilter, duration / 2f).Play();
+                        s.Append(thresholdTween);
+
+                        intensityTween = DOTween.To(() => colorAdjustments.contrast.value, x => colorAdjustments.contrast.value = x, _contrast, duration / 2f).Play();
+                        s.Append(intensityTween);
+
+                        saturationTween = DOTween.To(() => colorAdjustments.saturation.value, x => colorAdjustments.saturation.value = x, _saturation, duration / 2f).Play();
+                        s.Append(saturationTween);
+
+                        yield return s.WaitForCompletion();
+                    }
+                }
+                yield return null;
+                isColorAdjustments = false;
             }
 
             StartCoroutine(EffectCoroutine());
