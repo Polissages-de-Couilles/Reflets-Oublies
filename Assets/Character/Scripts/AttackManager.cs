@@ -7,6 +7,11 @@ public class AttackManager : MonoBehaviour
 {
     PlayerInputEvent PIE;
     [SerializeField] float timeBetweenAttacks = 0.5f;
+    [SerializeField] float attackDamage = 5f;
+
+    [SerializeField] AttackCollider collision1;
+    [SerializeField] AttackCollider collision2;
+    [SerializeField] AttackCollider collision3;
 
     enum attackPhaseEnum
     {
@@ -25,6 +30,15 @@ public class AttackManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        collision1.SetCollisionState(false);
+        collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
+
+        collision2.SetCollisionState(false);
+        collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
+
+        collision3.SetCollisionState(false);
+        collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
+
         PIE.PlayerInputAction.Player.Attack.performed += OnAttack;
     }
 
@@ -50,8 +64,10 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase1()
     {
         Debug.Log("Attack 1");
+        collision1.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase2;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision1.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase2;
 
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
@@ -64,8 +80,10 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase2()
     {
         Debug.Log("Attack 2");
+        collision2.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase3;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision2.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase3;
 
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
@@ -78,8 +96,16 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase3()
     {
         Debug.Log("Attack 3");
+        collision3.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase1;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision3.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase1;
     }
+
+    void OnTriggerDetectDamageable(IDamageable damageable)
+    {
+        damageable.takeDamage(attackDamage);
+    }
+
 }
