@@ -2201,6 +2201,9 @@ GameObject:
   - component: {fileID: 1725615767}
   - component: {fileID: 1725615768}
   - component: {fileID: 1725615769}
+  - component: {fileID: 1725615772}
+  - component: {fileID: 1725615771}
+  - component: {fileID: 1725615770}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2346,13 +2349,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 1725615762}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d9ed6520ef634c468525ff3eeb01a5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 8de78e1740b87c849af9b0aa95a66a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 10
-  smoothRotaTime: 0.05
-  dashDuration: 0.1
-  dashSpeed: 50
+  dashForce: 20
+  dashTime: 0.1
+  dashCooldown: 1
+--- !u!114 &1725615770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725615762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f1954224174ed944b8afc6b44c1d146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1725615771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725615762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5c6c84a37fbbf4686a74eb68fb17e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+--- !u!114 &1725615772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725615762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abe8bea966804b4e8e86b8e32bc932d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
 --- !u!1 &1791027969
 GameObject:
   m_ObjectHideFlags: 0
