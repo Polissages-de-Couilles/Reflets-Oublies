@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class MovementController : MonoBehaviour
 {
     private CharacterController characterController;
-    private PlayerInputEvent PIE;
+    private PlayerInputEventManager PIE;
 
     Vector2 currentMovementInput;
     Vector3 currentMovement;
@@ -24,11 +24,11 @@ public class MovementController : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
-        PIE = GameObject.Find("InputManager").GetComponent<PlayerInputEvent>();
     }
 
     private void Start()
     {
+        PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Movement.started += OnMovement;
         PIE.PlayerInputAction.Player.Movement.performed += OnMovement;
         PIE.PlayerInputAction.Player.Movement.canceled += OnMovement;

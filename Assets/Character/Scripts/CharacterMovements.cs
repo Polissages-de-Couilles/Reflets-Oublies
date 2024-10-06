@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR;
 
 public class CharacterMovements : MonoBehaviour
 {
     [SerializeField] float walkSpeed = 10f;
     Rigidbody rb;
-    PlayerInputEvent PIE;
+    PlayerInputEventManager PIE;
 
     float _currentVelocity;
     Vector2 targetStickAngle;
@@ -25,7 +24,7 @@ public class CharacterMovements : MonoBehaviour
 
     private void Awake()
     {
-        PIE = GameObject.Find("InputManager").GetComponent<PlayerInputEvent>(); //To change when the InputManager will be moved in the Game Manager
+        PIE = GameManager.Instance.PlayerInputEventManager; //To change when the InputManager will be moved in the Game Manager
 
         // DASH
         PIE.PlayerInputAction.Player.Dash.performed += launchDash;
