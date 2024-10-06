@@ -29,12 +29,15 @@ public class GameManager : MonoBehaviour
     public PlayerInputEventManager PlayerInputEventManager => _playerInputEventManager;
     [SerializeField] PlayerInputEventManager _playerInputEventManager;
 
+    public RPDPC_Manager LanguageManager => _languageManager;
+    [SerializeField] RPDPC_Manager _languageManager;
+
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CamManager.Vignette(0.5f, 2f);
-        }
+        //if (Input.GetKeyDown(KeyCode.E))
+        //{
+        //    CamManager.Vignette(0.5f, 2f);
+        //}
     }
 }
