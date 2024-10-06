@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class AttackManager : MonoBehaviour
 {
-    PlayerInputEvent PIE;
+    PlayerInputEventManager PIE;
     [SerializeField] float timeBetweenAttacks = 0.5f;
     [SerializeField] float attackDamage = 5f;
 
@@ -22,14 +22,11 @@ public class AttackManager : MonoBehaviour
     attackPhaseEnum nextAttackPhaseLate = attackPhaseEnum.Phase1;
     attackPhaseEnum nextAttackPhase = attackPhaseEnum.Phase1;
 
-    void Awake()
-    {
-        PIE = GameObject.Find("InputManager").GetComponent<PlayerInputEvent>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        PIE = GameManager.Instance.PlayerInputEventManager;
+
         collision1.SetCollisionState(false);
         collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
