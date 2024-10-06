@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerInputEvent : MonoBehaviour
 {
     private PlayerInput playerInput;
+    public PlayerInputAction PlayerInputAction => playerInputAction;
     private PlayerInputAction playerInputAction;
     private void Awake()
     {
@@ -14,19 +15,9 @@ public class PlayerInputEvent : MonoBehaviour
         playerInputAction = new PlayerInputAction();
         playerInputAction.Player.Enable();
         playerInputAction.Player.Interaction.performed += Interaction;
-
-        playerInputAction.Player.Disable();
-        playerInputAction.Player.Interaction.PerformInteractiveRebinding()
-            .OnComplete(callback => {
-                print(callback);
-                callback.Dispose();
-                playerInputAction.Player.Enable();
-
-            })
-            .Start();
     }
     public void Interaction(InputAction.CallbackContext context)
     {
         print("Bien jouer d'avoir intéragit");
-    }
+    } 
 }
