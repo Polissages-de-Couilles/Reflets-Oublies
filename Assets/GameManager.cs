@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     public CinemachineEffectManager CamManager => _camManager;
     [SerializeField] CinemachineEffectManager _camManager;
 
+    public PlayerInputEventManager PlayerInputEventManager => _playerInputEventManager;
+    [SerializeField] PlayerInputEventManager _playerInputEventManager;
+
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
     {

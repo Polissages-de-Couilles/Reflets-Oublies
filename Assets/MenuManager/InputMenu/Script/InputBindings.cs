@@ -6,12 +6,12 @@ using UnityEngine.UI;
 
 public class InputBindings : MonoBehaviour
 {
-    public PlayerInput playerInput;
     public Text InteractionText;
 
     [SerializeField] private GameObject keyBoardScreen;
     [SerializeField] private GameObject gamepadScreen;
 
+    private PlayerInput playerInput;
     private PlayerInputAction playerInputAction;
 
     private void Awake()

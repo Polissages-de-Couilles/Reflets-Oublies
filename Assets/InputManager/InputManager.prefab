@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106796898270393277}
   - component: {fileID: 2205416670056715292}
-  - component: {fileID: 724085578067191256}
+  - component: {fileID: 3051813103841116483}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 724085578067191256}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputEvent, Assembly-CSharp
         m_MethodName: Interaction
         m_Mode: 1
@@ -74,12 +74,16 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 010072a2-a6f2-42c7-9543-86936bb4c005
     m_ActionName: Player/Interaction[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 39de43b3-c1fb-4df1-bc29-d833bebc6d55
+    m_ActionName: Player/LolAction[/Mouse/middleButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &724085578067191256
+--- !u!114 &3051813103841116483
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
