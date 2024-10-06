@@ -29,9 +29,9 @@ public class GameManager : MonoBehaviour
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.S))
-        //{
-        //    CamManager.ShakeCamera(5f, 1f);
-        //}
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            CamManager.Vignette(0.5f, 2f);
+        }
     }
 }
