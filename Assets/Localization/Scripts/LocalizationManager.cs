@@ -5,6 +5,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
 
 namespace PDC.Localization
@@ -12,7 +13,8 @@ namespace PDC.Localization
     public class LocalizationManager : MonoBehaviour
     {
         [SerializeField] Loader _loader;
-        public static int languageID = 2;
+        private static string _fontName = "";
+        public static int languageID = 1;
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
@@ -70,6 +72,7 @@ namespace PDC.Localization
             { "[/s]", "</s>" },
             { "[u]", "<u>" },
             { "[/u]", "</u>" },
+            { "[/f]", "</font>" },
             { "[v]", "," },
         };
 
@@ -91,35 +94,17 @@ namespace PDC.Localization
                     continue;
                 }
 
-                //if (c.Contains('&'))
-                //{
-                //    var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("&", string.Empty);
-                //    int id = 0;
-                //    for (int i = 0; i < value.Length; i++)
-                //    {
-                //        var letter = value[i];
-                //        int index = char.ToUpper(letter) - 64;
-                //        id += index;
-                //    }
-
-                //    Debug.Log(id);
-                //    List<char> list = value.ToList();
-                //    Shuffle(list, id);
-                //    string trad = string.Empty;
-
-                //    for (int i = 0; i < list.Count; i++)
-                //    {
-                //        trad += $"<sprite={char.ToUpper(list[i]) - 65}>";
-                //    }
-
-                //    t = t.Replace(c, trad);
-                //    continue;
-                //}
-
                 if (c.Contains('#') && !c.Contains('/'))
                 {
                     var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("#", string.Empty);
                     t = t.Replace(c, $"<color=#{value}>");
+                    continue;
+                }
+
+                if (c.Contains('f') && !c.Contains('/'))
+                {
+                    //var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("f", string.Empty);
+                    t = t.Replace(c, $"<font=rpdpcfont>");
                     continue;
                 }
 
@@ -138,37 +123,21 @@ namespace PDC.Localization
         }
         private static string TranslateWord(string text)
         {
-            //Debug.Log(text);
-            text = text.ToLower();
-            var words = GetWords(text);
-            Dictionary<string, string> dic = new Dictionary<string, string>();
+            if(!text.Contains("rpdpcfont")) return text;
 
-            foreach (var w in words)
+            var words = GetWords(text);
+            foreach (var word in words)
             {
-                //Debug.Log(w);
-                if (dic.ContainsKey(w.ToLower())) continue;
-                if (!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == w.ToLower()))
+                if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()))
                 {
-                    dic.Add(w.ToLower(), GetTranslatedWord(w.ToLower()));
+                    text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
-                    dic.Add(w.ToLower(), w.ToUpper());
+                    text = text.Replace(word, $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
                 }
+                
             }
-
-            foreach (var kv in dic)
-            {
-                if(text.Contains($" {kv.Key} "))
-                    text = text.Replace($" {kv.Key} ", $" {kv.Value} ");
-                else if(text.Contains($" {kv.Key}"))
-                    text = text.Replace($" {kv.Key}", $" {kv.Value}");
-                else if(text.Contains($"{kv.Key} "))
-                    text = text.Replace($"{kv.Key} ", $"{kv.Value} ");
-                else if(text.Contains($"{kv.Key}"))
-                    text = text.Replace($"{kv.Key}", $"{kv.Value}");
-            }
-
             //Debug.Log(text);
             return text;
         }
@@ -230,15 +199,7 @@ namespace PDC.Localization
             string trad = string.Empty;
             for (int i = 0; i < list.Count; i++)
             {
-                if (char.IsLetter(list[i]))
-                {
-                    trad += $"<sprite={char.ToUpper(list[i]) - 65}>";
-                    //Debug.Log($"{list[i]} = {char.ToUpper(list[i]) - 65} | Trad = {trad}");
-                }
-                else
-                {
-                    trad += list[i];
-                }
+                trad += list[i];
             }
 
             return trad;
