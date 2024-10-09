@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using TMPro;
 using UnityEngine;
 
 namespace PDC.Localization
@@ -9,7 +13,8 @@ namespace PDC.Localization
     public class LocalizationManager : MonoBehaviour
     {
         [SerializeField] Loader _loader;
-        public static int languageID = 2;
+        private static string _fontName = "";
+        public static int languageID = 1;
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
@@ -67,7 +72,10 @@ namespace PDC.Localization
             { "[/s]", "</s>" },
             { "[u]", "<u>" },
             { "[/u]", "</u>" },
+            { "[/f]", "</font>" },
+            { "[v]", "," },
         };
+
         private static string SimplifyText(string text)
         {
             var t = text;
@@ -86,10 +94,17 @@ namespace PDC.Localization
                     continue;
                 }
 
-                if(c.Contains('#') && !c.Contains('/'))
+                if (c.Contains('#') && !c.Contains('/'))
                 {
                     var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("#", string.Empty);
                     t = t.Replace(c, $"<color=#{value}>");
+                    continue;
+                }
+
+                if (c.Contains('f') && !c.Contains('/'))
+                {
+                    //var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("f", string.Empty);
+                    t = t.Replace(c, $"<font=rpdpcfont>");
                     continue;
                 }
 
@@ -105,6 +120,26 @@ namespace PDC.Localization
             
             //Debug.Log(t);
             return t;
+        }
+        private static string TranslateWord(string text)
+        {
+            if(!text.Contains("rpdpcfont")) return text;
+
+            var words = GetWords(text);
+            foreach (var word in words)
+            {
+                if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()))
+                {
+                    text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
+                }
+                else
+                {
+                    text = text.Replace(word, $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                }
+                
+            }
+            //Debug.Log(text);
+            return text;
         }
 
         public static string LocalizeText(string text)
@@ -141,7 +176,88 @@ namespace PDC.Localization
             }
             
             t.Replace($"\r\n", string.Empty);
-            return SimplifyText(t);
+            Debug.Log(t);
+            t = SimplifyText(t);
+            return TranslateWord(t);
+        }
+
+        public static string GetTranslatedWord(string text)
+        {
+            text = RemoveDiacritics(text);
+            int id = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                var letter = text[i];
+                int index = char.ToUpper(letter) - 64;
+                id += index;
+            }
+
+            //Debug.Log(id);
+            List<char> list = text.ToList();
+            Tools.Shuffle(list, id);
+
+            string trad = string.Empty;
+            for (int i = 0; i < list.Count; i++)
+            {
+                trad += list[i];
+            }
+
+            return trad;
+        }
+
+        static string[] GetWords(string input)
+        {
+            var words = input.Split(" ");
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                foreach (var kv in _simplifyDico)
+                {
+                    if (words[i].Contains(kv.Value))
+                    {
+                        words[i] = words[i].Replace(kv.Value, string.Empty);
+                    }
+                }
+
+                while (words[i].Contains('<') || words[i].Contains('>'))
+                {
+                    int startIndex = words[i].IndexOf('<');
+                    int endIndex = words[i].IndexOf('>');
+                    int length = endIndex - startIndex + 1;
+
+                    var c = words[i].Substring(startIndex, length);
+                    words[i] = words[i].Replace(c, string.Empty);
+                }
+            }
+
+            List<string> list = new();
+            foreach (var w in words)
+            {
+                if(w != string.Empty)
+                    list.Add(w);
+            }
+
+            return list.ToArray();
+        }
+
+        static string RemoveDiacritics(string text)
+        {
+            var normalizedString = text.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder(capacity: normalizedString.Length);
+
+            for (int i = 0; i < normalizedString.Length; i++)
+            {
+                char c = normalizedString[i];
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder
+                .ToString()
+                .Normalize(NormalizationForm.FormC);
         }
     }
 }
