@@ -13,6 +13,8 @@ public class AttackManager : MonoBehaviour
     [SerializeField] AttackCollider collision2;
     [SerializeField] AttackCollider collision3;
 
+    StateManager stateManager;
+
     enum attackPhaseEnum
     {
         Phase1,
@@ -21,6 +23,11 @@ public class AttackManager : MonoBehaviour
     }
     attackPhaseEnum nextAttackPhaseLate = attackPhaseEnum.Phase1;
     attackPhaseEnum nextAttackPhase = attackPhaseEnum.Phase1;
+
+    private void Awake()
+    {
+        stateManager = GetComponent<StateManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -41,8 +48,9 @@ public class AttackManager : MonoBehaviour
 
     void OnAttack(InputAction.CallbackContext context)
     {
-        if (nextAttackPhase == nextAttackPhaseLate)
+        if (nextAttackPhase == nextAttackPhaseLate && isStateCompatible(stateManager.playerState))
         {
+            stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks);
             if (nextAttackPhase == attackPhaseEnum.Phase1)
             {
                 StartCoroutine(AttackPhase1());
@@ -105,4 +113,8 @@ public class AttackManager : MonoBehaviour
         damageable.takeDamage(attackDamage);
     }
 
+    bool isStateCompatible(StateManager.States state)
+    {
+        return state != StateManager.States.dash && state != StateManager.States.stun;
+    }
 }

@@ -2125,6 +2125,7 @@ GameObject:
   - component: {fileID: 1725615770}
   - component: {fileID: 1725615773}
   - component: {fileID: 1725615774}
+  - component: {fileID: 1725615775}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2355,11 +2356,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f249b40d3b01b1d4788cc23a9a7d8540, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenAttacks: 2
+  timeBetweenAttacks: 0.5
   attackDamage: 5
   collision1: {fileID: 1529385418}
   collision2: {fileID: 1549814504}
   collision3: {fileID: 2072687131}
+--- !u!114 &1725615775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725615762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bca69aa1a199b49a76e673237d6e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerState: 0
 --- !u!1 &1791027969
 GameObject:
   m_ObjectHideFlags: 0
