@@ -198,7 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50c7a6a13ad0fd34d93e10599e51d2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockedWords: []
+  _unlockedWords:
+  - {fileID: 11400000, guid: 12fcb3eb96aa4a347adf20b5b1675122, type: 2}
+  - {fileID: 11400000, guid: ce4e3a3891efa2243bd8799d22796c9d, type: 2}
 --- !u!1 &5179735403974734202
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,9 +303,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df04ce7eaa7097a4da82f43e17dd5fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   _localizationManager: {fileID: 3828687985286755884}
   _camManager: {fileID: 0}
   _playerInputEventManager: {fileID: 1183026318410953302}
+  _languageManager: {fileID: 37038808854158831}
 --- !u!1001 &4193066699035489045
 PrefabInstance:
   m_ObjectHideFlags: 0

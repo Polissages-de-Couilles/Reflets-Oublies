@@ -142,9 +142,9 @@ namespace PDC.Localization
             return text;
         }
 
-        public static string LocalizeText(string text)
+        public static string LocalizeText(string text, bool isKey = false)
         {
-            var t = text;
+            var t = isKey ? GetLocalizedText(text) : text;
             bool AsKey()
             {
                 foreach (var key in _localization)
