@@ -24,7 +24,7 @@ public class InteractionController : MonoBehaviour
 
         if(atRange.Count > 0) currentInteraction = atRange[0];
         else currentInteraction = null;
-        Debug.Log(currentInteraction);
+        //Debug.Log(currentInteraction);
 
         foreach (var i in interacibles)
         {

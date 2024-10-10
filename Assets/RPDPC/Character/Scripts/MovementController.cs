@@ -21,7 +21,8 @@ public class MovementController : MonoBehaviour
 
     Vector3 gravity = new Vector3(0, -9.81f, 0);
     
-    StateManager stateManager;
+    StateManager stateManager; 
+    [SerializeField] private List<StateManager.States> states = new List<StateManager.States>();
 
     private void Awake()
     {
@@ -85,6 +86,6 @@ public class MovementController : MonoBehaviour
 
     bool isStateCompatible(StateManager.States state)
     {
-        return state != StateManager.States.dash && state != StateManager.States.stun && state != StateManager.States.attack;
+        return states.Contains(state);
     }
 }

@@ -176,7 +176,7 @@ namespace PDC.Localization
             }
             
             t.Replace($"\r\n", string.Empty);
-            Debug.Log(t);
+            //Debug.Log(t);
             t = SimplifyText(t);
             return TranslateWord(t);
         }
