@@ -18,10 +18,13 @@ public class DashController : MonoBehaviour
     bool canDash = true;
     Vector3 gravity = new Vector3(0, -9.81f, 0);
 
+    StateManager stateManager;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
         movementController = GetComponent<MovementController>();
+        stateManager = GetComponent<StateManager>();
     }
 
     private void Start()
@@ -32,8 +35,9 @@ public class DashController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(canDash)
+        if(canDash && isStateCompatible(stateManager.playerState))
             StartCoroutine(Dash());
+            stateManager.SetPlayerState(StateManager.States.dash, dashTime);
     }
 
     IEnumerator Dash()
@@ -55,5 +59,10 @@ public class DashController : MonoBehaviour
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    bool isStateCompatible(StateManager.States state)
+    {
+        return state != StateManager.States.stun;
     }
 }
