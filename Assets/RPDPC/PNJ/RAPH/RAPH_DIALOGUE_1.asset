@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: RAPH_DIALOGUE_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 5ceaf070-0d59-4291-8652-c8003bfdf558
+    TargetNodeGuid: 33c8d4f9-a2c5-46b8-98ca-5ed8e10436f3
+  - BaseNodeGuid: 33c8d4f9-a2c5-46b8-98ca-5ed8e10436f3
+    TargetNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+  - BaseNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+    TargetNodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+  - BaseNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+    TargetNodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+    Position: {x: 588, y: 174}
+    DialogueNodePorts:
+    - PortGuid: 6aa21414-825b-44db-a022-dd0f411a9243
+      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      OutputGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: RAPH_DIALOGUE_1_2C_1
+    - PortGuid: 05ab3dc0-658a-443d-b44f-5465e6cb8855
+      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      OutputGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: RAPH_DIALOGUE_1_2C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 51a015490d25150489b8638a077db229, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RAPH_DIALOGUE_1_2
+    Duration: 5
+  DialogueNodeDatas:
+  - NodeGuid: 33c8d4f9-a2c5-46b8-98ca-5ed8e10436f3
+    Position: {x: 299, y: 174}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 51a015490d25150489b8638a077db229, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RAPH_DIALOGUE_1_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+    Position: {x: 981, y: 174}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 5ceaf070-0d59-4291-8652-c8003bfdf558
+    Position: {x: 146, y: 174}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
