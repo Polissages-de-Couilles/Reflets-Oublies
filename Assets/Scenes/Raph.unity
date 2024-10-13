@@ -3692,7 +3692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1022077854
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6857,7 +6857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833254375}
   - component: {fileID: 1833254374}
-  - component: {fileID: 1833254373}
+  - component: {fileID: 1833254376}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -6865,26 +6865,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1833254373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833254372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!114 &1833254374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6915,6 +6895,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1000527168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1833254376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833254372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_XRTrackingOrigin: {fileID: 0}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_PointAction: {fileID: -7059062679650435308, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_MoveAction: {fileID: 7260564083524125253, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_SubmitAction: {fileID: 6354440272630600101, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_CancelAction: {fileID: 2823909469704869970, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_LeftClickAction: {fileID: 5370871025255823631, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_MiddleClickAction: {fileID: -7878339761610813458, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_RightClickAction: {fileID: -5309532756786817146, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_ScrollWheelAction: {fileID: -4509907954258214846, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4766017476039901388, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 6804152241988444424, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!1 &1835940622
 GameObject:
   m_ObjectHideFlags: 0
@@ -7243,6 +7253,54 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1000527168}
     m_Modifications:
+    - target: {fileID: 681001313, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 681001313, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681001313, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.93927205
+      objectReference: {fileID: 0}
+    - target: {fileID: 681001314, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681001314, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 681001314, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214275, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214275, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214275, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Colors.m_SelectedColor.r
+      value: 0.93927205
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214276, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214276, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2052214276, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 621406110542854864, guid: 519a7a2455505124ba913f8e9fad7cff, type: 3}
       propertyPath: m_Name
       value: Meet And Talk

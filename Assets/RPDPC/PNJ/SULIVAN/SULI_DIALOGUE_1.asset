@@ -16,22 +16,51 @@ MonoBehaviour:
   - BaseNodeGuid: 5ceaf070-0d59-4291-8652-c8003bfdf558
     TargetNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
   - BaseNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
-    TargetNodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+    TargetNodeGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
   - BaseNodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+    TargetNodeGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
+  - BaseNodeGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
+    TargetNodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+  - BaseNodeGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
     TargetNodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
   DialogueChoiceNodeDatas:
   - NodeGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
-    Position: {x: 588, y: 174}
+    Position: {x: 382, y: 174}
     DialogueNodePorts:
     - PortGuid: 6aa21414-825b-44db-a022-dd0f411a9243
-      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      InputGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
       OutputGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
       TextLanguage:
       - languageEnum: 0
         LanguageGenericType: SULI_DIALOGUE_1_1C_1
     - PortGuid: 05ab3dc0-658a-443d-b44f-5465e6cb8855
-      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      InputGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
       OutputGuid: 2bc93e33-ef0c-4a2e-82e4-d8399ebcdf01
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: SULI_DIALOGUE_1_1C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: 11400000, guid: 33079c5e41b427540b5d38eb80626094, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SULI_DIALOGUE_1_1
+    Duration: 5
+  - NodeGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
+    Position: {x: 741, y: 174}
+    DialogueNodePorts:
+    - PortGuid: 401c6fe0-2da7-4f1f-a218-fd39a5d14c10
+      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      OutputGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: SULI_DIALOGUE_1_1C_1
+    - PortGuid: 0fe23d96-67c8-450f-a860-cd5a244f695d
+      InputGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
+      OutputGuid: 3be66aa5-480f-4e12-8572-edcf0eb9bd98
       TextLanguage:
       - languageEnum: 0
         LanguageGenericType: SULI_DIALOGUE_1_1C_2
@@ -49,13 +78,13 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 5237c5cc-80bf-4cc6-99f8-fdb673ebd2ab
-    Position: {x: 981, y: 174}
+    Position: {x: 1095, y: 174}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas: []
   StartNodeDatas:
   - NodeGuid: 5ceaf070-0d59-4291-8652-c8003bfdf558
-    Position: {x: 417, y: 174}
+    Position: {x: 211, y: 174}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
