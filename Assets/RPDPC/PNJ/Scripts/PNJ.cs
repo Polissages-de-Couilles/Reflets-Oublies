@@ -57,7 +57,7 @@ public class PNJ : Interactible
             return;
         }
 
-        if(data is DialogueChoiceNodeData)
+        if(data is DialogueChoiceNodeData || data is TimerChoiceNodeData)
         {
             state = State.Choice;
             EventSystem.current.SetSelectedGameObject(null);
