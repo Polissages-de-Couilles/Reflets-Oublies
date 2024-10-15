@@ -18,6 +18,6 @@ public class PlayerInputEventManager : MonoBehaviour
     }
     public void Interaction(InputAction.CallbackContext context)
     {
-        print("Bien jouer d'avoir intéragit");
+        //print("Bien jouer d'avoir intéragit");
     } 
 }
