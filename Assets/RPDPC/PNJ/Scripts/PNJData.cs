@@ -8,11 +8,27 @@ using System.Linq;
 [CreateAssetMenu(menuName ="Game/PNJData")]
 public class PNJData : ScriptableObject
 {
-    [SerializeField] DialogueCharacterSO _character;
-    [SerializeField] List<DialogueContainerSO> _allDialogue = new List<DialogueContainerSO>();
-
-
 #if UNITY_EDITOR
+    [EditorCools.Button]
+    public void InitializeData()
+    {
+        if (_character == null)
+        {
+            var character = ScriptableObject.CreateInstance<DialogueCharacterSO>();
+            character.name = this.name.ToUpper().Replace("DATA", string.Empty);
+            _character = character;
+
+            AssetDatabase.AddObjectToAsset(character, this);
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.SetDirty(character);
+        }
+
+        _characterNameKey = this.name.ToUpper().Replace("DATA", string.Empty) + "_NAME";
+        AssetDatabase.SaveAssets();
+        EditorUtility.SetDirty(this);
+    }
+
     [EditorCools.Button]
     public void CreateDialogue()
     {
@@ -38,11 +54,15 @@ public class PNJData : ScriptableObject
         AssetDatabase.SaveAssets();
     }
 #endif
-    //private void OnGUI()
-    //{
-    //    if (GUILayout.Button("Create Dialogue"))
-    //    {
-    //        CreateDialogue();
-    //    }
-    //}
+
+    [SerializeField] DialogueCharacterSO _character;
+    public string CharacterNameKey => _characterNameKey;
+    [SerializeField] string _characterNameKey;
+    [SerializeField] List<DialogueContainerSO> _allDialogue = new List<DialogueContainerSO>();
+    
+    public DialogueContainerSO GetDialogue(int index)
+    {
+        if(index > _allDialogue.Count) return null;
+        return _allDialogue[index - 1];
+    }
 }

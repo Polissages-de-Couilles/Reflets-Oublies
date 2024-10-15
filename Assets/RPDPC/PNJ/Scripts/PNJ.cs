@@ -10,9 +10,11 @@ using LocalizationManager = PDC.Localization.LocalizationManager;
 
 public class PNJ : Interactible
 {
-    public override string Text => $"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} {LocalizationManager.LocalizeText(textKey, true)}";
+    public override string Text => $"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} {LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
 
-    [SerializeField] DialogueContainerSO dialogue;
+    [SerializeField] PNJData _data;
+    [SerializeField] int _dialogueIndex = 1;
+    DialogueContainerSO dialogue => _data.GetDialogue(_dialogueIndex);
     enum State
     {
         Waiting,
