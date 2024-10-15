@@ -6,9 +6,12 @@ using PDC.Localization;
 using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using LocalizationManager = PDC.Localization.LocalizationManager;
 
 public class PNJ : Interactible
 {
+    public override string Text => $"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} {LocalizationManager.LocalizeText(textKey, true)}";
+
     [SerializeField] DialogueContainerSO dialogue;
     enum State
     {
@@ -73,4 +76,6 @@ public class PNJ : Interactible
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(GameManager.Instance.DialogueUIManager.ButtonContainer.transform.GetChild(0).gameObject);
     }
+
+    
 }
