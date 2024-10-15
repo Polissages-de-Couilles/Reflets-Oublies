@@ -9,9 +9,21 @@ public class StateManager : MonoBehaviour
         idle,
         attack,
         dash,
-        stun
+        stun,
+        talk
     }
     public States playerState;
+
+    public void Start()
+    {
+        GameManager.Instance.DialogueManager.StartDialogueEvent.AddListener(() => SetPlayerState(States.talk));
+        GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() => SetPlayerState(States.idle));
+    }
+
+    public void SetPlayerState(States state)
+    {
+        playerState = state;
+    }
 
     public void SetPlayerState(States state, float duration)
     {

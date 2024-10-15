@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using PDC.Localization;
+using MeetAndTalk;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public GameObject Player => _player;
+    [SerializeField] GameObject _player;
+
     public LocalizationManager LocalizationManager => _localizationManager;
     [SerializeField] LocalizationManager _localizationManager;
 
@@ -29,8 +33,11 @@ public class GameManager : MonoBehaviour
     public PlayerInputEventManager PlayerInputEventManager => _playerInputEventManager;
     [SerializeField] PlayerInputEventManager _playerInputEventManager;
 
-    public RPDPC_Manager LanguageManager => _languageManager;
-    [SerializeField] RPDPC_Manager _languageManager;
+    public LanguageManager LanguageManager => _languageManager;
+    [SerializeField] LanguageManager _languageManager;
+
+    public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
+    public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
     public GameObject Player => _player;
     [SerializeField] GameObject _player;

@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6759040442585856715}
-  - component: {fileID: 37038808854158831}
+  - component: {fileID: 9220172021288818901}
   m_Layer: 0
   m_Name: RPDPC Language Manager
   m_TagString: Untagged
@@ -186,7 +186,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3499364351182337576}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &37038808854158831
+--- !u!114 &9220172021288818901
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5179041022865126333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50c7a6a13ad0fd34d93e10599e51d2aa, type: 3}
+  m_Script: {fileID: 11500000, guid: 32bef724dc8ee1746be61dae99410230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unlockedWords: []
@@ -301,9 +301,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df04ce7eaa7097a4da82f43e17dd5fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   _localizationManager: {fileID: 3828687985286755884}
   _camManager: {fileID: 0}
   _playerInputEventManager: {fileID: 1183026318410953302}
+  _languageManager: {fileID: 9220172021288818901}
 --- !u!1001 &4193066699035489045
 PrefabInstance:
   m_ObjectHideFlags: 0

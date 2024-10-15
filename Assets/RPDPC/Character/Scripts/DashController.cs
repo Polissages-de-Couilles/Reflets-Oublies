@@ -19,6 +19,7 @@ public class DashController : MonoBehaviour
     Vector3 gravity = new Vector3(0, -9.81f, 0);
 
     StateManager stateManager;
+    [SerializeField] private List<StateManager.States> states = new List<StateManager.States>();
 
     private void Awake()
     {
@@ -36,8 +37,10 @@ public class DashController : MonoBehaviour
     private void OnDash(InputAction.CallbackContext context)
     {
         if(canDash && isStateCompatible(stateManager.playerState))
+        {
             StartCoroutine(Dash());
             stateManager.SetPlayerState(StateManager.States.dash, dashTime);
+        }
     }
 
     IEnumerator Dash()
@@ -63,6 +66,6 @@ public class DashController : MonoBehaviour
 
     bool isStateCompatible(StateManager.States state)
     {
-        return state != StateManager.States.stun;
+        return states.Contains(state);
     }
 }
