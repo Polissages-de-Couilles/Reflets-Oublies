@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
     public RPDPC_Manager LanguageManager => _languageManager;
     [SerializeField] RPDPC_Manager _languageManager;
 
+    public GameObject Player => _player;
+    [SerializeField] GameObject _player;
+
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
     {
