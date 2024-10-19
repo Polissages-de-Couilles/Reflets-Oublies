@@ -142,9 +142,9 @@ namespace PDC.Localization
             return text;
         }
 
-        public static string LocalizeText(string text)
+        public static string LocalizeText(string text, bool isKey = false)
         {
-            var t = text;
+            var t = isKey ? GetLocalizedText(text) : text;
             bool AsKey()
             {
                 foreach (var key in _localization)
@@ -176,7 +176,7 @@ namespace PDC.Localization
             }
             
             t.Replace($"\r\n", string.Empty);
-            Debug.Log(t);
+            //Debug.Log(t);
             t = SimplifyText(t);
             return TranslateWord(t);
         }
