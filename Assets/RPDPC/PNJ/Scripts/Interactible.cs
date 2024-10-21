@@ -12,7 +12,7 @@ public abstract class Interactible : MonoBehaviour
     [SerializeField] protected float range = 3f;
     public bool IsAtRange => Distance <= Range;
     public float Distance => Vector3.Distance(GameManager.Instance.Player.transform.position, this.gameObject.transform.position);
-    public string Text => LocalizationManager.LocalizeText(textKey, true);
+    public virtual string Text => LocalizationManager.LocalizeText(textKey, true);
     [SerializeField] protected string textKey;
     [SerializeField] protected TextMeshProUGUI worldUI;
 

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using MeetAndTalk.GlobalValue;
 using MeetAndTalk.Localization;
 using PDC.Localization;
+using System;
+using Random = UnityEngine.Random;
 
 namespace MeetAndTalk
 {
@@ -20,6 +22,7 @@ namespace MeetAndTalk
         public UnityEvent StartDialogueEvent;
         public UnityEvent EndDialogueEvent;
 
+        public Action<BaseNodeData> OnNode;
         private BaseNodeData currentDialogueNodeData;
         private BaseNodeData lastDialogueNodeData;
 
@@ -152,6 +155,7 @@ namespace MeetAndTalk
         {
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
+            OnNode?.Invoke(currentDialogueNodeData);
 
             GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
             manager.LoadFile();
@@ -200,6 +204,7 @@ namespace MeetAndTalk
         {
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
+            OnNode?.Invoke(currentDialogueNodeData);
 
             GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
             manager.LoadFile();
@@ -283,6 +288,7 @@ namespace MeetAndTalk
         {
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
+            OnNode?.Invoke(currentDialogueNodeData);
 
             GlobalValueManager manager = Resources.Load<GlobalValueManager>("GlobalValue");
             manager.LoadFile();
