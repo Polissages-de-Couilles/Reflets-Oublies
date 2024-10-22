@@ -6,6 +6,8 @@ using UnityEngine;
 public class MoneyDrop : MonoBehaviour
 {
     [SerializeField] public List<MinMaxMoney> dropRate = new List<MinMaxMoney>();
+
+    private const float SPAWN_FACTOR = 1f;
     
     public void DropMonney()
     {
@@ -20,7 +22,8 @@ public class MoneyDrop : MonoBehaviour
 
         for(int i = 0; i < numberSpawn; i++)
         {
-            Instantiate(coin.coinSO.coin.gameObject, spawn,new Quaternion(0,0,0,0));
+            Vector3 trueSpawn = new Vector3(UnityEngine.Random.Range(spawn.x - SPAWN_FACTOR, spawn.x + SPAWN_FACTOR), spawn.y, UnityEngine.Random.Range(spawn.z - SPAWN_FACTOR, spawn.z + SPAWN_FACTOR));
+            Instantiate(coin.coinSO.coin.gameObject, trueSpawn,new Quaternion(0,0,0,0));
         }
     }
 }
