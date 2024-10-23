@@ -50,5 +50,9 @@ public class GameManager : MonoBehaviour
         {
             this.gameObject.GetComponent<MoneyDrop>().DropMonney();
         }
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            Player.GetComponent<PlayerDamageable>().takeDamage(20);
+        }
     }
 }
