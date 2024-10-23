@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using TMPro;
 using System.Text.RegularExpressions;
 using MeetAndTalk.GlobalValue;
+using System;
 
 namespace MeetAndTalk
 {
@@ -40,7 +41,7 @@ namespace MeetAndTalk
 
         private List<Button> buttons = new List<Button>();
         private List<TextMeshProUGUI> buttonsTexts = new List<TextMeshProUGUI>();
-
+        public Action<int> OnButtonCreate;
 
 
         private void Awake()
@@ -122,6 +123,9 @@ namespace MeetAndTalk
             }
 
             TimerSlider.gameObject.SetActive(showTimer);
+            //Debug.Log(ButtonContainer.transform.childCount);
+            //Debug.Log(_texts.Count);
+            OnButtonCreate?.Invoke(_texts.Count);
         }
 
         string ChangeReplaceableText(string text)

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MoneyManager _moneyManager;
 
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
+    public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
     //Uniquement là à but de test, ne pas utiliser pour la version final
 
