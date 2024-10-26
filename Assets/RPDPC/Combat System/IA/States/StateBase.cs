@@ -9,50 +9,91 @@ public abstract class StateBase : ScriptableObject
 {
     public float priority;
     public Action onActionFinished;
-    [SerializeField] ConditionExpression conditions;
+    [SerializeField] List<ConditionExpression> conditions;
 
     public void BaseInit(StateMachineManager manager, GameObject parent, GameObject player)
     {
-        conditions.baseCondition.Init(parent, player);
-        foreach (ConditionCalculs cc in conditions.otherParts)
+        foreach (ConditionExpression c in conditions)
         {
-            cc.secondCondition.Init(parent, player);
+            c.baseCondition.Init(parent, player);
+            foreach (ConditionCalculs cc in c.otherParts)
+            {
+                cc.secondCondition.Init(parent, player);
+            }
         }
-
+        
         Init(manager, parent, player);
     }
     public abstract void Init(StateMachineManager manager, GameObject parent, GameObject player);
     public bool isStateValid() 
     {
-        bool currentResult = conditions.baseCondition.isConditionFulfilled();
-        foreach (ConditionCalculs cc in conditions.otherParts)
+        bool currentResult = false;
+        foreach (ConditionExpression c in conditions)
         {
-            switch (cc.logicalGate)
+            bool currentExpressionResult = c.baseCondition.isConditionFulfilled();
+            foreach (ConditionCalculs cc in c.otherParts)
             {
-                case logicalGates.AND:
-                    currentResult = currentResult & cc.secondCondition.isConditionFulfilled();
+                switch (cc.logicalGate)
+                {
+                    case logicalGates.AND:
+                        currentExpressionResult = currentExpressionResult & cc.secondCondition.isConditionFulfilled();
 
-                    break;
-                case logicalGates.NAND:
-                    currentResult = !(currentResult & cc.secondCondition.isConditionFulfilled());
+                        break;
+                    case logicalGates.NAND:
+                        currentExpressionResult = !(currentExpressionResult & cc.secondCondition.isConditionFulfilled());
 
-                    break;
-                case logicalGates.OR:
-                    currentResult = currentResult | cc.secondCondition.isConditionFulfilled();
+                        break;
+                    case logicalGates.OR:
+                        currentExpressionResult = currentExpressionResult | cc.secondCondition.isConditionFulfilled();
 
-                    break;
-                case logicalGates.NOR:
-                    currentResult = !(currentResult | cc.secondCondition.isConditionFulfilled());
+                        break;
+                    case logicalGates.NOR:
+                        currentExpressionResult = !(currentExpressionResult | cc.secondCondition.isConditionFulfilled());
 
-                    break;
-                case logicalGates.XOR:
-                    currentResult = currentResult ^ cc.secondCondition.isConditionFulfilled();
+                        break;
+                    case logicalGates.XOR:
+                        currentExpressionResult = currentExpressionResult ^ cc.secondCondition.isConditionFulfilled();
 
-                    break;
-                case logicalGates.XNOR:
-                    currentResult = !(currentResult ^ cc.secondCondition.isConditionFulfilled());
+                        break;
+                    case logicalGates.XNOR:
+                        currentExpressionResult = !(currentExpressionResult ^ cc.secondCondition.isConditionFulfilled());
 
-                    break;
+                        break;
+                }
+            }
+            if (conditions.IndexOf(c) == 0)
+            {
+                currentResult = currentExpressionResult;
+            }
+            else 
+            {
+                switch (c.logicalGate)
+                {
+                    case logicalGates.AND:
+                        currentResult = currentResult & currentExpressionResult;
+
+                        break;
+                    case logicalGates.NAND:
+                        currentResult = !(currentResult & currentExpressionResult);
+
+                        break;
+                    case logicalGates.OR:
+                        currentResult = currentResult | currentExpressionResult;
+
+                        break;
+                    case logicalGates.NOR:
+                        currentResult = !(currentResult | currentExpressionResult);
+
+                        break;
+                    case logicalGates.XOR:
+                        currentResult = currentResult ^ currentExpressionResult;
+
+                        break;
+                    case logicalGates.XNOR:
+                        currentResult = !(currentResult ^ currentExpressionResult);
+
+                        break;
+                }
             }
         }
         return currentResult;
@@ -83,6 +124,7 @@ public struct ConditionCalculs
 [Serializable]
 public struct ConditionExpression
 {
+    public logicalGates logicalGate;
     public ConditionBase baseCondition;
     public List<ConditionCalculs> otherParts;
 }
