@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/IA/Conditions/Base/PlayerIsFar")]
-public class PlayerIsFar : ConditionBase
+[CreateAssetMenu(menuName = "Game/IA/Conditions/Base/PlayerIsNear")]
+public class PlayerIsNear : ConditionBase
 {
     [SerializeField] float minDistance;
     GameObject parent;
@@ -17,6 +17,6 @@ public class PlayerIsFar : ConditionBase
 
     public override bool isConditionFulfilled()
     {
-        return Vector3.Distance(parent.transform.position, player.transform.position) > minDistance;
+        return Vector3.Distance(parent.transform.position, player.transform.position) <= minDistance;
     }
 }
