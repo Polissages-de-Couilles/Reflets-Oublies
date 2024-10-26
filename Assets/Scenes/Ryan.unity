@@ -325,11 +325,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df04ce7eaa7097a4da82f43e17dd5fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 1725615762}
   _localizationManager: {fileID: 1423941242}
   _camManager: {fileID: 1827277084}
   _playerInputEventManager: {fileID: 1812521127}
   _languageManager: {fileID: 0}
-  _player: {fileID: 1725615762}
 --- !u!4 &291248928
 Transform:
   m_ObjectHideFlags: 0
@@ -2282,6 +2282,7 @@ MonoBehaviour:
   dashForce: 20
   dashTime: 0.1
   dashCooldown: 1
+  states: 
 --- !u!114 &1725615770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2320,6 +2321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  states: 00000000
 --- !u!143 &1725615773
 CharacterController:
   m_ObjectHideFlags: 0

@@ -2,15 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomMoveInRange : StateBase
+[CreateAssetMenu(menuName = "Game/IA/States/Base/doNothing")]
+public class doNothing : StateBase
 {
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
     {
-    }
-
-    public override bool isStateValid()
-    {
-        return false;
     }
 
     public override void ExitState()
