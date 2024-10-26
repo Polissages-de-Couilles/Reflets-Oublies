@@ -1,42 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PDC;
+using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
     [SerializeField] private int valueCoin;
+    [SerializeField] private AnimationCurve animCurv;
 
-    [SerializeField] private float speed = 5;
-
-    private Rigidbody rigidBody;
-    private bool coinGet = false;
+    private const float DURATION = 0.5f;
 
     private void Awake()
     {
         StartCoroutine(FollowPlayer());
-        rigidBody = GetComponent<Rigidbody>();
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.name == GameManager.Instance.Player.name)
-        {
-            GameManager.Instance.MoneyManager.ChangePlayerMonney(valueCoin);
-            coinGet = true;
-            Destroy(this.gameObject);
-        }
-    }
-
     private IEnumerator FollowPlayer()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1f);
 
-        while (coinGet == false)
-        {
-            Vector3 direction = transform.position - GameManager.Instance.Player.transform.position;
-            direction.Normalize();
-            rigidBody.velocity = direction * -speed;
-            yield return new WaitForEndOfFrame();
-        }
+        yield return transform.DOMoveInTargetLocalSpace(GameManager.Instance.Player.transform, Vector3.zero, DURATION).SetEase(animCurv).WaitForCompletion();
+
+        GameManager.Instance.MoneyManager.ChangePlayerMonney(valueCoin);
+        Destroy(this.gameObject);
+
+        //ajouter pailette LOL
     }
 }

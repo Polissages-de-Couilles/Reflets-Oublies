@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 171297914518982323}
   - component: {fileID: 216090147098063504}
   - component: {fileID: 6369113152201419279}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 1Gold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -120,7 +120,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valueCoin: 1
-  speed: 10
+  animCurv:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!54 &6369113152201419279
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -147,4 +170,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
