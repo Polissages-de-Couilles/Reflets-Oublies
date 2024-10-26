@@ -46,10 +46,6 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            this.gameObject.GetComponent<MoneyDrop>().DropMonney();
-        }
         if(Input.GetKeyDown(KeyCode.T))
         {
             Player.GetComponent<PlayerDamageable>().takeDamage(20);
