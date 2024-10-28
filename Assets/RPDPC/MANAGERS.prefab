@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &593472113437974624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8906577453201118785}
+  - component: {fileID: 5018291680400192581}
+  - component: {fileID: 9140524450465451549}
+  m_Layer: 0
+  m_Name: ReseauManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8906577453201118785
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593472113437974624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3499364351182337576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5018291680400192581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593472113437974624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525e403f9823c4644a9c68ac424ccb5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Message: Adorer
+  PdC: entry.1535528696
+--- !u!114 &9140524450465451549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593472113437974624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0477680b80c20554a87ac81ef38119e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csv: {fileID: 4900000, guid: 93f89b250d3751149a88c1f784a36cd6, type: 3}
 --- !u!1 &2235082274104157072
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,6 +94,7 @@ Transform:
   - {fileID: 9130210576775069791}
   - {fileID: 4272694235469349032}
   - {fileID: 6759040442585856715}
+  - {fileID: 8906577453201118785}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5146027343029764900
@@ -244,6 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a266c14b19dc2d5429b99fcd62b8432b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  csv: {fileID: 4900000, guid: 89cad3acaa4c3c244a31522239a40d33, type: 3}
 --- !u!114 &3828687985286755884
 MonoBehaviour:
   m_ObjectHideFlags: 0
