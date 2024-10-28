@@ -57,7 +57,7 @@ namespace PDC
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
-            Debug.Log(data);
+            //Debug.Log(data);
 
             // Splitting the dataset in the end of line
             var splitDataset = data.Split("\r\n");
@@ -75,8 +75,8 @@ namespace PDC
                 string[] row = splitDataset[i].Split(new char[] { ',' });
                 for (int j = 1; j < row.Length; j++)
                 {
-                    Debug.Log(row.Length + " | " + j + " | " + messages.Count);
-                    Debug.Log(row[j]);
+                    //Debug.Log(row.Length + " | " + j + " | " + messages.Count);
+                    //Debug.Log(row[j]);
                     if (row[j] == null)
                     {
                         messages[j-1].Add(string.Empty);
@@ -88,22 +88,22 @@ namespace PDC
                 }
             }
 
-            foreach (var list in messages)
-            {
-                string t = "| ";
-                foreach (var text in list)
-                {
-                    t += text;
-                    t += " | ";
-                }
-                Debug.Log(t);
-            }
+            //foreach (var list in messages)
+            //{
+            //    string t = "| ";
+            //    foreach (var text in list)
+            //    {
+            //        t += text;
+            //        t += " | ";
+            //    }
+            //    Debug.Log(t);
+            //}
 
             Messages = messages;
             OnDataUpdated?.Invoke();
         }
 
-        public IEnumerator<List<string>> GetMessages(int pdc, int language)
+        public IEnumerator<List<string>> GetMessages(int pdc)
         {
             bool isDataUpdated = false;
             OnDataUpdated += () => isDataUpdated = true;
@@ -112,25 +112,7 @@ namespace PDC
             while(!isDataUpdated)
                 yield return null;
 
-            var list = Messages[pdc];
-            List<string> finalList = new List<string>();
-            foreach (var t in list)
-            {
-                if (int.TryParse(t[0].ToString(), out var value))
-                {
-                    if(value == language)
-                    {
-                        finalList.Add(t.Substring(1));
-                        Debug.Log(t.Substring(1));
-                    }
-                }
-                else
-                {
-
-                }
-            }
-
-            yield return finalList;
+            yield return Messages[pdc];
         }
     }
 }

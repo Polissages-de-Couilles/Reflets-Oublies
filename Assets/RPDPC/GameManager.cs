@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PDC.Localization;
 using MeetAndTalk;
+using PDC;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class GameManager : MonoBehaviour
 
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
     public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
+
+    public PdCManager PdCManager => _pdcManager;
+    [SerializeField] PdCManager _pdcManager;
 
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
