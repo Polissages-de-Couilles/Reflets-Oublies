@@ -9,11 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96851745409a6394ca635b25b3aaa12b, type: 3}
-  m_Name: DollDoNothing
+  m_Script: {fileID: 11500000, guid: 1a9065d1cd7e778418e997496e5db2c9, type: 3}
+  m_Name: DollRandomMove
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 0
   conditions:
-  - logicalGate: 2
+  - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     otherParts: []
+  randomCenter: {x: 1.48, y: 0.98, z: 1.66}
+  randomRange: 100
+  shouldOnlyMoveOnce: 0
+  WaitForMoveToFinishBeforeEndOrSwitchingState: 0
+  rangeWaitBetweenMoves: {x: 2, y: 10}

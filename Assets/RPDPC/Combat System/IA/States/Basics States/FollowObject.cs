@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/IA/States/Base/FollowObject")]
 public class FollowObject : StateBase
 {
-    public GameObject player;
+    GameObject player;
     GameObject parent;
 
     public override void Init(StateMachineManager manager, GameObject parent, GameObject player)

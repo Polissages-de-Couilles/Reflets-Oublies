@@ -11,7 +11,7 @@ public class StateMachineManager : MonoBehaviour
     [SerializeField] StateBase[] states;
     StateBase currentState;
 
-    bool shouldSearchStates = true;
+    public bool shouldSearchStates = true;
 
     // Start is called before the first frame update
     void Start()
