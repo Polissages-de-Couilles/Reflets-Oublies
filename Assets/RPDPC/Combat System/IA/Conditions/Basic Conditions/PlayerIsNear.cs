@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/IA/Conditions/Base/PlayerIsNear")]
+[CreateAssetMenu(menuName = "Game/IA/Conditions/Base/Player/PlayerIsNear")]
 public class PlayerIsNear : ConditionBase
 {
     [SerializeField] float minDistance;

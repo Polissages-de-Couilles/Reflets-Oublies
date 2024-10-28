@@ -6,9 +6,15 @@ using UnityEngine;
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
-    float currentHealth;
+    public float currentHealth;
 
     public Action<float, float> OnDamageTaken { get; set; }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
     public void takeDamage(float damage)
     {
         currentHealth -= damage;

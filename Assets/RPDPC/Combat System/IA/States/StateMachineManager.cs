@@ -71,10 +71,17 @@ public class StateMachineManager : MonoBehaviour
             Debug.Log("FOUNDED STATE = " + highestState);
             if (currentState != null)
             {
-                currentState.ExitState();
+                currentState.onActionFinished -= StateEnded;
+                currentState.OnEndState();
             }
             currentState = highestState;
             currentState.OnEnterState();
+            currentState.onActionFinished += StateEnded;
         }
+    }
+
+    void StateEnded()
+    {
+        setNewCurrentState(-1);
     }
 }

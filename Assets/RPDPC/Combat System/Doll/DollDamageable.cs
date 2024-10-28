@@ -9,6 +9,12 @@ public class DollDamageable : MonoBehaviour, IDamageable
     float currentHealth;
 
     public Action<float, float> OnDamageTaken { get; set; }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
     public void takeDamage(float damage)
     {
         currentHealth -= damage;

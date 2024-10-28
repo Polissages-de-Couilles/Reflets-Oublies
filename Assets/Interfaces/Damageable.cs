@@ -7,4 +7,5 @@ public interface IDamageable
 {
     public Action<float, float> OnDamageTaken { get; set; }
     void takeDamage(float damage);
+    public float getCurrentHealth();
 }
