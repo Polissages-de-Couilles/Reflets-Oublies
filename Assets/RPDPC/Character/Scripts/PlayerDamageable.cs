@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,33 +9,30 @@ using UnityEngine.Rendering;
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
-    float currentHealth;
-
-    private PlayerInputEventManager PIE;
-
+    public float currentHealth => _currentHealth;
+    private float _currentHealth;
     public Action<float, float> OnDamageTaken { get; set; }
     public void takeDamage(float damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
         {
-            currentHealth = 0;
+            _currentHealth = 0;
         }
-        Debug.Log("Player took damage. Their health is now at " + currentHealth);
-        OnDamageTaken?.Invoke(damage, currentHealth);
+        Debug.Log("Player took damage. Their health is now at " + _currentHealth);
+        OnDamageTaken?.Invoke(damage, _currentHealth);
     }
 
     void Start()
     {
-        PIE = GameManager.Instance.PlayerInputEventManager;
-        PIE.PlayerInputAction.Player.Potion.performed += Heal;
-        currentHealth = maxHealth;
+        _currentHealth = maxHealth;
         //StartCoroutine(testDamage());
     }
 
-    private void Heal(InputAction.CallbackContext context)
+    public void heal(float heal)
     {
-        print("lol je Heal");
+        _currentHealth += heal;
+        if (maxHealth < _currentHealth) _currentHealth = maxHealth;
     }
 
     IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }

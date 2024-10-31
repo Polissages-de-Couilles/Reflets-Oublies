@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     public MoneyManager MoneyManager => _moneyManager;
     [SerializeField] private MoneyManager _moneyManager;
 
+    public PotionManager PotionManager => _potionManager;
+    [SerializeField] private PotionManager _potionManager;
+
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
     public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
