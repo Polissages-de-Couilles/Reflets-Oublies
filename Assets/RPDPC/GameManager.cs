@@ -37,6 +37,12 @@ public class GameManager : MonoBehaviour
     public LanguageManager LanguageManager => _languageManager;
     [SerializeField] LanguageManager _languageManager;
 
+    public MoneyManager MoneyManager => _moneyManager;
+    [SerializeField] private MoneyManager _moneyManager;
+
+    public PotionManager PotionManager => _potionManager;
+    [SerializeField] private PotionManager _potionManager;
+
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
     public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
@@ -44,11 +50,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] PdCManager _pdcManager;
 
     //Uniquement là à but de test, ne pas utiliser pour la version final
+
     public void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    CamManager.Vignette(0.5f, 2f);
-        //}
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            Player.GetComponent<PlayerDamageable>().takeDamage(20);
+        }
     }
 }
