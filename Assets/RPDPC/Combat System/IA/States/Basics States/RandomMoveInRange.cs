@@ -6,8 +6,8 @@ using UnityEngine.AI;
 [CreateAssetMenu(menuName = "Game/IA/States/Base/RandomMoveInRange")]
 public class RandomMoveInRange : StateBase
 {
-    [SerializeField] Vector3 randomCenter;
-    [SerializeField] float randomRange;
+    [SerializeField] Vector3 searchCenter;
+    [SerializeField] float searchRange;
     [SerializeField] bool shouldOnlyMoveOnce = false;
     [SerializeField] bool WaitForMoveToFinishBeforeEndOrSwitchingState = false;
     StateMachineManager manager;
@@ -83,7 +83,7 @@ public class RandomMoveInRange : StateBase
 
     private void goToRandomPos()
     {
-        Vector3 randomPoint = randomCenter + Random.insideUnitSphere * randomRange;
+        Vector3 randomPoint = searchCenter + Random.insideUnitSphere * searchRange;
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, 1f, NavMesh.AllAreas))
         {   
