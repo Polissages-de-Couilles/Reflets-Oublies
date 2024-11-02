@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/IA/Conditions/Base/Player/PlayerHpEqual")]
 public class PlayerHpEqual : ConditionBase
 {
-    public int hpThreshold;
+    [Range(0, 1)]
+    public int hpPercentage;
     PlayerDamageable pd;
     public override void Init(GameObject parent, GameObject player)
     {
@@ -14,6 +15,10 @@ public class PlayerHpEqual : ConditionBase
 
     public override bool isConditionFulfilled()
     {
-        return pd.currentHealth == hpThreshold;
+        return pd.getCurrentHealth() / pd.getMaxHealth() == hpPercentage;
+    }
+    void OnValidate()
+    {
+        hpPercentage = Mathf.Clamp(hpPercentage, 0, 1);
     }
 }

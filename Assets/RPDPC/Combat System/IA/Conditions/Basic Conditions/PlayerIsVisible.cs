@@ -10,6 +10,7 @@ public class PlayerIsVisible : ConditionBase
     GameObject player;
     CapsuleCollider playerCollider;
     List<Vector3> directions;
+    [SerializeField] float viewAngle;
     public override void Init(GameObject parent, GameObject player)
     {
         this.parent = parent;
@@ -45,7 +46,8 @@ public class PlayerIsVisible : ConditionBase
         if (Physics.Raycast(parent.transform.position, -(parent.transform.position - direction), out hit, Mathf.Infinity))
         {
             Debug.DrawLine(parent.transform.position, hit.point);
-            if (hit.collider.gameObject == player)
+            //Debug.Log(Vector3.Angle(parent.transform.forward.normalized, -(parent.transform.position - direction).normalized));
+            if (hit.collider.gameObject == player && Vector3.Angle(parent.transform.forward.normalized, -(parent.transform.position - direction).normalized) <= viewAngle/2)
             {
                 return true;
             }

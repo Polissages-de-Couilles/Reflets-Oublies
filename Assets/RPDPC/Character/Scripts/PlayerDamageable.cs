@@ -15,6 +15,11 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         return currentHealth;
     }
 
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
     public void takeDamage(float damage)
     {
         currentHealth -= damage;

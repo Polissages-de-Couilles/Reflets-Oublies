@@ -29,6 +29,7 @@ public class StateMachineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentState.OnUpdate();
         if (shouldSearchStates) {
             if (currentState.isStateValid())
             {
@@ -39,7 +40,6 @@ public class StateMachineManager : MonoBehaviour
                 setNewCurrentState(-1f);
             }
         }
-        currentState.OnUpdate();
     }
 
     void setNewCurrentState(float minExcluStatePrio)

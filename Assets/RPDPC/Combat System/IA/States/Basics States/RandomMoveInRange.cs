@@ -37,12 +37,14 @@ public class RandomMoveInRange : StateBase
 
     public override void OnEnterState()
     {
+        agent.isStopped = false;
         isPosReached = false;
         goToRandomPos();
     }
 
     public override void OnUpdate()
     {
+        Debug.DrawLine(parent.transform.forward, parent.transform.forward * 1000, Color.red, 2f);
         if (!timerRunning)
         {
             if (isPosReached)
