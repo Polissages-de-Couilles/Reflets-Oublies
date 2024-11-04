@@ -10,11 +10,6 @@ public class MoneyManager : MonoBehaviour
 
     public TextMeshProUGUI text;
 
-    private void Awake()
-    {
-        ChangePlayerMonney(100);
-    }
-
     public void ChangePlayerMonney(int monney)
     {
         _playerMonney += monney;
