@@ -44,6 +44,41 @@ namespace PDC.Localization
             onCompleted(downloadData);
         }
 
+        private const string k2_googleSheetDocID = "1Ya7cava7Ka5ln1qNVw4igsawQ4dcKFKSoTBRUOVphyU";
+
+        private const string url2 = "https://docs.google.com/spreadsheets/d/" + k2_googleSheetDocID + "/export?format=csv";
+
+        internal static IEnumerator DownloadGoogleDBData(System.Action<string> onCompleted)
+        {
+            yield return new WaitForEndOfFrame();
+
+            string downloadData = null;
+            using (UnityWebRequest webRequest = UnityWebRequest.Get(url2))
+            {
+                //Debug.Log("Starting Download...");
+                yield return webRequest.SendWebRequest();
+                //int equalsIndex = ExtractEqualsIndex(webRequest.downloadHandler);
+                if (webRequest.isNetworkError)
+                {
+                    Debug.Log("...Download Error: " + webRequest.error);
+                    downloadData = PlayerPrefs.GetString("LastGoogleDataDownloaded", null);
+                    //string versionText = PlayerPrefs.GetString("LastDataDownloadedVersion", null);
+                    Debug.Log("Using stale data");
+                }
+                else
+                {
+                    //string versionText = webRequest.downloadHandler.text;
+                    downloadData = webRequest.downloadHandler.text;
+                    //PlayerPrefs.SetString("LastDataDownloadedVersion", versionText);
+                    PlayerPrefs.SetString("LastGoogleDataDownloaded", downloadData);
+                    //Debug.Log("...Downloaded");
+
+                }
+            }
+
+            onCompleted(downloadData);
+        }
+
         //private static int ExtractEqualsIndex(DownloadHandler d)
         //{
         //    if (d.text == null || d.text.Length < 10)

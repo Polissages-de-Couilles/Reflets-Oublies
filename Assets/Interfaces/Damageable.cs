@@ -9,4 +9,5 @@ public interface IDamageable
     void takeDamage(float damage);
     public float getCurrentHealth();
     public float getMaxHealth();
+    void heal(float heal);
 }

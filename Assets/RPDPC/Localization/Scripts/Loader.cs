@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -7,6 +8,8 @@ namespace PDC.Localization
 {
     public class Loader : MonoBehaviour
     {
+        [SerializeField] TextAsset csv;
+
         public void Load()
         {
             StartCoroutine(CSVDownloader.DownloadData(AfterDownload));
@@ -19,9 +22,14 @@ namespace PDC.Localization
                 Debug.LogError("Was not able to download data or retrieve stale data.");
                 // TODO: Display a notification that this is likely due to poor internet connectivity
                 //       Maybe ask them about if they want to report a bug over this, though if there's no internet I guess they can't
+                StartCoroutine(ProcessData(csv.text, AfterProcessData));
             }
             else
             {
+                
+                //Debug.Log(Application.dataPath + @"/Resources/Localization.csv");
+                string filePath = Application.dataPath + @"/Resources/Localization.csv";
+                File.WriteAllText(filePath, data);
                 StartCoroutine(ProcessData(data, AfterProcessData));
             }
         }

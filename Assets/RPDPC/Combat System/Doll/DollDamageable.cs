@@ -31,6 +31,11 @@ public class DollDamageable : MonoBehaviour, IDamageable
         OnDamageTaken?.Invoke(damage, currentHealth);
     }
 
+    public void heal(float heal)
+    {
+
+    }
+
     void Start()
     {
         currentHealth = maxHealth;

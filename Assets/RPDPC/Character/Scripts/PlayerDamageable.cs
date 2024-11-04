@@ -1,12 +1,15 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
-    public float currentHealth;
+    private float currentHealth;
 
     public Action<float, float> OnDamageTaken { get; set; }
 
@@ -35,6 +38,12 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
     {
         currentHealth = maxHealth;
         //StartCoroutine(testDamage());
+    }
+
+    public void heal(float heal)
+    {
+        currentHealth += heal;
+        if (maxHealth < currentHealth) currentHealth = maxHealth;
     }
 
     IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }
