@@ -39,9 +39,6 @@ public class GameManager : MonoBehaviour
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
     public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
-    public GameObject Player => _player;
-    [SerializeField] GameObject _player;
-
     //Uniquement là à but de test, ne pas utiliser pour la version final
     public void Update()
     {
