@@ -10,7 +10,7 @@ public class MemorySO : ScriptableObject
     public bool _disposed = false;
     public int relationValue;
     public int defenceValue;
-    private List<TranslatedWord> translatedWords = new List<TranslatedWord>();
+    [SerializeField] private List<TranslatedWord> translatedWords = new List<TranslatedWord>();
 
     public void RunEvent()
     {
