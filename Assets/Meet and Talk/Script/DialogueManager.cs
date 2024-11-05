@@ -193,7 +193,11 @@ namespace MeetAndTalk
             dialogueUIManager.SkipButton.SetActive(true);
             MakeButtons(new List<DialogueNodePort>());
 
-            if(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if(audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
 
             _nodeDialogueInvoke = _nodeData;
 
@@ -247,7 +251,11 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSeconds(_nodeData.Duration); ChoiceNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if (audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
         }
         private void RunNode(EventNodeData _nodeData)
         {
@@ -331,8 +339,11 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSecondsRealtime(_nodeData.Duration); TimerNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
-
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if (audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
         }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)
