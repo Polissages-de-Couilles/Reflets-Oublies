@@ -57,8 +57,7 @@ public class Attack : StateBase
 
     IEnumerator SpawnCollision(AttackColliderDetails detail)
     {
-        yield return null;
-
+        return null;
     }
 }
 
