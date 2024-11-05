@@ -35,7 +35,7 @@ public class PotionManager : MonoBehaviour
 
     private void HealPlayer(InputAction.CallbackContext context)
     {
-        if(currentPotion != 0 && player.currentHealth != player.maxHealth)
+        if(currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)
         {
             player.heal(player.maxHealth * HEAL_VALUE);
             currentPotion--;
