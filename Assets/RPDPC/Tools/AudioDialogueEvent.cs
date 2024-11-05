@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using MeetAndTalk.Event;
+using MeetAndTalk;
 
 [CreateAssetMenu(menuName = "Dialogue/Event/AudioDialogue")]
 public class AudioDialogueEvent : DialogueEventSO
@@ -14,14 +15,17 @@ public class AudioDialogueEvent : DialogueEventSO
     {
         firstNode = false;
         soundID = AkSoundEngine.PostEvent(AudioName, GameManager.Instance.AudioDialogueGameObject);
-        GameManager.Instance.DialogueManager.OnNode += (node) =>
+        GameManager.Instance.DialogueManager.OnNode += StopAudio;
+    }
+
+    private void StopAudio(BaseNodeData node)
+    {
+        if (!firstNode)
         {
-            if (!firstNode)
-            {
-                firstNode = true;
-                return;
-            }
-            AkSoundEngine.StopPlayingID(soundID);
-        };
+            firstNode = true;
+            return;
+        }
+        AkSoundEngine.StopPlayingID(soundID);
+        GameManager.Instance.DialogueManager.OnNode -= StopAudio;
     }
 }
