@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour
     public PdCManager PdCManager => _pdcManager;
     [SerializeField] PdCManager _pdcManager;
 
+    public GameObject AudioDialogueGameObject => _audioDialogueGameObject;
+    [SerializeField] GameObject _audioDialogueGameObject;
+
     //Uniquement là à but de test, ne pas utiliser pour la version final
 
     public void Update()

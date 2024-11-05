@@ -67,17 +67,21 @@ MonoBehaviour:
   m_Name: Dialogue_1
   m_EditorClassIdentifier: 
   NodeLinkDatas:
+  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
+    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
+  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
+    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
   - BaseNodeGuid: 6fcb0fc4-b4f4-4fce-8bce-36d29792f2fd
+    TargetNodeGuid: eb3a18d5-582e-4e9e-b73d-ba9d098ccc97
+  - BaseNodeGuid: eb3a18d5-582e-4e9e-b73d-ba9d098ccc97
     TargetNodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
   - BaseNodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
+    TargetNodeGuid: 2dac1db2-8d67-4352-b1c5-b9e685a83b7a
+  - BaseNodeGuid: 2dac1db2-8d67-4352-b1c5-b9e685a83b7a
     TargetNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
-  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
   DialogueChoiceNodeDatas:
   - NodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-    Position: {x: 630, y: 161}
+    Position: {x: 906, y: 161}
     DialogueNodePorts:
     - PortGuid: 333f4834-4e5a-4757-8526-235511beabd3
       InputGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
@@ -93,7 +97,7 @@ MonoBehaviour:
         LanguageGenericType: RAPH_DIALOGUE_1_2C_2
     AudioClips:
     - languageEnum: 0
-      LanguageGenericType: {fileID: 8300000, guid: 677b4ed041050a14387b53f74487e0f0, type: 3}
+      LanguageGenericType: {fileID: 0}
     Character: {fileID: -8284016587835104288}
     AvatarPos: 0
     AvatarType: 0
@@ -103,11 +107,11 @@ MonoBehaviour:
     Duration: 0
   DialogueNodeDatas:
   - NodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
-    Position: {x: 378, y: 161}
+    Position: {x: 339, y: 161}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
-      LanguageGenericType: {fileID: 8300000, guid: fa25db795414208408fea3f9b41fc2ea, type: 3}
+      LanguageGenericType: {fileID: 0}
     Character: {fileID: -8284016587835104288}
     AvatarPos: 0
     AvatarType: 0
@@ -118,13 +122,21 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
-    Position: {x: 985, y: 161}
+    Position: {x: 1258, y: 161}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: eb3a18d5-582e-4e9e-b73d-ba9d098ccc97
+    Position: {x: -8, y: 161}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 37c4d2414133b74449ec11249ef0d6fc, type: 2}
+  - NodeGuid: 2dac1db2-8d67-4352-b1c5-b9e685a83b7a
+    Position: {x: 565, y: 161}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 898aab10baa3b3a438b3901ade6d184d, type: 2}
   StartNodeDatas:
   - NodeGuid: 6fcb0fc4-b4f4-4fce-8bce-36d29792f2fd
-    Position: {x: 278, y: 161}
+    Position: {x: -123, y: 161}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
