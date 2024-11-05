@@ -29,6 +29,8 @@ namespace AK
         static const AkUniqueID PLAY_JACK_WOUH = 2754582667U;
         static const AkUniqueID PLAY_LASERARME = 2320881544U;
         static const AkUniqueID PLAY_MICKEY_MOUSE_SOUND_EFFECT = 2501766892U;
+        static const AkUniqueID RAPH_DIALOGUE_1_1 = 3170927391U;
+        static const AkUniqueID RAPH_DIALOGUE_1_2 = 3170927388U;
     } // namespace EVENTS
 
     namespace SWITCHES
