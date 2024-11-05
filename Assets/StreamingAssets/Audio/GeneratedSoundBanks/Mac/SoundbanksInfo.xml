@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
-		<ProjectRoot>../..</ProjectRoot>
-		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<ProjectRoot>../../../../../../RPDPC_WwiseIntegrationTemp/Polissages-de-Couilles_WwiseProject</ProjectRoot>
+		<SourceFilesRoot>../../../../../../RPDPC_WwiseIntegrationTemp/Polissages-de-Couilles_WwiseProject/.cache/Mac</SourceFilesRoot>
 		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>../../../../../../RPDPC_WwiseIntegrationTemp/Polissages-de-Couilles_WwiseProject/GeneratedSoundBanks/Mac</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
@@ -46,7 +46,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{629863FC-EB35-120F-5070-A2254DD5E539}">
+		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{B9E44557-2DAC-7369-35D5-E3F49436D8EA}">
 			<ShortName>SoundbankProject</ShortName>
 			<Path>SoundbankProject.bnk</Path>
 			<Media>
@@ -114,9 +114,17 @@
 					<ShortName>Footsteps_Tile_Walk_02.wav</ShortName>
 					<CachePath>SFX/Footsteps_Tile_Walk_02_818F3B66.wem</CachePath>
 				</File>
+				<File Id="685404629" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RAPH_DIALOGUE_1_2.wav</ShortName>
+					<CachePath>SFX/RAPH_DIALOGUE_1_2_818F3B66.wem</CachePath>
+				</File>
 				<File Id="698938679" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Jack_cry.wav</ShortName>
 					<CachePath>SFX/Jack_cry_818F3B66.wem</CachePath>
+				</File>
+				<File Id="757659191" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RAPH_DIALOGUE_1_1.wav</ShortName>
+					<CachePath>SFX/RAPH_DIALOGUE_1_1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="789379472" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_Tile_Walk_07.wav</ShortName>
@@ -128,7 +136,7 @@
 				</File>
 				<File Id="823078919" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MICKEY-MOUSE-SOUND-EFFECT.wav</ShortName>
-					<CachePath>SFX/MICKEY-MOUSE-SOUND-EFFECT_8E3B16F0.wem</CachePath>
+					<CachePath>SFX/MICKEY-MOUSE-SOUND-EFFECT_76D40615.wem</CachePath>
 				</File>
 				<File Id="898981175" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_Tile_Walk_08.wav</ShortName>
@@ -293,6 +301,16 @@
 						<MediaRef Id="823078919"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3170927391" Name="RAPH_DIALOGUE_1_1" DurationType="OneShot" DurationMin="1.408322" DurationMax="1.408322">
+					<MediaRefs>
+						<MediaRef Id="757659191"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3170927388" Name="RAPH_DIALOGUE_1_2" DurationType="OneShot" DurationMin="1.5824716" DurationMax="1.5824716">
+					<MediaRefs>
+						<MediaRef Id="685404629"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 			<GameParameters>
 				<GameParameter Id="2985490821" Name="transitionParameter"/>
@@ -313,5 +331,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DE08FCC6-5638-BEA6-848A-98763E6AC278}</FileHash>
+	<FileHash>{9CBEFCFA-D163-79B1-2C3D-B1D296580A57}</FileHash>
 </SoundBanksInfo>
