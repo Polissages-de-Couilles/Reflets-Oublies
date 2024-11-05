@@ -24,7 +24,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         return maxHealth;
     }
 
-    public void ChangeDéfence(float _defenceChange)
+    public void ChangeDefence(float _defenceChange)
     {
         defence = defence * (1 + _defenceChange);
     }

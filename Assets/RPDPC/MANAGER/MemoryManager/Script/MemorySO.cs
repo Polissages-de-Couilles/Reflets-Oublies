@@ -6,14 +6,31 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Memory", menuName = ("Game/Memory"), order =1)]
 public class MemorySO : ScriptableObject
 {
-    public Action _action;
-    public bool _disposed = false;
+    public Action<bool> _action;
+    public bool _isTaken = false;
     public int relationValue;
-    public int defenceValue;
+    public float defenceValue;
     [SerializeField] private List<TranslatedWord> translatedWords = new List<TranslatedWord>();
 
-    public void RunEvent()
+    public void RunEvent(bool seeIt)
     {
-        _action?.Invoke();
+        _isTaken = seeIt;
+        if (_isTaken == false)
+        {
+            GameManager.Instance.RelationManager.ChangeValue(-relationValue);
+            GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(-defenceValue);
+        }
+        else
+        {
+            GameManager.Instance.RelationManager.ChangeValue(relationValue);
+            GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(defenceValue);
+        }
+
+        foreach(TranslatedWord word in translatedWords)
+        {
+            word.GetTranslatedWord();
+        }
+
+        _action?.Invoke(_isTaken);        
     }
 }

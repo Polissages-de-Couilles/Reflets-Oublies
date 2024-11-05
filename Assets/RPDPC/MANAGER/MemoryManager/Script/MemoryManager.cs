@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class MemoryManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public List<MemorySO> AllMemory => _allMemory;
+    [SerializeField]private List<MemorySO> _allMemory = new List<MemorySO>();
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        foreach (MemorySO mem in _allMemory) {
+            mem._isTaken = false;
+        }
     }
 }
