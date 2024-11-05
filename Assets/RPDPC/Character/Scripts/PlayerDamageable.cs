@@ -9,30 +9,41 @@ using UnityEngine.Rendering;
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
-    public float currentHealth => _currentHealth;
-    private float _currentHealth;
+    private float currentHealth;
+
     public Action<float, float> OnDamageTaken { get; set; }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
     public void takeDamage(float damage)
     {
-        _currentHealth -= damage;
-        if (_currentHealth <= 0)
+        currentHealth -= damage;
+        if (currentHealth <= 0)
         {
-            _currentHealth = 0;
+            currentHealth = 0;
         }
-        Debug.Log("Player took damage. Their health is now at " + _currentHealth);
-        OnDamageTaken?.Invoke(damage, _currentHealth);
+        Debug.Log("Player took damage. Their health is now at " + currentHealth);
+        OnDamageTaken?.Invoke(damage, currentHealth);
     }
 
     void Start()
     {
-        _currentHealth = maxHealth;
+        currentHealth = maxHealth;
         //StartCoroutine(testDamage());
     }
 
     public void heal(float heal)
     {
-        _currentHealth += heal;
-        if (maxHealth < _currentHealth) _currentHealth = maxHealth;
+        currentHealth += heal;
+        if (maxHealth < currentHealth) currentHealth = maxHealth;
     }
 
     IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }
