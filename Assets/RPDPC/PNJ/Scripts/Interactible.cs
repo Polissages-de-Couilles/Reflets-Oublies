@@ -28,6 +28,11 @@ public abstract class Interactible : MonoBehaviour
 
     public void SetUI(bool active)
     {
+        if(textKey == string.Empty)
+        {
+            worldUI.text = string.Empty;
+            return;
+        }
         worldUI.text = Text;
         worldUI.gameObject.SetActive(active);
     }

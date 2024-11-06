@@ -31,6 +31,7 @@ namespace MeetAndTalk
         private DialogueChoiceNodeData _nodeChoiceInvoke;
 
         float Timer;
+        private uint soundID;
 
         private void Awake()
         {
@@ -193,7 +194,18 @@ namespace MeetAndTalk
             dialogueUIManager.SkipButton.SetActive(true);
             MakeButtons(new List<DialogueNodePort>());
 
-            if(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if(audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
+
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+            }
 
             _nodeDialogueInvoke = _nodeData;
 
@@ -247,7 +259,18 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSeconds(_nodeData.Duration); ChoiceNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if (audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
+
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+            }
         }
         private void RunNode(EventNodeData _nodeData)
         {
@@ -331,8 +354,24 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSecondsRealtime(_nodeData.Duration); TimerNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
-            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null) audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
+            {
+                if (audioSource.isPlaying) audioSource.Pause();
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
 
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+            }
+        }
+
+        private void StopAudio(BaseNodeData node)
+        {
+            AkSoundEngine.StopPlayingID(soundID);
+            GameManager.Instance.DialogueManager.OnNode -= StopAudio;
         }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)

@@ -1,17 +1,37 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
-    float currentHealth;
+    private float currentHealth;
+    private float defence = 1f; 
 
     public Action<float, float> OnDamageTaken { get; set; }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public void ChangeDefence(float _defenceChange)
+    {
+        defence = defence * (1 + _defenceChange);
+    }
+
     public void takeDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth -= damage / defence;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -24,6 +44,12 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
     {
         currentHealth = maxHealth;
         //StartCoroutine(testDamage());
+    }
+
+    public void heal(float heal)
+    {
+        currentHealth += heal;
+        if (maxHealth < currentHealth) currentHealth = maxHealth;
     }
 
     IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }

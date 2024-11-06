@@ -14,7 +14,7 @@ namespace PDC.Localization
     {
         [SerializeField] Loader _loader;
         private static string _fontName = "";
-        public static int languageID = 1;
+        public static int languageID = 0;
         private static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;

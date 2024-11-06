@@ -117,6 +117,7 @@ namespace MeetAndTalk.Editor
                 AvatarPos = _node.avatarPosition,
                 AvatarType = _node.avatarType,
                 AudioClips = _node.AudioClip,
+                AudioName = _node.AudioName,
                 DialogueNodePorts = _node.dialogueNodePorts,
                 Duration = _node.DurationShow
             };
@@ -238,6 +239,7 @@ namespace MeetAndTalk.Editor
                 AvatarPos = _node.avatarPosition,
                 AvatarType = _node.avatarType,
                 AudioClips = _node.AudioClip,
+                AudioName = _node.AudioName,
                 DialogueNodePorts = _node.dialogueNodePorts,
                 Duration = _node.DurationShow
             };
@@ -364,6 +366,10 @@ namespace MeetAndTalk.Editor
                 {
                     tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
+                foreach (LanguageGeneric<string> languageGeneric in node.AudioName)
+                {
+                    tempNode.AudioName.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
                 foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
                 {
                     tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
@@ -419,6 +425,10 @@ namespace MeetAndTalk.Editor
                 {
                     tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
+                foreach (LanguageGeneric<string> languageGeneric in node.AudioName)
+                {
+                    tempNode.AudioName.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
                 foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
                 {
                     tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
@@ -448,7 +458,10 @@ namespace MeetAndTalk.Editor
                 {
                     tempNode.Texts.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
                 }
-
+                foreach (LanguageGeneric<string> languageGeneric in node.AudioName)
+                {
+                    tempNode.AudioName.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;
+                }
                 foreach (LanguageGeneric<AudioClip> languageGeneric in node.AudioClips)
                 {
                     tempNode.AudioClip.Find(language => language.languageEnum == languageGeneric.languageEnum).LanguageGenericType = languageGeneric.LanguageGenericType;

@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7949656094097914174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: MICKEY
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: MICKEY_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: MickeyData
+  m_EditorClassIdentifier: 
+  _character: {fileID: -7949656094097914174}
+  _characterNameKey: MICKEY_NAME
+  _allDialogue:
+  - {fileID: 3275287995009554886}
+--- !u!114 &3275287995009554886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b9afea05-09be-4f8e-9a56-eb7c6563edec
+    TargetNodeGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+  - BaseNodeGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+    TargetNodeGuid: 341b9491-0c1b-4d98-b94a-d11a14aaf65e
+  - BaseNodeGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+    TargetNodeGuid: c5710821-35fe-477c-986d-c5a117befc2b
+  - BaseNodeGuid: c5710821-35fe-477c-986d-c5a117befc2b
+    TargetNodeGuid: 7eb6d90b-bef5-403b-bd97-ad689699065b
+  - BaseNodeGuid: 7eb6d90b-bef5-403b-bd97-ad689699065b
+    TargetNodeGuid: 341b9491-0c1b-4d98-b94a-d11a14aaf65e
+  DialogueChoiceNodeDatas:
+  - NodeGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+    Position: {x: -20.8, y: 172.8}
+    DialogueNodePorts:
+    - PortGuid: d920ac1f-c734-4022-83ce-d3a11dcb7ac0
+      InputGuid: c5710821-35fe-477c-986d-c5a117befc2b
+      OutputGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MICKEY_DIALOGUE_1_1C_1
+    - PortGuid: 164024e7-109e-4262-9719-bf45c62c443b
+      InputGuid: 341b9491-0c1b-4d98-b94a-d11a14aaf65e
+      OutputGuid: a0e72151-5789-43a8-a898-e30055cb22c1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MICKEY_DIALOGUE_1_1C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: -7949656094097914174}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MICKEY_DIALOGUE_1_1
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: c5710821-35fe-477c-986d-c5a117befc2b
+    Position: {x: 406.4, y: -32}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    Character: {fileID: -7949656094097914174}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MICKEY_DIALOGUE_1_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 341b9491-0c1b-4d98-b94a-d11a14aaf65e
+    Position: {x: 1091.2, y: 205.59999}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas:
+  - NodeGuid: 7eb6d90b-bef5-403b-bd97-ad689699065b
+    Position: {x: 672, y: 62.399998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 3e40bb00602082f4bbe1f41a5c6a99a9, type: 2}
+  StartNodeDatas:
+  - NodeGuid: b9afea05-09be-4f8e-9a56-eb7c6563edec
+    Position: {x: -200, y: 240.8}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

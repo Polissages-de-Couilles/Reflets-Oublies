@@ -9,6 +9,17 @@ public class DollDamageable : MonoBehaviour, IDamageable
     float currentHealth;
 
     public Action<float, float> OnDamageTaken { get; set; }
+
+    public float getCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+    public float getMaxHealth()
+    {
+        return maxHealth;
+    }
+
     public void takeDamage(float damage)
     {
         currentHealth -= damage;
@@ -18,6 +29,11 @@ public class DollDamageable : MonoBehaviour, IDamageable
         }
         Debug.Log("Doll took damage. Their health is now at " + currentHealth);
         OnDamageTaken?.Invoke(damage, currentHealth);
+    }
+
+    public void heal(float heal)
+    {
+
     }
 
     void Start()
