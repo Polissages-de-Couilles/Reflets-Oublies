@@ -205,6 +205,7 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
 
             _nodeDialogueInvoke = _nodeData;
@@ -270,6 +271,7 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
         }
         private void RunNode(EventNodeData _nodeData)
@@ -365,13 +367,21 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
         }
 
+        private void StopAudio()
+        {
+            AkSoundEngine.StopPlayingID(soundID);
+            GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
+        }
         private void StopAudio(BaseNodeData node)
         {
             AkSoundEngine.StopPlayingID(soundID);
             GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
         }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)
