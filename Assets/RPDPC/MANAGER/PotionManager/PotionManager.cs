@@ -11,8 +11,6 @@ public class PotionManager : MonoBehaviour
     private int maxPotion;
     public int currentPotion;
 
-    public TextMeshProUGUI text;
-
     private const float HEAL_VALUE = 0.5f;
 
     private PlayerInputEventManager PIE;
@@ -26,11 +24,6 @@ public class PotionManager : MonoBehaviour
         player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Potion.performed += HealPlayer;
-    }
-
-    private void Update()
-    {
-        text.text = currentPotion.ToString() + "/" + maxPotion.ToString();
     }
 
     private void HealPlayer(InputAction.CallbackContext context)

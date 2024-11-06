@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
     public PotionManager PotionManager => _potionManager;
     [SerializeField] private PotionManager _potionManager;
 
+    public RelationManager RelationManager => _relationManager;
+    [SerializeField] private RelationManager _relationManager;
+
     public DialogueManager DialogueManager => MeetAndTalk.DialogueManager.Instance;
     public DialogueUIManager DialogueUIManager => MeetAndTalk.DialogueUIManager.Instance;
 
@@ -56,9 +59,9 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            Player.GetComponent<PlayerDamageable>().takeDamage(20);
-        }
+        //if(Input.GetKeyDown(KeyCode.T))
+        //{
+        //    Player.GetComponent<PlayerDamageable>().takeDamage(20);
+        //}
     }
 }
