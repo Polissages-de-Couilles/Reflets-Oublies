@@ -5,8 +5,8 @@ using UnityEngine;
 using PDC;
 using DG.Tweening;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/HomingAttack")]
-public class HomingAttack : StateBase
+[CreateAssetMenu(menuName = "Game/IA/States/Base/ProjectileAttack")]
+public class ProjectileAttack : StateBase
 {
     [SerializeField] List<AttackDetails> attacks;
     [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
@@ -14,6 +14,7 @@ public class HomingAttack : StateBase
     int currentIndex = 0;
 
     GameObject parent;
+    GameObject player;
     StateMachineManager manager;
     public override void ExitState()
     {
@@ -24,6 +25,7 @@ public class HomingAttack : StateBase
     {
         this.parent = parent;
         this.manager = manager;
+        this.player = player;
     }
 
     public override void OnEndState()
@@ -93,17 +95,27 @@ public class HomingAttack : StateBase
                 capsuleCollider.isTrigger = true;
                 break;
         }
-        attackCollider.AddComponent<AttackCollider>().OnDamageableEnterTrigger += DealDamage;
+        AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
+        ac.OnDamageableEnterTrigger += DealDamage;
+        ac.OnEnterTrigger += DestroyCollision;
 
         attackCollider.transform.localPosition = detail.ColliderRelativePosition;
         attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
 
-        yield return attackCollider.transform.DOMoveInTargetLocalSpace(GameManager.Instance.Player.transform, Vector3.zero, DURATION).SetEase(animCurv).WaitForCompletion();
+        yield return attackCollider.transform.DOMove((attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
+
+        Debug.Log("DIDN'T TOUCHED SOMETHING AHAHAHA");
+        Destroy(attackCollider);
     }
 
     void DealDamage(IDamageable damageable)
     {
         damageable.takeDamage(attacks[currentIndex].damage);
+    }
+
+    void DestroyCollision(GameObject collision)
+    {
+        Destroy(collision);
     }
 
     [Serializable]
@@ -125,6 +137,9 @@ public class HomingAttack : StateBase
         public Vector3 BoxColliderDimension;
         public float CapsuleColliderHeight;
         public float SphereAndCapsuleColliderRadius;
+        public float distance;
+        public float speed;
+        public AnimationCurve animCurv;
     }
 
     [Serializable]
