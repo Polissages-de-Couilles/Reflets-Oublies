@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using PDC;
+using DG.Tweening;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/Attack")]
-public class Attack : StateBase
+[CreateAssetMenu(menuName = "Game/IA/States/Base/HomingAttack")]
+public class HomingAttack : StateBase
 {
     [SerializeField] List<AttackDetails> attacks;
     [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
@@ -45,7 +46,7 @@ public class Attack : StateBase
     {
         foreach (AttackDetails attack in attacks)
         {
-            foreach(AttackColliderDetails collider in attack.colliders)
+            foreach (AttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider));
             }
@@ -70,7 +71,7 @@ public class Attack : StateBase
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
         GameObject attackCollider = Instantiate(new GameObject("BotAttackCollider"), parent.transform);
-        
+
         switch (detail.colliderShape)
         {
             case ColliderShape.Box:
@@ -97,12 +98,11 @@ public class Attack : StateBase
         attackCollider.transform.localPosition = detail.ColliderRelativePosition;
         attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
 
-        yield return new WaitForSeconds(detail.ColliderDuration);
-
-        Destroy(attackCollider);
+        yield return attackCollider.transform.DOMoveInTargetLocalSpace(GameManager.Instance.Player.transform, Vector3.zero, DURATION).SetEase(animCurv).WaitForCompletion();
     }
 
-    void DealDamage(IDamageable damageable) {
+    void DealDamage(IDamageable damageable)
+    {
         damageable.takeDamage(attacks[currentIndex].damage);
     }
 
@@ -125,7 +125,6 @@ public class Attack : StateBase
         public Vector3 BoxColliderDimension;
         public float CapsuleColliderHeight;
         public float SphereAndCapsuleColliderRadius;
-        public float ColliderDuration;
     }
 
     [Serializable]
