@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class AttackCollider : MonoBehaviour
 {
-    public Action<IDamageable> OnDamageableEnterTrigger;
+    public Action<IDamageable, GameObject> OnDamageableEnterTrigger;
     public Action<GameObject> OnEnterTrigger;
 
     void OnTriggerEnter(Collider collider)
@@ -16,11 +16,15 @@ public class AttackCollider : MonoBehaviour
         {
             if (damageable != null)
             {
-                Debug.Log("Collision");
-                OnDamageableEnterTrigger?.Invoke(damageable);
+                OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
             }
             OnEnterTrigger?.Invoke(gameObject);
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 1);
     }
 
     public void SetCollisionState(bool state)

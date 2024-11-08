@@ -108,7 +108,7 @@ public class AttackManager : MonoBehaviour
         nextAttackPhaseLate = attackPhaseEnum.Phase1;
     }
 
-    void OnTriggerDetectDamageable(IDamageable damageable)
+    void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)
     {
         damageable.takeDamage(attackDamage);
     }

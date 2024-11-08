@@ -102,7 +102,7 @@ public class Attack : StateBase
         Destroy(attackCollider);
     }
 
-    void DealDamage(IDamageable damageable) {
+    void DealDamage(IDamageable damageable, GameObject collider) {
         damageable.takeDamage(attacks[currentIndex].damage);
     }
 

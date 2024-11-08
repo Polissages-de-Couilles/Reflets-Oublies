@@ -11,8 +11,8 @@ public class ProjectileAttack : StateBase
     [SerializeField] List<AttackDetails> attacks;
     [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
     [SerializeField] bool doAllAttacks;
-    int currentIndex = 0;
 
+    Dictionary<GameObject, AttackDetails> currentAttacks = new Dictionary<GameObject, AttackDetails>();
     GameObject parent;
     GameObject player;
     StateMachineManager manager;
@@ -35,7 +35,6 @@ public class ProjectileAttack : StateBase
 
     public override void OnEnterState()
     {
-        currentIndex = 0;
         manager.shouldSearchStates = false;
         manager.StartCoroutine(SpawnAttack());
     }
@@ -50,7 +49,7 @@ public class ProjectileAttack : StateBase
         {
             foreach (AttackColliderDetails collider in attack.colliders)
             {
-                manager.StartCoroutine(SpawnCollision(collider));
+                manager.StartCoroutine(SpawnCollision(collider, attack));
             }
 
             yield return new WaitForSeconds(attack.attackDuration);
@@ -63,16 +62,15 @@ public class ProjectileAttack : StateBase
                     break;
                 }
             }
-
-            currentIndex++;
         }
     }
 
-    IEnumerator SpawnCollision(AttackColliderDetails detail)
+    IEnumerator SpawnCollision(AttackColliderDetails detail, AttackDetails ad)
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
         GameObject attackCollider = Instantiate(new GameObject("BotAttackCollider"), parent.transform);
+        currentAttacks.Add(attackCollider, ad);
 
         switch (detail.colliderShape)
         {
@@ -102,19 +100,25 @@ public class ProjectileAttack : StateBase
         attackCollider.transform.localPosition = detail.ColliderRelativePosition;
         attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
 
-        yield return attackCollider.transform.DOMove((attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
+        Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
+        vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
+        Debug.Log(vDistance);
 
-        Debug.Log("DIDN'T TOUCHED SOMETHING AHAHAHA");
+        yield return attackCollider.transform.DOMove(new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
+        //yield return attackCollider.transform.DOMove(-(attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).WaitForCompletion();
+
+        currentAttacks.Remove(attackCollider);
         Destroy(attackCollider);
     }
 
-    void DealDamage(IDamageable damageable)
+    void DealDamage(IDamageable damageable, GameObject collider)
     {
-        damageable.takeDamage(attacks[currentIndex].damage);
+        damageable.takeDamage(currentAttacks[collider].damage);
     }
 
     void DestroyCollision(GameObject collision)
     {
+        Debug.Log("TOUCHED SOMETHING " + collision);
         Destroy(collision);
     }
 
