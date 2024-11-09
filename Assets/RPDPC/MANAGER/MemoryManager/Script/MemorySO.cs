@@ -24,12 +24,14 @@ public class MemorySO : ScriptableObject
         {
             GameManager.Instance.RelationManager.ChangeValue(relationValue);
             GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(defenceValue);
+            foreach (TranslatedWord word in translatedWords)
+            {
+                if(!GameManager.Instance.LanguageManager.UnlockedWords.Find(x => x.Word == word.Word))
+                    GameManager.Instance.LanguageManager.UnlockedWords.Add(word);
+            }
         }
 
-        foreach(TranslatedWord word in translatedWords)
-        {
-            word.GetTranslatedWord();
-        }
+
 
         _action?.Invoke(_isTaken);        
     }
