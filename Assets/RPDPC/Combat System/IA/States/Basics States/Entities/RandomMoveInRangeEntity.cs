@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/RandomMoveInRange")]
-public class RandomMoveInRange : StateBase
+public class RandomMoveInRangeEntity : StateEntityBase
 {
-    [SerializeField] Vector3 searchCenter;
-    [SerializeField] float searchRange;
-    [SerializeField] bool shouldOnlyMoveOnce = false;
-    [SerializeField] bool WaitForMoveToFinishBeforeEndOrSwitchingState = false;
-    StateMachineManager manager;
-    GameObject parent;
+    Vector3 searchCenter;
+    float searchRange;
+    bool shouldOnlyMoveOnce;
+    bool WaitForMoveToFinishBeforeEndOrSwitchingState;
+    Vector2 rangeWaitBetweenMoves;
     NavMeshAgent agent;
     bool isPosReached;
     bool timerRunning = false;
     Vector3 currentDestination;
-    [SerializeField] Vector2 rangeWaitBetweenMoves;
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
     {
-        this.manager = manager;
-        this.parent = parent;
+        this.searchCenter = searchCenter;
+        this.searchRange = searchRange;
+        this.shouldOnlyMoveOnce = shouldOnlyMoveOnce;
+        this.WaitForMoveToFinishBeforeEndOrSwitchingState = WaitForMoveToFinishBeforeEndOrSwitchingState;
+        this.rangeWaitBetweenMoves = rangeWaitBetweenMoves;
         agent = parent.GetComponent<NavMeshAgent>();
     }
 

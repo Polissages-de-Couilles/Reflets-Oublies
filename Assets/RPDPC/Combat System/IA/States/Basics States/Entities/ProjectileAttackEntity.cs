@@ -5,27 +5,21 @@ using UnityEngine;
 using PDC;
 using DG.Tweening;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/ProjectileAttack")]
-public class ProjectileAttack : StateBase
+public class ProjectileAttackEntity : StateEntityBase
 {
-    [SerializeField] List<AttackDetails> attacks;
-    [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
-    [SerializeField] bool doAllAttacks;
+    List<SOProjectileAttack.ProjectileAttackDetails> attacks;
+    bool doAllAttacks;
 
-    Dictionary<GameObject, AttackDetails> currentAttacks = new Dictionary<GameObject, AttackDetails>();
-    GameObject parent;
-    GameObject player;
-    StateMachineManager manager;
+    Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails> currentAttacks = new Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails>();
     public override void ExitState()
     {
         onActionFinished?.Invoke();
     }
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
     {
-        this.parent = parent;
-        this.manager = manager;
-        this.player = player;
+        this.attacks = projectileAttacks;
+        this.doAllAttacks = doAllAttacks;
     }
 
     public override void OnEndState()
@@ -45,9 +39,9 @@ public class ProjectileAttack : StateBase
 
     IEnumerator SpawnAttack()
     {
-        foreach (AttackDetails attack in attacks)
+        foreach (SOProjectileAttack.ProjectileAttackDetails attack in attacks)
         {
-            foreach (AttackColliderDetails collider in attack.colliders)
+            foreach (SOProjectileAttack.ProjectileAttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider, attack));
             }
@@ -65,28 +59,28 @@ public class ProjectileAttack : StateBase
         }
     }
 
-    IEnumerator SpawnCollision(AttackColliderDetails detail, AttackDetails ad)
+    IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-        GameObject attackCollider = Instantiate(new GameObject("BotAttackCollider"), parent.transform);
+        GameObject attackCollider = MonoBehaviour.Instantiate(new GameObject("BotAttackCollider"), parent.transform);
         currentAttacks.Add(attackCollider, ad);
 
         switch (detail.colliderShape)
         {
-            case ColliderShape.Box:
+            case SOProjectileAttack.ProjectileColliderShape.Box:
                 BoxCollider boxCollider = attackCollider.AddComponent<BoxCollider>();
                 boxCollider.size = detail.BoxColliderDimension;
                 boxCollider.isTrigger = true;
                 break;
 
-            case ColliderShape.Sphere:
+            case SOProjectileAttack.ProjectileColliderShape.Sphere:
                 SphereCollider sphereCollider = attackCollider.AddComponent<SphereCollider>();
                 sphereCollider.radius = detail.SphereAndCapsuleColliderRadius;
                 sphereCollider.isTrigger = true;
                 break;
 
-            case ColliderShape.Capsule:
+            case SOProjectileAttack.ProjectileColliderShape.Capsule:
                 CapsuleCollider capsuleCollider = attackCollider.AddComponent<CapsuleCollider>();
                 capsuleCollider.radius = detail.SphereAndCapsuleColliderRadius;
                 capsuleCollider.height = detail.CapsuleColliderHeight;
@@ -108,7 +102,7 @@ public class ProjectileAttack : StateBase
         //yield return attackCollider.transform.DOMove(-(attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).WaitForCompletion();
 
         currentAttacks.Remove(attackCollider);
-        Destroy(attackCollider);
+        MonoBehaviour.Destroy(attackCollider);
     }
 
     void DealDamage(IDamageable damageable, GameObject collider)
@@ -119,22 +113,22 @@ public class ProjectileAttack : StateBase
     void DestroyCollision(GameObject collision)
     {
         Debug.Log("TOUCHED SOMETHING " + collision);
-        Destroy(collision);
+        MonoBehaviour.Destroy(collision);
     }
 
     [Serializable]
-    struct AttackDetails
+    public struct ProjectileAttackDetails
     {
-        public List<AttackColliderDetails> colliders;
+        public List<ProjectileAttackColliderDetails> colliders;
         public float attackDuration;
         public float damage;
     }
 
     [Serializable]
-    struct AttackColliderDetails
+    public struct ProjectileAttackColliderDetails
     {
         public float delayBeforeColliderSpawn;
-        public ColliderShape colliderShape;
+        public ProjectileColliderShape colliderShape;
         [Tooltip("Also depends of bot rotation. If you put 1 0 0 it will spawn at the x 1 * the bot current rotation. Which is logic")]
         public Vector3 ColliderRelativePosition; // Also depends of Bots rotation
         public Quaternion ColliderRelativeRotation;
@@ -147,7 +141,7 @@ public class ProjectileAttack : StateBase
     }
 
     [Serializable]
-    enum ColliderShape
+    public enum ProjectileColliderShape
     {
         Box,
         Sphere,

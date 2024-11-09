@@ -4,25 +4,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/Attack")]
-public class Attack : StateBase
+public class AttackEntity : StateEntityBase
 {
-    [SerializeField] List<AttackDetails> attacks;
-    [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
-    [SerializeField] bool doAllAttacks;
+    List<SOAttack.AttackDetails> attacks;
+    bool doAllAttacks;
     int currentIndex = 0;
-
-    GameObject parent;
-    StateMachineManager manager;
     public override void ExitState()
     {
         onActionFinished?.Invoke();
     }
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
     {
-        this.parent = parent;
-        this.manager = manager;
+        this.attacks = attacks;
+        this.doAllAttacks = doAllAttacks;
     }
 
     public override void OnEndState()
@@ -43,9 +38,9 @@ public class Attack : StateBase
 
     IEnumerator SpawnAttack()
     {
-        foreach (AttackDetails attack in attacks)
+        foreach (SOAttack.AttackDetails attack in attacks)
         {
-            foreach(AttackColliderDetails collider in attack.colliders)
+            foreach(SOAttack.AttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider));
             }
@@ -65,27 +60,27 @@ public class Attack : StateBase
         }
     }
 
-    IEnumerator SpawnCollision(AttackColliderDetails detail)
+    IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail)
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-        GameObject attackCollider = Instantiate(new GameObject("BotAttackCollider"), parent.transform);
+        GameObject attackCollider = MonoBehaviour.Instantiate(new GameObject("BotAttackCollider"), parent.transform);
         
         switch (detail.colliderShape)
         {
-            case ColliderShape.Box:
+            case SOAttack.ColliderShape.Box:
                 BoxCollider boxCollider = attackCollider.AddComponent<BoxCollider>();
                 boxCollider.size = detail.BoxColliderDimension;
                 boxCollider.isTrigger = true;
                 break;
 
-            case ColliderShape.Sphere:
+            case SOAttack.ColliderShape.Sphere:
                 SphereCollider sphereCollider = attackCollider.AddComponent<SphereCollider>();
                 sphereCollider.radius = detail.SphereAndCapsuleColliderRadius;
                 sphereCollider.isTrigger = true;
                 break;
 
-            case ColliderShape.Capsule:
+            case SOAttack.ColliderShape.Capsule:
                 CapsuleCollider capsuleCollider = attackCollider.AddComponent<CapsuleCollider>();
                 capsuleCollider.radius = detail.SphereAndCapsuleColliderRadius;
                 capsuleCollider.height = detail.CapsuleColliderHeight;
@@ -99,41 +94,11 @@ public class Attack : StateBase
 
         yield return new WaitForSeconds(detail.ColliderDuration);
 
-        Destroy(attackCollider);
+        MonoBehaviour.Destroy(attackCollider);
     }
 
     void DealDamage(IDamageable damageable, GameObject collider) {
         damageable.takeDamage(attacks[currentIndex].damage);
-    }
-
-    [Serializable]
-    struct AttackDetails
-    {
-        public List<AttackColliderDetails> colliders;
-        public float attackDuration;
-        public float damage;
-    }
-
-    [Serializable]
-    struct AttackColliderDetails
-    {
-        public float delayBeforeColliderSpawn;
-        public ColliderShape colliderShape;
-        [Tooltip("Also depends of bot rotation. If you put 1 0 0 it will spawn at the x 1 * the bot current rotation. Which is logic")]
-        public Vector3 ColliderRelativePosition; // Also depends of Bots rotation
-        public Quaternion ColliderRelativeRotation;
-        public Vector3 BoxColliderDimension;
-        public float CapsuleColliderHeight;
-        public float SphereAndCapsuleColliderRadius;
-        public float ColliderDuration;
-    }
-
-    [Serializable]
-    enum ColliderShape
-    {
-        Box,
-        Sphere,
-        Capsule
     }
 }
 

@@ -5,23 +5,16 @@ using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/FollowPlayer")]
-public class FollowPlayer : StateBase
+public class FollowPlayerEntity : StateEntityBase
 {
-    GameObject player;
-    GameObject parent;
     NavMeshAgent agent;
-    StateMachineManager manager;
-    [Tooltip("Does the bot have to go to the last known place even if the conditions are not met anymore")]
-    [SerializeField] bool isIntelligent;
+    bool isIntelligent;
     Vector3 lastKnownPos;
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
     {
+        this.isIntelligent = isIntelligent;
         agent = parent.GetComponent<NavMeshAgent>();
-        this.player = player;
-        this.parent = parent;
-        this.manager = manager;
     }
 
     public override void ExitState()

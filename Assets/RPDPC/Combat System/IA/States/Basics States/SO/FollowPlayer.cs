@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.PackageManager;
+using UnityEngine;
+using UnityEngine.AI;
+
+[CreateAssetMenu(menuName = "Game/IA/States/Base/FollowPlayer")]
+public class SOFollowPlayer : StateBase
+{
+    [Tooltip("Does the bot have to go to the last known place even if the conditions are not met anymore")]
+    [SerializeField] bool isIntelligent;
+
+    public override StateEntityBase PrepareEntityInstance()
+    {
+        FollowPlayerEntity fp = new FollowPlayerEntity();
+        fp.Init(isIntelligent, new List<SOAttack.AttackDetails>(), new List<SOProjectileAttack.ProjectileAttackDetails>(), false, new Vector3(), 0, false, false, new Vector2());
+        return fp;
+    }
+}

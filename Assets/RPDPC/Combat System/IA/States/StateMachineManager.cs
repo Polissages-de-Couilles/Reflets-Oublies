@@ -9,7 +9,8 @@ using UnityEngine.Rendering;
 public class StateMachineManager : MonoBehaviour
 {
     [SerializeField] StateBase[] states;
-    StateBase currentState;
+    List<StateEntityBase> stateEntities = new List<StateEntityBase>();
+    StateEntityBase currentState;
 
     public bool shouldSearchStates = true;
 
@@ -20,8 +21,9 @@ public class StateMachineManager : MonoBehaviour
         GameObject player = GameManager.Instance.Player;
         foreach (StateBase state in states)
         {
-            Debug.Log("STATE");
-            state.BaseInit(this, gameObject, player);
+            StateEntityBase stateEntity = state.PrepareEntityInstance();
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority);
+            stateEntities.Add(stateEntity);
         }
         setNewCurrentState(-1f);
     }
@@ -46,8 +48,8 @@ public class StateMachineManager : MonoBehaviour
     {
         //Search all valid states that have a priority above minExcluStatePrio, takes all the ones with the highest priority and chose one randomly
 
-        Dictionary<float, List<StateBase>> listStateForPriority = new Dictionary<float, List<StateBase>>();
-        foreach (StateBase state in states)
+        Dictionary<float, List<StateEntityBase>> listStateForPriority = new Dictionary<float, List<StateEntityBase>>();
+        foreach (StateEntityBase state in stateEntities)
         {
             if (state.priority > minExcluStatePrio && state.isStateValid())
             {
@@ -57,16 +59,16 @@ public class StateMachineManager : MonoBehaviour
                 }
                 else
                 {
-                    listStateForPriority[state.priority] = new List<StateBase> { state };
+                    listStateForPriority[state.priority] = new List<StateEntityBase> { state };
                 }
             }
         }
         if (listStateForPriority.Keys.Count > 0)
         {
             System.Random rnd = new System.Random();
-            List<StateBase> maxPrioList = listStateForPriority[listStateForPriority.Keys.Max()];
+            List<StateEntityBase> maxPrioList = listStateForPriority[listStateForPriority.Keys.Max()];
             int randIndex = rnd.Next(maxPrioList.Count);
-            StateBase highestState = maxPrioList[rnd.Next(maxPrioList.Count)];
+            StateEntityBase highestState = maxPrioList[rnd.Next(maxPrioList.Count)];
 
             Debug.Log("FOUNDED STATE = " + highestState);
             if (currentState != null)
