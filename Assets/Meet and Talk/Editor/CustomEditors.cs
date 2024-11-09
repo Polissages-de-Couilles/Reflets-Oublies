@@ -199,6 +199,7 @@ public class DialogueContainerSOEditor : Editor
                 _target.DialogueNodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", _target.DialogueNodeDatas[i].AvatarType);
 
                 _target.DialogueNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.DialogueNodeDatas[i].Duration);
+                _target.DialogueNodeDatas[i].CantBeSkip = EditorGUILayout.Toggle("Can be skip", _target.DialogueNodeDatas[i].CantBeSkip);
 
                 for (int j = 0; j < _target.DialogueNodeDatas[0].TextType.Count; j++)
                 {

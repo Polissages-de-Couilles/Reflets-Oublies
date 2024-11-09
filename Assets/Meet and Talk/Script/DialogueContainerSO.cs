@@ -331,6 +331,7 @@ namespace MeetAndTalk
         public List<DialogueNodePort> DialogueNodePorts;
         public List<LanguageGeneric<AudioClip>> AudioClips;
         public List<LanguageGeneric<string>> AudioName;
+        public bool CantBeSkip;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;

@@ -162,10 +162,10 @@ namespace MeetAndTalk
             manager.LoadFile();
 
             var nameGlobal = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.CustomizedName.ValueName);
-            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + ": ";
+            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + " : ";
 
             var name = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.characterName[0].LanguageGenericType); 
-            name = PDC.Localization.LocalizationManager.LocalizeText(name) + ": ";
+            name = PDC.Localization.LocalizationManager.LocalizeText(name) + " : ";
 
             // Gloval Value Multiline
             if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = nameGlobal; }
@@ -191,7 +191,7 @@ namespace MeetAndTalk
             if (_nodeData.AvatarPos == AvatarPosition.Left && _nodeData.Character != null) { dialogueUIManager.SpriteLeft.SetActive(true); dialogueUIManager.SpriteLeft.GetComponent<Image>().sprite = _nodeData.Character.GetAvatar(_nodeData.AvatarPos, _nodeData.AvatarType); }
             if (_nodeData.AvatarPos == AvatarPosition.Right && _nodeData.Character != null) { dialogueUIManager.SpriteRight.SetActive(true); dialogueUIManager.SpriteRight.GetComponent<Image>().sprite = _nodeData.Character.GetAvatar(_nodeData.AvatarPos, _nodeData.AvatarType); }
 
-            dialogueUIManager.SkipButton.SetActive(true);
+            dialogueUIManager.SkipButton.SetActive(!_nodeData.CantBeSkip);
             MakeButtons(new List<DialogueNodePort>());
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
@@ -223,10 +223,10 @@ namespace MeetAndTalk
             manager.LoadFile();
 
             var nameGlobal = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.CustomizedName.ValueName);
-            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + ": ";
+            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + " : ";
 
             var name = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.characterName[0].LanguageGenericType);
-            name = PDC.Localization.LocalizationManager.LocalizeText(name) + ": ";
+            name = PDC.Localization.LocalizationManager.LocalizeText(name) + " : ";
 
             // Gloval Value Multiline
             if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = nameGlobal; }
@@ -319,10 +319,10 @@ namespace MeetAndTalk
             manager.LoadFile();
 
             var nameGlobal = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.CustomizedName.ValueName);
-            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + ": ";
+            nameGlobal = PDC.Localization.LocalizationManager.LocalizeText(nameGlobal) + " : ";
 
             var name = PDC.Localization.LocalizationManager.GetLocalizedText(_nodeData.Character.characterName[0].LanguageGenericType);
-            name = PDC.Localization.LocalizationManager.LocalizeText(name) + ": ";
+            name = PDC.Localization.LocalizationManager.LocalizeText(name) + " : ";
 
             // Gloval Value Multiline
             if (dialogueUIManager.showSeparateName && dialogueUIManager.nameTextBox != null && _nodeData.Character != null && _nodeData.Character.UseGlobalValue) { dialogueUIManager.ResetText(""); dialogueUIManager.nameTextBox.text = nameGlobal; }
