@@ -209,6 +209,10 @@ public class DialogueContainerSOEditor : Editor
                     _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
                     _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType);
                     EditorGUILayout.EndVertical();
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
+                    EditorGUILayout.EndVertical();
                 }
                 EditorGUILayout.EndVertical();
                 // Display Node
@@ -260,6 +264,11 @@ public class DialogueContainerSOEditor : Editor
                     _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
                     _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType);
                     EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
+                    EditorGUILayout.EndVertical();
+
                     EditorGUI.indentLevel++;
                     for (int x = 0; x < _target.DialogueChoiceNodeDatas[i].DialogueNodePorts.Count; x++)
                     {
@@ -325,6 +334,10 @@ public class DialogueContainerSOEditor : Editor
                         _target.TimerChoiceNodeDatas[i].DialogueNodePorts[x].TextLanguage[j].LanguageGenericType = EditorGUILayout.TextField($"Option_{x}", _target.TimerChoiceNodeDatas[i].DialogueNodePorts[x].TextLanguage[j].LanguageGenericType);
                     }
                     EditorGUI.indentLevel--;
+                    EditorGUILayout.EndVertical();
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
                     EditorGUILayout.EndVertical();
                 }
                 EditorGUILayout.EndVertical();

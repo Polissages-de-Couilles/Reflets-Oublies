@@ -31,6 +31,7 @@ namespace MeetAndTalk
         private DialogueChoiceNodeData _nodeChoiceInvoke;
 
         float Timer;
+        private uint soundID;
 
         private void Awake()
         {
@@ -199,6 +200,14 @@ namespace MeetAndTalk
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
             }
 
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
+            }
+
             _nodeDialogueInvoke = _nodeData;
 
             IEnumerator tmp() { yield return new WaitForSeconds(_nodeData.Duration); DialogueNode_NextNode(); }
@@ -255,6 +264,14 @@ namespace MeetAndTalk
             {
                 if (audioSource.isPlaying) audioSource.Pause();
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+            }
+
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
         }
         private void RunNode(EventNodeData _nodeData)
@@ -344,6 +361,27 @@ namespace MeetAndTalk
                 if (audioSource.isPlaying) audioSource.Pause();
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
             }
+
+            string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
+            if (!_audioName.Equals(string.Empty))
+            {
+                soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
+                GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
+            }
+        }
+
+        private void StopAudio()
+        {
+            AkSoundEngine.StopPlayingID(soundID);
+            GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
+        }
+        private void StopAudio(BaseNodeData node)
+        {
+            AkSoundEngine.StopPlayingID(soundID);
+            GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
         }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)
