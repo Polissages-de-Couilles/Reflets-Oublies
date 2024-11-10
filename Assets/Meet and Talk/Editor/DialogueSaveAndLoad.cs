@@ -242,7 +242,8 @@ namespace MeetAndTalk.Editor
                 AudioName = _node.AudioName,
                 DialogueNodePorts = _node.dialogueNodePorts,
                 Duration = _node.DurationShow,
-                CantBeSkip = _node.CantBeSkip
+                CantBeSkip = _node.CantBeSkip,
+                CanMove = _node.CanMove,
             };
 
             return dialogueNodeData;
@@ -474,6 +475,7 @@ namespace MeetAndTalk.Editor
 
                 tempNode.DurationShow = node.Duration;
                 tempNode.CantBeSkip = node.CantBeSkip;
+                tempNode.CanMove = node.CanMove;
 
                 tempNode.LoadValueInToField();
                 graphView.AddElement(tempNode);

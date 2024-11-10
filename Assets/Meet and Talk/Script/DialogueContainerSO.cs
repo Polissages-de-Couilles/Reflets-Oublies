@@ -332,6 +332,7 @@ namespace MeetAndTalk
         public List<LanguageGeneric<AudioClip>> AudioClips;
         public List<LanguageGeneric<string>> AudioName;
         public bool CantBeSkip;
+        public bool CanMove;
         public DialogueCharacterSO Character;
         public AvatarPosition AvatarPos;
         public AvatarType AvatarType;

@@ -16,7 +16,7 @@ public class StateManager : MonoBehaviour
 
     public void Start()
     {
-        GameManager.Instance.DialogueManager.StartDialogueEvent.AddListener(() => SetPlayerState(States.talk));
+        GameManager.Instance.DialogueManager.OnNode += OnNode;
         GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() => SetPlayerState(States.idle));
     }
 
@@ -44,5 +44,19 @@ public class StateManager : MonoBehaviour
     void clearState()
     {
         playerState = States.idle;
+    }
+
+    void OnNode(MeetAndTalk.BaseNodeData node)
+    {
+        if(node is MeetAndTalk.DialogueNodeData)
+        {
+            if((node as MeetAndTalk.DialogueNodeData).CanMove)
+            {
+                SetPlayerState(States.idle);
+                return;
+            }
+        }
+
+        SetPlayerState(States.talk);
     }
 }

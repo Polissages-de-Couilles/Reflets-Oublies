@@ -19,6 +19,7 @@ namespace MeetAndTalk.Nodes
         private DialogueCharacterSO character = ScriptableObject.CreateInstance<DialogueCharacterSO>();
         private float durationShow = 10;
         private bool canBeSkip = false;
+        private bool canMove = false;
 
 
         public List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
@@ -29,6 +30,7 @@ namespace MeetAndTalk.Nodes
         public DialogueCharacterSO Character { get => character; set => character = value; }
         public float DurationShow { get => durationShow; set => durationShow = value; }
         public bool CantBeSkip { get => canBeSkip; set => canBeSkip = value; }
+        public bool CanMove { get => canMove; set => canMove = value; }
 
         private TextField texts_Field;
         private TextField audioName_Field;
@@ -37,6 +39,7 @@ namespace MeetAndTalk.Nodes
         private ObjectField character_Field;
         private FloatField duration_Field;
         private Toggle canBeSkip_Field;
+        private Toggle canMove_Field;
 
         public AvatarPosition avatarPosition;
         public AvatarType avatarType;
@@ -193,6 +196,21 @@ namespace MeetAndTalk.Nodes
 
             canBeSkip_Field.AddToClassList("Cant be skip");
             mainContainer.Add(canBeSkip_Field);
+
+            Label label_cantMove = new Label("Can Move");
+            label_cantMove.AddToClassList("label_cantMove");
+            label_cantMove.AddToClassList("Label");
+            mainContainer.Add(label_cantMove);
+
+            canMove_Field = new Toggle("");
+            canMove_Field.RegisterValueChangedCallback(value =>
+            {
+                CanMove = value.newValue;
+            });
+            canMove_Field.SetValueWithoutNotify(canMove);
+
+            canMove_Field.AddToClassList("Cant be skip");
+            mainContainer.Add(canMove_Field);
         }
 
         public void ReloadLanguage()
@@ -226,6 +244,7 @@ namespace MeetAndTalk.Nodes
             AvatarTypeField.SetValueWithoutNotify(avatarType);
             duration_Field.SetValueWithoutNotify(durationShow);
             canBeSkip_Field.SetValueWithoutNotify(canBeSkip);
+            canMove_Field.SetValueWithoutNotify(canMove);
         }
 
         public override void SetValidation()
