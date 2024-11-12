@@ -68,7 +68,7 @@ public class StateMachineManager : MonoBehaviour
             System.Random rnd = new System.Random();
             List<StateEntityBase> maxPrioList = listStateForPriority[listStateForPriority.Keys.Max()];
             int randIndex = rnd.Next(maxPrioList.Count);
-            StateEntityBase highestState = maxPrioList[rnd.Next(maxPrioList.Count)];
+            StateEntityBase highestState = maxPrioList[randIndex];
 
             Debug.Log("FOUNDED STATE = " + highestState);
             if (currentState != null)

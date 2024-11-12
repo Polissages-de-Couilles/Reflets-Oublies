@@ -18,6 +18,7 @@ public abstract class StateEntityBase
         this.parent = parent;
         this.player = player;
         this.conditions = conditions;
+        this.priority = priority;
         foreach (ConditionExpression c in conditions)
         {
             c.baseCondition.Init(parent, player);
