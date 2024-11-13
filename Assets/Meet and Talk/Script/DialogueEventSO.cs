@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 
 namespace MeetAndTalk.Event
 {
@@ -23,11 +25,13 @@ namespace MeetAndTalk.Event
 
     public static class EventSOCreator
     {
+#if UNITY_EDITOR
         [MenuItem("Assets/Create/Dialogue/New Event SO")]
         public static void NewEvent()
         {
             string script = "Assets/Meet and Talk/Script/Events/EventSOTemplate.cs.txt";
             ProjectWindowUtil.CreateScriptAssetFromTemplateFile(script, "EventSO.cs");
         }
+#endif
     }
 }

@@ -199,6 +199,8 @@ public class DialogueContainerSOEditor : Editor
                 _target.DialogueNodeDatas[i].AvatarType = (AvatarType)EditorGUILayout.EnumPopup("Avatar Emotion", _target.DialogueNodeDatas[i].AvatarType);
 
                 _target.DialogueNodeDatas[i].Duration = EditorGUILayout.FloatField("Display Time", _target.DialogueNodeDatas[i].Duration);
+                _target.DialogueNodeDatas[i].CantBeSkip = EditorGUILayout.Toggle("Cant be Skip", _target.DialogueNodeDatas[i].CantBeSkip);
+                _target.DialogueNodeDatas[i].CanMove = EditorGUILayout.Toggle("Can Move", _target.DialogueNodeDatas[i].CanMove);
 
                 for (int j = 0; j < _target.DialogueNodeDatas[0].TextType.Count; j++)
                 {
@@ -208,6 +210,10 @@ public class DialogueContainerSOEditor : Editor
                     EditorGUILayout.EndVertical();
                     _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
                     _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueNodeDatas[i].TextType[j].LanguageGenericType);
+                    EditorGUILayout.EndVertical();
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
                     EditorGUILayout.EndVertical();
                 }
                 EditorGUILayout.EndVertical();
@@ -260,6 +266,11 @@ public class DialogueContainerSOEditor : Editor
                     _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType = (AudioClip)EditorGUILayout.ObjectField("Audio Clips", _target.DialogueChoiceNodeDatas[i].AudioClips[j].LanguageGenericType, typeof(AudioClip), false);
                     _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType = EditorGUILayout.TextField("Displayed String", _target.DialogueChoiceNodeDatas[i].TextType[j].LanguageGenericType);
                     EditorGUILayout.LabelField("Options: ", EditorStyles.boldLabel);
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
+                    EditorGUILayout.EndVertical();
+
                     EditorGUI.indentLevel++;
                     for (int x = 0; x < _target.DialogueChoiceNodeDatas[i].DialogueNodePorts.Count; x++)
                     {
@@ -325,6 +336,10 @@ public class DialogueContainerSOEditor : Editor
                         _target.TimerChoiceNodeDatas[i].DialogueNodePorts[x].TextLanguage[j].LanguageGenericType = EditorGUILayout.TextField($"Option_{x}", _target.TimerChoiceNodeDatas[i].DialogueNodePorts[x].TextLanguage[j].LanguageGenericType);
                     }
                     EditorGUI.indentLevel--;
+                    EditorGUILayout.EndVertical();
+
+                    EditorGUILayout.BeginVertical("Wwise", GUILayout.Height(30));
+                    EditorGUILayout.LabelField(_target.DialogueChoiceNodeDatas[0].AudioName[j].languageEnum.ToString(), EditorStyles.boldLabel);
                     EditorGUILayout.EndVertical();
                 }
                 EditorGUILayout.EndVertical();

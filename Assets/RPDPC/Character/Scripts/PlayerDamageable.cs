@@ -10,6 +10,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
     private float currentHealth;
+    private float defence = 1f; 
 
     public Action<float, float> OnDamageTaken { get; set; }
 
@@ -23,9 +24,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         return maxHealth;
     }
 
+    public void ChangeDefence(float _defenceChange)
+    {
+        defence = defence * (1 + _defenceChange);
+    }
+
     public void takeDamage(float damage)
     {
-        currentHealth -= damage;
+        currentHealth -= damage / defence;
         if (currentHealth <= 0)
         {
             currentHealth = 0;

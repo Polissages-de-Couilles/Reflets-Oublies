@@ -14,6 +14,7 @@ namespace MeetAndTalk.Nodes
     public class DialogueChoiceNode : BaseNode
     {
         private List<LanguageGeneric<string>> texts = new List<LanguageGeneric<string>>();
+        private List<LanguageGeneric<string>> audioName = new List<LanguageGeneric<string>>();
         private List<LanguageGeneric<AudioClip>> audioClip = new List<LanguageGeneric<AudioClip>>();
         private DialogueCharacterSO character = ScriptableObject.CreateInstance<DialogueCharacterSO>();
         private float durationShow = 5;
@@ -21,11 +22,13 @@ namespace MeetAndTalk.Nodes
         public List<DialogueNodePort> dialogueNodePorts = new List<DialogueNodePort>();
 
         public List<LanguageGeneric<string>> Texts { get => texts; set => texts = value; }
+        public List<LanguageGeneric<string>> AudioName { get => audioName; set => audioName = value; }
         public List<LanguageGeneric<AudioClip>> AudioClip { get => audioClip; set => audioClip = value; }
         public DialogueCharacterSO Character { get => character; set => character = value; }
         public float DurationShow { get => durationShow; set => durationShow = value; }
 
         private TextField texts_Field;
+        private TextField audioName_Field;
         private ObjectField audioClips_Field;
         private FloatField duration_Field;
         private ObjectField character_Field;
@@ -60,6 +63,11 @@ namespace MeetAndTalk.Nodes
                     languageEnum = language,
                     LanguageGenericType = ""
                 });
+                audioName.Add(new LanguageGeneric<string>
+                {
+                    languageEnum = language,
+                    LanguageGenericType = ""
+                });
                 AudioClip.Add(new LanguageGeneric<AudioClip>
                 {
                     languageEnum = language,
@@ -79,6 +87,22 @@ namespace MeetAndTalk.Nodes
             });
             audioClips_Field.SetValueWithoutNotify(audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             mainContainer.Add(audioClips_Field);
+
+            Label label_audioName = new Label("Audio Name (Wwise Event)");
+            label_audioName.AddToClassList("label_audioName");
+            label_audioName.AddToClassList("Label");
+            mainContainer.Add(label_audioName);
+
+            audioName_Field = new TextField("");
+            audioName_Field.RegisterValueChangedCallback(value =>
+            {
+                audioName.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue;
+            });
+            audioName_Field.SetValueWithoutNotify(texts.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            audioName_Field.multiline = true;
+
+            audioName_Field.AddToClassList("TextBox");
+            mainContainer.Add(audioName_Field);
 
             /* Character CLIPS */
             Label label_character = new Label("Character SO");
@@ -168,6 +192,12 @@ namespace MeetAndTalk.Nodes
             });
             texts_Field.SetValueWithoutNotify(texts.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
 
+            audioName_Field.RegisterValueChangedCallback(value =>
+            {
+                audioName.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue;
+            });
+            audioName_Field.SetValueWithoutNotify(audioName.Find(text => text.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+
             audioClips_Field.RegisterValueChangedCallback(value =>
             {
                 audioClip.Find(audioClips => audioClips.languageEnum == editorWindow.LanguageEnum).LanguageGenericType = value.newValue as AudioClip;
@@ -187,6 +217,7 @@ namespace MeetAndTalk.Nodes
         public override void LoadValueInToField()
         {
             texts_Field.SetValueWithoutNotify(texts.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
+            audioName_Field.SetValueWithoutNotify(audioName.Find(language => language.languageEnum == editorWindow.LanguageEnum).LanguageGenericType);
             character_Field.SetValueWithoutNotify(character);
             AvatarPositionField.SetValueWithoutNotify(avatarPosition);
             AvatarTypeField.SetValueWithoutNotify(avatarType);

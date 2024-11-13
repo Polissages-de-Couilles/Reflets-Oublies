@@ -12,7 +12,7 @@ public class DashController : MonoBehaviour
 
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashTime = 0.1f;
-    [SerializeField] private float dashCooldown = 1f;
+    [SerializeField] private float dashCooldown = 2f;
 
     public bool isDashing { get; private set; }
     bool canDash = true;
@@ -20,6 +20,11 @@ public class DashController : MonoBehaviour
 
     StateManager stateManager;
     [SerializeField] private List<StateManager.States> states = new List<StateManager.States>();
+
+    public int DashMax => dashMax;
+    private int dashMax = 3;
+    public int DashCount => dashCount;
+    private int dashCount;
 
     private void Awake()
     {
@@ -32,11 +37,12 @@ public class DashController : MonoBehaviour
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Dash.performed += OnDash;
+        StartCoroutine(RechargeDash());
     }
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(canDash && isStateCompatible(stateManager.playerState))
+        if(canDash && isStateCompatible(stateManager.playerState) && dashCount > 0)
         {
             StartCoroutine(Dash());
             stateManager.SetPlayerState(StateManager.States.dash, dashTime);
@@ -45,23 +51,34 @@ public class DashController : MonoBehaviour
 
     IEnumerator Dash()
     {
-        canDash = false;
+            canDash = false;
+            dashCount--;
+            isDashing = true;
+            Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
 
-        isDashing = true;
-        Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
-        
-        for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
+            for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
+            {
+                Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
+                dash += gravity * dashForce;
+                characterController.Move(dash);
+                yield return new WaitForFixedUpdate();
+            }
+
+            isDashing = false;
+            canDash = true;
+    }
+
+    IEnumerator RechargeDash()
+    {
+        while (true)
         {
-            Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
-            dash += gravity * dashForce;
-            characterController.Move(dash);
-            yield return new WaitForFixedUpdate();
+            if(dashCount < dashMax)
+            {
+                yield return new WaitForSeconds(dashCooldown);
+                dashCount++;
+            }
+            yield return null;
         }
-        
-        isDashing = false;
-
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
     }
 
     bool isStateCompatible(StateManager.States state)
