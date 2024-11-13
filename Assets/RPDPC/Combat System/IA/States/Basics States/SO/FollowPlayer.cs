@@ -14,7 +14,7 @@ public class SOFollowPlayer : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         FollowPlayerEntity fp = new FollowPlayerEntity();
-        fp.Init(isIntelligent, new List<SOAttack.AttackDetails>(), new List<SOProjectileAttack.ProjectileAttackDetails>(), false, new Vector3(), 0, false, false, new Vector2());
+        fp.Init(isIntelligent, null, null, false, new Vector3(), 0, false, false, new Vector2(), null, 0, 0, 0, Vector2.zero);
         return fp;
     }
 }

@@ -6,8 +6,16 @@ using UnityEngine;
 
 public class MobSpawner : StateBase
 {
+    [SerializeField] GameObject monsterPrefab;
+    [SerializeField] int nbToSpawnAtEnterState;
+    [SerializeField] int mobMaxNb;
+    [SerializeField] float spawnRange;
+    [SerializeField] Vector2 rangeTimeBetweenSpawns;
+
     public override StateEntityBase PrepareEntityInstance()
     {
-        throw new System.NotImplementedException();
+        MobSpawnerEntity mse = new MobSpawnerEntity();
+        mse.Init(false, null, null, false, new Vector3(), 0, false, false, new Vector2(), monsterPrefab, nbToSpawnAtEnterState, mobMaxNb, spawnRange, rangeTimeBetweenSpawns);
+        return mse;
     }
 }

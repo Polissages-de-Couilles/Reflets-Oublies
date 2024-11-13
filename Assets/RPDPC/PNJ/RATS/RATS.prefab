@@ -144,7 +144,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7421626219565148868}
   - component: {fileID: 6997864902228097752}
-  - component: {fileID: 8275404103433998714}
+  - component: {fileID: 7544593501085946562}
+  - component: {fileID: 402069318496846280}
   m_Layer: 0
   m_Name: RATS
   m_TagString: Untagged
@@ -192,7 +193,7 @@ CapsuleCollider:
   m_Height: 1.2943392
   m_Direction: 2
   m_Center: {x: -0.01, y: 0.26999998, z: 0.16681862}
---- !u!114 &8275404103433998714
+--- !u!114 &7544593501085946562
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,15 +202,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 583257317877209676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2851328bd2d4f864fb3cfe484e0a8d1f, type: 3}
+  m_Script: {fileID: 11500000, guid: d17612c2983fea741a0b3b31a69ecd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  priority: 0
-  range: 3
-  textKey: RATS_NAME
-  worldUI: {fileID: 553029481407505298}
-  _data: {fileID: 11400000, guid: 49d9ac68620096a419ffdd47fb3568de, type: 2}
-  _dialogueIndex: 1
+  states:
+  - {fileID: 11400000, guid: 142dd8bdce075314f99da5de3b46c300, type: 2}
+  - {fileID: 11400000, guid: 0ce0c28dff17c214ea7b1e0927232bf8, type: 2}
+  - {fileID: 11400000, guid: 957fa3523e4e902459ed0babbf850a8b, type: 2}
+  shouldSearchStates: 1
+--- !u!195 &402069318496846280
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583257317877209676}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &6838415435285947719
 GameObject:
   m_ObjectHideFlags: 0

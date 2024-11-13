@@ -14,7 +14,7 @@ public class SOAttack : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         AttackEntity ae = new AttackEntity();
-        ae.Init(false, attacks, new List<SOProjectileAttack.ProjectileAttackDetails>(), doAllAttacks, new Vector3(), 0, false, false, new Vector2());
+        ae.Init(false, attacks, null, doAllAttacks, new Vector3(), 0, false, false, new Vector2(), null, 0, 0, 0, Vector2.zero);
         return ae;
     }
 
