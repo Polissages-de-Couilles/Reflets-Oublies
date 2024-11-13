@@ -24,6 +24,7 @@ public class SOAttack : StateBase
         public List<AttackColliderDetails> colliders;
         public float attackDuration;
         public float damage;
+        public bool ShouldOnlyTookDamageFromOneCollision;
     }
 
     [Serializable]

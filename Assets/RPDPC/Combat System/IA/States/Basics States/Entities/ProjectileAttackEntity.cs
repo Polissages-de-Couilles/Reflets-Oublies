@@ -11,6 +11,7 @@ public class ProjectileAttackEntity : StateEntityBase
     bool doAllAttacks;
 
     Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails> currentAttacks = new Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails>();
+    bool finishedSpawnAllAttacks = false;
     public override void ExitState()
     {
         onActionFinished?.Invoke();
@@ -30,6 +31,7 @@ public class ProjectileAttackEntity : StateEntityBase
     public override void OnEnterState()
     {
         manager.shouldSearchStates = false;
+        finishedSpawnAllAttacks = false;
         manager.StartCoroutine(SpawnAttack());
     }
 
@@ -57,6 +59,7 @@ public class ProjectileAttackEntity : StateEntityBase
                 }
             }
         }
+        finishedSpawnAllAttacks = true;
     }
 
     IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
@@ -96,13 +99,20 @@ public class ProjectileAttackEntity : StateEntityBase
 
         Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
         vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
-        Debug.Log(vDistance);
 
         yield return attackCollider.transform.DOMove(new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
         //yield return attackCollider.transform.DOMove(-(attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).WaitForCompletion();
 
+        if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
+        {
+            ExitState();
+        }
+
         currentAttacks.Remove(attackCollider);
-        MonoBehaviour.Destroy(attackCollider);
+        if(attackCollider == null)
+        {
+            MonoBehaviour.Destroy(attackCollider);
+        }
     }
 
     void DealDamage(IDamageable damageable, GameObject collider)

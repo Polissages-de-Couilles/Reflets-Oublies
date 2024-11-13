@@ -8,7 +8,10 @@ public class AttackEntity : StateEntityBase
 {
     List<SOAttack.AttackDetails> attacks;
     bool doAllAttacks;
-    int currentIndex = 0;
+
+    Dictionary<GameObject, SOAttack.AttackDetails> currentAttacks = new Dictionary<GameObject, SOAttack.AttackDetails>();
+    Dictionary<SOAttack.AttackDetails, bool> attackAlreadyDealtDamage = new Dictionary<SOAttack.AttackDetails, bool>();
+    bool finishedSpawnAllAttacks = false;
     public override void ExitState()
     {
         onActionFinished?.Invoke();
@@ -27,8 +30,16 @@ public class AttackEntity : StateEntityBase
 
     public override void OnEnterState()
     {
-        currentIndex = 0;
         manager.shouldSearchStates = false;
+        finishedSpawnAllAttacks = false;
+        foreach (SOAttack.AttackDetails attack in attacks)
+        {
+            if(attackAlreadyDealtDamage.ContainsKey(attack))
+            {
+                attackAlreadyDealtDamage.Remove(attack);
+            }
+            attackAlreadyDealtDamage.Add(attack, false);
+        }
         manager.StartCoroutine(SpawnAttack());
     }
 
@@ -42,7 +53,7 @@ public class AttackEntity : StateEntityBase
         {
             foreach(SOAttack.AttackColliderDetails collider in attack.colliders)
             {
-                manager.StartCoroutine(SpawnCollision(collider));
+                manager.StartCoroutine(SpawnCollision(collider, attack));
             }
 
             yield return new WaitForSeconds(attack.attackDuration);
@@ -55,17 +66,18 @@ public class AttackEntity : StateEntityBase
                     break;
                 }
             }
-
-            currentIndex++;
         }
+        finishedSpawnAllAttacks = true;
     }
 
-    IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail)
+    IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail, SOAttack.AttackDetails ad)
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-        GameObject attackCollider = MonoBehaviour.Instantiate(new GameObject("BotAttackCollider"), parent.transform);
-        
+        GameObject attackCollider = new GameObject("BotAttackCollider");
+        attackCollider.transform.parent = parent.transform;
+        currentAttacks.Add(attackCollider, ad);
+
         switch (detail.colliderShape)
         {
             case SOAttack.ColliderShape.Box:
@@ -94,11 +106,25 @@ public class AttackEntity : StateEntityBase
 
         yield return new WaitForSeconds(detail.ColliderDuration);
 
-        MonoBehaviour.Destroy(attackCollider);
+        if(currentAttacks.Count == 1 && finishedSpawnAllAttacks)
+        {
+            ExitState();
+        }
+
+        currentAttacks.Remove(attackCollider);
+        if (attackCollider != null)
+        {
+            Debug.Log(attackCollider);
+            MonoBehaviour.Destroy(attackCollider);
+        }
     }
 
     void DealDamage(IDamageable damageable, GameObject collider) {
-        damageable.takeDamage(attacks[currentIndex].damage);
+        if (!attackAlreadyDealtDamage[currentAttacks[collider]])
+        {
+            attackAlreadyDealtDamage[currentAttacks[collider]] = true;
+            damageable.takeDamage(currentAttacks[collider].damage);
+        }
     }
 }
 
