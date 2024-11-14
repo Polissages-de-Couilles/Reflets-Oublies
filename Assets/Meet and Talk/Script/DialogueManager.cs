@@ -191,7 +191,7 @@ namespace MeetAndTalk
             if (_nodeData.AvatarPos == AvatarPosition.Left && _nodeData.Character != null) { dialogueUIManager.SpriteLeft.SetActive(true); dialogueUIManager.SpriteLeft.GetComponent<Image>().sprite = _nodeData.Character.GetAvatar(_nodeData.AvatarPos, _nodeData.AvatarType); }
             if (_nodeData.AvatarPos == AvatarPosition.Right && _nodeData.Character != null) { dialogueUIManager.SpriteRight.SetActive(true); dialogueUIManager.SpriteRight.GetComponent<Image>().sprite = _nodeData.Character.GetAvatar(_nodeData.AvatarPos, _nodeData.AvatarType); }
 
-            dialogueUIManager.SkipButton.SetActive(true);
+            dialogueUIManager.SkipButton.SetActive(!_nodeData.CantBeSkip);
             MakeButtons(new List<DialogueNodePort>());
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
@@ -205,6 +205,7 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
 
             _nodeDialogueInvoke = _nodeData;
@@ -270,6 +271,7 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
         }
         private void RunNode(EventNodeData _nodeData)
@@ -365,13 +367,21 @@ namespace MeetAndTalk
             {
                 soundID = AkSoundEngine.PostEvent(_audioName, GameManager.Instance.AudioDialogueGameObject);
                 GameManager.Instance.DialogueManager.OnNode += StopAudio;
+                GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(StopAudio);
             }
         }
 
+        private void StopAudio()
+        {
+            AkSoundEngine.StopPlayingID(soundID);
+            GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
+        }
         private void StopAudio(BaseNodeData node)
         {
             AkSoundEngine.StopPlayingID(soundID);
             GameManager.Instance.DialogueManager.OnNode -= StopAudio;
+            GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(StopAudio);
         }
 
         private void MakeButtons(List<DialogueNodePort> _nodePorts)
