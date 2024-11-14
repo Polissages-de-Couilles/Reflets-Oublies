@@ -240,7 +240,7 @@ namespace PDC.Localization
             return list.ToArray();
         }
 
-        static string RemoveDiacritics(string text)
+        public static string RemoveDiacritics(string text)
         {
             var normalizedString = text.Normalize(NormalizationForm.FormD);
             var stringBuilder = new StringBuilder(capacity: normalizedString.Length);
