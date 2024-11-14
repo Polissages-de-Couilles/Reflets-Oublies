@@ -49,11 +49,17 @@ public class AttackEntity : StateEntityBase
 
     IEnumerator SpawnAttack()
     {
+        int index = 0;
         foreach (SOAttack.AttackDetails attack in attacks)
         {
             foreach(SOAttack.AttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider, attack));
+            }
+
+            if (index + 1 == attacks.Count)
+            {
+                finishedSpawnAllAttacks = true;
             }
 
             yield return new WaitForSeconds(attack.attackDuration);
@@ -66,8 +72,9 @@ public class AttackEntity : StateEntityBase
                     break;
                 }
             }
+
+            index++;
         }
-        finishedSpawnAllAttacks = true;
     }
 
     IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail, SOAttack.AttackDetails ad)
@@ -106,15 +113,16 @@ public class AttackEntity : StateEntityBase
 
         yield return new WaitForSeconds(detail.ColliderDuration);
 
-        if(currentAttacks.Count == 1 && finishedSpawnAllAttacks)
+        Debug.Log("TRY EXIT STATE : " + (currentAttacks.Count == 1) + " & " + finishedSpawnAllAttacks);
+        if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
         {
+            Debug.Log("EXIT STATE");
             ExitState();
         }
 
         currentAttacks.Remove(attackCollider);
         if (attackCollider != null)
         {
-            Debug.Log(attackCollider);
             MonoBehaviour.Destroy(attackCollider);
         }
     }
