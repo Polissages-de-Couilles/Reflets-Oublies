@@ -5,6 +5,7 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class UIManager : MonoBehaviour
 
     public String SceneGameToLoad;
     public String SceneMenuToLoad;
+
+    public GameObject GlobalOption;
+    public GameObject inputManetteOption;
+    public GameObject inputKeybordOption;
+
 
     public void SwitchOption() {
         Option.SetActive(true);
@@ -50,6 +56,25 @@ public class UIManager : MonoBehaviour
     public void MaskPause()
     {
         Pause.SetActive(false);
+    }
+
+    public void ShowGlobalOption()
+    {
+        GlobalOption.SetActive(true);
+        inputKeybordOption.SetActive(false);
+        inputManetteOption.SetActive(false);
+    }
+
+    public void ShowInputOption()
+    {
+        GlobalOption.SetActive(false);
+        if (Gamepad.all.Count > 0) { 
+            inputManetteOption.SetActive(true);
+
+        }
+        else {
+            inputKeybordOption.SetActive(true);
+        }
     }
 
 
