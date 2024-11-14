@@ -1,21 +1,57 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public Canvas test;
+    public GameObject Pause;
+    public GameObject Dialogue;
+    public GameObject HUD;
+    public GameObject MainMenu;
+    public GameObject Option;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public String SceneGameToLoad;
+    public String SceneMenuToLoad;
+
+    public void SwitchOption() {
+        Option.SetActive(true);
+        MainMenu.SetActive(false);
+    }
+    public void SwitchMainMenu() {
+        Option.SetActive(false);
+        MainMenu.SetActive(true);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SwitchSceneMenu()
     {
-        
+        SceneManager.LoadScene(SceneMenuToLoad);
     }
+
+    public void SwitchSceneGame()
+    {
+        SceneManager.LoadScene(SceneGameToLoad);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Quitter !");
+    }
+
+    public void ShowPause()
+    {
+        Pause.SetActive(true);
+    }
+
+    public void MaskPause()
+    {
+        Pause.SetActive(false);
+    }
+
+
+
 }
