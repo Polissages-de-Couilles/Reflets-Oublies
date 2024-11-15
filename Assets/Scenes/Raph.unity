@@ -1311,7 +1311,6 @@ GameObject:
   - component: {fileID: 399333685}
   - component: {fileID: 399333684}
   - component: {fileID: 399333683}
-  - component: {fileID: 399333686}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1448,22 +1447,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399333681}
   m_CullTransparentMesh: 1
---- !u!114 &399333686
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399333681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3924093c31b8c86459dfd73893e72374, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionText: {fileID: 399333683}
-  keyBoardScreen: {fileID: 0}
-  gamepadScreen: {fileID: 0}
-  inputAction: {fileID: 545817125209527096, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
 --- !u!1 &458254749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5700,7 +5683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1458487829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8139,6 +8122,10 @@ PrefabInstance:
     - target: {fileID: 559057447727064224, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
       propertyPath: m_Name
       value: Ewen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062142572647039492, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 5117971115241216492, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
       propertyPath: m_LocalPosition.x
