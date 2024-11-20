@@ -10,10 +10,12 @@ public class MobSpawnerEntity : StateEntityBase
     int mobMaxNb;
     float spawnRange;
     Vector2 rangeTimeBetweenSpawns;
-
+    
+    bool doOnce = false;
     List<GameObject> spawnedMobs = new List<GameObject>();
     public override void ExitState()
     {
+        manager.StopCoroutine(spawnMobsEveryTimeRange());
     }
 
     public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns)
@@ -32,8 +34,9 @@ public class MobSpawnerEntity : StateEntityBase
 
     public override void OnEnterState()
     {
-        if (ValidateAndGetSpawnedMobsCount() < nbToSpawnAtEnterState) 
+        if (ValidateAndGetSpawnedMobsCount() < nbToSpawnAtEnterState && !doOnce) 
         { 
+            doOnce = true;
             for (int i = 0; i < nbToSpawnAtEnterState; i++)
             {
                 if (ValidateAndGetSpawnedMobsCount() < mobMaxNb)

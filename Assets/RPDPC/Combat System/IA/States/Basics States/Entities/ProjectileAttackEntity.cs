@@ -91,6 +91,7 @@ public class ProjectileAttackEntity : StateEntityBase
                 break;
         }
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
+        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode);
         ac.OnDamageableEnterTrigger += DealDamage;
         ac.OnEnterTrigger += DestroyCollision;
 
@@ -101,7 +102,6 @@ public class ProjectileAttackEntity : StateEntityBase
         vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
 
         yield return attackCollider.transform.DOMove(new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
-        //yield return attackCollider.transform.DOMove(-(attackCollider.transform.position - player.transform.position).normalized * detail.distance, detail.distance / detail.speed).WaitForCompletion();
 
         if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
         {
@@ -109,7 +109,7 @@ public class ProjectileAttackEntity : StateEntityBase
         }
 
         currentAttacks.Remove(attackCollider);
-        if(attackCollider == null)
+        if(attackCollider != null)
         {
             MonoBehaviour.Destroy(attackCollider);
         }

@@ -39,6 +39,11 @@ public class SOAttack : StateBase
         public float CapsuleColliderHeight;
         public float SphereAndCapsuleColliderRadius;
         public float ColliderDuration;
+        public bool DoesStun;
+        public float StunDuration;
+        public bool DoesKnockback;
+        public float KnockForce;
+        public KnockbackMode KnockbackMode;
     }
 
     [Serializable]

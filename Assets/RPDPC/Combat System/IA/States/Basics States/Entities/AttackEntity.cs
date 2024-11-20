@@ -106,7 +106,9 @@ public class AttackEntity : StateEntityBase
                 capsuleCollider.isTrigger = true;
                 break;
         }
-        attackCollider.AddComponent<AttackCollider>().OnDamageableEnterTrigger += DealDamage;
+        AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
+        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode);
+        ac.OnDamageableEnterTrigger += DealDamage;
 
         attackCollider.transform.localPosition = detail.ColliderRelativePosition;
         attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
@@ -135,4 +137,3 @@ public class AttackEntity : StateEntityBase
         }
     }
 }
-

@@ -41,6 +41,11 @@ public class SOProjectileAttack : StateBase
         public float distance;
         public float speed;
         public AnimationCurve animCurv;
+        public bool DoesStun;
+        public float StunDuration;
+        public bool DoesKnockback;
+        public float KnockForce;
+        public KnockbackMode KnockbackMode;
     }
 
     [Serializable]
