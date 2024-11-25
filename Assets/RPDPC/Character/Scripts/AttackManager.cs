@@ -118,6 +118,6 @@ public class AttackManager : MonoBehaviour
 
     bool isStateCompatible(StateManager.States state)
     {
-        return state != StateManager.States.dash && state != StateManager.States.stun;
+        return state != StateManager.States.dash && state != StateManager.States.stun && state != StateManager.States.talk;
     }
 }
