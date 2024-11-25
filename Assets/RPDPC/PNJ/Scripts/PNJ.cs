@@ -15,13 +15,13 @@ public class PNJ : Interactible
     [SerializeField] PNJData _data;
     [SerializeField] int _dialogueIndex = 1;
     DialogueContainerSO dialogue => _data.GetDialogue(_dialogueIndex);
-    enum State
+    public enum State
     {
         Waiting,
         Dialogue,
         Choice
     }
-    State state;
+    public State state;
 
     public override void OnInteraction()
     {
