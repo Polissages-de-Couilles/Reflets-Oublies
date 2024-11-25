@@ -8,14 +8,14 @@ public class PlayerIsVisible : ConditionBase
 {
     GameObject parent;
     GameObject player;
-    CapsuleCollider playerCollider;
+    CharacterController playerCollider;
     List<Vector3> directions;
     [SerializeField] float viewAngle;
     public override void Init(GameObject parent, GameObject player)
     {
         this.parent = parent;
         this.player = player;
-        playerCollider = player.GetComponent<CapsuleCollider>();
+        playerCollider = player.GetComponent<CharacterController>();
     }
 
     public override bool isConditionFulfilled()

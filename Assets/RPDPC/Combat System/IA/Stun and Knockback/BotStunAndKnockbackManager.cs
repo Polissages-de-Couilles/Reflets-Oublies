@@ -6,12 +6,16 @@ using UnityEngine;
 public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
 {
     [DoNotSerialize] public bool Stunned = false;
+    [SerializeField] bool canBeStunned = true;
 
     public override void ApplyStun(float stunDuration)
     {
-        StopAllCoroutines();
-        Stunned = true; 
-        StartCoroutine(cancelStun(stunDuration));
+        if (canBeStunned)
+        {
+            StopAllCoroutines();
+            Stunned = true;
+            StartCoroutine(cancelStun(stunDuration));
+        }
     }
     IEnumerator cancelStun(float duration) 
     { 

@@ -10,9 +10,12 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
 {
     public float maxHealth = 100f;
     private float currentHealth;
-    private float defence = 1f; 
+    private float defence = 1f;
+    StateManager sm;
 
     public Action<float, float> OnDamageTaken { get; set; }
+
+    List<StateManager.States> incompatibleStates = new List<StateManager.States> { StateManager.States.talk };
 
     public float getCurrentHealth()
     {
@@ -31,19 +34,23 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
 
     public void takeDamage(float damage)
     {
-        currentHealth -= damage / defence;
-        if (currentHealth <= 0)
+        if (!incompatibleStates.Contains(sm.playerState))
         {
-            currentHealth = 0;
+            currentHealth -= damage / defence;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
+            Debug.Log("Player took damage. Their health is now at " + currentHealth);
+            OnDamageTaken?.Invoke(damage, currentHealth);
         }
-        Debug.Log("Player took damage. Their health is now at " + currentHealth);
-        OnDamageTaken?.Invoke(damage, currentHealth);
     }
 
     void Start()
     {
         currentHealth = maxHealth;
         //StartCoroutine(testDamage());
+        sm = GetComponent<StateManager>();
     }
 
     public void heal(float heal)
