@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "J\xF6rn Plischke"
   m_EditorClassIdentifier: 
   _character: {fileID: 7281160302115866369}
-  _characterNameKey: "J\xD6RN PLISCHKE_NAME"
+  _characterNameKey: JORN_NAME
   _allDialogue:
   - {fileID: 9056953548699222479}
 --- !u!114 &7281160302115866369
@@ -95,13 +95,13 @@ MonoBehaviour:
     AudioName:
     - languageEnum: 0
       LanguageGenericType: 
-    Character: {fileID: 0}
+    Character: {fileID: 7281160302115866369}
     AvatarPos: 0
     AvatarType: 0
     TextType:
     - languageEnum: 0
       LanguageGenericType: JORN_DIALOGUE_1_5
-    Duration: 5
+    Duration: 0
   DialogueNodeDatas:
   - NodeGuid: 71b6f1bd-e9c4-44a5-8a3f-2e6bc1f01271
     Position: {x: 355.2, y: 340}
@@ -114,49 +114,13 @@ MonoBehaviour:
       LanguageGenericType: 
     CantBeSkip: 0
     CanMove: 0
-    Character: {fileID: 0}
+    Character: {fileID: 7281160302115866369}
     AvatarPos: 0
     AvatarType: 0
     TextType:
     - languageEnum: 0
       LanguageGenericType: JORN_DIALOGUE_1_1
-    Duration: 10
-  - NodeGuid: a46d3655-0f79-4f77-bb88-e52cc098aeca
-    Position: {x: 555.2, y: 340}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 0}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: JORN_DIALOGUE_1_2
-    Duration: 10
-  - NodeGuid: 306f083d-99fa-4067-b599-d1f57d9b60c5
-    Position: {x: 755.2, y: 340}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 0}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: JORN_DIALOGUE_1_3
-    Duration: 10
+    Duration: 0
   - NodeGuid: 5c7e009b-dba1-4457-9aa2-baa41263b833
     Position: {x: 955.2, y: 340}
     DialogueNodePorts: []
@@ -168,13 +132,49 @@ MonoBehaviour:
       LanguageGenericType: 
     CantBeSkip: 0
     CanMove: 0
-    Character: {fileID: 0}
+    Character: {fileID: 7281160302115866369}
     AvatarPos: 0
     AvatarType: 0
     TextType:
     - languageEnum: 0
       LanguageGenericType: JORN_DIALOGUE_1_4
-    Duration: 10
+    Duration: 0
+  - NodeGuid: a46d3655-0f79-4f77-bb88-e52cc098aeca
+    Position: {x: 555.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 306f083d-99fa-4067-b599-d1f57d9b60c5
+    Position: {x: 755.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_3
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 846e9d67-e90e-45bc-a713-2e798491ac9a
