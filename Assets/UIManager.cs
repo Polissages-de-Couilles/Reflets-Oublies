@@ -15,12 +15,14 @@ public class UIManager : MonoBehaviour
     public GameObject MainMenu;
     public GameObject Option;
 
-    public String SceneGameToLoad;
-    public String SceneMenuToLoad;
+    public string SceneGameToLoad;
+    public string SceneMenuToLoad;
 
     public GameObject GlobalOption;
     public GameObject inputManetteOption;
     public GameObject inputKeybordOption;
+
+    private IDamageable player;
 
 
     public void SwitchOption() {
@@ -77,6 +79,15 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        player = GameManager.Instance.Player.GetComponent<IDamageable>();
+        player.OnDamageTaken += PointDeVie;
+        PointDeVie(0, player.getCurrentHealth());
+    }
 
-
+    private void PointDeVie(float degatPrit, float vieActuel)
+    {
+        player.getMaxHealth();
+    }
 }
