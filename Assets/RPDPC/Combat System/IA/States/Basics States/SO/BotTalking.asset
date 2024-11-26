@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adc02b364d46104e90b7deee4bca7d7, type: 3}
   m_Name: BotTalking
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 999
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 1cbb1cce6f042da4f990d8e32de258fe, type: 2}
+    otherParts: []
