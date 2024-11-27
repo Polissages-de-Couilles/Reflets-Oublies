@@ -85,7 +85,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
     {
         Vector3 randomPoint = searchCenter + Random.insideUnitSphere * searchRange;
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(randomPoint, out hit, searchRange, NavMesh.AllAreas))
         {   
             if (WaitForMoveToFinishBeforeEndOrSwitchingState)
             {
