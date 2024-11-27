@@ -13,7 +13,6 @@ public class IKFootSolver : MonoBehaviour
     [SerializeField] float stepDistance = 0.8f;
     float footSpacing;
     float distance;
-    bool isMoving = false;
     float lerp;
     MovementController movementController;
 
@@ -31,7 +30,7 @@ public class IKFootSolver : MonoBehaviour
     {
         transform.position = currentPosition;
 
-        Ray ray = new Ray(body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 2f) * Mathf.Clamp01(movementController.Velocity.magnitude)));
+        Ray ray = new (body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 2f) * Mathf.Clamp01(movementController.Velocity.magnitude)));
 
         if (Physics.Raycast(ray, out RaycastHit info, 10, terrainLayer.value))
         {
@@ -40,7 +39,7 @@ public class IKFootSolver : MonoBehaviour
             //Debug.Log(name + " : " + Mathf.Clamp01(movementController.Velocity.magnitude));
             if(Mathf.Clamp01(movementController.Velocity.magnitude) <= 0)
             {
-                Debug.Log(name + " Distance : " + distance);
+                //Debug.Log(name + " Distance : " + distance);
                 if (distance > (stepDistance / 10f))
                 {
                     //Debug.Log(new Vector3(body.position.x, 0, body.transform.position.z));
@@ -74,13 +73,6 @@ public class IKFootSolver : MonoBehaviour
         }
 
         transform.localPosition = new Vector3(footSpacing, transform.localPosition.y, transform.localPosition.z);
-    }
-
-    IEnumerator Move(Vector3 end)
-    {
-        isMoving = true;
-        yield return transform.DOMove(end, (1f / speed) * (2f / (2f + movementController.Velocity.magnitude))).WaitForCompletion();
-        isMoving = false;
     }
 
     private void OnDrawGizmos()
