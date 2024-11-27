@@ -9,11 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96851745409a6394ca635b25b3aaa12b, type: 3}
-  m_Name: BotDoNothing
+  m_Script: {fileID: 11500000, guid: 1a9065d1cd7e778418e997496e5db2c9, type: 3}
+  m_Name: DEFAULT_STATE_RandomMoveInRange
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 1
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     otherParts: []
+  searchCenter: {x: 15.77, y: -42.88, z: 165.46}
+  searchRange: 5
+  shouldOnlyMoveOnce: 0
+  WaitForMoveToFinishBeforeEndOrSwitchingState: 0
+  rangeWaitBetweenMoves: {x: 0, y: 1}

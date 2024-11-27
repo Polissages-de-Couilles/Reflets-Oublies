@@ -22,7 +22,6 @@ public class RandomMoveInRangeEntity : StateEntityBase
         this.shouldOnlyMoveOnce = shouldOnlyMoveOnce;
         this.WaitForMoveToFinishBeforeEndOrSwitchingState = WaitForMoveToFinishBeforeEndOrSwitchingState;
         this.rangeWaitBetweenMoves = rangeWaitBetweenMoves;
-        agent = parent.GetComponent<NavMeshAgent>();
     }
 
     public override void ExitState()
@@ -37,6 +36,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
 
     public override void OnEnterState()
     {
+        agent = parent.GetComponent<NavMeshAgent>();
         agent.isStopped = false;
         isPosReached = false;
         goToRandomPos();
