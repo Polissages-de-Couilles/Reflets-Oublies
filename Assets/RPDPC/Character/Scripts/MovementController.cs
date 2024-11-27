@@ -19,6 +19,8 @@ public class MovementController : MonoBehaviour
     public float Speed => speed;
     [SerializeField] private float speed = 5f;
     public Vector3 Velocity { get; private set; }
+    Vector3 oldPosition, currentPosition;
+    public float DistanceTravelInOneFrame => (currentPosition - oldPosition).magnitude;
 
     Vector3 gravity = new Vector3(0, -9.81f, 0);
     
@@ -37,6 +39,7 @@ public class MovementController : MonoBehaviour
         PIE.PlayerInputAction.Player.Movement.started += OnMovement;
         PIE.PlayerInputAction.Player.Movement.performed += OnMovement;
         PIE.PlayerInputAction.Player.Movement.canceled += OnMovement;
+        oldPosition = currentPosition = transform.position;
     }
 
     private void OnMovement(InputAction.CallbackContext context)
@@ -85,6 +88,8 @@ public class MovementController : MonoBehaviour
         }
         HandleRotation();
         HandleGravity();
+        oldPosition = currentPosition;
+        currentPosition = transform.position;
     }
 
     bool isStateCompatible(StateManager.States state)

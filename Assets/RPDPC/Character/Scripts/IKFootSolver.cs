@@ -30,14 +30,14 @@ public class IKFootSolver : MonoBehaviour
     {
         transform.position = currentPosition;
 
-        Ray ray = new (body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 2f) * Mathf.Clamp01(movementController.Velocity.magnitude)));
+        Ray ray = new (body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 2f) * (movementController.DistanceTravelInOneFrame <= 0 ? 0 : Mathf.Clamp01(movementController.Velocity.magnitude))));
 
         if (Physics.Raycast(ray, out RaycastHit info, 10, terrainLayer.value))
         {
             distance = Vector3.Distance(info.point, currentPosition);
 
-            //Debug.Log(name + " : " + Mathf.Clamp01(movementController.Velocity.magnitude));
-            if(Mathf.Clamp01(movementController.Velocity.magnitude) <= 0)
+            Debug.Log(Mathf.Clamp01(movementController.Velocity.magnitude) <= 0 || movementController.DistanceTravelInOneFrame <= 0);
+            if (Mathf.Clamp01(movementController.Velocity.magnitude) <= 0 || movementController.DistanceTravelInOneFrame <= 0)
             {
                 //Debug.Log(name + " Distance : " + distance);
                 if (distance > (stepDistance / 10f))
@@ -45,7 +45,6 @@ public class IKFootSolver : MonoBehaviour
                     //Debug.Log(new Vector3(body.position.x, 0, body.transform.position.z));
                     newPosition = info.point;
                     //Debug.Log(name + " Pos : " + newPosition);
-                    //StartCoroutine(Move(newPosition));
                     if(lerp >= 1) lerp = 0;
                 }
             }
@@ -54,7 +53,6 @@ public class IKFootSolver : MonoBehaviour
                 if (distance > (stepDistance / 1.5f) && otherFoot.Distance() > (stepDistance / 2f) && !otherFoot.IsMoving())
                 {
                     newPosition = info.point;
-                    //StartCoroutine(Move(newPosition));
                     if (lerp >= 1) lerp = 0;
                 }
             }
@@ -72,7 +70,7 @@ public class IKFootSolver : MonoBehaviour
             oldPosition = newPosition;
         }
 
-        transform.localPosition = new Vector3(footSpacing, transform.localPosition.y, transform.localPosition.z);
+        //transform.localPosition = new Vector3(footSpacing, transform.localPosition.y, transform.localPosition.z);
     }
 
     private void OnDrawGizmos()
