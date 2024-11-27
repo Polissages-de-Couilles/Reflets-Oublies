@@ -18,6 +18,7 @@ public class MovementController : MonoBehaviour
 
     public float Speed => speed;
     [SerializeField] private float speed = 5f;
+    public Vector3 Velocity { get; private set; }
 
     Vector3 gravity = new Vector3(0, -9.81f, 0);
     
@@ -75,10 +76,12 @@ public class MovementController : MonoBehaviour
         if (isStateCompatible(stateManager.playerState))
         {
             characterController.Move(Quaternion.Euler(0, 45, 0) * currentMovement * Time.fixedDeltaTime * speed);
+            Velocity = currentMovement * speed;
         }
         else
         {
             characterController.Move(new Vector3(0,0,0));
+            Velocity = new Vector3(0, 0, 0);
         }
         HandleRotation();
         HandleGravity();

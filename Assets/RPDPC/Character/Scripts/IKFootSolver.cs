@@ -9,78 +9,87 @@ public class IKFootSolver : MonoBehaviour
     [SerializeField] CharacterController characterController;
     [SerializeField] IKFootSolver otherFoot = default;
     [SerializeField] Transform body = default;
-    [SerializeField] float speed = 1;
-    [SerializeField] float stepDistance = 4;
-    [SerializeField] float stepLength = 4;
-    [SerializeField] float stepHeight = 1;
+    [SerializeField] float speed = 4f;
+    [SerializeField] float stepDistance = 0.8f;
     float footSpacing;
-    float lerp;
     float distance;
     bool isMoving = false;
+    float lerp;
     MovementController movementController;
 
     Vector3 oldPosition, currentPosition, newPosition;
 
     public void Start()
     {
+        footSpacing = transform.localPosition.x;
         movementController = GameManager.Instance.Player.GetComponent<MovementController>();
         currentPosition = newPosition = oldPosition = transform.position;
-        footSpacing = transform.localPosition.x;
+        lerp = 1;
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if (!isMoving)
-        {
-            transform.position = currentPosition;
-        }
+        transform.position = currentPosition;
 
-        Ray ray = new Ray(body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * 0.4f));
+        Ray ray = new Ray(body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 2f) * Mathf.Clamp01(movementController.Velocity.magnitude)));
 
         if (Physics.Raycast(ray, out RaycastHit info, 10, terrainLayer.value))
         {
-            oldPosition = info.point;
             distance = Vector3.Distance(info.point, currentPosition);
-            //Debug.Log(distance);
 
-            if (distance > 0.8f && otherFoot.Distance() > 0.4f && !otherFoot.IsMoving())
+            //Debug.Log(name + " : " + Mathf.Clamp01(movementController.Velocity.magnitude));
+            if(Mathf.Clamp01(movementController.Velocity.magnitude) <= 0)
             {
-                newPosition = info.point;
-                StartCoroutine(Move(newPosition));
+                Debug.Log(name + " Distance : " + distance);
+                if (distance > (stepDistance / 10f))
+                {
+                    //Debug.Log(new Vector3(body.position.x, 0, body.transform.position.z));
+                    newPosition = info.point;
+                    //Debug.Log(name + " Pos : " + newPosition);
+                    //StartCoroutine(Move(newPosition));
+                    if(lerp >= 1) lerp = 0;
+                }
+            }
+            else
+            {
+                if (distance > (stepDistance / 1.5f) && otherFoot.Distance() > (stepDistance / 2f) && !otherFoot.IsMoving())
+                {
+                    newPosition = info.point;
+                    //StartCoroutine(Move(newPosition));
+                    if (lerp >= 1) lerp = 0;
+                }
             }
         }
 
-        currentPosition = newPosition;
-        //if (lerp < 1)
-        //{
-        //    Vector3 tempPosition = Vector3.Lerp(oldPosition, newPosition, lerp);
-        //    tempPosition.y += Mathf.Sin(lerp * Mathf.PI) * stepHeight;
+        if (lerp < 1)
+        {
+            Vector3 tempPosition = Vector3.Lerp(oldPosition, newPosition, lerp);
 
-        //    currentPosition = tempPosition;
-        //    lerp += Time.deltaTime * speed;
-        //}
-        //else
-        //{
-        //    oldPosition = newPosition;
-        //}
+            currentPosition = tempPosition;
+            lerp += Time.fixedDeltaTime * speed;
+        }
+        else
+        {
+            oldPosition = newPosition;
+        }
 
-        //Debug.Log(lerp);
+        transform.localPosition = new Vector3(footSpacing, transform.localPosition.y, transform.localPosition.z);
     }
 
     IEnumerator Move(Vector3 end)
     {
         isMoving = true;
-        yield return transform.DOMove(end, 0.1f / movementController.Speed).WaitForCompletion();
+        yield return transform.DOMove(end, (1f / speed) * (2f / (2f + movementController.Velocity.magnitude))).WaitForCompletion();
         isMoving = false;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(oldPosition, 0.1f);
+        Gizmos.DrawSphere(newPosition, 0.1f);
     }
 
-    public bool IsMoving() => isMoving;
+    public bool IsMoving() => lerp < 1 || (distance > (stepDistance / 2.5f) && lerp > 0 && lerp < 1);
 
     public float Distance() => distance;
 }
