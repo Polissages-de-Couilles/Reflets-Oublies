@@ -50,7 +50,7 @@ public class IKFootSolver : MonoBehaviour
             }
             else
             {
-                if (distance > (stepDistance / 1.5f) && otherFoot.Distance() > (stepDistance / 2f) && !otherFoot.IsMoving())
+                if (distance > (stepDistance / 1.25f) && otherFoot.Distance() > (stepDistance / 2f) && !otherFoot.IsMoving())
                 {
                     newPosition = info.point;
                     if (lerp >= 1) lerp = 0;
