@@ -22,15 +22,13 @@ public class UIManager : MonoBehaviour
     public GameObject inputManetteOption;
     public GameObject inputKeybordOption;
 
-    private PlayerDamageable player; // Référence au script PlayerDamageable
-
-    // Ajouter une référence au Slider de santé
+    private PlayerDamageable player; 
+    
     public Slider healthSlider;
+    public Slider dashSlider;
 
-    // Référence au GameObject dont l'opacité va changer
+    
     public GameObject bloodEffect;
-
-    // Référence à l'Image sur le GameObject bloodEffect
     private Image bloodEffectImage;
 
     public void SwitchOption()
@@ -93,40 +91,31 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        // Récupère le PlayerDamageable attaché au joueur
         player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
 
-        // Abonne la méthode PointDeVie à l'événement OnDamageTaken
         player.OnDamageTaken += PointDeVie;
 
-        // Initialise le Slider de santé
         if (healthSlider != null)
         {
-            healthSlider.maxValue = player.getMaxHealth();  // Définit la valeur maximale du slider
-            healthSlider.value = player.getCurrentHealth(); // Définit la valeur actuelle du slider
+            healthSlider.maxValue = player.getMaxHealth();  
+            healthSlider.value = player.getCurrentHealth(); 
         }
 
-        // Appeler une première fois pour que le slider soit à jour au début
         PointDeVie(0, player.getCurrentHealth());
 
-        // Obtenir la référence à l'Image du GameObject bloodEffect
         bloodEffectImage = bloodEffect.GetComponent<Image>();
 
-        // Vérifie si bloodEffectImage a bien été assigné
         if (bloodEffectImage == null)
         {
             Debug.LogError("L'image sur bloodEffect n'est pas assignée ou n'est pas un composant Image.");
             return;
         }
 
-        // Initialiser l'opacité
         UpdateOpacity();
     }
 
-    // Méthode appelée lorsqu'un dégât est pris par le joueur
     private void PointDeVie(float degatPrit, float vieActuel)
     {
-        // Met à jour le slider avec la nouvelle valeur de santé
         if (healthSlider != null)
         {
             healthSlider.value = vieActuel;
@@ -134,17 +123,13 @@ public class UIManager : MonoBehaviour
 
         UpdateOpacity();
 
-        // Optionnellement, tu peux ajouter d'autres comportements ici
         Debug.Log($"Santé actuelle du joueur : {vieActuel}/{player.getMaxHealth()}");
     }
 
     public void UpdateOpacity()
     {
-        // Calculer le pourcentage de vie restante
         float healthPercentage = player.getCurrentHealth() / player.getMaxHealth();
 
-        // Inverser la logique de l'alpha : plus la vie est faible, plus l'opacité est élevée
-        // Si la vie est pleine, alpha = 0 (transparente), si la vie est à 0, alpha = 1 (opaque)
         if (bloodEffectImage != null)
         {
             Color currentColor = bloodEffectImage.color;
@@ -156,4 +141,13 @@ public class UIManager : MonoBehaviour
     {
         player.takeDamage(10);
     }
+
+    public void UpdateDashSlider(int dashCount)
+    {
+        if (dashSlider != null)
+        {
+            dashSlider.value = dashCount;  // Met à jour la valeur du slider avec le nombre de dashes restants
+        }
+    }
+
 }

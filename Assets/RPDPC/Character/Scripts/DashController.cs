@@ -26,6 +26,8 @@ public class DashController : MonoBehaviour
     public int DashCount => dashCount;
     private int dashCount;
 
+    public UIManager uiManager; 
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -54,9 +56,16 @@ public class DashController : MonoBehaviour
             canDash = false;
             dashCount--;
             isDashing = true;
+
+        if (uiManager != null)
+        {
+            uiManager.UpdateDashSlider(dashCount);
+        }
+
             Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
 
-            for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
+
+        for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
             {
                 Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
                 dash += gravity * dashForce;
@@ -76,6 +85,11 @@ public class DashController : MonoBehaviour
             {
                 yield return new WaitForSeconds(dashCooldown);
                 dashCount++;
+
+                if (uiManager != null)
+                {
+                    uiManager.UpdateDashSlider(dashCount);
+                }
             }
             yield return null;
         }
@@ -84,5 +98,14 @@ public class DashController : MonoBehaviour
     bool isStateCompatible(StateManager.States state)
     {
         return states.Contains(state);
+    }
+
+    public void SimulateDash()
+    {
+        if (canDash && dashCount > 0)
+        {
+            StartCoroutine(Dash());
+            stateManager.SetPlayerState(StateManager.States.dash, dashTime);
+        }
     }
 }
