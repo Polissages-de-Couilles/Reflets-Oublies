@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: "J\xF6rn Plischke"
+  m_EditorClassIdentifier: 
+  _character: {fileID: 7281160302115866369}
+  _characterNameKey: JORN_NAME
+  _allDialogue:
+  - {fileID: 9056953548699222479}
+--- !u!114 &7281160302115866369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: "J\xD6RN PLISCHKE"
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: JORN_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+--- !u!114 &9056953548699222479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 96d12f17-6610-4183-9bc0-069363002157
+    TargetNodeGuid: 71b6f1bd-e9c4-44a5-8a3f-2e6bc1f01271
+  - BaseNodeGuid: 71b6f1bd-e9c4-44a5-8a3f-2e6bc1f01271
+    TargetNodeGuid: a46d3655-0f79-4f77-bb88-e52cc098aeca
+  - BaseNodeGuid: a46d3655-0f79-4f77-bb88-e52cc098aeca
+    TargetNodeGuid: 306f083d-99fa-4067-b599-d1f57d9b60c5
+  - BaseNodeGuid: 306f083d-99fa-4067-b599-d1f57d9b60c5
+    TargetNodeGuid: 5c7e009b-dba1-4457-9aa2-baa41263b833
+  - BaseNodeGuid: 5c7e009b-dba1-4457-9aa2-baa41263b833
+    TargetNodeGuid: 05e616cb-abe8-4917-8171-53f84e86c1af
+  - BaseNodeGuid: 05e616cb-abe8-4917-8171-53f84e86c1af
+    TargetNodeGuid: 846e9d67-e90e-45bc-a713-2e798491ac9a
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 05e616cb-abe8-4917-8171-53f84e86c1af
+    Position: {x: 1155.2, y: 340}
+    DialogueNodePorts:
+    - PortGuid: 419396b7-9fce-4bd0-b3ba-50cf9cffb49c
+      InputGuid: 846e9d67-e90e-45bc-a713-2e798491ac9a
+      OutputGuid: 05e616cb-abe8-4917-8171-53f84e86c1af
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: JORN_DIALOGUE_1_5C_1
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_5
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: 71b6f1bd-e9c4-44a5-8a3f-2e6bc1f01271
+    Position: {x: 355.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 5c7e009b-dba1-4457-9aa2-baa41263b833
+    Position: {x: 955.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: a46d3655-0f79-4f77-bb88-e52cc098aeca
+    Position: {x: 555.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 306f083d-99fa-4067-b599-d1f57d9b60c5
+    Position: {x: 755.2, y: 340}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7281160302115866369}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: JORN_DIALOGUE_1_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 846e9d67-e90e-45bc-a713-2e798491ac9a
+    Position: {x: 1455.2, y: 340}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 96d12f17-6610-4183-9bc0-069363002157
+    Position: {x: 234.4, y: 340}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
