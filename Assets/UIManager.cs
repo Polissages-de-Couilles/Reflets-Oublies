@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.UI; // Nécessaire pour utiliser le Slider
+using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
@@ -146,8 +146,10 @@ public class UIManager : MonoBehaviour
     {
         if (dashSlider != null)
         {
-            dashSlider.value = dashCount;  // Met à jour la valeur du slider avec le nombre de dashes restants
+            dashSlider.value = dashCount;  
         }
     }
+    
+
 
 }

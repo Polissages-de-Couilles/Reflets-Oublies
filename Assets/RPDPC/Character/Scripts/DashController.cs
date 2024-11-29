@@ -26,7 +26,7 @@ public class DashController : MonoBehaviour
     public int DashCount => dashCount;
     private int dashCount;
 
-    public UIManager uiManager; 
+    
 
     private void Awake()
     {
@@ -40,6 +40,11 @@ public class DashController : MonoBehaviour
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Dash.performed += OnDash;
         StartCoroutine(RechargeDash());
+
+        if (GameManager.Instance.UIManager != null)
+        {
+            GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
+        }
     }
 
     private void OnDash(InputAction.CallbackContext context)
@@ -57,9 +62,9 @@ public class DashController : MonoBehaviour
             dashCount--;
             isDashing = true;
 
-        if (uiManager != null)
+        if (GameManager.Instance.UIManager != null)
         {
-            uiManager.UpdateDashSlider(dashCount);
+            GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
         }
 
             Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
@@ -86,9 +91,9 @@ public class DashController : MonoBehaviour
                 yield return new WaitForSeconds(dashCooldown);
                 dashCount++;
 
-                if (uiManager != null)
+                if (GameManager.Instance.UIManager != null)
                 {
-                    uiManager.UpdateDashSlider(dashCount);
+                    GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
                 }
             }
             yield return null;
