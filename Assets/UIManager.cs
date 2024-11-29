@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.UI; 
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.InputSystem;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,72 +20,13 @@ public class UIManager : MonoBehaviour
     public GameObject inputManetteOption;
     public GameObject inputKeybordOption;
 
-    private PlayerDamageable player; 
-    
+    private PlayerDamageable player;
+
     public Slider healthSlider;
     public Slider dashSlider;
 
-    
     public GameObject bloodEffect;
     private Image bloodEffectImage;
-
-    public void SwitchOption()
-    {
-        Option.SetActive(true);
-        MainMenu.SetActive(false);
-    }
-
-    public void SwitchMainMenu()
-    {
-        Option.SetActive(false);
-        MainMenu.SetActive(true);
-    }
-
-    public void SwitchSceneMenu()
-    {
-        SceneManager.LoadScene(SceneMenuToLoad);
-    }
-
-    public void SwitchSceneGame()
-    {
-        SceneManager.LoadScene(SceneGameToLoad);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-        Debug.Log("Quitter !");
-    }
-
-    public void ShowPause()
-    {
-        Pause.SetActive(true);
-    }
-
-    public void MaskPause()
-    {
-        Pause.SetActive(false);
-    }
-
-    public void ShowGlobalOption()
-    {
-        GlobalOption.SetActive(true);
-        inputKeybordOption.SetActive(false);
-        inputManetteOption.SetActive(false);
-    }
-
-    public void ShowInputOption()
-    {
-        GlobalOption.SetActive(false);
-        if (Gamepad.all.Count > 0)
-        {
-            inputManetteOption.SetActive(true);
-        }
-        else
-        {
-            inputKeybordOption.SetActive(true);
-        }
-    }
 
     private void Start()
     {
@@ -97,8 +36,8 @@ public class UIManager : MonoBehaviour
 
         if (healthSlider != null)
         {
-            healthSlider.maxValue = player.getMaxHealth();  
-            healthSlider.value = player.getCurrentHealth(); 
+            healthSlider.maxValue = player.getMaxHealth();
+            healthSlider.value = player.getCurrentHealth();
         }
 
         PointDeVie(0, player.getCurrentHealth());
@@ -126,6 +65,7 @@ public class UIManager : MonoBehaviour
         Debug.Log($"Santé actuelle du joueur : {vieActuel}/{player.getMaxHealth()}");
     }
 
+    // La fonction qui met à jour l'opacité en fonction de la santé actuelle
     public void UpdateOpacity()
     {
         float healthPercentage = player.getCurrentHealth() / player.getMaxHealth();
@@ -133,23 +73,33 @@ public class UIManager : MonoBehaviour
         if (bloodEffectImage != null)
         {
             Color currentColor = bloodEffectImage.color;
+            // Diminuer l'opacité du sang à mesure que la santé augmente
             bloodEffectImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1 - healthPercentage);
         }
     }
 
+    // Cette fonction gère les dégâts dans le UIManager
     public void InfligerDegats()
     {
-        player.takeDamage(10);
+        player.takeDamage(10);  // Exemple de dégâts infligés
+    }
+
+    // Fonction pour tester les soins sans changer la logique existante
+    public void Heal()
+    {
+        player.heal(10);
+        if (healthSlider != null)
+        {
+            healthSlider.value = player.getCurrentHealth();  // Mettre à jour le slider
+        }
+        UpdateOpacity();  // Mettre à jour l'opacité du sang après un soin
     }
 
     public void UpdateDashSlider(int dashCount)
     {
         if (dashSlider != null)
         {
-            dashSlider.value = dashCount;  
+            dashSlider.value = dashCount;  // Mettre à jour le slider de dash
         }
     }
-    
-
-
 }
