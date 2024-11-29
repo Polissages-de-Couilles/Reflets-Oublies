@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
 {
-    [DoNotSerialize] public bool Stunned = false;
+    [HideInInspector] public bool Stunned = false;
     [SerializeField] bool canBeStunned = true;
 
     public override void ApplyStun(float stunDuration)

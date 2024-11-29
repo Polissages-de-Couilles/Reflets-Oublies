@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class FollowPlayerEntity : StateEntityBase
 {
@@ -27,7 +28,8 @@ public class FollowPlayerEntity : StateEntityBase
     public override void OnEnterState()
     {
         agent = parent.GetComponent<NavMeshAgent>();
-        agent.isStopped = false;
+        if (agent.isStopped)
+            agent.isStopped = false;
     }
 
     public override void OnUpdate()
@@ -49,6 +51,7 @@ public class FollowPlayerEntity : StateEntityBase
                 manager.shouldSearchStates = true;
             }
         }
+        
         lastKnownPos = player.transform.position;
         agent.SetDestination(lastKnownPos);
     }

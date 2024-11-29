@@ -68,7 +68,7 @@ public class MobSpawnerEntity : StateEntityBase
         if(NavMesh.SamplePosition(parent.transform.position + new Vector3(RandomPoint.x, 0, RandomPoint.y), out hit, spawnRange, NavMesh.AllAreas))
         {
             GameObject mob = MonoBehaviour.Instantiate(monsterPrefab);
-            mob.transform.position = new Vector3(hit.position.x, hit.position.y + mob.GetComponent<Collider>().bounds.size.y, hit.position.z);
+            mob.GetComponent<NavMeshAgent>().Warp(hit.position);
             spawnedMobs.Add(mob);
             mob.name = mob.name + " " + spawnedMobs.IndexOf(mob);
         }
