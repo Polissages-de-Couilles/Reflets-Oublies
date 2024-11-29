@@ -9,6 +9,7 @@ public abstract class StateBase : ScriptableObject
 {
     public float priority;
     public List<ConditionExpression> conditions;
+    public bool isHostileState;
 
     public abstract StateEntityBase PrepareEntityInstance();
 }

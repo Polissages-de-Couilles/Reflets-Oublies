@@ -22,7 +22,7 @@ public class StateMachineManager : MonoBehaviour
         foreach (StateBase state in states)
         {
             StateEntityBase stateEntity = state.PrepareEntityInstance();
-            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority);
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState);
             stateEntities.Add(stateEntity);
         }
         setNewCurrentState(-1f);
@@ -74,9 +74,11 @@ public class StateMachineManager : MonoBehaviour
             if (currentState != null)
             {
                 currentState.onActionFinished -= StateEnded;
+                currentState.RemoveHostileFromPlayerState();
                 currentState.OnEndState();
             }
             currentState = highestState;
+            currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
         }

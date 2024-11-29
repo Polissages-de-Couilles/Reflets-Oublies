@@ -11,14 +11,16 @@ public abstract class StateEntityBase
     protected GameObject player;
     public float priority;
     protected List<ConditionExpression> conditions;
+    public bool isHostileState;
 
-    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority)
+    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState)
     {
         this.manager = manager;
         this.parent = parent;
         this.player = player;
         this.conditions = conditions;
         this.priority = priority;
+        this.isHostileState = isHostileState;
         foreach (ConditionExpression c in conditions)
         {
             c.baseCondition.Init(parent, player);
@@ -110,6 +112,21 @@ public abstract class StateEntityBase
             }
         }
         return currentResult;
+    }
+
+    public void AddHostileToPlayerState()
+    {
+        if (isHostileState)
+        {
+            player.GetComponent<StateManager>().addHostileEnemy(parent);
+        }
+    }
+    public void RemoveHostileFromPlayerState()
+    {
+        if (isHostileState)
+        {
+            player.GetComponent<StateManager>().removeHostileEnemy(parent);
+        }
     }
 
     public abstract void OnEnterState();
