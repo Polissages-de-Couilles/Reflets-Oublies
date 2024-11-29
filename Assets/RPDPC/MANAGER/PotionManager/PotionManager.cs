@@ -39,22 +39,25 @@ public class PotionManager : MonoBehaviour
         }
     }
 
-    public bool RefillPotion()
+    public bool RefillPotion(bool check)
     {
         if(currentPotion <  maxPotion)
         {
-            currentPotion = maxPotion;
+            if (check == false) { currentPotion = maxPotion; }
             return true;
         }
         return false;
     }
 
-    public bool AddMaxPotion()
+    public bool AddMaxPotion(bool check)
     {
         if(maxPotion < maxMaxPotion)
         {
-            maxPotion++;
-            currentPotion++;
+            if(check == false)
+            {
+                maxPotion++;
+                currentPotion++;
+            }
             return true;
         }
         return false;
