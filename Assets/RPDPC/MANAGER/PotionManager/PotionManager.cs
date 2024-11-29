@@ -16,10 +16,14 @@ public class PotionManager : MonoBehaviour
     private PlayerInputEventManager PIE;
     private PlayerDamageable player;
 
+    public TextMeshProUGUI text;
+
     private void Start()
     {
         maxMaxPotion = 10;
         maxPotion = currentPotion;
+
+        text.text = currentPotion.ToString();
 
         player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
         PIE = GameManager.Instance.PlayerInputEventManager;
@@ -32,6 +36,7 @@ public class PotionManager : MonoBehaviour
         {
             player.heal(player.maxHealth * HEAL_VALUE);
             currentPotion--;
+            text.text = currentPotion.ToString();
         }
         else if(currentPotion == 0)
         {
@@ -44,6 +49,7 @@ public class PotionManager : MonoBehaviour
         if(currentPotion <  maxPotion)
         {
             currentPotion = maxPotion;
+            text.text = currentPotion.ToString();
             return true;
         }
         return false;
@@ -55,6 +61,7 @@ public class PotionManager : MonoBehaviour
         {
             maxPotion++;
             currentPotion++;
+            text.text = currentPotion.ToString();
             return true;
         }
         return false;
