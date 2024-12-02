@@ -8,7 +8,7 @@ public abstract class StunAndKnockbackManagerBase : MonoBehaviour
     public abstract void ApplyStun(float stunDuration);
     public void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
     {
-        Rigidbody body = GetComponent<Rigidbody>();
+        CharacterController body = GetComponent<CharacterController>();
         Vector3 forceToAdd = new Vector3();
         switch (mode) {
             case KnockbackMode.MoveAwayFromAttackCollision:
@@ -18,7 +18,7 @@ public abstract class StunAndKnockbackManagerBase : MonoBehaviour
                 forceToAdd = -(attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
                 break;
         }
-        body.velocity = forceToAdd;
+        body.SimpleMove(forceToAdd);
     }
 }
 

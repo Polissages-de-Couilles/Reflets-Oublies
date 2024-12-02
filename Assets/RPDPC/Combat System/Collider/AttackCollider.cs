@@ -49,10 +49,10 @@ public class AttackCollider : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawSphere(transform.position, 1);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawSphere(transform.position, 1);
+    //}
 
     public void SetCollisionState(bool state)
     {
