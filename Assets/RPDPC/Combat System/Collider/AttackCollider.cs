@@ -15,6 +15,7 @@ public class AttackCollider : MonoBehaviour
     public float KnockForce;
     public KnockbackMode KnockbackMode;
     bool isEnemy;
+    bool hasAlreadyDealtDamage = false;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy)
     {
@@ -28,15 +29,17 @@ public class AttackCollider : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        bool changeHasAlreadyTakeDamageValue = false;
         IDamageable damageable = collider.GetComponent<IDamageable>();
         StunAndKnockbackManagerBase SKManager = collider.GetComponent<StunAndKnockbackManagerBase>();
         if(collider != transform.parent.gameObject && !collider.transform.IsChildOf(transform.parent) && (isEnemy ^ (collider.GetComponent<StateMachineManager>() != null)))
         {
-            if (damageable != null)
+            if (damageable != null && !hasAlreadyDealtDamage)
             {
+                changeHasAlreadyTakeDamageValue = true;
                 OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
             }
-            if (SKManager != null)
+            if (SKManager != null && !hasAlreadyDealtDamage)
             {
                 if (DoesStun)
                 {
@@ -48,6 +51,10 @@ public class AttackCollider : MonoBehaviour
                 }
             }
             OnEnterTrigger?.Invoke(gameObject);
+        }
+        if(changeHasAlreadyTakeDamageValue)
+        {
+            hasAlreadyDealtDamage = true;
         }
     }
 
