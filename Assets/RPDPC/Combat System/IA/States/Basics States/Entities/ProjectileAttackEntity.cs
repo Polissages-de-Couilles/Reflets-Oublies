@@ -91,7 +91,7 @@ public class ProjectileAttackEntity : StateEntityBase
                 break;
         }
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
-        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode);
+        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
         ac.OnDamageableEnterTrigger += DealDamage;
         ac.OnEnterTrigger += DestroyCollision;
 

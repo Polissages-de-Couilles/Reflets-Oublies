@@ -107,7 +107,7 @@ public class AttackEntity : StateEntityBase
                 break;
         }
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
-        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode);
+        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
         ac.OnDamageableEnterTrigger += DealDamage;
 
         attackCollider.transform.localPosition = detail.ColliderRelativePosition;

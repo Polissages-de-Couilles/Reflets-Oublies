@@ -35,15 +35,15 @@ public class AttackManager : MonoBehaviour
         PIE = GameManager.Instance.PlayerInputEventManager;
 
         collision1.SetCollisionState(false);
-        collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker);
+        collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
         collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision2.SetCollisionState(false);
-        collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker);
+        collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
         collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision3.SetCollisionState(false);
-        collision3.Init(true, 1, true, 10, KnockbackMode.MoveAwayFromAttacker);
+        collision3.Init(true, 1, true, 10, KnockbackMode.MoveAwayFromAttacker, false);
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         PIE.PlayerInputAction.Player.Attack.performed += OnAttack;
