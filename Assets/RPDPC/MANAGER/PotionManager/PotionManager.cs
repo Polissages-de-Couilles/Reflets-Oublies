@@ -18,6 +18,8 @@ public class PotionManager : MonoBehaviour
 
     public TextMeshProUGUI text;
 
+    private UIManager uiManager;  // Référence au UIManager
+
     private void Start()
     {
         maxMaxPotion = 10;
@@ -28,42 +30,69 @@ public class PotionManager : MonoBehaviour
         player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Potion.performed += HealPlayer;
+
+        uiManager = GameManager.Instance.UIManager;
     }
 
     private void HealPlayer(InputAction.CallbackContext context)
     {
-        if(currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)
+        if (currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)
         {
             player.heal(player.maxHealth * HEAL_VALUE);
             currentPotion--;
             text.text = currentPotion.ToString();
+
+            if (uiManager != null)
+            {
+                uiManager.UpdateSlider();
+            }
         }
-        else if(currentPotion == 0)
+        else if (currentPotion == 0)
         {
             print("Saucisse pas de popo");
         }
     }
 
-    public bool RefillPotion()
+    // Temporaire, à retirer
+    public void TestHealPlayer()
     {
-        if(currentPotion <  maxPotion)
+        if (currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)
+        {
+            player.heal(player.maxHealth * HEAL_VALUE);
+            currentPotion--;
+            text.text = currentPotion.ToString();
+
+            if (uiManager != null)
+            {
+                uiManager.UpdateSlider();
+            }
+        }
+        else if (currentPotion == 0)
+        {
+            print("Saucisse pas de popo");
+        }
+    }
+
+    public void RefillPotion()
+    {
+        if (currentPotion < maxPotion)
         {
             currentPotion = maxPotion;
             text.text = currentPotion.ToString();
-            return true;
+            return;
         }
-        return false;
+        return;
     }
 
-    public bool AddMaxPotion()
+    public void AddMaxPotion()
     {
-        if(maxPotion < maxMaxPotion)
+        if (maxPotion < maxMaxPotion)
         {
             maxPotion++;
             currentPotion++;
             text.text = currentPotion.ToString();
-            return true;
+            return;
         }
-        return false;
+        return;
     }
 }

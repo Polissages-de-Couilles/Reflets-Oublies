@@ -1,37 +1,45 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject Pause;
-    public GameObject Dialogue;
-    public GameObject HUD;
-    public GameObject MainMenu;
-    public GameObject Option;
+    // UI Elements
+    [Header("UI Elements")]
+    public GameObject Pause, Dialogue, HUD, MainMenu, Option;
+    public GameObject GlobalOption, inputManetteOption, inputKeybordOption;
 
-    public string SceneGameToLoad;
-    public string SceneMenuToLoad;
+    // Scene Management
+    [Header("Scene Management")]
+    public string SceneGameToLoad, SceneMenuToLoad;
 
-    public GameObject GlobalOption;
-    public GameObject inputManetteOption;
-    public GameObject inputKeybordOption;
-
+    // Player
+    [Header("Player")]
     private PlayerDamageable player;
+    public Slider healthSlider, dashSlider;
 
-    public Slider healthSlider;
-    public Slider dashSlider;
-
+    // Effects
+    [Header("Effects")]
     public GameObject bloodEffect;
     private Image bloodEffectImage;
 
+    // Wave Animation
+    [Header("Wave Animation")]
+    public GameObject objectToSpawn, parentObject;
+    public float animationDuration = 2f;
+
+    private bool isSpawning = false;
+
     private void Start()
     {
-        player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
+        InitializePlayer();
+        InitializeBloodEffect();
+        StartCoroutine(SpawnAnimationCoroutine());
+    }
 
+    private void InitializePlayer()
+    {
+        player = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
         player.OnDamageTaken += PointDeVie;
 
         if (healthSlider != null)
@@ -41,65 +49,79 @@ public class UIManager : MonoBehaviour
         }
 
         PointDeVie(0, player.getCurrentHealth());
+    }
 
+    private void InitializeBloodEffect()
+    {
         bloodEffectImage = bloodEffect.GetComponent<Image>();
-
-        if (bloodEffectImage == null)
-        {
-            Debug.LogError("L'image sur bloodEffect n'est pas assignée ou n'est pas un composant Image.");
-            return;
-        }
-
+        if (bloodEffectImage == null) return;
         UpdateOpacity();
     }
 
     private void PointDeVie(float degatPrit, float vieActuel)
     {
         if (healthSlider != null)
-        {
             healthSlider.value = vieActuel;
-        }
 
         UpdateOpacity();
-
-        Debug.Log($"Santé actuelle du joueur : {vieActuel}/{player.getMaxHealth()}");
     }
 
-    // La fonction qui met à jour l'opacité en fonction de la santé actuelle
     public void UpdateOpacity()
     {
-        float healthPercentage = player.getCurrentHealth() / player.getMaxHealth();
-
         if (bloodEffectImage != null)
         {
-            Color currentColor = bloodEffectImage.color;
-            // Diminuer l'opacité du sang à mesure que la santé augmente
-            bloodEffectImage.color = new Color(currentColor.r, currentColor.g, currentColor.b, 1 - healthPercentage);
+            float healthPercentage = player.getCurrentHealth() / player.getMaxHealth();
+            bloodEffectImage.color = new Color(bloodEffectImage.color.r, bloodEffectImage.color.g, bloodEffectImage.color.b, 1 - healthPercentage);
         }
     }
 
-    // Cette fonction gère les dégâts dans le UIManager
-    public void InfligerDegats()
+    public void UpdateSlider()
     {
-        player.takeDamage(10);  // Exemple de dégâts infligés
+        if (healthSlider != null)
+            healthSlider.value = player.getCurrentHealth();
+
+        UpdateOpacity();
     }
 
-    // Fonction pour tester les soins sans changer la logique existante
+    public void InfligerDegats()
+    {
+        player.takeDamage(10);
+    }
+
     public void Heal()
     {
         player.heal(10);
-        if (healthSlider != null)
-        {
-            healthSlider.value = player.getCurrentHealth();  // Mettre à jour le slider
-        }
-        UpdateOpacity();  // Mettre à jour l'opacité du sang après un soin
+        UpdateSlider();
     }
 
     public void UpdateDashSlider(int dashCount)
     {
         if (dashSlider != null)
+            dashSlider.value = dashCount;
+    }
+
+    private IEnumerator SpawnAnimationCoroutine()
+    {
+        isSpawning = true;
+
+        while (true)
         {
-            dashSlider.value = dashCount;  // Mettre à jour le slider de dash
+            if (parentObject != null)
+            {
+                Vector3 spawnPosition = new Vector3(0f, -80f, parentObject.transform.position.z);
+                GameObject clone = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
+                clone.transform.SetParent(parentObject.transform);
+                clone.transform.localPosition = new Vector3(0f, -80f, clone.transform.localPosition.z);
+
+                Animator animator = clone.GetComponent<Animator>();
+                if (animator != null)
+                    animator.SetTrigger("PlayAnimation");
+
+                yield return new WaitForSeconds(animationDuration);
+                Destroy(clone);
+            }
+
+            yield return new WaitForSeconds(animationDuration);
         }
     }
 }
