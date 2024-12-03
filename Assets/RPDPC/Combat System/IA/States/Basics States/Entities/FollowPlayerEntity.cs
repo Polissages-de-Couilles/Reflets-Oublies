@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/FollowPlayer")]
-public class FollowPlayer : StateBase
+public class FollowPlayerEntity : StateEntityBase
 {
-    GameObject player;
-    GameObject parent;
     NavMeshAgent agent;
-    StateMachineManager manager;
-    [Tooltip("Does the bot have to go to the last known place even if the conditions are not met anymore")]
-    [SerializeField] bool isIntelligent;
+    bool isIntelligent;
     Vector3 lastKnownPos;
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns)
     {
-        agent = parent.GetComponent<NavMeshAgent>();
-        this.player = player;
-        this.parent = parent;
-        this.manager = manager;
+        this.isIntelligent = isIntelligent;
     }
 
     public override void ExitState()
@@ -34,7 +27,9 @@ public class FollowPlayer : StateBase
 
     public override void OnEnterState()
     {
-        agent.isStopped = false;
+        agent = parent.GetComponent<NavMeshAgent>();
+        if (agent.isStopped)
+            agent.isStopped = false;
     }
 
     public override void OnUpdate()
@@ -56,6 +51,7 @@ public class FollowPlayer : StateBase
                 manager.shouldSearchStates = true;
             }
         }
+        
         lastKnownPos = player.transform.position;
         agent.SetDestination(lastKnownPos);
     }

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9065d1cd7e778418e997496e5db2c9, type: 3}
+  m_Name: DEFAULT_STATE_RandomMoveInRange
+  m_EditorClassIdentifier: 
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    otherParts: []
+  searchCenter: {x: 26.9, y: -6.9, z: 214.02}
+  searchRange: 5
+  shouldOnlyMoveOnce: 0
+  WaitForMoveToFinishBeforeEndOrSwitchingState: 0
+  rangeWaitBetweenMoves: {x: 0, y: 1}

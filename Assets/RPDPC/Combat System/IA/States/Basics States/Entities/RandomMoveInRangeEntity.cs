@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-[CreateAssetMenu(menuName = "Game/IA/States/Base/RandomMoveInRange")]
-public class RandomMoveInRange : StateBase
+public class RandomMoveInRangeEntity : StateEntityBase
 {
-    [SerializeField] Vector3 searchCenter;
-    [SerializeField] float searchRange;
-    [SerializeField] bool shouldOnlyMoveOnce = false;
-    [SerializeField] bool WaitForMoveToFinishBeforeEndOrSwitchingState = false;
-    StateMachineManager manager;
-    GameObject parent;
+    Vector3 searchCenter;
+    float searchRange;
+    bool shouldOnlyMoveOnce;
+    bool WaitForMoveToFinishBeforeEndOrSwitchingState;
+    Vector2 rangeWaitBetweenMoves;
     NavMeshAgent agent;
     bool isPosReached;
     bool timerRunning = false;
     Vector3 currentDestination;
-    [SerializeField] Vector2 rangeWaitBetweenMoves;
 
-    public override void Init(StateMachineManager manager, GameObject parent, GameObject player)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns)
     {
-        this.manager = manager;
-        this.parent = parent;
-        agent = parent.GetComponent<NavMeshAgent>();
+        this.searchCenter = searchCenter;
+        this.searchRange = searchRange;
+        this.shouldOnlyMoveOnce = shouldOnlyMoveOnce;
+        this.WaitForMoveToFinishBeforeEndOrSwitchingState = WaitForMoveToFinishBeforeEndOrSwitchingState;
+        this.rangeWaitBetweenMoves = rangeWaitBetweenMoves;
     }
 
     public override void ExitState()
@@ -37,6 +36,7 @@ public class RandomMoveInRange : StateBase
 
     public override void OnEnterState()
     {
+        agent = parent.GetComponent<NavMeshAgent>();
         agent.isStopped = false;
         isPosReached = false;
         goToRandomPos();
@@ -85,7 +85,7 @@ public class RandomMoveInRange : StateBase
     {
         Vector3 randomPoint = searchCenter + Random.insideUnitSphere * searchRange;
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(randomPoint, out hit, searchRange, NavMesh.AllAreas))
         {   
             if (WaitForMoveToFinishBeforeEndOrSwitchingState)
             {

@@ -12,12 +12,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca2a8ab07cfb554bb418276f2571d81, type: 3}
   m_Name: DollAttack
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 10
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    otherParts: []
   attacks:
-  - delayBeforeColliderSpawn: 0
-    boxColliderRelativePosition: {x: 0, y: 0, z: 0}
-    boxColliderRelativeRotation: {x: 0, y: 0, z: 0}
-    boxColliderDimension: {x: 0, y: 0, z: 0}
-    attackDuration: 0
+  - colliders:
+    - delayBeforeColliderSpawn: 2
+      colliderShape: 0
+      ColliderRelativePosition: {x: 1, y: 0, z: 0}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 1, y: 1, z: 1}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0
+      ColliderDuration: 3
+    - delayBeforeColliderSpawn: 2
+      colliderShape: 0
+      ColliderRelativePosition: {x: 1, y: 0, z: 0}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 1, y: 1, z: 1}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0
+      ColliderDuration: 3
+    - delayBeforeColliderSpawn: 2
+      colliderShape: 0
+      ColliderRelativePosition: {x: 1, y: 0, z: 0}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 1, y: 1, z: 1}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0
+      ColliderDuration: 3
+    attackDuration: 5
+    damage: 5
+  - colliders:
+    - delayBeforeColliderSpawn: 1
+      colliderShape: 0
+      ColliderRelativePosition: {x: 1, y: 0, z: 0}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 1, y: 1, z: 1}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0
+      ColliderDuration: 3
+    - delayBeforeColliderSpawn: 2
+      colliderShape: 0
+      ColliderRelativePosition: {x: 1, y: 0, z: 0}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 1, y: 1, z: 1}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0
+      ColliderDuration: 3
+    attackDuration: 5
+    damage: 5
   doAllAttacks: 0

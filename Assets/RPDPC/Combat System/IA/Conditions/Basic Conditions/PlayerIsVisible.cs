@@ -8,18 +8,26 @@ public class PlayerIsVisible : ConditionBase
 {
     GameObject parent;
     GameObject player;
-    CapsuleCollider playerCollider;
+    CharacterController playerCollider;
     List<Vector3> directions;
+    StateManager sm;
+    [SerializeField] bool fulfillIfTalking;
     [SerializeField] float viewAngle;
     public override void Init(GameObject parent, GameObject player)
     {
         this.parent = parent;
         this.player = player;
-        playerCollider = player.GetComponent<CapsuleCollider>();
+        playerCollider = player.GetComponent<CharacterController>();
+        sm = this.player.GetComponent<StateManager>();
     }
 
     public override bool isConditionFulfilled()
     {
+        if (sm.playerState == StateManager.States.talk && !fulfillIfTalking)
+        {
+            return false;
+        }
+
         directions = new List<Vector3> {
             player.transform.position,
             player.transform.position + new Vector3(0, playerCollider.height / 2, 0),
