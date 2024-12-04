@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,8 +23,6 @@ public class UIManager : MonoBehaviour
     [Header("Effects")]
     public GameObject bloodEffect;
     private Image bloodEffectImage;
-
-    
 
     private void Start()
     {
@@ -94,6 +93,8 @@ public class UIManager : MonoBehaviour
         if (dashSlider != null)
             dashSlider.value = dashCount;
     }
+
+    
 
     
 }

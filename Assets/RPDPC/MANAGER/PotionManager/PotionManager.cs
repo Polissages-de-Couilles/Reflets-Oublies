@@ -1,9 +1,11 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class PotionManager : MonoBehaviour
 {
@@ -16,12 +18,16 @@ public class PotionManager : MonoBehaviour
     private PlayerInputEventManager PIE;
     private PlayerDamageable player;
 
+    [Header("Ui")]
+    private UIManager uiManager;  
     public TextMeshProUGUI text;
-
-    private UIManager uiManager;  // Référence au UIManager
+    public GameObject Potion;
+    private Vector3 lastPos;
 
     private void Start()
     {
+        lastPos = Potion.transform.position;
+
         maxMaxPotion = 10;
         maxPotion = currentPotion;
 
@@ -50,6 +56,7 @@ public class PotionManager : MonoBehaviour
         else if (currentPotion == 0)
         {
             print("Saucisse pas de popo");
+            Potion.transform.DOShakePosition(1, 2).OnComplete(() => Potion.transform.position = lastPos);
         }
     }
 
@@ -70,6 +77,7 @@ public class PotionManager : MonoBehaviour
         else if (currentPotion == 0)
         {
             print("Saucisse pas de popo");
+            Potion.transform.DOShakePosition(1, 2).OnComplete ( () => Potion.transform.position = lastPos);
         }
     }
 
@@ -94,5 +102,10 @@ public class PotionManager : MonoBehaviour
             return;
         }
         return;
+    }
+
+    public void doShake()
+    {
+        Potion.transform.DOShakePosition(1, 2);
     }
 }
