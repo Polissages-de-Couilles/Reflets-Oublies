@@ -43,7 +43,7 @@ public class AttackManager : MonoBehaviour
         collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision3.SetCollisionState(false);
-        collision3.Init(true, 1, true, 10, KnockbackMode.MoveAwayFromAttacker, false);
+        collision3.Init(true, 1, true, 1f, KnockbackMode.MoveAwayFromAttacker, false);
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         PIE.PlayerInputAction.Player.Attack.performed += OnAttack;
@@ -53,6 +53,9 @@ public class AttackManager : MonoBehaviour
     {
         if (nextAttackPhase == nextAttackPhaseLate && isStateCompatible(stateManager.playerState))
         {
+            collision1.hasAlreadyDealtDamage = false;
+            collision2.hasAlreadyDealtDamage = false;
+            collision3.hasAlreadyDealtDamage = false;
             stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks);
             if (nextAttackPhase == attackPhaseEnum.Phase1)
             {

@@ -6,38 +6,13 @@ using UnityEngine;
 
 public abstract class StunAndKnockbackManagerBase : MonoBehaviour
 {
-    CharacterController characterController;
-    Vector3 gravity = new Vector3(0, -9.81f, 0);
-    float knockbackDuration = 0.07f;
+    protected Vector3 gravity = new Vector3(0, -9.81f, 0);
+    protected float knockbackDuration = 0.07f;
 
     public abstract void ApplyStun(float stunDuration);
-    public void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
-    {
-        characterController = GetComponent<CharacterController>();
-        Vector3 finalPos = new Vector3();
-        switch (mode) {
-            case KnockbackMode.MoveAwayFromAttackCollision:
-                finalPos = attacked.transform.position + (collisionPosWhenTouched - attacked.transform.position).normalized * knockbackForce;
-                break;
-            case KnockbackMode.MoveAwayFromAttacker:
-                finalPos = attacked.transform.position - (attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
-                break;
-        }
-        Debug.Log("Knockback from : " + attacked.transform.position + " to " + finalPos);
-        StartCoroutine(ApplyKnockback(finalPos, attacked.transform.position));
-    }
+    public abstract void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched);
 
-    IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos)
-    {
-        float time = 0;
-        while (time < knockbackDuration) {
-            Vector3 knockback = Vector3.Lerp(Vector3.zero, finalPos - attackedPos, time/ knockbackDuration);
-            knockback += gravity;
-            characterController.Move(knockback);
-            time += Time.fixedDeltaTime;
-            yield return new WaitForFixedUpdate();
-        }
-    }
+    protected abstract IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos);
 }
 
 [Serializable]

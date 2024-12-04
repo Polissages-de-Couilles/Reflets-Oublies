@@ -15,7 +15,7 @@ public class AttackCollider : MonoBehaviour
     public float KnockForce;
     public KnockbackMode KnockbackMode;
     bool isEnemy;
-    bool hasAlreadyDealtDamage = false;
+    public bool hasAlreadyDealtDamage = false;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy)
     {
