@@ -23,18 +23,13 @@ public class UIManager : MonoBehaviour
     public GameObject bloodEffect;
     private Image bloodEffectImage;
 
-    // Wave Animation
-    [Header("Wave Animation")]
-    public GameObject objectToSpawn, parentObject;
-    public float animationDuration = 2f;
-
-    private bool isSpawning = false;
+    
 
     private void Start()
     {
         InitializePlayer();
         InitializeBloodEffect();
-        StartCoroutine(SpawnAnimationCoroutine());
+       
     }
 
     private void InitializePlayer()
@@ -100,28 +95,5 @@ public class UIManager : MonoBehaviour
             dashSlider.value = dashCount;
     }
 
-    private IEnumerator SpawnAnimationCoroutine()
-    {
-        isSpawning = true;
-
-        while (true)
-        {
-            if (parentObject != null)
-            {
-                Vector3 spawnPosition = new Vector3(0f, -80f, parentObject.transform.position.z);
-                GameObject clone = Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
-                clone.transform.SetParent(parentObject.transform);
-                clone.transform.localPosition = new Vector3(0f, -80f, clone.transform.localPosition.z);
-
-                Animator animator = clone.GetComponent<Animator>();
-                if (animator != null)
-                    animator.SetTrigger("PlayAnimation");
-
-                yield return new WaitForSeconds(animationDuration);
-                Destroy(clone);
-            }
-
-            yield return new WaitForSeconds(animationDuration);
-        }
-    }
+    
 }
