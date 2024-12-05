@@ -64,8 +64,11 @@ public class PotionManager : MonoBehaviour
     {
         if (currentPotion < maxPotion)
         {
-            currentPotion = maxPotion;
-            text.text = currentPotion.ToString();
+            if (refillPotion == true)
+            {
+                currentPotion = maxPotion;
+                text.text = currentPotion.ToString();
+            }
             return true;
         }
         return false;
@@ -75,9 +78,12 @@ public class PotionManager : MonoBehaviour
     {
         if (maxPotion < maxMaxPotion)
         {
-            maxPotion++;
-            currentPotion++;
-            text.text = currentPotion.ToString();
+            if(addMaxPotion == true)
+            {
+                maxPotion++;
+                currentPotion++;
+                text.text = currentPotion.ToString();
+            }
             return true;
         }
         return false;
