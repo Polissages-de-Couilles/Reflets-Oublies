@@ -32,6 +32,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
 
     public override void OnEndState()
     {
+        agent.isStopped = true;
     }
 
     public override void OnEnterState()
