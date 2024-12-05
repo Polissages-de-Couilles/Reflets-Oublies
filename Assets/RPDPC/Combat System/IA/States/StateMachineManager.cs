@@ -88,4 +88,9 @@ public class StateMachineManager : MonoBehaviour
     {
         setNewCurrentState(-1);
     }
+
+    public StateEntityBase getCurrentState()
+    {
+        return currentState; 
+    }
 }

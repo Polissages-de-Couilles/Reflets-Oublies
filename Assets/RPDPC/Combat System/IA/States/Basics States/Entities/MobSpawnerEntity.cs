@@ -12,7 +12,7 @@ public class MobSpawnerEntity : StateEntityBase
     Vector2 rangeTimeBetweenSpawns;
     
     bool doOnce = false;
-    List<GameObject> spawnedMobs = new List<GameObject>();
+    public List<GameObject> spawnedMobs = new List<GameObject>();
     public override void ExitState()
     {
         manager.StopCoroutine(spawnMobsEveryTimeRange());
@@ -69,6 +69,7 @@ public class MobSpawnerEntity : StateEntityBase
         {
             GameObject mob = MonoBehaviour.Instantiate(monsterPrefab);
             mob.GetComponent<NavMeshAgent>().Warp(hit.position);
+            mob.GetComponent<FromSpawnerManager>().spawner = parent;
             spawnedMobs.Add(mob);
             mob.name = mob.name + " " + spawnedMobs.IndexOf(mob);
         }
