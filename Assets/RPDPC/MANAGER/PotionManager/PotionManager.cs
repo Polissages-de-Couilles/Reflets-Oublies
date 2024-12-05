@@ -60,27 +60,6 @@ public class PotionManager : MonoBehaviour
         }
     }
 
-    // Temporaire, à retirer
-    public void TestHealPlayer()
-    {
-        if (currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)
-        {
-            player.heal(player.maxHealth * HEAL_VALUE);
-            currentPotion--;
-            text.text = currentPotion.ToString();
-
-            if (uiManager != null)
-            {
-                uiManager.UpdateSlider();
-            }
-        }
-        else if (currentPotion == 0)
-        {
-            print("Saucisse pas de popo");
-            Potion.transform.DOShakePosition(1, 2).OnComplete ( () => Potion.transform.position = lastPos);
-        }
-    }
-
     public bool RefillPotion(bool refillPotion)
     {
         if (currentPotion < maxPotion)
