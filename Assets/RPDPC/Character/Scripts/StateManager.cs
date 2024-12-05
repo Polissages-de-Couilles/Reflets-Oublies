@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class StateManager : MonoBehaviour
         talk
     }
     public States playerState;
+
+    List<GameObject> hostileEnemies = new List<GameObject>();
+    Action<bool> OnFightStateChanged;
 
     public void Start()
     {
@@ -58,5 +62,22 @@ public class StateManager : MonoBehaviour
         }
 
         SetPlayerState(States.talk);
+    }
+
+    public void addHostileEnemy(GameObject enemy)
+    {
+        Debug.Log("Add hostile State");
+        hostileEnemies.Add(enemy);
+        OnFightStateChanged?.Invoke(true);
+    }
+    public void removeHostileEnemy(GameObject enemy)
+    {
+        Debug.Log("Remove hostile State");
+        hostileEnemies.Remove(enemy);
+        if (hostileEnemies.Count == 0)
+        {
+            Debug.Log("No hostile enemies");
+            OnFightStateChanged?.Invoke(false);
+        }
     }
 }

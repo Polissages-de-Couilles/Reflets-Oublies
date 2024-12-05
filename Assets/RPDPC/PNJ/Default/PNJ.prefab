@@ -114,7 +114,9 @@ GameObject:
   - component: {fileID: 2955737354325826880}
   - component: {fileID: 6549935444014338855}
   - component: {fileID: 6640088453249554461}
+  - component: {fileID: 4595790665123575094}
   - component: {fileID: 1678943846710925677}
+  - component: {fileID: -5427339735423451665}
   m_Layer: 0
   m_Name: PNJ
   m_TagString: Untagged
@@ -211,6 +213,28 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &4595790665123575094
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052739580963973660}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &1678943846710925677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +251,25 @@ MonoBehaviour:
   range: 5
   textKey: PNJ_TALK
   worldUI: {fileID: 7858997192037120161}
-  dialogue: {fileID: 11400000, guid: 58ea56df02319cf4aa018ff2b7949888, type: 2}
+  _data: {fileID: 0}
+  _dialogueIndex: 1
+  state: 0
+--- !u!114 &-5427339735423451665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3052739580963973660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17612c2983fea741a0b3b31a69ecd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400000, guid: 67638432bbe05a240983aaaf98eb57f3, type: 2}
+  - {fileID: 11400000, guid: b4a4b957972efb84494c772713335bc5, type: 2}
+  shouldSearchStates: 1
 --- !u!1 &4623586059813969916
 GameObject:
   m_ObjectHideFlags: 0

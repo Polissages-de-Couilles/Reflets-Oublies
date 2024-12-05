@@ -10,6 +10,11 @@ public class MoneyManager : MonoBehaviour
 
     public TextMeshProUGUI text;
 
+    public void Start()
+    {
+        text.text = _playerMonney.ToString();
+    }
+
     public void ChangePlayerMonney(int monney)
     {
         _playerMonney += monney;
