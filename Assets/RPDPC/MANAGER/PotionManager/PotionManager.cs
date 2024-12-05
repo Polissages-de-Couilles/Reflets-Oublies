@@ -81,27 +81,27 @@ public class PotionManager : MonoBehaviour
         }
     }
 
-    public void RefillPotion()
+    public bool RefillPotion(bool refillPotion)
     {
         if (currentPotion < maxPotion)
         {
             currentPotion = maxPotion;
             text.text = currentPotion.ToString();
-            return;
+            return true;
         }
-        return;
+        return false;
     }
 
-    public void AddMaxPotion()
+    public bool AddMaxPotion(bool addMaxPotion)
     {
         if (maxPotion < maxMaxPotion)
         {
             maxPotion++;
             currentPotion++;
             text.text = currentPotion.ToString();
-            return;
+            return true;
         }
-        return;
+        return false;
     }
 
     public void doShake()
