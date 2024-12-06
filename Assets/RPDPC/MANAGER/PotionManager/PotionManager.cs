@@ -10,8 +10,8 @@ using UnityEngine.UIElements;
 public class PotionManager : MonoBehaviour
 {
     private int maxMaxPotion;
-    private int maxPotion;
-    public int currentPotion;
+    private int maxPotion = 1;
+    public int currentPotion = 1;
 
     private const float HEAL_VALUE = 0.5f;
 
