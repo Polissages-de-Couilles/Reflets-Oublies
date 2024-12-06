@@ -62,9 +62,9 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.T))
-        //{
-        //    Player.GetComponent<PlayerDamageable>().takeDamage(20);
-        //}
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            Player.GetComponent<PlayerDamageable>().takeDamage(20);
+        }
     }
 }

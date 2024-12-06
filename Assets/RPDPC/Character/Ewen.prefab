@@ -36,7 +36,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8788232892791349610}
   - {fileID: 918954333425076011}
@@ -63,13 +63,13 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 3
+  m_Radius: 0.75
   m_SlopeLimit: 30
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!114 &8319683430904619221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,9 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de78e1740b87c849af9b0aa95a66a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 20
-  dashTime: 0.1
-  dashCooldown: 2
+  dashForce: 40
+  dashTime: 0.15
+  dashCooldown: 1
   states: 000000000100000002000000
 --- !u!114 &2979098239838289063
 MonoBehaviour:
@@ -264,9 +264,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5117971115241216492}
     m_Modifications:
+    - target: {fileID: 3077777348809864414, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.225
+      objectReference: {fileID: 0}
     - target: {fileID: 3756494068359303675, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: m_Name
       value: Ewen Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569587776761842497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569587776761842497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569587776761842497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4569587776761842497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -308,18 +324,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4569587776761842497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4923990058971050497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: body
       value: 
       objectReference: {fileID: 5117971115241216492}
+    - target: {fileID: 4923990058971050497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: stepDistance
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4923990058971050497, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: characterController
       value: 
       objectReference: {fileID: 4653150003827487220}
+    - target: {fileID: 5366660043765404169, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6397112362966839701, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 6934387525585624001, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
     - target: {fileID: 7037392805086307981, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: body
       value: 
       objectReference: {fileID: 5117971115241216492}
+    - target: {fileID: 7037392805086307981, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
+      propertyPath: stepDistance
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 7037392805086307981, guid: 4cd8d0c3fed5f3c4a8c05ac7fbd9a05b, type: 3}
       propertyPath: characterController
       value: 

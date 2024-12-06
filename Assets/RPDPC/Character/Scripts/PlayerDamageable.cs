@@ -46,7 +46,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         }
     }
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         //StartCoroutine(testDamage());
