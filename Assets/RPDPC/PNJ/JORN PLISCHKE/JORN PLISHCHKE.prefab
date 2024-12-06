@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 8467552443564819372}
   - component: {fileID: 2973527617260607915}
   - component: {fileID: 8039039993653143413}
+  - component: {fileID: 3462976052853369820}
   m_Layer: 0
   m_Name: JORN PLISHCHKE
   m_TagString: Untagged
@@ -363,3 +364,20 @@ MonoBehaviour:
   worldUI: {fileID: 6280276704477912506}
   _data: {fileID: 11400000, guid: f55adaaab85708542837660b529c51cc, type: 2}
   _dialogueIndex: 1
+  state: 0
+--- !u!114 &3462976052853369820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4508867310858845708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d17612c2983fea741a0b3b31a69ecd44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400000, guid: 67638432bbe05a240983aaaf98eb57f3, type: 2}
+  - {fileID: 11400000, guid: b4a4b957972efb84494c772713335bc5, type: 2}
+  shouldSearchStates: 1
