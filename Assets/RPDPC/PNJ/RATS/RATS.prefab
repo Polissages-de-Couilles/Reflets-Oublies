@@ -151,6 +151,7 @@ GameObject:
   - component: {fileID: 1017988489631655323}
   - component: {fileID: 8534761473111786364}
   - component: {fileID: -4622623744477351506}
+  - component: {fileID: 5658722299351552408}
   m_Layer: 0
   m_Name: RATS
   m_TagString: Untagged
@@ -317,6 +318,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
+--- !u!114 &5658722299351552408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583257317877209676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e0c6d7a7b6f23b40bd8f67031e4d202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropRate:
+  - min: 2
+    max: 5
+    coinSO: {fileID: 11400000, guid: 0360068b692914840a45e46f235490d5, type: 2}
 --- !u!1 &6838415435285947719
 GameObject:
   m_ObjectHideFlags: 0
