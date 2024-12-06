@@ -106,6 +106,11 @@ public class AttackEntity : StateEntityBase
                 capsuleCollider.isTrigger = true;
                 break;
         }
+
+        //Pour décembre : Visuel PlaceHolder
+        attackCollider.AddComponent<MeshRenderer>();
+        attackCollider.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
+
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
         ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
         ac.OnDamageableEnterTrigger += DealDamage;

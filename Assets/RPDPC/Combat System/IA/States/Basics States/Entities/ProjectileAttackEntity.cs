@@ -93,6 +93,16 @@ public class ProjectileAttackEntity : StateEntityBase
                 capsuleCollider.isTrigger = true;
                 break;
         }
+
+        //Pour décembre : Visuel PlaceHolder
+        GameObject mesh = new GameObject("mesh");
+        mesh.transform.parent = attackCollider.transform;
+        Material material = new Material(Shader.Find("Unlit/Color"));
+        material.color = Color.red;
+        mesh.AddComponent<MeshRenderer>().material = material;
+        mesh.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Capsule.fbx");
+        mesh.transform.localScale = new Vector3(0.1f, 0, 0.3f);
+
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
         ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
         ac.OnDamageableEnterTrigger += DealDamage;

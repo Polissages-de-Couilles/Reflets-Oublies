@@ -35,14 +35,17 @@ public class AttackManager : MonoBehaviour
         PIE = GameManager.Instance.PlayerInputEventManager;
 
         collision1.SetCollisionState(false);
+        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
         collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision2.SetCollisionState(false);
+        collision2.GetComponent<MeshRenderer>().enabled = false;
         collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
         collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision3.SetCollisionState(false);
+        collision3.GetComponent<MeshRenderer>().enabled = false;
         collision3.Init(true, 1, true, 1f, KnockbackMode.MoveAwayFromAttacker, false);
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
@@ -75,9 +78,11 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase1()
     {
         Debug.Log("Attack 1");
+        collision1.GetComponent<MeshRenderer>().enabled = true;
         collision1.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase2;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision1.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase2;
 
@@ -91,9 +96,11 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase2()
     {
         Debug.Log("Attack 2");
+        collision1.GetComponent<MeshRenderer>().enabled = true;
         collision2.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase3;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision2.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase3;
 
@@ -107,9 +114,11 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase3()
     {
         Debug.Log("Attack 3");
+        collision1.GetComponent<MeshRenderer>().enabled = true;
         collision3.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase1;
         yield return new WaitForSeconds(timeBetweenAttacks);
+        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision3.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase1;
     }
