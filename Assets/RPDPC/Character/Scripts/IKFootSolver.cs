@@ -32,7 +32,7 @@ public class IKFootSolver : MonoBehaviour
 
         Ray ray = new (body.position + (body.right * footSpacing), Vector3.down + (characterController.transform.forward * (stepDistance / 1.75f) * (movementController.DistanceTravelInOneFrame <= 0 ? 0 : Mathf.Clamp01(movementController.Velocity.magnitude))));
 
-        Debug.Log(movementController.DistanceTravelInOneFrame.ToString("0.00"));
+        //Debug.Log(movementController.DistanceTravelInOneFrame.ToString("0.00"));
         if (Physics.Raycast(ray, out RaycastHit info, 10, terrainLayer.value))
         {
             distance = Vector3.Distance(info.point, currentPosition);
