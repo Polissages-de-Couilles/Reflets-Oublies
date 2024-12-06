@@ -10,6 +10,9 @@ public class settingMenu : MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
+    public GameObject OptionGameObject;
+    public GameObject MenuGameObject;
+
     Resolution[] resolutions;
     void Start()
     {
@@ -34,5 +37,11 @@ public class settingMenu : MonoBehaviour
     public void SetFullscreen (bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    public void GoMenu()
+    {
+        OptionGameObject.SetActive(false);
+        MenuGameObject.SetActive(true);
     }
 }
