@@ -149,6 +149,8 @@ GameObject:
   - component: {fileID: -4710864616724258150}
   - component: {fileID: -1397715883149726693}
   - component: {fileID: 1017988489631655323}
+  - component: {fileID: 8534761473111786364}
+  - component: {fileID: -4622623744477351506}
   m_Layer: 0
   m_Name: RATS
   m_TagString: Untagged
@@ -212,6 +214,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 142dd8bdce075314f99da5de3b46c300, type: 2}
   - {fileID: 11400000, guid: 0ce0c28dff17c214ea7b1e0927232bf8, type: 2}
   - {fileID: 11400000, guid: 957fa3523e4e902459ed0babbf850a8b, type: 2}
+  - {fileID: 11400000, guid: 8b61f4e097e18e6448e39497aed6b6d1, type: 2}
   shouldSearchStates: 1
 --- !u!195 &402069318496846280
 NavMeshAgent:
@@ -289,6 +292,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stunned: 0
   canBeStunned: 1
+--- !u!114 &8534761473111786364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583257317877209676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb33ace85819ec4fa10c9282cda625d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4622623744477351506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583257317877209676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfe3a2990c51134ba158a755695fe4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawner: {fileID: 0}
 --- !u!1 &6838415435285947719
 GameObject:
   m_ObjectHideFlags: 0

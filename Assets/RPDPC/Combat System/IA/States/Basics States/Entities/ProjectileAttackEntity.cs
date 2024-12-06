@@ -54,19 +54,22 @@ public class ProjectileAttackEntity : StateEntityBase
             {
                 if (!isStateValid())
                 {
-                    ExitState();
+                    //ExitState();
+                    manager.shouldSearchStates = true;
                     break;
                 }
             }
         }
-        finishedSpawnAllAttacks = true;
+        //finishedSpawnAllAttacks = true;
+        manager.shouldSearchStates = true;
     }
 
     IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-        GameObject attackCollider = MonoBehaviour.Instantiate(new GameObject("BotAttackCollider"), parent.transform);
+        GameObject attackCollider = new GameObject("BotAttackCollider");
+        attackCollider.transform.parent = parent.transform;
         currentAttacks.Add(attackCollider, ad);
 
         switch (detail.colliderShape)
@@ -101,12 +104,12 @@ public class ProjectileAttackEntity : StateEntityBase
         Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
         vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
 
-        yield return attackCollider.transform.DOMove(new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
+        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
 
-        if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
-        {
-            ExitState();
-        }
+        //if (currentAttacks.Count <= 1 && finishedSpawnAllAttacks)
+        //{
+        //    ExitState();
+        //}
 
         currentAttacks.Remove(attackCollider);
         if(attackCollider != null)

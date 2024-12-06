@@ -15,7 +15,7 @@ public class AttackCollider : MonoBehaviour
     public float KnockForce;
     public KnockbackMode KnockbackMode;
     bool isEnemy;
-    bool hasAlreadyDealtDamage = false;
+    public bool hasAlreadyDealtDamage = false;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy)
     {
@@ -58,10 +58,10 @@ public class AttackCollider : MonoBehaviour
         }
     }
 
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawSphere(transform.position, 1);
-    //}
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(transform.position, 1);
+    }
 
     public void SetCollisionState(bool state)
     {

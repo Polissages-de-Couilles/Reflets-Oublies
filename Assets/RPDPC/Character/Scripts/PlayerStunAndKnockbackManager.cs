@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
 {
+    protected CharacterController characterController;
+
     StateManager sm;
     List<StateManager.States> incompatibleStates = new List<StateManager.States> { StateManager.States.talk };
 
@@ -14,11 +14,23 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
         sm = GetComponent<StateManager>();
     }
 
-    new public void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
+    public override void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
     {
         if (!incompatibleStates.Contains(sm.playerState))
         {
-            base.ApplyKnockback(knockbackForce, mode, attacker, attacked, collisionPosWhenTouched);
+            characterController = GetComponent<CharacterController>();
+            Vector3 finalPos = new Vector3();
+            switch (mode)
+            {
+                case KnockbackMode.MoveAwayFromAttackCollision:
+                    finalPos = attacked.transform.position + (collisionPosWhenTouched - attacked.transform.position).normalized * knockbackForce;
+                    break;
+                case KnockbackMode.MoveAwayFromAttacker:
+                    finalPos = attacked.transform.position - (attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
+                    break;
+            }
+            Debug.Log("Knockback from : " + attacked.transform.position + " to " + finalPos);
+            StartCoroutine(ApplyKnockback(finalPos, attacked.transform.position));
         }
     }
 
@@ -27,6 +39,19 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
         if (!incompatibleStates.Contains(sm.playerState))
         {
             sm.SetPlayerState(StateManager.States.stun, stunDuration);
+        }
+    }
+
+    protected override IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos)
+    {
+        float time = 0;
+        while (time < knockbackDuration)
+        {
+            Vector3 knockback = Vector3.Lerp(Vector3.zero, finalPos - attackedPos, time / knockbackDuration);
+            knockback += gravity;
+            characterController.Move(knockback);
+            time += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate();
         }
     }
 }

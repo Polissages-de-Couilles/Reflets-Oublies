@@ -1,9 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor.PackageManager;
 using UnityEngine;
-using UnityEngine.AI;
 
 [CreateAssetMenu(menuName = "Game/IA/States/Base/FollowPlayer")]
 public class SOFollowPlayer : StateBase
