@@ -54,12 +54,14 @@ public class ProjectileAttackEntity : StateEntityBase
             {
                 if (!isStateValid())
                 {
-                    ExitState();
+                    //ExitState();
+                    manager.shouldSearchStates = true;
                     break;
                 }
             }
         }
-        finishedSpawnAllAttacks = true;
+        //finishedSpawnAllAttacks = true;
+        manager.shouldSearchStates = true;
     }
 
     IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
@@ -104,10 +106,10 @@ public class ProjectileAttackEntity : StateEntityBase
 
         yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
 
-        if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
-        {
-            ExitState();
-        }
+        //if (currentAttacks.Count <= 1 && finishedSpawnAllAttacks)
+        //{
+        //    ExitState();
+        //}
 
         currentAttacks.Remove(attackCollider);
         if(attackCollider != null)
