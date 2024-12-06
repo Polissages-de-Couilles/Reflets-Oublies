@@ -43,7 +43,8 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
         while (time < knockbackDuration)
         {
             Vector3 knockback = Vector3.Lerp(Vector3.zero, finalPos - attackedPos, time / knockbackDuration);
-            knockback += gravity;
+            //knockback += gravity;
+            knockback.y = 0;
             rb.MovePosition(attackedPos + knockback);
             time += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();

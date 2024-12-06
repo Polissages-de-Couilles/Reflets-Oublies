@@ -7,11 +7,16 @@ public class BotDeathManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<IDamageable>().OnDamageTaken += CheckBotHealth;
+        GetComponent<IDamageable>().OnDamageTaken += CallCheckBotHealth;
+    }
+
+    void CallCheckBotHealth(float damageTaken, float playerHealth)
+    {
+        StartCoroutine(CheckBotHealth(damageTaken, playerHealth));
     }
 
     // Update is called once per frame
-    void CheckBotHealth(float damageTaken, float playerHealth)
+    IEnumerator CheckBotHealth(float damageTaken, float playerHealth)
     {
         if (playerHealth <= 0)
         {
@@ -25,6 +30,11 @@ public class BotDeathManager : MonoBehaviour
                     MSE.spawnedMobs.Remove(gameObject);
                 }
             }
+
+            GetComponent<MoneyDrop>().DropMonney();
+
+            yield return new WaitForSeconds(0.5f);
+
             Destroy(gameObject);
         }
     }
