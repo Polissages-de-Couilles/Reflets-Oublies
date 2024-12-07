@@ -24,6 +24,11 @@ public class PotionManager : MonoBehaviour
     public GameObject Potion;
     private Vector3 lastPos;
 
+    private void Awake()
+    {
+        currentPotion = 1;
+    }
+
     private void Start()
     {
         lastPos = Potion.transform.position;

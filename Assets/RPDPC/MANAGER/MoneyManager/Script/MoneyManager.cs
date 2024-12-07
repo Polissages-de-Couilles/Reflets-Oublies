@@ -6,10 +6,15 @@ using UnityEngine;
 public class MoneyManager : MonoBehaviour 
 {
     public int PlayerMonney => _playerMonney;
-    [SerializeField] private int _playerMonney = 100;
+    [SerializeField] private int _playerMonney;
 
     public TextMeshProUGUI text;
 
+
+    private void Awake()
+    {
+        _playerMonney = 100;
+    }
     public void Start()
     {
         text.text = _playerMonney.ToString();
