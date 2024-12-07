@@ -37,14 +37,14 @@ public class UIPanel : MonoBehaviour
         map.actionTriggered += CheckController;
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         OnNewController += OnControllerChange;
         Debug.Log(name + " is Enable");
         OnControllerChange(currentController);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         OnNewController -= OnControllerChange;
         UINavigation.SetSelectedGameObject(null);

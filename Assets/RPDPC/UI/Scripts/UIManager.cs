@@ -1,6 +1,8 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -28,7 +30,18 @@ public class UIManager : MonoBehaviour
     {
         InitializePlayer();
         InitializeBloodEffect();
-       
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Pause.performed += OnPause;
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Disable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Enable();
+    }
+
+    private void OnPause(InputAction.CallbackContext context)
+    {
+        Debug.Log(Pause.activeSelf);
+        if (!Pause.activeSelf)
+        {
+            Pause.SetActive(true);
+        }
     }
 
     private void InitializePlayer()

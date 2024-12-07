@@ -128,17 +128,29 @@ namespace PDC.Localization
             var words = GetWords(text);
             foreach (var word in words)
             {
+                Debug.Log(word);
                 if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()))
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
-                    text = text.Replace(word, $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                    if (text.Contains($" {word}"))
+                    {
+                        text = text.Replace($" {word}", $" </font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                    }
+                    else if (text.Contains($"{word} "))
+                    {
+                        text = text.Replace($"{word} ", $"</font>{word}<font=rpdpcfont> ", StringComparison.OrdinalIgnoreCase);
+                    }
+                    else
+                    {
+                        text = text.Replace($"{word}", $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                    }
                 }
                 
             }
-            //Debug.Log(text);
+            Debug.Log(text);
             return text;
         }
 
