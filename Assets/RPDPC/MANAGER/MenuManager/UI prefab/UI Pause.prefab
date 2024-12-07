@@ -240,6 +240,7 @@ GameObject:
   - component: {fileID: 2821127634050028041}
   - component: {fileID: 8810953426498748881}
   - component: {fileID: 7821016509948069334}
+  - component: {fileID: 266850423517306566}
   m_Layer: 5
   m_Name: PauseText
   m_TagString: Untagged
@@ -296,8 +297,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Pause
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 0b9b376e66c314846a67af8e70da44d0, type: 2}
-  m_sharedMaterial: {fileID: -5650333416619337392, guid: 0b9b376e66c314846a67af8e70da44d0, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bdf3cb05c30694b4986df7cc19ce3efa, type: 2}
+  m_sharedMaterial: {fileID: 7025892178517372551, guid: bdf3cb05c30694b4986df7cc19ce3efa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -363,6 +364,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &266850423517306566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2941383796517435139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: UI_TITLE_PAUSE
 --- !u!1 &3001711794650331037
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,6 +718,7 @@ GameObject:
   - component: {fileID: 6724058787203266241}
   - component: {fileID: 4368020863269760811}
   - component: {fileID: 5658240999748371738}
+  - component: {fileID: 2617245835893672997}
   m_Layer: 5
   m_Name: ContinuerText
   m_TagString: Untagged
@@ -827,6 +842,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2617245835893672997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7307010272248377170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: UI_BUTTON_CONTINUE
 --- !u!1 &7387891168386199133
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,6 +987,7 @@ GameObject:
   - component: {fileID: 7642102916467625975}
   - component: {fileID: 3981375763867914347}
   - component: {fileID: 2379939052522202645}
+  - component: {fileID: 7263280943134052837}
   m_Layer: 5
   m_Name: OptionText
   m_TagString: Untagged
@@ -1082,6 +1111,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7263280943134052837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387895453195571619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: UI_BUTTON_OPTION
 --- !u!1 &8387055349255397937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1135,7 @@ GameObject:
   - component: {fileID: 7448160366199107231}
   - component: {fileID: 5455279858887952013}
   - component: {fileID: 6195894862272144826}
+  - component: {fileID: 1496916868141971249}
   m_Layer: 5
   m_Name: QuitterText
   m_TagString: Untagged
@@ -1216,6 +1259,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1496916868141971249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8387055349255397937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fbe5acc87abfb40bee466efb09e9f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _key: UI_BUTTON_QUIT
 --- !u!1 &8571407224364870832
 GameObject:
   m_ObjectHideFlags: 0
