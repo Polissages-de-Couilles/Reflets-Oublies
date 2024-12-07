@@ -4,6 +4,7 @@ using UnityEngine;
 using PDC.Localization;
 using MeetAndTalk;
 using PDC;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
@@ -57,6 +58,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject AudioDialogueGameObject => _audioDialogueGameObject;
     [SerializeField] GameObject _audioDialogueGameObject;
+
+    public InputActionAsset InputAction => _inputAction;
+    [SerializeField] InputActionAsset _inputAction;
 
     //Uniquement là à but de test, ne pas utiliser pour la version final
 
