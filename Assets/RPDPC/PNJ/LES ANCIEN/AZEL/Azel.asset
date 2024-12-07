@@ -69,20 +69,20 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: aeaca2ee-7ec1-4197-8eb3-8e754c9d7de0
     TargetNodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
+  - BaseNodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
+    TargetNodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
   - BaseNodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
     TargetNodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
+  - BaseNodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
+    TargetNodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
   - BaseNodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
     TargetNodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
   - BaseNodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
     TargetNodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
   - BaseNodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
     TargetNodeGuid: e4ca9f82-1059-4b1a-8bd2-63e8531e7c1c
-  - BaseNodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
-    TargetNodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
   - BaseNodeGuid: e4ca9f82-1059-4b1a-8bd2-63e8531e7c1c
     TargetNodeGuid: 91b56785-aad6-4471-b77d-a5df43c565ac
-  - BaseNodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
-    TargetNodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
@@ -101,25 +101,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_1
-    Duration: 0
-  - NodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
-    Position: {x: 859, y: 101}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -1388802221408870107}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_2
+      LanguageGenericType: AZEL_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
     Position: {x: 1082, y: 101}
@@ -137,7 +119,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_3
+      LanguageGenericType: AZEL_DIALOGUE_1_3
     Duration: 0
   - NodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
     Position: {x: 1296, y: 101}
@@ -155,7 +137,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_4
+      LanguageGenericType: AZEL_DIALOGUE_1_4
     Duration: 0
   - NodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
     Position: {x: 1519, y: 101}
@@ -173,7 +155,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_5
+      LanguageGenericType: AZEL_DIALOGUE_1_5
     Duration: 0
   - NodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
     Position: {x: 1737, y: 101}
@@ -191,7 +173,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_6
+      LanguageGenericType: AZEL_DIALOGUE_1_6
     Duration: 0
   - NodeGuid: e4ca9f82-1059-4b1a-8bd2-63e8531e7c1c
     Position: {x: 1976, y: 101}
@@ -209,7 +191,25 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: AZEL_DIALOGUE_7
+      LanguageGenericType: AZEL_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
+    Position: {x: 865, y: 101}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_DIALOGUE_1_2
     Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:

@@ -1,0 +1,555 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3245006656811280036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b34a9fd3-0c15-4a31-99d4-9426928486e1
+    TargetNodeGuid: 2c2305c5-873b-49de-bbc7-d0988049b8c3
+  - BaseNodeGuid: 2c2305c5-873b-49de-bbc7-d0988049b8c3
+    TargetNodeGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+  - BaseNodeGuid: d73821ff-edb1-4257-afef-f228211b32cc
+    TargetNodeGuid: f5590088-c8f5-4c00-ae9d-843bb9f2d9b6
+  - BaseNodeGuid: f5590088-c8f5-4c00-ae9d-843bb9f2d9b6
+    TargetNodeGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+  - BaseNodeGuid: 52b84aa4-29e1-44cf-99bc-d8d0cbd0dacb
+    TargetNodeGuid: 63c88a9a-5300-4409-8311-2a5f3d97399e
+  - BaseNodeGuid: 63c88a9a-5300-4409-8311-2a5f3d97399e
+    TargetNodeGuid: ef1e7908-966c-4cb3-bddc-f238a20bae37
+  - BaseNodeGuid: ef1e7908-966c-4cb3-bddc-f238a20bae37
+    TargetNodeGuid: 8b027fc5-2e89-44e4-9688-27bb047156da
+  - BaseNodeGuid: 2a41e915-acb3-4732-9817-40856403a274
+    TargetNodeGuid: 7ddfb2a3-0a88-4a6c-8860-e6180741ef63
+  - BaseNodeGuid: 7ddfb2a3-0a88-4a6c-8860-e6180741ef63
+    TargetNodeGuid: 93b5b2f7-9825-4222-b09c-3edc13c05706
+  - BaseNodeGuid: 93b5b2f7-9825-4222-b09c-3edc13c05706
+    TargetNodeGuid: 495a6b7b-afe3-4d08-abdd-1f87f45e6c3a
+  - BaseNodeGuid: 495a6b7b-afe3-4d08-abdd-1f87f45e6c3a
+    TargetNodeGuid: 159526a6-da03-4f4d-9cbf-6f93edce08c2
+  - BaseNodeGuid: 159526a6-da03-4f4d-9cbf-6f93edce08c2
+    TargetNodeGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+  - BaseNodeGuid: 886c737d-b32f-40f3-84bd-322dea83d079
+    TargetNodeGuid: 9c5316a3-c860-41cb-a2b0-9fac845b0fa8
+  - BaseNodeGuid: 9c5316a3-c860-41cb-a2b0-9fac845b0fa8
+    TargetNodeGuid: 4c3dff1a-2755-4ca0-a54c-648931b2fbf3
+  - BaseNodeGuid: 4c3dff1a-2755-4ca0-a54c-648931b2fbf3
+    TargetNodeGuid: c84a156d-fdcd-44ce-bf00-dd022f9ba439
+  - BaseNodeGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+    TargetNodeGuid: f5c0f48a-e580-4294-b486-693c5f3b146c
+  - BaseNodeGuid: f5c0f48a-e580-4294-b486-693c5f3b146c
+    TargetNodeGuid: f9095775-809e-4768-908e-abd1238f197c
+  - BaseNodeGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+    TargetNodeGuid: 52b84aa4-29e1-44cf-99bc-d8d0cbd0dacb
+  - BaseNodeGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+    TargetNodeGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+  - BaseNodeGuid: 8b027fc5-2e89-44e4-9688-27bb047156da
+    TargetNodeGuid: 2a41e915-acb3-4732-9817-40856403a274
+  - BaseNodeGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+    TargetNodeGuid: 886c737d-b32f-40f3-84bd-322dea83d079
+  - BaseNodeGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+    TargetNodeGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+  - BaseNodeGuid: c84a156d-fdcd-44ce-bf00-dd022f9ba439
+    TargetNodeGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+  - BaseNodeGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+    TargetNodeGuid: d73821ff-edb1-4257-afef-f228211b32cc
+  - BaseNodeGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+    TargetNodeGuid: 5f8403be-cae5-473d-91da-f30fdc69df91
+  DialogueChoiceNodeDatas:
+  - NodeGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+    Position: {x: 1209, y: 321}
+    DialogueNodePorts:
+    - PortGuid: 05ca7bc3-ae45-4083-bb76-a01ce96d4d3c
+      InputGuid: 52b84aa4-29e1-44cf-99bc-d8d0cbd0dacb
+      OutputGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_5C_1
+    - PortGuid: 94f1053d-89dc-4122-adbe-06bd538de41c
+      InputGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+      OutputGuid: f417b40e-d51c-4e2b-9626-0907a5305ef4
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_5C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 8b027fc5-2e89-44e4-9688-27bb047156da
+    Position: {x: 2262, y: -53}
+    DialogueNodePorts:
+    - PortGuid: 02f10266-d4bc-4ae9-92e7-467b288e6cb5
+      InputGuid: 2a41e915-acb3-4732-9817-40856403a274
+      OutputGuid: 8b027fc5-2e89-44e4-9688-27bb047156da
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_11C_1
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+    Position: {x: 3735, y: 321}
+    DialogueNodePorts:
+    - PortGuid: 26c819a2-0123-44da-9e74-e133789a6c9a
+      InputGuid: 886c737d-b32f-40f3-84bd-322dea83d079
+      OutputGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_17C_1
+    - PortGuid: 9aebc30f-3cf8-4f54-883d-a8e87a6ca69c
+      InputGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+      OutputGuid: b1a3203a-d759-4307-b7c7-c8c82d111f9c
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_2C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: c84a156d-fdcd-44ce-bf00-dd022f9ba439
+    Position: {x: 4827, y: -53}
+    DialogueNodePorts:
+    - PortGuid: 89e244a8-0d00-4d64-a1f1-b8aca720fd98
+      InputGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+      OutputGuid: c84a156d-fdcd-44ce-bf00-dd022f9ba439
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_21C_1
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+    Position: {x: 212, y: -53}
+    DialogueNodePorts:
+    - PortGuid: f0a758a3-09c0-47d1-95ae-f412cebb8083
+      InputGuid: d73821ff-edb1-4257-afef-f228211b32cc
+      OutputGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_2C_1
+    - PortGuid: 65aa39ff-49ed-4010-b2b2-c29e082b43bf
+      InputGuid: 5f8403be-cae5-473d-91da-f30fdc69df91
+      OutputGuid: 87f4cf75-f642-4c07-a7e5-506f1199dbc1
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: MILLIE_DIALOGUE_1_2C_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 11400000, guid: f33057471ba7cb745bb1196124241ef4, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_2
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: 2c2305c5-873b-49de-bbc7-d0988049b8c3
+    Position: {x: -11, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: d73821ff-edb1-4257-afef-f228211b32cc
+    Position: {x: 733, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: f5590088-c8f5-4c00-ae9d-843bb9f2d9b6
+    Position: {x: 949, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 52b84aa4-29e1-44cf-99bc-d8d0cbd0dacb
+    Position: {x: 1562, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: 63c88a9a-5300-4409-8311-2a5f3d97399e
+    Position: {x: 1791, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: ef1e7908-966c-4cb3-bddc-f238a20bae37
+    Position: {x: 2033, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: 2a41e915-acb3-4732-9817-40856403a274
+    Position: {x: 2588, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_12
+    Duration: 0
+  - NodeGuid: 7ddfb2a3-0a88-4a6c-8860-e6180741ef63
+    Position: {x: 2810, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_13
+    Duration: 0
+  - NodeGuid: 93b5b2f7-9825-4222-b09c-3edc13c05706
+    Position: {x: 3032, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_14
+    Duration: 0
+  - NodeGuid: 495a6b7b-afe3-4d08-abdd-1f87f45e6c3a
+    Position: {x: 3253, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_15
+    Duration: 0
+  - NodeGuid: 159526a6-da03-4f4d-9cbf-6f93edce08c2
+    Position: {x: 3489, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_16
+    Duration: 0
+  - NodeGuid: 886c737d-b32f-40f3-84bd-322dea83d079
+    Position: {x: 4071, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_18
+    Duration: 0
+  - NodeGuid: 9c5316a3-c860-41cb-a2b0-9fac845b0fa8
+    Position: {x: 4319, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_19
+    Duration: 0
+  - NodeGuid: 4c3dff1a-2755-4ca0-a54c-648931b2fbf3
+    Position: {x: 4570, y: -53}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_20
+    Duration: 0
+  - NodeGuid: 65accfae-b63c-4541-ae89-ccc7664214b5
+    Position: {x: 5165, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: f5c0f48a-e580-4294-b486-693c5f3b146c
+    Position: {x: 5418, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 11400000, guid: f33057471ba7cb745bb1196124241ef4, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_DIALOGUE_1_7
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f9095775-809e-4768-908e-abd1238f197c
+    Position: {x: 5683, y: 321}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  - NodeGuid: 5f8403be-cae5-473d-91da-f30fdc69df91
+    Position: {x: 542, y: 295}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b34a9fd3-0c15-4a31-99d4-9426928486e1
+    Position: {x: -144, y: -53}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: Millie
+  m_EditorClassIdentifier: 
+  _character: {fileID: 4701458107152354234}
+  _characterNameKey: MILLIE_NAME
+  _allDialogue:
+  - {fileID: -3245006656811280036}
+--- !u!114 &4701458107152354234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: MILLIE
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: MILLIE_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
