@@ -12,7 +12,7 @@ public class StateMachineManager : MonoBehaviour
     List<StateEntityBase> stateEntities = new List<StateEntityBase>();
     StateEntityBase currentState;
 
-    public bool shouldSearchStates = true;
+    [HideInInspector] public bool shouldSearchStates = true;
 
     // Start is called before the first frame update
     void Start()
@@ -92,5 +92,18 @@ public class StateMachineManager : MonoBehaviour
     public StateEntityBase getCurrentState()
     {
         return currentState; 
+    }
+
+    public StateEntityBase GetSpawnState() //Sale mais vas y pour décembre ça ira
+    {
+        foreach (StateEntityBase seb in stateEntities)
+        {
+            if (seb is MobSpawnerEntity)
+            {
+                return seb;
+            }
+        }
+
+        return null;
     }
 }
