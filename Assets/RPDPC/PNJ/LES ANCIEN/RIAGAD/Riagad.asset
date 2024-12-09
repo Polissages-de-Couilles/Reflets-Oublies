@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: Riagad
+  m_EditorClassIdentifier: 
+  _character: {fileID: 3480064495466724221}
+  _characterNameKey: RIAGAD_NAME
+  _allDialogue:
+  - {fileID: 566405886339149921}
+--- !u!114 &566405886339149921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 0f839ac6-e45b-4169-84cf-d8103219a9b7
+    TargetNodeGuid: 4636225d-cb03-423d-8d5e-1c524f0cb854
+  - BaseNodeGuid: c185c077-e7d0-4683-8500-41ceced7b083
+    TargetNodeGuid: 0f839ac6-e45b-4169-84cf-d8103219a9b7
+  - BaseNodeGuid: 4b2adc87-cceb-4249-96fa-da75f46457f4
+    TargetNodeGuid: c185c077-e7d0-4683-8500-41ceced7b083
+  - BaseNodeGuid: 767d98b7-0b82-4c7e-93c9-766a1d818f76
+    TargetNodeGuid: 4b2adc87-cceb-4249-96fa-da75f46457f4
+  - BaseNodeGuid: 4636225d-cb03-423d-8d5e-1c524f0cb854
+    TargetNodeGuid: 566fd4ba-6753-42e3-8774-586d1340e1ec
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 4b2adc87-cceb-4249-96fa-da75f46457f4
+    Position: {x: 162, y: 165}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: c185c077-e7d0-4683-8500-41ceced7b083
+    Position: {x: 389, y: 165}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 0f839ac6-e45b-4169-84cf-d8103219a9b7
+    Position: {x: 609, y: 165}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 4636225d-cb03-423d-8d5e-1c524f0cb854
+    Position: {x: 829, y: 165}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_DIALOGUE_1_4
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 566fd4ba-6753-42e3-8774-586d1340e1ec
+    Position: {x: 1075, y: 165}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 767d98b7-0b82-4c7e-93c9-766a1d818f76
+    Position: {x: 50, y: 165}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &3480064495466724221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: RIAGAD
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: RIAGAD_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
