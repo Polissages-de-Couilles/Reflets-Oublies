@@ -1,0 +1,222 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
+  m_Name: RATS_MITRAILLETTE_STATE_ProjectileAttack
+  m_EditorClassIdentifier: 
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 95bc4428cd96ac749bbf3c1001f3db79, type: 2}
+    otherParts:
+    - logicalGate: 0
+      secondCondition: {fileID: 11400000, guid: e4fb48cad55afe04d99f22d7ab1783b3, type: 2}
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 1d4fc190fcd10b442a239e06714b1c42, type: 2}
+    otherParts:
+    - logicalGate: 0
+      secondCondition: {fileID: 11400000, guid: e4fb48cad55afe04d99f22d7ab1783b3, type: 2}
+  isHostileState: 1
+  attacks:
+  - colliders:
+    - delayBeforeColliderSpawn: 0
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0.5
+      distance: 20
+      speed: 8
+      animCurv:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 1
+    - delayBeforeColliderSpawn: 0.4
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0.5
+      distance: 20
+      speed: 8
+      animCurv:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 1
+    - delayBeforeColliderSpawn: 0.8
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0.5
+      distance: 20
+      speed: 8
+      animCurv:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 1
+    - delayBeforeColliderSpawn: 1.2
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0.5
+      distance: 20
+      speed: 8
+      animCurv:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 1
+    - delayBeforeColliderSpawn: 1.6
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 0.5
+      distance: 20
+      speed: 8
+      animCurv:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 0
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 1
+    attackDuration: 3
+    damage: 2
+  doAllAttacks: 1

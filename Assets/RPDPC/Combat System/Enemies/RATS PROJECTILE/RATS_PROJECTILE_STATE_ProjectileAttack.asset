@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
   m_Name: RATS_PROJECTILE_STATE_ProjectileAttack
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 2
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: f2be577dcb5febc439772ea3ff590efb, type: 2}
+    otherParts:
+    - logicalGate: 0
+      secondCondition: {fileID: 11400000, guid: e4fb48cad55afe04d99f22d7ab1783b3, type: 2}
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: e4fb48cad55afe04d99f22d7ab1783b3, type: 2}
     otherParts:
     - logicalGate: 0
       secondCondition: {fileID: 11400000, guid: e4fb48cad55afe04d99f22d7ab1783b3, type: 2}
@@ -24,7 +29,7 @@ MonoBehaviour:
   - colliders:
     - delayBeforeColliderSpawn: 0
       colliderShape: 1
-      ColliderRelativePosition: {x: 0, y: 0, z: 0}
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
       ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
       BoxColliderDimension: {x: 0, y: 0, z: 0}
       CapsuleColliderHeight: 0

@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ca2a8ab07cfb554bb418276f2571d81, type: 3}
-  m_Name: RATS_CAC_STATE_Attack
+  m_Name: RATS_BOURIN_STATE_Attack
   m_EditorClassIdentifier: 
   priority: 2
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 8e56c429317ce64408672754a0f771b8, type: 2}
+    baseCondition: {fileID: 11400000, guid: 902ab3aa66a4b5e498805d48a2ec5624, type: 2}
     otherParts: []
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 2c7fd01315971994987dfffc609ab02c, type: 2}
+    baseCondition: {fileID: 11400000, guid: 5f28731c3f5faba4ca9bb0cafa838ace, type: 2}
     otherParts: []
   isHostileState: 1
   attacks:
@@ -30,13 +30,13 @@ MonoBehaviour:
       BoxColliderDimension: {x: 0, y: 0, z: 0}
       CapsuleColliderHeight: 0
       SphereAndCapsuleColliderRadius: 1
-      ColliderDuration: 3
+      ColliderDuration: 2
       DoesStun: 1
       StunDuration: 0.5
       DoesKnockback: 1
-      KnockForce: 0.5
+      KnockForce: 2
       KnockbackMode: 0
-    attackDuration: 4
-    damage: 10
+    attackDuration: 2
+    damage: 5
     ShouldOnlyTookDamageFromOneCollision: 0
   doAllAttacks: 0
