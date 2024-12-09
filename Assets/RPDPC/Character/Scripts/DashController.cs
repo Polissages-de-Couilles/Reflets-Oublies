@@ -41,10 +41,10 @@ public class DashController : MonoBehaviour
         PIE.PlayerInputAction.Player.Dash.performed += OnDash;
         StartCoroutine(RechargeDash());
 
-        if (GameManager.Instance.UIManager != null)
-        {
-            GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
-        }
+        //if (GameManager.Instance.UIManager != null)
+        //{
+        //    GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
+        //}
     }
 
     private void OnDash(InputAction.CallbackContext context)
@@ -64,7 +64,7 @@ public class DashController : MonoBehaviour
 
         if (GameManager.Instance.UIManager != null)
         {
-            GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
+            GameManager.Instance.UIManager.UpdateDashSlider(-1f);
         }
 
             Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
@@ -88,13 +88,21 @@ public class DashController : MonoBehaviour
         {
             if(dashCount < dashMax)
             {
-                yield return new WaitForSeconds(dashCooldown);
-                dashCount++;
-
-                if (GameManager.Instance.UIManager != null)
+                
+                for (int i = 0; i < 100; i++)
                 {
-                    GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
+                    yield return new WaitForSeconds(dashCooldown / 100);
+                    if(i > 10)
+                    {
+                        if (GameManager.Instance.UIManager != null)
+                        {
+                            GameManager.Instance.UIManager.UpdateDashSlider(1f/90f);
+                        }
+                    }
                 }
+
+                //yield return new WaitForSeconds(dashCooldown);
+                dashCount++;
             }
             yield return null;
         }

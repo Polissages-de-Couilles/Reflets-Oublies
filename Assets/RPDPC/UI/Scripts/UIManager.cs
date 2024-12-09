@@ -101,13 +101,19 @@ public class UIManager : MonoBehaviour
         UpdateSlider();
     }
 
-    public void UpdateDashSlider(int dashCount)
+    public void UpdateDashSlider(float value)
     {
         if (dashSlider != null)
-            dashSlider.value = dashCount;
+        {
+            dashSlider.value += value;
+        }
     }
 
-    
-
-    
+    public void SetDashSlider(float value)
+    {
+        if (dashSlider != null)
+        {
+            dashSlider.value = value;
+        }
+    }
 }
