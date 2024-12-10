@@ -15,12 +15,14 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 33ac0b44-5987-4ec8-b8da-147ef3069f6e
     TargetNodeGuid: 0c50ddbb-6b4f-40f5-ac0b-cb93fcdfabd5
+  - BaseNodeGuid: 8084ffef-233e-4ed2-892b-f9b56bcf3207
+    TargetNodeGuid: 5356cb31-de98-4b58-991b-66d97e4166bd
   - BaseNodeGuid: 0c50ddbb-6b4f-40f5-ac0b-cb93fcdfabd5
     TargetNodeGuid: ed0e53d3-4353-4dc8-bb74-926ecf91f8f9
   - BaseNodeGuid: 41e84b3b-8660-4e64-b4c0-0a6b741a99cd
     TargetNodeGuid: b035a209-4e93-4381-a1c6-1f590b4c18e7
   - BaseNodeGuid: 878dbbe8-1ceb-454e-834a-93ce502db13a
-    TargetNodeGuid: 5356cb31-de98-4b58-991b-66d97e4166bd
+    TargetNodeGuid: 8084ffef-233e-4ed2-892b-f9b56bcf3207
   - BaseNodeGuid: b9736825-d911-4fe6-aba1-1633c85ba2e7
     TargetNodeGuid: d7dcaae2-d812-4485-85b4-fa9ea68c7a0b
   - BaseNodeGuid: d7dcaae2-d812-4485-85b4-fa9ea68c7a0b
@@ -53,8 +55,6 @@ MonoBehaviour:
     TargetNodeGuid: 031e6ebb-0264-4a7f-aae7-765cb509cd5b
   - BaseNodeGuid: 9a890625-cfc1-42a6-aa61-38f8af163ab6
     TargetNodeGuid: 031e6ebb-0264-4a7f-aae7-765cb509cd5b
-  - BaseNodeGuid: 4e74f2c0-3e24-4634-962d-47c5c3ce261c
-    TargetNodeGuid: fd53360e-6ea3-47c5-a71c-249e52011b47
   - BaseNodeGuid: 77619b55-c017-40ca-957c-72f731da3b7a
     TargetNodeGuid: fbe9eb36-0a62-478c-a5f2-8c52cb7cd884
   - BaseNodeGuid: 58ae4b63-8293-4d4f-8e9b-760a33d05cf5
@@ -69,8 +69,6 @@ MonoBehaviour:
     TargetNodeGuid: eaea22d2-6f6b-4836-b781-b7572872fe83
   - BaseNodeGuid: f01086ee-2acc-4be8-91bb-96e71a086b67
     TargetNodeGuid: 94c87371-a276-4fab-a584-ee2de7c8b3dc
-  - BaseNodeGuid: fbe9eb36-0a62-478c-a5f2-8c52cb7cd884
-    TargetNodeGuid: fd53360e-6ea3-47c5-a71c-249e52011b47
   - BaseNodeGuid: c2e2d874-d26b-4aad-8002-49f55ff4a5e1
     TargetNodeGuid: e1cc743a-b87e-4db1-9f96-b50338da70a1
   - BaseNodeGuid: eaea22d2-6f6b-4836-b781-b7572872fe83
@@ -105,9 +103,15 @@ MonoBehaviour:
     TargetNodeGuid: b5d65676-e944-4989-ad79-ec7f1231b165
   - BaseNodeGuid: 08115f57-a4b0-4d34-b060-7b3adc48fe6c
     TargetNodeGuid: dbe869f4-3c89-4045-933d-3b391b0dd8d9
+  - BaseNodeGuid: 6746f82b-ac24-42f9-8801-73585de41301
+    TargetNodeGuid: fd53360e-6ea3-47c5-a71c-249e52011b47
+  - BaseNodeGuid: fbe9eb36-0a62-478c-a5f2-8c52cb7cd884
+    TargetNodeGuid: 6746f82b-ac24-42f9-8801-73585de41301
+  - BaseNodeGuid: 4e74f2c0-3e24-4634-962d-47c5c3ce261c
+    TargetNodeGuid: 6746f82b-ac24-42f9-8801-73585de41301
   DialogueChoiceNodeDatas:
   - NodeGuid: ed0e53d3-4353-4dc8-bb74-926ecf91f8f9
-    Position: {x: 538.4, y: 224}
+    Position: {x: 538, y: 224}
     DialogueNodePorts:
     - PortGuid: 216e7e2d-d6e2-48a9-991d-8fed6c843466
       InputGuid: 76ee8285-b5bc-471b-b564-c187cef7460b
@@ -135,7 +139,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_2
     Duration: 0
   - NodeGuid: b035a209-4e93-4381-a1c6-1f590b4c18e7
-    Position: {x: 1171.2, y: 524}
+    Position: {x: 1171, y: 524}
     DialogueNodePorts:
     - PortGuid: 9cf8a545-d8aa-4aaa-a312-5f7c162d7b0d
       InputGuid: b9736825-d911-4fe6-aba1-1633c85ba2e7
@@ -163,7 +167,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_4
     Duration: 0
   - NodeGuid: 3c947f81-c8fd-4c56-9c9e-150d807e9b2c
-    Position: {x: 2752.8, y: 224}
+    Position: {x: 2753, y: 224}
     DialogueNodePorts:
     - PortGuid: 8f4b6363-6a9b-4056-9102-a4dd165a73f6
       InputGuid: cda3619c-d9f8-418a-896e-7b02204b412a
@@ -191,7 +195,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_10
     Duration: 0
   - NodeGuid: cacf51a9-4bc8-4ad0-bcb5-c3284a74330e
-    Position: {x: 3568.8, y: 224}
+    Position: {x: 3569, y: 224}
     DialogueNodePorts:
     - PortGuid: 988af894-f79f-4b1e-b1c8-c12415345b0c
       InputGuid: 0311b453-643a-417c-b4f5-310c7594e929
@@ -225,7 +229,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_4
     Duration: 0
   - NodeGuid: 4cdda225-11d2-459f-bacd-1f52e40835c0
-    Position: {x: 4420.8, y: 224}
+    Position: {x: 4421, y: 224}
     DialogueNodePorts:
     - PortGuid: 1f77f1c0-3760-4df0-8511-8e3f6eca2ac4
       InputGuid: 2ecbaa86-7351-4576-ace5-bc2b9e7d5e5a
@@ -247,7 +251,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_12
     Duration: 0
   - NodeGuid: 031e6ebb-0264-4a7f-aae7-765cb509cd5b
-    Position: {x: 6410.4, y: 224}
+    Position: {x: 6410, y: 224}
     DialogueNodePorts:
     - PortGuid: f8134423-6d25-4d30-b015-8da393ba7a66
       InputGuid: b5d65676-e944-4989-ad79-ec7f1231b165
@@ -275,7 +279,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_15
     Duration: 0
   - NodeGuid: 08115f57-a4b0-4d34-b060-7b3adc48fe6c
-    Position: {x: 6410.4, y: -149.6}
+    Position: {x: 6410, y: -150}
     DialogueNodePorts:
     - PortGuid: ee560a0a-2190-4993-bc94-2154a42ed3cc
       InputGuid: b5d65676-e944-4989-ad79-ec7f1231b165
@@ -322,7 +326,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: 41e84b3b-8660-4e64-b4c0-0a6b741a99cd
-    Position: {x: 920.8, y: 524}
+    Position: {x: 921, y: 524}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -340,7 +344,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_3
     Duration: 0
   - NodeGuid: 878dbbe8-1ceb-454e-834a-93ce502db13a
-    Position: {x: 1568.8, y: 732}
+    Position: {x: 1569, y: 732}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -358,7 +362,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_5
     Duration: 0
   - NodeGuid: b9736825-d911-4fe6-aba1-1633c85ba2e7
-    Position: {x: 1568.8, y: 337.6}
+    Position: {x: 1569, y: 338}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -376,7 +380,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_6
     Duration: 0
   - NodeGuid: d7dcaae2-d812-4485-85b4-fa9ea68c7a0b
-    Position: {x: 1784.8, y: 337.6}
+    Position: {x: 1785, y: 338}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -394,7 +398,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_7
     Duration: 0
   - NodeGuid: 76ee8285-b5bc-471b-b564-c187cef7460b
-    Position: {x: 2047.2, y: 224}
+    Position: {x: 2047, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -412,7 +416,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_8
     Duration: 0
   - NodeGuid: a52bbf15-3609-4372-9524-1c153ed7f377
-    Position: {x: 2519.2, y: 224}
+    Position: {x: 2519, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -430,7 +434,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: 6a7e453c-1ed9-4575-bf0a-200ac2f652fa
-    Position: {x: 2283.2, y: 224}
+    Position: {x: 2283, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -466,7 +470,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_2
     Duration: 0
   - NodeGuid: 324ce420-7177-4847-bd54-2e47a620512d
-    Position: {x: 3339.2, y: 224}
+    Position: {x: 3339, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -484,7 +488,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_3
     Duration: 0
   - NodeGuid: 0311b453-643a-417c-b4f5-310c7594e929
-    Position: {x: 3940, y: -149.6}
+    Position: {x: 3940, y: -150}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -502,7 +506,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_5
     Duration: 0
   - NodeGuid: cf6ae4a3-7d0e-46b9-8e65-6b99a613798f
-    Position: {x: 3940, y: 617.60004}
+    Position: {x: 3940, y: 618}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -520,7 +524,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_7
     Duration: 0
   - NodeGuid: a7fd2ea9-1272-4cad-b6ff-5cb303313cf4
-    Position: {x: 4179.2, y: 617.60004}
+    Position: {x: 4179, y: 618}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -556,7 +560,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_10
     Duration: 0
   - NodeGuid: 9b98b6e2-4e1d-4450-ab0e-05d3ea707fd8
-    Position: {x: 4179.2, y: 224}
+    Position: {x: 4179, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -574,7 +578,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_11
     Duration: 0
   - NodeGuid: e1cc743a-b87e-4db1-9f96-b50338da70a1
-    Position: {x: 5943.2, y: 224}
+    Position: {x: 5943, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -592,7 +596,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_15
     Duration: 0
   - NodeGuid: 2ecbaa86-7351-4576-ace5-bc2b9e7d5e5a
-    Position: {x: 4779.2, y: 224}
+    Position: {x: 4779, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -610,7 +614,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_11
     Duration: 0
   - NodeGuid: 7d7026e1-fb84-41d0-ac46-5bbef4a1416f
-    Position: {x: 6172.8, y: 224}
+    Position: {x: 6173, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -628,7 +632,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_14
     Duration: 0
   - NodeGuid: 9a890625-cfc1-42a6-aa61-38f8af163ab6
-    Position: {x: 6172.8, y: 617.60004}
+    Position: {x: 6173, y: 618}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -646,7 +650,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_9
     Duration: 0
   - NodeGuid: 4e74f2c0-3e24-4634-962d-47c5c3ce261c
-    Position: {x: 7548, y: 293.6}
+    Position: {x: 7548, y: 294}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -664,7 +668,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_19
     Duration: 0
   - NodeGuid: 77619b55-c017-40ca-957c-72f731da3b7a
-    Position: {x: 7324.8, y: -149.6}
+    Position: {x: 7325, y: -150}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -682,7 +686,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_16
     Duration: 0
   - NodeGuid: 58ae4b63-8293-4d4f-8e9b-760a33d05cf5
-    Position: {x: 7107.2, y: -149.6}
+    Position: {x: 7107, y: -150}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -700,7 +704,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_17
     Duration: 0
   - NodeGuid: b5d65676-e944-4989-ad79-ec7f1231b165
-    Position: {x: 6886.4, y: -149.6}
+    Position: {x: 6886, y: -150}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -718,7 +722,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_16
     Duration: 0
   - NodeGuid: 94c87371-a276-4fab-a584-ee2de7c8b3dc
-    Position: {x: 7324.8, y: 293.6}
+    Position: {x: 7325, y: 294}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -736,7 +740,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_18
     Duration: 0
   - NodeGuid: dbe869f4-3c89-4045-933d-3b391b0dd8d9
-    Position: {x: 6886.4, y: 247.99998}
+    Position: {x: 6886, y: 248}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -754,7 +758,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_18
     Duration: 0
   - NodeGuid: 62b51ca4-22e2-4620-a074-1530e2ad1332
-    Position: {x: 5019.2, y: 224}
+    Position: {x: 5019, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -772,7 +776,7 @@ MonoBehaviour:
       LanguageGenericType: IAZDA_DIALOGUE_1_13
     Duration: 0
   - NodeGuid: f01086ee-2acc-4be8-91bb-96e71a086b67
-    Position: {x: 7107.2, y: 293.6}
+    Position: {x: 7107, y: 294}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -790,7 +794,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_19
     Duration: 0
   - NodeGuid: fbe9eb36-0a62-478c-a5f2-8c52cb7cd884
-    Position: {x: 7548, y: -149.6}
+    Position: {x: 7548, y: -150}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -808,7 +812,7 @@ MonoBehaviour:
       LanguageGenericType: VASAT_DIALOGUE_1_17
     Duration: 0
   - NodeGuid: c2e2d874-d26b-4aad-8002-49f55ff4a5e1
-    Position: {x: 5714.4, y: 224}
+    Position: {x: 5714, y: 224}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -864,17 +868,26 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 5356cb31-de98-4b58-991b-66d97e4166bd
-    Position: {x: 2147.2, y: 732}
+    Position: {x: 2147, y: 732}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   - NodeGuid: fd53360e-6ea3-47c5-a71c-249e52011b47
-    Position: {x: 8026.4, y: 125.59999}
+    Position: {x: 8182, y: 116}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 8084ffef-233e-4ed2-892b-f9b56bcf3207
+    Position: {x: 1814, y: 732}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 0}
+    - DialogueEventSO: {fileID: 11400000, guid: 56ba19ae5f651ed46adfc7cda2dfad68, type: 2}
+  - NodeGuid: 6746f82b-ac24-42f9-8801-73585de41301
+    Position: {x: 7825, y: 116}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 77aab29b0c0e5d542b5764fd1642c819, type: 2}
   StartNodeDatas:
   - NodeGuid: 33ac0b44-5987-4ec8-b8da-147ef3069f6e
-    Position: {x: 190.4, y: 224}
+    Position: {x: 190, y: 224}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
