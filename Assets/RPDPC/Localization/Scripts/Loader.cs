@@ -71,6 +71,7 @@ namespace PDC.Localization
                 var key = row[0];
                 var list = row.ToList();
                 list.Remove(key);
+                //Debug.Log(row[0] + " : " + list.Count);
                 localization.Add(row[0], list.ToArray());
             }
             LocalizationManager.SetLocalization(localization);
