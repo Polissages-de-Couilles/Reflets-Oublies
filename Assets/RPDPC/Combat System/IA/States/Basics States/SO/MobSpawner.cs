@@ -9,7 +9,7 @@ public class MobSpawner : StateBase
     [SerializeField] GameObject monsterPrefab;
     [SerializeField] int nbToSpawnAtStart;
     [SerializeField] int mobMaxNb;
-    [SerializeField] float spawnRange;
+    public float spawnRange;
     [SerializeField] Vector2 rangeTimeBetweenSpawns;
 
     public override StateEntityBase PrepareEntityInstance()
