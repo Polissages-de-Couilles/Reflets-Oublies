@@ -32,7 +32,8 @@ public class StateMachineManager : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        if (shouldSearchStates) {
+        if (shouldSearchStates)
+        {
             if (currentState.isStateValid())
             {
                 setNewCurrentState(currentState.priority);
@@ -91,7 +92,7 @@ public class StateMachineManager : MonoBehaviour
 
     public StateEntityBase getCurrentState()
     {
-        return currentState; 
+        return currentState;
     }
 
     public StateEntityBase GetSpawnState() //Sale mais vas y pour décembre ça ira
@@ -105,5 +106,22 @@ public class StateMachineManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    //Debug pour placer des spawners
+
+    void OnDrawGizmos()
+    {
+        foreach (StateBase seb in states)
+        {
+            MobSpawner ms = seb as MobSpawner;
+            if (ms != null)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(new Vector3(transform.position.x + ms.spawnRange, transform.position.y, transform.position.z), new Vector3(transform.position.x - ms.spawnRange, transform.position.y, transform.position.z));
+                Gizmos.DrawLine(new Vector3(transform.position.x, transform.position.y, transform.position.z + ms.spawnRange), new Vector3(transform.position.x, transform.position.y, transform.position.z - ms.spawnRange));
+                break;
+            }
+        }
     }
 }
