@@ -29,6 +29,7 @@ public class UIPanel : MonoBehaviour
     private void Awake()
     {
         UINavigation = EventSystem.current;
+        currentController = ControllerType.WirelessController;
     }
 
     private void Start()

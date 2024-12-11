@@ -35,6 +35,7 @@ public class PNJ : Interactible
                 { 
                     GameManager.Instance.DialogueManager.OnNode -= OnNode;
                     state = State.Waiting;
+                    EventSystem.current.SetSelectedGameObject(null);
                 }
                 );
                 GameManager.Instance.DialogueManager.StartDialogue(dialogue);
