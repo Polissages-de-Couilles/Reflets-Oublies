@@ -42,6 +42,7 @@ public class UIPanel : MonoBehaviour
     {
         OnNewController += OnControllerChange;
         Debug.Log(name + " is Enable");
+        currentController = ControllerType.WirelessController;
         OnControllerChange(currentController);
     }
 
