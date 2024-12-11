@@ -97,7 +97,7 @@ public class ProjectileAttackEntity : StateEntityBase
         //Pour décembre : Visuel PlaceHolder
         GameObject mesh = new GameObject("mesh");
         mesh.transform.parent = attackCollider.transform;
-        Material material = new Material(Shader.Find("Unlit/Color"));
+        Material material = new Material(Shader.Find("FlatKit/Stylized Surface"));
         material.color = Color.red;
         mesh.AddComponent<MeshRenderer>().material = material;
         mesh.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Capsule.fbx");
