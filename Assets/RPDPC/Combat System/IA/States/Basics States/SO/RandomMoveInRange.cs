@@ -15,7 +15,7 @@ public class SORandomMoveInRange : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         RandomMoveInRangeEntity rmir = new RandomMoveInRangeEntity();
-        rmir.Init(false, null, null, false, searchCenter, searchRange, shouldOnlyMoveOnce, WaitForMoveToFinishBeforeEndOrSwitchingState, rangeWaitBetweenMoves, null, 0, 0, 0, Vector2.zero);
+        rmir.Init(false, null, null, false, searchCenter, searchRange, shouldOnlyMoveOnce, WaitForMoveToFinishBeforeEndOrSwitchingState, rangeWaitBetweenMoves, null, 0, 0, 0, Vector2.zero, 0);
         return rmir;
     }
 }

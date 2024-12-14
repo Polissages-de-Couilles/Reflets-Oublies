@@ -35,7 +35,8 @@ public abstract class StateEntityBase
         bool isIntelligent, //FollowPlayer
         List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, //Attack and ProjectileAttack
         Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, //RandomMoveInRange
-        GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns
+        GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, //Monster Spawner
+        float turnDuration //TurnToPlayer
     );
 
     public bool isStateValid()

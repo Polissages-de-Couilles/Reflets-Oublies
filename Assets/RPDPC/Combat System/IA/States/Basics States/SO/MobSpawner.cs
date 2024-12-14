@@ -15,7 +15,7 @@ public class MobSpawner : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         MobSpawnerEntity mse = new MobSpawnerEntity();
-        mse.Init(false, null, null, false, new Vector3(), 0, false, false, new Vector2(), monsterPrefab, nbToSpawnAtStart, mobMaxNb, spawnRange, rangeTimeBetweenSpawns);
+        mse.Init(false, null, null, false, new Vector3(), 0, false, false, new Vector2(), monsterPrefab, nbToSpawnAtStart, mobMaxNb, spawnRange, rangeTimeBetweenSpawns, 0);
         return mse;
     }
 }
