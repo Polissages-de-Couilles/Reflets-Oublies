@@ -1022,7 +1022,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 559057447727064224, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1916671163}
+    - targetCorrespondingSourceObject: {fileID: 559057447727064224, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1916671162}
   m_SourcePrefab: {fileID: 100100000, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
 --- !u!43 &624689771
 Mesh:
@@ -1797,6 +1803,86 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &879562262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 879562265}
+  - component: {fileID: 879562264}
+  - component: {fileID: 879562263}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &879562263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879562262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23b26d8532ccaa142b4a33466ed9e87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  priority: 0
+  reverbAuxBus:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  reverbLevel: 1
+  transmissionLoss: 1
+  roomToneEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  roomToneAuxSend: 0
+--- !u!65 &879562264
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879562262}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11.472952, y: 4.4878244, z: 10.554001}
+  m_Center: {x: -2.551094, y: 1.7439122, z: -1.4225235}
+--- !u!4 &879562265
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879562262}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.97, y: -0.6, z: 105.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &942639052
 GameObject:
   m_ObjectHideFlags: 0
@@ -4471,6 +4557,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5117971115241216492, guid: b511406e6e31c7e4cb010d37c9e4ad2c, type: 3}
   m_PrefabInstance: {fileID: 538023403}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1916671162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916671152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520cb578bd24f8242bdb556e362885a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Collider: {fileID: 0}
+--- !u!114 &1916671163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916671152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8138c027b06e44ca3ca7995ba2d0ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
 --- !u!43 &1962268382
 Mesh:
   m_ObjectHideFlags: 0
@@ -5832,3 +5953,4 @@ SceneRoots:
   - {fileID: 1162413942}
   - {fileID: 418830205}
   - {fileID: 942639053}
+  - {fileID: 879562265}

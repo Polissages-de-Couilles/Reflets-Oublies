@@ -9,7 +9,35 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{6017C3DD-FCC7-6CEF-2023-20CA4AE48E21}">
+		<SoundBank Id="188883950" Type="Bus" Language="SFX" Hash="{7B0C14D9-2B0D-B490-0939-13E8202D932E}">
+			<ShortName>auxMusicMario</ShortName>
+			<Path>Bus/auxMusicMario.bnk</Path>
+			<AuxBusses>
+				<AuxBus Id="188883950" Name="auxMusicMario"/>
+			</AuxBusses>
+		</SoundBank>
+		<SoundBank Id="270455624" Type="Bus" Language="SFX" Hash="{5F80B332-431F-0922-242D-255372D7D250}">
+			<ShortName>auxMusicForet</ShortName>
+			<Path>Bus/auxMusicForet.bnk</Path>
+			<AuxBusses>
+				<AuxBus Id="270455624" Name="auxMusicForet"/>
+			</AuxBusses>
+		</SoundBank>
+		<SoundBank Id="572284388" Type="Event" Language="SFX" Hash="{58CC8067-35E4-AC13-382A-EC9491FAD0D1}">
+			<ShortName>SmashMusic</ShortName>
+			<Path>Event/SmashMusic.bnk</Path>
+			<Events>
+				<Event Id="572284388" Name="SmashMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="659899738" Type="Bus" Language="SFX" Hash="{1E0E0106-DEBB-2762-5EB4-DA0EB0A42B3E}">
+			<ShortName>auxMusicCombat</ShortName>
+			<Path>Bus/auxMusicCombat.bnk</Path>
+			<AuxBusses>
+				<AuxBus Id="659899738" Name="auxMusicCombat"/>
+			</AuxBusses>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{BD6C3C84-4F22-766C-8185-E790DBA5AE43}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -24,6 +52,13 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="188883950" Name="auxMusicMario"/>
+				<AuxBus Id="270455624" Name="auxMusicForet"/>
+				<AuxBus Id="659899738" Name="auxMusicCombat"/>
+				<AuxBus Id="2745591986" Name="auxMusicVillage"/>
+				<AuxBus Id="4113045422" Name="auxMusicSmash"/>
+			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="414646191" Name="VoiceVolume"/>
 				<GameParameter Id="698515981" Name="vfxVolume"/>
@@ -31,6 +66,16 @@
 				<GameParameter Id="2918011349" Name="MasterVolume"/>
 				<GameParameter Id="2985490821" Name="transitionParameter"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="3504060719" Name="GameAmbience">
+					<States>
+						<State Id="45932233" Name="Foret"/>
+						<State Id="514064485" Name="Fight"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="3945572659" Name="Village"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 			<SwitchGroups>
 				<SwitchGroup Id="119732153" Name="GunSwitch">
 					<Switches>
@@ -46,7 +91,21 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{B9E44557-2DAC-7369-35D5-E3F49436D8EA}">
+		<SoundBank Id="2264695890" Type="Event" Language="SFX" Hash="{DABD8AD5-0986-32C2-6945-02F2280E0EA7}">
+			<ShortName>ForetMusic</ShortName>
+			<Path>Event/ForetMusic.bnk</Path>
+			<Events>
+				<Event Id="2264695890" Name="ForetMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2745591986" Type="Bus" Language="SFX" Hash="{09E596CD-FCCF-95A2-47FC-5099D4ED8518}">
+			<ShortName>auxMusicVillage</ShortName>
+			<Path>Bus/auxMusicVillage.bnk</Path>
+			<AuxBusses>
+				<AuxBus Id="2745591986" Name="auxMusicVillage"/>
+			</AuxBusses>
+		</SoundBank>
+		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{434FD56C-03BD-1C09-5EFA-C6A1D99321A5}">
 			<ShortName>SoundbankProject</ShortName>
 			<Path>SoundbankProject.bnk</Path>
 			<Media>
@@ -93,14 +152,6 @@
 				<File Id="301785778" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>gun1.wav</ShortName>
 					<CachePath>SFX/gun1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="409138883" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>The-Underwater-Song-In-Super-Mario-64.wav</ShortName>
-					<CachePath>SFX/The-Underwater-Song-In-Super-Mario-64_9F5C8D49.wem</CachePath>
-				</File>
-				<File Id="519913326" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Song-of-Storms-Super-Smash-Bros.-Brawl.wav</ShortName>
-					<CachePath>SFX/Song-of-Storms-Super-Smash-Bros.-Brawl_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="540110852" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Jack_laugh.wav</ShortName>
@@ -201,12 +252,6 @@
 				<Event Id="2137976346" Name="Play_Ashley_wouh" DurationType="OneShot" DurationMin="0.35442176" DurationMax="0.35442176">
 					<MediaRefs>
 						<MediaRef Id="100238393"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1555285992" Name="Play_Dynamic_Ambiance" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="409138883"/>
-						<MediaRef Id="519913326"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3854155799" Name="Play_footsteps" DurationType="OneShot" DurationMin="0.9312292" DurationMax="1.4814792">
@@ -312,9 +357,6 @@
 					</MediaRefs>
 				</Event>
 			</Events>
-			<GameParameters>
-				<GameParameter Id="2985490821" Name="transitionParameter"/>
-			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="119732153" Name="GunSwitch">
 					<Switches>
@@ -330,6 +372,34 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
+		<SoundBank Id="3428957736" Type="Event" Language="SFX" Hash="{A305F4DC-638C-F41E-C62C-DCB1EDF43436}">
+			<ShortName>MarioMusic</ShortName>
+			<Path>Event/MarioMusic.bnk</Path>
+			<Events>
+				<Event Id="3428957736" Name="MarioMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3625871072" Type="Event" Language="SFX" Hash="{4B130A94-8E96-EA0B-566C-D42CCBA07576}">
+			<ShortName>VillageMusic</ShortName>
+			<Path>Event/VillageMusic.bnk</Path>
+			<Events>
+				<Event Id="3625871072" Name="VillageMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3733692670" Type="Event" Language="SFX" Hash="{B00B6CEF-4DCA-593D-D43E-8E1FAA814C46}">
+			<ShortName>CombatMusic</ShortName>
+			<Path>Event/CombatMusic.bnk</Path>
+			<Events>
+				<Event Id="3733692670" Name="CombatMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="4113045422" Type="Bus" Language="SFX" Hash="{35FD9C67-5FB7-CB89-7D56-4B5675284100}">
+			<ShortName>auxMusicSmash</ShortName>
+			<Path>Bus/auxMusicSmash.bnk</Path>
+			<AuxBusses>
+				<AuxBus Id="4113045422" Name="auxMusicSmash"/>
+			</AuxBusses>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9CBEFCFA-D163-79B1-2C3D-B1D296580A57}</FileHash>
+	<FileHash>{0544DCCD-515E-A2FD-A150-8881C9EA082B}</FileHash>
 </SoundBanksInfo>

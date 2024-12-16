@@ -13,13 +13,15 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID COMBATMUSIC = 3733692670U;
+        static const AkUniqueID FORETMUSIC = 2264695890U;
+        static const AkUniqueID MARIOMUSIC = 3428957736U;
         static const AkUniqueID PLAY_ASHLEY_COUGH = 883066387U;
         static const AkUniqueID PLAY_ASHLEY_CRY = 2581246001U;
         static const AkUniqueID PLAY_ASHLEY_HEINN = 4130244703U;
         static const AkUniqueID PLAY_ASHLEY_HMM = 2831483387U;
         static const AkUniqueID PLAY_ASHLEY_LAUGH = 1946362930U;
         static const AkUniqueID PLAY_ASHLEY_WOUH = 2137976346U;
-        static const AkUniqueID PLAY_DYNAMIC_AMBIANCE = 1555285992U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_JACK_COUGH = 968975072U;
         static const AkUniqueID PLAY_JACK_CRY = 1403254254U;
@@ -31,7 +33,26 @@ namespace AK
         static const AkUniqueID PLAY_MICKEY_MOUSE_SOUND_EFFECT = 2501766892U;
         static const AkUniqueID RAPH_DIALOGUE_1_1 = 3170927391U;
         static const AkUniqueID RAPH_DIALOGUE_1_2 = 3170927388U;
+        static const AkUniqueID SMASHMUSIC = 572284388U;
+        static const AkUniqueID VILLAGEMUSIC = 3625871072U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace GAMEAMBIENCE
+        {
+            static const AkUniqueID GROUP = 3504060719U;
+
+            namespace STATE
+            {
+                static const AkUniqueID FIGHT = 514064485U;
+                static const AkUniqueID FORET = 45932233U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID VILLAGE = 3945572659U;
+            } // namespace STATE
+        } // namespace GAMEAMBIENCE
+
+    } // namespace STATES
 
     namespace SWITCHES
     {
@@ -81,6 +102,15 @@ namespace AK
         static const AkUniqueID VFX = 694692527U;
         static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID AUXMUSICCOMBAT = 659899738U;
+        static const AkUniqueID AUXMUSICFORET = 270455624U;
+        static const AkUniqueID AUXMUSICMARIO = 188883950U;
+        static const AkUniqueID AUXMUSICSMASH = 4113045422U;
+        static const AkUniqueID AUXMUSICVILLAGE = 2745591986U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
