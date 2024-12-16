@@ -37,11 +37,24 @@ namespace PDC.Localization
             }
         }
 
+        public static void OnLocaReady(Action action)
+        {
+            if(IsLocaReady)
+            {
+                action();
+            }
+            else
+            {
+                OnLocalizationReady += action;
+            }
+        }
+
         public static void SetLocalization(Dictionary<string, string[]> loca)
         {
             _localization = loca;
             IsLocaReady = true;
             OnLocalizationReady?.Invoke();
+            Debug.Log("OnLocalizationReady");
         }
 
         public static void SetLanguage(List<string> languages)

@@ -1,10 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using PDC.Localization;
 
 public class settingMenu : UIPanel
@@ -36,15 +32,33 @@ public class settingMenu : UIPanel
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentRes;
 
-        languageDropdown.ClearOptions();
-        List<string> languageOption = new List<string>();
-        for (int i = 0; i < LocalizationManager._languages.Count; i++)
+        if(LocalizationManager.IsLocaReady)
         {
-            languageOption.Add(LocalizationManager._languages[i]);
+            languageDropdown.ClearOptions();
+            List<string> languageOption = new List<string>();
+            for(int i = 0; i < LocalizationManager._languages.Count; i++)
+            {
+                languageOption.Add(LocalizationManager._languages[i]);
+            }
+            languageDropdown.AddOptions(languageOption);
+            languageDropdown.value = LocalizationManager.languageID;
+            languageDropdown.onValueChanged.AddListener(GameManager.Instance.LocalizationManager.ChangeLanguage);
         }
-        languageDropdown.AddOptions(languageOption);
-        languageDropdown.value = LocalizationManager.languageID;
-        languageDropdown.onValueChanged.AddListener(GameManager.Instance.LocalizationManager.ChangeLanguage);
+        else
+        {
+            LocalizationManager.OnLocalizationReady += () =>
+            {
+                languageDropdown.ClearOptions();
+                List<string> languageOption = new List<string>();
+                for(int i = 0; i < LocalizationManager._languages.Count; i++)
+                {
+                    languageOption.Add(LocalizationManager._languages[i]);
+                }
+                languageDropdown.AddOptions(languageOption);
+                languageDropdown.value = LocalizationManager.languageID;
+                languageDropdown.onValueChanged.AddListener(GameManager.Instance.LocalizationManager.ChangeLanguage);
+            };
+        }
     }
 
     public void setQuality (int qualityIndex)
