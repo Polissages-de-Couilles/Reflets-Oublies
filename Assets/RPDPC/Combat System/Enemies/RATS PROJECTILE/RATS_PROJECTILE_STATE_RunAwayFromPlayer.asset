@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06de103fc8b4ffe4d9c747b09048a5d7, type: 3}
+  m_Name: RATS_PROJECTILE_STATE_RunAwayFromPlayer
+  m_EditorClassIdentifier: 
+  priority: 5
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 26572edc290c7f048810414d01461c17, type: 2}
+    otherParts: []
+  isHostileState: 0

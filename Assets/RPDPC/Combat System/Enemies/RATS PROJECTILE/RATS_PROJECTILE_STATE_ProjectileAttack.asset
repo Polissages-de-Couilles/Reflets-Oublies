@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
   m_Name: RATS_PROJECTILE_STATE_ProjectileAttack
   m_EditorClassIdentifier: 
-  priority: 2
+  priority: 3
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: f2be577dcb5febc439772ea3ff590efb, type: 2}
@@ -65,6 +65,6 @@ MonoBehaviour:
       DoesKnockback: 1
       KnockForce: 0.5
       KnockbackMode: 1
-    attackDuration: 3
+    attackDuration: 1
     damage: 10
   doAllAttacks: 1
