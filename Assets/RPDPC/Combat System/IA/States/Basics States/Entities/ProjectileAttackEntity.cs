@@ -59,8 +59,7 @@ public class ProjectileAttackEntity : StateEntityBase
                 }
             }
         }
-        //finishedSpawnAllAttacks = true;
-        manager.shouldSearchStates = true;
+        ExitState();
     }
 
     IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
@@ -113,12 +112,7 @@ public class ProjectileAttackEntity : StateEntityBase
         Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
         vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
 
-        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
-
-        //if (currentAttacks.Count <= 1 && finishedSpawnAllAttacks)
-        //{
-        //    ExitState();
-        //}
+        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y * -detail.distance, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
 
         currentAttacks.Remove(attackCollider);
         if(attackCollider != null)
