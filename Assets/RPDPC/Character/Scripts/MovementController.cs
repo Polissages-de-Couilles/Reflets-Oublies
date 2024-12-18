@@ -62,7 +62,7 @@ public class MovementController : MonoBehaviour
 
     private void HandleRotation()
     {
-        Vector3 positionToLookAt = Quaternion.Euler(0, 45, 0) * currentMovement;
+        Vector3 positionToLookAt = Quaternion.Euler(0, -45, 0) * currentMovement;
         positionToLookAt.y = 0.0f;
 
         Quaternion currentRotation = transform.rotation;
@@ -78,7 +78,7 @@ public class MovementController : MonoBehaviour
     {
         if (isStateCompatible(stateManager.playerState))
         {
-            characterController.Move(Quaternion.Euler(0, 45, 0) * currentMovement * Time.fixedDeltaTime * speed);
+            characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * speed);
             Velocity = currentMovement * speed;
         }
         else
