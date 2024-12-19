@@ -9,7 +9,7 @@ public class TurnToPlayer : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         TurnToPlayerEntity ttpe = new TurnToPlayerEntity();
-        ttpe.Init(false, null, null, false, Vector3.zero, 0, false, false, Vector2.zero, null, 0, 0, 0, Vector2.zero, turnDuration);
+        ttpe.Init(false, null, null, false, Vector3.zero, 0, false, false, Vector2.zero, null, 0, 0, 0, Vector2.zero, turnDuration, null, false);
         return ttpe;
     }
 }

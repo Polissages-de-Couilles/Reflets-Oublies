@@ -36,7 +36,8 @@ public abstract class StateEntityBase
         List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, //Attack and ProjectileAttack
         Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, //RandomMoveInRange
         GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, //Monster Spawner
-        float turnDuration //TurnToPlayer
+        float turnDuration, //TurnToPlayer
+        List<Vector3> positions, bool loop //FollowListOfPositions
     );
 
     public bool isStateValid()
