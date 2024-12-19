@@ -139,30 +139,51 @@ namespace PDC.Localization
             if(!text.Contains("rpdpcfont")) return text;
 
             var words = GetWords(text);
-            foreach (var word in words)
+            bool isTranslated = false;
+            for(int i = 0; i < words.Length; i++)
             {
-                Debug.Log(word);
-                if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()))
+                bool CheckIfKey()
+                {
+                    if(i > 0 && i < words.Length - 1)
+                    {
+                        if(words[i-1] == "<" && words[i+1] == ">")
+                        {
+                            return true;
+                        }
+                    }
+                    return false;
+                }
+                var word = words[i];
+                
+                if(CheckIfKey() && (word == "/font" || word == "font=rpdpcfont"))
+                {
+                    isTranslated = word == "/font" ? false : word == "font=rpdpcfont";
+                }
+
+                //Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')));
+                if(word.Contains('<') || word.Contains('>') || CheckIfKey()) continue;
+                
+                if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
-                    if (text.Contains($" {word}"))
+                    if(text.Contains($" {word}"))
                     {
-                        text = text.Replace($" {word}", $" </font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($" {word}", $" {word}", StringComparison.OrdinalIgnoreCase);
                     }
-                    else if (text.Contains($"{word} "))
+                    else if(text.Contains($"{word} "))
                     {
-                        text = text.Replace($"{word} ", $"</font>{word}<font=rpdpcfont> ", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word} ", $"{word} ", StringComparison.OrdinalIgnoreCase);
                     }
                     else
                     {
-                        text = text.Replace($"{word}", $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word}", $"{word}", StringComparison.OrdinalIgnoreCase);
                     }
                 }
-                
             }
+            
             Debug.Log(text);
             return text;
         }
@@ -201,12 +222,15 @@ namespace PDC.Localization
             }
             
             t.Replace($"\r\n", string.Empty);
-            //Debug.Log(t);
+            Debug.Log(t);
             t = SimplifyText(t);
-            return TranslateWord(t);
+            Debug.Log(t);
+            t = TranslateWord(t);
+            Debug.Log(t);
+            return t;
         }
 
-        public static string GetTranslatedWord(string text)
+        private static string GetTranslatedWord(string text)
         {
             text = RemoveDiacritics(text);
             int id = 0;
@@ -232,37 +256,45 @@ namespace PDC.Localization
 
         static string[] GetWords(string input)
         {
-            var words = input.Split(" ");
-
-            for (int i = 0; i < words.Length; i++)
+            var words = Regex.Split(input, @"([ ])");
+            List<string> list = new List<string>();
+            foreach (var word in words)
             {
-                foreach (var kv in _simplifyDico)
+                Debug.Log(word);
+                if(word.Contains('<'))
                 {
-                    if (words[i].Contains(kv.Value))
+                    var wordleft = Regex.Split(word, @"([<])");
+                    foreach(var w in wordleft)
                     {
-                        words[i] = words[i].Replace(kv.Value, string.Empty);
+                        Debug.Log(w);
+                        list.Add(w);
                     }
                 }
-
-                while (words[i].Contains('<') || words[i].Contains('>'))
+                else
                 {
-                    int startIndex = words[i].IndexOf('<');
-                    int endIndex = words[i].IndexOf('>');
-                    int length = endIndex - startIndex + 1;
-
-                    var c = words[i].Substring(startIndex, length);
-                    words[i] = words[i].Replace(c, string.Empty);
+                    list.Add(word);
                 }
             }
 
-            List<string> list = new();
-            foreach (var w in words)
+            List<string> secondList = new List<string>();
+            foreach(var word in list)
             {
-                if(w != string.Empty)
-                    list.Add(w);
+                Debug.Log(word);
+                if(word.Contains('>'))
+                {
+                    var wordleft = Regex.Split(word, @"([>])");
+                    foreach(var w in wordleft)
+                    {
+                        Debug.Log(w);
+                        secondList.Add(w);
+                    }
+                }
+                else
+                {
+                    secondList.Add(word);
+                }
             }
-
-            return list.ToArray();
+            return secondList.ToArray();
         }
 
         public static string RemoveDiacritics(string text)
@@ -280,9 +312,7 @@ namespace PDC.Localization
                 }
             }
 
-            return stringBuilder
-                .ToString()
-                .Normalize(NormalizationForm.FormC);
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
     }
 }
