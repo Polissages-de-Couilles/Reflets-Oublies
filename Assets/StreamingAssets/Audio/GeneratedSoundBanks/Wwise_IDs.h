@@ -37,23 +37,6 @@ namespace AK
         static const AkUniqueID VILLAGEMUSIC = 3625871072U;
     } // namespace EVENTS
 
-    namespace STATES
-    {
-        namespace GAMEAMBIENCE
-        {
-            static const AkUniqueID GROUP = 3504060719U;
-
-            namespace STATE
-            {
-                static const AkUniqueID FIGHT = 514064485U;
-                static const AkUniqueID FORET = 45932233U;
-                static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID VILLAGE = 3945572659U;
-            } // namespace STATE
-        } // namespace GAMEAMBIENCE
-
-    } // namespace STATES
-
     namespace SWITCHES
     {
         namespace GUNSWITCH
