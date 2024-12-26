@@ -184,7 +184,7 @@ namespace PDC.Localization
                 }
             }
             
-            Debug.Log(text);
+            //Debug.Log(text);
             return text;
         }
 
@@ -222,11 +222,11 @@ namespace PDC.Localization
             }
             
             t.Replace($"\r\n", string.Empty);
-            Debug.Log(t);
+            //Debug.Log(t);
             t = SimplifyText(t);
-            Debug.Log(t);
+            //Debug.Log(t);
             t = TranslateWord(t);
-            Debug.Log(t);
+            //Debug.Log(t);
             return t;
         }
 
@@ -260,13 +260,13 @@ namespace PDC.Localization
             List<string> list = new List<string>();
             foreach (var word in words)
             {
-                Debug.Log(word);
+                //Debug.Log(word);
                 if(word.Contains('<'))
                 {
                     var wordleft = Regex.Split(word, @"([<])");
                     foreach(var w in wordleft)
                     {
-                        Debug.Log(w);
+                        //Debug.Log(w);
                         list.Add(w);
                     }
                 }
@@ -279,13 +279,13 @@ namespace PDC.Localization
             List<string> secondList = new List<string>();
             foreach(var word in list)
             {
-                Debug.Log(word);
+                //Debug.Log(word);
                 if(word.Contains('>'))
                 {
                     var wordleft = Regex.Split(word, @"([>])");
                     foreach(var w in wordleft)
                     {
-                        Debug.Log(w);
+                        //Debug.Log(w);
                         secondList.Add(w);
                     }
                 }
