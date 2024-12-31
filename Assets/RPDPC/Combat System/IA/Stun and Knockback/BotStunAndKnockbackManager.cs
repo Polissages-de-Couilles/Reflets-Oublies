@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 
 public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
@@ -34,6 +33,8 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
             StopAllCoroutines();
             Stunned = true;
             StartCoroutine(cancelStun(stunDuration));
+            StateMachineManager sm = GetComponent<StateMachineManager>();
+            sm.forceState(Type.GetType("StunEntity"));
         }
     }
 
