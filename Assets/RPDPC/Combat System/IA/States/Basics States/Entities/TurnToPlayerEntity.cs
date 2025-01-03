@@ -32,6 +32,6 @@ public class TurnToPlayerEntity : StateEntityBase
 
     IEnumerator DoLookAt()
     {
-        yield return parent.transform.DOLookAt(player.transform.position, turnDuration).WaitForCompletion();
+        yield return parent.transform.DOLookAt(new Vector3(player.transform.position.x,parent.transform.position.y, player.transform.position.z), turnDuration).WaitForCompletion();
     }
 }
