@@ -25,7 +25,17 @@ public class AttackEntity : StateEntityBase
 
     public override void OnEndState()
     {
+        manager.StopCoroutine(SpawnAttack());
         manager.shouldSearchStates = true;
+
+        foreach (GameObject go in currentAttacks.Keys)
+        {
+            MonoBehaviour.Destroy(go);
+        }
+
+        currentAttacks.Clear();
+        attackAlreadyDealtDamage.Clear();
+        finishedSpawnAllAttacks = false;
     }
 
     public override void OnEnterState()

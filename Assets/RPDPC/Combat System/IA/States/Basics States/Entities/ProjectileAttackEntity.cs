@@ -25,6 +25,7 @@ public class ProjectileAttackEntity : StateEntityBase
     public override void OnEndState()
     {
         manager.shouldSearchStates = true;
+        manager.StopCoroutine(SpawnAttack());
     }
 
     public override void OnEnterState()
