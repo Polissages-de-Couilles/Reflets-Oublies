@@ -32,7 +32,7 @@ public class UIPanel : MonoBehaviour
         currentController = ControllerType.WirelessController;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         map = GameManager.Instance.InputAction.FindActionMap("UI");
         map.actionTriggered += CheckController;

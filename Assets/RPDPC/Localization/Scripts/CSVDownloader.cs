@@ -20,7 +20,7 @@ namespace PDC.Localization
             string downloadData = null;
             using (UnityWebRequest webRequest = UnityWebRequest.Get(url))
             {
-                //Debug.Log("Starting Download...");
+                Debug.Log("Starting Download...");
                 yield return webRequest.SendWebRequest();
                 //int equalsIndex = ExtractEqualsIndex(webRequest.downloadHandler);
                 if (webRequest.isNetworkError)
@@ -36,7 +36,7 @@ namespace PDC.Localization
                     downloadData = webRequest.downloadHandler.text;
                     //PlayerPrefs.SetString("LastDataDownloadedVersion", versionText);
                     PlayerPrefs.SetString("LastDataDownloaded", downloadData);
-                    //Debug.Log("...Downloaded");
+                    Debug.Log("...Downloaded");
 
                 }
             }

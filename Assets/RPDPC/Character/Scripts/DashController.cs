@@ -26,7 +26,7 @@ public class DashController : MonoBehaviour
     public int DashCount => dashCount;
     private int dashCount;
 
-    
+    private bool isRecharging = false;
 
     private void Awake()
     {
@@ -92,17 +92,20 @@ public class DashController : MonoBehaviour
                 for (int i = 0; i < 100; i++)
                 {
                     yield return new WaitForSeconds(dashCooldown / 100);
-                    if(i > 10)
+                    if(i > 50)
                     {
+                        isRecharging = true;
                         if (GameManager.Instance.UIManager != null)
                         {
-                            GameManager.Instance.UIManager.UpdateDashSlider(1f/90f);
+                            GameManager.Instance.UIManager.UpdateDashSlider(1f/50f);
                         }
                     }
                 }
 
                 //yield return new WaitForSeconds(dashCooldown);
                 dashCount++;
+                isRecharging = false;
+                GameManager.Instance.UIManager.SetDashSlider(dashCount);
             }
             yield return null;
         }

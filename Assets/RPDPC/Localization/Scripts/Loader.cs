@@ -17,6 +17,7 @@ namespace PDC.Localization
 
         public void AfterDownload(string data)
         {
+            Debug.Log("data == null" + (null == data));
             if (null == data)
             {
                 Debug.LogError("Was not able to download data or retrieve stale data.");
@@ -53,7 +54,7 @@ namespace PDC.Localization
             yield return new WaitForEndOfFrame();
             yield return new WaitForEndOfFrame();
 
-            //Debug.Log(data);
+            Debug.Log(data);
 
             // Splitting the dataset in the end of line
             var splitDataset = data.Split("\r\n");
