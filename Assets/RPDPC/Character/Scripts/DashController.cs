@@ -26,7 +26,7 @@ public class DashController : MonoBehaviour
     public int DashCount => dashCount;
     private int dashCount;
 
-    
+    private bool isRecharging = false;
 
     private void Awake()
     {
@@ -40,11 +40,6 @@ public class DashController : MonoBehaviour
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Dash.performed += OnDash;
         StartCoroutine(RechargeDash());
-
-        //if (GameManager.Instance.UIManager != null)
-        //{
-        //    GameManager.Instance.UIManager.UpdateDashSlider(dashCount);
-        //}
     }
 
     private void OnDash(InputAction.CallbackContext context)
@@ -58,28 +53,28 @@ public class DashController : MonoBehaviour
 
     IEnumerator Dash()
     {
-            canDash = false;
-            dashCount--;
-            isDashing = true;
+        canDash = false;
+        dashCount--;
+        isDashing = true;
 
         if (GameManager.Instance.UIManager != null)
         {
             GameManager.Instance.UIManager.UpdateDashSlider(-1f);
         }
 
-            Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
+        Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
 
 
         for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
-            {
-                Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
-                dash += gravity * dashForce;
-                characterController.Move(dash);
-                yield return new WaitForFixedUpdate();
-            }
+        {
+            Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
+            dash += gravity * dashForce;
+            characterController.Move(dash);
+            yield return new WaitForFixedUpdate();
+        }
 
-            isDashing = false;
-            canDash = true;
+        isDashing = false;
+        canDash = true;
     }
 
     IEnumerator RechargeDash()
@@ -92,17 +87,20 @@ public class DashController : MonoBehaviour
                 for (int i = 0; i < 100; i++)
                 {
                     yield return new WaitForSeconds(dashCooldown / 100);
-                    if(i > 10)
+                    if(i > 50)
                     {
+                        isRecharging = true;
                         if (GameManager.Instance.UIManager != null)
                         {
-                            GameManager.Instance.UIManager.UpdateDashSlider(1f/90f);
+                            GameManager.Instance.UIManager.UpdateDashSlider(1f/50f);
                         }
                     }
                 }
 
                 //yield return new WaitForSeconds(dashCooldown);
                 dashCount++;
+                isRecharging = false;
+                GameManager.Instance.UIManager.SetDashSlider(dashCount);
             }
             yield return null;
         }

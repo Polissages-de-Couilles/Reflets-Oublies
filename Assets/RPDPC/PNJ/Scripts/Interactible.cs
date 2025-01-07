@@ -13,8 +13,17 @@ public abstract class Interactible : MonoBehaviour
     public bool IsAtRange => Distance <= Range;
     public float Distance => Vector3.Distance(GameManager.Instance.Player.transform.position, this.gameObject.transform.position);
     public virtual string Text => LocalizationManager.LocalizeText(textKey, true);
+    protected string text;
     [SerializeField] protected string textKey;
     [SerializeField] protected TextMeshProUGUI worldUI;
+
+    private void Start()
+    {
+        LocalizationManager.OnLocaReady(() =>
+        {
+            text = Text;
+        });
+    }
 
     public abstract void OnInteraction();
 
@@ -33,7 +42,7 @@ public abstract class Interactible : MonoBehaviour
             worldUI.text = string.Empty;
             return;
         }
-        worldUI.text = Text;
+        worldUI.text = text;
         worldUI.gameObject.SetActive(active);
     }
 
