@@ -1,3 +1,4 @@
+using ExternPropertyAttributes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ public class SOAttack : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         AttackEntity ae = new AttackEntity();
-        ae.Init(false, attacks, null, doAllAttacks, new Vector3(), 0, false, false, new Vector2(), null, 0, 0, 0, Vector2.zero, 0, null, false);
+        ae.Init(false, attacks, null, doAllAttacks, new Vector3(), 0, false, false, new Vector2(), null, 0, 0, 0, Vector2.zero, 0, null, false, animationNames);
         return ae;
     }
 
@@ -25,6 +26,7 @@ public class SOAttack : StateBase
         public float attackDuration;
         public float damage;
         public bool ShouldOnlyTookDamageFromOneCollision;
+        public int animationID;
     }
 
     [Serializable]

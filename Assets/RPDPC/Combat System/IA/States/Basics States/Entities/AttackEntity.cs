@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,10 +18,11 @@ public class AttackEntity : StateEntityBase
         onActionFinished?.Invoke();
     }
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop, List<string> animationNames)
     {
         this.attacks = attacks;
         this.doAllAttacks = doAllAttacks;
+        this.animationNames = new(animationNames);
     }
 
     public override void OnEndState()
@@ -62,7 +64,10 @@ public class AttackEntity : StateEntityBase
         int index = 0;
         foreach (SOAttack.AttackDetails attack in attacks)
         {
-            foreach(SOAttack.AttackColliderDetails collider in attack.colliders)
+            animator.Play(animationNames[attack.animationID]);
+            float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
+
+            foreach (SOAttack.AttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider, attack));
             }
@@ -72,19 +77,26 @@ public class AttackEntity : StateEntityBase
                 finishedSpawnAllAttacks = true;
             }
 
-            yield return new WaitForSeconds(attack.attackDuration);
+            yield return new WaitForSeconds(animationDuration);
 
-            if (!doAllAttacks)
-            {
-                if (!isStateValid())
-                {
-                    ExitState();
-                    break;
-                }
-            }
+            animator.Play(animationNames[0]);
+
+            yield return new WaitForSeconds(attack.attackDuration - animationDuration);
+            
+
+            //if (!doAllAttacks)
+            //{
+            //    if (!isStateValid())
+            //    {
+            //        ExitState();
+            //        break;
+            //    }
+            //}
 
             index++;
         }
+
+        ExitState();
     }
 
     IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail, SOAttack.AttackDetails ad)
@@ -130,12 +142,12 @@ public class AttackEntity : StateEntityBase
 
         yield return new WaitForSeconds(detail.ColliderDuration);
 
-        Debug.Log("TRY EXIT STATE : " + (currentAttacks.Count == 1) + " & " + finishedSpawnAllAttacks);
-        if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
-        {
-            Debug.Log("EXIT STATE");
-            ExitState();
-        }
+        //Debug.Log("TRY EXIT STATE : " + (currentAttacks.Count == 1) + " & " + finishedSpawnAllAttacks);
+        //if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
+        //{
+        //    Debug.Log("EXIT STATE");
+        //    ExitState();
+        //}
 
         currentAttacks.Remove(attackCollider);
         if (attackCollider != null)

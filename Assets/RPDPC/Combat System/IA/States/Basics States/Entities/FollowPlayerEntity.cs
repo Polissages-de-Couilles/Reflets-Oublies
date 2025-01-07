@@ -8,9 +8,10 @@ public class FollowPlayerEntity : StateEntityBase
     bool isIntelligent;
     Vector3 lastKnownPos;
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop, List<string> animationNames)
     {
         this.isIntelligent = isIntelligent;
+        this.animationNames = new (animationNames);
     }
 
     public override void ExitState()
@@ -28,6 +29,8 @@ public class FollowPlayerEntity : StateEntityBase
         agent = parent.GetComponent<NavMeshAgent>();
         if (agent.isStopped)
             agent.isStopped = false;
+
+        animator.Play(animationNames[0]);
     }
 
     public override void OnUpdate()

@@ -10,6 +10,7 @@ public abstract class StateBase : ScriptableObject
     public float priority;
     public List<ConditionExpression> conditions;
     public bool isHostileState;
+    public List<string> animationNames;
 
     public abstract StateEntityBase PrepareEntityInstance();
 }

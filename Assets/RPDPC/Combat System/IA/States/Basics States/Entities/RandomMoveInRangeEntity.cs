@@ -13,15 +13,17 @@ public class RandomMoveInRangeEntity : StateEntityBase
     NavMeshAgent agent;
     bool isPosReached;
     bool timerRunning = false;
+    bool isMoving => Vector3.Distance(currentDestination, parent.transform.position) >= 0.1f;
     Vector3 currentDestination;
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop)
+    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop, List<string> animationNames)
     {
         this.searchCenter = searchCenter;
         this.searchRange = searchRange;
         this.shouldOnlyMoveOnce = shouldOnlyMoveOnce;
         this.WaitForMoveToFinishBeforeEndOrSwitchingState = WaitForMoveToFinishBeforeEndOrSwitchingState;
         this.rangeWaitBetweenMoves = rangeWaitBetweenMoves;
+        this.animationNames = new(animationNames);
     }
 
     public override void ExitState()
@@ -38,14 +40,14 @@ public class RandomMoveInRangeEntity : StateEntityBase
     public override void OnEnterState()
     {
         agent = parent.GetComponent<NavMeshAgent>();
-        agent.isStopped = false;
+        if (agent.isStopped)
+            agent.isStopped = false;
         isPosReached = false;
         goToRandomPos();
     }
 
     public override void OnUpdate()
     {
-        Debug.DrawLine(parent.transform.forward, parent.transform.forward * 1000, Color.red, 2f);
         if (!timerRunning)
         {
             if (isPosReached)
@@ -61,13 +63,12 @@ public class RandomMoveInRangeEntity : StateEntityBase
             }
             else
             {
-                if (agent.velocity == Vector3.zero)
+                if (!isMoving)
                 {
                     if (!shouldOnlyMoveOnce)
                     {
                         manager.StartCoroutine(resetRandomMove());
                     }
-
                 }
             }
         }
@@ -76,10 +77,12 @@ public class RandomMoveInRangeEntity : StateEntityBase
     public IEnumerator resetRandomMove() 
     {
         timerRunning = true;
+        isPosReached = true;
+        Debug.LogError(animationNames[0]);
+        animator.Play(animationNames[0]);
         yield return new WaitForSeconds(Random.Range(rangeWaitBetweenMoves.x, rangeWaitBetweenMoves.y));
         manager.shouldSearchStates = true;
         timerRunning = false;
-        isPosReached = true;
     }
 
     private void goToRandomPos()
@@ -94,6 +97,8 @@ public class RandomMoveInRangeEntity : StateEntityBase
             }
             isPosReached = false;
             currentDestination = hit.position;
+            Debug.LogError(animationNames[1]);
+            animator.Play(animationNames[1]);
             agent.SetDestination(currentDestination);
         }
         else 

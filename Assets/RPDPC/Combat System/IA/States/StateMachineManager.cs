@@ -11,6 +11,8 @@ public class StateMachineManager : MonoBehaviour
 
     [HideInInspector] public bool shouldSearchStates = true;
 
+    [SerializeField] Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class StateMachineManager : MonoBehaviour
         foreach (StateBase state in states)
         {
             StateEntityBase stateEntity = state.PrepareEntityInstance();
-            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState);
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator);
             stateEntities.Add(stateEntity);
         }
         setNewCurrentState(-1f);

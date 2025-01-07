@@ -18,8 +18,4 @@ public class OwnHpUnder : ConditionBase
     {
         return id.getCurrentHealth()/id.getMaxHealth() < hpPercentage;
     }
-    void OnValidate()
-    {
-        hpPercentage = Mathf.Clamp(hpPercentage, 0, 1);
-    }
 }
