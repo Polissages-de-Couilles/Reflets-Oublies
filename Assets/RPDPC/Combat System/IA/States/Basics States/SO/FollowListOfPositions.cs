@@ -10,7 +10,7 @@ public class FollowListOfPositions : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         FollowListOfPositionsEntity flop = new FollowListOfPositionsEntity();
-        flop.Init(false, null, null, false, new Vector3(), 0, false, false, new Vector2(), null, 0, 0, 0, Vector2.zero, 0, positions, loop);
+        flop.Init(positions, loop);
         return flop;
     }
 }

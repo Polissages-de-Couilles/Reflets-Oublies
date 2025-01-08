@@ -18,11 +18,10 @@ public class AttackEntity : StateEntityBase
         onActionFinished?.Invoke();
     }
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop, List<string> animationNames)
+    public override void Init(List<SOAttack.AttackDetails> attacks, bool doAllAttacks) 
     {
         this.attacks = attacks;
         this.doAllAttacks = doAllAttacks;
-        this.animationNames = new(animationNames);
     }
 
     public override void OnEndState()

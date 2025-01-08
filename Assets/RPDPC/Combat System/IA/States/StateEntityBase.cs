@@ -15,7 +15,7 @@ public abstract class StateEntityBase
     protected List<ConditionExpression> conditions;
     public bool isHostileState;
 
-    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator)
+    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator, List<string> animationNames)
     {
         this.manager = manager;
         this.parent = parent;
@@ -24,6 +24,7 @@ public abstract class StateEntityBase
         this.priority = priority;
         this.isHostileState = isHostileState;
         this.animator = animator;
+        this.animationNames = new (animationNames);
         foreach (ConditionExpression c in conditions)
         {
             c.baseCondition.Init(parent, player);
@@ -35,25 +36,43 @@ public abstract class StateEntityBase
     }
 
     public virtual void Init(
-        bool isIntelligent, //FollowPlayer
-        List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, //Attack and ProjectileAttack
-        Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, //RandomMoveInRange
-        GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, //Monster Spawner
-        float turnDuration, //TurnToPlayer
-        List<Vector3> positions, bool loop //FollowListOfPositions
+    )
+    { }
+
+    public virtual void Init(
+        bool isIntelligent //FollowPlayer
     )
     {}
 
     public virtual void Init(
-        bool isIntelligent, //FollowPlayer
-        List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, //Attack and ProjectileAttack
-        Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, //RandomMoveInRange
-        GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, //Monster Spawner
-        float turnDuration, //TurnToPlayer
-        List<Vector3> positions, bool loop, //FollowListOfPositions
-        List<string> animationNames //ALL
+        List<SOAttack.AttackDetails> attacks, bool doAllAttacks //Attack
+    )
+    { }
+
+    public virtual void Init(
+        List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks //ProjectileAttack
     )
     {}
+
+    public virtual void Init(
+        Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves //RandomMoveInRange
+    )
+    { }
+
+    public virtual void Init(
+        GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns //Monster Spawner
+    )
+    { }
+
+    public virtual void Init(
+        float turnDuration //TurnToPlayer
+    )
+    { }
+
+    public virtual void Init(
+        List<Vector3> positions, bool loop //FollowListOfPositions
+    )
+    { }
 
     public bool isStateValid()
     {

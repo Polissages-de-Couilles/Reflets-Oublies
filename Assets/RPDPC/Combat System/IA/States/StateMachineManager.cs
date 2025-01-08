@@ -21,7 +21,7 @@ public class StateMachineManager : MonoBehaviour
         foreach (StateBase state in states)
         {
             StateEntityBase stateEntity = state.PrepareEntityInstance();
-            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator);
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator, state.animationNames);
             stateEntities.Add(stateEntity);
         }
         setNewCurrentState(-1f);

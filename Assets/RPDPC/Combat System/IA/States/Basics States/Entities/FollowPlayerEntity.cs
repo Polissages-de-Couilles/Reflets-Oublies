@@ -8,10 +8,9 @@ public class FollowPlayerEntity : StateEntityBase
     bool isIntelligent;
     Vector3 lastKnownPos;
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns, float turnDuration, List<Vector3> positions, bool loop, List<string> animationNames)
+    public override void Init(bool isIntelligent)
     {
         this.isIntelligent = isIntelligent;
-        this.animationNames = new (animationNames);
     }
 
     public override void ExitState()
