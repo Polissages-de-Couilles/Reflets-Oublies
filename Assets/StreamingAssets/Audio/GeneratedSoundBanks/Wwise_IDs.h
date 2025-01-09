@@ -14,8 +14,14 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID COMBATMUSIC = 3733692670U;
+        static const AkUniqueID COMBATMUSICPAUSE = 3640620548U;
+        static const AkUniqueID COMBATMUSICRESUME = 4123088407U;
         static const AkUniqueID FORETMUSIC = 2264695890U;
+        static const AkUniqueID FORETMUSICPAUSE = 2716092448U;
+        static const AkUniqueID FORETMUSICRESUME = 1829540987U;
         static const AkUniqueID MARIOMUSIC = 3428957736U;
+        static const AkUniqueID MARIOMUSICPAUSE = 3360282654U;
+        static const AkUniqueID MARIOMUSICRESUME = 797962905U;
         static const AkUniqueID PLAY_ASHLEY_COUGH = 883066387U;
         static const AkUniqueID PLAY_ASHLEY_CRY = 2581246001U;
         static const AkUniqueID PLAY_ASHLEY_HEINN = 4130244703U;
@@ -34,7 +40,11 @@ namespace AK
         static const AkUniqueID RAPH_DIALOGUE_1_1 = 3170927391U;
         static const AkUniqueID RAPH_DIALOGUE_1_2 = 3170927388U;
         static const AkUniqueID SMASHMUSIC = 572284388U;
+        static const AkUniqueID SMASHMUSICPAUSE = 3395474434U;
+        static const AkUniqueID SMASHMUSICRESUME = 750352341U;
         static const AkUniqueID VILLAGEMUSIC = 3625871072U;
+        static const AkUniqueID VILLAGEMUSICPAUSE = 2606775814U;
+        static const AkUniqueID VILLAGEMUSICRESUME = 1037476801U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -65,10 +75,15 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID COMBATMUSIC = 3733692670U;
+        static const AkUniqueID FORETMUSIC = 2264695890U;
+        static const AkUniqueID MARIOMUSIC = 3428957736U;
         static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MUSICVOLUME = 2346531308U;
+        static const AkUniqueID SMASHMUSIC = 572284388U;
         static const AkUniqueID TRANSITIONPARAMETER = 2985490821U;
         static const AkUniqueID VFXVOLUME = 698515981U;
+        static const AkUniqueID VILLAGEMUSIC = 3625871072U;
         static const AkUniqueID VOICEVOLUME = 414646191U;
     } // namespace GAME_PARAMETERS
 
@@ -82,18 +97,14 @@ namespace AK
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID MUSICCOMBAT = 3634348186U;
+        static const AkUniqueID MUSICFORET = 1935794824U;
+        static const AkUniqueID MUSICMARIO = 1429868846U;
+        static const AkUniqueID MUSICSMASH = 1441840878U;
+        static const AkUniqueID MUSICVILLAGE = 1844245490U;
         static const AkUniqueID VFX = 694692527U;
         static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
-
-    namespace AUX_BUSSES
-    {
-        static const AkUniqueID AUXMUSICCOMBAT = 659899738U;
-        static const AkUniqueID AUXMUSICFORET = 270455624U;
-        static const AkUniqueID AUXMUSICMARIO = 188883950U;
-        static const AkUniqueID AUXMUSICSMASH = 4113045422U;
-        static const AkUniqueID AUXMUSICVILLAGE = 2745591986U;
-    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

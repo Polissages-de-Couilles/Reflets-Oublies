@@ -1,25 +1,35 @@
 Event	ID	Name			Wwise Object Path	Notes
 	572284388	SmashMusic			\Default Work Unit\Music\SmashMusic	
+	750352341	SmashMusicResume			\Default Work Unit\Music\SmashMusicResume	
+	797962905	MarioMusicResume			\Default Work Unit\Music\MarioMusicResume	
 	883066387	Play_Ashley_cough			\Default Work Unit\Character\Ashley\Play_Ashley_cough	
 	951685384	Play_Jack_hmm			\Default Work Unit\Character\Jack\Play_Jack_hmm	
 	968975072	Play_Jack_cough			\Default Work Unit\Character\Jack\Play_Jack_cough	
+	1037476801	VillageMusicResume			\Default Work Unit\Music\VillageMusicResume	
 	1403254254	Play_Jack_cry			\Default Work Unit\Character\Jack\Play_Jack_cry	
+	1829540987	ForetMusicResume			\Default Work Unit\Music\ForetMusicResume	
 	1946362930	Play_Ashley_laugh			\Default Work Unit\Character\Ashley\Play_Ashley_laugh	
 	2137976346	Play_Ashley_wouh			\Default Work Unit\Character\Ashley\Play_Ashley_wouh	
 	2264695890	ForetMusic			\Default Work Unit\Music\ForetMusic	
 	2320881544	Play_LaserArme			\Default Work Unit\Play_LaserArme	
 	2501766892	Play_MICKEY_MOUSE_SOUND_EFFECT			\Default Work Unit\Play_MICKEY_MOUSE_SOUND_EFFECT	
 	2581246001	Play_Ashley_cry			\Default Work Unit\Character\Ashley\Play_Ashley_cry	
+	2606775814	VillageMusicPause			\Default Work Unit\Music\VillageMusicPause	
+	2716092448	ForetMusicPause			\Default Work Unit\Music\ForetMusicPause	
 	2754582667	Play_Jack_wouh			\Default Work Unit\Character\Jack\Play_Jack_wouh	
 	2831483387	Play_Ashley_hmm			\Default Work Unit\Character\Ashley\Play_Ashley_hmm	
 	3170927388	RAPH_DIALOGUE_1_2			\Default Work Unit\Character\Raph\RAPH_DIALOGUE_1_2	
 	3170927391	RAPH_DIALOGUE_1_1			\Default Work Unit\Character\Raph\RAPH_DIALOGUE_1_1	
+	3360282654	MarioMusicPause			\Default Work Unit\Music\MarioMusicPause	
 	3395388088	Play_Jack_heinn			\Default Work Unit\Character\Jack\Play_Jack_heinn	
+	3395474434	SmashMusicPause			\Default Work Unit\Music\SmashMusicPause	
 	3428957736	MarioMusic			\Default Work Unit\Music\MarioMusic	
 	3625871072	VillageMusic			\Default Work Unit\Music\VillageMusic	
+	3640620548	CombatMusicPause			\Default Work Unit\Music\CombatMusicPause	
 	3728340277	Play_Jack_laugh			\Default Work Unit\Character\Jack\Play_Jack_laugh	
 	3733692670	CombatMusic			\Default Work Unit\Music\CombatMusic	
 	3854155799	Play_footsteps			\Default Work Unit\Play_footsteps	
+	4123088407	CombatMusicResume			\Default Work Unit\Music\CombatMusicResume	
 	4130244703	Play_Ashley_heinn			\Default Work Unit\Character\Ashley\Play_Ashley_heinn	
 
 Switch Group	ID	Name			Wwise Object Path	Notes
@@ -31,6 +41,9 @@ Switch	ID	Name	Switch Group			Notes
 	688956122	gun1	GunSwitch			
 	2734451473	notLaser	isLaser			
 	3982605422	Laser	isLaser			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3733692670	CombatMusic			\Default Work Unit\MusicVolume\CombatMusic	
 
 Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
 	509536389	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\footsteps\breath\silence\Silence	
