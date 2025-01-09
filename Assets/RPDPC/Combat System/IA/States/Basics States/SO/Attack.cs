@@ -46,6 +46,7 @@ public class SOAttack : StateBase
         public bool DoesKnockback;
         public float KnockForce;
         public KnockbackMode KnockbackMode;
+        public GameObject VFX;
     }
 
     [Serializable]

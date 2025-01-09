@@ -102,6 +102,9 @@ public class AttackEntity : StateEntityBase
     {
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
+        GameObject vfx = MonoBehaviour.Instantiate(detail.VFX, parent.transform);
+        vfx.transform.localPosition = detail.ColliderRelativePosition;
+
         GameObject attackCollider = new GameObject("BotAttackCollider");
         attackCollider.transform.parent = parent.transform;
         currentAttacks.Add(attackCollider, ad);
@@ -127,10 +130,6 @@ public class AttackEntity : StateEntityBase
                 capsuleCollider.isTrigger = true;
                 break;
         }
-
-        //Pour décembre : Visuel PlaceHolder
-        attackCollider.AddComponent<MeshRenderer>();
-        attackCollider.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
 
         AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
         ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
