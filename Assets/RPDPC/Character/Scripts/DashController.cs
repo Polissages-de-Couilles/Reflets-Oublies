@@ -86,7 +86,7 @@ public class DashController : MonoBehaviour
                 
                 for (int i = 0; i < 100; i++)
                 {
-                    yield return new WaitForSeconds(dashCooldown / 100);
+                    yield return new WaitForSeconds(dashCooldown / 100f);
                     if(i > 50)
                     {
                         isRecharging = true;
