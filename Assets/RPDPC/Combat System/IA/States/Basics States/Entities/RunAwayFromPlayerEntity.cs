@@ -6,13 +6,15 @@ using UnityEngine.AI;
 public class RunAwayFromPlayerEntity : StateEntityBase
 {
     NavMeshAgent agent;
+    bool keepWatchingPlayer;
 
     public override void ExitState()
     {
     }
 
-    public override void Init()
+    public override void Init(bool isIntelligent)
     {
+        keepWatchingPlayer = isIntelligent;
     }
 
     public override void OnEndState()
@@ -30,5 +32,7 @@ public class RunAwayFromPlayerEntity : StateEntityBase
     public override void OnUpdate()
     {
         agent.SetDestination(parent.transform.position - (player.transform.position - parent.transform.position).normalized);
+        if (keepWatchingPlayer)
+            agent.transform.LookAt(player.transform.position);
     }
 }

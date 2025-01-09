@@ -40,7 +40,7 @@ public abstract class StateEntityBase
     { }
 
     public virtual void Init(
-        bool isIntelligent //FollowPlayer
+        bool isIntelligent //FollowPlayer ou RunAwayFromPlayer
     )
     {}
 
