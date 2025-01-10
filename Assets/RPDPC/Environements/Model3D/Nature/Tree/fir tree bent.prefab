@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7793503112204249128}
   - component: {fileID: 6595467076672612237}
   - component: {fileID: 8963070446875054919}
-  - component: {fileID: 8025964898687812765}
+  - component: {fileID: 5672760172435145328}
   m_Layer: 0
   m_Name: fir tree bent
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8025964898687812765
-CapsuleCollider:
+--- !u!64 &5672760172435145328
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,8 +102,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.232963
-  m_Height: 5.5602508
-  m_Direction: 1
-  m_Center: {x: -0.031661987, y: 0.86388946, z: 0.10183883}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8450315177187483977, guid: accfade4b7114f24783256bf071c25c2, type: 3}
