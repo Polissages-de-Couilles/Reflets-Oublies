@@ -62,6 +62,9 @@ public class GameManager : MonoBehaviour
     public InputActionAsset InputAction => _inputAction;
     [SerializeField] InputActionAsset _inputAction;
 
+    public VFXManager VFXManager => _vfxManager;
+    [SerializeField] private VFXManager _vfxManager;
+
     //Uniquement là à but de test, ne pas utiliser pour la version final
 
     public void Update()

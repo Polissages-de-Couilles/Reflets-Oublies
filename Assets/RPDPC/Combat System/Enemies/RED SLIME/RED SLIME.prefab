@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -6405370947578726185}
   - component: {fileID: -5315232874052416244}
   - component: {fileID: 5920006165444556415}
+  - component: {fileID: 5437810716763362646}
   m_Layer: 0
   m_Name: RED SLIME
   m_TagString: Untagged
@@ -131,6 +132,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e72a2647f737d44daa1b32340619b71, type: 2}
   - {fileID: 11400000, guid: 3786e34613366194f8920cb74c708709, type: 2}
   - {fileID: 11400000, guid: 9988891f592a6be459a7d35d192f487f, type: 2}
+  - {fileID: 11400000, guid: 429e8a58b70b5554488cc2cae743f74b, type: 2}
   shouldSearchStates: 1
   animator: {fileID: 6945936001800029890}
 --- !u!114 &-7988538864932358234
@@ -247,6 +249,19 @@ MonoBehaviour:
     m_PostInfinity: 1
     m_RotationOrder: 4
   agent: {fileID: 3031341672916915160}
+--- !u!114 &5437810716763362646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749567980823191316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e511a0c36f6196847b169fe910fe0914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onDeathVFX: {fileID: 8942575455857307612, guid: a153b896da35e3041a219985adfffff1, type: 3}
 --- !u!1001 &7005289711838741148
 PrefabInstance:
   m_ObjectHideFlags: 0
