@@ -106,6 +106,7 @@ public class AttackEntity : StateEntityBase
         vfx.transform.localPosition = detail.ColliderRelativePosition;
 
         GameObject attackCollider = new GameObject("BotAttackCollider");
+        attackCollider.layer = 9;
         attackCollider.transform.parent = parent.transform;
         currentAttacks.Add(attackCollider, ad);
 
