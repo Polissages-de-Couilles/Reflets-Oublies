@@ -6,8 +6,8 @@ using UnityEngine.InputSystem;
 public class AttackManager : MonoBehaviour
 {
     PlayerInputEventManager PIE;
-    [SerializeField] float timeBetweenAttacks = 0.5f;
-    [SerializeField] float attackDamage = 5f;
+    [SerializeField] float timeBetweenAttacks;
+    [SerializeField] float attackDamage;
 
     [SerializeField] AttackCollider collision1;
     [SerializeField] AttackCollider collision2;

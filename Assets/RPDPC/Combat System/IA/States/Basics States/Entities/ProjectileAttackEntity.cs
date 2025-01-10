@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PDC;
 using DG.Tweening;
 
 public class ProjectileAttackEntity : StateEntityBase
@@ -17,7 +16,7 @@ public class ProjectileAttackEntity : StateEntityBase
         onActionFinished?.Invoke();
     }
 
-    public override void Init(bool isIntelligent, List<SOAttack.AttackDetails> attacks, List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves, GameObject monsterPrefab, int nbToSpawnAtEnterState, int mobMaxNb, float spawnRange, Vector2 rangeTimeBetweenSpawns)
+    public override void Init(List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks)
     {
         this.attacks = projectileAttacks;
         this.doAllAttacks = doAllAttacks;
@@ -26,6 +25,7 @@ public class ProjectileAttackEntity : StateEntityBase
     public override void OnEndState()
     {
         manager.shouldSearchStates = true;
+        manager.StopCoroutine(SpawnAttack());
     }
 
     public override void OnEnterState()
@@ -60,8 +60,7 @@ public class ProjectileAttackEntity : StateEntityBase
                 }
             }
         }
-        //finishedSpawnAllAttacks = true;
-        manager.shouldSearchStates = true;
+        ExitState();
     }
 
     IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
@@ -114,12 +113,7 @@ public class ProjectileAttackEntity : StateEntityBase
         Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
         vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
 
-        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
-
-        //if (currentAttacks.Count <= 1 && finishedSpawnAllAttacks)
-        //{
-        //    ExitState();
-        //}
+        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y * -detail.distance, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
 
         currentAttacks.Remove(attackCollider);
         if(attackCollider != null)

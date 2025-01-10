@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07c5713963b5094792016b09b3c7f48, type: 3}
   m_Name: RATS_CAC_STATE_FollowPlayer
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 2
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 2c7fd01315971994987dfffc609ab02c, type: 2}
     otherParts: []
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: a15fddb2b59cc1a488c02c03df0ef0c9, type: 2}
+    otherParts: []
   isHostileState: 1
-  isIntelligent: 1
+  isIntelligent: 0

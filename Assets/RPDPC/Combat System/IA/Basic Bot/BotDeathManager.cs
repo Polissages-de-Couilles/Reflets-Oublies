@@ -32,6 +32,7 @@ public class BotDeathManager : MonoBehaviour
             }
 
             GetComponent<MoneyDrop>().DropMonney();
+            GetComponent<StateMachineManager>().enabled = false;
 
             yield return new WaitForSeconds(0.5f);
 

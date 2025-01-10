@@ -9,6 +9,7 @@ public class PlayerIsVisible : ConditionBase
     GameObject parent;
     GameObject player;
     CharacterController playerCollider;
+    CapsuleCollider parentCollider;
     List<Vector3> directions;
     StateManager sm;
     [SerializeField] bool fulfillIfTalking;
@@ -19,6 +20,7 @@ public class PlayerIsVisible : ConditionBase
         this.player = player;
         playerCollider = player.GetComponent<CharacterController>();
         sm = this.player.GetComponent<StateManager>();
+        parentCollider = parent.GetComponent<CapsuleCollider>();
     }
 
     public override bool isConditionFulfilled()
@@ -51,7 +53,7 @@ public class PlayerIsVisible : ConditionBase
     bool CheckRayCast(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.Raycast(parent.transform.position, -(parent.transform.position - direction), out hit, Mathf.Infinity))
+        if (Physics.Raycast(parent.transform.position + new Vector3(0,parentCollider.height/2,0), -(parent.transform.position - direction), out hit, Mathf.Infinity))
         {
             Debug.DrawLine(parent.transform.position, hit.point);
             //Debug.Log(Vector3.Angle(parent.transform.forward.normalized, -(parent.transform.position - direction).normalized));

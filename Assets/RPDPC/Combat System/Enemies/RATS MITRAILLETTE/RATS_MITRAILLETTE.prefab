@@ -60,10 +60,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.30625832
-  m_Height: 1.2943392
-  m_Direction: 2
-  m_Center: {x: -0.01, y: 0.26999998, z: 0.16681862}
+  m_Radius: 0.75
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: -0.01, y: 1.5, z: 0.16681862}
 --- !u!114 &7544593501085946562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8a52d2fc4b137fd4b9c3cc4972807c81, type: 2}
   - {fileID: 11400000, guid: e4cbb8e283e114e4790fe3f56df35290, type: 2}
   - {fileID: 11400000, guid: b4df1258a894a3140b4269216921ddd5, type: 2}
+  - {fileID: 11400000, guid: 7b1a03c0721eb3044ba96afdfda77fd4, type: 2}
   shouldSearchStates: 1
 --- !u!195 &402069318496846280
 NavMeshAgent:
@@ -89,7 +90,7 @@ NavMeshAgent:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583257317877209676}
   m_Enabled: 1
-  m_AgentTypeID: 0
+  m_AgentTypeID: 1479372276
   m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
