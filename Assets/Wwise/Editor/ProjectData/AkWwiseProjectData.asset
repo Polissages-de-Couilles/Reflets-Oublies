@@ -262,7 +262,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: ed8be2bc20991442b5d1348aaa6ce5b7
     GuidInternal: 
-    m_lastTime: -8584651497928579128
+    m_lastTime: -8584651495611438120
     List:
     - name: Ashley
       guid: c67890c6aa566e4e9ec4865ae97da608
@@ -321,6 +321,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: CombatMusicPause
+      guid: 45dc3bdc29c61a4295d77b4b314fcd0d
+      id: 3640620548
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: CombatMusicPause
+        ObjectType: 3
+        guid: 45dc3bdc29c61a4295d77b4b314fcd0d
+      Path: Events\Default Work Unit\Music\CombatMusicPause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: CombatMusicResume
+      guid: 710bfb03178e3e47a132cf79480a7792
+      id: 4123088407
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: CombatMusicResume
+        ObjectType: 3
+        guid: 710bfb03178e3e47a132cf79480a7792
+      Path: Events\Default Work Unit\Music\CombatMusicResume
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: ForetMusic
       guid: afef429528f7194585fa307319241d9d
       id: 2264695890
@@ -341,6 +381,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: ForetMusicPause
+      guid: 0995ee374717004db967a3c4323cb8db
+      id: 2716092448
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: ForetMusicPause
+        ObjectType: 3
+        guid: 0995ee374717004db967a3c4323cb8db
+      Path: Events\Default Work Unit\Music\ForetMusicPause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: ForetMusicResume
+      guid: f88ce4ea4202e543a8d7fdccfea241a0
+      id: 1829540987
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: ForetMusicResume
+        ObjectType: 3
+        guid: f88ce4ea4202e543a8d7fdccfea241a0
+      Path: Events\Default Work Unit\Music\ForetMusicResume
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Jack
       guid: fa87857bf9800d4384a67e8fa29f98ba
       id: 3865235296
@@ -381,6 +461,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: MarioMusicPause
+      guid: ebec2304b1decc479735b74a3aa0e83c
+      id: 3360282654
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: MarioMusicPause
+        ObjectType: 3
+        guid: ebec2304b1decc479735b74a3aa0e83c
+      Path: Events\Default Work Unit\Music\MarioMusicPause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: MarioMusicResume
+      guid: 092fa32046993b4db67146ea65ba7997
+      id: 797962905
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: MarioMusicResume
+        ObjectType: 3
+        guid: 092fa32046993b4db67146ea65ba7997
+      Path: Events\Default Work Unit\Music\MarioMusicResume
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Music
       guid: 458068be8d2bac4b9eb176cdf5b6a32d
       id: 3991942870
@@ -398,106 +518,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: PauseCombatMusic
-      guid: 45dc3bdc29c61a4295d77b4b314fcd0d
-      id: 1611540638
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ed8be2bc20991442b5d1348aaa6ce5b7
-      - ElementName: Music
-        ObjectType: 4
-        guid: 458068be8d2bac4b9eb176cdf5b6a32d
-      - ElementName: PauseCombatMusic
-        ObjectType: 3
-        guid: 45dc3bdc29c61a4295d77b4b314fcd0d
-      Path: Events\Default Work Unit\Music\PauseCombatMusic
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: PauseForetMusic
-      guid: 0995ee374717004db967a3c4323cb8db
-      id: 637501298
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ed8be2bc20991442b5d1348aaa6ce5b7
-      - ElementName: Music
-        ObjectType: 4
-        guid: 458068be8d2bac4b9eb176cdf5b6a32d
-      - ElementName: PauseForetMusic
-        ObjectType: 3
-        guid: 0995ee374717004db967a3c4323cb8db
-      Path: Events\Default Work Unit\Music\PauseForetMusic
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: PauseMarioMusic
-      guid: ebec2304b1decc479735b74a3aa0e83c
-      id: 3285551176
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ed8be2bc20991442b5d1348aaa6ce5b7
-      - ElementName: Music
-        ObjectType: 4
-        guid: 458068be8d2bac4b9eb176cdf5b6a32d
-      - ElementName: PauseMarioMusic
-        ObjectType: 3
-        guid: ebec2304b1decc479735b74a3aa0e83c
-      Path: Events\Default Work Unit\Music\PauseMarioMusic
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: PauseSmashMusic
-      guid: 4a7b19d58902b64992f855685d44dc13
-      id: 3560935940
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ed8be2bc20991442b5d1348aaa6ce5b7
-      - ElementName: Music
-        ObjectType: 4
-        guid: 458068be8d2bac4b9eb176cdf5b6a32d
-      - ElementName: PauseSmashMusic
-        ObjectType: 3
-        guid: 4a7b19d58902b64992f855685d44dc13
-      Path: Events\Default Work Unit\Music\PauseSmashMusic
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
-    - name: PauseVillageMusic
-      guid: b03356605c6dfc4082068a9881ee282c
-      id: 3030900992
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ed8be2bc20991442b5d1348aaa6ce5b7
-      - ElementName: Music
-        ObjectType: 4
-        guid: 458068be8d2bac4b9eb176cdf5b6a32d
-      - ElementName: PauseVillageMusic
-        ObjectType: 3
-        guid: b03356605c6dfc4082068a9881ee282c
-      Path: Events\Default Work Unit\Music\PauseVillageMusic
-      maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
     - name: Play_Ashley_cough
       guid: 39bb9678f4f43242a6b3096a4e85d031
       id: 883066387
@@ -911,6 +931,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: SmashMusicPause
+      guid: 4a7b19d58902b64992f855685d44dc13
+      id: 3395474434
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: SmashMusicPause
+        ObjectType: 3
+        guid: 4a7b19d58902b64992f855685d44dc13
+      Path: Events\Default Work Unit\Music\SmashMusicPause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: SmashMusicResume
+      guid: 7ab5921c1e1df5489ec51b215fb8e9d0
+      id: 750352341
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: SmashMusicResume
+        ObjectType: 3
+        guid: 7ab5921c1e1df5489ec51b215fb8e9d0
+      Path: Events\Default Work Unit\Music\SmashMusicResume
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: VillageMusic
       guid: bde1bed101c4ab41a2c7955e52c0e34c
       id: 3625871072
@@ -931,6 +991,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: VillageMusicPause
+      guid: b03356605c6dfc4082068a9881ee282c
+      id: 2606775814
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: VillageMusicPause
+        ObjectType: 3
+        guid: b03356605c6dfc4082068a9881ee282c
+      Path: Events\Default Work Unit\Music\VillageMusicPause
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: VillageMusicResume
+      guid: 257c601bee192942a47d6bb4f94669c5
+      id: 1037476801
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ed8be2bc20991442b5d1348aaa6ce5b7
+      - ElementName: Music
+        ObjectType: 4
+        guid: 458068be8d2bac4b9eb176cdf5b6a32d
+      - ElementName: VillageMusicResume
+        ObjectType: 3
+        guid: 257c601bee192942a47d6bb4f94669c5
+      Path: Events\Default Work Unit\Music\VillageMusicResume
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
