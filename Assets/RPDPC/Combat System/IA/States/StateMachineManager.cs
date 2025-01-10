@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class StateMachineManager : MonoBehaviour
 {
@@ -14,6 +11,9 @@ public class StateMachineManager : MonoBehaviour
 
     [HideInInspector] public bool shouldSearchStates = true;
 
+    public Animator Animator => animator;
+    [SerializeField] Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class StateMachineManager : MonoBehaviour
         foreach (StateBase state in states)
         {
             StateEntityBase stateEntity = state.PrepareEntityInstance();
-            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState);
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator, state.animationNames);
             stateEntities.Add(stateEntity);
         }
         setNewCurrentState(-1f);
@@ -79,6 +79,35 @@ public class StateMachineManager : MonoBehaviour
                 currentState.OnEndState();
             }
             currentState = highestState;
+            currentState.AddHostileToPlayerState();
+            currentState.OnEnterState();
+            currentState.onActionFinished += StateEnded;
+        }
+    }
+
+    public void forceState(Type targetStateType)
+    {
+        StateEntityBase foundedState = null;
+
+        foreach (StateEntityBase seb in stateEntities)
+        {
+            if (targetStateType.IsInstanceOfType(seb))
+            {
+                foundedState = seb;
+            }
+        }
+
+        if (foundedState != null)
+        {
+            Debug.Log("FORCE STATE FOR " + gameObject + " : " + foundedState);
+            shouldSearchStates = true;
+            if (currentState != null)
+            {
+                currentState.onActionFinished -= StateEnded;
+                currentState.RemoveHostileFromPlayerState();
+                currentState.OnEndState();
+            }
+            currentState = foundedState;
             currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
