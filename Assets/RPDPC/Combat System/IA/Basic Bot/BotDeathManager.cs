@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BotDeathManager : MonoBehaviour
 {
+    public Action OnBotDied;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,8 @@ public class BotDeathManager : MonoBehaviour
                     MSE.spawnedMobs.Remove(gameObject);
                 }
             }
+
+            OnBotDied?.Invoke();
 
             GetComponent<MoneyDrop>().DropMonney();
             GetComponent<StateMachineManager>().enabled = false;

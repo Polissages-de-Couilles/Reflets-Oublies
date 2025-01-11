@@ -14,7 +14,7 @@ public class BossStartManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //GetComponent<StateMachineManager>().enabled = true;
+        GetComponent<BotDeathManager>().OnBotDied += OnBotDied;
 
         foreach (WallsInfo d in detectorsInfos)
         {
@@ -39,12 +39,29 @@ public class BossStartManager : MonoBehaviour
             Destroy(bpd.gameObject);
         }
 
+        foreach (WallsInfo w in wallsInfos)
+        {
+            GameObject wG = new GameObject("BossWall");
+            BoxCollider bc = wG.AddComponent<BoxCollider>();
+            wG.transform.position = w.absPos;
+            wG.transform.localScale = w.size;
+            walls.Add(wG);
+        }
+
         ActivateBoss();
     }
 
     private void ActivateBoss()
     {
         GetComponent<StateMachineManager>().enabled = true;
+    }
+
+    void OnBotDied()
+    {
+        foreach (GameObject wG in walls)
+        {
+            Destroy(wG);
+        }
     }
 
 
