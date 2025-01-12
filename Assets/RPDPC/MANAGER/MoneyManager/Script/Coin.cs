@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PDC;
-using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
