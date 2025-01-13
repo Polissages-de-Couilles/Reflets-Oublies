@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -6405370947578726185}
   - component: {fileID: -5315232874052416244}
   - component: {fileID: 4380574193750354783}
+  - component: {fileID: 3905644814771578287}
   m_Layer: 0
   m_Name: DARKNUT
   m_TagString: Untagged
@@ -127,8 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 11400000, guid: ff8b2ea6d2e51ab41a9d56a452eb1666, type: 2}
   - {fileID: 11400000, guid: 7b1a03c0721eb3044ba96afdfda77fd4, type: 2}
+  - {fileID: 11400000, guid: d3027261885ac034faec936b239de2e0, type: 2}
+  - {fileID: 11400000, guid: c6d5a4cfbdd5afe41b73cbd9fd957cdf, type: 2}
+  - {fileID: 11400000, guid: 85e68a40290f53245ab7cd34d753538d, type: 2}
   shouldSearchStates: 1
   animator: {fileID: 2886875625884379673}
 --- !u!114 &-7988538864932358234
@@ -219,6 +222,70 @@ MonoBehaviour:
   detectorsInfos:
   - absPos: {x: -32.13, y: -3.9, z: 293.4}
     size: {x: 30, y: 10, z: 2}
+--- !u!114 &3905644814771578287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749567980823191316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777597af31fb92c4f8af36f2aff550c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.3995126
+      outSlope: -0.3995126
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.16921113
+      value: 0.932398
+      inSlope: -0.58725524
+      outSlope: -0.58725524
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.75
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.41666663
+    - serializedVersion: 3
+      time: 0.82780427
+      value: 0.92373794
+      inSlope: 0.65084124
+      outSlope: 0.65084124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.44288006
+      outSlope: 0.44288006
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 1
+    m_RotationOrder: 4
+  agent: {fileID: 3031341672916915160}
 --- !u!1001 &3536236444946320008
 PrefabInstance:
   m_ObjectHideFlags: 0
