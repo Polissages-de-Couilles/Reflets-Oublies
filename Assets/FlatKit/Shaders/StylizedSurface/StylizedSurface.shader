@@ -117,6 +117,8 @@
     	#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Version.hlsl"
     	ENDHLSL
 
+        
+
         Pass
         {
             Name "ForwardLit"
@@ -721,8 +723,13 @@
 
             ENDHLSL
         }
+
+        
     }
 
     Fallback "Hidden/Universal Render Pipeline/FallbackError"
     CustomEditor "StylizedSurfaceEditor"
+
+    
+    
 }

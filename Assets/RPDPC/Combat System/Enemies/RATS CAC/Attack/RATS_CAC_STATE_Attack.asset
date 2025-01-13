@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca2a8ab07cfb554bb418276f2571d81, type: 3}
+  m_Name: RATS_CAC_STATE_Attack
+  m_EditorClassIdentifier: 
+  priority: 3
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 8e56c429317ce64408672754a0f771b8, type: 2}
+    otherParts: []
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: f0dc88e8453d06d4b8f557e35723ab45, type: 2}
+    otherParts: []
+  isHostileState: 1
+  attacks:
+  - colliders:
+    - delayBeforeColliderSpawn: 0
+      colliderShape: 1
+      ColliderRelativePosition: {x: 0, y: 1, z: 1}
+      ColliderRelativeRotation: {x: 0, y: 0.004363309, z: 0, w: 0.99999046}
+      BoxColliderDimension: {x: 0, y: 0, z: 0}
+      CapsuleColliderHeight: 0
+      SphereAndCapsuleColliderRadius: 1
+      ColliderDuration: 3
+      DoesStun: 1
+      StunDuration: 0.5
+      DoesKnockback: 1
+      KnockForce: 0.5
+      KnockbackMode: 0
+    attackDuration: 4
+    damage: 10
+    ShouldOnlyTookDamageFromOneCollision: 0
+  doAllAttacks: 0
