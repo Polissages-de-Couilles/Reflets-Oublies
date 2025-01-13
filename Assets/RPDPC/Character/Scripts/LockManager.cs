@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class LockManager : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class LockManager : MonoBehaviour
     private Lockable newLockableObject;
     private bool isSearchingLock = false;
 
+    [SerializeField] Image vfxLock;
+    [SerializeField] Image vfxLockable;
+
     private void Start()
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
@@ -26,6 +30,13 @@ public class LockManager : MonoBehaviour
 
     private void OnLockPress(InputAction.CallbackContext context)
     {
+        GameManager.Instance.CamManager.Vignette(0.4f, 0.125f, false, true);
+        GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(60, -45, 0), 0.5f);
+        DOTween.To(() =>
+            GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
+            x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
+            new Vector3(0, 0f, 0),
+            0.5f);
         isSearchingLock = true;
     }
 
@@ -34,12 +45,12 @@ public class LockManager : MonoBehaviour
         currentLockObject = newLockableObject;
         currentLockObject.IsLock();
 
-        GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(50, -45, 0), 0.5f);
-        DOTween.To(() => 
-            GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset, 
-            x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x, 
-            new Vector3(0, 1.5f, 0), 
-            0.5f);
+        //GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(60, -45, 0), 0.5f);
+        //DOTween.To(() => 
+        //    GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset, 
+        //    x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x, 
+        //    new Vector3(0, 0f, 0), 
+        //    0.5f);
     }
 
     private void Unlock()
@@ -47,12 +58,12 @@ public class LockManager : MonoBehaviour
         currentLockObject.IsUnlock();
         currentLockObject = null;
 
-        GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(45, -45, 0), 0.5f);
-        DOTween.To(() =>
-            GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
-            x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
-            new Vector3(0, 0.5f, 0),
-            0.5f);
+        //GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(45, -45, 0), 0.5f);
+        //DOTween.To(() =>
+        //    GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
+        //    x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
+        //    new Vector3(0, 0.5f, 0),
+        //    0.5f);
     }
 
     public void OnUnLock()
@@ -73,6 +84,13 @@ public class LockManager : MonoBehaviour
     public void OnLockRelease()
     {
         isSearchingLock = false;
+        GameManager.Instance.CamManager.Vignette(0.28f, 0.125f, false, true);
+        GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(45, -45, 0), 0.5f);
+        DOTween.To(() =>
+            GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
+            x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
+            new Vector3(0, 0.5f, 0),
+            0.5f);
 
         if (currentLockObject != null)
         {
@@ -87,6 +105,23 @@ public class LockManager : MonoBehaviour
             OnLockRelease();
         }
         FindLockableObject();
+        
+        vfxLock.gameObject.SetActive(currentLockObject != null);
+        if(currentLockObject != null)
+        {
+            vfxLock.transform.position = Camera.main.WorldToScreenPoint(currentLockObject.transform.position);
+            var mesh = currentLockObject.GetComponentInChildren<SkinnedMeshRenderer>();
+            if(mesh != null)
+            {
+                Debug.Log(mesh.localBounds.extents);
+            }
+        }
+        
+        vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject);
+        if(newLockableObject != null)
+        {
+            vfxLockable.transform.position = Camera.main.WorldToScreenPoint(newLockableObject.transform.position);
+        }
     }
 
     void FindLockableObject()

@@ -84,16 +84,15 @@ public class DashController : MonoBehaviour
             if(dashCount < dashMax)
             {
                 
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < Mathf.RoundToInt(dashCooldown * 50f); i++)
                 {
-                    Debug.Log(dashCooldown / 50f);
-                    yield return new WaitForSeconds(dashCooldown / 50f);
-                    if(i > 25)
+                    yield return new WaitForFixedUpdate();
+                    if(i > Mathf.RoundToInt(dashCooldown * 25f))
                     {
                         isRecharging = true;
                         if (GameManager.Instance.UIManager != null)
                         {
-                            GameManager.Instance.UIManager.UpdateDashSlider(1f/25f);
+                            GameManager.Instance.UIManager.UpdateDashSlider(1f/Mathf.RoundToInt(dashCooldown * 25f));
                         }
                     }
                 }

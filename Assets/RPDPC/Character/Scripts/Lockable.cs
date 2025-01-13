@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Lockable : MonoBehaviour
 {
-    [SerializeField] GameObject lockableVFX;
-    [SerializeField] GameObject lockVFX;
     public bool CanBeLock { get; set; } = true;
     public bool IsCurrentlyLock => isLock;
     private bool isLock = false;
@@ -30,29 +28,22 @@ public class Lockable : MonoBehaviour
     public void IsLockable()
     {
         isLockable = true;
-        if (!isLock)
-        {
-            lockableVFX.SetActive(true);
-        }
     }
 
     public void IsNotLockable()
     {
         isLockable = false;
-        lockableVFX.SetActive(false);
     }
 
     public void IsLock()
     {
         isLock = true;
-        lockVFX.SetActive(true);
         Debug.Log(this.name + " is Lock");
     }
 
     public void IsUnlock()
     {
         isLock = false;
-        lockVFX.SetActive(false);
         Debug.Log(this.name + " is Unlock");
     }
 }
