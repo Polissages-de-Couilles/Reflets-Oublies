@@ -9,6 +9,7 @@ using UnityEngine.Rendering.Universal;
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CinemachineEffectManager : MonoBehaviour
 {
+    public CinemachineVirtualCamera VirtualCamera => Cam;
     CinemachineVirtualCamera Cam;
     Tween shakeTween;
     [SerializeField] private Volume CamVolume;
@@ -33,7 +34,6 @@ public class CinemachineEffectManager : MonoBehaviour
         shakeTween = DOTween.To(() => cinemachineBasicMultiChannelPerlin.m_AmplitudeGain, x => cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = x, 0f, time);
         shakeTween.Play();
     }
-
     public void Bloom(float threshold, float intensity, float duration, bool snap = false)
     {
         if(isBloom) return;

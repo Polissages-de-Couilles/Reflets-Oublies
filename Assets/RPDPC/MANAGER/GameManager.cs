@@ -65,7 +65,10 @@ public class GameManager : MonoBehaviour
     public VFXManager VFXManager => _vfxManager;
     [SerializeField] private VFXManager _vfxManager;
 
-    //Uniquement là à but de test, ne pas utiliser pour la version final
+    public LockManager LockManager => _lockManager;
+    [SerializeField] private LockManager _lockManager;
+
+    //Uniquement lEEbut de test, ne pas utiliser pour la version final
 
     public void Update()
     {

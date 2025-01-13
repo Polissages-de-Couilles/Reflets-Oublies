@@ -8,8 +8,8 @@ using UnityEngine;
 public class BotDeathManager : MonoBehaviour
 {
     const string DeathAnimName = "Die";
-    public Action OnDeath;
     StateMachineManager stateMachine;
+    public Action OnBotDied;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +40,15 @@ public class BotDeathManager : MonoBehaviour
             }
 
             stateMachine.enabled = false;
+            
+            GetComponent<StateMachineManager>().enabled = false;
 
             if (TryGetComponent<MoneyDrop>(out MoneyDrop money))
             {
                 money.DropMonney();
             }
-
-            OnDeath?.Invoke();
+            
+            OnBotDied?.Invoke();
             stateMachine.Animator.Play(DeathAnimName);
             float animationDuration = stateMachine.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == DeathAnimName).length;
             yield return new WaitForSeconds(animationDuration);

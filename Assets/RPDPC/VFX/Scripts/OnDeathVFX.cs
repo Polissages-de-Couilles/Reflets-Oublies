@@ -11,12 +11,12 @@ public class OnDeathVFX : MonoBehaviour
     public void Start()
     {
         deathManager = GetComponent<BotDeathManager>();
-        deathManager.OnDeath += VFX;
+        deathManager.OnBotDied += VFX;
     }
 
     private void OnDestroy()
     {
-        deathManager.OnDeath -= VFX;
+        deathManager.OnBotDied -= VFX;
     }
 
     void VFX()

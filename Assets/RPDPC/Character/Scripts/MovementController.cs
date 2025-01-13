@@ -62,15 +62,31 @@ public class MovementController : MonoBehaviour
 
     private void HandleRotation()
     {
-        Vector3 positionToLookAt = Quaternion.Euler(0, -45, 0) * currentMovement;
-        positionToLookAt.y = 0.0f;
-
-        Quaternion currentRotation = transform.rotation;
-
-        if (isMovementPressed && isStateCompatible(stateManager.playerState))
+        if(GameManager.Instance.LockManager.CurrentLockObject != null)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
-            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            Vector3 positionToLookAt = (GameManager.Instance.LockManager.CurrentLockObject.transform.position - this.transform.position);
+            positionToLookAt.y = 0.0f;
+
+            Quaternion currentRotation = transform.rotation;
+
+            if (isStateCompatible(stateManager.playerState))
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            }
+        }
+        else
+        {
+            Vector3 positionToLookAt = Quaternion.Euler(0, -45, 0) * currentMovement;
+            positionToLookAt.y = 0.0f;
+
+            Quaternion currentRotation = transform.rotation;
+
+            if (isMovementPressed && isStateCompatible(stateManager.playerState))
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            }
         }
     }
 
@@ -78,8 +94,20 @@ public class MovementController : MonoBehaviour
     {
         if (isStateCompatible(stateManager.playerState))
         {
-            characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * speed);
-            Velocity = currentMovement * speed;
+            //if (GameManager.Instance.LockManager.CurrentLockObject != null)
+            //{
+            //    Vector3 positionToLookAt = (GameManager.Instance.LockManager.CurrentLockObject.transform.position - this.transform.position);
+            //    positionToLookAt.y = 0.0f;
+            //    Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+
+            //    characterController.Move(targetRotation * currentMovement * Time.fixedDeltaTime * speed);
+            //    Velocity = currentMovement * speed;
+            //}
+            //else
+            //{
+                characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * speed);
+                Velocity = currentMovement * speed;
+            //}
         }
         else
         {
