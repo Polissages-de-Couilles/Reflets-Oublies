@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private PlayerInputEventManager PIE;
 
     Vector2 currentMovementInput;
+    public Vector3 Direction => currentMovement;
     Vector3 currentMovement;
     public bool IsMovementPressed => isMovementPressed;
     bool isMovementPressed;
