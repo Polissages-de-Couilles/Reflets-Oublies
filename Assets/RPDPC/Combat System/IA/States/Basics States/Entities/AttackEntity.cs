@@ -13,6 +13,9 @@ public class AttackEntity : StateEntityBase
     Dictionary<GameObject, SOAttack.AttackDetails> currentAttacks = new Dictionary<GameObject, SOAttack.AttackDetails>();
     Dictionary<SOAttack.AttackDetails, bool> attackAlreadyDealtDamage = new Dictionary<SOAttack.AttackDetails, bool>();
     bool finishedSpawnAllAttacks = false;
+    bool grabed = false;
+    Transform grabTransform;
+    float currentAttackTimer = 0f;
     public override void ExitState()
     {
         onActionFinished?.Invoke();
@@ -56,6 +59,13 @@ public class AttackEntity : StateEntityBase
 
     public override void OnUpdate()
     {
+        currentAttackTimer += Time.deltaTime;
+
+        if (grabed)
+        {
+            player.transform.position = grabTransform.position;
+            player.transform.rotation = grabTransform.rotation * Quaternion.Euler(0,180,0);
+        }
     }
 
     IEnumerator SpawnAttack()
@@ -63,6 +73,7 @@ public class AttackEntity : StateEntityBase
         int index = 0;
         foreach (SOAttack.AttackDetails attack in attacks)
         {
+            currentAttackTimer = 0f;
             animator.Play(animationNames[attack.animationID]);
             float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
 
@@ -100,53 +111,33 @@ public class AttackEntity : StateEntityBase
 
     IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail, SOAttack.AttackDetails ad)
     {
+        AttackColliderManager acm = parent.GetComponentsInChildren<AttackColliderManager>().ToList().Find(s => s.colliderID == detail.colliderID);
+        AttackCollider ac; 
+
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
+
+        ac = acm.CreateAttackCollider(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
+
+        ac.OnDamageableEnterTrigger += DealDamage;
+
+        acm.ActivateCollider();
 
         if(detail.VFX != null)
         {
             GameObject vfx = MonoBehaviour.Instantiate(detail.VFX, parent.transform);
-            vfx.transform.localPosition = detail.ColliderRelativePosition;
+            vfx.transform.localPosition = acm.gameObject.transform.position;
         }
 
-        GameObject attackCollider = new GameObject("BotAttackCollider");
-        attackCollider.layer = 9;
-        attackCollider.transform.parent = parent.transform;
-        currentAttacks.Add(attackCollider, ad);
-
-        switch (detail.colliderShape)
-        {
-            case SOAttack.ColliderShape.Box:
-                BoxCollider boxCollider = attackCollider.AddComponent<BoxCollider>();
-                boxCollider.size = detail.BoxColliderDimension;
-                boxCollider.isTrigger = true;
-                break;
-
-            case SOAttack.ColliderShape.Sphere:
-                SphereCollider sphereCollider = attackCollider.AddComponent<SphereCollider>();
-                sphereCollider.radius = detail.SphereAndCapsuleColliderRadius;
-                sphereCollider.isTrigger = true;
-                break;
-
-            case SOAttack.ColliderShape.Capsule:
-                CapsuleCollider capsuleCollider = attackCollider.AddComponent<CapsuleCollider>();
-                capsuleCollider.radius = detail.SphereAndCapsuleColliderRadius;
-                capsuleCollider.height = detail.CapsuleColliderHeight;
-                capsuleCollider.isTrigger = true;
-                break;
-        }
+        currentAttacks.Add(ac.gameObject, ad);
 
         //Pour décembre : Visuel PlaceHolder
-        attackCollider.AddComponent<MeshRenderer>();
-        attackCollider.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
-
-        AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
-        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
-        ac.OnDamageableEnterTrigger += DealDamage;
-
-        attackCollider.transform.localPosition = detail.ColliderRelativePosition;
-        attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
+        //attackCollider.AddComponent<MeshRenderer>();
+        //attackCollider.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Cube.fbx");
 
         yield return new WaitForSeconds(detail.ColliderDuration);
+
+        ac.OnDamageableEnterTrigger -= DealDamage;
+        acm.DesactivateCollider();
 
         //Debug.Log("TRY EXIT STATE : " + (currentAttacks.Count == 1) + " & " + finishedSpawnAllAttacks);
         //if (currentAttacks.Count == 1 && finishedSpawnAllAttacks)
@@ -155,11 +146,20 @@ public class AttackEntity : StateEntityBase
         //    ExitState();
         //}
 
-        currentAttacks.Remove(attackCollider);
-        if (attackCollider != null)
-        {
-            MonoBehaviour.Destroy(attackCollider);
-        }
+        currentAttacks.Remove(ac.gameObject);
+    }
+
+    IEnumerator launchGrab(SOAttack.AttackDetails ad, SOAttack.GrabDetails gd)
+    {
+        float grabDuration = ad.attackDuration - currentAttackTimer - gd.grabStunDuration;
+        grabed = true;
+        grabTransform = gd.grabAnchor;
+        player.GetComponent<PlayerStunAndKnockbackManager>().ApplyStun(grabDuration + gd.grabStunDuration);
+
+        yield return new WaitForSeconds(grabDuration);
+
+        grabed = false;
+        parent.GetComponent<CharacterController>().Move(gd.grabReleaseForce);
     }
 
     void DealDamage(IDamageable damageable, GameObject collider) {
@@ -167,6 +167,10 @@ public class AttackEntity : StateEntityBase
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
             damageable.takeDamage(currentAttacks[collider].damage);
+            if (currentAttacks[collider].grabDetails.grabAnchor != null)
+            {
+                manager.StartCoroutine(launchGrab(currentAttacks[collider], currentAttacks[collider].grabDetails));
+            }
         }
     }
 }

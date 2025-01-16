@@ -27,19 +27,24 @@ public class SOAttack : StateBase
         public float damage;
         public bool ShouldOnlyTookDamageFromOneCollision;
         public int animationID;
+        public GrabDetails grabDetails;
+    }
+
+    [Serializable]
+    public struct GrabDetails
+    {
+        public Transform grabAnchor;
+        [Tooltip("Mettez ici le nombre de secondes avant la fin de l'attaque. Par exemple si l'attaque dure 5 secondes, mettez 1 pour relacher à la 4ème seconde")]
+        public float grabReleaseTime;
+        public Vector3 grabReleaseForce;
+        public float grabStunDuration;
     }
 
     [Serializable]
     public struct AttackColliderDetails
     {
         public float delayBeforeColliderSpawn;
-        public ColliderShape colliderShape;
-        [Tooltip("Also depends of bot rotation. If you put 1 0 0 it will spawn at the x 1 * the bot current rotation. Which is logic")]
-        public Vector3 ColliderRelativePosition; // Also depends of Bots rotation
-        public Quaternion ColliderRelativeRotation;
-        public Vector3 BoxColliderDimension;
-        public float CapsuleColliderHeight;
-        public float SphereAndCapsuleColliderRadius;
+        public float colliderID;
         public float ColliderDuration;
         public bool DoesStun;
         public float StunDuration;
