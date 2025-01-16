@@ -19,6 +19,7 @@ public class MovementController : MonoBehaviour
 
     public float Speed => speed;
     [SerializeField] private float speed = 5f;
+    public float Acceleration { get; set; }
     public Vector3 Velocity { get; private set; }
     Vector3 oldPosition, currentPosition;
     public float DistanceTravelInOneFrame => (currentPosition - oldPosition).magnitude;
@@ -95,20 +96,20 @@ public class MovementController : MonoBehaviour
     {
         if (isStateCompatible(stateManager.playerState))
         {
-            //if (GameManager.Instance.LockManager.CurrentLockObject != null)
-            //{
-            //    Vector3 positionToLookAt = (GameManager.Instance.LockManager.CurrentLockObject.transform.position - this.transform.position);
-            //    positionToLookAt.y = 0.0f;
-            //    Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+            var s = Mathf.Lerp(0, speed, Mathf.Clamp01(Acceleration));
+            if (IsMovementPressed)
+            {
+                Acceleration += 5f * Time.fixedDeltaTime;
+                Acceleration = Mathf.Clamp01(Acceleration);
+            }
+            else
+            {
+                Acceleration -= 10f * Time.fixedDeltaTime;
+                Acceleration = Mathf.Clamp01(Acceleration);
+            }
 
-            //    characterController.Move(targetRotation * currentMovement * Time.fixedDeltaTime * speed);
-            //    Velocity = currentMovement * speed;
-            //}
-            //else
-            //{
-                characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * speed);
-                Velocity = currentMovement * speed;
-            //}
+            characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * s);
+            Velocity = currentMovement * speed;
         }
         else
         {

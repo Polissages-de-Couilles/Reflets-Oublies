@@ -62,7 +62,7 @@ public class DashController : MonoBehaviour
             GameManager.Instance.UIManager.UpdateDashSlider(-1f);
         }
 
-        Vector3 dir = movementController.IsMovementPressed ? Quaternion.Euler(0, -45, 0) * movementController.Direction : -characterController.transform.forward;
+        Vector3 dir = movementController.IsMovementPressed ? Quaternion.Euler(0, -45, 0) * movementController.Direction.normalized : -characterController.transform.forward;
 
 
         for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
@@ -72,6 +72,7 @@ public class DashController : MonoBehaviour
             characterController.Move(dash);
             yield return new WaitForFixedUpdate();
         }
+        movementController.Acceleration = 1f;
 
         isDashing = false;
         canDash = true;
