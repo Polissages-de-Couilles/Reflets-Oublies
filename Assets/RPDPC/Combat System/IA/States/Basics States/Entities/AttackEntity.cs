@@ -61,11 +61,6 @@ public class AttackEntity : StateEntityBase
     {
         currentAttackTimer += Time.deltaTime;
 
-        if (grabed)
-        {
-            player.transform.position = grabTransform.position;
-            player.transform.rotation = grabTransform.rotation * Quaternion.Euler(0,180,0);
-        }
     }
 
     IEnumerator SpawnAttack()
@@ -149,27 +144,19 @@ public class AttackEntity : StateEntityBase
         currentAttacks.Remove(ac.gameObject);
     }
 
-    IEnumerator launchGrab(SOAttack.AttackDetails ad, SOAttack.GrabDetails gd)
-    {
-        float grabDuration = ad.attackDuration - currentAttackTimer - gd.grabStunDuration;
-        grabed = true;
-        grabTransform = gd.grabAnchor;
-        player.GetComponent<PlayerStunAndKnockbackManager>().ApplyStun(grabDuration + gd.grabStunDuration);
-
-        yield return new WaitForSeconds(grabDuration);
-
-        grabed = false;
-        parent.GetComponent<CharacterController>().Move(gd.grabReleaseForce);
-    }
+    
 
     void DealDamage(IDamageable damageable, GameObject collider) {
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
             damageable.takeDamage(currentAttacks[collider].damage);
-            if (currentAttacks[collider].grabDetails.grabAnchor != null)
+
+            GrabSocketManager gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
+
+            if (gsm != null)
             {
-                manager.StartCoroutine(launchGrab(currentAttacks[collider], currentAttacks[collider].grabDetails));
+                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabStunDuration);
             }
         }
     }

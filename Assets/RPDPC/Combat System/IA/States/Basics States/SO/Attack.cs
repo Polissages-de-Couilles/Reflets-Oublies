@@ -33,7 +33,7 @@ public class SOAttack : StateBase
     [Serializable]
     public struct GrabDetails
     {
-        public Transform grabAnchor;
+        public int grabID;
         [Tooltip("Mettez ici le nombre de secondes avant la fin de l'attaque. Par exemple si l'attaque dure 5 secondes, mettez 1 pour relacher à la 4ème seconde")]
         public float grabReleaseTime;
         public Vector3 grabReleaseForce;
