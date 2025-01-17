@@ -19,7 +19,7 @@ public class PlayAudioOnStart : MonoBehaviour
     // Paramètres pour la transition de volume
     private const float targetVolume = 100f;
     private const float transitionTime = 1f; 
-    private const float updateInterval = 0.01f; 
+    private const float updateInterval = 0.001f; 
 
     
     
@@ -33,7 +33,9 @@ public class PlayAudioOnStart : MonoBehaviour
         }
 
         Debug.Log("Entrée dans la zone");
+        StopAllCoroutines();
         StartCoroutine(TransitionVolumeEnter());
+
     }
 
     IEnumerator TransitionVolumeEnter()
@@ -67,6 +69,7 @@ public class PlayAudioOnStart : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Sortie de la zone");
+        StopAllCoroutines();
         StartCoroutine(TransitionVolumeExit());
     }
 
