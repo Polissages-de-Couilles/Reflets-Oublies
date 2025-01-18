@@ -96,20 +96,29 @@ public class MovementController : MonoBehaviour
     {
         if (isStateCompatible(stateManager.playerState))
         {
-            var s = Mathf.Lerp(0, speed, Mathf.Clamp01(Acceleration));
-            if (IsMovementPressed)
+            RaycastHit hit;
+            if(!Physics.Raycast(transform.position + (transform.forward * 0.5f), Vector3.down, out hit, 2f))
             {
-                Acceleration += 5f * Time.fixedDeltaTime;
-                Acceleration = Mathf.Clamp01(Acceleration);
+                characterController.Move(new Vector3(0, 0, 0));
+                Velocity = new Vector3(0, 0, 0);
             }
             else
             {
-                Acceleration -= 10f * Time.fixedDeltaTime;
-                Acceleration = Mathf.Clamp01(Acceleration);
-            }
+                var s = Mathf.Lerp(0, speed, Mathf.Clamp01(Acceleration));
+                if (IsMovementPressed)
+                {
+                    Acceleration += 5f * Time.fixedDeltaTime;
+                    Acceleration = Mathf.Clamp01(Acceleration);
+                }
+                else
+                {
+                    Acceleration -= 10f * Time.fixedDeltaTime;
+                    Acceleration = Mathf.Clamp01(Acceleration);
+                }
 
-            characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * s);
-            Velocity = currentMovement * speed;
+                characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * s);
+                Velocity = currentMovement * speed;
+            }
         }
         else
         {
@@ -125,5 +134,11 @@ public class MovementController : MonoBehaviour
     bool isStateCompatible(StateManager.States state)
     {
         return states.Contains(state);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(transform.position + (transform.forward * 0.5f), transform.position + (transform.forward * 0.5f) + (Vector3.down * 2f));
     }
 }
