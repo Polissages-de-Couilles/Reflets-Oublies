@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using PDC;
 using DG.Tweening;
+using UnityEditor;
 
 [CreateAssetMenu(menuName = "Game/IA/States/Base/ProjectileAttack")]
 public class SOProjectileAttack : StateBase
@@ -22,38 +23,17 @@ public class SOProjectileAttack : StateBase
     [Serializable]
     public struct ProjectileAttackDetails
     {
-        public List<ProjectileAttackColliderDetails> colliders;
+        public int spawnerID;
+        public List<ProjectileAttackPrefabDetails> prefabProjectiles;
         public float attackDuration;
         public float damage;
     }
 
     [Serializable]
-    public struct ProjectileAttackColliderDetails
+    public struct ProjectileAttackPrefabDetails
     {
-        public float delayBeforeColliderSpawn;
-        public ProjectileColliderShape colliderShape;
-        [Tooltip("Also depends of bot rotation. If you put 1 0 0 it will spawn at the x 1 * the bot current rotation. Which is logic")]
-        public Vector3 ColliderRelativePosition; // Also depends of Bots rotation
-        public Quaternion ColliderRelativeRotation;
-        public Vector3 BoxColliderDimension;
-        public float CapsuleColliderHeight;
-        public float SphereAndCapsuleColliderRadius;
-        public float distance;
-        public float speed;
-        public AnimationCurve animCurv;
-        public bool DoesStun;
-        public float StunDuration;
-        public bool DoesKnockback;
-        public float KnockForce;
-        public KnockbackMode KnockbackMode;
-    }
-
-    [Serializable]
-    public enum ProjectileColliderShape
-    {
-        Box,
-        Sphere,
-        Capsule
+        public GameObject prefab;
+        public float delayBeforeSpawn;
     }
 }
 

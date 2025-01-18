@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System.Linq;
 
 public class ProjectileAttackEntity : StateEntityBase
 {
@@ -43,127 +44,93 @@ public class ProjectileAttackEntity : StateEntityBase
     {
         foreach (SOProjectileAttack.ProjectileAttackDetails attack in attacks)
         {
-            foreach (SOProjectileAttack.ProjectileAttackColliderDetails collider in attack.colliders)
+            foreach (SOProjectileAttack.ProjectileAttackPrefabDetails collider in attack.prefabProjectiles)
             {
-                manager.StartCoroutine(SpawnCollision(collider, attack));
+                manager.StartCoroutine(SpawnCollisionNEW(collider, attack));
             }
 
             yield return new WaitForSeconds(attack.attackDuration);
 
-            if (!doAllAttacks)
-            {
-                if (!isStateValid())
-                {
-                    //ExitState();
-                    manager.shouldSearchStates = true;
-                    break;
-                }
-            }
+            //if (!doAllAttacks)
+            //{
+            //    if (!isStateValid())
+            //    {
+            //        //ExitState();
+            //        manager.shouldSearchStates = true;
+            //        break;
+            //    }
+            //}
         }
         ExitState();
     }
 
-    IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
+    IEnumerator SpawnCollisionNEW(SOProjectileAttack.ProjectileAttackPrefabDetails papd, SOProjectileAttack.ProjectileAttackDetails ad)
     {
-        yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
+        yield return new WaitForSeconds(papd.delayBeforeSpawn);
 
-        GameObject attackCollider = new GameObject("BotAttackCollider");
-        attackCollider.layer = 9;
-        attackCollider.transform.parent = parent.transform;
-        currentAttacks.Add(attackCollider, ad);
+        ProjectileSpawner ps = parent.GetComponentsInChildren<ProjectileSpawner>().ToList().Find(x => x.spawnerID == ad.spawnerID);
 
-        switch (detail.colliderShape)
-        {
-            case SOProjectileAttack.ProjectileColliderShape.Box:
-                BoxCollider boxCollider = attackCollider.AddComponent<BoxCollider>();
-                boxCollider.size = detail.BoxColliderDimension;
-                boxCollider.isTrigger = true;
-                break;
-
-            case SOProjectileAttack.ProjectileColliderShape.Sphere:
-                SphereCollider sphereCollider = attackCollider.AddComponent<SphereCollider>();
-                sphereCollider.radius = detail.SphereAndCapsuleColliderRadius;
-                sphereCollider.isTrigger = true;
-                break;
-
-            case SOProjectileAttack.ProjectileColliderShape.Capsule:
-                CapsuleCollider capsuleCollider = attackCollider.AddComponent<CapsuleCollider>();
-                capsuleCollider.radius = detail.SphereAndCapsuleColliderRadius;
-                capsuleCollider.height = detail.CapsuleColliderHeight;
-                capsuleCollider.isTrigger = true;
-                break;
-        }
-
-        //Pour décembre : Visuel PlaceHolder
-        GameObject mesh = new GameObject("mesh");
-        mesh.transform.parent = attackCollider.transform;
-        Material material = new Material(Shader.Find("FlatKit/Stylized Surface"));
-        material.color = Color.red;
-        mesh.AddComponent<MeshRenderer>().material = material;
-        mesh.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Capsule.fbx");
-        mesh.transform.localScale = new Vector3(0.1f, 0, 0.3f);
-
-        AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
-        ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
-        ac.OnDamageableEnterTrigger += DealDamage;
-        ac.OnEnterTrigger += DestroyCollision;
-
-        attackCollider.transform.localPosition = detail.ColliderRelativePosition;
-        attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
-
-        Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
-        vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
-
-        yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y * -detail.distance, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
-
-        currentAttacks.Remove(attackCollider);
-        if(attackCollider != null)
-        {
-            MonoBehaviour.Destroy(attackCollider);
-        }
+        GameObject projectile = MonoBehaviour.Instantiate(papd.prefab, ps.gameObject.transform);
+        projectile.layer = 9;
     }
 
-    void DealDamage(IDamageable damageable, GameObject collider)
-    {
-        damageable.takeDamage(currentAttacks[collider].damage);
-    }
+    //IEnumerator SpawnCollision(SOProjectileAttack.ProjectileAttackColliderDetails detail, SOProjectileAttack.ProjectileAttackDetails ad)
+    //{
+    //    yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-    void DestroyCollision(GameObject collision)
-    {
-        Debug.Log("TOUCHED SOMETHING " + collision);
-        MonoBehaviour.Destroy(collision);
-    }
+    //    GameObject attackCollider = new GameObject("BotAttackCollider");
+    //    attackCollider.layer = 9;
+    //    attackCollider.transform.parent = parent.transform;
+    //    currentAttacks.Add(attackCollider, ad);
 
-    [Serializable]
-    public struct ProjectileAttackDetails
-    {
-        public List<ProjectileAttackColliderDetails> colliders;
-        public float attackDuration;
-        public float damage;
-    }
+    //    switch (detail.colliderShape)
+    //    {
+    //        case SOProjectileAttack.ProjectileColliderShape.Box:
+    //            BoxCollider boxCollider = attackCollider.AddComponent<BoxCollider>();
+    //            boxCollider.size = detail.BoxColliderDimension;
+    //            boxCollider.isTrigger = true;
+    //            break;
 
-    [Serializable]
-    public struct ProjectileAttackColliderDetails
-    {
-        public float delayBeforeColliderSpawn;
-        public ProjectileColliderShape colliderShape;
-        [Tooltip("Also depends of bot rotation. If you put 1 0 0 it will spawn at the x 1 * the bot current rotation. Which is logic")]
-        public Vector3 ColliderRelativePosition; // Also depends of Bots rotation
-        public Quaternion ColliderRelativeRotation;
-        public Vector3 BoxColliderDimension;
-        public float CapsuleColliderHeight;
-        public float SphereAndCapsuleColliderRadius;
-        public float distance;
-        public float speed;
-        public AnimationCurve animCurv;
-    }
+    //        case SOProjectileAttack.ProjectileColliderShape.Sphere:
+    //            SphereCollider sphereCollider = attackCollider.AddComponent<SphereCollider>();
+    //            sphereCollider.radius = detail.SphereAndCapsuleColliderRadius;
+    //            sphereCollider.isTrigger = true;
+    //            break;
 
-    [Serializable]
-    public enum ProjectileColliderShape
-    {
-        Box,
-        Sphere,
-        Capsule
-    }
+    //        case SOProjectileAttack.ProjectileColliderShape.Capsule:
+    //            CapsuleCollider capsuleCollider = attackCollider.AddComponent<CapsuleCollider>();
+    //            capsuleCollider.radius = detail.SphereAndCapsuleColliderRadius;
+    //            capsuleCollider.height = detail.CapsuleColliderHeight;
+    //            capsuleCollider.isTrigger = true;
+    //            break;
+    //    }
+
+    //    //Pour décembre : Visuel PlaceHolder
+    //    GameObject mesh = new GameObject("mesh");
+    //    mesh.transform.parent = attackCollider.transform;
+    //    Material material = new Material(Shader.Find("FlatKit/Stylized Surface"));
+    //    material.color = Color.red;
+    //    mesh.AddComponent<MeshRenderer>().material = material;
+    //    mesh.AddComponent<MeshFilter>().mesh = Resources.GetBuiltinResource<Mesh>("Capsule.fbx");
+    //    mesh.transform.localScale = new Vector3(0.1f, 0, 0.3f);
+
+    //    AttackCollider ac = attackCollider.AddComponent<AttackCollider>();
+    //    ac.Init(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
+    //    ac.OnDamageableEnterTrigger += DealDamage;
+    //    ac.OnEnterTrigger += DestroyCollision;
+
+    //    attackCollider.transform.localPosition = detail.ColliderRelativePosition;
+    //    attackCollider.transform.localRotation = detail.ColliderRelativeRotation;
+
+    //    Vector3 vDistance = (attackCollider.transform.position - player.transform.position);
+    //    vDistance = new Vector3(-vDistance.x, vDistance.y, -vDistance.z).normalized;
+
+    //    yield return attackCollider.transform.DOMove(attackCollider.transform.position + new Vector3(vDistance.x * detail.distance, vDistance.y * -detail.distance, vDistance.z * detail.distance), detail.distance / detail.speed).SetEase(detail.animCurv).WaitForCompletion();
+
+    //    currentAttacks.Remove(attackCollider);
+    //    if(attackCollider != null)
+    //    {
+    //        MonoBehaviour.Destroy(attackCollider);
+    //    }
+    //}
 }
-
