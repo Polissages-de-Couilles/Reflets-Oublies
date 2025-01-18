@@ -12,7 +12,6 @@ public class AttackEntity : StateEntityBase
 
     Dictionary<GameObject, SOAttack.AttackDetails> currentAttacks = new Dictionary<GameObject, SOAttack.AttackDetails>();
     Dictionary<SOAttack.AttackDetails, bool> attackAlreadyDealtDamage = new Dictionary<SOAttack.AttackDetails, bool>();
-    bool finishedSpawnAllAttacks = false;
     bool grabed = false;
     Transform grabTransform;
     float currentAttackTimer = 0f;
@@ -39,13 +38,11 @@ public class AttackEntity : StateEntityBase
 
         currentAttacks.Clear();
         attackAlreadyDealtDamage.Clear();
-        finishedSpawnAllAttacks = false;
     }
 
     public override void OnEnterState()
     {
         manager.shouldSearchStates = false;
-        finishedSpawnAllAttacks = false;
         foreach (SOAttack.AttackDetails attack in attacks)
         {
             if(attackAlreadyDealtDamage.ContainsKey(attack))
@@ -65,7 +62,6 @@ public class AttackEntity : StateEntityBase
 
     IEnumerator SpawnAttack()
     {
-        int index = 0;
         foreach (SOAttack.AttackDetails attack in attacks)
         {
             currentAttackTimer = 0f;
@@ -76,12 +72,6 @@ public class AttackEntity : StateEntityBase
             {
                 manager.StartCoroutine(SpawnCollision(collider, attack));
             }
-
-            if (index + 1 == attacks.Count)
-            {
-                finishedSpawnAllAttacks = true;
-            }
-
             yield return new WaitForSeconds(animationDuration);
 
             animator.Play(animationNames[0]);
@@ -97,8 +87,6 @@ public class AttackEntity : StateEntityBase
             //        break;
             //    }
             //}
-
-            index++;
         }
 
         ExitState();
@@ -112,7 +100,7 @@ public class AttackEntity : StateEntityBase
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
         ac = acm.CreateAttackCollider(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
-
+        ac.gameObject.layer = 9;
         ac.OnDamageableEnterTrigger += DealDamage;
 
         acm.ActivateCollider();
@@ -153,10 +141,9 @@ public class AttackEntity : StateEntityBase
             damageable.takeDamage(currentAttacks[collider].damage);
 
             GrabSocketManager gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
-
             if (gsm != null)
             {
-                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabStunDuration);
+                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabReleaseTime);
             }
         }
     }

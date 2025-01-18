@@ -34,7 +34,7 @@ public class SOAttack : StateBase
     public struct GrabDetails
     {
         public int grabID;
-        [Tooltip("Mettez ici le nombre de secondes avant la fin de l'attaque. Par exemple si l'attaque dure 5 secondes, mettez 1 pour relacher à la 4ème seconde")]
+        [Tooltip("Temps par rapport à durer de l'attaque, par exemple si l'attaque 5 secondes, mettre 4 arrête le grab à la 4ème seconde, peut importe que le joueur ait été grab à la 2ème ou 3ème secondes")]
         public float grabReleaseTime;
         public Vector3 grabReleaseForce;
         public float grabStunDuration;
