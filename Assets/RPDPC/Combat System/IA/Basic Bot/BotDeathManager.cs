@@ -36,10 +36,12 @@ public class BotDeathManager : MonoBehaviour
 
             OnBotDied?.Invoke();
 
+            Animator animator = GetComponent<Animator>();
             GetComponent<MoneyDrop>().DropMonney();
             GetComponent<StateMachineManager>().enabled = false;
-
-            yield return new WaitForSeconds(0.5f);
+            animator.Play("Die");
+            float dieLength = animator.GetCurrentAnimatorStateInfo(0).length;
+            yield return new WaitForSeconds(dieLength);
 
             Destroy(gameObject);
         }
