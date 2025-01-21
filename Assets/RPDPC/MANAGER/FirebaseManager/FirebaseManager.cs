@@ -53,12 +53,12 @@ public class FirebaseManager : MonoBehaviour
 
     public async Task SetUserData(UserData userData)
     {
-        await _database.GetReference(USER_KEY).Database.GetReference(userData.name).SetRawJsonValueAsync(JsonUtility.ToJson(userData));
+        await _database.GetReference(USER_KEY).Child(userData.name).SetRawJsonValueAsync(JsonUtility.ToJson(userData));
     }
 
     public async Task<UserData> GetUserData(string key)
     {
-        var dataSnapshot = await _database.GetReference(USER_KEY).Database.GetReference(key).GetValueAsync();
+        var dataSnapshot = await _database.GetReference(USER_KEY).Child(key).GetValueAsync();
         if (!dataSnapshot.Exists)
         {
             return null;
