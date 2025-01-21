@@ -1,4 +1,6 @@
+using Firebase;
 using Proyecto26;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
@@ -10,7 +12,21 @@ public class FirebaseManager : MonoBehaviour
     private const string firebase_url = "https://rpdpc-a1f69-default-rtdb.europe-west1.firebasedatabase.app/";
     private string GetURL(string url) => firebase_url + url + ".json";
 
+    public Action OnFirebaseInitialized;
 
+    public void Start()
+    {
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => 
+        {
+            if(task.Exception != null)
+            {
+                Debug.LogError($"Failed to init Firebase with {task.Exception}");
+                return;
+            }
+
+            OnFirebaseInitialized?.Invoke();
+        });
+    }
 
     //private void AddUser(string name, float x, float y, float z)
     //{
