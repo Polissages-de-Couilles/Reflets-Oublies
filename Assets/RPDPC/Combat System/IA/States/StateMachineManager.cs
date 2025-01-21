@@ -17,7 +17,7 @@ public class StateMachineManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(states.Count());
+        //Debug.Log(states.Count());
         GameObject player = GameManager.Instance.Player;
         foreach (StateBase state in states)
         {
@@ -71,7 +71,7 @@ public class StateMachineManager : MonoBehaviour
             int randIndex = rnd.Next(maxPrioList.Count);
             StateEntityBase highestState = maxPrioList[randIndex];
 
-            Debug.Log("FOUNDED STATE FOR " + gameObject + " : " + highestState);
+            //Debug.Log("FOUNDED STATE FOR " + gameObject + " : " + highestState);
             if (currentState != null)
             {
                 currentState.onActionFinished -= StateEnded;
@@ -99,7 +99,7 @@ public class StateMachineManager : MonoBehaviour
 
         if (foundedState != null)
         {
-            Debug.Log("FORCE STATE FOR " + gameObject + " : " + foundedState);
+            //Debug.Log("FORCE STATE FOR " + gameObject + " : " + foundedState);
             shouldSearchStates = true;
             if (currentState != null)
             {
