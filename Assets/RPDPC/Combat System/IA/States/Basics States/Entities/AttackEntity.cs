@@ -33,7 +33,7 @@ public class AttackEntity : StateEntityBase
 
         foreach (GameObject go in currentAttacks.Keys)
         {
-            MonoBehaviour.Destroy(go);
+            go.GetComponent<AttackColliderManager>().DesactivateCollider();
         }
 
         currentAttacks.Clear();
@@ -140,7 +140,12 @@ public class AttackEntity : StateEntityBase
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
             damageable.takeDamage(currentAttacks[collider].damage);
 
-            GrabSocketManager gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
+            GrabSocketManager gsm = null;
+
+            if (currentAttacks[collider].grabDetails.grabID > -1)
+            {
+                gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
+            }
             if (gsm != null)
             {
                 gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabReleaseTime);
