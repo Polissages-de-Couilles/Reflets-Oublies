@@ -146,9 +146,9 @@ public class AttackEntity : StateEntityBase
             {
                 gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
             }
-            if (gsm != null)
+            if (gsm != null && currentAttacks[collider].grabDetails.grabReleaseTime - currentAttackTimer > 0)
             {
-                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabReleaseTime);
+                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].grabDetails.grabReleaseTime - currentAttackTimer);
             }
         }
     }

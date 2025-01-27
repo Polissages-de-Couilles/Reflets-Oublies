@@ -31,7 +31,7 @@ public class GrabSocketManager : MonoBehaviour
 
         yield return new WaitForSeconds(duration);
 
-
+        grabTarget.transform.rotation = new Quaternion(0, grabTarget.transform.rotation.y, 0, 0);
         grabTarget.GetComponent<PlayerStunAndKnockbackManager>().ApplyStun(gd.grabStunDuration);
         grabTarget.GetComponent<CharacterController>().enabled = true;
         isGrabing = false;
