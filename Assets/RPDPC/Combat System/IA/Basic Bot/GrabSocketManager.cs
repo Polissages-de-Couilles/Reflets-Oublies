@@ -35,6 +35,6 @@ public class GrabSocketManager : MonoBehaviour
         grabTarget.GetComponent<PlayerStunAndKnockbackManager>().ApplyStun(gd.grabStunDuration);
         grabTarget.GetComponent<CharacterController>().enabled = true;
         isGrabing = false;
-        grabTarget.GetComponent<CharacterController>().Move(grabTarget.transform.InverseTransformDirection(gd.grabReleaseForce));
+        grabTarget.GetComponent<CharacterController>().Move(transform.TransformDirection(gd.grabReleaseForce));
     }
 }
