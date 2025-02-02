@@ -62,16 +62,26 @@ public class DashController : MonoBehaviour
             GameManager.Instance.UIManager.UpdateDashSlider(-1f);
         }
 
-        Vector3 dir = movementController.IsMovementPressed ? characterController.transform.forward : -characterController.transform.forward;
+        Vector3 dir = movementController.IsMovementPressed ? Quaternion.Euler(0, -45, 0) * movementController.Direction.normalized : -characterController.transform.forward;
 
 
         for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
         {
             Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
             dash += gravity * dashForce;
-            characterController.Move(dash);
+            RaycastHit hit;
+            if (!Physics.Raycast(transform.position + (transform.forward * 0.5f), Vector3.down, out hit, 2f))
+            {
+                characterController.Move(new Vector3(0, 0, 0));
+                break;
+            }
+            else
+            {
+                characterController.Move(dash);
+            }
             yield return new WaitForFixedUpdate();
         }
+        movementController.Acceleration = 1f;
 
         isDashing = false;
         canDash = true;
@@ -84,15 +94,15 @@ public class DashController : MonoBehaviour
             if(dashCount < dashMax)
             {
                 
-                for (int i = 0; i < 100; i++)
+                for (int i = 0; i < Mathf.RoundToInt(dashCooldown * 50f); i++)
                 {
-                    yield return new WaitForSeconds(dashCooldown / 100f);
-                    if(i > 50)
+                    yield return new WaitForFixedUpdate();
+                    if(i > Mathf.RoundToInt(dashCooldown * 25f))
                     {
                         isRecharging = true;
                         if (GameManager.Instance.UIManager != null)
                         {
-                            GameManager.Instance.UIManager.UpdateDashSlider(1f/50f);
+                            GameManager.Instance.UIManager.UpdateDashSlider(1f/Mathf.RoundToInt(dashCooldown * 25f));
                         }
                     }
                 }
@@ -102,7 +112,8 @@ public class DashController : MonoBehaviour
                 isRecharging = false;
                 GameManager.Instance.UIManager.SetDashSlider(dashCount);
             }
-            yield return null;
+            else
+                yield return null;
         }
     }
 

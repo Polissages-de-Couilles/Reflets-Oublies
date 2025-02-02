@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06de103fc8b4ffe4d9c747b09048a5d7, type: 3}
   m_Name: RED_SHELL_STATE_RunawarFromPlayer
   m_EditorClassIdentifier: 
-  priority: 1000
+  priority: 0
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     otherParts: []
   isHostileState: 0
-  animationNames: []
+  animationNames:
+  - WalkBWD
   keepWatchingPlayer: 1

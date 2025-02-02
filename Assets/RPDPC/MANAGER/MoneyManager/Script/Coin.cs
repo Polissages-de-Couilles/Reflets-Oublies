@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using PDC;
-using DG.Tweening;
 
 public class Coin : MonoBehaviour
 {
@@ -28,7 +26,7 @@ public class Coin : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, GameManager.Instance.Player.transform.position, v);
             yield return new WaitForFixedUpdate();
             value += Time.fixedDeltaTime / 1.5f;
-            Debug.Log(value);
+            //Debug.Log(value);
         }
 
         GameManager.Instance.MoneyManager.ChangePlayerMonney(valueCoin);
