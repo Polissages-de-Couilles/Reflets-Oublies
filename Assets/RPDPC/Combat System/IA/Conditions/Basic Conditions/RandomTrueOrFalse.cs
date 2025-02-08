@@ -13,6 +13,6 @@ public class RandomTrueOrFalse : ConditionBase
 
     public override bool isConditionFulfilled()
     {
-        return Random.Range(0,100) <= percentageOfTrue;
+        return Random.Range(0f,100f) <= percentageOfTrue;
     }
 }

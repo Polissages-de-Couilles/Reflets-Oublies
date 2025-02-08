@@ -77,6 +77,13 @@ public abstract class StateEntityBase
     { }
 
     public virtual void Init(
+        float turnDuration, //TurnToPlayer
+        string guardAnim,
+        string guardHitAnim
+    )
+    { }
+
+    public virtual void Init(
         List<Vector3> positions, bool loop //FollowListOfPositions
     )
     { }

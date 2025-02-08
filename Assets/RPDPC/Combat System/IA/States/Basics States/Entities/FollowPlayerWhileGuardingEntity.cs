@@ -49,7 +49,9 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
     {
         animator.Play(guardHitAnim);
         isGuardingHit = true;
+        agent.isStopped = true;
         yield return new WaitForSeconds(GuardHitAnimLen);
+        agent.isStopped = false;
         isGuardingHit = false;
         playAnim();
     }
