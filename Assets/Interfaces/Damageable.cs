@@ -6,7 +6,7 @@ using UnityEngine;
 public interface IDamageable
 {
     public Action<float, float> OnDamageTaken { get; set; }
-    void takeDamage(float damage);
+    void takeDamage(float damage, GameObject attacker);
     public float getCurrentHealth();
     public float getMaxHealth();
     void heal(float heal);

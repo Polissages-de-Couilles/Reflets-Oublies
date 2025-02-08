@@ -138,7 +138,7 @@ public class AttackEntity : StateEntityBase
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
-            damageable.takeDamage(currentAttacks[collider].damage);
+            damageable.takeDamage(currentAttacks[collider].damage, parent);
 
             GrabSocketManager gsm = null;
 

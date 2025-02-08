@@ -45,6 +45,13 @@ public abstract class StateEntityBase
     {}
 
     public virtual void Init(
+        bool isIntelligent, //FollowPlayerWhileGuarding
+        string guardAnim,
+        string guardHitAnim
+    )
+    { }
+
+    public virtual void Init(
         List<SOAttack.AttackDetails> attacks, bool doAllAttacks //Attack
     )
     { }
