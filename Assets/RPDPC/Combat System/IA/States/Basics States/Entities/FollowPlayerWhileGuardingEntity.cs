@@ -19,6 +19,7 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
     public override void OnEndState()
     {
         base.OnEndState();
+        guardManager.isGuarding = false;
         guardManager.asGuarded -= hasGuarded;
         animator.Play("GuardEmpty");
     }
