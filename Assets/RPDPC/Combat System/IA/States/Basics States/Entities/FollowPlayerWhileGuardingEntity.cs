@@ -55,7 +55,7 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
 
     override protected void playAnim()
     {
-        animator.Play(animationNames[0]);
-        animator.Play(guardAnim);
+        animator.CrossFadeInFixedTime(animationNames[0], 0.5f);
+        animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
     }
 }
