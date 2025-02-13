@@ -7,6 +7,7 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
     string guardAnim;
     string guardHitAnim;
     GuardManager guardManager;
+    Coroutine guardCoroutine;
     bool isGuardingHit = false;
 
     public override void Init(bool isIntelligent, string guardAnim, string guardHitAnim)
@@ -22,6 +23,11 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
         guardManager.isGuarding = false;
         guardManager.asGuarded -= hasGuarded;
         animator.Play("GuardEmpty");
+        if (guardCoroutine != null)
+        {
+            manager.StopCoroutine(guardCoroutine);
+            manager.shouldSearchStates = true;
+        }
     }
 
     public override void OnEnterState()
@@ -42,15 +48,23 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
 
     void hasGuarded()
     {
-        manager.StartCoroutine(hasGuardedEnum(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == guardHitAnim).length));
+        if (guardCoroutine != null)
+        {
+            manager.StopCoroutine(guardCoroutine);
+            manager.shouldSearchStates = true;
+        }
+        //guardCoroutine = manager.StartCoroutine(hasGuardedEnum(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == guardHitAnim).length));
+        guardCoroutine = manager.StartCoroutine(hasGuardedEnum(0.56f));
     }
 
     IEnumerator hasGuardedEnum(float GuardHitAnimLen)
     {
         animator.Play(guardHitAnim);
+        manager.shouldSearchStates = false;
         isGuardingHit = true;
         agent.isStopped = true;
         yield return new WaitForSeconds(GuardHitAnimLen);
+        manager.shouldSearchStates = true;
         agent.isStopped = false;
         isGuardingHit = false;
         playAnim();
