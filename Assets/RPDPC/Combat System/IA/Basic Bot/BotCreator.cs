@@ -14,6 +14,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(FromSpawnerManager))]
 [RequireComponent(typeof(MoneyDrop))]
 [RequireComponent(typeof(BotMovementSpeedManager))]
+[RequireComponent(typeof(GuardManager))]
+[RequireComponent(typeof(Lockable))]
 public class BotCreator : MonoBehaviour
 {
 }

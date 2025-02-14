@@ -11,6 +11,7 @@ public class StateMachineManager : MonoBehaviour
 
     [HideInInspector] public bool shouldSearchStates = true;
 
+    public Animator Animator => animator;
     [SerializeField] Animator animator;
 
     // Start is called before the first frame update

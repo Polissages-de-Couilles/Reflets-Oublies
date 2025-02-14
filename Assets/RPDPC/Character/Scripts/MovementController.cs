@@ -11,6 +11,7 @@ public class MovementController : MonoBehaviour
     private PlayerInputEventManager PIE;
 
     Vector2 currentMovementInput;
+    public Vector3 Direction => currentMovement;
     Vector3 currentMovement;
     public bool IsMovementPressed => isMovementPressed;
     bool isMovementPressed;
@@ -18,6 +19,7 @@ public class MovementController : MonoBehaviour
 
     public float Speed => speed;
     [SerializeField] private float speed = 5f;
+    public float Acceleration { get; set; }
     public Vector3 Velocity { get; private set; }
     Vector3 oldPosition, currentPosition;
     public float DistanceTravelInOneFrame => (currentPosition - oldPosition).magnitude;
@@ -62,15 +64,31 @@ public class MovementController : MonoBehaviour
 
     private void HandleRotation()
     {
-        Vector3 positionToLookAt = Quaternion.Euler(0, -45, 0) * currentMovement;
-        positionToLookAt.y = 0.0f;
-
-        Quaternion currentRotation = transform.rotation;
-
-        if (isMovementPressed && isStateCompatible(stateManager.playerState))
+        if(GameManager.Instance.LockManager.CurrentLockObject != null)
         {
-            Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
-            transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            Vector3 positionToLookAt = (GameManager.Instance.LockManager.CurrentLockObject.transform.position - this.transform.position);
+            positionToLookAt.y = 0.0f;
+
+            Quaternion currentRotation = transform.rotation;
+
+            if (isStateCompatible(stateManager.playerState))
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            }
+        }
+        else
+        {
+            Vector3 positionToLookAt = Quaternion.Euler(0, -45, 0) * currentMovement;
+            positionToLookAt.y = 0.0f;
+
+            Quaternion currentRotation = transform.rotation;
+
+            if (isMovementPressed && isStateCompatible(stateManager.playerState))
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
+                transform.rotation = Quaternion.Slerp(currentRotation, targetRotation, rotationFactorPerFrame * Time.fixedDeltaTime);
+            }
         }
     }
 
@@ -78,8 +96,29 @@ public class MovementController : MonoBehaviour
     {
         if (isStateCompatible(stateManager.playerState))
         {
-            characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * speed);
-            Velocity = currentMovement * speed;
+            RaycastHit hit;
+            if(!Physics.Raycast(transform.position + (transform.forward * 0.5f), Vector3.down, out hit, 2f))
+            {
+                characterController.Move(new Vector3(0, 0, 0));
+                Velocity = new Vector3(0, 0, 0);
+            }
+            else
+            {
+                var s = Mathf.Lerp(0, speed, Mathf.Clamp01(Acceleration));
+                if (IsMovementPressed)
+                {
+                    Acceleration += 5f * Time.fixedDeltaTime;
+                    Acceleration = Mathf.Clamp01(Acceleration);
+                }
+                else
+                {
+                    Acceleration -= 10f * Time.fixedDeltaTime;
+                    Acceleration = Mathf.Clamp01(Acceleration);
+                }
+
+                characterController.Move(Quaternion.Euler(0, -45, 0) * currentMovement * Time.fixedDeltaTime * s);
+                Velocity = currentMovement * speed;
+            }
         }
         else
         {
@@ -95,5 +134,11 @@ public class MovementController : MonoBehaviour
     bool isStateCompatible(StateManager.States state)
     {
         return states.Contains(state);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawLine(transform.position + (transform.forward * 0.5f), transform.position + (transform.forward * 0.5f) + (Vector3.down * 2f));
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/IA/States/Base/Turn to Player")]
 public class TurnToPlayer : StateBase
 {
-    [SerializeField] float turnDuration;
+    [SerializeField] protected float turnDuration;
     public override StateEntityBase PrepareEntityInstance()
     {
         TurnToPlayerEntity ttpe = new TurnToPlayerEntity();

@@ -23,7 +23,7 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
                 break;
         }
         Debug.Log(gameObject + " : Knockback from : " + attacked.transform.position + " to " + finalPos);
-        StartCoroutine(ApplyKnockback(finalPos, attacked.transform.position));
+        StartCoroutine(ApplyKnockbackEnum(finalPos, attacked.transform.position));
     }
 
     public override void ApplyStun(float stunDuration)
@@ -32,13 +32,14 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
         {
             StopAllCoroutines();
             Stunned = true;
+            GetComponent<Animator>().Play("GetHit");
             StartCoroutine(cancelStun(stunDuration));
             StateMachineManager sm = GetComponent<StateMachineManager>();
             sm.forceState(Type.GetType("StunEntity"));
         }
     }
 
-    protected override IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos)
+    protected override IEnumerator ApplyKnockbackEnum(Vector3 finalPos, Vector3 attackedPos)
     {
         float time = 0;
         while (time < knockbackDuration)

@@ -92,7 +92,7 @@ public class UIManager : MonoBehaviour
 
     public void InfligerDegats()
     {
-        player.takeDamage(10);
+        player.takeDamage(10, null);
     }
 
     public void Heal()

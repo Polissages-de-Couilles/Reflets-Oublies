@@ -125,7 +125,7 @@ public class AttackManager : MonoBehaviour
 
     void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)
     {
-        damageable.takeDamage(attackDamage);
+        damageable.takeDamage(attackDamage, gameObject);
     }
 
     bool isStateCompatible(StateManager.States state)

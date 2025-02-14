@@ -1,16 +1,21 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(StateMachineManager))]
 public class BotDeathManager : MonoBehaviour
 {
+    const string DeathAnimName = "Die";
+    StateMachineManager stateMachine;
     public Action OnBotDied;
 
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<IDamageable>().OnDamageTaken += CallCheckBotHealth;
+        stateMachine = GetComponent<StateMachineManager>();
     }
 
     void CallCheckBotHealth(float damageTaken, float playerHealth)
@@ -33,15 +38,19 @@ public class BotDeathManager : MonoBehaviour
                     MSE.spawnedMobs.Remove(gameObject);
                 }
             }
-
-            OnBotDied?.Invoke();
-
-            Animator animator = GetComponent<Animator>();
-            GetComponent<MoneyDrop>().DropMonney();
+            stateMachine.enabled = false;
+            
             GetComponent<StateMachineManager>().enabled = false;
-            animator.Play("Die");
-            float dieLength = animator.GetCurrentAnimatorStateInfo(0).length;
-            yield return new WaitForSeconds(dieLength);
+
+            if (TryGetComponent<MoneyDrop>(out MoneyDrop money))
+            {
+                money.DropMonney();
+            }
+            
+            OnBotDied?.Invoke();
+            stateMachine.Animator.Play(DeathAnimName);
+            float animationDuration = stateMachine.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == DeathAnimName).length;
+            yield return new WaitForSeconds(animationDuration);
 
             Destroy(gameObject);
         }

@@ -62,13 +62,19 @@ public class GameManager : MonoBehaviour
     public InputActionAsset InputAction => _inputAction;
     [SerializeField] InputActionAsset _inputAction;
 
-    //Uniquement l‡ ‡ but de test, ne pas utiliser pour la version final
+    public VFXManager VFXManager => _vfxManager;
+    [SerializeField] private VFXManager _vfxManager;
+
+    public LockManager LockManager => _lockManager;
+    [SerializeField] private LockManager _lockManager;
+
+    //Uniquement lÅEÅEbut de test, ne pas utiliser pour la version final
 
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Player.GetComponent<PlayerDamageable>().takeDamage(20);
+            Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
         }
     }
 }

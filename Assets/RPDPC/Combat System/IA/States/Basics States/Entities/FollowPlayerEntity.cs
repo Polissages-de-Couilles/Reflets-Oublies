@@ -4,9 +4,9 @@ using UnityEngine.AI;
 
 public class FollowPlayerEntity : StateEntityBase
 {
-    NavMeshAgent agent;
-    bool isIntelligent;
-    Vector3 lastKnownPos;
+    protected NavMeshAgent agent;
+    protected bool isIntelligent;
+    protected Vector3 lastKnownPos;
 
     public override void Init(bool isIntelligent)
     {
@@ -28,8 +28,7 @@ public class FollowPlayerEntity : StateEntityBase
         agent = parent.GetComponent<NavMeshAgent>();
         if (agent.isStopped)
             agent.isStopped = false;
-
-        animator.Play(animationNames[0]);
+        playAnim();
     }
 
     public override void OnUpdate()
@@ -54,5 +53,10 @@ public class FollowPlayerEntity : StateEntityBase
         
         lastKnownPos = player.transform.position;
         agent.SetDestination(lastKnownPos);
+    }
+
+    protected virtual void playAnim()
+    {
+        animator.Play(animationNames[0]);
     }
 }

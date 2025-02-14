@@ -33,7 +33,7 @@ public class AttackEntity : StateEntityBase
 
         foreach (GameObject go in currentAttacks.Keys)
         {
-            MonoBehaviour.Destroy(go);
+            go.GetComponent<AttackColliderManager>().DesactivateCollider();
         }
 
         currentAttacks.Clear();
@@ -64,19 +64,17 @@ public class AttackEntity : StateEntityBase
     {
         foreach (SOAttack.AttackDetails attack in attacks)
         {
+            animator.SetFloat("AttackSpeed", 1f);
             currentAttackTimer = 0f;
-            animator.Play(animationNames[attack.animationID]);
             float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
+            manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
 
             foreach (SOAttack.AttackColliderDetails collider in attack.colliders)
             {
                 manager.StartCoroutine(SpawnCollision(collider, attack));
             }
-            yield return new WaitForSeconds(animationDuration);
 
-            animator.Play(animationNames[0]);
-
-            yield return new WaitForSeconds(attack.attackDuration - animationDuration);
+            yield return new WaitForSeconds(attack.attackDuration);
             
 
             //if (!doAllAttacks)
@@ -90,6 +88,19 @@ public class AttackEntity : StateEntityBase
         }
 
         ExitState();
+    }
+
+    IEnumerator PlayAnimationSpeed(float animDuration, SOAttack.AttackDetails ad)
+    {
+        float timer = 0f;
+        animator.Play(animationNames[ad.animationID]);
+        while (timer < animDuration)
+        {
+            animator.SetFloat("AttackSpeed", ad.animationSpeed.Evaluate(timer / animDuration));
+            yield return new WaitForFixedUpdate();
+            timer += Time.deltaTime * ad.animationSpeed.Evaluate(timer / animDuration);
+        }
+        animator.Play(animationNames[0]);
     }
 
     IEnumerator SpawnCollision(SOAttack.AttackColliderDetails detail, SOAttack.AttackDetails ad)
@@ -138,12 +149,17 @@ public class AttackEntity : StateEntityBase
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
-            damageable.takeDamage(currentAttacks[collider].damage);
+            damageable.takeDamage(currentAttacks[collider].damage, parent);
 
-            GrabSocketManager gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
-            if (gsm != null)
+            GrabSocketManager gsm = null;
+
+            if (currentAttacks[collider].grabDetails.grabID > -1)
             {
-                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].attackDuration - currentAttackTimer - currentAttacks[collider].grabDetails.grabReleaseTime);
+                gsm = parent.GetComponentsInChildren<GrabSocketManager>().ToList().Find(s => s.grabID == currentAttacks[collider].grabDetails.grabID);
+            }
+            if (gsm != null && currentAttacks[collider].grabDetails.grabReleaseTime - currentAttackTimer > 0)
+            {
+                gsm.LaunchGrab(player, currentAttacks[collider].grabDetails, currentAttacks[collider].grabDetails.grabReleaseTime - currentAttackTimer);
             }
         }
     }

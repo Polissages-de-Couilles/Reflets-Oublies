@@ -4,7 +4,7 @@ using UnityEngine;
 public class SOFollowPlayer : StateBase
 {
     [Tooltip("Does the bot have to go to the last known place even if the conditions are not met anymore")]
-    [SerializeField] bool isIntelligent;
+    [SerializeField] protected bool isIntelligent;
 
     public override StateEntityBase PrepareEntityInstance()
     {
