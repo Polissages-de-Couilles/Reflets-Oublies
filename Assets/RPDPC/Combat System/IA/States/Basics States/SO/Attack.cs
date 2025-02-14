@@ -27,6 +27,7 @@ public class SOAttack : StateBase
         public float damage;
         public bool ShouldOnlyTookDamageFromOneCollision;
         public int animationID;
+        public AnimationCurve animationSpeed;
         public GrabDetails grabDetails;
     }
 

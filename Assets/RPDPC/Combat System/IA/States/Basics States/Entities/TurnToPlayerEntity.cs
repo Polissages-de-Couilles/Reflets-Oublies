@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class TurnToPlayerEntity : StateEntityBase
 {
-    float turnDuration;
+    protected float turnDuration;
 
     public override void ExitState()
     {

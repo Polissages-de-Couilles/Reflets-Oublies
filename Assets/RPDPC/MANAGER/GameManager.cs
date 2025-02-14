@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Player.GetComponent<PlayerDamageable>().takeDamage(20);
+            Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
         }
     }
 }

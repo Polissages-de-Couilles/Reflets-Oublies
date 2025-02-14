@@ -71,6 +71,7 @@ public class ProjectileAttackEntity : StateEntityBase
         ProjectileSpawner ps = parent.GetComponentsInChildren<ProjectileSpawner>().ToList().Find(x => x.spawnerID == ad.spawnerID);
 
         GameObject projectile = MonoBehaviour.Instantiate(papd.prefab, ps.gameObject.transform);
+        projectile.GetComponent<ProjectileManager>().Init(parent, player);
         projectile.layer = 9;
     }
 

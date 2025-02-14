@@ -11,7 +11,7 @@ public abstract class StunAndKnockbackManagerBase : MonoBehaviour
     public abstract void ApplyStun(float stunDuration);
     public abstract void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched);
 
-    protected abstract IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos);
+    protected abstract IEnumerator ApplyKnockbackEnum(Vector3 finalPos, Vector3 attackedPos);
 }
 
 [Serializable]

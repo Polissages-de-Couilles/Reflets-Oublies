@@ -32,7 +32,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         defence = defence * (1 + _defenceChange);
     }
 
-    public void takeDamage(float damage)
+    public void takeDamage(float damage, GameObject attacker)
     {
         if (!incompatibleStates.Contains(sm.playerState))
         {
@@ -59,5 +59,5 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         if (maxHealth < currentHealth) currentHealth = maxHealth;
     }
 
-    IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }
+    //IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }
 }

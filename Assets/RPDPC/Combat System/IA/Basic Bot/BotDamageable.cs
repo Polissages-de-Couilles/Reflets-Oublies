@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class BotDamageable : MonoBehaviour, IDamageable
 {
+    GuardManager gm;
     public float maxHealth = 100f;
     float currentHealth;
 
@@ -20,15 +21,22 @@ public class BotDamageable : MonoBehaviour, IDamageable
         return maxHealth;
     }
 
-    public void takeDamage(float damage)
+    public void takeDamage(float damage, GameObject attacker)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        if (gm.isGuarding != true)
         {
-            currentHealth = 0;
+            currentHealth -= damage;
+            if (currentHealth <= 0)
+            {
+                currentHealth = 0;
+            }
+            Debug.Log("Bot took damage. Their health is now at " + currentHealth);
+            OnDamageTaken?.Invoke(damage, currentHealth);
         }
-        Debug.Log("Doll took damage. Their health is now at " + currentHealth);
-        OnDamageTaken?.Invoke(damage, currentHealth);
+        else
+        {
+            gm.ApplyGuard(attacker);
+        }
     }
 
     public void heal(float heal)
@@ -39,5 +47,6 @@ public class BotDamageable : MonoBehaviour, IDamageable
     void Start()
     {
         currentHealth = maxHealth;
+        gm = GetComponent<GuardManager>();
     }
 }

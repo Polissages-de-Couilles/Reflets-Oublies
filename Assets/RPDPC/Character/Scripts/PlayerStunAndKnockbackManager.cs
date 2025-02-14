@@ -30,7 +30,7 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
                     break;
             }
             Debug.Log("Knockback from : " + attacked.transform.position + " to " + finalPos);
-            StartCoroutine(ApplyKnockback(finalPos, attacked.transform.position));
+            StartCoroutine(ApplyKnockbackEnum(finalPos, attacked.transform.position));
         }
     }
 
@@ -42,7 +42,7 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
         }
     }
 
-    protected override IEnumerator ApplyKnockback(Vector3 finalPos, Vector3 attackedPos)
+    protected override IEnumerator ApplyKnockbackEnum(Vector3 finalPos, Vector3 attackedPos)
     {
         float time = 0;
         while (time < knockbackDuration)

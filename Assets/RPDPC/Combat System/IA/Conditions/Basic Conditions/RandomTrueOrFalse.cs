@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/IA/Conditions/Base/Random True or False")]
 public class RandomTrueOrFalse : ConditionBase
 {
-    [Tooltip("Value between 0 and 1")]
+    [Range(0, 100)]
     [SerializeField] float percentageOfTrue;
     public override void Init(GameObject parent, GameObject player)
     {
@@ -13,10 +13,6 @@ public class RandomTrueOrFalse : ConditionBase
 
     public override bool isConditionFulfilled()
     {
-        return Random.Range(0,1) <= percentageOfTrue;
-    }
-    void OnValidate()
-    {
-        percentageOfTrue = Mathf.Clamp(percentageOfTrue, 0, 1);
+        return Random.Range(0f,100f) <= percentageOfTrue;
     }
 }
