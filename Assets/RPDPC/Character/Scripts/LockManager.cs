@@ -127,7 +127,7 @@ public class LockManager : MonoBehaviour
     void FindLockableObject()
     {
         var lockableList = FindObjectsOfType<Lockable>().ToList();
-        Debug.Log(lockableList.Count);
+        //Debug.Log(lockableList.Count);
         List<Lockable> visibleLockableObject = new();
         foreach (var lockable in lockableList)
         {
