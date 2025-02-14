@@ -1,15 +1,16 @@
+using EditorCools;
 using Firebase;
 using Firebase.Database;
-using Proyecto26;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
+using Random = UnityEngine.Random;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -19,6 +20,15 @@ public class FirebaseManager : MonoBehaviour
     private const string USER_KEY = "USER";
     private FirebaseDatabase _database;
     public Action OnFirebaseInitialized;
+    bool isFirebaseInit = false;
+    bool isInitCompleted = false;
+
+    private List<UserData> _activeUsers = new();
+
+    bool isDataWriting = false;
+
+    [SerializeField] GameObject _ghost;
+    private Dictionary<int, GameObject> _ghostDic = new();
 
     public void Start()
     {
@@ -33,27 +43,151 @@ public class FirebaseManager : MonoBehaviour
 
             Debug.Log("Firebase is init");
             _database = FirebaseDatabase.DefaultInstance;
+            isFirebaseInit = true;
             OnFirebaseInitialized?.Invoke();
         });
     }
 
+    private async void HandleDisconnect()
+    {
+        OnFirebaseInitialized -= OnFirebaseInit;
+        Disconnect();
+        await _database.GetReference(USER_KEY).Child(UserInstance.User.id.ToString()).RemoveValueAsync();
+    }
+
+    [Button]
+    private void Disconnect()
+    {
+        _database.GetReference(USER_KEY).ChildChanged -= HandleChildChange;
+        _database.GetReference(USER_KEY).ChildAdded -= HandleChildAdded;
+        _database.GetReference(USER_KEY).ChildRemoved -= HandleChildRemoved;
+    }
+
+    public void OnDestroy()
+    {
+        HandleDisconnect();
+    }
+
+    public void OnApplicationQuit()
+    {
+        HandleDisconnect();
+    }
+
+    public void Update()
+    {
+        if (isFirebaseInit && !isDataWriting && isInitCompleted)
+        {
+            UpdateThisUserData();
+        }
+
+        if(isFirebaseInit && isInitCompleted)
+        {
+            
+        }
+    }
+
+    private async void UpdateThisUserData()
+    {
+        isDataWriting = true;
+        UserInstance.User.x = GameManager.Instance.Player.transform.position.x;
+        UserInstance.User.y = GameManager.Instance.Player.transform.position.y;
+        UserInstance.User.z = GameManager.Instance.Player.transform.position.z;
+        await SetUserData(UserInstance.User);
+        isDataWriting = false;
+    }
+
     private async void OnFirebaseInit()
     {
-        await SetUserData(new("Ryan", 1, 1, 1));
+        //await SetUserData(new(2, 1, 1, 1));
 
-        var data = await GetUserData("Ryan");
-        Debug.Log(data.name);
+        //var data = await GetUserData("Ryan");
+        //Debug.Log(data.name);
 
         var datas = await GetAllUserData();
-        foreach (var d in datas)
+        //foreach (var d in datas)
+        //{
+        //    Debug.Log($"{d.id}");
+        //}
+        System.Random rng = new System.Random();
+
+        int id = rng.Next(0, 9);
+
+        for (int i = 0; i < 1000000; i++)
         {
-            Debug.Log($"{d.name}");
+            id = int.Parse($"{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}{rng.Next(0, 9)}");
+            Debug.Log(id);
+
+            if (id != 0 && datas.Find(x => x.id == id) == null)
+            {
+                break;
+            }
+            else if (i >= 999999)
+            {
+                Debug.LogError("Max id Reach");
+            }
         }
+        
+        //while (id == 0 || datas.Find(x => x.id == id) != null)
+        //{
+        //    id = Random.Range(10000000, 99999999);
+        //    Debug.Log(id);
+        //}
+
+        _database.GetReference(USER_KEY).ChildChanged += HandleChildChange;
+        _database.GetReference(USER_KEY).ChildAdded += HandleChildAdded;
+        _database.GetReference(USER_KEY).ChildRemoved += HandleChildRemoved;
+
+        _activeUsers.Clear();
+        _activeUsers = datas.ToList();
+        
+        UserInstance.User = new(id, 0, 0, 0);
+        
+        await SetUserData(UserInstance.User);
+        isInitCompleted = true;
+
+        foreach (var user in _activeUsers)
+        {
+            CreateGhost(user);
+        }
+    }
+
+    private void CreateGhost(UserData userData)
+    {
+        if (userData.id == UserInstance.User.id || userData.id == -1 || UserInstance.User.id == UserInstance.OldId) return;
+        GameObject go;
+        _ghostDic.Add(userData.id, go = Instantiate(_ghost));
+        go.transform.position = new Vector3(userData.x, userData.y, userData.z);
+    }
+
+    private void HandleChildAdded(object sender, ChildChangedEventArgs e)
+    {
+        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+        _activeUsers.Add(user);
+        //Debug.Log(user.id);
+        CreateGhost(user);
+    }
+
+    private void HandleChildRemoved(object sender, ChildChangedEventArgs e)
+    {
+        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+        if (!_ghostDic.ContainsKey(user.id)) return;
+        _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
+        //Debug.Log(user.id);
+        Destroy(_ghostDic[user.id]);
+        _ghostDic.Remove(user.id);
+    }
+
+    private void HandleChildChange(object sender, ChildChangedEventArgs e)
+    {
+        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+        if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id) || UserInstance.User.id == UserInstance.OldId) return;
+        Debug.Log(user.id + " | " + UserInstance.User.id + " | " + UserInstance.OldId + " | " + (UserInstance.User.id == UserInstance.OldId));
+        _ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
     }
 
     public async Task SetUserData(UserData userData)
     {
-        await _database.GetReference(USER_KEY).Child(userData.name).SetRawJsonValueAsync(JsonUtility.ToJson(userData));
+        await _database.GetReference(USER_KEY).Child(userData.id.ToString()).SetRawJsonValueAsync(JsonUtility.ToJson(userData));
     }
 
     public async Task<UserData> GetUserData(string key)
@@ -114,16 +248,22 @@ public class FirebaseManager : MonoBehaviour
 
 public class UserData
 {
-    public string name;
+    public int id;
     public float x;
     public float y;
     public float z;
 
-    public UserData(string name, float x, float y, float z)
+    public UserData(int id, float x, float y, float z)
     {
-        this.name = name;
+        this.id = id;
         this.x = x;
         this.y = y;
         this.z = z;
     }
+}
+
+public static class UserInstance
+{
+    public static UserData User;
+    public static int OldId;
 }
