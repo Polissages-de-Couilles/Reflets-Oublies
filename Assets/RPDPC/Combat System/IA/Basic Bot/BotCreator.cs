@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AI;
+
+
+[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(StateMachineManager))]
+[RequireComponent(typeof(BotDamageable))]
+[RequireComponent(typeof(BotStunAndKnockbackManager))]
+[RequireComponent(typeof(BotDeathManager))]
+[RequireComponent(typeof(FromSpawnerManager))]
+[RequireComponent(typeof(MoneyDrop))]
+[RequireComponent(typeof(BotMovementSpeedManager))]
+public class BotCreator : MonoBehaviour
+{
+}

@@ -25,6 +25,7 @@ public class AttackCollider : MonoBehaviour
         this.KnockForce = KnockForce;
         this.KnockbackMode = KnockbackMode;
         this.isEnemy = isEnemy;
+        hasAlreadyDealtDamage = false;
     }
 
     void OnTriggerEnter(Collider collider)

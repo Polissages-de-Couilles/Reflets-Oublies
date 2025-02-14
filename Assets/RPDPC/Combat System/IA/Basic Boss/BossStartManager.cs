@@ -53,6 +53,8 @@ public class BossStartManager : MonoBehaviour
 
     private void ActivateBoss()
     {
+        GameManager.Instance.UIManager.GetComponent<BossBarManager>().ActivateBar(gameObject);
+
         GetComponent<StateMachineManager>().enabled = true;
     }
 
