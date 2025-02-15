@@ -32,4 +32,383 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: -118659170257107410}
   _characterNameKey: ELOUAN_NAME
-  _allDialogue: []
+  _allDialogue:
+  - {fileID: 4141588084020384670}
+  - {fileID: 7331630150142838198}
+  - {fileID: 26081840590527422}
+--- !u!114 &26081840590527422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 762efa23-a12d-4514-a131-b7002fd2a241
+    TargetNodeGuid: 2ccf0c04-4a35-4171-808e-10c73709511c
+  - BaseNodeGuid: 2ccf0c04-4a35-4171-808e-10c73709511c
+    TargetNodeGuid: 7141dd76-7ef2-47dc-bcc2-4b53035aad27
+  - BaseNodeGuid: 7141dd76-7ef2-47dc-bcc2-4b53035aad27
+    TargetNodeGuid: 24ac4f86-4a4b-4d00-be7e-c5bc0a06dccf
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 2ccf0c04-4a35-4171-808e-10c73709511c
+    Position: {x: 587, y: 587}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 7141dd76-7ef2-47dc-bcc2-4b53035aad27
+    Position: {x: 856, y: 587}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 24ac4f86-4a4b-4d00-be7e-c5bc0a06dccf
+    Position: {x: 1123, y: 587}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 762efa23-a12d-4514-a131-b7002fd2a241
+    Position: {x: 458, y: 587}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &4141588084020384670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: a4dba1c0-5b4b-45b5-819e-983b5d183a74
+    TargetNodeGuid: 6c9c2410-f550-498f-aa7b-9ebc5c61de3e
+  - BaseNodeGuid: 6c9c2410-f550-498f-aa7b-9ebc5c61de3e
+    TargetNodeGuid: 9ec9ac71-0ff8-4441-9b2e-569583fc1e66
+  - BaseNodeGuid: 9ec9ac71-0ff8-4441-9b2e-569583fc1e66
+    TargetNodeGuid: ac34e40c-0169-4ba7-86b0-26d7c83cddd7
+  - BaseNodeGuid: ac34e40c-0169-4ba7-86b0-26d7c83cddd7
+    TargetNodeGuid: 1e7854bd-f333-40b1-bee3-04fe7908b18e
+  - BaseNodeGuid: 1e7854bd-f333-40b1-bee3-04fe7908b18e
+    TargetNodeGuid: 663bbfcc-5880-421c-9e12-5d5d71ada77a
+  - BaseNodeGuid: d27a65eb-630d-4ae2-97b2-7e75aa59cb46
+    TargetNodeGuid: fd290e84-656a-472d-afbe-827d96e35918
+  - BaseNodeGuid: fd290e84-656a-472d-afbe-827d96e35918
+    TargetNodeGuid: ddedbd7d-542f-4949-b53c-ed09eb42d20d
+  - BaseNodeGuid: ddedbd7d-542f-4949-b53c-ed09eb42d20d
+    TargetNodeGuid: 603e79af-8f84-4512-9812-871ecaec6c6c
+  - BaseNodeGuid: 663bbfcc-5880-421c-9e12-5d5d71ada77a
+    TargetNodeGuid: d27a65eb-630d-4ae2-97b2-7e75aa59cb46
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 6c9c2410-f550-498f-aa7b-9ebc5c61de3e
+    Position: {x: 506, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 9ec9ac71-0ff8-4441-9b2e-569583fc1e66
+    Position: {x: 740, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: ac34e40c-0169-4ba7-86b0-26d7c83cddd7
+    Position: {x: 986, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 1e7854bd-f333-40b1-bee3-04fe7908b18e
+    Position: {x: 1216, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: d27a65eb-630d-4ae2-97b2-7e75aa59cb46
+    Position: {x: 1677, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: fd290e84-656a-472d-afbe-827d96e35918
+    Position: {x: 1906, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: ddedbd7d-542f-4949-b53c-ed09eb42d20d
+    Position: {x: 2124, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 663bbfcc-5880-421c-9e12-5d5d71ada77a
+    Position: {x: 1445, y: 500}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 603e79af-8f84-4512-9812-871ecaec6c6c
+    Position: {x: 2346, y: 500}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: a4dba1c0-5b4b-45b5-819e-983b5d183a74
+    Position: {x: 398, y: 500}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &7331630150142838198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 83c93754-9179-4a0e-a561-86de3541be84
+    TargetNodeGuid: 8904712d-543f-494d-b799-b0bc5e1e5e62
+  - BaseNodeGuid: 8904712d-543f-494d-b799-b0bc5e1e5e62
+    TargetNodeGuid: 3f54d735-c58b-4a49-bec5-dfa9d5bb3237
+  - BaseNodeGuid: 3f54d735-c58b-4a49-bec5-dfa9d5bb3237
+    TargetNodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
+  - BaseNodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
+    TargetNodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
+  - BaseNodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
+    TargetNodeGuid: 74b8b26e-c2b4-4245-9d4c-d8043a4e174e
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 8904712d-543f-494d-b799-b0bc5e1e5e62
+    Position: {x: 213, y: 473}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: 3f54d735-c58b-4a49-bec5-dfa9d5bb3237
+    Position: {x: 461, y: 473}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
+    Position: {x: 714, y: 473}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
+    Position: {x: 1279, y: 473}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -118659170257107410}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ELOUAN_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 74b8b26e-c2b4-4245-9d4c-d8043a4e174e
+    Position: {x: 1538, y: 473}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 83c93754-9179-4a0e-a561-86de3541be84
+    Position: {x: 106, y: 473}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: 11b5b30b-75f9-44c2-a012-4d0a21318ba5
+    Position: {x: 944, y: 558}
+    commmand: Faire un event pause 1-2s
+  IfNodeDatas: []
