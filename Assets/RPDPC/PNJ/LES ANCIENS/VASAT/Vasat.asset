@@ -1,5 +1,76 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5312763179357879862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9c5b77aa-8bd9-48d7-8caa-da6e6d7e8768
+    TargetNodeGuid: 8d68ddb3-6180-433b-a481-86c89cac68da
+  - BaseNodeGuid: cd0c2d27-8717-4283-9d47-624db481614e
+    TargetNodeGuid: 517be5d2-8e54-42eb-b058-415079d42e52
+  - BaseNodeGuid: 517be5d2-8e54-42eb-b058-415079d42e52
+    TargetNodeGuid: 9c5b77aa-8bd9-48d7-8caa-da6e6d7e8768
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 517be5d2-8e54-42eb-b058-415079d42e52
+    Position: {x: 169.6, y: 335.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 2377815588551124545}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: VASAT_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 9c5b77aa-8bd9-48d7-8caa-da6e6d7e8768
+    Position: {x: 413.6, y: 335.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_VASAT_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 8d68ddb3-6180-433b-a481-86c89cac68da
+    Position: {x: 660.8, y: 335.2}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: cd0c2d27-8717-4283-9d47-624db481614e
+    Position: {x: 47.2, y: 335.2}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-521171633933583640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,14 +88,14 @@ MonoBehaviour:
     TargetNodeGuid: 6402b54b-3669-4dc3-9eb1-1000f187693f
   - BaseNodeGuid: 6402b54b-3669-4dc3-9eb1-1000f187693f
     TargetNodeGuid: 4adec800-204c-4756-91cb-9ba2fb47d666
-  - BaseNodeGuid: 4adec800-204c-4756-91cb-9ba2fb47d666
-    TargetNodeGuid: e144add4-df9a-418d-a22a-b21d11b29452
   - BaseNodeGuid: e144add4-df9a-418d-a22a-b21d11b29452
     TargetNodeGuid: 42765a00-8c6a-48bf-a246-243bcda71434
   - BaseNodeGuid: 42765a00-8c6a-48bf-a246-243bcda71434
     TargetNodeGuid: 2160fe5b-6eba-471f-8924-52874c6719a1
   - BaseNodeGuid: 2160fe5b-6eba-471f-8924-52874c6719a1
     TargetNodeGuid: fd53360e-6ea3-47c5-a71c-249e52011b47
+  - BaseNodeGuid: 4adec800-204c-4756-91cb-9ba2fb47d666
+    TargetNodeGuid: e144add4-df9a-418d-a22a-b21d11b29452
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 6402b54b-3669-4dc3-9eb1-1000f187693f
@@ -148,6 +219,8 @@ MonoBehaviour:
   _allDialogue:
   - {fileID: -521171633933583640}
   - {fileID: 8259098878966072563}
+  - {fileID: -5312763179357879862}
+  - {fileID: 7897767097632967771}
 --- !u!114 &2377815588551124545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +259,77 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 0}
     RightPosition: {fileID: 0}
+--- !u!114 &7897767097632967771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_4
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 0af1f255-3b1d-48b4-a61d-3461b09a2a63
+    TargetNodeGuid: 3c4a2bd9-fc64-406f-a24d-4804f44ef21e
+  - BaseNodeGuid: bfc301e6-efec-48c3-bf8b-595dcc4e9f1d
+    TargetNodeGuid: 0af1f255-3b1d-48b4-a61d-3461b09a2a63
+  - BaseNodeGuid: f551dd63-5274-4c12-97d3-94b5d40d2cd4
+    TargetNodeGuid: bfc301e6-efec-48c3-bf8b-595dcc4e9f1d
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: bfc301e6-efec-48c3-bf8b-595dcc4e9f1d
+    Position: {x: 353.6, y: 324.80002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 2377815588551124545}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: VASAT_ACT_1_DIALOGUE_4_1
+    Duration: 0
+  - NodeGuid: 0af1f255-3b1d-48b4-a61d-3461b09a2a63
+    Position: {x: 569.6, y: 324.80002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_VASAT_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 3c4a2bd9-fc64-406f-a24d-4804f44ef21e
+    Position: {x: 848, y: 324.80002}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: f551dd63-5274-4c12-97d3-94b5d40d2cd4
+    Position: {x: 213.6, y: 324.80002}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &8259098878966072563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,14 +343,14 @@ MonoBehaviour:
   m_Name: Dialogue_2
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 1ff5f77f-eaa2-4167-a47f-5931abcbc5b6
-    TargetNodeGuid: fad60cef-e63f-4a7c-9684-be977805f350
-  - BaseNodeGuid: c2ec41c3-09cb-45fb-8d05-67472736e38c
-    TargetNodeGuid: 1ff5f77f-eaa2-4167-a47f-5931abcbc5b6
-  - BaseNodeGuid: 60e55219-fc99-4bce-aa42-f79ad0cd2fe0
-    TargetNodeGuid: c2ec41c3-09cb-45fb-8d05-67472736e38c
   - BaseNodeGuid: 6549684b-90a5-4fc7-aa4c-f1a7c1407f05
     TargetNodeGuid: 60e55219-fc99-4bce-aa42-f79ad0cd2fe0
+  - BaseNodeGuid: 60e55219-fc99-4bce-aa42-f79ad0cd2fe0
+    TargetNodeGuid: c2ec41c3-09cb-45fb-8d05-67472736e38c
+  - BaseNodeGuid: c2ec41c3-09cb-45fb-8d05-67472736e38c
+    TargetNodeGuid: 1ff5f77f-eaa2-4167-a47f-5931abcbc5b6
+  - BaseNodeGuid: 1ff5f77f-eaa2-4167-a47f-5931abcbc5b6
+    TargetNodeGuid: fad60cef-e63f-4a7c-9684-be977805f350
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 60e55219-fc99-4bce-aa42-f79ad0cd2fe0
@@ -225,7 +369,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType: VASAT_ACT_1_DIALOGUE_2_1
     Duration: 10
   - NodeGuid: c2ec41c3-09cb-45fb-8d05-67472736e38c
     Position: {x: 708.8, y: 334.40002}
@@ -243,7 +387,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType: VASAT_ACT_1_DIALOGUE_2_2
     Duration: 10
   - NodeGuid: 1ff5f77f-eaa2-4167-a47f-5931abcbc5b6
     Position: {x: 944, y: 334.40002}
@@ -256,12 +400,12 @@ MonoBehaviour:
       LanguageGenericType: 
     CantBeSkip: 0
     CanMove: 0
-    Character: {fileID: -135174160976546339, guid: 80f4f5db86ad9eb43904d96fb1e5f6a4, type: 2}
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
     AvatarPos: 0
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_VASAT_1
     Duration: 10
   TimerChoiceNodeDatas: []
   EndNodeDatas:
