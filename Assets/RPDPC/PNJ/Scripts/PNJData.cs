@@ -44,6 +44,31 @@ public class PNJData : ScriptableObject
     }
 
     [EditorCools.Button]
+    public void AddDialogue()
+    {
+        var dialogue = ScriptableObject.CreateInstance<DialogueContainerSO>();
+        dialogue.name = $"Dialogue_{_allDialogue.Count + 1}";
+        dialogue.NodeLinkDatas = _dialogueToAdd.NodeLinkDatas;
+        dialogue.DialogueChoiceNodeDatas = _dialogueToAdd.DialogueChoiceNodeDatas;
+        dialogue.DialogueNodeDatas = _dialogueToAdd.DialogueNodeDatas;
+        dialogue.TimerChoiceNodeDatas = _dialogueToAdd.TimerChoiceNodeDatas;
+        dialogue.EndNodeDatas = _dialogueToAdd.EndNodeDatas;
+        dialogue.EventNodeDatas = _dialogueToAdd.EventNodeDatas;
+        dialogue.StartNodeDatas = _dialogueToAdd.StartNodeDatas;
+        dialogue.RandomNodeDatas = _dialogueToAdd.RandomNodeDatas;
+        dialogue.CommandNodeDatas = _dialogueToAdd.CommandNodeDatas;
+        dialogue.IfNodeDatas = _dialogueToAdd.IfNodeDatas;
+        _allDialogue.Add(dialogue);
+
+        AssetDatabase.AddObjectToAsset(dialogue, this);
+        AssetDatabase.SaveAssets();
+
+        EditorUtility.SetDirty(this);
+        EditorUtility.SetDirty(dialogue);
+        _dialogueToAdd = null;
+    }
+
+    [EditorCools.Button]
     public void DeleteLastDialogue()
     {
         if (_allDialogue == null || _allDialogue.Count <= 0) return;
@@ -58,6 +83,7 @@ public class PNJData : ScriptableObject
     [SerializeField] DialogueCharacterSO _character;
     public string CharacterNameKey => _characterNameKey;
     [SerializeField] string _characterNameKey;
+    [SerializeField] DialogueContainerSO _dialogueToAdd;
     [SerializeField] List<DialogueContainerSO> _allDialogue = new List<DialogueContainerSO>();
     
     public DialogueContainerSO GetDialogue(int index)
