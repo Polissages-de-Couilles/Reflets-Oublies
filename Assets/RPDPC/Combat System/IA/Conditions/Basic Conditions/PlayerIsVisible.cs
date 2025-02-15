@@ -53,7 +53,12 @@ public class PlayerIsVisible : ConditionBase
     bool CheckRayCast(Vector3 direction)
     {
         RaycastHit hit;
-        if (Physics.Raycast(parent.transform.position + new Vector3(0,parentCollider.height/2,0), -(parent.transform.position - direction), out hit, Mathf.Infinity))
+        float RayHeight = 0f;
+        if (parentCollider != null) 
+        {
+            RayHeight = parentCollider.height / 2;
+        }
+        if (Physics.Raycast(parent.transform.position + new Vector3(0, RayHeight, 0), -(parent.transform.position - direction), out hit, Mathf.Infinity))
         {
             Debug.DrawLine(parent.transform.position, hit.point);
             //Debug.Log(Vector3.Angle(parent.transform.forward.normalized, -(parent.transform.position - direction).normalized));
