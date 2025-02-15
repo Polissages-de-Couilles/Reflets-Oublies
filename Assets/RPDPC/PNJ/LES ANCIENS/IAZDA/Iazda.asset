@@ -1,5 +1,287 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8384824112673108561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: d667c19a-33e4-454d-92c3-4886be554dab
+    TargetNodeGuid: 01113702-9c6e-421e-ac87-b9d75f01e6dd
+  - BaseNodeGuid: 01113702-9c6e-421e-ac87-b9d75f01e6dd
+    TargetNodeGuid: 1fc33d29-e23d-40f7-89ec-216c998eca0d
+  - BaseNodeGuid: 1fc33d29-e23d-40f7-89ec-216c998eca0d
+    TargetNodeGuid: 07ac45bd-630b-4ae6-926d-fe22386a04f7
+  - BaseNodeGuid: 07ac45bd-630b-4ae6-926d-fe22386a04f7
+    TargetNodeGuid: de721cfe-a5ca-4aa7-adf5-122656a28a8f
+  - BaseNodeGuid: de721cfe-a5ca-4aa7-adf5-122656a28a8f
+    TargetNodeGuid: 08d8587e-2f7f-45bc-8e7e-0299ece49adb
+  - BaseNodeGuid: 08d8587e-2f7f-45bc-8e7e-0299ece49adb
+    TargetNodeGuid: 7111d8a9-1c52-4789-8ac5-2d68fc0ff6cf
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 01113702-9c6e-421e-ac87-b9d75f01e6dd
+    Position: {x: 324, y: 519}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 07ac45bd-630b-4ae6-926d-fe22386a04f7
+    Position: {x: 813, y: 519}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: 08d8587e-2f7f-45bc-8e7e-0299ece49adb
+    Position: {x: 1285, y: 519}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_3_3
+    Duration: 0
+  - NodeGuid: 1fc33d29-e23d-40f7-89ec-216c998eca0d
+    Position: {x: 568, y: 519}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: de721cfe-a5ca-4aa7-adf5-122656a28a8f
+    Position: {x: 1055, y: 519}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 7111d8a9-1c52-4789-8ac5-2d68fc0ff6cf
+    Position: {x: 1537, y: 519}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: d667c19a-33e4-454d-92c3-4886be554dab
+    Position: {x: 204, y: 519}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-5071999622645184965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 4c95b465-74d0-488d-802f-43a24bf4f79b
+    TargetNodeGuid: c58675ee-db06-4219-8d14-0c28742ab38f
+  - BaseNodeGuid: c58675ee-db06-4219-8d14-0c28742ab38f
+    TargetNodeGuid: ccaa6155-e88d-4c1d-9a92-04c545068654
+  - BaseNodeGuid: ccaa6155-e88d-4c1d-9a92-04c545068654
+    TargetNodeGuid: c7d4645f-4937-4200-a348-fdc7b62d5512
+  - BaseNodeGuid: c7d4645f-4937-4200-a348-fdc7b62d5512
+    TargetNodeGuid: df80d48a-e632-4cb9-ad95-838b25ef09c6
+  - BaseNodeGuid: df80d48a-e632-4cb9-ad95-838b25ef09c6
+    TargetNodeGuid: 6a6e16cc-526d-4d04-80e5-be2790cf7072
+  - BaseNodeGuid: 6a6e16cc-526d-4d04-80e5-be2790cf7072
+    TargetNodeGuid: 28c6ffab-dd98-48a8-96f7-7586523df2de
+  - BaseNodeGuid: 28c6ffab-dd98-48a8-96f7-7586523df2de
+    TargetNodeGuid: 562d5852-49b5-42b7-95ce-0bfaad2daea7
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: c58675ee-db06-4219-8d14-0c28742ab38f
+    Position: {x: 251, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: ccaa6155-e88d-4c1d-9a92-04c545068654
+    Position: {x: 497, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: df80d48a-e632-4cb9-ad95-838b25ef09c6
+    Position: {x: 1015, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: 6a6e16cc-526d-4d04-80e5-be2790cf7072
+    Position: {x: 1281, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 28c6ffab-dd98-48a8-96f7-7586523df2de
+    Position: {x: 1551, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_2_4
+    Duration: 0
+  - NodeGuid: c7d4645f-4937-4200-a348-fdc7b62d5512
+    Position: {x: 754, y: 514}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 562d5852-49b5-42b7-95ce-0bfaad2daea7
+    Position: {x: 1809, y: 514}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 4c95b465-74d0-488d-802f-43a24bf4f79b
+    Position: {x: 134, y: 514}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14,8 +296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 3809937904536913914}
   _characterNameKey: IAZDA_NAME
-  _allDialogue: []
---- !u!114 &2548222442074994293
+  _allDialogue:
+  - {fileID: 3545728256328002440}
+  - {fileID: -5071999622645184965}
+  - {fileID: -8384824112673108561}
+--- !u!114 &3545728256328002440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -27,13 +312,162 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
   m_Name: Dialogue_1
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: fcdc2186-8aae-43fb-ad81-269c0e123634
+    TargetNodeGuid: 1820e06b-9a74-4235-8ab1-088c6c2afb3a
+  - BaseNodeGuid: 1820e06b-9a74-4235-8ab1-088c6c2afb3a
+    TargetNodeGuid: d8791daf-e76a-4eb8-b19d-9a39b35ce486
+  - BaseNodeGuid: d8791daf-e76a-4eb8-b19d-9a39b35ce486
+    TargetNodeGuid: acc401a3-503e-4059-9242-0c8137240cb4
+  - BaseNodeGuid: acc401a3-503e-4059-9242-0c8137240cb4
+    TargetNodeGuid: 16e4528e-043c-487b-811f-bd87ad9f3c9f
+  - BaseNodeGuid: 16e4528e-043c-487b-811f-bd87ad9f3c9f
+    TargetNodeGuid: 1773509e-1ae7-4b8f-b0a9-192d7fbdff15
+  - BaseNodeGuid: 1773509e-1ae7-4b8f-b0a9-192d7fbdff15
+    TargetNodeGuid: 50dbc618-97f9-43e2-b54c-d64b0fe718f8
+  - BaseNodeGuid: 50dbc618-97f9-43e2-b54c-d64b0fe718f8
+    TargetNodeGuid: a3415c49-cbde-425d-bd51-09edf993ce07
+  - BaseNodeGuid: a3415c49-cbde-425d-bd51-09edf993ce07
+    TargetNodeGuid: aa27c3de-1c38-4006-9ed7-5216a536590c
   DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 1820e06b-9a74-4235-8ab1-088c6c2afb3a
+    Position: {x: 386, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: d8791daf-e76a-4eb8-b19d-9a39b35ce486
+    Position: {x: 631, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: acc401a3-503e-4059-9242-0c8137240cb4
+    Position: {x: 874, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 16e4528e-043c-487b-811f-bd87ad9f3c9f
+    Position: {x: 1120, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 1773509e-1ae7-4b8f-b0a9-192d7fbdff15
+    Position: {x: 1358, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 50dbc618-97f9-43e2-b54c-d64b0fe718f8
+    Position: {x: 1597, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: a3415c49-cbde-425d-bd51-09edf993ce07
+    Position: {x: 1829, y: 456}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3809937904536913914}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: IAZDA_ACT_1_DIALOGUE_1_5
+    Duration: 0
   TimerChoiceNodeDatas: []
-  EndNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: aa27c3de-1c38-4006-9ed7-5216a536590c
+    Position: {x: 2062, y: 456}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: fcdc2186-8aae-43fb-ad81-269c0e123634
+    Position: {x: 280, y: 456}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
   IfNodeDatas: []
