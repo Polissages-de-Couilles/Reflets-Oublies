@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8700d8ac6316dfa49a456402907fee09, type: 3}
+  m_Name: PLAINE1_SLIMESPAWNER_Spawner
+  m_EditorClassIdentifier: 
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: b14b0e31412360548bcebcf563727a9b, type: 2}
+    otherParts: []
+  isHostileState: 0
+  animationNames: []
+  monsterPrefab: {fileID: 6749567980823191316, guid: a4035faef16b13748bf7a8d3c7b8effd, type: 3}
+  nbToSpawnAtStart: 3
+  mobMaxNb: 3
+  spawnRange: 30
+  rangeTimeBetweenSpawns: {x: 60, y: 120}

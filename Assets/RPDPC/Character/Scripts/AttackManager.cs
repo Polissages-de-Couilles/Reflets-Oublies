@@ -56,9 +56,9 @@ public class AttackManager : MonoBehaviour
     {
         if (nextAttackPhase == nextAttackPhaseLate && isStateCompatible(stateManager.playerState))
         {
-            collision1.hasAlreadyDealtDamage = false;
-            collision2.hasAlreadyDealtDamage = false;
-            collision3.hasAlreadyDealtDamage = false;
+            collision1.CharacterAlreadyAttacked.Clear();
+            collision2.CharacterAlreadyAttacked.Clear();
+            collision3.CharacterAlreadyAttacked.Clear();
             stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks);
             if (nextAttackPhase == attackPhaseEnum.Phase1)
             {

@@ -9,20 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a9065d1cd7e778418e997496e5db2c9, type: 3}
-  m_Name: RED_SLIME_STATE_RandomMoveInRange
+  m_Script: {fileID: 11500000, guid: 96851745409a6394ca635b25b3aaa12b, type: 3}
+  m_Name: PLAINE1_SLIMESPAWNER_DoNothing
   m_EditorClassIdentifier: 
   priority: 0
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     otherParts: []
-  isHostileState: 0
-  animationNames:
-  - IdleNormal
-  - WalkFWD
-  searchCenter: {x: 13, y: 1.9, z: 143.4}
-  searchRange: 30
-  shouldOnlyMoveOnce: 0
-  WaitForMoveToFinishBeforeEndOrSwitchingState: 0
-  rangeWaitBetweenMoves: {x: 5, y: 10}

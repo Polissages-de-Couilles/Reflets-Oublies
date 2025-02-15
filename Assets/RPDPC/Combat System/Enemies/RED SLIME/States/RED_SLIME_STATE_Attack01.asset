@@ -28,12 +28,7 @@ MonoBehaviour:
   attacks:
   - colliders:
     - delayBeforeColliderSpawn: 0.15
-      colliderShape: 1
-      ColliderRelativePosition: {x: 0, y: 1, z: 0.65}
-      ColliderRelativeRotation: {x: 0, y: 0, z: 0, w: 0}
-      BoxColliderDimension: {x: 0, y: 0, z: 0}
-      CapsuleColliderHeight: 0
-      SphereAndCapsuleColliderRadius: 0.1
+      colliderID: 0
       ColliderDuration: 0.25
       DoesStun: 0
       StunDuration: 0
@@ -45,4 +40,33 @@ MonoBehaviour:
     damage: 5
     ShouldOnlyTookDamageFromOneCollision: 0
     animationID: 1
+    animationSpeed:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    grabDetails:
+      grabID: 0
+      grabReleaseTime: 0
+      grabReleaseForce: {x: 0, y: 0, z: 0}
+      grabStunDuration: 0
   doAllAttacks: 0
