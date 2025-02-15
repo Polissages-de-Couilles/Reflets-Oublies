@@ -119,7 +119,7 @@ public class AttackEntity : StateEntityBase
         if(detail.VFX != null)
         {
             GameObject vfx = MonoBehaviour.Instantiate(detail.VFX, parent.transform);
-            vfx.transform.localPosition = acm.gameObject.transform.position;
+            vfx.transform.localPosition = acm.gameObject.transform.localPosition;
         }
 
         currentAttacks.Add(ac.gameObject, ad);

@@ -39,9 +39,9 @@ public class BotDeathManager : MonoBehaviour
                 }
             }
 
+            stateMachine.Animator.Play(DeathAnimName);
+            float animationDuration = stateMachine.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == DeathAnimName).length;
             stateMachine.enabled = false;
-
-            GetComponent<StateMachineManager>().enabled = false;
 
             if (TryGetComponent<MoneyDrop>(out MoneyDrop money))
             {
@@ -49,8 +49,6 @@ public class BotDeathManager : MonoBehaviour
             }
 
             OnBotDied?.Invoke();
-            stateMachine.Animator.Play(DeathAnimName);
-            float animationDuration = stateMachine.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == DeathAnimName).length;
             yield return new WaitForSeconds(animationDuration);
 
             Destroy(gameObject);

@@ -42,7 +42,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
         if (agent.isStopped)
             agent.isStopped = false;
         isPosReached = false;
-        goToRandomPos();
+        manager.StartCoroutine(resetRandomMove());
     }
 
     public override void OnUpdate()
@@ -53,7 +53,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
             {
                 if (!shouldOnlyMoveOnce)
                 {
-                    goToRandomPos();
+                    manager.StartCoroutine(resetRandomMove());
                 }
                 else
                 {
@@ -81,6 +81,7 @@ public class RandomMoveInRangeEntity : StateEntityBase
         yield return new WaitForSeconds(Random.Range(rangeWaitBetweenMoves.x, rangeWaitBetweenMoves.y));
         manager.shouldSearchStates = true;
         timerRunning = false;
+        goToRandomPos();
     }
 
     private void goToRandomPos()
