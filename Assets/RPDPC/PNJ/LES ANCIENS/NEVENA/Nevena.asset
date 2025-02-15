@@ -1,5 +1,267 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5739471224317415389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
+    TargetNodeGuid: 1d43daff-7224-4027-869b-1ff69ccb5620
+  - BaseNodeGuid: c6f6ded4-0d55-45b5-914c-586f1b203e6e
+    TargetNodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
+  - BaseNodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
+    TargetNodeGuid: cbd3bc5e-e94d-4fec-b73a-325f682c0091
+  - BaseNodeGuid: cbd3bc5e-e94d-4fec-b73a-325f682c0091
+    TargetNodeGuid: fb5694de-a147-4607-ba2b-657d8d3a9117
+  - BaseNodeGuid: fb5694de-a147-4607-ba2b-657d8d3a9117
+    TargetNodeGuid: cd362b1c-e7d7-4345-a4e8-f73093e1f6c8
+  - BaseNodeGuid: cd362b1c-e7d7-4345-a4e8-f73093e1f6c8
+    TargetNodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
+    Position: {x: 254.4, y: 261.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_NEVENA_1
+    Duration: 0
+  - NodeGuid: cbd3bc5e-e94d-4fec-b73a-325f682c0091
+    Position: {x: 487.2, y: 261.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: fb5694de-a147-4607-ba2b-657d8d3a9117
+    Position: {x: 743.2, y: 261.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: cd362b1c-e7d7-4345-a4e8-f73093e1f6c8
+    Position: {x: 973.6, y: 261.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
+    Position: {x: 1218.4, y: 261.6}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 1d43daff-7224-4027-869b-1ff69ccb5620
+    Position: {x: 1475.2, y: 261.6}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: c6f6ded4-0d55-45b5-914c-586f1b203e6e
+    Position: {x: 149.6, y: 261.6}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-255397151323782510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
+    TargetNodeGuid: 8b5c113e-04bb-4f4c-b5c9-b49005a4fd65
+  - BaseNodeGuid: f2284147-dab9-41fa-baee-1a1385e48fd1
+    TargetNodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
+  - BaseNodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
+    TargetNodeGuid: f2284147-dab9-41fa-baee-1a1385e48fd1
+  - BaseNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
+    TargetNodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
+  - BaseNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+    TargetNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
+  - BaseNodeGuid: ce426f8c-2bec-4b6f-b8b2-1942babf30b3
+    TargetNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+    Position: {x: 360, y: 275.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_NEVENA_1
+    Duration: 0
+  - NodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
+    Position: {x: 633.6, y: 275.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: f2284147-dab9-41fa-baee-1a1385e48fd1
+    Position: {x: 1182.4, y: 275.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
+    Position: {x: 894.4, y: 275.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Duration: 0
+  - NodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
+    Position: {x: 1480, y: 275.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_DIALOGUE_0_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 8b5c113e-04bb-4f4c-b5c9-b49005a4fd65
+    Position: {x: 1780.8, y: 275.2}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: ce426f8c-2bec-4b6f-b8b2-1942babf30b3
+    Position: {x: 226.4, y: 275.2}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-135174160976546339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,4 +294,278 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: -135174160976546339}
   _characterNameKey: NEVENA_NAME
-  _allDialogue: []
+  _allDialogue:
+  - {fileID: 6803494112045628589}
+  - {fileID: -255397151323782510}
+  - {fileID: -5739471224317415389}
+--- !u!114 &6803494112045628589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 4d8515f2-de01-48b6-b14a-8bd29cc8b420
+    TargetNodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
+  - BaseNodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
+    TargetNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
+  - BaseNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
+    TargetNodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
+  - BaseNodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
+    TargetNodeGuid: c3f7f85a-e7a5-402f-b4d9-ac2b88ba30b7
+  - BaseNodeGuid: c3f7f85a-e7a5-402f-b4d9-ac2b88ba30b7
+    TargetNodeGuid: a679de52-de59-4311-9fbd-f8092ec582de
+  - BaseNodeGuid: a679de52-de59-4311-9fbd-f8092ec582de
+    TargetNodeGuid: fdfa0ad3-07a4-4231-96d1-3e73253d2d88
+  - BaseNodeGuid: fdfa0ad3-07a4-4231-96d1-3e73253d2d88
+    TargetNodeGuid: 53c7c65b-ffbc-4495-a642-3266a3faa5a6
+  - BaseNodeGuid: 53c7c65b-ffbc-4495-a642-3266a3faa5a6
+    TargetNodeGuid: 90c145af-6445-426d-bafb-c5279f747c28
+  - BaseNodeGuid: 90c145af-6445-426d-bafb-c5279f747c28
+    TargetNodeGuid: a43379cf-661e-4158-a19f-04b8db725ca7
+  - BaseNodeGuid: a43379cf-661e-4158-a19f-04b8db725ca7
+    TargetNodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
+  - BaseNodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
+    TargetNodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
+  - BaseNodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
+    TargetNodeGuid: bdbb0b0d-97b7-4da7-9bf0-8eac1768d30c
+  - BaseNodeGuid: bdbb0b0d-97b7-4da7-9bf0-8eac1768d30c
+    TargetNodeGuid: 87ff5554-2019-4a39-8df0-da19d8c5feec
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
+    Position: {x: 742.4, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_NEVENA_1
+    Duration: 0
+  - NodeGuid: c3f7f85a-e7a5-402f-b4d9-ac2b88ba30b7
+    Position: {x: 1004.8, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: a679de52-de59-4311-9fbd-f8092ec582de
+    Position: {x: 1289.6, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: fdfa0ad3-07a4-4231-96d1-3e73253d2d88
+    Position: {x: 1548.8, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 53c7c65b-ffbc-4495-a642-3266a3faa5a6
+    Position: {x: 1801.6, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 90c145af-6445-426d-bafb-c5279f747c28
+    Position: {x: 2046.4, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: a43379cf-661e-4158-a19f-04b8db725ca7
+    Position: {x: 2321.6, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
+    Position: {x: 2848.8, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_1_4
+    Duration: 10
+  - NodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
+    Position: {x: 224, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
+    Position: {x: 2587.2, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
+    Position: {x: 480, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: bdbb0b0d-97b7-4da7-9bf0-8eac1768d30c
+    Position: {x: 3105.6, y: 253.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -135174160976546339}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NEVENA_ACT_1_DIALOGUE_1_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 87ff5554-2019-4a39-8df0-da19d8c5feec
+    Position: {x: 3369.6, y: 253.59999}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 4d8515f2-de01-48b6-b14a-8bd29cc8b420
+    Position: {x: 102.4, y: 253.59999}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
