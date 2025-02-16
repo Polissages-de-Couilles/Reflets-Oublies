@@ -26,7 +26,8 @@ public class SOProjectileAttack : StateBase
         public int spawnerID;
         public List<ProjectileAttackPrefabDetails> prefabProjectiles;
         public float attackDuration;
-        public float damage;
+        public int animationID;
+        public AnimationCurve animationSpeed;
     }
 
     [Serializable]
@@ -34,6 +35,18 @@ public class SOProjectileAttack : StateBase
     {
         public GameObject prefab;
         public float delayBeforeSpawn;
+        public ProjectileAttackDamageDetails damageDetails;
     }
+}
+
+[Serializable]
+public struct ProjectileAttackDamageDetails
+{
+    public float damage;
+    public bool doesStun;
+    public float stunDuration;
+    public bool doesKnockback;
+    public float knockbackForce;
+    public bool doNotDestroyAtTriggerEnter;
 }
 

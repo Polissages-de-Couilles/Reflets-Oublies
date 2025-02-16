@@ -14,10 +14,11 @@ public class AttackCollider : MonoBehaviour
     public bool DoesKnockback;
     public float KnockForce;
     public KnockbackMode KnockbackMode;
+    GameObject Attacker;
     bool isEnemy;
     public List<GameObject> CharacterAlreadyAttacked = new List<GameObject>();
 
-    public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy)
+    public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attaker)
     {
         this.DoesStun = DoesStun;
         this.StunDuration = StunDuration;
@@ -25,6 +26,7 @@ public class AttackCollider : MonoBehaviour
         this.KnockForce = KnockForce;
         this.KnockbackMode = KnockbackMode;
         this.isEnemy = isEnemy;
+        this.Attacker = Attaker;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -32,7 +34,7 @@ public class AttackCollider : MonoBehaviour
         bool changeHasAlreadyTakeDamageValue = false;
         IDamageable damageable = collider.GetComponent<IDamageable>();
         StunAndKnockbackManagerBase SKManager = collider.GetComponent<StunAndKnockbackManagerBase>();
-        if(collider != transform.parent.gameObject && !collider.transform.IsChildOf(transform.parent) && (isEnemy ^ (collider.GetComponent<StateMachineManager>() != null)))
+        if(collider != Attacker && !collider.transform.IsChildOf(Attacker.transform) && (isEnemy ^ (collider.GetComponent<StateMachineManager>() != null)))
         {
             if (damageable != null && !CharacterAlreadyAttacked.Contains(collider.gameObject))
             {
@@ -47,7 +49,7 @@ public class AttackCollider : MonoBehaviour
                 }
                 if (DoesKnockback)
                 {
-                    SKManager.ApplyKnockback(KnockForce, KnockbackMode, transform.parent.gameObject, collider.gameObject, collider.transform.position);
+                    SKManager.ApplyKnockback(KnockForce, KnockbackMode, Attacker, collider.gameObject, transform.position);
                 }
             }
             OnEnterTrigger?.Invoke(gameObject);

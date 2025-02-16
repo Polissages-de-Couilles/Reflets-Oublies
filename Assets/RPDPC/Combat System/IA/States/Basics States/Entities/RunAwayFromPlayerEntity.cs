@@ -26,7 +26,10 @@ public class RunAwayFromPlayerEntity : StateEntityBase
     {
         agent = parent.GetComponent<NavMeshAgent>();
         if (agent.isStopped)
+        {
             agent.isStopped = false;
+        }
+        animator.Play(animationNames[0]);
     }
 
     public override void OnUpdate()

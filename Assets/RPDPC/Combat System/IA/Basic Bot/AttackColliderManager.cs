@@ -32,7 +32,7 @@ public class AttackColliderManager : MonoBehaviour
             ac = gameObject.AddComponent<AttackCollider>();
         }
 
-        ac.Init(DoesStun, StunDuration, DoesKnockback, KnockForce, KnockbackMode, true);
+        ac.Init(DoesStun, StunDuration, DoesKnockback, KnockForce, KnockbackMode, true, gameObject);
 
         return ac;
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,6 +17,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(BotMovementSpeedManager))]
 [RequireComponent(typeof(GuardManager))]
 [RequireComponent(typeof(Lockable))]
+[RequireComponent(typeof(NavMeshModifier))]
 public class BotCreator : MonoBehaviour
 {
 }

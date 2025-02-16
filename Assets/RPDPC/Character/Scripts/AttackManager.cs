@@ -36,17 +36,17 @@ public class AttackManager : MonoBehaviour
 
         collision1.SetCollisionState(false);
         collision1.GetComponent<MeshRenderer>().enabled = false;
-        collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
+        collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision2.SetCollisionState(false);
         collision2.GetComponent<MeshRenderer>().enabled = false;
-        collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false);
+        collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision3.SetCollisionState(false);
         collision3.GetComponent<MeshRenderer>().enabled = false;
-        collision3.Init(true, 1, true, 1f, KnockbackMode.MoveAwayFromAttacker, false);
+        collision3.Init(true, 1, true, 1f, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         PIE.PlayerInputAction.Player.Attack.performed += OnAttack;
