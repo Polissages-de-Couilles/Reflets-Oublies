@@ -18,7 +18,7 @@ public class AttackCollider : MonoBehaviour
     bool isEnemy;
     public List<GameObject> CharacterAlreadyAttacked = new List<GameObject>();
 
-    public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attaker)
+    public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attacker)
     {
         this.DoesStun = DoesStun;
         this.StunDuration = StunDuration;
@@ -26,7 +26,7 @@ public class AttackCollider : MonoBehaviour
         this.KnockForce = KnockForce;
         this.KnockbackMode = KnockbackMode;
         this.isEnemy = isEnemy;
-        this.Attacker = Attaker;
+        this.Attacker = Attacker;
     }
 
     void OnTriggerEnter(Collider collider)
@@ -67,6 +67,7 @@ public class AttackCollider : MonoBehaviour
 
     public void SetCollisionState(bool state)
     {
+        CharacterAlreadyAttacked.Clear();
         GetComponent<Collider>().enabled = state;
     }
 }

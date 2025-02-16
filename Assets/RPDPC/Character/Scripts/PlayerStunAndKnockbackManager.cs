@@ -26,7 +26,7 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
                     finalPos = attacked.transform.position + (attacked.transform.position - collisionPosWhenTouched).normalized * knockbackForce;
                     break;
                 case KnockbackMode.MoveAwayFromAttacker:
-                    finalPos = attacked.transform.position - (attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
+                    finalPos = attacked.transform.position + (attacked.transform.position - attacker.transform.position).normalized * knockbackForce;
                     break;
             }
             Debug.Log("Knockback from : " + attacked.transform.position + " to " + finalPos);

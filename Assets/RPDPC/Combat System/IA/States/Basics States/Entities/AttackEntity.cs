@@ -110,7 +110,7 @@ public class AttackEntity : StateEntityBase
 
         yield return new WaitForSeconds(detail.delayBeforeColliderSpawn);
 
-        ac = acm.CreateAttackCollider(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true);
+        ac = acm.CreateAttackCollider(detail.DoesStun, detail.StunDuration, detail.DoesKnockback, detail.KnockForce, detail.KnockbackMode, true, parent);
         ac.gameObject.layer = 9;
         ac.OnDamageableEnterTrigger += DealDamage;
 
