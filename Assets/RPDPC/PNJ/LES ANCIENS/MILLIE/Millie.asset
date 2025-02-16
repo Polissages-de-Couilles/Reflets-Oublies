@@ -1,5 +1,116 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4099291702216774645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b7614df1-1bc2-4e8b-a82c-fcf400434cd3
+    TargetNodeGuid: 703e74d0-dcb9-4db5-8e87-c3796438490f
+  - BaseNodeGuid: 703e74d0-dcb9-4db5-8e87-c3796438490f
+    TargetNodeGuid: e9f0b1fc-6ef0-47f2-a741-6869f6819019
+  - BaseNodeGuid: e9f0b1fc-6ef0-47f2-a741-6869f6819019
+    TargetNodeGuid: ce9454d9-baca-4711-96e8-09c729de3be8
+  - BaseNodeGuid: ce9454d9-baca-4711-96e8-09c729de3be8
+    TargetNodeGuid: 0bc90011-6d79-4103-8c92-d83481932c66
+  - BaseNodeGuid: 0bc90011-6d79-4103-8c92-d83481932c66
+    TargetNodeGuid: ca1c2576-086b-4f1b-8355-ff5b2b6350c9
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 703e74d0-dcb9-4db5-8e87-c3796438490f
+    Position: {x: 707, y: 560}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: e9f0b1fc-6ef0-47f2-a741-6869f6819019
+    Position: {x: 959, y: 560}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221, guid: c93fb1ff82252e24fa806a56907ff864, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: ce9454d9-baca-4711-96e8-09c729de3be8
+    Position: {x: 1222, y: 560}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: 0bc90011-6d79-4103-8c92-d83481932c66
+    Position: {x: 1473, y: 560}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_ACT_1_DIALOGUE_3_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: ca1c2576-086b-4f1b-8355-ff5b2b6350c9
+    Position: {x: 1728, y: 560}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b7614df1-1bc2-4e8b-a82c-fcf400434cd3
+    Position: {x: 594, y: 560}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-3245006656811280036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +256,7 @@ MonoBehaviour:
       LanguageGenericType: {fileID: 0}
     AudioName:
     - languageEnum: 0
-      LanguageGenericType: 
+      LanguageGenericType: Saucisse
     CantBeSkip: 0
     CanMove: 0
     Character: {fileID: 3480064495466724221, guid: c93fb1ff82252e24fa806a56907ff864, type: 2}
@@ -708,6 +819,8 @@ MonoBehaviour:
   _dialogueToAdd: {fileID: 0}
   _allDialogue:
   - {fileID: -3245006656811280036}
+  - {fileID: 7677149915349990601}
+  - {fileID: -4099291702216774645}
 --- !u!114 &4701458107152354234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -746,3 +859,114 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 0}
     RightPosition: {fileID: 0}
+--- !u!114 &7677149915349990601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: f87ec6f2-c21c-4671-8e63-7303ab03b0c1
+    TargetNodeGuid: 362fa8e3-b284-464c-b59a-d6f07f6bd949
+  - BaseNodeGuid: 362fa8e3-b284-464c-b59a-d6f07f6bd949
+    TargetNodeGuid: a1c7ee6d-227a-4d01-9256-f6b8bad461f9
+  - BaseNodeGuid: a1c7ee6d-227a-4d01-9256-f6b8bad461f9
+    TargetNodeGuid: de452b5d-4f5c-4202-b991-d47fc9a20f4b
+  - BaseNodeGuid: de452b5d-4f5c-4202-b991-d47fc9a20f4b
+    TargetNodeGuid: 13b54987-f64a-4553-8530-d06b24691c35
+  - BaseNodeGuid: 13b54987-f64a-4553-8530-d06b24691c35
+    TargetNodeGuid: 61cbe6bb-3fd0-4fb0-99db-b0a35d77eb2b
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 362fa8e3-b284-464c-b59a-d6f07f6bd949
+    Position: {x: 784, y: 430}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221, guid: c93fb1ff82252e24fa806a56907ff864, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: a1c7ee6d-227a-4d01-9256-f6b8bad461f9
+    Position: {x: 1032, y: 430}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 4701458107152354234}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: MILLIE_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: de452b5d-4f5c-4202-b991-d47fc9a20f4b
+    Position: {x: 1279, y: 430}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 3480064495466724221, guid: c93fb1ff82252e24fa806a56907ff864, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: RIAGAD_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: 13b54987-f64a-4553-8530-d06b24691c35
+    Position: {x: 1519, y: 430}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_RIAGAD_MILLIE_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 61cbe6bb-3fd0-4fb0-99db-b0a35d77eb2b
+    Position: {x: 1776, y: 430}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: f87ec6f2-c21c-4671-8e63-7303ab03b0c1
+    Position: {x: 666, y: 430}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
