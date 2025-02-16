@@ -161,28 +161,37 @@ public class FirebaseManager : MonoBehaviour
 
     private void HandleChildAdded(object sender, ChildChangedEventArgs e)
     {
-        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-        _activeUsers.Add(user);
-        //Debug.Log(user.id);
-        CreateGhost(user);
+        if (Application.isPlaying)
+        {
+            var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+            _activeUsers.Add(user);
+            //Debug.Log(user.id);
+            CreateGhost(user);
+        }
     }
 
     private void HandleChildRemoved(object sender, ChildChangedEventArgs e)
     {
-        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-        if (!_ghostDic.ContainsKey(user.id)) return;
-        _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
-        //Debug.Log(user.id);
-        Destroy(_ghostDic[user.id]);
-        _ghostDic.Remove(user.id);
+        if (Application.isPlaying)
+        {
+            var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+            if (!_ghostDic.ContainsKey(user.id)) return;
+            _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
+            //Debug.Log(user.id);
+            Destroy(_ghostDic[user.id]);
+            _ghostDic.Remove(user.id);
+        }
     }
 
     private void HandleChildChange(object sender, ChildChangedEventArgs e)
     {
-        var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-        if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id) || UserInstance.User.id == UserInstance.OldId) return;
-        Debug.Log(user.id + " | " + UserInstance.User.id + " | " + UserInstance.OldId + " | " + (UserInstance.User.id == UserInstance.OldId));
-        _ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
+        if (Application.isPlaying)
+        {
+            var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
+            if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id) || UserInstance.User.id == UserInstance.OldId) return;
+            Debug.Log(user.id + " | " + UserInstance.User.id + " | " + UserInstance.OldId + " | " + (UserInstance.User.id == UserInstance.OldId));
+            _ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
+        }
     }
 
     public async Task SetUserData(UserData userData)
