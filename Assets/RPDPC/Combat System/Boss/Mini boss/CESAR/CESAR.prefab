@@ -1834,6 +1834,8 @@ GameObject:
   - component: {fileID: 6062456093825383335}
   - component: {fileID: 4575141042696335108}
   - component: {fileID: 3386720701950491938}
+  - component: {fileID: 8548472384111040057}
+  - component: {fileID: 1690548433408178953}
   m_Layer: 0
   m_Name: CESAR
   m_TagString: Untagged
@@ -2189,6 +2191,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859d514061ac1634d9a784c7bc9504f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8548472384111040057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802286859466036053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
+--- !u!114 &1690548433408178953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802286859466036053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e511a0c36f6196847b169fe910fe0914, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onDeathVFX: {fileID: 7083740825371661690, guid: 4b23a49fec9573c40ad0392d5f5f6d6c, type: 3}
+  _delay: 0.8
 --- !u!1 &1802286859466036055
 GameObject:
   m_ObjectHideFlags: 0

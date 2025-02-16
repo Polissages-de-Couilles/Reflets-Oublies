@@ -6,6 +6,7 @@ using UnityEngine;
 public class OnDeathVFX : MonoBehaviour
 {
     [SerializeField] GameObject _onDeathVFX;
+    [SerializeField] float _delay = 0;
     BotDeathManager deathManager;
 
     public void Start()
@@ -21,6 +22,11 @@ public class OnDeathVFX : MonoBehaviour
 
     void VFX()
     {
-        Instantiate(_onDeathVFX, this.transform.position, Quaternion.Euler(-90, 0, 0));
+        IEnumerator VFXCoroutine()
+        {
+            yield return new WaitForSeconds(_delay);
+            Instantiate(_onDeathVFX, this.transform.position, Quaternion.Euler(-90, 0, 0));
+        }
+        StartCoroutine(VFXCoroutine());
     }
 }
