@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(Collider))]
 [RequireComponent(typeof(NavMeshAgent))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(StateMachineManager))]

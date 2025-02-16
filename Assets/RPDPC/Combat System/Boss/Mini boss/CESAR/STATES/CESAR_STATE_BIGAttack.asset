@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ca2a8ab07cfb554bb418276f2571d81, type: 3}
-  m_Name: CESAR_STATE_Attack2
+  m_Name: CESAR_STATE_BIGAttack
   m_EditorClassIdentifier: 
   priority: 4
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: d135a96051e8ce94e992633af1c3f688, type: 2}
+    baseCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
     otherParts: []
-  - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
-    otherParts: []
-  - logicalGate: 0
+  - logicalGate: 2
     baseCondition: {fileID: 11400000, guid: 73d92b41921baf142bc3e318e14e96e9, type: 2}
     otherParts: []
   isHostileState: 1
@@ -29,17 +26,17 @@ MonoBehaviour:
   - Attack02
   attacks:
   - colliders:
-    - delayBeforeColliderSpawn: 0.3
-      colliderID: 1
-      ColliderDuration: 1
+    - delayBeforeColliderSpawn: 3.4
+      colliderID: 2
+      ColliderDuration: 0.1
       DoesStun: 1
-      StunDuration: 1
-      DoesKnockback: 1
-      KnockForce: 2
+      StunDuration: 2
+      DoesKnockback: 0
+      KnockForce: 0
       KnockbackMode: 0
-      VFX: {fileID: 0}
-    attackDuration: 1.5
-    damage: 5
+      VFX: {fileID: 2117074926573386360, guid: d0616496821242b44887a77bc331dfc2, type: 3}
+    attackDuration: 6
+    damage: 50
     ShouldOnlyTookDamageFromOneCollision: 0
     animationID: 1
     animationSpeed:
@@ -47,7 +44,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
+        value: 0.2
         inSlope: 0.016647788
         outSlope: 0.016647788
         tangentMode: 0
@@ -55,8 +52,8 @@ MonoBehaviour:
         inWeight: 0
         outWeight: 0.2881317
       - serializedVersion: 3
-        time: 0.4916733
-        value: 1.0023582
+        time: 0.45
+        value: 0.2
         inSlope: -0.00589744
         outSlope: -0.00589744
         tangentMode: 0
@@ -64,14 +61,50 @@ MonoBehaviour:
         inWeight: 0.33333334
         outWeight: 0.35139152
       - serializedVersion: 3
-        time: 0.7439384
-        value: 2
+        time: 0.4501
+        value: 10
         inSlope: 0.013840232
         outSlope: 0.013840232
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.50296754
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7
+        value: 10
+        inSlope: 0.008447986
+        outSlope: 0.008447986
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 0.7001
+        value: 0.075
+        inSlope: -0.004325266
+        outSlope: -0.004325266
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.74
+        value: 0.05
+        inSlope: 0.0000090261865
+        outSlope: 0.0000090261865
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7401
+        value: 1
+        inSlope: -0.14824799
+        outSlope: -0.14824799
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
       - serializedVersion: 3
         time: 1
         value: 1
@@ -89,4 +122,4 @@ MonoBehaviour:
       grabReleaseTime: 0
       grabReleaseForce: {x: 0, y: 0, z: 0}
       grabStunDuration: 0
-  doAllAttacks: 0
+  doAllAttacks: 1

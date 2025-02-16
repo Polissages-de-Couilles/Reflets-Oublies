@@ -49,7 +49,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6320832971820834040
 Transform:
   m_ObjectHideFlags: 0
@@ -496,6 +496,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3342341056368959228, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+      propertyPath: attackCollider
+      value: 
+      objectReference: {fileID: 577316388839724141}
+    - target: {fileID: 4408477971736994047, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+      propertyPath: states.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4408477971736994047, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+      propertyPath: states.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2bb84f9168e618144ac8d54f4dccfdbc, type: 2}
+    - target: {fileID: 4408477971736994047, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+      propertyPath: states.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: af3e86fedc05a9b42b9fd294294ad3da, type: 2}
     - target: {fileID: 8548472384111040057, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
       propertyPath: m_IgnoreFromBuild
       value: 1
@@ -505,6 +521,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+--- !u!136 &577316388839724141 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 6945431057896473170, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+  m_PrefabInstance: {fileID: 7521058166246676031}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8170419041186044234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1802286859466067829, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
