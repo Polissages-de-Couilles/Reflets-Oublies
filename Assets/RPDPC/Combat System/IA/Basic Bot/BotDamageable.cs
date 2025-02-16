@@ -6,7 +6,7 @@ using UnityEngine;
 public class BotDamageable : MonoBehaviour, IDamageable
 {
     GuardManager gm;
-    public float maxHealth = 100f;
+    public float maxHealth = 3f;
     float currentHealth;
 
     public Action<float, float> OnDamageTaken { get; set; }
