@@ -1,5 +1,96 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7724278226176816641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 54109f06-efce-4962-a9ec-c256e106158a
+    TargetNodeGuid: 443c6b18-f7f0-476f-b335-362d8016bb02
+  - BaseNodeGuid: dd375341-edf3-45a7-bab1-6a0f3031684f
+    TargetNodeGuid: d6a2a67d-755f-482a-8b30-0359502e7e90
+  - BaseNodeGuid: 443c6b18-f7f0-476f-b335-362d8016bb02
+    TargetNodeGuid: dd375341-edf3-45a7-bab1-6a0f3031684f
+  - BaseNodeGuid: d6a2a67d-755f-482a-8b30-0359502e7e90
+    TargetNodeGuid: f1082ba6-c557-48c1-ab2b-a05c33118fe0
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: dd375341-edf3-45a7-bab1-6a0f3031684f
+    Position: {x: 593.6, y: 430.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: 443c6b18-f7f0-476f-b335-362d8016bb02
+    Position: {x: 356, y: 430.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: d6a2a67d-755f-482a-8b30-0359502e7e90
+    Position: {x: 825.6, y: 430.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_3_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f1082ba6-c557-48c1-ab2b-a05c33118fe0
+    Position: {x: 1056, y: 430.40002}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 54109f06-efce-4962-a9ec-c256e106158a
+    Position: {x: 247.2, y: 430.40002}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-2083089731187425495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,4 +123,270 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: -2083089731187425495}
   _characterNameKey: ROZENN_NAME
-  _allDialogue: []
+  _dialogueToAdd: {fileID: 0}
+  _allDialogue:
+  - {fileID: 7427537151958765327}
+  - {fileID: 4639163544732083583}
+  - {fileID: -7724278226176816641}
+--- !u!114 &4639163544732083583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: f012e463-6bc6-40d1-adf4-cc49b5bab976
+    TargetNodeGuid: 7b902d56-277a-4941-8837-7e419df803c6
+  - BaseNodeGuid: 7b902d56-277a-4941-8837-7e419df803c6
+    TargetNodeGuid: f2433a51-1d73-4d48-8dd9-c9bfb411ba54
+  - BaseNodeGuid: f2433a51-1d73-4d48-8dd9-c9bfb411ba54
+    TargetNodeGuid: f4bfd8b7-6cd8-4c25-9e0b-6edd68c7ed85
+  - BaseNodeGuid: f4bfd8b7-6cd8-4c25-9e0b-6edd68c7ed85
+    TargetNodeGuid: fd403a57-9ae9-4142-a6bc-a42af4fb343d
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: f2433a51-1d73-4d48-8dd9-c9bfb411ba54
+    Position: {x: 516, y: 340.80002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: f4bfd8b7-6cd8-4c25-9e0b-6edd68c7ed85
+    Position: {x: 752.8, y: 340.80002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: 7b902d56-277a-4941-8837-7e419df803c6
+    Position: {x: 276.8, y: 340.80002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: fd403a57-9ae9-4142-a6bc-a42af4fb343d
+    Position: {x: 984.8, y: 340.80002}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: f012e463-6bc6-40d1-adf4-cc49b5bab976
+    Position: {x: 148, y: 344}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &7427537151958765327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: fc200dfb-b4a4-4186-8062-8e312bab45ec
+    TargetNodeGuid: ccc54c96-60c5-40ee-9dbc-093aecb94850
+  - BaseNodeGuid: a746acc5-69c4-45e6-b4bb-da4519a317a8
+    TargetNodeGuid: fc200dfb-b4a4-4186-8062-8e312bab45ec
+  - BaseNodeGuid: 46680c60-d9d5-4a92-8794-c4674ab49c72
+    TargetNodeGuid: a746acc5-69c4-45e6-b4bb-da4519a317a8
+  - BaseNodeGuid: 64ed64f0-2f88-40df-aab6-6c8699a1ff44
+    TargetNodeGuid: 46680c60-d9d5-4a92-8794-c4674ab49c72
+  - BaseNodeGuid: cf4aa619-fbc1-4008-94b0-f43c3822ddce
+    TargetNodeGuid: 64ed64f0-2f88-40df-aab6-6c8699a1ff44
+  - BaseNodeGuid: 45078d6e-b10d-4c8f-9c62-5c33f6a71f1f
+    TargetNodeGuid: cf4aa619-fbc1-4008-94b0-f43c3822ddce
+  - BaseNodeGuid: e9eae859-87f6-4498-8e3b-523e59145e98
+    TargetNodeGuid: 45078d6e-b10d-4c8f-9c62-5c33f6a71f1f
+  - BaseNodeGuid: 48f310fd-7c91-45cc-a461-8ee2f78b2dd5
+    TargetNodeGuid: e9eae859-87f6-4498-8e3b-523e59145e98
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: e9eae859-87f6-4498-8e3b-523e59145e98
+    Position: {x: 363.2, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 45078d6e-b10d-4c8f-9c62-5c33f6a71f1f
+    Position: {x: 607.2, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: cf4aa619-fbc1-4008-94b0-f43c3822ddce
+    Position: {x: 868, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 64ed64f0-2f88-40df-aab6-6c8699a1ff44
+    Position: {x: 1152, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: a746acc5-69c4-45e6-b4bb-da4519a317a8
+    Position: {x: 1654.4, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: fc200dfb-b4a4-4186-8062-8e312bab45ec
+    Position: {x: 1910.4, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_ROZENN_1
+    Duration: 0
+  - NodeGuid: 46680c60-d9d5-4a92-8794-c4674ab49c72
+    Position: {x: 1416.8, y: 279.2}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -2083089731187425495}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: ROZENN_ACT_1_DIALOGUE_1_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: ccc54c96-60c5-40ee-9dbc-093aecb94850
+    Position: {x: 2184, y: 279.2}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 48f310fd-7c91-45cc-a461-8ee2f78b2dd5
+    Position: {x: 215.2, y: 279.2}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

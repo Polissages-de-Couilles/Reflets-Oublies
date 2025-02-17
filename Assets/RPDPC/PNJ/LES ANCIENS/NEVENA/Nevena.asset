@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: Dialogue_3
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
-    TargetNodeGuid: 1d43daff-7224-4027-869b-1ff69ccb5620
   - BaseNodeGuid: c6f6ded4-0d55-45b5-914c-586f1b203e6e
     TargetNodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
   - BaseNodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
@@ -25,6 +23,8 @@ MonoBehaviour:
     TargetNodeGuid: cd362b1c-e7d7-4345-a4e8-f73093e1f6c8
   - BaseNodeGuid: cd362b1c-e7d7-4345-a4e8-f73093e1f6c8
     TargetNodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
+  - BaseNodeGuid: 7d013a18-967a-4b0d-943f-03ab24cbcddc
+    TargetNodeGuid: 1d43daff-7224-4027-869b-1ff69ccb5620
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 230189f7-acb1-48fa-9341-9502825eb7c7
@@ -144,18 +144,18 @@ MonoBehaviour:
   m_Name: Dialogue_2
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
-    TargetNodeGuid: 8b5c113e-04bb-4f4c-b5c9-b49005a4fd65
+  - BaseNodeGuid: ce426f8c-2bec-4b6f-b8b2-1942babf30b3
+    TargetNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+  - BaseNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+    TargetNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
+  - BaseNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
+    TargetNodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
   - BaseNodeGuid: f2284147-dab9-41fa-baee-1a1385e48fd1
     TargetNodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
   - BaseNodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
     TargetNodeGuid: f2284147-dab9-41fa-baee-1a1385e48fd1
-  - BaseNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
-    TargetNodeGuid: f5e63790-c2d1-4bad-9459-9ed73e0d545a
-  - BaseNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
-    TargetNodeGuid: ccd90d4b-caa1-4288-b1ce-daf298060d81
-  - BaseNodeGuid: ce426f8c-2bec-4b6f-b8b2-1942babf30b3
-    TargetNodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
+  - BaseNodeGuid: 18a332c5-43b5-42b5-bfc4-98766b8443c5
+    TargetNodeGuid: 8b5c113e-04bb-4f4c-b5c9-b49005a4fd65
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 22480cb3-04fb-41e5-ad07-05e5cc2dc9f5
@@ -294,6 +294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: -135174160976546339}
   _characterNameKey: NEVENA_NAME
+  _dialogueToAdd: {fileID: 0}
   _allDialogue:
   - {fileID: 6803494112045628589}
   - {fileID: -255397151323782510}
@@ -313,10 +314,6 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 4d8515f2-de01-48b6-b14a-8bd29cc8b420
     TargetNodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
-  - BaseNodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
-    TargetNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
-  - BaseNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
-    TargetNodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
   - BaseNodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
     TargetNodeGuid: c3f7f85a-e7a5-402f-b4d9-ac2b88ba30b7
   - BaseNodeGuid: c3f7f85a-e7a5-402f-b4d9-ac2b88ba30b7
@@ -331,10 +328,14 @@ MonoBehaviour:
     TargetNodeGuid: a43379cf-661e-4158-a19f-04b8db725ca7
   - BaseNodeGuid: a43379cf-661e-4158-a19f-04b8db725ca7
     TargetNodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
-  - BaseNodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
-    TargetNodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
   - BaseNodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
     TargetNodeGuid: bdbb0b0d-97b7-4da7-9bf0-8eac1768d30c
+  - BaseNodeGuid: df9bede6-de81-4d0e-a8e0-92aad560bf90
+    TargetNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
+  - BaseNodeGuid: 6bea0e8c-4d93-44b7-90fa-e81b160d9c63
+    TargetNodeGuid: 345661d0-c943-4ec8-8bf3-2bc9f6b02ff8
+  - BaseNodeGuid: 5eb7d653-5230-4977-b175-eff759f04016
+    TargetNodeGuid: 048474d6-a184-4091-9643-3e171b9624d0
   - BaseNodeGuid: bdbb0b0d-97b7-4da7-9bf0-8eac1768d30c
     TargetNodeGuid: 87ff5554-2019-4a39-8df0-da19d8c5feec
   DialogueChoiceNodeDatas: []
