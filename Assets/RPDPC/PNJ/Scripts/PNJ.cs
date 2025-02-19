@@ -15,6 +15,7 @@ public class PNJ : Interactible
     [SerializeField] PNJData _data;
     [SerializeField] int _dialogueIndex = 1;
     DialogueContainerSO dialogue => _data.GetDialogue(_dialogueIndex);
+    
     public enum State
     {
         Waiting,
