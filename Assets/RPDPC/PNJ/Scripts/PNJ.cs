@@ -13,9 +13,8 @@ public class PNJ : Interactible
     public override string Text => $"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} {LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
 
     [SerializeField] PNJData _data;
-    [SerializeField] int _dialogueIndex = 1;
-    DialogueContainerSO dialogue => _data.GetDialogue(_dialogueIndex);
-    
+    [SerializeField] List<ActDialogueSO> _dialogues;
+
     public enum State
     {
         Waiting,
@@ -39,7 +38,8 @@ public class PNJ : Interactible
                     EventSystem.current.SetSelectedGameObject(null);
                 }
                 );
-                GameManager.Instance.DialogueManager.StartDialogue(dialogue);
+                var listDialogue = _dialogues.Find(x => x.Act == GameManager.Instance.StoryManager.CurrentAct);
+                GameManager.Instance.DialogueManager.StartDialogue(listDialogue.GetDialogue());
                 break;
 
             case State.Dialogue:

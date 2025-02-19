@@ -52,7 +52,8 @@ public class FirebaseManager : MonoBehaviour
     {
         OnFirebaseInitialized -= OnFirebaseInit;
         Disconnect();
-        await _database.GetReference(USER_KEY).Child(UserInstance.User.id.ToString()).RemoveValueAsync();
+        if(UserInstance.User != null)
+            await _database.GetReference(USER_KEY).Child(UserInstance.User.id.ToString()).RemoveValueAsync();
     }
 
     [Button]

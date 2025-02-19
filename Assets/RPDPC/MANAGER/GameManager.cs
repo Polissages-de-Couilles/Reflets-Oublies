@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
     public LockManager LockManager => _lockManager;
     [SerializeField] private LockManager _lockManager;
 
+    public StoryManager StoryManager => _storyManager;
+    [SerializeField] private StoryManager _storyManager;
+
     //Uniquement lEEbut de test, ne pas utiliser pour la version final
 
     public void Update()
