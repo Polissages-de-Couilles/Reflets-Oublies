@@ -139,6 +139,7 @@ namespace PDC.Localization
             if(!text.Contains("rpdpcfont")) return text;
 
             var words = GetWords(text);
+            Debug.Log(text + " | " + words.Length);
             bool isTranslated = false;
             for(int i = 0; i < words.Length; i++)
             {
@@ -160,8 +161,8 @@ namespace PDC.Localization
                     isTranslated = word == "/font" ? false : word == "font=rpdpcfont";
                 }
 
-                //Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')));
-                if(word.Contains('<') || word.Contains('>') || CheckIfKey()) continue;
+                Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')) + " | " + word.Length);
+                if(word.Contains('<') || word.Contains('>') || CheckIfKey() || word.Length == 0) continue;
                 
                 if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
                 {
