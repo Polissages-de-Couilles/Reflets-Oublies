@@ -23,6 +23,14 @@ public class PNJ : Interactible
     }
     public State state;
 
+    public void Awake()
+    {
+        foreach (var dialogue in _dialogues)
+        {
+            dialogue.isFirst = true;
+        }
+    }
+
     public override void OnInteraction()
     {
         if (!LocalizationManager.IsLocaReady) return;
