@@ -15,6 +15,7 @@ public class FollowPlayerEntity : StateEntityBase
 
     public override void ExitState()
     {
+        onActionFinished?.Invoke();
         manager.shouldSearchStates = true;
     }
 
@@ -41,6 +42,7 @@ public class FollowPlayerEntity : StateEntityBase
                 agent.SetDestination(lastKnownPos);
                 if (Vector3.Distance(parent.transform.position, player.transform.position) < 2)
                 {
+                    manager.shouldSearchStates = false;
                     ExitState();
                 }
                 return;

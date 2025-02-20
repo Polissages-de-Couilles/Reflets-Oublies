@@ -15,10 +15,10 @@ MonoBehaviour:
   priority: 4
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
+    baseCondition: {fileID: 11400000, guid: 367a3f7abf27649439175afe35ec2593, type: 2}
     otherParts: []
-  - logicalGate: 2
-    baseCondition: {fileID: 11400000, guid: 73d92b41921baf142bc3e318e14e96e9, type: 2}
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 7bcdf0f668aa8e644b3d8250dc383674, type: 2}
     otherParts: []
   isHostileState: 1
   animationNames:
@@ -26,7 +26,7 @@ MonoBehaviour:
   - Attack02
   attacks:
   - colliders:
-    - delayBeforeColliderSpawn: 3.4
+    - delayBeforeColliderSpawn: 2.3
       colliderID: 2
       ColliderDuration: 0.1
       DoesStun: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
       KnockForce: 0
       KnockbackMode: 0
       VFX: {fileID: 2117074926573386360, guid: d0616496821242b44887a77bc331dfc2, type: 3}
-    attackDuration: 6
+    attackDuration: 4
     damage: 50
     ShouldOnlyTookDamageFromOneCollision: 0
     animationID: 1
@@ -44,7 +44,7 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.2
+        value: 0.3
         inSlope: 0.016647788
         outSlope: 0.016647788
         tangentMode: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
         outWeight: 0.2881317
       - serializedVersion: 3
         time: 0.45
-        value: 0.2
+        value: 0.3
         inSlope: -0.00589744
         outSlope: -0.00589744
         tangentMode: 0

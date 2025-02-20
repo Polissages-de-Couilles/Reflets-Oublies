@@ -38,7 +38,7 @@ MonoBehaviour:
       KnockForce: 0
       KnockbackMode: 0
       VFX: {fileID: 0}
-    attackDuration: 1.7
+    attackDuration: 2.04
     damage: 10
     ShouldOnlyTookDamageFromOneCollision: 1
     animationID: 1
@@ -47,39 +47,39 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1
-        inSlope: 0.016647788
-        outSlope: 0.016647788
+        value: 0.5
+        inSlope: -0.0005766105
+        outSlope: -0.0005766105
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
-        outWeight: 0.2881317
+        outWeight: 1
       - serializedVersion: 3
-        time: 0.4916733
-        value: 1.0023582
-        inSlope: -0.00589744
-        outSlope: -0.00589744
+        time: 0.199
+        value: 0.5
+        inSlope: -0.0014126997
+        outSlope: -0.0014126997
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.830907
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 1
+        inSlope: -0.0007802946
+        outSlope: -0.0007802946
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.35139152
-      - serializedVersion: 3
-        time: 0.7439384
-        value: 2
-        inSlope: 0.013840232
-        outSlope: 0.013840232
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.50296754
-        outWeight: 0.33333334
+        outWeight: 0.21197492
       - serializedVersion: 3
         time: 1
         value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.33333334
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -89,4 +89,4 @@ MonoBehaviour:
       grabReleaseTime: 1.1
       grabReleaseForce: {x: 3, y: 0, z: 0}
       grabStunDuration: 0.5
-  doAllAttacks: 0
+  doAllAttacks: 1

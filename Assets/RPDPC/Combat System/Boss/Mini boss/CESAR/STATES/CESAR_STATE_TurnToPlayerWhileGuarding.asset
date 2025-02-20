@@ -15,15 +15,12 @@ MonoBehaviour:
   priority: 2
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
-    otherParts: []
-  - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
     otherParts:
     - logicalGate: 4
       secondCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
   isHostileState: 1
   animationNames: []
-  turnDuration: 0.5
+  turnDuration: 10
   guardAnim: IdleDefense
   guardHitAnim: IdleDefenseGetHit

@@ -10,6 +10,13 @@ public class TurnToPlayerWhileGardingEntity : TurnToPlayerEntity
     GuardManager guardManager;
     Coroutine guardCoroutine;
 
+    public override void Init(float turnDuration, string guardAnim, string guardHitAnim)
+    {
+        this.turnDuration = turnDuration;
+        this.guardAnim = guardAnim;
+        this.guardHitAnim = guardHitAnim;
+    }
+
     public override void OnEndState()
     {
         base.OnEndState();

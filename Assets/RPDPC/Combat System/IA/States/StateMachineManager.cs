@@ -71,7 +71,7 @@ public class StateMachineManager : MonoBehaviour
             int randIndex = rnd.Next(maxPrioList.Count);
             StateEntityBase highestState = maxPrioList[randIndex];
 
-            //Debug.Log("FOUNDED STATE FOR " + gameObject + " : " + highestState);
+            Debug.Log("FOUNDED STATE FOR " + gameObject + " : " + highestState);
             if (currentState != null)
             {
                 currentState.onActionFinished -= StateEnded;
