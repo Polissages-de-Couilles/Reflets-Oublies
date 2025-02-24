@@ -14,8 +14,464 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: 7546228857376511551}
   _characterNameKey: DENEZ_NAME
-  _dialogueToAdd: {fileID: 0}
-  _allDialogue: []
+  _dialogueToAdd: {fileID: -6747691320893120661, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+  _allDialogue:
+  - {fileID: 528416713236581029}
+  - {fileID: 605387816657277565}
+  - {fileID: 7216387281662996451}
+--- !u!114 &528416713236581029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: aeaca2ee-7ec1-4197-8eb3-8e754c9d7de0
+    TargetNodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
+  - BaseNodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
+    TargetNodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
+  - BaseNodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
+    TargetNodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
+  - BaseNodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
+    TargetNodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
+  - BaseNodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
+    TargetNodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
+  - BaseNodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
+    TargetNodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
+  - BaseNodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
+    TargetNodeGuid: 91b56785-aad6-4471-b77d-a5df43c565ac
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: b050d5a0-b3d0-4092-b85d-f47ba8807a41
+    Position: {x: 1519.2, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 46251452-e2b6-483f-ad3a-d38baa122fc9
+    Position: {x: 864.8, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: f07b75fb-811a-4f1a-91ff-d589a663b971
+    Position: {x: 632.8, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_AZEL_DENEZ_1
+    Duration: 0
+  - NodeGuid: eb23dcb8-e50c-494e-8b80-30fb23b8f48b
+    Position: {x: 1082.4, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_1_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 95e2f2fa-e459-4fb1-a8c0-6698ab44b970
+    Position: {x: 1296, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: d230561a-d29e-439c-9577-9c2e73d3b95a
+    Position: {x: 1736.8, y: 101.600006}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_1_DIALOGUE_1_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 91b56785-aad6-4471-b77d-a5df43c565ac
+    Position: {x: 2004, y: 101.600006}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: aeaca2ee-7ec1-4197-8eb3-8e754c9d7de0
+    Position: {x: 514.4, y: 101.600006}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &605387816657277565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_2
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 9ed5362f-0a3e-4f92-b48c-71733d9262a6
+    TargetNodeGuid: fa32335b-12de-4c4b-92d1-0dbc46874c38
+  - BaseNodeGuid: fa32335b-12de-4c4b-92d1-0dbc46874c38
+    TargetNodeGuid: c9a6212c-55fb-4041-a88b-959db7a81dca
+  - BaseNodeGuid: c9a6212c-55fb-4041-a88b-959db7a81dca
+    TargetNodeGuid: 3ec07eaf-68aa-4011-944b-a8cc4bda2e5c
+  - BaseNodeGuid: 3ec07eaf-68aa-4011-944b-a8cc4bda2e5c
+    TargetNodeGuid: 7cc1134d-e410-45a5-a45c-17ef31ed14a2
+  - BaseNodeGuid: 7cc1134d-e410-45a5-a45c-17ef31ed14a2
+    TargetNodeGuid: de143050-290b-4412-8376-d708c35c75ca
+  - BaseNodeGuid: de143050-290b-4412-8376-d708c35c75ca
+    TargetNodeGuid: 6d13bc86-7ff5-49a9-bdd0-da2a3630ff2e
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: fa32335b-12de-4c4b-92d1-0dbc46874c38
+    Position: {x: 351.2, y: 300}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: c9a6212c-55fb-4041-a88b-959db7a81dca
+    Position: {x: 603.2, y: 300}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: 3ec07eaf-68aa-4011-944b-a8cc4bda2e5c
+    Position: {x: 871.2, y: 300}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: 7cc1134d-e410-45a5-a45c-17ef31ed14a2
+    Position: {x: 1136.8, y: 300}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: de143050-290b-4412-8376-d708c35c75ca
+    Position: {x: 1428, y: 300}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_1_DIALOGUE_AZEL_DENEZ_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 6d13bc86-7ff5-49a9-bdd0-da2a3630ff2e
+    Position: {x: 1685.6, y: 300}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 9ed5362f-0a3e-4f92-b48c-71733d9262a6
+    Position: {x: 228, y: 300}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &7216387281662996451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Dialogue_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: a1d14e6c-cf10-4dc0-935a-1671f4eaa17b
+    TargetNodeGuid: 60fc99de-14aa-4fd1-81db-4b15ab2c1040
+  - BaseNodeGuid: 60fc99de-14aa-4fd1-81db-4b15ab2c1040
+    TargetNodeGuid: cd1628c5-d3ff-4149-b0de-9c38109ea155
+  - BaseNodeGuid: cd1628c5-d3ff-4149-b0de-9c38109ea155
+    TargetNodeGuid: 61efa79a-8d2e-494e-89b1-f1a3b11fe768
+  - BaseNodeGuid: 61efa79a-8d2e-494e-89b1-f1a3b11fe768
+    TargetNodeGuid: 57575a3e-cc2a-4ced-abc8-9fbeb640e42d
+  - BaseNodeGuid: 57575a3e-cc2a-4ced-abc8-9fbeb640e42d
+    TargetNodeGuid: b156fbbc-0faf-4213-81b8-5dc3d42bc497
+  - BaseNodeGuid: b156fbbc-0faf-4213-81b8-5dc3d42bc497
+    TargetNodeGuid: aeaa7314-063a-4236-ba5d-d0ea9b2365d3
+  - BaseNodeGuid: aeaa7314-063a-4236-ba5d-d0ea9b2365d3
+    TargetNodeGuid: 205b56af-f00e-4a6b-8d8c-cd00937f6253
+  - BaseNodeGuid: 205b56af-f00e-4a6b-8d8c-cd00937f6253
+    TargetNodeGuid: 5640ddcf-4ed6-4626-bba7-e14104633852
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 60fc99de-14aa-4fd1-81db-4b15ab2c1040
+    Position: {x: 156.8, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: cd1628c5-d3ff-4149-b0de-9c38109ea155
+    Position: {x: 422.4, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 61efa79a-8d2e-494e-89b1-f1a3b11fe768
+    Position: {x: 684.8, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: 57575a3e-cc2a-4ced-abc8-9fbeb640e42d
+    Position: {x: 961.6, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: b156fbbc-0faf-4213-81b8-5dc3d42bc497
+    Position: {x: 1216.8, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_3_3
+    Duration: 0
+  - NodeGuid: 205b56af-f00e-4a6b-8d8c-cd00937f6253
+    Position: {x: 1770.4, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1388802221408870107, guid: 3294968cc283ed24cbd5ccd41a6d6d99, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: AZEL_ACT_1_DIALOGUE_3_4
+    Duration: 0
+  - NodeGuid: aeaa7314-063a-4236-ba5d-d0ea9b2365d3
+    Position: {x: 1500.8, y: 314.40002}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 5640ddcf-4ed6-4626-bba7-e14104633852
+    Position: {x: 2033.6, y: 314.40002}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: a1d14e6c-cf10-4dc0-935a-1671f4eaa17b
+    Position: {x: 5.6, y: 314.40002}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &7546228857376511551
 MonoBehaviour:
   m_ObjectHideFlags: 0
