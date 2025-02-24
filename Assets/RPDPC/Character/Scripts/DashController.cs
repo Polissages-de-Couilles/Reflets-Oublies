@@ -70,7 +70,8 @@ public class DashController : MonoBehaviour
             Vector3 dash = dir * dashForce * Time.fixedDeltaTime;
             dash += gravity * dashForce;
             RaycastHit hit;
-            if (!Physics.Raycast(transform.position + (transform.forward * 0.5f), Vector3.down, out hit, 2f))
+            RaycastHit hit2;
+            if (!Physics.Raycast(transform.position + (transform.forward * 0.5f), Vector3.down, out hit, 2f) || !Physics.Raycast(transform.position + (-transform.forward * 0.5f), Vector3.down, out hit2, 2f))
             {
                 characterController.Move(new Vector3(0, 0, 0));
                 break;
