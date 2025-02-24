@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4908989478168496767}
   - component: {fileID: 8327121070525122010}
   - component: {fileID: 6082981247896973584}
-  - component: {fileID: 4692954203892362103}
+  - component: {fileID: 299294145465731076}
   m_Layer: 0
   m_Name: PPinAutumnMedium
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4692954203892362103
-BoxCollider:
+--- !u!64 &299294145465731076
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,6 +102,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.86350596, y: 1.9511468, z: 0.86140984}
-  m_Center: {x: 0.063791156, y: 0.9395745, z: 0.0893186}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3621733802710035688, guid: cf7eb190d6c57ac4dae24cb0da6a7b32, type: 3}

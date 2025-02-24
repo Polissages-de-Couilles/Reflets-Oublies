@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4925350167017300407}
   - component: {fileID: 8355725923075829266}
   - component: {fileID: 6057754078596160216}
-  - component: {fileID: 1399514182290534054}
+  - component: {fileID: 4286412756290220393}
   m_Layer: 0
   m_Name: "PCh\xE8neAutumn4"
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1399514182290534054
-BoxCollider:
+--- !u!64 &4286412756290220393
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,6 +102,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.40822023, y: 0.7797181, z: 0.4263413}
-  m_Center: {x: 0.05874195, y: 0.38985905, z: -0.10220802}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4219713672447892256, guid: d4009576a3bf19841a5522e532e0a87c, type: 3}

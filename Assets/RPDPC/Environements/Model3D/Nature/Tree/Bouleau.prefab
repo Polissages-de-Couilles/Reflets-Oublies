@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6150721384136902603}
   - component: {fileID: 2172142774127467994}
   - component: {fileID: 4474348365970314102}
-  - component: {fileID: 6501946330682763842}
+  - component: {fileID: 5041263921847360640}
   m_Layer: 0
   m_Name: Bouleau
   m_TagString: Untagged
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6501946330682763842
-BoxCollider:
+--- !u!64 &5041263921847360640
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -103,6 +103,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.0049378006, y: 0.0060565984, z: 0.019978194}
-  m_Center: {x: 0.000120833975, y: -0.009844727, z: -0.040042587}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5489779928931805349, guid: 9d21259c9f5bc2046b83a7f0080e46e1, type: 3}
