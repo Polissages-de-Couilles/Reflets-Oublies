@@ -45,7 +45,7 @@ public class ActDialogueSO : ScriptableObject
             }
         }
 
-        if(!_first.name.Contains(_act.ToString()))
+        if(_first != null && !_first.name.Contains(_act.ToString()))
         {
             _first.name = (_first.name + "_" + _act.ToString());
         }
