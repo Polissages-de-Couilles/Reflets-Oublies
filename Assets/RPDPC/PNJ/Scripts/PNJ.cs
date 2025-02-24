@@ -11,7 +11,7 @@ using DG.Tweening.Core.Easing;
 
 public class PNJ : Interactible
 {
-    public override string Text => $"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} {LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
+    public override string Text => /*$"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} */$"{LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
 
     [SerializeField] PNJData _data;
     [SerializeField] List<ActDialogueSO> _dialogues;

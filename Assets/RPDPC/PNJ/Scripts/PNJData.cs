@@ -33,7 +33,7 @@ public class PNJData : ScriptableObject
     public void CreateDialogue()
     {
         var dialogue = ScriptableObject.CreateInstance<DialogueContainerSO>();
-        dialogue.name = $"Dialogue_{_allDialogue.Count + 1}";
+        dialogue.name = $"{_characterNameKey.Replace("NAME", "")}_Dialogue_{_allDialogue.Count + 1}";
         _allDialogue.Add(dialogue);
 
         AssetDatabase.AddObjectToAsset(dialogue, this);
@@ -77,6 +77,16 @@ public class PNJData : ScriptableObject
         _allDialogue.Remove(dialogue);
         Undo.DestroyObjectImmediate(dialogue);
         AssetDatabase.SaveAssets();
+    }
+
+    [EditorCools.Button]
+    public void Rename()
+    {
+        foreach(var dialogue in _allDialogue)
+        {
+            //dialogue.name = _characterNameKey.Replace("NAME", "") + dialogue.name.Replace(_characterNameKey.Replace("NAME", ""), "");
+            dialogue.name = dialogue.name.Replace("_Act1", "");
+        }
     }
 #endif
 

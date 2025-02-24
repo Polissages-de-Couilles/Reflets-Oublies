@@ -10,10 +10,10 @@ public class StoryManager : MonoBehaviour
 
 public enum Act
 {
-    Act1,
-    Act2,
-    Act3,
-    Act4,
-    Act5,
-    Act6
+    ACT_1,
+    ACT_2,
+    ACT_3,
+    ACT_4,
+    ACT_5,
+    ACT_6
 }
