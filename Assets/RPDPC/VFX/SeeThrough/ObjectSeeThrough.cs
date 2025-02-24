@@ -21,8 +21,9 @@ public class ObjectSeeThrough : MonoBehaviour
 
         RaycastHit hit;
 
-        if(Physics.Raycast(Camera.main.transform.position, (this.transform.position - Camera.main.transform.position).normalized, out hit, Mathf.Infinity, layer))
+        if(Physics.Raycast(Camera.main.transform.position, (this.transform.position - Camera.main.transform.position).normalized, out hit, (this.transform.position - Camera.main.transform.position).sqrMagnitude, layer))
         {
+            Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.gameObject == target)
             {
                 this.transform.DOScale(0, 0.5f);
@@ -37,6 +38,6 @@ public class ObjectSeeThrough : MonoBehaviour
     public void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        Gizmos.DrawRay(Camera.main.transform.position, (this.transform.position - Camera.main.transform.position).normalized * 1000f);
+        Gizmos.DrawRay(Camera.main.transform.position, (this.transform.position - Camera.main.transform.position));
     }
 }
