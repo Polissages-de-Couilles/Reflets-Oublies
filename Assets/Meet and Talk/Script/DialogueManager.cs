@@ -21,6 +21,7 @@ namespace MeetAndTalk
 
         public UnityEvent StartDialogueEvent;
         public UnityEvent EndDialogueEvent;
+        public bool isDialogueInProcess;
 
         public Action<BaseNodeData> OnNode;
         private BaseNodeData currentDialogueNodeData;
@@ -60,6 +61,7 @@ namespace MeetAndTalk
             else { CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)])); }
 
             dialogueUIManager.dialogueCanvas .SetActive(true);
+            isDialogueInProcess = true;
             StartDialogueEvent.Invoke();
         }
 
@@ -84,6 +86,7 @@ namespace MeetAndTalk
             }
 
             dialogueUIManager.dialogueCanvas.SetActive(true);
+            isDialogueInProcess = true;
             StartDialogueEvent.Invoke();
         }
 
@@ -95,6 +98,7 @@ namespace MeetAndTalk
             else { CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)])); }
 
             dialogueUIManager.dialogueCanvas.SetActive(true);
+            isDialogueInProcess = true;
             StartDialogueEvent.Invoke();
         }
 
@@ -291,6 +295,7 @@ namespace MeetAndTalk
             {
                 case EndNodeType.End:
                     dialogueUIManager.dialogueCanvas.SetActive(false);
+                    isDialogueInProcess = false;
                     EndDialogueEvent.Invoke();
                     break;
                 case EndNodeType.Repeat:
@@ -469,6 +474,7 @@ namespace MeetAndTalk
         public void ForceEndDialog()
         {
             dialogueUIManager.dialogueCanvas.SetActive(false);
+            isDialogueInProcess = false;
             EndDialogueEvent.Invoke();
         }
     }

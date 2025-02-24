@@ -7,6 +7,7 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using LocalizationManager = PDC.Localization.LocalizationManager;
+using DG.Tweening.Core.Easing;
 
 public class PNJ : Interactible
 {
@@ -33,7 +34,7 @@ public class PNJ : Interactible
 
     public override void OnInteraction()
     {
-        if (!LocalizationManager.IsLocaReady) return;
+        if (!LocalizationManager.IsLocaReady || GameManager.Instance.DialogueManager.isDialogueInProcess) return;
 
         switch (state)
         {
