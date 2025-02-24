@@ -12,7 +12,7 @@ public class PauseMenu : UIPanel
 
     public void playButton()
     {
-        //Time.timeScale = 1;
+        Time.timeScale = 1.0f;
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Disable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Enable();
         UIOption.SetActive(false);
@@ -35,7 +35,6 @@ public class PauseMenu : UIPanel
         base.OnEnable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Enable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Disable();
-        //Time.timeScale = 0;
     }
 
     protected override void OnDisable()

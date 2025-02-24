@@ -40,6 +40,7 @@ public class UIManager : MonoBehaviour
         Debug.Log(Pause.activeSelf);
         if (!Pause.activeSelf)
         {
+            Time.timeScale = 0f;
             Pause.SetActive(true);
         }
     }

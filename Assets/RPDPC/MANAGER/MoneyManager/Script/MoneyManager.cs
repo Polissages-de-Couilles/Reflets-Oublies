@@ -17,7 +17,10 @@ public class MoneyManager : MonoBehaviour
     }
     public void Start()
     {
-        text.text = _playerMonney.ToString();
+        if(text != null)
+        {
+            text.text = _playerMonney.ToString();
+        }
     }
 
     public void ChangePlayerMonney(int monney)
