@@ -28,7 +28,7 @@ public class InteractionController : MonoBehaviour
 
         foreach (var i in interacibles)
         {
-            if (i.Equals(currentInteraction))
+            if (i.Equals(currentInteraction) || (atRange.Contains(i) && i.UIShowAnyway))
                 i.SetUI(true);
             else
                 i.SetUI(false);
