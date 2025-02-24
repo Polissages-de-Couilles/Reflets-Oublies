@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9942014D-FF43-AC8A-DBA7-3FFA6AF1D93C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{97EA811C-F124-65B3-F0E2-CBA34C1EE00E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -20,16 +20,26 @@
 			</Plugins>
 			<Busses>
 				<Bus Id="694692527" Name="VFX"/>
+				<Bus Id="1429868846" Name="MusicMario"/>
+				<Bus Id="1441840878" Name="MusicSmash"/>
+				<Bus Id="1844245490" Name="MusicVillage"/>
+				<Bus Id="1935794824" Name="MusicForet"/>
 				<Bus Id="3170124113" Name="Voice"/>
+				<Bus Id="3634348186" Name="MusicCombat"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 				<Bus Id="3991942870" Name="Music"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="414646191" Name="VoiceVolume"/>
+				<GameParameter Id="572284388" Name="SmashMusic"/>
 				<GameParameter Id="698515981" Name="vfxVolume"/>
+				<GameParameter Id="2264695890" Name="ForetMusic"/>
 				<GameParameter Id="2346531308" Name="MusicVolume"/>
 				<GameParameter Id="2918011349" Name="MasterVolume"/>
 				<GameParameter Id="2985490821" Name="transitionParameter"/>
+				<GameParameter Id="3428957736" Name="MarioMusic"/>
+				<GameParameter Id="3625871072" Name="VillageMusic"/>
+				<GameParameter Id="3733692670" Name="CombatMusic"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="119732153" Name="GunSwitch">
@@ -46,13 +56,17 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{B9E44557-2DAC-7369-35D5-E3F49436D8EA}">
+		<SoundBank Id="2838261015" Type="User" Language="SFX" Hash="{88BD7B7E-3F65-5874-DF9A-CEFD227DF7EC}">
 			<ShortName>SoundbankProject</ShortName>
 			<Path>SoundbankProject.bnk</Path>
 			<Media>
 				<File Id="62694526" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ashley_hmm.wav</ShortName>
 					<CachePath>SFX/Ashley_hmm_818F3B66.wem</CachePath>
+				</File>
+				<File Id="76159660" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Musique combat.wav</ShortName>
+					<CachePath>SFX/Musique combat_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="81838306" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Jack_hmm.wav</ShortName>
@@ -61,6 +75,10 @@
 				<File Id="88815601" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps_Tile_Walk_01.wav</ShortName>
 					<CachePath>SFX/Footsteps_Tile_Walk_01_818F3B66.wem</CachePath>
+				</File>
+				<File Id="89672929" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Maybe village..wav</ShortName>
+					<CachePath>SFX/Maybe village._FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="100238393" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ashley_wouh.wav</ShortName>
@@ -122,6 +140,10 @@
 					<ShortName>Jack_cry.wav</ShortName>
 					<CachePath>SFX/Jack_cry_818F3B66.wem</CachePath>
 				</File>
+				<File Id="705252272" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Maybe Forêt.wav</ShortName>
+					<CachePath>SFX/Maybe Forêt_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="757659191" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RAPH_DIALOGUE_1_1.wav</ShortName>
 					<CachePath>SFX/RAPH_DIALOGUE_1_1_818F3B66.wem</CachePath>
@@ -173,6 +195,27 @@
 				</Custom>
 			</Plugins>
 			<Events>
+				<Event Id="3733692670" Name="CombatMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="76159660"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3640620548" Name="CombatMusicPause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4123088407" Name="CombatMusicResume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="2264695890" Name="ForetMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="705252272"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2716092448" Name="ForetMusicPause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1829540987" Name="ForetMusicResume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3428957736" Name="MarioMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="409138883"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3360282654" Name="MarioMusicPause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="797962905" Name="MarioMusicResume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="883066387" Name="Play_Ashley_cough" DurationType="OneShot" DurationMin="0.78902495" DurationMax="0.78902495">
 					<MediaRefs>
 						<MediaRef Id="793272996"/>
@@ -201,12 +244,6 @@
 				<Event Id="2137976346" Name="Play_Ashley_wouh" DurationType="OneShot" DurationMin="0.35442176" DurationMax="0.35442176">
 					<MediaRefs>
 						<MediaRef Id="100238393"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1555285992" Name="Play_Dynamic_Ambiance" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="409138883"/>
-						<MediaRef Id="519913326"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3854155799" Name="Play_footsteps" DurationType="OneShot" DurationMin="0.9312292" DurationMax="1.4814792">
@@ -311,9 +348,23 @@
 						<MediaRef Id="685404629"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="572284388" Name="SmashMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="519913326"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3395474434" Name="SmashMusicPause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="750352341" Name="SmashMusicResume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3625871072" Name="VillageMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="89672929"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2606775814" Name="VillageMusicPause" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1037476801" Name="VillageMusicResume" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 			<GameParameters>
-				<GameParameter Id="2985490821" Name="transitionParameter"/>
+				<GameParameter Id="3733692670" Name="CombatMusic"/>
 			</GameParameters>
 			<SwitchGroups>
 				<SwitchGroup Id="119732153" Name="GunSwitch">
@@ -331,5 +382,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{81311209-9719-20EA-4893-33D5E8CD9DB9}</FileHash>
+	<FileHash>{D272C2E3-6646-150D-2CCE-C1F454F7787A}</FileHash>
 </SoundBanksInfo>
