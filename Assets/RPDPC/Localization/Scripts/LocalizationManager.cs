@@ -162,29 +162,31 @@ namespace PDC.Localization
 
                 //Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')) + " | " + word.Length);
                 if(word.Contains('<') || word.Contains('>') || CheckIfKey() || word.Length == 0) continue;
-                
+
+                Debug.Log(word.ToLower() + " | " + isTranslated + " | " + CheckIfKey());
                 if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
                 else
                 {
+                    Debug.Log(word.ToLower());
                     if(text.Contains($" {word}"))
                     {
-                        text = text.Replace($" {word}", $" {word}", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($" {word}", $"</font> {word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
                     }
                     else if(text.Contains($"{word} "))
                     {
-                        text = text.Replace($"{word} ", $"{word} ", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word} ", $"</font>{word} <font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
                     }
                     else
                     {
-                        text = text.Replace($"{word}", $"{word}", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word}", $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
                     }
                 }
             }
             
-            //Debug.Log(text);
+            Debug.Log(text);
             return text;
         }
 

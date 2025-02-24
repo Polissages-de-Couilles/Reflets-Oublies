@@ -7,14 +7,13 @@ using System;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using LocalizationManager = PDC.Localization.LocalizationManager;
-using DG.Tweening.Core.Easing;
 
 public class PNJ : Interactible
 {
     public override string Text => /*$"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} */$"{LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
 
     [SerializeField] PNJData _data;
-    [SerializeField] List<ActDialogueSO> _dialogues;
+    [SerializeField] List<ActDialogueSO> _dialogues = new();
 
     public enum State
     {
@@ -39,6 +38,7 @@ public class PNJ : Interactible
         switch (state)
         {
             case State.Waiting:
+                if(_dialogues.Count <= 0) return;
                 GameManager.Instance.DialogueManager.OnNode += OnNode;
                 GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() => 
                 { 

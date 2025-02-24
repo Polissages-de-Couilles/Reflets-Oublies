@@ -15,7 +15,10 @@ public abstract class Interactible : MonoBehaviour
     public virtual string Text => LocalizationManager.LocalizeText(textKey, true);
     protected string text;
     [SerializeField] protected string textKey;
-    [SerializeField] protected TextMeshProUGUI worldUI;
+    [SerializeField] protected TextMeshProUGUI textUI;
+    [SerializeField] protected RectTransform worldUI;
+    public bool UIShowAnyway => _uiShowAnyway;
+    [SerializeField] protected bool _uiShowAnyway = false;
 
     private void Start()
     {
@@ -29,9 +32,13 @@ public abstract class Interactible : MonoBehaviour
 
     public virtual void FixedUpdate()
     {
-        if (worldUI.isActiveAndEnabled)
+        if (textUI.isActiveAndEnabled)
         {
-            worldUI.transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+            Quaternion lookRotation = Camera.main.transform.rotation;
+            textUI.transform.rotation = lookRotation;
+            worldUI.transform.rotation = lookRotation;
+            //textUI.transform.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
+            //worldUI.LookAt(transform.position + Camera.main.transform.rotation * Vector3.forward, Camera.main.transform.rotation * Vector3.up);
         }
     }
 
@@ -39,10 +46,11 @@ public abstract class Interactible : MonoBehaviour
     {
         if(textKey == string.Empty)
         {
-            worldUI.text = string.Empty;
+            textUI.text = string.Empty;
             return;
         }
-        worldUI.text = text;
+        textUI.text = text;
+        textUI.gameObject.SetActive(active);
         worldUI.gameObject.SetActive(active);
     }
 
