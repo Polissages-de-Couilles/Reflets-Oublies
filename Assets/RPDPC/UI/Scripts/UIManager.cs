@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour
     private void OnPause(InputAction.CallbackContext context)
     {
         Debug.Log(Pause.activeSelf);
-        if (!Pause.activeSelf)
+        if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess)
         {
             Time.timeScale = 0f;
             Pause.SetActive(true);
