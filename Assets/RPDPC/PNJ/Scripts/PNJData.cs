@@ -84,8 +84,8 @@ public class PNJData : ScriptableObject
     {
         foreach(var dialogue in _allDialogue)
         {
-            //dialogue.name = _characterNameKey.Replace("NAME", "") + dialogue.name.Replace(_characterNameKey.Replace("NAME", ""), "");
-            dialogue.name = dialogue.name.Replace("_Act1", "");
+            dialogue.name = _characterNameKey.Replace("NAME", "") + dialogue.name.Replace(_characterNameKey.Replace("NAME", ""), "");
+            //dialogue.name = dialogue.name.Replace("_Act1", "");
         }
     }
 #endif
