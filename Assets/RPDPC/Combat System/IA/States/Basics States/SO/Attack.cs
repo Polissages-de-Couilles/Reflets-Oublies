@@ -11,11 +11,12 @@ public class SOAttack : StateBase
     [SerializeField] List<AttackDetails> attacks;
     [Tooltip("True if we want the bot to continue to attack, even if the conditions are not met anymore")]
     [SerializeField] bool doAllAttacks;
+    [SerializeField] Vector2 timeWithoutAttackAfter;
 
     public override StateEntityBase PrepareEntityInstance()
     {
         AttackEntity ae = new AttackEntity();
-        ae.Init(attacks, doAllAttacks);
+        ae.Init(attacks, doAllAttacks, timeWithoutAttackAfter);
         return ae;
     }
 

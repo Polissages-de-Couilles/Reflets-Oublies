@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class StateMachineManager : MonoBehaviour
     [SerializeField] StateBase[] states;
     List<StateEntityBase> stateEntities = new List<StateEntityBase>();
     StateEntityBase currentState;
+    bool prioritizeAttack = true;
 
     [HideInInspector] public bool shouldSearchStates = true;
 
@@ -50,24 +52,76 @@ public class StateMachineManager : MonoBehaviour
         //Search all valid states that have a priority above minExcluStatePrio, takes all the ones with the highest priority and chose one randomly
 
         Dictionary<float, List<StateEntityBase>> listStateForPriority = new Dictionary<float, List<StateEntityBase>>();
+        Dictionary<float, List<StateEntityBase>> listStateWithAbsolutePiority = new Dictionary<float, List<StateEntityBase>>();
         foreach (StateEntityBase state in stateEntities)
         {
-            if (state.priority > minExcluStatePrio && state.isStateValid())
+            if ((prioritizeAttack && (state is AttackEntity || state is ProjectileAttackEntity)) || state is StunEntity || state is TalkingEntity)
             {
-                if (listStateForPriority.ContainsKey(state.priority))
+                if (currentState is AttackEntity || currentState is ProjectileAttackEntity || currentState is StunEntity || currentState is TalkingEntity)
                 {
-                    listStateForPriority[state.priority].Add(state);
+                    if (state.priority > minExcluStatePrio && state.isStateValid())
+                    {
+                        if (state is AttackEntity || state is ProjectileAttackEntity)
+                        {
+                            Debug.Log("Saucisse");
+                        }
+                        if (listStateWithAbsolutePiority.ContainsKey(state.priority))
+                        {
+                            listStateWithAbsolutePiority[state.priority].Add(state);
+                        }
+                        else
+                        {
+                            listStateWithAbsolutePiority[state.priority] = new List<StateEntityBase> { state };
+                        }
+                    }
                 }
-                else
+                else if (state.isStateValid())
                 {
-                    listStateForPriority[state.priority] = new List<StateEntityBase> { state };
+                    if (state is AttackEntity || state is ProjectileAttackEntity)
+                    {
+                        Debug.Log("Saucisse");
+                    }
+                    if (listStateWithAbsolutePiority.ContainsKey(state.priority))
+                    {
+                        listStateWithAbsolutePiority[state.priority].Add(state);
+                    }
+                    else
+                    {
+                        listStateWithAbsolutePiority[state.priority] = new List<StateEntityBase> { state };
+                    }
+                }
+            }
+            else if (state is not AttackEntity && state is not ProjectileAttackEntity)
+            {
+                if (state.priority > minExcluStatePrio && state.isStateValid())
+                {
+                    if (state is AttackEntity || state is ProjectileAttackEntity)
+                    {
+                        Debug.Log("Saucisse");
+                    }
+                    if (listStateForPriority.ContainsKey(state.priority))
+                    {
+                        listStateForPriority[state.priority].Add(state);
+                    }
+                    else
+                    {
+                        listStateForPriority[state.priority] = new List<StateEntityBase> { state };
+                    }
                 }
             }
         }
-        if (listStateForPriority.Keys.Count > 0)
+        if (listStateForPriority.Keys.Count > 0 || listStateWithAbsolutePiority.Keys.Count > 0)
         {
             System.Random rnd = new System.Random();
-            List<StateEntityBase> maxPrioList = listStateForPriority[listStateForPriority.Keys.Max()];
+            List<StateEntityBase> maxPrioList;
+            if (listStateWithAbsolutePiority.Keys.Count == 0)
+            {
+                maxPrioList = listStateForPriority[listStateForPriority.Keys.Max()];
+            }
+            else
+            {
+                maxPrioList = listStateWithAbsolutePiority[listStateWithAbsolutePiority.Keys.Max()];
+            }
             int randIndex = rnd.Next(maxPrioList.Count);
             StateEntityBase highestState = maxPrioList[randIndex];
 
@@ -135,6 +189,17 @@ public class StateMachineManager : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void StopPrioritizeAttack(float duration)
+    {
+        prioritizeAttack = false;
+        StartCoroutine(StopPrioritizeAttackEnum(duration));
+    }
+    IEnumerator StopPrioritizeAttackEnum(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        prioritizeAttack = true;
     }
 
     //Debug pour placer des spawners

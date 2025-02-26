@@ -8,18 +8,21 @@ public class ProjectileAttackEntity : StateEntityBase
 {
     List<SOProjectileAttack.ProjectileAttackDetails> attacks;
     bool doAllAttacks;
+    Vector2 timeWithoutAttackAfter;
 
     Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails> currentAttacks = new Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails>();
     bool finishedSpawnAllAttacks = false;
     public override void ExitState()
     {
         onActionFinished?.Invoke();
+        manager.StopPrioritizeAttack(UnityEngine.Random.Range(timeWithoutAttackAfter.x, timeWithoutAttackAfter.y));
     }
 
-    public override void Init(List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks)
+    public override void Init(List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter)
     {
         this.attacks = projectileAttacks;
         this.doAllAttacks = doAllAttacks;
+        this.timeWithoutAttackAfter = timeWithoutAttackAfter;
     }
 
     public override void OnEndState()

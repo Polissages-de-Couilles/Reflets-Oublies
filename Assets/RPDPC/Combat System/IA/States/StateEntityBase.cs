@@ -52,12 +52,12 @@ public abstract class StateEntityBase
     { }
 
     public virtual void Init(
-        List<SOAttack.AttackDetails> attacks, bool doAllAttacks //Attack
+        List<SOAttack.AttackDetails> attacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter //Attack
     )
     { }
 
     public virtual void Init(
-        List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks //ProjectileAttack
+        List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter //ProjectileAttack
     )
     {}
 

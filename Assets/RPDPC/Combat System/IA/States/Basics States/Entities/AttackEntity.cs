@@ -2,13 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackEntity : StateEntityBase
 {
     List<SOAttack.AttackDetails> attacks;
     bool doAllAttacks;
+    Vector2 timeWithoutAttackAfter;
 
     Dictionary<GameObject, SOAttack.AttackDetails> currentAttacks = new Dictionary<GameObject, SOAttack.AttackDetails>();
     Dictionary<SOAttack.AttackDetails, bool> attackAlreadyDealtDamage = new Dictionary<SOAttack.AttackDetails, bool>();
@@ -17,13 +17,15 @@ public class AttackEntity : StateEntityBase
     float currentAttackTimer = 0f;
     public override void ExitState()
     {
+        manager.StopPrioritizeAttack(UnityEngine.Random.Range(timeWithoutAttackAfter.x, timeWithoutAttackAfter.y));
         onActionFinished?.Invoke();
     }
 
-    public override void Init(List<SOAttack.AttackDetails> attacks, bool doAllAttacks) 
+    public override void Init(List<SOAttack.AttackDetails> attacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter) 
     {
         this.attacks = attacks;
         this.doAllAttacks = doAllAttacks;
+        this.timeWithoutAttackAfter = timeWithoutAttackAfter;
     }
 
     public override void OnEndState()
