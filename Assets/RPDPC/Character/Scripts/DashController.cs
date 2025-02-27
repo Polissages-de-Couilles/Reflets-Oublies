@@ -80,7 +80,7 @@ public class DashController : MonoBehaviour
                 characterController.Move(new Vector3(0, 0, 0));
                 break;
             }
-            else
+            else if(!stateManager.playerState.Equals(StateManager.States.talk))
             {
                 characterController.Move(dash);
             }
