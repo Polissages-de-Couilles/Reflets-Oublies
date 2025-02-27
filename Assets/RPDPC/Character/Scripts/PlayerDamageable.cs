@@ -3,12 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
-using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
 
 public class PlayerDamageable : MonoBehaviour, IDamageable
 {
+    private CharacterController characterController;
     public float maxHealth = 100f;
     private float currentHealth;
     private float defence = 1f;
@@ -76,12 +74,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
     }
     IEnumerator InvicibleFrame(float time, int id)
     {
-        isInvicible = true;
         yield return null;
+        isInvicible = true;
+        characterController.detectCollisions = false;
         yield return new WaitForSeconds(time);
         _invicibleList.Remove(id);
         if(_invicibleList.Count <= 0)
         {
+            characterController.detectCollisions = true;
             isInvicible = false;
         }
     }
@@ -90,6 +90,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
         //StartCoroutine(testDamage());
         sm = GetComponent<StateManager>();
+        characterController = GetComponent<CharacterController>();
     }
 
     public void heal(float heal)
