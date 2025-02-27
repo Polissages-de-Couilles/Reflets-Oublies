@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cebe10d9bb48ee4f84d7ce4beb2e777, type: 3}
   m_Name: CESAR_STATE_TurnToPlayer
   m_EditorClassIdentifier: 
-  priority: 2
+  priority: 1
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
-    otherParts: []
-  - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
+    not: 0
     otherParts:
     - logicalGate: 4
+      not: 0
       secondCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
   isHostileState: 1
-  animationNames: []
-  turnDuration: 0.5
+  animationNames:
+  - WalkFWD
+  turnDuration: 5

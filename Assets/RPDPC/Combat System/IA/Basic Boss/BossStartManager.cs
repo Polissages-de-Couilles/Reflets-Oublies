@@ -8,6 +8,7 @@ public class BossStartManager : MonoBehaviour
 {
     [SerializeField] List<WallsInfo> wallsInfos;
     [SerializeField] List<WallsInfo> detectorsInfos;
+    [SerializeField] string bossName;
     List<BossPlayerDetector> detectors = new List<BossPlayerDetector>();
     List<GameObject> walls = new List<GameObject>();
 
@@ -53,7 +54,7 @@ public class BossStartManager : MonoBehaviour
 
     private void ActivateBoss()
     {
-        GameManager.Instance.UIManager.GetComponent<BossBarManager>().ActivateBar(gameObject);
+        GameManager.Instance.UIManager.GetComponent<BossBarManager>().ActivateBar(gameObject, bossName);
 
         GetComponent<StateMachineManager>().enabled = true;
     }

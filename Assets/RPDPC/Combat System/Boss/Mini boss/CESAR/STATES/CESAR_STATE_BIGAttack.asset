@@ -16,7 +16,18 @@ MonoBehaviour:
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 367a3f7abf27649439175afe35ec2593, type: 2}
-    otherParts: []
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 36239ba96175a78408909a346d790ea5, type: 2}
+  - logicalGate: 2
+    baseCondition: {fileID: 11400000, guid: 367a3f7abf27649439175afe35ec2593, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 1
+      secondCondition: {fileID: 11400000, guid: cef6c2c79fa5eab449c939f59a14fdc2, type: 2}
   isHostileState: 1
   animationNames:
   - IdleBattle

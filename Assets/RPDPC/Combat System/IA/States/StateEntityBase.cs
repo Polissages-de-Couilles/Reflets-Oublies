@@ -88,13 +88,19 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        string guardAnim, //Guard
+        string guardHitAnim
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
         foreach (ConditionExpression c in conditions)
         {
             c.baseCondition.Init(parent, player);
-            bool currentExpressionResult = c.baseCondition.isConditionFulfilled();
+            bool currentExpressionResult = c.baseCondition.isConditionFulfilled() ^ c.not ;
 
             foreach (ConditionCalculs cc in c.otherParts)
             {
@@ -102,27 +108,27 @@ public abstract class StateEntityBase
                 switch (cc.logicalGate)
                 {
                     case logicalGates.AND:
-                        currentExpressionResult = currentExpressionResult & cc.secondCondition.isConditionFulfilled();
+                        currentExpressionResult = currentExpressionResult & (cc.secondCondition.isConditionFulfilled() ^ cc.not);
 
                         break;
                     case logicalGates.NAND:
-                        currentExpressionResult = !(currentExpressionResult & cc.secondCondition.isConditionFulfilled());
+                        currentExpressionResult = !(currentExpressionResult & (cc.secondCondition.isConditionFulfilled() ^ cc.not));
 
                         break;
                     case logicalGates.OR:
-                        currentExpressionResult = currentExpressionResult | cc.secondCondition.isConditionFulfilled();
+                        currentExpressionResult = currentExpressionResult | (cc.secondCondition.isConditionFulfilled() ^ cc.not);
 
                         break;
                     case logicalGates.NOR:
-                        currentExpressionResult = !(currentExpressionResult | cc.secondCondition.isConditionFulfilled());
+                        currentExpressionResult = !(currentExpressionResult | (cc.secondCondition.isConditionFulfilled() ^ cc.not));
 
                         break;
                     case logicalGates.XOR:
-                        currentExpressionResult = currentExpressionResult ^ cc.secondCondition.isConditionFulfilled();
+                        currentExpressionResult = currentExpressionResult ^ (cc.secondCondition.isConditionFulfilled() ^ cc.not);
 
                         break;
                     case logicalGates.XNOR:
-                        currentExpressionResult = !(currentExpressionResult ^ cc.secondCondition.isConditionFulfilled());
+                        currentExpressionResult = !(currentExpressionResult ^ (cc.secondCondition.isConditionFulfilled() ^ cc.not));
 
                         break;
                 }
@@ -199,6 +205,7 @@ public enum logicalGates
 public struct ConditionCalculs
 {
     public logicalGates logicalGate;
+    public bool not;
     public ConditionBase secondCondition;
 }
 
@@ -207,5 +214,6 @@ public struct ConditionExpression
 {
     public logicalGates logicalGate;
     public ConditionBase baseCondition;
+    public bool not;
     public List<ConditionCalculs> otherParts;
 }

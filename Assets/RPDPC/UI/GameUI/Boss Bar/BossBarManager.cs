@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BossBarManager : MonoBehaviour
 {
     [SerializeField] GameObject bar;
+    [SerializeField] TextMeshProUGUI bossNameText;
     Slider slider;
     float maxHealth;
 
@@ -15,9 +17,10 @@ public class BossBarManager : MonoBehaviour
         bar.SetActive(false);
     }
 
-    public void ActivateBar(GameObject boss)
+    public void ActivateBar(GameObject boss, string bossName)
     {
         bar.SetActive(true);
+        bossNameText.text = bossName;
 
         IDamageable damageable = boss.GetComponent<IDamageable>();
         damageable.OnDamageTaken += OnDamageTaken;

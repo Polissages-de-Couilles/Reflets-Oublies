@@ -23,7 +23,7 @@ public class BotDamageable : MonoBehaviour, IDamageable
 
     public void takeDamage(float damage, GameObject attacker)
     {
-        if (gm.isGuarding != true)
+        if (gm.isGuarding != true || Vector3.Angle(transform.forward, (attacker.transform.position - transform.position).normalized) > 120)
         {
             currentHealth -= damage;
             if (currentHealth <= 0)

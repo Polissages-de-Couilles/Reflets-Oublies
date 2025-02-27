@@ -22,7 +22,7 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
         base.OnEndState();
         guardManager.isGuarding = false;
         guardManager.asGuarded -= hasGuarded;
-        animator.Play("GuardEmpty");
+        animator.CrossFadeInFixedTime("GuardEmpty", 0.5f, 1);
         if (guardCoroutine != null)
         {
             manager.StopCoroutine(guardCoroutine);
@@ -64,15 +64,16 @@ public class FollowPlayerWhileGuardingEntity : FollowPlayerEntity
         isGuardingHit = true;
         agent.isStopped = true;
         yield return new WaitForSeconds(GuardHitAnimLen);
+        playAnim();
+        yield return new WaitForSeconds(Mathf.Max(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[0]).length, animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == guardAnim).length));
         manager.shouldSearchStates = true;
         agent.isStopped = false;
         isGuardingHit = false;
-        playAnim();
     }
 
     override protected void playAnim()
     {
-        animator.CrossFadeInFixedTime(animationNames[0], 0.5f);
+        animator.CrossFadeInFixedTime(animationNames[0], 0.5f, 0);
         animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
     }
 }
