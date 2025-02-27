@@ -168,20 +168,20 @@ namespace PDC.Localization
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
-                else
+                else if(!word.Equals(string.Empty))
                 {
                     Debug.Log(word.ToLower());
                     if(text.Contains($" {word}"))
                     {
-                        text = text.Replace($" {word}", $"</font> {word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($" {word}", $" {word}", StringComparison.OrdinalIgnoreCase);
                     }
                     else if(text.Contains($"{word} "))
                     {
-                        text = text.Replace($"{word} ", $"</font>{word} <font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word} ", $"{word} ", StringComparison.OrdinalIgnoreCase);
                     }
                     else
                     {
-                        text = text.Replace($"{word}", $"</font>{word}<font=rpdpcfont>", StringComparison.OrdinalIgnoreCase);
+                        text = text.Replace($"{word}", $"{word}", StringComparison.OrdinalIgnoreCase);
                     }
                 }
             }
