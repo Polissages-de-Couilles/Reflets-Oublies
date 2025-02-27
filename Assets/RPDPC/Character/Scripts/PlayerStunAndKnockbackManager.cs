@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
 {
     protected CharacterController characterController;
+    private PlayerDamageable playerDamageable;
 
     StateManager sm;
     List<StateManager.States> incompatibleStates = new List<StateManager.States> { StateManager.States.talk };
@@ -12,10 +13,12 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
     private void Start()
     {
         sm = GetComponent<StateManager>();
+        playerDamageable = GetComponent<PlayerDamageable>();
     }
 
     public override void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
     {
+        if(playerDamageable.IsInvicible) return;
         if (!incompatibleStates.Contains(sm.playerState))
         {
             characterController = GetComponent<CharacterController>();
@@ -36,6 +39,7 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
 
     public override void ApplyStun(float stunDuration)
     {
+        if(playerDamageable.IsInvicible) return;
         if (!incompatibleStates.Contains(sm.playerState))
         {
             sm.SetPlayerState(StateManager.States.stun, stunDuration);

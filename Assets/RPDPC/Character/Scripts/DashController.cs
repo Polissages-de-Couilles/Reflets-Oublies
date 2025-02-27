@@ -8,6 +8,7 @@ public class DashController : MonoBehaviour
 {
     private CharacterController characterController;
     private MovementController movementController;
+    private PlayerDamageable playerDamageable;
     private PlayerInputEventManager PIE;
 
     [SerializeField] private float dashForce = 20f;
@@ -33,6 +34,7 @@ public class DashController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         movementController = GetComponent<MovementController>();
         stateManager = GetComponent<StateManager>();
+        playerDamageable = GetComponent<PlayerDamageable>();
     }
 
     private void Start()
@@ -56,6 +58,8 @@ public class DashController : MonoBehaviour
         canDash = false;
         dashCount--;
         isDashing = true;
+
+        playerDamageable.BecameInvicible(dashTime);
 
         if (GameManager.Instance.UIManager != null)
         {
