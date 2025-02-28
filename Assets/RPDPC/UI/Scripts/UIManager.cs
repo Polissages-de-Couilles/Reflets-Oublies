@@ -28,6 +28,7 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         InitializePlayer();
         InitializeBloodEffect();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Pause.performed += OnPause;

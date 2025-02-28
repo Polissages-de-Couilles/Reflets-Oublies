@@ -59,7 +59,7 @@ public class PlayerIsVisible : ConditionBase
             RayHeight = parentCollider.bounds.size.y / 2;
         }
         Vector3 origin = parent.transform.position + new Vector3(0, RayHeight, 0);
-        if (Physics.Raycast(origin, -(origin - direction), out hit, Mathf.Infinity))
+        if (Physics.Raycast(origin, -(origin - direction), out hit, Mathf.Infinity, -1, QueryTriggerInteraction.Ignore))
         {
             Debug.DrawLine(origin, hit.point);
             if (hit.collider.gameObject == player && Vector3.Angle(parent.transform.forward.normalized, new Vector3(-(origin - direction).x, 0, -(origin - direction).z).normalized) <= viewAngle/2)

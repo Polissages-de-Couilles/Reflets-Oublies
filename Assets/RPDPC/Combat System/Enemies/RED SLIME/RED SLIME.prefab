@@ -735,9 +735,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 1
+  m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!195 &3031341672916915160
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDeathVFX: {fileID: 8942575455857307612, guid: a153b896da35e3041a219985adfffff1, type: 3}
+  _delay: 0
 --- !u!114 &5016646409797581129
 MonoBehaviour:
   m_ObjectHideFlags: 0

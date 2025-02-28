@@ -61,10 +61,6 @@ public class StateMachineManager : MonoBehaviour
                 {
                     if (state.priority > minExcluStatePrio && state.isStateValid())
                     {
-                        if (state is AttackEntity || state is ProjectileAttackEntity)
-                        {
-                            Debug.Log("Saucisse");
-                        }
                         if (listStateWithAbsolutePiority.ContainsKey(state.priority))
                         {
                             listStateWithAbsolutePiority[state.priority].Add(state);
@@ -77,10 +73,6 @@ public class StateMachineManager : MonoBehaviour
                 }
                 else if (state.isStateValid())
                 {
-                    if (state is AttackEntity || state is ProjectileAttackEntity)
-                    {
-                        Debug.Log("Saucisse");
-                    }
                     if (listStateWithAbsolutePiority.ContainsKey(state.priority))
                     {
                         listStateWithAbsolutePiority[state.priority].Add(state);
@@ -95,10 +87,6 @@ public class StateMachineManager : MonoBehaviour
             {
                 if (state.priority > minExcluStatePrio && state.isStateValid())
                 {
-                    if (state is AttackEntity || state is ProjectileAttackEntity)
-                    {
-                        Debug.Log("Saucisse");
-                    }
                     if (listStateForPriority.ContainsKey(state.priority))
                     {
                         listStateForPriority[state.priority].Add(state);
@@ -158,7 +146,10 @@ public class StateMachineManager : MonoBehaviour
             if (currentState != null)
             {
                 currentState.onActionFinished -= StateEnded;
-                currentState.RemoveHostileFromPlayerState();
+                if (!foundedState.isHostileState) 
+                {
+                    foundedState.RemoveHostileFromPlayerState();
+                }
                 currentState.OnEndState();
             }
             currentState = foundedState;

@@ -1,42 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class TurnToPlayerWhileGardingEntity : TurnToPlayerEntity
+public class GuardEntity : StateEntityBase
 {
     string guardAnim;
     string guardHitAnim;
     GuardManager guardManager;
     Coroutine guardCoroutine;
 
-    public override void Init(float turnDuration, string guardAnim, string guardHitAnim)
+    public override void Init(string guardAnim, string guardHitAnim)
     {
-        this.turnDuration = turnDuration;
         this.guardAnim = guardAnim;
         this.guardHitAnim = guardHitAnim;
     }
 
     public override void OnEndState()
     {
-        base.OnEndState();
         guardManager.isGuarding = false;
-        animator.CrossFadeInFixedTime("GuardEmpty", 0.5f, 1);
         guardManager.asGuarded -= hasGuarded;
+        animator.CrossFadeInFixedTime("GuardEmpty", 0.5f, 1);
         if (guardCoroutine != null)
         {
-            manager.StopCoroutine(guardCoroutine); 
+            manager.StopCoroutine(guardCoroutine);
             manager.shouldSearchStates = true;
         }
     }
 
     public override void OnEnterState()
     {
-        base.OnEnterState();
         guardManager = parent.GetComponent<GuardManager>();
         guardManager.isGuarding = true;
-        animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
         guardManager.asGuarded += hasGuarded;
+        animator.CrossFadeInFixedTime(animationNames[0], 0);
+        animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
     }
 
     void hasGuarded()
@@ -59,5 +56,14 @@ public class TurnToPlayerWhileGardingEntity : TurnToPlayerEntity
         animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
         yield return new WaitForSeconds(0.5f);
         manager.shouldSearchStates = true;
+    }
+
+    public override void ExitState()
+    {
+        onActionFinished?.Invoke();
+    }
+
+    public override void OnUpdate()
+    {
     }
 }

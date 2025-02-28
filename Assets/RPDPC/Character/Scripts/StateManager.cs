@@ -17,10 +17,13 @@ public class StateManager : MonoBehaviour
 
     List<GameObject> hostileEnemies = new List<GameObject>();
     Action<bool> OnFightStateChanged;
+    private CharacterController characterController;
 
     public void Start()
     {
+        characterController = GetComponent<CharacterController>();
         GameManager.Instance.DialogueManager.OnNode += OnNode;
+        GameManager.Instance.DialogueManager.StartDialogueEvent.AddListener(() => SetPlayerState(States.talk));
         GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() => SetPlayerState(States.idle));
     }
 
