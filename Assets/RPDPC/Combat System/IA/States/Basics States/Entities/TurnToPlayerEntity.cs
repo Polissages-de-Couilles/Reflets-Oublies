@@ -58,13 +58,11 @@ public class TurnToPlayerEntity : StateEntityBase
             }
 
             Vector3 targetVector = new Vector3(player.transform.position.x, parent.transform.position.y, player.transform.position.z);
-            if (tween != null)
-            {
-                tween.Kill();
-            }
+
             tween = parent.transform.DOLookAt(targetVector, turnDuration * (Quaternion.Angle(Quaternion.Euler(0, parent.transform.eulerAngles.y, 0), Quaternion.LookRotation(player.transform.position - parent.transform.position, Vector3.up)) / 360f)).SetEase(Ease.Linear);
             yield return new WaitForFixedUpdate();
         }
+
         yield return new WaitForFixedUpdate();
         manager.shouldSearchStates = true;
         ExitState();

@@ -16,9 +16,18 @@ MonoBehaviour:
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 2e79b7f49c6b01f4ea8716c984283cf6, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 7bcdf0f668aa8e644b3d8250dc383674, type: 2}
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
+    not: 0
     otherParts: []
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
+    not: 0
     otherParts: []
   isHostileState: 1
   animationNames:

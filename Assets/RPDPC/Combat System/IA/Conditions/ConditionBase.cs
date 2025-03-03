@@ -4,7 +4,15 @@ using UnityEngine;
 
 public abstract class ConditionBase : ScriptableObject
 {
-    public abstract void Init(GameObject parent, GameObject player);
+    public virtual void Init(GameObject parent, GameObject player)
+    {
+
+    }
+
+    public virtual void Init(GameObject parent, GameObject player, StateEntityBase state)
+    {
+
+    }
 
     public abstract bool isConditionFulfilled();
 }

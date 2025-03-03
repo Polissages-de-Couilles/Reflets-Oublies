@@ -12,10 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5476cfec87d3134993342331694110d, type: 3}
   m_Name: CESAR_STATE_FollowPlayerWhileGuarding
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 2
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 4
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 367a3f7abf27649439175afe35ec2593, type: 2}
+    not: 0
     otherParts: []
   isHostileState: 1
   animationNames:
