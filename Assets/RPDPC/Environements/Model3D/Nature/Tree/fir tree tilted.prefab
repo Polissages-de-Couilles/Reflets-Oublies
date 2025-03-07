@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3548937772441507620}
   - component: {fileID: 499767121683191937}
   - component: {fileID: 2381120821357210699}
-  - component: {fileID: 6620992410769135262}
+  - component: {fileID: 6669958157416777247}
   m_Layer: 0
   m_Name: fir tree tilted
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6620992410769135262
-MeshCollider:
+--- !u!136 &6669958157416777247
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3016046974184527623, guid: 9c9c052014ed57146bc86830599c1c2b, type: 3}
+  serializedVersion: 2
+  m_Radius: 2.232963
+  m_Height: 35.93944
+  m_Direction: 1
+  m_Center: {x: -0.056885242, y: 17.96972, z: -0.05475235}

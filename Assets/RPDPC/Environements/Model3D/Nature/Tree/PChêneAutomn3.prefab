@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7727303214321833525}
   - component: {fileID: 6670744469021399440}
   - component: {fileID: 8896801182186270042}
-  - component: {fileID: 3696461360586403607}
+  - component: {fileID: 8857482508196786968}
   m_Layer: 0
   m_Name: "PCh\xEAneAutomn3"
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3696461360586403607
-MeshCollider:
+--- !u!136 &8857482508196786968
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,7 +102,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7139787152385400650, guid: 3c05b15d66da8aa449c6885574937515, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.67795134
+  m_Height: 31.655083
+  m_Direction: 1
+  m_Center: {x: 0.13892317, y: 15.827541, z: 0}
