@@ -41,7 +41,7 @@ public class FirebaseManager : MonoBehaviour
                 return;
             }
 
-            Debug.Log("Firebase is init");
+            Debug.Log($"Firebase is init {task.Result}");
             _database = FirebaseDatabase.DefaultInstance;
             isFirebaseInit = true;
             OnFirebaseInitialized?.Invoke();
