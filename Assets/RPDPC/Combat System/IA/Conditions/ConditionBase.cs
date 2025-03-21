@@ -9,10 +9,5 @@ public abstract class ConditionBase : ScriptableObject
 
     }
 
-    public virtual void Init(GameObject parent, GameObject player, StateEntityBase state)
-    {
-
-    }
-
     public abstract bool isConditionFulfilled();
 }
