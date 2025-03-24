@@ -6,6 +6,7 @@ using UnityEngine;
 public class StagingEvent : MonoBehaviour
 {
     public string ID;
+    public StagingEventTypes Type;
     public Action OnEventFinished;
 
     public virtual void PlayEvent()
