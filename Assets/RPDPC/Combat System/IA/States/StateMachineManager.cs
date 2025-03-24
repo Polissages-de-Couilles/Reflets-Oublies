@@ -15,6 +15,7 @@ public class StateMachineManager : MonoBehaviour
 
     public Animator Animator => animator;
     [SerializeField] Animator animator;
+    static List<StateMachineManager> alreadyStopedStateMachines = new List<StateMachineManager>();
 
     // Start is called before the first frame update
     void Start()
@@ -213,11 +214,19 @@ public class StateMachineManager : MonoBehaviour
 
     static void StopAllStateMachines()
     {
+        alreadyStopedStateMachines.Clear();
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            machine.forceDoNothing();
-            machine.enabled = false;
+            if (machine.enabled == false)
+            {
+                alreadyStopedStateMachines.Add(machine);
+            }
+            else
+            {
+                machine.forceDoNothing();
+                machine.enabled = false;
+            }
         }
     }
 
@@ -226,7 +235,7 @@ public class StateMachineManager : MonoBehaviour
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            machine.enabled = true;
+            if (!alreadyStopedStateMachines.Contains(machine)) machine.enabled = true;
         }
     }
 
