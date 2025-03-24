@@ -159,6 +159,24 @@ public class StateMachineManager : MonoBehaviour
         }
     }
 
+    void forceDoNothing()
+    {
+        doNothingEntity nothing = new doNothingEntity();
+        nothing.priority = 0;
+
+        shouldSearchStates = true;
+        if (currentState != null)
+        {
+            currentState.onActionFinished -= StateEnded;
+            nothing.RemoveHostileFromPlayerState();
+            currentState.OnEndState();
+        }
+        currentState = nothing;
+        currentState.AddHostileToPlayerState();
+        currentState.OnEnterState();
+        currentState.onActionFinished += StateEnded;
+    }
+
     void StateEnded()
     {
         setNewCurrentState(-1);
@@ -191,6 +209,25 @@ public class StateMachineManager : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         prioritizeAttack = true;
+    }
+
+    static void StopAllStateMachines()
+    {
+        List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
+        foreach (StateMachineManager machine in smm)
+        {
+            machine.forceDoNothing();
+            machine.enabled = false;
+        }
+    }
+
+    static void RestartAllStateMachines()
+    {
+        List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
+        foreach (StateMachineManager machine in smm)
+        {
+            machine.enabled = true;
+        }
     }
 
     //Debug pour placer des spawners

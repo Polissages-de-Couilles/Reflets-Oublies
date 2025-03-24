@@ -9,6 +9,7 @@ public class MoveToME : StagingEvent
 
     public override void PlayEvent()
     {
+        base.PlayEvent();
         if (objectToMove == null)
         {
             Debug.LogError($"Error for staging event ID {ID} {GetType().Name} : Invalid Agent");
