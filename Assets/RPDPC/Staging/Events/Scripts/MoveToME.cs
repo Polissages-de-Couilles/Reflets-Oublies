@@ -12,8 +12,9 @@ public class MoveToME : StagingEvent
         base.PlayEvent();
         if (objectToMove == null)
         {
-            Debug.LogError($"Error for staging event ID {ID} {GetType().Name} : Invalid Agent");
+            DebugError("Invalid Agent");
             OnEventFinished?.Invoke();
+            return;
         }
 
         NavMeshPath navMeshPath = new NavMeshPath();
@@ -24,7 +25,7 @@ public class MoveToME : StagingEvent
         }
         else
         {
-            Debug.LogError($"Error for staging event ID {ID} {GetType().Name} : Destination is unreachable for this agent");
+            DebugError("Destination is unreachable for this agent");
             OnEventFinished?.Invoke();
         }
     }

@@ -17,6 +17,12 @@ public class StagingEvent : MonoBehaviour
 
     public enum StagingEventTypes
     {
-        MoveToME
+        MoveToME,
+        PlayAnimatorState
+    }
+
+    public void DebugError(string error)
+    {
+        Debug.LogError($"Error for staging event ID {ID} {GetType().Name} : " + error);
     }
 }
