@@ -9,7 +9,6 @@ public class PlayAnimation : StagingEvent
 
     public override void PlayEvent()
     {
-        base.PlayEvent();
         if (animator == null) 
         {
             DebugError("Invalid animator");

@@ -18,7 +18,8 @@ public class StagingEvent : MonoBehaviour
     public enum StagingEventTypes
     {
         MoveToME,
-        PlayAnimatorState
+        PlayAnimatorState,
+        PlayVFXHere
     }
 
     public void DebugError(string error)
