@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class MoveToME : StagingEvent
 {
     [SerializeField] NavMeshAgent objectToMove;
+    [SerializeField] float speed;
+    float oldSpeed;
 
     public override void PlayEvent()
     {
@@ -20,6 +22,8 @@ public class MoveToME : StagingEvent
         NavMeshPath navMeshPath = new NavMeshPath();
         if (objectToMove.CalculatePath(transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
         {
+            oldSpeed = objectToMove.speed;
+            objectToMove.speed = speed;
             objectToMove.SetPath(navMeshPath);
             StartCoroutine(CheckIfDestinationReached());
         }
@@ -36,6 +40,7 @@ public class MoveToME : StagingEvent
         {
             yield return null;
         }
+        objectToMove.speed = oldSpeed;
         OnEventFinished?.Invoke();
     }
 
