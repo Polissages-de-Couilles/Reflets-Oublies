@@ -19,7 +19,8 @@ public class StagingEvent : MonoBehaviour
     {
         MoveToME,
         PlayAnimatorState,
-        PlayVFXHere
+        PlayVFXHere,
+        RotateToME
     }
 
     public void DebugError(string error)
