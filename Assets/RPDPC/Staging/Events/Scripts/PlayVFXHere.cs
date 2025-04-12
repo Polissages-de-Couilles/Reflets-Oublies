@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class PlayVFXHere : StagingEvent
 {
-    GameObject vfx;
+    [SerializeField] GameObject vfx;
 
     public override void PlayEvent()
     {
         GameObject vfxInstance = Instantiate(vfx, transform);
-        vfxInstance.transform.localPosition = transform.localPosition;
+        vfxInstance.transform.localPosition = Vector3.zero;
         OnEventFinished?.Invoke();
     }
 }

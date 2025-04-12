@@ -7,7 +7,9 @@ public class MoveToME : StagingEvent
 {
     [SerializeField] NavMeshAgent objectToMove;
     [SerializeField] float speed;
+    [SerializeField] float stoppingDistance;
     float oldSpeed;
+
 
     public override void PlayEvent()
     {
@@ -46,7 +48,7 @@ public class MoveToME : StagingEvent
 
     protected bool pathComplete()
     {
-        if (Vector3.Distance(objectToMove.destination, objectToMove.transform.position) <= objectToMove.stoppingDistance)
+        if (Vector3.Distance(objectToMove.destination, objectToMove.transform.position) <= stoppingDistance)
         {
             if (!objectToMove.hasPath || objectToMove.velocity.sqrMagnitude == 0f)
             {

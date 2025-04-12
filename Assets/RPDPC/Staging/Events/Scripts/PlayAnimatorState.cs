@@ -19,3 +19,5 @@ public class PlayAnimation : StagingEvent
         OnEventFinished?.Invoke();
     }
 }
+
+//animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == guardHitAnim).length
