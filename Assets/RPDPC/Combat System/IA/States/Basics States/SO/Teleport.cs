@@ -9,13 +9,14 @@ public class Teleport : StateBase
     [SerializeField] Vector3 SetPoint;
     [SerializeField] List<Vector3> RandomPointInZone;
     [SerializeField] Vector3 SymetricPoint;
+    [SerializeField] float behindPlayerDistance;
     [SerializeField] bool HaveToSeePlayer;
     [SerializeField] bool IgnoreY = true;
     [SerializeField] bool SnapToNavMesh = true;
     public override StateEntityBase PrepareEntityInstance()
     {
         TeleportEntities teleportEntities = new TeleportEntities();
-        teleportEntities.Init(teleportMode, SetPoint, RandomPointInZone, SymetricPoint, HaveToSeePlayer, IgnoreY, SnapToNavMesh);
+        teleportEntities.Init(teleportMode, SetPoint, RandomPointInZone, SymetricPoint, behindPlayerDistance, HaveToSeePlayer, IgnoreY, SnapToNavMesh);
         return teleportEntities;
     }
 }
@@ -25,5 +26,6 @@ public enum TeleportMode
     SetPoint,
     RandomPointInZone,
     RandomPointInSpawnedZone,
-    SymetricPoint
+    SymetricPoint,
+    BehindPlayer
 }

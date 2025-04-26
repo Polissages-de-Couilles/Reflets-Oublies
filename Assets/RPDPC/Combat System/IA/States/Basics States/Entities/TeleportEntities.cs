@@ -10,16 +10,18 @@ public class TeleportEntities : StateEntityBase
     Vector3 SetPoint;
     List<Vector3> RandomPointInZone;
     Vector3 SymetricPoint;
+    float distanceWithPlayer;
     bool HaveToSeePlayer;
     bool IgnoreY;
     bool SnapToNavMesh;
 
-    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, Vector3 SymetricPoint, bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh)
+    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, Vector3 SymetricPoint, float distanceWithPlayer,bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh)
     { 
         this.teleportMode = teleportMode;
         this.SetPoint = SetPoint;
         this.RandomPointInZone = RandomPointInZone;
         this.SymetricPoint = SymetricPoint;
+        this.distanceWithPlayer = distanceWithPlayer;
         this.HaveToSeePlayer = HaveToSeePlayer;
         this.IgnoreY = IgnoreY;
         this.SnapToNavMesh = SnapToNavMesh;
@@ -65,6 +67,10 @@ public class TeleportEntities : StateEntityBase
                     teleportDestination = new Vector3(Random.Range(fsm.spawnerCollider.bounds.max.x, fsm.spawnerCollider.bounds.min.x), Random.Range(fsm.spawnerCollider.bounds.max.y, fsm.spawnerCollider.bounds.min.y), Random.Range(fsm.spawnerCollider.bounds.max.z, fsm.spawnerCollider.bounds.min.z));
                 }
                 break;
+            case TeleportMode.BehindPlayer:
+                teleportDestination = player.transform.position - player.transform.forward * distanceWithPlayer;
+                break;
+
         }
 
         if (IgnoreY)
