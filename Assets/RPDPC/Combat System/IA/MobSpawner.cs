@@ -78,6 +78,7 @@ public class MobSpawner : MonoBehaviour
             GameObject mob = Instantiate(monstersPrefabs[Random.Range(0, monstersPrefabs.Count)], hit.position, Quaternion.identity);
             //mob.GetComponent<NavMeshAgent>().Warp(hit.position);
             mob.GetComponent<FromSpawnerManager>().spawner = gameObject;
+            mob.GetComponent<FromSpawnerManager>().spawnerCollider = col;
             spawnedMobs.Add(mob);
             mob.name = mob.name + " " + spawnedMobs.IndexOf(mob);
         }

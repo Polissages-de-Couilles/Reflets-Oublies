@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class FromSpawnerManager : MonoBehaviour
 {
     [HideInInspector] public GameObject spawner;
+    public Collider spawnerCollider;
 
     private void Start()
     {

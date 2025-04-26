@@ -13,7 +13,7 @@ public class PlayerIsVisible : ConditionBase
     List<Vector3> directions;
     StateManager sm;
     [SerializeField] bool fulfillIfTalking;
-    [SerializeField] float viewAngle;
+    [SerializeField] public float viewAngle;
     public override void Init(GameObject parent, GameObject player)
     {
         this.parent = parent;
