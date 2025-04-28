@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
+  m_Name: STEPHANE_STATE_PlayManyStates
+  m_EditorClassIdentifier: 
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
+  isHostileState: 1
+  animationNames: []
+  States:
+  - delayBeforePlay: 2
+    state: {fileID: 11400000, guid: ed2c6363439c3954bb14ad201b984f03, type: 2}
+  - delayBeforePlay: 2
+    state: {fileID: 11400000, guid: 703de7e558cd46e438c128636c4587f2, type: 2}

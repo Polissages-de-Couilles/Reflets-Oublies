@@ -174,6 +174,7 @@ public class StateMachineManager : MonoBehaviour
         prioritizeAttack = false;
         StartCoroutine(StopPrioritizeAttackEnum(duration));
     }
+
     IEnumerator StopPrioritizeAttackEnum(float duration)
     {
         yield return new WaitForSeconds(duration);
