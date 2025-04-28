@@ -338,10 +338,12 @@ MonoBehaviour:
     TargetNodeGuid: 3f54d735-c58b-4a49-bec5-dfa9d5bb3237
   - BaseNodeGuid: 3f54d735-c58b-4a49-bec5-dfa9d5bb3237
     TargetNodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
-  - BaseNodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
-    TargetNodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
   - BaseNodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
     TargetNodeGuid: 74b8b26e-c2b4-4245-9d4c-d8043a4e174e
+  - BaseNodeGuid: b036fb7b-a417-4034-8cd4-0c7aadde2da3
+    TargetNodeGuid: 1965ef2d-a1fb-4e91-b301-41925ec9a09a
+  - BaseNodeGuid: 1965ef2d-a1fb-4e91-b301-41925ec9a09a
+    TargetNodeGuid: f8622fc5-efff-4657-a2d5-ac5a61766c02
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 8904712d-543f-494d-b799-b0bc5e1e5e62
@@ -422,7 +424,11 @@ MonoBehaviour:
     Position: {x: 1538, y: 473}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 1965ef2d-a1fb-4e91-b301-41925ec9a09a
+    Position: {x: 944, y: 473}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 699d1cdaeab8e9b4b9f3073354faacc8, type: 2}
   StartNodeDatas:
   - NodeGuid: 83c93754-9179-4a0e-a561-86de3541be84
     Position: {x: 106, y: 473}
@@ -430,6 +436,6 @@ MonoBehaviour:
   RandomNodeDatas: []
   CommandNodeDatas:
   - NodeGuid: 11b5b30b-75f9-44c2-a012-4d0a21318ba5
-    Position: {x: 944, y: 558}
+    Position: {x: 944, y: 678}
     commmand: Faire un event pause 1-2s
   IfNodeDatas: []

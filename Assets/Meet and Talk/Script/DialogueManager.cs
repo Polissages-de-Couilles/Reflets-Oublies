@@ -8,6 +8,7 @@ using MeetAndTalk.Localization;
 using PDC.Localization;
 using System;
 using Random = UnityEngine.Random;
+using MeetAndTalk.Event;
 
 namespace MeetAndTalk
 {
@@ -39,6 +40,8 @@ namespace MeetAndTalk
             Instance = this;
             dialogueUIManager= DialogueUIManager.Instance;
             audioSource = GetComponent<AudioSource>();
+            StartDialogueEvent.AddListener(() => StateMachineManager.StopAllStateMachines());
+            EndDialogueEvent.AddListener(() => StateMachineManager.RestartAllStateMachines());
         }
 
         private void Update()
@@ -280,14 +283,35 @@ namespace MeetAndTalk
         }
         private void RunNode(EventNodeData _nodeData)
         {
+            bool waitTillPassToNextNode = false;
+            List<DialogueEventTimeEvent> list = new List<DialogueEventTimeEvent>();
             foreach (var item in _nodeData.EventScriptableObjects)
             {
                 if (item.DialogueEventSO != null)
                 {
                     item.DialogueEventSO.RunEvent();
+                    if (item.DialogueEventSO is DialogueEventTimeEvent)
+                    {
+                        list.Add(item.DialogueEventSO as DialogueEventTimeEvent);
+                        waitTillPassToNextNode = true;
+                    }
                 }
             }
-            CheckNodeType(GetNextNode(_nodeData));
+            if(!waitTillPassToNextNode) CheckNodeType(GetNextNode(_nodeData));
+            else
+            {
+                IEnumerator tmp()
+                {
+                    while(!list.TrueForAll(x => x.IsEventEnd))
+                        yield return null;
+                    foreach (var e in list)
+                    {
+                        e.IsEventEnd = false;
+                    }
+                    CheckNodeType(GetNextNode(_nodeData));
+                }
+                StartCoroutine(tmp());
+            }
         }
         private void RunNode(EndNodeData _nodeData)
         {
