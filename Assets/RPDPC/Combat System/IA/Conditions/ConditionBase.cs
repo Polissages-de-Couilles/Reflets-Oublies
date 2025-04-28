@@ -4,7 +4,10 @@ using UnityEngine;
 
 public abstract class ConditionBase : ScriptableObject
 {
-    public abstract void Init(GameObject parent, GameObject player);
+    public virtual void Init(GameObject parent, GameObject player)
+    {
+
+    }
 
     public abstract bool isConditionFulfilled();
 }

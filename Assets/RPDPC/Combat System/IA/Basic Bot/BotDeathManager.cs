@@ -32,7 +32,7 @@ public class BotDeathManager : MonoBehaviour
             FromSpawnerManager FSM = GetComponent<FromSpawnerManager>();
             if (FSM.isFromSpawner())
             {
-                MobSpawnerEntity MSE = FSM.spawner.GetComponent<StateMachineManager>().GetSpawnState() as MobSpawnerEntity;
+                MobSpawner MSE = FSM.spawner.GetComponent<MobSpawner>();
                 if (MSE != null)
                 {
                     MSE.spawnedMobs.Remove(gameObject);

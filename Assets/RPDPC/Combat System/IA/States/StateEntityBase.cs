@@ -94,6 +94,18 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        TeleportMode teleportMode,  //Teleport
+        Vector3 SetPoint,
+        List<Vector3> RandomPointInZone,
+        Vector3 SymetricPoint,
+        float distanceWithPlayer,
+        bool HateToSeePlayer,
+        bool IgnoreY,
+        bool SnapToNavMesh
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;

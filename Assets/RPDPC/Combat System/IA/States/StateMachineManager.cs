@@ -169,19 +169,6 @@ public class StateMachineManager : MonoBehaviour
         return currentState;
     }
 
-    public StateEntityBase GetSpawnState() //Sale mais vas y pour décembre ça ira
-    {
-        foreach (StateEntityBase seb in stateEntities)
-        {
-            if (seb is MobSpawnerEntity)
-            {
-                return seb;
-            }
-        }
-
-        return null;
-    }
-
     public void StopPrioritizeAttack(float duration)
     {
         prioritizeAttack = false;
@@ -191,22 +178,5 @@ public class StateMachineManager : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         prioritizeAttack = true;
-    }
-
-    //Debug pour placer des spawners
-
-    void OnDrawGizmos()
-    {
-        foreach (StateBase seb in states)
-        {
-            MobSpawner ms = seb as MobSpawner;
-            if (ms != null)
-            {
-                Gizmos.color = Color.red;
-                Gizmos.DrawLine(new Vector3(transform.position.x + ms.spawnRange, transform.position.y, transform.position.z), new Vector3(transform.position.x - ms.spawnRange, transform.position.y, transform.position.z));
-                Gizmos.DrawLine(new Vector3(transform.position.x, transform.position.y, transform.position.z + ms.spawnRange), new Vector3(transform.position.x, transform.position.y, transform.position.z - ms.spawnRange));
-                break;
-            }
-        }
     }
 }

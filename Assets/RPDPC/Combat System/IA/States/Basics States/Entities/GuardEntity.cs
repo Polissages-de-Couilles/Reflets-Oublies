@@ -32,7 +32,7 @@ public class GuardEntity : StateEntityBase
         guardManager = parent.GetComponent<GuardManager>();
         guardManager.isGuarding = true;
         guardManager.asGuarded += hasGuarded;
-        animator.CrossFadeInFixedTime(animationNames[0], 0);
+        animator.CrossFadeInFixedTime(animationNames[0], 0.5f, 0);
         animator.CrossFadeInFixedTime(guardAnim, 0.5f, 1);
     }
 

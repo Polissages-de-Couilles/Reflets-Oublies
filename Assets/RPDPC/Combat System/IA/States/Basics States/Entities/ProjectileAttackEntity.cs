@@ -46,8 +46,11 @@ public class ProjectileAttackEntity : StateEntityBase
     {
         foreach (SOProjectileAttack.ProjectileAttackDetails attack in attacks)
         {
-            float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
-            manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
+            if (animator != null)
+            {
+                float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
+                manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
+            }
 
             foreach (SOProjectileAttack.ProjectileAttackPrefabDetails collider in attack.prefabProjectiles)
             {
