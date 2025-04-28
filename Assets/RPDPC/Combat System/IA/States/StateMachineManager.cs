@@ -212,7 +212,7 @@ public class StateMachineManager : MonoBehaviour
         prioritizeAttack = true;
     }
 
-    static void StopAllStateMachines()
+    public static void StopAllStateMachines()
     {
         alreadyStopedStateMachines.Clear();
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
@@ -230,7 +230,7 @@ public class StateMachineManager : MonoBehaviour
         }
     }
 
-    static void RestartAllStateMachines()
+    public static void RestartAllStateMachines()
     {
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)

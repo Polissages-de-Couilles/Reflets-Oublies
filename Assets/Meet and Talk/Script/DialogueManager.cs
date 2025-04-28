@@ -40,6 +40,8 @@ namespace MeetAndTalk
             Instance = this;
             dialogueUIManager= DialogueUIManager.Instance;
             audioSource = GetComponent<AudioSource>();
+            StartDialogueEvent.AddListener(() => StateMachineManager.StopAllStateMachines());
+            EndDialogueEvent.AddListener(() => StateMachineManager.RestartAllStateMachines());
         }
 
         private void Update()

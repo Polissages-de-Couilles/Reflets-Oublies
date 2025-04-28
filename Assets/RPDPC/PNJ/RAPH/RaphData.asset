@@ -75,6 +75,8 @@ MonoBehaviour:
   - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
     TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
   - BaseNodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
+    TargetNodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
+  - BaseNodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
     TargetNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
   DialogueChoiceNodeDatas:
   - NodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
@@ -130,7 +132,11 @@ MonoBehaviour:
     Position: {x: 1650, y: 161}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
+    Position: {x: 898, y: 161}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: a97238dc29f6ef44ab8c120d9b7a4f1c, type: 2}
   StartNodeDatas:
   - NodeGuid: 6fcb0fc4-b4f4-4fce-8bce-36d29792f2fd
     Position: {x: 529, y: 161}
