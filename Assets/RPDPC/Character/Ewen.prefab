@@ -73,7 +73,7 @@ CharacterController:
   m_StepOffset: 0.75
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1.01, z: 0}
 --- !u!114 &8319683430904619221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -271,7 +271,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1.02, z: 0}
 --- !u!1001 &1300576476448315981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -282,15 +282,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.33000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.33000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.33000004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,6 +331,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
       propertyPath: m_Name
