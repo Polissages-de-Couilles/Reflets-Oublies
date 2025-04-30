@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
-  m_Name: STEPHANE_STATE_PlayManyStates
+  m_Script: {fileID: 11500000, guid: fcaa6e4572fabd74896c64c1b3587f85, type: 3}
+  m_Name: STEPHANE_STATE_TEST_Teleport
   m_EditorClassIdentifier: 
   priority: 1
   conditions:
@@ -20,8 +20,11 @@ MonoBehaviour:
     otherParts: []
   isHostileState: 1
   animationNames: []
-  States:
-  - delayBeforePlay: 2
-    state: {fileID: 11400000, guid: ed2c6363439c3954bb14ad201b984f03, type: 2}
-  - delayBeforePlay: 2
-    state: {fileID: 11400000, guid: 703de7e558cd46e438c128636c4587f2, type: 2}
+  teleportMode: 4
+  SetPoint: {x: 0, y: 0, z: 0}
+  RandomPointInZone: []
+  SymetricPoint: {x: 0, y: 0, z: 0}
+  behindPlayerDistance: 2
+  HaveToSeePlayer: 0
+  IgnoreY: 1
+  SnapToNavMesh: 0

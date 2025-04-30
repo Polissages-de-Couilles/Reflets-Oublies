@@ -70,7 +70,6 @@ public class TeleportEntities : StateEntityBase
             case TeleportMode.BehindPlayer:
                 teleportDestination = player.transform.position - player.transform.forward * distanceWithPlayer;
                 break;
-
         }
 
         if (IgnoreY)
