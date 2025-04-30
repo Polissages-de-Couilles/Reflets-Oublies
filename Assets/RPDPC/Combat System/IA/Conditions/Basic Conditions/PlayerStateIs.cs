@@ -8,7 +8,7 @@ public class PlayerStateIs : ConditionBase
     [SerializeField] StateManager.States state;
     StateManager stateManager;
 
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         stateManager = player.GetComponent<StateManager>();
     }

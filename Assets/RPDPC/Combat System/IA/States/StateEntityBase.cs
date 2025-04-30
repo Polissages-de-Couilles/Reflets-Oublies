@@ -27,10 +27,10 @@ public abstract class StateEntityBase
         this.animationNames = new (animationNames);
         foreach (ConditionExpression c in conditions)
         {
-            c.baseCondition.Init(parent, player);
+            c.baseCondition.Init(parent, player, this);
             foreach (ConditionCalculs cc in c.otherParts)
             {
-                cc.secondCondition.Init(parent, player);
+                cc.secondCondition.Init(parent, player, this);
             }
         }
     }
@@ -116,12 +116,12 @@ public abstract class StateEntityBase
         bool currentResult = false;
         foreach (ConditionExpression c in conditions)
         {
-            c.baseCondition.Init(parent, player);
+            c.baseCondition.Init(parent, player, this);
             bool currentExpressionResult = c.baseCondition.isConditionFulfilled() ^ c.not ;
 
             foreach (ConditionCalculs cc in c.otherParts)
             {
-                cc.secondCondition.Init(parent, player);
+                cc.secondCondition.Init(parent, player, this);
                 switch (cc.logicalGate)
                 {
                     case logicalGates.AND:

@@ -14,7 +14,7 @@ public class PlayerIsVisible : ConditionBase
     StateManager sm;
     [SerializeField] bool fulfillIfTalking;
     [SerializeField] public float viewAngle;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         this.parent = parent;
         this.player = player;

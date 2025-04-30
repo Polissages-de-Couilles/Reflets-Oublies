@@ -11,7 +11,7 @@ public class PlayerIsNear : ConditionBase
     StateManager sm;
     GameObject parent;
     GameObject player;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         this.parent = parent;
         this.player = player;

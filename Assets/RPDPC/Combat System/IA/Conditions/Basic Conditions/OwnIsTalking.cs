@@ -7,7 +7,7 @@ public class OwnIsTalking : ConditionBase
 {
     PNJ pnjComp;
 
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         pnjComp = parent.GetComponent<PNJ>();
     }

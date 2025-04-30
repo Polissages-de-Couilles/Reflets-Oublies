@@ -6,7 +6,7 @@ using UnityEngine;
 public class OwnIsVisibleOnCam : ConditionBase
 {
     GameObject parent;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         this.parent = parent;
     }

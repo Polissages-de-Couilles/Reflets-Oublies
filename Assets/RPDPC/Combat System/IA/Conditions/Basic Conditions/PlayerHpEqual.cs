@@ -8,7 +8,7 @@ public class PlayerHpEqual : ConditionBase
     [Range(0, 1)]
     public int hpPercentage;
     PlayerDamageable pd;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         pd = player.GetComponent<PlayerDamageable>();
     }

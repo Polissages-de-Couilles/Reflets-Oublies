@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ConditionBase : ScriptableObject
 {
-    public virtual void Init(GameObject parent, GameObject player)
+    public virtual void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
 
     }

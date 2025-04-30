@@ -7,7 +7,7 @@ public class RandomTrueOrFalse : ConditionBase
 {
     [Range(0, 100)]
     [SerializeField] float percentageOfTrue;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
     }
 

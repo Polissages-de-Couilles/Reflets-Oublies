@@ -8,7 +8,7 @@ public class OwnHpAbove : ConditionBase
     [Range(0, 1)]
     public float hpPercentage;
     IDamageable id;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         if (parent.GetComponent<IDamageable>() != null)
             id = parent.GetComponent<IDamageable>();
