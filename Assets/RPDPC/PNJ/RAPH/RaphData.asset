@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _character: {fileID: -8284016587835104288}
   _characterNameKey: RAPH_NAME
+  _dialogueToAdd: {fileID: 0}
   _allDialogue:
   - {fileID: 2553182938101270630}
 --- !u!114 &2553182938101270630
@@ -69,14 +70,14 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 6fcb0fc4-b4f4-4fce-8bce-36d29792f2fd
     TargetNodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
-  - BaseNodeGuid: 16d746dd-26d9-4c41-9777-2d083a3fc027
-    TargetNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
+  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
+    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
+  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
+    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
   - BaseNodeGuid: 9965e41a-8bf4-4709-aaa9-447953a4d693
-    TargetNodeGuid: 16d746dd-26d9-4c41-9777-2d083a3fc027
-  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
-  - BaseNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
-    TargetNodeGuid: 6eaf7c87-4630-4344-9bc3-402a8d27fde0
+    TargetNodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
+  - BaseNodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
+    TargetNodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
   DialogueChoiceNodeDatas:
   - NodeGuid: d8690b3a-302e-428f-b791-152dab59fdd0
     Position: {x: 1245, y: 161}
@@ -132,11 +133,10 @@ MonoBehaviour:
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
-  - NodeGuid: 16d746dd-26d9-4c41-9777-2d083a3fc027
-    Position: {x: 890, y: 161}
+  - NodeGuid: 35b58f51-b3cb-4f08-bdff-df24921fe96c
+    Position: {x: 898, y: 161}
     EventScriptableObjects:
-    - DialogueEventSO: {fileID: 0}
-    - DialogueEventSO: {fileID: 11400000, guid: d38692cb9f3bc3c4ca85c4620af5aeda, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: a97238dc29f6ef44ab8c120d9b7a4f1c, type: 2}
   StartNodeDatas:
   - NodeGuid: 6fcb0fc4-b4f4-4fce-8bce-36d29792f2fd
     Position: {x: 529, y: 161}

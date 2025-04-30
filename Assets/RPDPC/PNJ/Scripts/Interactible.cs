@@ -49,7 +49,7 @@ public abstract class Interactible : MonoBehaviour
             textUI.text = string.Empty;
             return;
         }
-        textUI.text = text;
+        textUI.text = Text;
         textUI.gameObject.SetActive(active);
         worldUI.gameObject.SetActive(active);
     }

@@ -80,13 +80,19 @@ public class PNJData : ScriptableObject
     }
 
     [EditorCools.Button]
-    public void Rename()
+    public void RenameAllDialogue()
     {
         foreach(var dialogue in _allDialogue)
         {
             dialogue.name = _characterNameKey.Replace("NAME", "") + dialogue.name.Replace(_characterNameKey.Replace("NAME", ""), "");
             //dialogue.name = dialogue.name.Replace("_Act1", "");
         }
+    }
+
+    [EditorCools.Button]
+    public void RenameDialogue()
+    {
+        _dialogueToRename.name = _dialogueNewName;
     }
 #endif
 
@@ -95,7 +101,9 @@ public class PNJData : ScriptableObject
     [SerializeField] string _characterNameKey;
     [SerializeField] DialogueContainerSO _dialogueToAdd;
     [SerializeField] List<DialogueContainerSO> _allDialogue = new List<DialogueContainerSO>();
-    
+
+    [SerializeField] DialogueContainerSO _dialogueToRename;
+    [SerializeField] string _dialogueNewName;
     public DialogueContainerSO GetDialogue(int index)
     {
         if(index > _allDialogue.Count) return null;

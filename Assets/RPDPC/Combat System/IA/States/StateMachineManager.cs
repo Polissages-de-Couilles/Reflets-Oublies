@@ -15,6 +15,7 @@ public class StateMachineManager : MonoBehaviour
 
     public Animator Animator => animator;
     [SerializeField] Animator animator;
+    static List<StateMachineManager> alreadyStopedStateMachines = new List<StateMachineManager>();
 
     // Start is called before the first frame update
     void Start()
@@ -158,6 +159,24 @@ public class StateMachineManager : MonoBehaviour
             currentState.onActionFinished += StateEnded;
         }
     }
+    
+    void forceDoNothing()
+    {
+        doNothingEntity nothing = new doNothingEntity();
+        nothing.priority = 0;
+
+        shouldSearchStates = true;
+        if (currentState != null)
+        {
+            currentState.onActionFinished -= StateEnded;
+            nothing.RemoveHostileFromPlayerState();
+            currentState.OnEndState();
+        }
+        currentState = nothing;
+        currentState.AddHostileToPlayerState();
+        currentState.OnEnterState();
+        currentState.onActionFinished += StateEnded;
+    }
 
     void StateEnded()
     {
@@ -179,5 +198,32 @@ public class StateMachineManager : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         prioritizeAttack = true;
+    }
+
+    public static void StopAllStateMachines()
+    {
+        alreadyStopedStateMachines.Clear();
+        List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
+        foreach (StateMachineManager machine in smm)
+        {
+            if (machine.enabled == false)
+            {
+                alreadyStopedStateMachines.Add(machine);
+            }
+            else
+            {
+                machine.forceDoNothing();
+                machine.enabled = false;
+            }
+        }
+    }
+
+    public static void RestartAllStateMachines()
+    {
+        List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
+        foreach (StateMachineManager machine in smm)
+        {
+            if (!alreadyStopedStateMachines.Contains(machine)) machine.enabled = true;
+        }
     }
 }
