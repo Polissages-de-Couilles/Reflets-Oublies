@@ -106,6 +106,11 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        List<StateListItem> States   //PlayManyStates
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
