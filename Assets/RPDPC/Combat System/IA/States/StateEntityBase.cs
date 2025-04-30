@@ -35,6 +35,11 @@ public abstract class StateEntityBase
         }
     }
 
+    public StateMachineManager GetStateManager()
+    {
+        return manager;
+    }
+
     public virtual void Init(
     )
     { }

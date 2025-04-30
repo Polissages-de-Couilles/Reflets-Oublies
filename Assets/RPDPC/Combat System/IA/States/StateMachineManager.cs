@@ -11,6 +11,8 @@ public class StateMachineManager : MonoBehaviour
     StateEntityBase currentState;
     bool prioritizeAttack = true;
 
+    Dictionary<StateEntityBase, int> numberOfTimeGoesIntoState = new Dictionary<StateEntityBase, int>();
+
     [HideInInspector] public bool shouldSearchStates = true;
 
     public Animator Animator => animator;
@@ -27,6 +29,7 @@ public class StateMachineManager : MonoBehaviour
             StateEntityBase stateEntity = state.PrepareEntityInstance();
             stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator, state.animationNames);
             stateEntities.Add(stateEntity);
+            numberOfTimeGoesIntoState.Add(stateEntity, 0);
         }
         setNewCurrentState(-1f);
     }
@@ -122,6 +125,7 @@ public class StateMachineManager : MonoBehaviour
                 currentState.OnEndState();
             }
             currentState = highestState;
+            numberOfTimeGoesIntoState[currentState] += 1;
             currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
@@ -154,6 +158,7 @@ public class StateMachineManager : MonoBehaviour
                 currentState.OnEndState();
             }
             currentState = foundedState;
+            numberOfTimeGoesIntoState[currentState] += 1;
             currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
@@ -225,5 +230,10 @@ public class StateMachineManager : MonoBehaviour
         {
             if (!alreadyStopedStateMachines.Contains(machine)) machine.enabled = true;
         }
+    }
+
+    public int getNbTimeStateWasAchieved(StateEntityBase seb)
+    {
+        return numberOfTimeGoesIntoState[seb];
     }
 }
