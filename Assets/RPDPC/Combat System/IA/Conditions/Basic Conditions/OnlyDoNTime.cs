@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using static UnityEngine.EventSystems.EventTrigger;
 
+[CreateAssetMenu(menuName = "Game/IA/Conditions/Base/OnlyDoNTime")]
 public class OnlyDoNTime : ConditionBase
 {
     [SerializeField] int nTime;

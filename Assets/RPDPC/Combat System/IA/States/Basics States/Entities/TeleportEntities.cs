@@ -90,7 +90,7 @@ public class TeleportEntities : StateEntityBase
         { 
             PlayerIsVisible piv = new PlayerIsVisible();
             piv.viewAngle = 180;
-            piv.Init(parent, player);
+            piv.Init(parent, player, this);
             if (!piv.isConditionFulfilled()) return;
         }
 

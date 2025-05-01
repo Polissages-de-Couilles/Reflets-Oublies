@@ -15,9 +15,10 @@ public class MakeVisibleEntity : StateEntityBase
 
     public override void OnEnterState()
     {
-        parent.GetComponent<MeshRenderer>().enabled = true;
-        MeshRenderer[] rs = parent.GetComponentsInChildren<MeshRenderer>();
-        foreach (MeshRenderer r in rs)
+        if (parent.GetComponent<MeshRenderer>() != null) parent.GetComponent<MeshRenderer>().enabled = true;
+        if (parent.GetComponent<Rigidbody>() != null) parent.GetComponent<Rigidbody>().useGravity = true;
+        Renderer[] rs = parent.GetComponentsInChildren<Renderer>();
+        foreach (Renderer r in rs)
         {
             r.enabled = true;
         }

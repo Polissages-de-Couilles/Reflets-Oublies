@@ -32,7 +32,7 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
         {
             StopAllCoroutines();
             Stunned = true;
-            GetComponent<Animator>().Play("GetHit");
+            if (GetComponent<Animator>() != null) GetComponent<Animator>().Play("GetHit");
             StartCoroutine(cancelStun(stunDuration));
             StateMachineManager sm = GetComponent<StateMachineManager>();
             sm.forceState(Type.GetType("StunEntity"));
