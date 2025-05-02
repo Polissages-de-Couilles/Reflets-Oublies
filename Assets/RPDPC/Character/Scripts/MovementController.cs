@@ -9,6 +9,7 @@ public class MovementController : MonoBehaviour
 {
     private CharacterController characterController;
     private PlayerInputEventManager PIE;
+    private AnimationManager animationManager;
 
     Vector2 currentMovementInput;
     public Vector3 Direction => currentMovement;
@@ -33,6 +34,7 @@ public class MovementController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         stateManager = GetComponent<StateManager>();
+        animationManager = GetComponent<AnimationManager>();
     }
 
     private void Start()
@@ -94,6 +96,7 @@ public class MovementController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        HandleRotation();
         if (isStateCompatible(stateManager.playerState))
         {
             RaycastHit hit;
@@ -125,10 +128,10 @@ public class MovementController : MonoBehaviour
             characterController.Move(new Vector3(0,0,0));
             Velocity = new Vector3(0, 0, 0);
         }
-        HandleRotation();
         HandleGravity();
         oldPosition = currentPosition;
         currentPosition = transform.position;
+        animationManager.SetSpeed(Velocity.normalized.sqrMagnitude);
     }
 
     bool isStateCompatible(StateManager.States state)
