@@ -10,6 +10,7 @@ public class MovementController : MonoBehaviour
     private CharacterController characterController;
     private PlayerInputEventManager PIE;
     private AnimationManager animationManager;
+    private LockManager lockManager;
 
     Vector2 currentMovementInput;
     public Vector3 Direction => currentMovement;
@@ -35,6 +36,7 @@ public class MovementController : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         stateManager = GetComponent<StateManager>();
         animationManager = GetComponent<AnimationManager>();
+        lockManager = GetComponent<LockManager>();
     }
 
     private void Start()
@@ -131,7 +133,7 @@ public class MovementController : MonoBehaviour
         HandleGravity();
         oldPosition = currentPosition;
         currentPosition = transform.position;
-        animationManager.SetSpeed(Velocity.normalized.sqrMagnitude);
+        animationManager.SetSpeed(lockManager.CurrentLockObject != null ? (Velocity.normalized.sqrMagnitude + 1) * Velocity.normalized.sqrMagnitude : Velocity.normalized.sqrMagnitude, Velocity.normalized);
     }
 
     bool isStateCompatible(StateManager.States state)

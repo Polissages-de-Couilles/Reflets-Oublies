@@ -8,8 +8,10 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] Transform rig;
     [SerializeField] Animator animator;
 
-    public void SetSpeed(float speed)
+    public void SetSpeed(float speed, Vector3 dir)
     {
+        animator.SetFloat("x", dir.x);
+        animator.SetFloat("y", dir.y);
         animator.SetFloat("Speed", speed);
     }
 
