@@ -1,5 +1,327 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8526308127361481588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Mort_1_ACT_6_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: c303143e-663d-4deb-8c5a-9cd139d3e36d
+    TargetNodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
+  - BaseNodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
+    TargetNodeGuid: 889cfddf-3ee1-48b3-94a6-3f34e5967e38
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
+    Position: {x: 392, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_MORT_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 889cfddf-3ee1-48b3-94a6-3f34e5967e38
+    Position: {x: 640, y: 285}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: c303143e-663d-4deb-8c5a-9cd139d3e36d
+    Position: {x: 272, y: 285}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-7673568582555057265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Dialogue_1_ACT_4_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b2328357-eb9a-4eb2-8a5c-fd470f8810ee
+    TargetNodeGuid: c52f0d82-e6ff-4521-8f54-4f17ecbb1d91
+  - BaseNodeGuid: c52f0d82-e6ff-4521-8f54-4f17ecbb1d91
+    TargetNodeGuid: fcf921dc-86c2-4157-b397-3b49e50714cc
+  - BaseNodeGuid: fcf921dc-86c2-4157-b397-3b49e50714cc
+    TargetNodeGuid: 1dfabe7e-e7c0-4b26-8387-0a6ef44f471b
+  - BaseNodeGuid: 1dfabe7e-e7c0-4b26-8387-0a6ef44f471b
+    TargetNodeGuid: 03ebea4f-5868-46c0-96ff-d84ac81cb8ad
+  - BaseNodeGuid: 03ebea4f-5868-46c0-96ff-d84ac81cb8ad
+    TargetNodeGuid: 6170797a-bb63-44ad-972c-e33a11b4fea3
+  - BaseNodeGuid: 6170797a-bb63-44ad-972c-e33a11b4fea3
+    TargetNodeGuid: b8740453-b95e-47e4-a6d6-a00d92db7a7f
+  - BaseNodeGuid: b8740453-b95e-47e4-a6d6-a00d92db7a7f
+    TargetNodeGuid: 1266eff6-8c6a-46bc-a624-5eaa12ea0a28
+  - BaseNodeGuid: 1266eff6-8c6a-46bc-a624-5eaa12ea0a28
+    TargetNodeGuid: 66955bb2-f4aa-4fab-833d-92b3e44e2b54
+  - BaseNodeGuid: 66955bb2-f4aa-4fab-833d-92b3e44e2b54
+    TargetNodeGuid: 7e9130dd-7ece-49d4-810f-d52c8f0402e6
+  - BaseNodeGuid: 7e9130dd-7ece-49d4-810f-d52c8f0402e6
+    TargetNodeGuid: 8e90eb70-93f7-48b8-ad1d-d225ba5d536a
+  - BaseNodeGuid: 8e90eb70-93f7-48b8-ad1d-d225ba5d536a
+    TargetNodeGuid: 940d464b-2d10-4311-9af3-beb52fad5e62
+  - BaseNodeGuid: 940d464b-2d10-4311-9af3-beb52fad5e62
+    TargetNodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
+  - BaseNodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
+    TargetNodeGuid: f12267ef-4b12-46f1-955a-d7520534733f
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: b8740453-b95e-47e4-a6d6-a00d92db7a7f
+    Position: {x: 1398, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 1266eff6-8c6a-46bc-a624-5eaa12ea0a28
+    Position: {x: 1773, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 66955bb2-f4aa-4fab-833d-92b3e44e2b54
+    Position: {x: 2153, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 8e90eb70-93f7-48b8-ad1d-d225ba5d536a
+    Position: {x: 2680, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: 940d464b-2d10-4311-9af3-beb52fad5e62
+    Position: {x: 2929, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
+    Position: {x: 3160, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_11
+    Duration: 0
+  - NodeGuid: c52f0d82-e6ff-4521-8f54-4f17ecbb1d91
+    Position: {x: 210, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: fcf921dc-86c2-4157-b397-3b49e50714cc
+    Position: {x: 449, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 1dfabe7e-e7c0-4b26-8387-0a6ef44f471b
+    Position: {x: 687, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 03ebea4f-5868-46c0-96ff-d84ac81cb8ad
+    Position: {x: 920, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 6170797a-bb63-44ad-972c-e33a11b4fea3
+    Position: {x: 1153, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 7e9130dd-7ece-49d4-810f-d52c8f0402e6
+    Position: {x: 2412, y: 336}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_DIALOGUE_1_8
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f12267ef-4b12-46f1-955a-d7520534733f
+    Position: {x: 3397, y: 336}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b2328357-eb9a-4eb2-8a5c-fd470f8810ee
+    Position: {x: 62, y: 336}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-5295752730496985833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,6 +360,962 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 0}
     RightPosition: {fileID: 0}
+--- !u!114 &-5172576846485883785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Dialogue_1_ACT_6_N
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: c4421d2f-1329-465f-8188-8e4b98c3d312
+    TargetNodeGuid: 84a61a10-825a-4265-b16a-38c06371cf82
+  - BaseNodeGuid: 84a61a10-825a-4265-b16a-38c06371cf82
+    TargetNodeGuid: 032ff4b6-f51b-4528-ac4c-eb9f32de36aa
+  - BaseNodeGuid: 032ff4b6-f51b-4528-ac4c-eb9f32de36aa
+    TargetNodeGuid: 5067ace4-37e2-4135-b954-7a5be928fc3d
+  - BaseNodeGuid: 5067ace4-37e2-4135-b954-7a5be928fc3d
+    TargetNodeGuid: e64c8091-4dd6-4f9f-bd88-a7d1e30f06a6
+  - BaseNodeGuid: c3c1114d-b3e6-4dcd-95c9-29eba1e6505f
+    TargetNodeGuid: 972530a7-30c8-4f98-8415-7d4d75763fd3
+  - BaseNodeGuid: 972530a7-30c8-4f98-8415-7d4d75763fd3
+    TargetNodeGuid: 1c9947fa-f263-4fee-9e78-364646146a74
+  - BaseNodeGuid: 1c9947fa-f263-4fee-9e78-364646146a74
+    TargetNodeGuid: 21a470e7-6fd8-4744-b301-717f71b82c39
+  - BaseNodeGuid: 21a470e7-6fd8-4744-b301-717f71b82c39
+    TargetNodeGuid: 4ff00164-ccc4-4b9d-b853-2d4273a55a4a
+  - BaseNodeGuid: e64c8091-4dd6-4f9f-bd88-a7d1e30f06a6
+    TargetNodeGuid: c3c1114d-b3e6-4dcd-95c9-29eba1e6505f
+  - BaseNodeGuid: 4ff00164-ccc4-4b9d-b853-2d4273a55a4a
+    TargetNodeGuid: e76c5251-1764-48c0-853b-af5bab02c036
+  - BaseNodeGuid: e76c5251-1764-48c0-853b-af5bab02c036
+    TargetNodeGuid: 3366d257-16a5-49b4-90dd-8689ced58a28
+  - BaseNodeGuid: e76c5251-1764-48c0-853b-af5bab02c036
+    TargetNodeGuid: 58a041cf-21e6-4806-b348-efc364690e81
+  - BaseNodeGuid: 3366d257-16a5-49b4-90dd-8689ced58a28
+    TargetNodeGuid: 84c6caba-989e-401e-96bd-2cd1bc88fa74
+  - BaseNodeGuid: 84c6caba-989e-401e-96bd-2cd1bc88fa74
+    TargetNodeGuid: 9c18073a-0f12-4dd8-abdc-f531ab9549c4
+  - BaseNodeGuid: 9c18073a-0f12-4dd8-abdc-f531ab9549c4
+    TargetNodeGuid: 2e9629da-475c-4166-aa91-700508f75f6c
+  - BaseNodeGuid: 2e9629da-475c-4166-aa91-700508f75f6c
+    TargetNodeGuid: 94a5d427-8a19-444c-9ec3-f5db3ddd026b
+  - BaseNodeGuid: 58a041cf-21e6-4806-b348-efc364690e81
+    TargetNodeGuid: a36e30ce-ecfa-4a3a-b7e3-4042ec1af642
+  - BaseNodeGuid: a36e30ce-ecfa-4a3a-b7e3-4042ec1af642
+    TargetNodeGuid: 9cc82634-a8b6-435f-a03c-b71395d64654
+  - BaseNodeGuid: 9cc82634-a8b6-435f-a03c-b71395d64654
+    TargetNodeGuid: 94a5d427-8a19-444c-9ec3-f5db3ddd026b
+  DialogueChoiceNodeDatas:
+  - NodeGuid: e76c5251-1764-48c0-853b-af5bab02c036
+    Position: {x: 2636, y: 243}
+    DialogueNodePorts:
+    - PortGuid: 791dc7a5-68bc-4d87-a7f9-23782aaaff90
+      InputGuid: 3366d257-16a5-49b4-90dd-8689ced58a28
+      OutputGuid: e76c5251-1764-48c0-853b-af5bab02c036
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: OMBRE_ACT_6_N_CHOICE_1_1
+    - PortGuid: abe25834-70d4-4000-bbea-78f34ebee7bd
+      InputGuid: 58a041cf-21e6-4806-b348-efc364690e81
+      OutputGuid: e76c5251-1764-48c0-853b-af5bab02c036
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: OMBRE_ACT_6_N_CHOICE_1_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_10
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: 84a61a10-825a-4265-b16a-38c06371cf82
+    Position: {x: 360, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 032ff4b6-f51b-4528-ac4c-eb9f32de36aa
+    Position: {x: 598, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 5067ace4-37e2-4135-b954-7a5be928fc3d
+    Position: {x: 835, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: c3c1114d-b3e6-4dcd-95c9-29eba1e6505f
+    Position: {x: 1307, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 972530a7-30c8-4f98-8415-7d4d75763fd3
+    Position: {x: 1639, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 1c9947fa-f263-4fee-9e78-364646146a74
+    Position: {x: 1891, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 21a470e7-6fd8-4744-b301-717f71b82c39
+    Position: {x: 2143, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: 4ff00164-ccc4-4b9d-b853-2d4273a55a4a
+    Position: {x: 2390, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: e64c8091-4dd6-4f9f-bd88-a7d1e30f06a6
+    Position: {x: 1070, y: 243}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 3366d257-16a5-49b4-90dd-8689ced58a28
+    Position: {x: 3103, y: 110}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_11
+    Duration: 0
+  - NodeGuid: 84c6caba-989e-401e-96bd-2cd1bc88fa74
+    Position: {x: 3347, y: 110}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_12
+    Duration: 0
+  - NodeGuid: 9c18073a-0f12-4dd8-abdc-f531ab9549c4
+    Position: {x: 3576, y: 110}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_13
+    Duration: 0
+  - NodeGuid: 2e9629da-475c-4166-aa91-700508f75f6c
+    Position: {x: 3819, y: 110}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_14
+    Duration: 0
+  - NodeGuid: 58a041cf-21e6-4806-b348-efc364690e81
+    Position: {x: 3103, y: 567}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_15
+    Duration: 0
+  - NodeGuid: a36e30ce-ecfa-4a3a-b7e3-4042ec1af642
+    Position: {x: 3347, y: 567}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_16
+    Duration: 0
+  - NodeGuid: 9cc82634-a8b6-435f-a03c-b71395d64654
+    Position: {x: 3576, y: 567}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_DIALOGUE_1_17
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 94a5d427-8a19-444c-9ec3-f5db3ddd026b
+    Position: {x: 4179, y: 399}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: c4421d2f-1329-465f-8188-8e4b98c3d312
+    Position: {x: 236, y: 243}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-4213154380350549485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Monologue_1_ACT_4_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: d1f0e607-12b7-4288-aa7e-a8d193634c9f
+    TargetNodeGuid: 323e9337-7272-4263-ad0a-e4f15b99dee8
+  - BaseNodeGuid: 323e9337-7272-4263-ad0a-e4f15b99dee8
+    TargetNodeGuid: af2e13e3-bb5c-4f19-a39d-24e3784c0488
+  - BaseNodeGuid: af2e13e3-bb5c-4f19-a39d-24e3784c0488
+    TargetNodeGuid: 2d804d5d-d25f-4cb8-9709-d64b05b33003
+  - BaseNodeGuid: 2d804d5d-d25f-4cb8-9709-d64b05b33003
+    TargetNodeGuid: 219a6f47-e070-4d8b-8c9a-903eb0edcf82
+  - BaseNodeGuid: 219a6f47-e070-4d8b-8c9a-903eb0edcf82
+    TargetNodeGuid: 8bd709b8-ad19-4c2c-ba91-3f2e965f1365
+  - BaseNodeGuid: 8bd709b8-ad19-4c2c-ba91-3f2e965f1365
+    TargetNodeGuid: 189d4edb-ab67-488e-a4dd-79dd61dcf0ef
+  - BaseNodeGuid: 189d4edb-ab67-488e-a4dd-79dd61dcf0ef
+    TargetNodeGuid: 142137ad-1fec-4c79-8e89-374508fbd86f
+  - BaseNodeGuid: 142137ad-1fec-4c79-8e89-374508fbd86f
+    TargetNodeGuid: d83dbd6e-769e-4d9c-b279-cff23c6a1bfd
+  - BaseNodeGuid: d83dbd6e-769e-4d9c-b279-cff23c6a1bfd
+    TargetNodeGuid: c2461033-3e88-4539-aa53-80966f07cfe0
+  - BaseNodeGuid: c2461033-3e88-4539-aa53-80966f07cfe0
+    TargetNodeGuid: a6b251a1-2f7e-4512-946e-a08bfb9ad0df
+  - BaseNodeGuid: a6b251a1-2f7e-4512-946e-a08bfb9ad0df
+    TargetNodeGuid: f8bd76f4-04a0-4fe8-941c-0ba7527eb95d
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 323e9337-7272-4263-ad0a-e4f15b99dee8
+    Position: {x: 280, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_1
+    Duration: 0
+  - NodeGuid: af2e13e3-bb5c-4f19-a39d-24e3784c0488
+    Position: {x: 515, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_2
+    Duration: 0
+  - NodeGuid: 219a6f47-e070-4d8b-8c9a-903eb0edcf82
+    Position: {x: 976, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_4
+    Duration: 0
+  - NodeGuid: 8bd709b8-ad19-4c2c-ba91-3f2e965f1365
+    Position: {x: 1213, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_5
+    Duration: 0
+  - NodeGuid: 189d4edb-ab67-488e-a4dd-79dd61dcf0ef
+    Position: {x: 1519, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_6
+    Duration: 0
+  - NodeGuid: 142137ad-1fec-4c79-8e89-374508fbd86f
+    Position: {x: 1753, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_7
+    Duration: 0
+  - NodeGuid: d83dbd6e-769e-4d9c-b279-cff23c6a1bfd
+    Position: {x: 1996, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_8
+    Duration: 0
+  - NodeGuid: c2461033-3e88-4539-aa53-80966f07cfe0
+    Position: {x: 2246, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_9
+    Duration: 0
+  - NodeGuid: a6b251a1-2f7e-4512-946e-a08bfb9ad0df
+    Position: {x: 2496, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_10
+    Duration: 0
+  - NodeGuid: 2d804d5d-d25f-4cb8-9709-d64b05b33003
+    Position: {x: 745, y: 333}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_B_MONOLOGUE_1_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f8bd76f4-04a0-4fe8-941c-0ba7527eb95d
+    Position: {x: 2771, y: 333}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: d1f0e607-12b7-4288-aa7e-a8d193634c9f
+    Position: {x: 168, y: 333}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-3521231875816487889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Monologue_1_ACT_2_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: fd8ed46c-0bb7-492d-9548-1b427c6f08f5
+    TargetNodeGuid: 56388743-cdde-4e73-9cc3-927b2c66ab40
+  - BaseNodeGuid: 56388743-cdde-4e73-9cc3-927b2c66ab40
+    TargetNodeGuid: ae52980a-d8ec-434e-a125-98b4f5075807
+  - BaseNodeGuid: 44a2f99b-31a6-49f7-9b5d-69b08f8e280d
+    TargetNodeGuid: 35c313a0-4c16-4fd6-9111-b1106617a85f
+  - BaseNodeGuid: 1e5d8b7c-a53c-4a1c-a2a1-be48f2718239
+    TargetNodeGuid: 370e85c1-3cc8-41b0-a6fe-c9911b71bdb6
+  - BaseNodeGuid: 370e85c1-3cc8-41b0-a6fe-c9911b71bdb6
+    TargetNodeGuid: 6ad27883-ae31-4547-812b-e8e7398b40af
+  - BaseNodeGuid: 6ad27883-ae31-4547-812b-e8e7398b40af
+    TargetNodeGuid: 0fa8edfc-3fa1-4c55-bca6-0dfa812cb51e
+  - BaseNodeGuid: 0fa8edfc-3fa1-4c55-bca6-0dfa812cb51e
+    TargetNodeGuid: 0171f372-b1aa-4fa1-be52-aa40b93f3f17
+  - BaseNodeGuid: 0171f372-b1aa-4fa1-be52-aa40b93f3f17
+    TargetNodeGuid: 4794dab9-fd17-4abd-b85b-5346aecb71cd
+  - BaseNodeGuid: 4a8185da-5aa1-4508-aa15-525b4d77314d
+    TargetNodeGuid: c03e7105-b1ec-4b79-a1ed-eebbf96bc92c
+  - BaseNodeGuid: 4794dab9-fd17-4abd-b85b-5346aecb71cd
+    TargetNodeGuid: 4a8185da-5aa1-4508-aa15-525b4d77314d
+  - BaseNodeGuid: 35c313a0-4c16-4fd6-9111-b1106617a85f
+    TargetNodeGuid: 1e5d8b7c-a53c-4a1c-a2a1-be48f2718239
+  - BaseNodeGuid: ab528546-5244-46f4-870a-bb0ae08de4ee
+    TargetNodeGuid: 44a2f99b-31a6-49f7-9b5d-69b08f8e280d
+  - BaseNodeGuid: ae52980a-d8ec-434e-a125-98b4f5075807
+    TargetNodeGuid: ab528546-5244-46f4-870a-bb0ae08de4ee
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 56388743-cdde-4e73-9cc3-927b2c66ab40
+    Position: {x: 328, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_1
+    Duration: 0
+  - NodeGuid: 44a2f99b-31a6-49f7-9b5d-69b08f8e280d
+    Position: {x: 1024, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_4
+    Duration: 0
+  - NodeGuid: 1e5d8b7c-a53c-4a1c-a2a1-be48f2718239
+    Position: {x: 1482, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_6
+    Duration: 0
+  - NodeGuid: 370e85c1-3cc8-41b0-a6fe-c9911b71bdb6
+    Position: {x: 1787, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_7
+    Duration: 0
+  - NodeGuid: 6ad27883-ae31-4547-812b-e8e7398b40af
+    Position: {x: 2030, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_8
+    Duration: 0
+  - NodeGuid: 0fa8edfc-3fa1-4c55-bca6-0dfa812cb51e
+    Position: {x: 2273, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_9
+    Duration: 0
+  - NodeGuid: 0171f372-b1aa-4fa1-be52-aa40b93f3f17
+    Position: {x: 2531, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_10
+    Duration: 0
+  - NodeGuid: 4a8185da-5aa1-4508-aa15-525b4d77314d
+    Position: {x: 3022, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_12
+    Duration: 0
+  - NodeGuid: 4794dab9-fd17-4abd-b85b-5346aecb71cd
+    Position: {x: 2776, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_11
+    Duration: 0
+  - NodeGuid: 35c313a0-4c16-4fd6-9111-b1106617a85f
+    Position: {x: 1252, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_5
+    Duration: 0
+  - NodeGuid: ab528546-5244-46f4-870a-bb0ae08de4ee
+    Position: {x: 784, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_3
+    Duration: 0
+  - NodeGuid: ae52980a-d8ec-434e-a125-98b4f5075807
+    Position: {x: 556, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_G_MONOLOGUE_1_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: c03e7105-b1ec-4b79-a1ed-eebbf96bc92c
+    Position: {x: 3280, y: 351}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: fd8ed46c-0bb7-492d-9548-1b427c6f08f5
+    Position: {x: 208, y: 351}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-3240251936684216819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Mort_1_ACT_6_N
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: eddf87b4-ad26-47e5-b465-d6152aaa1736
+    TargetNodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
+  - BaseNodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
+    TargetNodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
+  - BaseNodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
+    TargetNodeGuid: 58de677c-62d9-4f87-9e45-de179bd2d9bd
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
+    Position: {x: 445, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_MORT_1
+    Duration: 0
+  - NodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
+    Position: {x: 678, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_N_MORT_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 58de677c-62d9-4f87-9e45-de179bd2d9bd
+    Position: {x: 935, y: 292}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: eddf87b4-ad26-47e5-b465-d6152aaa1736
+    Position: {x: 293, y: 292}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-951450765867712650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,8 +1353,6 @@ MonoBehaviour:
     TargetNodeGuid: 05e3441c-ff53-42fd-b324-a4f95e4070a9
   - BaseNodeGuid: f11cff5f-38cd-4ac3-b8ac-7e3264950364
     TargetNodeGuid: 326fd4ed-d658-4d97-957b-dcc7f90a2f31
-  - BaseNodeGuid: 6710ceb0-5e4a-4a40-a118-8a33b8de7547
-    TargetNodeGuid: 035142c3-ba57-4877-a65a-4d10e00cc41c
   - BaseNodeGuid: b98f3d87-6024-45de-89a5-a730576e7f48
     TargetNodeGuid: be715a43-aa36-4678-b75a-aee5c96a6d2c
   - BaseNodeGuid: 7fb54402-9ad2-4803-89fc-ecb05339d09a
@@ -85,20 +1361,22 @@ MonoBehaviour:
     TargetNodeGuid: 7fb54402-9ad2-4803-89fc-ecb05339d09a
   - BaseNodeGuid: 93a80c1e-b2a7-438a-90fa-664699543aea
     TargetNodeGuid: b98f3d87-6024-45de-89a5-a730576e7f48
+  - BaseNodeGuid: 6710ceb0-5e4a-4a40-a118-8a33b8de7547
+    TargetNodeGuid: 035142c3-ba57-4877-a65a-4d10e00cc41c
+  - BaseNodeGuid: 035142c3-ba57-4877-a65a-4d10e00cc41c
+    TargetNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
+  - BaseNodeGuid: 326fd4ed-d658-4d97-957b-dcc7f90a2f31
+    TargetNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
   - BaseNodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
     TargetNodeGuid: 282129c1-e62d-45ca-b99e-ea6b8052334b
   - BaseNodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
     TargetNodeGuid: 55c5c766-5684-402a-b3c8-4e219c7ec309
   - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
+    TargetNodeGuid: f11cff5f-38cd-4ac3-b8ac-7e3264950364
+  - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
     TargetNodeGuid: 6710ceb0-5e4a-4a40-a118-8a33b8de7547
-  - BaseNodeGuid: 035142c3-ba57-4877-a65a-4d10e00cc41c
-    TargetNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
   - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
     TargetNodeGuid: 602a6c7f-7614-44ad-966e-9fb13e402997
-  - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
-    TargetNodeGuid: f11cff5f-38cd-4ac3-b8ac-7e3264950364
-  - BaseNodeGuid: 326fd4ed-d658-4d97-957b-dcc7f90a2f31
-    TargetNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
   DialogueChoiceNodeDatas:
   - NodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
     Position: {x: 1103, y: 398}
@@ -326,7 +1604,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: 282129c1-e62d-45ca-b99e-ea6b8052334b
-    Position: {x: 1490, y: 225}
+    Position: {x: 1490, y: 226}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -518,3 +1796,1434 @@ MonoBehaviour:
   _dialogueToAdd: {fileID: 0}
   _allDialogue:
   - {fileID: -951450765867712650}
+  - {fileID: 6011350015442725407}
+  - {fileID: -3521231875816487889}
+  - {fileID: 1824324365498698883}
+  - {fileID: -4213154380350549485}
+  - {fileID: 5313372133392711304}
+  - {fileID: -7673568582555057265}
+  - {fileID: 7769704383851090646}
+  - {fileID: -8526308127361481588}
+  - {fileID: -5172576846485883785}
+  - {fileID: -3240251936684216819}
+  - {fileID: 6951266592987921972}
+  - {fileID: 6760162109638084410}
+  _dialogueToRename: {fileID: 6760162109638084410}
+  _dialogueNewName: OMBRE_Mort_1_ACT_6_B
+--- !u!114 &1824324365498698883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Monologue_1_ACT_4_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 5c549b31-c782-41f2-af34-100cc8ecd3d2
+    TargetNodeGuid: fcc4876b-0fe3-4f21-b807-52b63c5b02eb
+  - BaseNodeGuid: 8ac526e5-ead1-47b1-84c4-a6962bebc911
+    TargetNodeGuid: 01d65465-1147-4360-bf32-c8c51acae552
+  - BaseNodeGuid: 01d65465-1147-4360-bf32-c8c51acae552
+    TargetNodeGuid: 4e483579-c298-4a83-b25f-743dfa548bfa
+  - BaseNodeGuid: 4e483579-c298-4a83-b25f-743dfa548bfa
+    TargetNodeGuid: cb832201-6e7a-422d-a4bc-2e41e90dc8c0
+  - BaseNodeGuid: cb832201-6e7a-422d-a4bc-2e41e90dc8c0
+    TargetNodeGuid: ed6653ad-9cf0-4666-b06e-9d4f346bd785
+  - BaseNodeGuid: ed6653ad-9cf0-4666-b06e-9d4f346bd785
+    TargetNodeGuid: 5d7f0087-c68d-4e4c-a67d-79f122d84eea
+  - BaseNodeGuid: 5d7f0087-c68d-4e4c-a67d-79f122d84eea
+    TargetNodeGuid: ec8e976d-9557-4e6f-8b0a-89fd128a438b
+  - BaseNodeGuid: ec8e976d-9557-4e6f-8b0a-89fd128a438b
+    TargetNodeGuid: 5dae7bec-efb7-4f4b-9073-f4973c2eadb2
+  - BaseNodeGuid: 5dae7bec-efb7-4f4b-9073-f4973c2eadb2
+    TargetNodeGuid: 7a40fe84-3602-47ef-90a2-9a9de02d03f6
+  - BaseNodeGuid: fcc4876b-0fe3-4f21-b807-52b63c5b02eb
+    TargetNodeGuid: 8217fd49-c6a9-4c62-b0bd-0680219024ae
+  - BaseNodeGuid: 8217fd49-c6a9-4c62-b0bd-0680219024ae
+    TargetNodeGuid: 8ac526e5-ead1-47b1-84c4-a6962bebc911
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 8ac526e5-ead1-47b1-84c4-a6962bebc911
+    Position: {x: 759, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 01d65465-1147-4360-bf32-c8c51acae552
+    Position: {x: 992, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 4e483579-c298-4a83-b25f-743dfa548bfa
+    Position: {x: 1224, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: cb832201-6e7a-422d-a4bc-2e41e90dc8c0
+    Position: {x: 1515, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: ed6653ad-9cf0-4666-b06e-9d4f346bd785
+    Position: {x: 1742, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 5d7f0087-c68d-4e4c-a67d-79f122d84eea
+    Position: {x: 1980, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: ec8e976d-9557-4e6f-8b0a-89fd128a438b
+    Position: {x: 2218, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: 5dae7bec-efb7-4f4b-9073-f4973c2eadb2
+    Position: {x: 2452, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: fcc4876b-0fe3-4f21-b807-52b63c5b02eb
+    Position: {x: 309, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 8217fd49-c6a9-4c62-b0bd-0680219024ae
+    Position: {x: 538, y: 427}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 7a40fe84-3602-47ef-90a2-9a9de02d03f6
+    Position: {x: 2691, y: 427}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 5c549b31-c782-41f2-af34-100cc8ecd3d2
+    Position: {x: 177, y: 427}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &5313372133392711304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Dialogue_1_ACT_4_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: bed839df-9231-42cf-81ab-a6197a23948a
+    TargetNodeGuid: f03e3551-a6f6-4ad0-9638-62461f1b03d9
+  - BaseNodeGuid: f03e3551-a6f6-4ad0-9638-62461f1b03d9
+    TargetNodeGuid: a43d9943-08d1-48a1-99f5-f19ad710ac68
+  - BaseNodeGuid: a43d9943-08d1-48a1-99f5-f19ad710ac68
+    TargetNodeGuid: 5bd485e3-76cb-448e-a860-9d00f56c47aa
+  - BaseNodeGuid: 5bd485e3-76cb-448e-a860-9d00f56c47aa
+    TargetNodeGuid: 7db1d3bf-0d5b-4e40-bec4-9b71242e3c86
+  - BaseNodeGuid: 7db1d3bf-0d5b-4e40-bec4-9b71242e3c86
+    TargetNodeGuid: a9caed86-6124-4990-86f5-8496a5865502
+  - BaseNodeGuid: a9caed86-6124-4990-86f5-8496a5865502
+    TargetNodeGuid: 7f198245-6253-46fb-b8d5-e483c4093595
+  - BaseNodeGuid: 7f198245-6253-46fb-b8d5-e483c4093595
+    TargetNodeGuid: 5cbd39fc-ac29-4a4d-909d-08e44d8bd800
+  - BaseNodeGuid: 5cbd39fc-ac29-4a4d-909d-08e44d8bd800
+    TargetNodeGuid: fd593832-c15c-4e16-a39c-c1dade79b829
+  - BaseNodeGuid: fd593832-c15c-4e16-a39c-c1dade79b829
+    TargetNodeGuid: 01b18e7d-c489-425a-afc9-01b3b102cf8a
+  - BaseNodeGuid: 01b18e7d-c489-425a-afc9-01b3b102cf8a
+    TargetNodeGuid: 88492ca5-413b-4f28-837b-af2f36eb3c2e
+  - BaseNodeGuid: 88492ca5-413b-4f28-837b-af2f36eb3c2e
+    TargetNodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: f03e3551-a6f6-4ad0-9638-62461f1b03d9
+    Position: {x: 259, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: a43d9943-08d1-48a1-99f5-f19ad710ac68
+    Position: {x: 480, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 5bd485e3-76cb-448e-a860-9d00f56c47aa
+    Position: {x: 719, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 7db1d3bf-0d5b-4e40-bec4-9b71242e3c86
+    Position: {x: 970, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: a9caed86-6124-4990-86f5-8496a5865502
+    Position: {x: 1208, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 5cbd39fc-ac29-4a4d-909d-08e44d8bd800
+    Position: {x: 1740, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: fd593832-c15c-4e16-a39c-c1dade79b829
+    Position: {x: 1977, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: 01b18e7d-c489-425a-afc9-01b3b102cf8a
+    Position: {x: 2218, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: 88492ca5-413b-4f28-837b-af2f36eb3c2e
+    Position: {x: 2451, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: 7f198245-6253-46fb-b8d5-e483c4093595
+    Position: {x: 1499, y: 171}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_4_G_DIALOGUE_1_6
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
+    Position: {x: 2700, y: 171}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: bed839df-9231-42cf-81ab-a6197a23948a
+    Position: {x: 127, y: 171}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &6011350015442725407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Monologue_1_ACT_2_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: f732323e-4f6d-438f-b4f7-bb170a08ca69
+    TargetNodeGuid: 06176a3a-b342-4a34-b396-5ed81ce7fa4b
+  - BaseNodeGuid: 06176a3a-b342-4a34-b396-5ed81ce7fa4b
+    TargetNodeGuid: 8faca3dc-6100-454c-aa46-3dd0753953b5
+  - BaseNodeGuid: 8faca3dc-6100-454c-aa46-3dd0753953b5
+    TargetNodeGuid: 1fa0e750-f67e-4a71-abf1-71c830300375
+  - BaseNodeGuid: 1fa0e750-f67e-4a71-abf1-71c830300375
+    TargetNodeGuid: d531cfda-477b-4dd4-bac9-143c4624b355
+  - BaseNodeGuid: d531cfda-477b-4dd4-bac9-143c4624b355
+    TargetNodeGuid: 5ebcdbe7-f21d-445c-981f-1b59c70c78a1
+  - BaseNodeGuid: 5ebcdbe7-f21d-445c-981f-1b59c70c78a1
+    TargetNodeGuid: 3387437e-f35e-458f-831f-be040c26624e
+  - BaseNodeGuid: 3387437e-f35e-458f-831f-be040c26624e
+    TargetNodeGuid: d4f380a3-d848-4aa5-835d-decb3377503f
+  - BaseNodeGuid: d4f380a3-d848-4aa5-835d-decb3377503f
+    TargetNodeGuid: e95ae281-8313-485f-82c1-132235a93fcf
+  - BaseNodeGuid: e95ae281-8313-485f-82c1-132235a93fcf
+    TargetNodeGuid: fb0402de-8b26-43d5-93b1-cf5318695e0a
+  - BaseNodeGuid: fb0402de-8b26-43d5-93b1-cf5318695e0a
+    TargetNodeGuid: dd2933f7-6544-4e69-892e-ccc0c60c0d0c
+  - BaseNodeGuid: dd2933f7-6544-4e69-892e-ccc0c60c0d0c
+    TargetNodeGuid: 20f8c6a9-570d-446b-9c95-cbf09fa0358e
+  - BaseNodeGuid: 20f8c6a9-570d-446b-9c95-cbf09fa0358e
+    TargetNodeGuid: b36f0355-c4a6-487a-b18c-fa1bffe3e551
+  - BaseNodeGuid: b36f0355-c4a6-487a-b18c-fa1bffe3e551
+    TargetNodeGuid: 59b25cc8-a864-4d8e-9e6b-3fdecf23fff2
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 06176a3a-b342-4a34-b396-5ed81ce7fa4b
+    Position: {x: 430, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_1
+    Duration: 0
+  - NodeGuid: 8faca3dc-6100-454c-aa46-3dd0753953b5
+    Position: {x: 651, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_2
+    Duration: 0
+  - NodeGuid: 1fa0e750-f67e-4a71-abf1-71c830300375
+    Position: {x: 869, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_3
+    Duration: 0
+  - NodeGuid: d531cfda-477b-4dd4-bac9-143c4624b355
+    Position: {x: 1091, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_4
+    Duration: 0
+  - NodeGuid: e95ae281-8313-485f-82c1-132235a93fcf
+    Position: {x: 2028, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_8
+    Duration: 0
+  - NodeGuid: fb0402de-8b26-43d5-93b1-cf5318695e0a
+    Position: {x: 2252, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_9
+    Duration: 0
+  - NodeGuid: dd2933f7-6544-4e69-892e-ccc0c60c0d0c
+    Position: {x: 2476, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_10
+    Duration: 0
+  - NodeGuid: 20f8c6a9-570d-446b-9c95-cbf09fa0358e
+    Position: {x: 2704, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 'OMBRE_ACT_2_B_MONOLOGUE_1_11
+
+'
+    Duration: 0
+  - NodeGuid: b36f0355-c4a6-487a-b18c-fa1bffe3e551
+    Position: {x: 2923, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_12
+    Duration: 0
+  - NodeGuid: d4f380a3-d848-4aa5-835d-decb3377503f
+    Position: {x: 1797, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_7
+    Duration: 0
+  - NodeGuid: 5ebcdbe7-f21d-445c-981f-1b59c70c78a1
+    Position: {x: 1315, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_5
+    Duration: 0
+  - NodeGuid: 3387437e-f35e-458f-831f-be040c26624e
+    Position: {x: 1549, y: 361}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 1
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_2_B_MONOLOGUE_1_6
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 59b25cc8-a864-4d8e-9e6b-3fdecf23fff2
+    Position: {x: 3157, y: 361}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: f732323e-4f6d-438f-b4f7-bb170a08ca69
+    Position: {x: 311, y: 361}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &6760162109638084410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Mort_1_ACT_6_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 3f24d1f3-d695-4bd5-b14b-fae9f8c71c33
+    TargetNodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
+  - BaseNodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
+    TargetNodeGuid: 05927847-853a-4c64-837b-809ba7e07582
+  - BaseNodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
+    TargetNodeGuid: 8d1a65b7-7ae2-48b6-bdbc-b442a2720355
+  - BaseNodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
+    TargetNodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
+  - BaseNodeGuid: 05927847-853a-4c64-837b-809ba7e07582
+    TargetNodeGuid: 611b1f60-5737-4d47-9d35-2cb8fb4aa2fd
+  - BaseNodeGuid: 8d1a65b7-7ae2-48b6-bdbc-b442a2720355
+    TargetNodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
+    Position: {x: 1186, y: 291}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
+    Position: {x: 383, y: 291}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_MORT_1
+    Duration: 0
+  - NodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
+    Position: {x: 863, y: 291}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_MORT_3
+    Duration: 0
+  - NodeGuid: 05927847-853a-4c64-837b-809ba7e07582
+    Position: {x: 1485, y: 291}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_MORT_4
+    Duration: 0
+  - NodeGuid: 8d1a65b7-7ae2-48b6-bdbc-b442a2720355
+    Position: {x: 622, y: 291}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_MORT_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 611b1f60-5737-4d47-9d35-2cb8fb4aa2fd
+    Position: {x: 1767, y: 291}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 3f24d1f3-d695-4bd5-b14b-fae9f8c71c33
+    Position: {x: 249, y: 291}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: fdf57e03-629a-4df4-95c7-e1560c840bd9
+    Position: {x: 1737, y: 443}
+    commmand: PTDR A LA FIN EWEN MEURT
+  IfNodeDatas: []
+--- !u!114 &6951266592987921972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Dialogue_1_ACT_6_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: c2ab143f-345f-41dd-bfd0-e398b480cb2a
+    TargetNodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
+  - BaseNodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
+    TargetNodeGuid: d613f3be-65d6-4794-8e24-37ee98d4a33b
+  - BaseNodeGuid: d613f3be-65d6-4794-8e24-37ee98d4a33b
+    TargetNodeGuid: d9bc5801-2ecd-419b-aab1-f9cc68dca011
+  - BaseNodeGuid: d9bc5801-2ecd-419b-aab1-f9cc68dca011
+    TargetNodeGuid: efe9201e-7810-433e-9bfd-20caf66c32cc
+  - BaseNodeGuid: efe9201e-7810-433e-9bfd-20caf66c32cc
+    TargetNodeGuid: 567f7e09-8c6e-4a37-a919-c03373bbeb9d
+  - BaseNodeGuid: 567f7e09-8c6e-4a37-a919-c03373bbeb9d
+    TargetNodeGuid: e640333f-f163-4ee8-b305-9a7a1abe6761
+  - BaseNodeGuid: e640333f-f163-4ee8-b305-9a7a1abe6761
+    TargetNodeGuid: 67a4a668-bb29-491f-8291-4de75f3cdb2a
+  - BaseNodeGuid: 67a4a668-bb29-491f-8291-4de75f3cdb2a
+    TargetNodeGuid: f799e61a-c801-45dc-a2ad-512778fe3d4e
+  - BaseNodeGuid: f799e61a-c801-45dc-a2ad-512778fe3d4e
+    TargetNodeGuid: 25ea5731-5439-4d1e-8282-60aa601e39f5
+  - BaseNodeGuid: 25ea5731-5439-4d1e-8282-60aa601e39f5
+    TargetNodeGuid: 0db9b224-c62b-4680-9e53-4816d72dc5fc
+  - BaseNodeGuid: 0db9b224-c62b-4680-9e53-4816d72dc5fc
+    TargetNodeGuid: 390816ed-a109-4e08-aa8f-959232b5b106
+  - BaseNodeGuid: 390816ed-a109-4e08-aa8f-959232b5b106
+    TargetNodeGuid: a0f45257-e377-47d0-aaa5-21bec49215fa
+  - BaseNodeGuid: a0f45257-e377-47d0-aaa5-21bec49215fa
+    TargetNodeGuid: e3613491-9c06-4837-8083-95076422601b
+  - BaseNodeGuid: e3613491-9c06-4837-8083-95076422601b
+    TargetNodeGuid: 520745e4-5e11-4be1-a1a0-2b2da5d2b157
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
+    Position: {x: 351, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: d613f3be-65d6-4794-8e24-37ee98d4a33b
+    Position: {x: 579, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: efe9201e-7810-433e-9bfd-20caf66c32cc
+    Position: {x: 1375, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 567f7e09-8c6e-4a37-a919-c03373bbeb9d
+    Position: {x: 1615, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: e640333f-f163-4ee8-b305-9a7a1abe6761
+    Position: {x: 1862, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 67a4a668-bb29-491f-8291-4de75f3cdb2a
+    Position: {x: 2106, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 0db9b224-c62b-4680-9e53-4816d72dc5fc
+    Position: {x: 2818, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: 390816ed-a109-4e08-aa8f-959232b5b106
+    Position: {x: 3423, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: 25ea5731-5439-4d1e-8282-60aa601e39f5
+    Position: {x: 2570, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: d9bc5801-2ecd-419b-aab1-f9cc68dca011
+    Position: {x: 983, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: f799e61a-c801-45dc-a2ad-512778fe3d4e
+    Position: {x: 2338, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: a0f45257-e377-47d0-aaa5-21bec49215fa
+    Position: {x: 4054, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_11
+    Duration: 0
+  - NodeGuid: e3613491-9c06-4837-8083-95076422601b
+    Position: {x: 4308, y: 293}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_B_DIALOGUE_1_12
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 520745e4-5e11-4be1-a1a0-2b2da5d2b157
+    Position: {x: 4568, y: 293}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: c2ab143f-345f-41dd-bfd0-e398b480cb2a
+    Position: {x: 233, y: 293}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: e67b326d-4725-48e1-859a-902a1260ff5d
+    Position: {x: 3066, y: 316}
+    commmand: Tentative de Fusion de l'ombre
+  - NodeGuid: 0e2ce9ce-5e36-4fe5-ac5d-4ceb01022d4e
+    Position: {x: 3678, y: 316}
+    commmand: "Ewen sort son \xE9p\xE9e"
+  IfNodeDatas: []
+--- !u!114 &7769704383851090646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: OMBRE_Dialogue_1_ACT_6_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: fb76d897-9c08-4a88-8eae-88e7e40597ad
+    TargetNodeGuid: 46b265b2-7131-4591-b7c1-b902b2e1c004
+  - BaseNodeGuid: 6b7ef3d7-70dd-4ba9-9d78-0a7d68c1c43b
+    TargetNodeGuid: 74ca3b5d-42b8-4769-8645-e888a0fbe765
+  - BaseNodeGuid: a035d892-f8aa-418a-9dc9-904f51739156
+    TargetNodeGuid: ef765b39-68dc-4782-ba7f-16aadf1ef85a
+  - BaseNodeGuid: ef765b39-68dc-4782-ba7f-16aadf1ef85a
+    TargetNodeGuid: fc447f31-5f51-4e40-be32-1d8a7968f220
+  - BaseNodeGuid: fc447f31-5f51-4e40-be32-1d8a7968f220
+    TargetNodeGuid: 0142193a-219a-452d-a2d4-7c291f8c1578
+  - BaseNodeGuid: 5f5e6ce1-525b-4d5f-bcec-6f26a4b4e9e4
+    TargetNodeGuid: b1712023-efa6-4005-b3cd-1cef93202a4d
+  - BaseNodeGuid: b1712023-efa6-4005-b3cd-1cef93202a4d
+    TargetNodeGuid: f3dc623a-8b45-40f0-bd9e-2bd178ac3f53
+  - BaseNodeGuid: 71260b0b-0949-4f87-92f4-5d0fee58ed0a
+    TargetNodeGuid: a035d892-f8aa-418a-9dc9-904f51739156
+  - BaseNodeGuid: 46b265b2-7131-4591-b7c1-b902b2e1c004
+    TargetNodeGuid: 6b7ef3d7-70dd-4ba9-9d78-0a7d68c1c43b
+  - BaseNodeGuid: 74ca3b5d-42b8-4769-8645-e888a0fbe765
+    TargetNodeGuid: 71260b0b-0949-4f87-92f4-5d0fee58ed0a
+  - BaseNodeGuid: 0142193a-219a-452d-a2d4-7c291f8c1578
+    TargetNodeGuid: fdfee73c-cf0a-4d11-88c7-7eca6bcb833d
+  - BaseNodeGuid: fdfee73c-cf0a-4d11-88c7-7eca6bcb833d
+    TargetNodeGuid: 5f5e6ce1-525b-4d5f-bcec-6f26a4b4e9e4
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: a035d892-f8aa-418a-9dc9-904f51739156
+    Position: {x: 1527, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: ef765b39-68dc-4782-ba7f-16aadf1ef85a
+    Position: {x: 1770, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: fc447f31-5f51-4e40-be32-1d8a7968f220
+    Position: {x: 2009, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 5f5e6ce1-525b-4d5f-bcec-6f26a4b4e9e4
+    Position: {x: 2977, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: b1712023-efa6-4005-b3cd-1cef93202a4d
+    Position: {x: 3231, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: 71260b0b-0949-4f87-92f4-5d0fee58ed0a
+    Position: {x: 1147, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_6_G_DIALOGUE_OMBRE_1_1
+    Duration: 0
+  - NodeGuid: 74ca3b5d-42b8-4769-8645-e888a0fbe765
+    Position: {x: 747, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 0142193a-219a-452d-a2d4-7c291f8c1578
+    Position: {x: 2250, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: fdfee73c-cf0a-4d11-88c7-7eca6bcb833d
+    Position: {x: 2614, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_6_G_DIALOGUE_OMBRE_1_2
+    Duration: 0
+  - NodeGuid: 46b265b2-7131-4591-b7c1-b902b2e1c004
+    Position: {x: 278, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 6b7ef3d7-70dd-4ba9-9d78-0a7d68c1c43b
+    Position: {x: 520, y: 211}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_6_G_DIALOGUE_1_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f3dc623a-8b45-40f0-bd9e-2bd178ac3f53
+    Position: {x: 3494, y: 211}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: fb76d897-9c08-4a88-8eae-88e7e40597ad
+    Position: {x: 140, y: 211}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
