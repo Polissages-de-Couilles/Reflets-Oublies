@@ -6,12 +6,23 @@ using System;
 public class MirrorsManager : MonoBehaviour
 {
      Dictionary<int, Mirror> mirrors = new Dictionary<int, Mirror>();
+    [SerializeField] BossStartManager OmbreBSM;
 
     private void Start()
     {
         foreach (Mirror mirror in GetComponentsInChildren<Mirror>())
         {
             mirrors.Add(mirror.ID, mirror);
+            mirror.gameObject.SetActive(false);
+        }
+        OmbreBSM.OnBossIsActivated += InitMirror;
+    }
+
+    void InitMirror()
+    {
+        foreach (Mirror mirror in mirrors.Values)
+        {
+            mirror.gameObject.SetActive(true);
         }
     }
 
