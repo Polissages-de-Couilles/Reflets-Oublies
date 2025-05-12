@@ -92,6 +92,7 @@ public class TeleportEntities : StateEntityBase
             piv.viewAngle = 180;
             piv.Init(parent, player, this);
             if (!piv.isConditionFulfilled()) return;
+            parent.transform.rotation = Quaternion.LookRotation(player.transform.position - parent.transform.position, parent.transform.up);
         }
 
         parent.transform.position = teleportDestination;
