@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ public class DashController : MonoBehaviour
     private MovementController movementController;
     private PlayerDamageable playerDamageable;
     private PlayerInputEventManager PIE;
+    private AnimationManager animationManager;
 
     [SerializeField] private float dashForce = 20f;
     [SerializeField] private float dashTime = 0.1f;
@@ -35,6 +37,7 @@ public class DashController : MonoBehaviour
         movementController = GetComponent<MovementController>();
         stateManager = GetComponent<StateManager>();
         playerDamageable = GetComponent<PlayerDamageable>();
+        animationManager = GetComponent<AnimationManager>();
     }
 
     private void Start()
@@ -59,6 +62,7 @@ public class DashController : MonoBehaviour
         dashCount--;
         isDashing = true;
 
+        animationManager.Roll();
         playerDamageable.BecameInvicible(dashTime);
 
         if (GameManager.Instance.UIManager != null)
@@ -66,7 +70,12 @@ public class DashController : MonoBehaviour
             GameManager.Instance.UIManager.UpdateDashSlider(-1f);
         }
 
-        Vector3 dir = movementController.IsMovementPressed ? Quaternion.Euler(0, -45, 0) * movementController.Direction.normalized : -characterController.transform.forward;
+        bool isMovementPressed = movementController.IsMovementPressed;
+        Vector3 dir = isMovementPressed ? Quaternion.Euler(0, -45, 0) * movementController.Direction.normalized : -characterController.transform.forward;
+        if (!isMovementPressed)
+        {
+            animationManager.Rig.DOLocalRotate(animationManager.Rig.localRotation.eulerAngles + new Vector3(0, 180, 0), 0.1f);
+        }
 
 
         for (int i = 0; i < Mathf.RoundToInt(dashTime * 50f); i++)
@@ -87,6 +96,11 @@ public class DashController : MonoBehaviour
             yield return new WaitForFixedUpdate();
         }
         movementController.Acceleration = 1f;
+
+        if (!isMovementPressed)
+        {
+            animationManager.Rig.DOLocalRotate(animationManager.Rig.localRotation.eulerAngles + new Vector3(0, -180, 0), 0.1f);
+        }
 
         isDashing = false;
         canDash = true;

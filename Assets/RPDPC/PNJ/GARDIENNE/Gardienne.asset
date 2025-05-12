@@ -1,5 +1,1000 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8382459716534417643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_4_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: e4855de0-5101-4f26-9042-f4977bc6f508
+    TargetNodeGuid: 51bb225c-2367-4710-8b2d-5fe6d2707227
+  - BaseNodeGuid: 51bb225c-2367-4710-8b2d-5fe6d2707227
+    TargetNodeGuid: 3b6ed863-b81e-4e08-b53b-3f9433b66d25
+  - BaseNodeGuid: e28b0788-7ed6-4270-a31a-6ec7d4a282c7
+    TargetNodeGuid: 3cd0a0b0-5bee-4686-a82a-b0793081c107
+  - BaseNodeGuid: 3cd0a0b0-5bee-4686-a82a-b0793081c107
+    TargetNodeGuid: ad8f61e2-1f8c-4c11-8ac9-05033f117dc4
+  - BaseNodeGuid: ad8f61e2-1f8c-4c11-8ac9-05033f117dc4
+    TargetNodeGuid: e7da0807-8315-40ce-839b-7d60cf1f71b2
+  - BaseNodeGuid: e7da0807-8315-40ce-839b-7d60cf1f71b2
+    TargetNodeGuid: f20e94df-9928-4225-856a-6d52d1b6bcdf
+  - BaseNodeGuid: f20e94df-9928-4225-856a-6d52d1b6bcdf
+    TargetNodeGuid: 1a6fb222-a1ff-4dac-918e-1ac3f066708b
+  - BaseNodeGuid: 1a6fb222-a1ff-4dac-918e-1ac3f066708b
+    TargetNodeGuid: 629df2e3-fd0e-43dc-bb8c-4acb191e7a79
+  - BaseNodeGuid: 629df2e3-fd0e-43dc-bb8c-4acb191e7a79
+    TargetNodeGuid: 946c9abe-99a1-4d7c-8f04-639e39905f63
+  - BaseNodeGuid: 946c9abe-99a1-4d7c-8f04-639e39905f63
+    TargetNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+  - BaseNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+    TargetNodeGuid: 44b14d0b-6547-4274-a2f9-377959957e04
+  - BaseNodeGuid: 44b14d0b-6547-4274-a2f9-377959957e04
+    TargetNodeGuid: 9837f846-bc8d-408d-9573-6445b15e3a60
+  - BaseNodeGuid: 9837f846-bc8d-408d-9573-6445b15e3a60
+    TargetNodeGuid: 25ef7656-74b8-4366-99e4-79d3eef59bb5
+  - BaseNodeGuid: 25ef7656-74b8-4366-99e4-79d3eef59bb5
+    TargetNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+  - BaseNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+    TargetNodeGuid: f392230b-f30d-4f1e-a458-6b06a04626b8
+  - BaseNodeGuid: f392230b-f30d-4f1e-a458-6b06a04626b8
+    TargetNodeGuid: 3d6b7a1b-e6b9-493a-b02e-f06e6b00739d
+  - BaseNodeGuid: 3d6b7a1b-e6b9-493a-b02e-f06e6b00739d
+    TargetNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+  - BaseNodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+    TargetNodeGuid: e4855de0-5101-4f26-9042-f4977bc6f508
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+    Position: {x: 2278, y: 278}
+    DialogueNodePorts:
+    - PortGuid: 784fcd2d-98a4-49d8-8ca7-4656bfcb23f4
+      InputGuid: 44b14d0b-6547-4274-a2f9-377959957e04
+      OutputGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_4_G_CHOICE_1_1
+    - PortGuid: dc7e9223-45f8-43fe-8214-216e3f80340f
+      InputGuid: f392230b-f30d-4f1e-a458-6b06a04626b8
+      OutputGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_4_G_CHOICE_1_2
+    - PortGuid: 225258e2-c860-4a4a-88b7-2b20477445e9
+      InputGuid: e4855de0-5101-4f26-9042-f4977bc6f508
+      OutputGuid: 76b87b29-6b1f-45c3-88d9-81eff64b164a
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_4_G_CHOICE_1_3
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_7
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: e7da0807-8315-40ce-839b-7d60cf1f71b2
+    Position: {x: 947, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_4_G_DIALOGUE_GARDIENNE_1_1
+    Duration: 0
+  - NodeGuid: 3cd0a0b0-5bee-4686-a82a-b0793081c107
+    Position: {x: 342, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: ad8f61e2-1f8c-4c11-8ac9-05033f117dc4
+    Position: {x: 574, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: f20e94df-9928-4225-856a-6d52d1b6bcdf
+    Position: {x: 1336, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 1a6fb222-a1ff-4dac-918e-1ac3f066708b
+    Position: {x: 1596, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 629df2e3-fd0e-43dc-bb8c-4acb191e7a79
+    Position: {x: 1822, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 946c9abe-99a1-4d7c-8f04-639e39905f63
+    Position: {x: 2046, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: f392230b-f30d-4f1e-a458-6b06a04626b8
+    Position: {x: 2733, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_11
+    Duration: 0
+  - NodeGuid: 3d6b7a1b-e6b9-493a-b02e-f06e6b00739d
+    Position: {x: 2971, y: 278}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_12
+    Duration: 0
+  - NodeGuid: 44b14d0b-6547-4274-a2f9-377959957e04
+    Position: {x: 2733, y: -96}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: 9837f846-bc8d-408d-9573-6445b15e3a60
+    Position: {x: 2971, y: -96}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: e4855de0-5101-4f26-9042-f4977bc6f508
+    Position: {x: 2733, y: 673}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_13
+    Duration: 0
+  - NodeGuid: 51bb225c-2367-4710-8b2d-5fe6d2707227
+    Position: {x: 2971, y: 673}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_14
+    Duration: 0
+  - NodeGuid: 25ef7656-74b8-4366-99e4-79d3eef59bb5
+    Position: {x: 3214, y: -96}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_1_10
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 3b6ed863-b81e-4e08-b53b-3f9433b66d25
+    Position: {x: 3278, y: 673}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: e28b0788-7ed6-4270-a31a-6ec7d4a282c7
+    Position: {x: 215, y: 278}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-6865845715676418741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_3_ACT_5_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 87664858-844d-47b8-8edf-2d08f4301925
+    TargetNodeGuid: a75b5ee8-3b57-46a7-a9b9-7ebcdceead08
+  - BaseNodeGuid: a75b5ee8-3b57-46a7-a9b9-7ebcdceead08
+    TargetNodeGuid: e987b35a-d742-4527-9bb7-3e5d0a8361b4
+  - BaseNodeGuid: e987b35a-d742-4527-9bb7-3e5d0a8361b4
+    TargetNodeGuid: dd703ac1-99fe-4de3-9bae-5fb8e907986b
+  - BaseNodeGuid: 9ecf290c-063c-48ed-a051-b1ae75a1cfe1
+    TargetNodeGuid: c386c34e-bad7-4370-a1e8-79faea65ab4c
+  - BaseNodeGuid: dd703ac1-99fe-4de3-9bae-5fb8e907986b
+    TargetNodeGuid: 9ecf290c-063c-48ed-a051-b1ae75a1cfe1
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: a75b5ee8-3b57-46a7-a9b9-7ebcdceead08
+    Position: {x: 325, y: 273}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_5_G_DIALOGUE_GARDIENNE_3_1
+    Duration: 0
+  - NodeGuid: e987b35a-d742-4527-9bb7-3e5d0a8361b4
+    Position: {x: 640, y: 273}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 9ecf290c-063c-48ed-a051-b1ae75a1cfe1
+    Position: {x: 1094, y: 273}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_3_3
+    Duration: 0
+  - NodeGuid: dd703ac1-99fe-4de3-9bae-5fb8e907986b
+    Position: {x: 870, y: 273}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_3_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: c386c34e-bad7-4370-a1e8-79faea65ab4c
+    Position: {x: 1328, y: 273}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 87664858-844d-47b8-8edf-2d08f4301925
+    Position: {x: 211, y: 273}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-6266564984687502268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_5_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 60759214-2cd9-4c70-9244-1ad7b5fb8eb4
+    TargetNodeGuid: fc9eb004-60f6-4fea-aa54-60e0851859a9
+  - BaseNodeGuid: fc9eb004-60f6-4fea-aa54-60e0851859a9
+    TargetNodeGuid: f186a132-9c8c-46b3-a15a-e6462d2aaadb
+  - BaseNodeGuid: f186a132-9c8c-46b3-a15a-e6462d2aaadb
+    TargetNodeGuid: 11ea49e7-7715-48fc-829b-5cb30da4148d
+  - BaseNodeGuid: 11ea49e7-7715-48fc-829b-5cb30da4148d
+    TargetNodeGuid: f34d9506-386b-465a-bfb6-a2416d72b720
+  - BaseNodeGuid: f34d9506-386b-465a-bfb6-a2416d72b720
+    TargetNodeGuid: 2a6fa1a9-d7eb-4993-907f-b555b5526677
+  - BaseNodeGuid: 2a6fa1a9-d7eb-4993-907f-b555b5526677
+    TargetNodeGuid: f11a27fd-c1a4-429f-84f6-844898846e04
+  - BaseNodeGuid: f11a27fd-c1a4-429f-84f6-844898846e04
+    TargetNodeGuid: ac8a35d0-ae62-47ff-8235-34f04ce81c83
+  - BaseNodeGuid: ac8a35d0-ae62-47ff-8235-34f04ce81c83
+    TargetNodeGuid: b4a5f595-11eb-46e4-a3ce-88b7a49154ef
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: fc9eb004-60f6-4fea-aa54-60e0851859a9
+    Position: {x: 343, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: f186a132-9c8c-46b3-a15a-e6462d2aaadb
+    Position: {x: 588, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 11ea49e7-7715-48fc-829b-5cb30da4148d
+    Position: {x: 834, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: f34d9506-386b-465a-bfb6-a2416d72b720
+    Position: {x: 1090, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 2a6fa1a9-d7eb-4993-907f-b555b5526677
+    Position: {x: 1444, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: f11a27fd-c1a4-429f-84f6-844898846e04
+    Position: {x: 1708, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: ac8a35d0-ae62-47ff-8235-34f04ce81c83
+    Position: {x: 1942, y: 265}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_DIALOGUE_1_7
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: b4a5f595-11eb-46e4-a3ce-88b7a49154ef
+    Position: {x: 2161, y: 265}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 60759214-2cd9-4c70-9244-1ad7b5fb8eb4
+    Position: {x: 231, y: 265}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-6165299909274272571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Mort_ACT_5_N
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: d6947c99-d226-4f71-9269-593e3c05f538
+    TargetNodeGuid: c868b145-e3cb-4906-b98a-685ac73918af
+  - BaseNodeGuid: 0f124b2e-4ef3-49a4-b664-8d0d91402431
+    TargetNodeGuid: d6947c99-d226-4f71-9269-593e3c05f538
+  - BaseNodeGuid: 32c160b3-bc2d-453f-ac7d-9313c5361c15
+    TargetNodeGuid: 0f124b2e-4ef3-49a4-b664-8d0d91402431
+  - BaseNodeGuid: 33fbe25f-19f8-47cb-9cf2-7755e552977d
+    TargetNodeGuid: 32c160b3-bc2d-453f-ac7d-9313c5361c15
+  - BaseNodeGuid: e286f320-51cd-4d91-b3b9-d69cf097e37d
+    TargetNodeGuid: 33fbe25f-19f8-47cb-9cf2-7755e552977d
+  - BaseNodeGuid: 831b265d-14bb-41cc-a28d-e137b36b773f
+    TargetNodeGuid: e286f320-51cd-4d91-b3b9-d69cf097e37d
+  - BaseNodeGuid: 83dd7036-19bb-46db-8227-f447127b1e28
+    TargetNodeGuid: 831b265d-14bb-41cc-a28d-e137b36b773f
+  - BaseNodeGuid: bdb6aa9f-6aa8-4d6f-8551-054324f7dbec
+    TargetNodeGuid: b9d7e788-9310-4598-91e4-1374b09ac0a7
+  - BaseNodeGuid: b9d7e788-9310-4598-91e4-1374b09ac0a7
+    TargetNodeGuid: 26b4a025-b6c3-41ba-bf4a-2463f4cb77f2
+  - BaseNodeGuid: 26b4a025-b6c3-41ba-bf4a-2463f4cb77f2
+    TargetNodeGuid: 2801f225-d221-45ce-a222-2b8ec93707b9
+  - BaseNodeGuid: 2801f225-d221-45ce-a222-2b8ec93707b9
+    TargetNodeGuid: 83dd7036-19bb-46db-8227-f447127b1e28
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: b9d7e788-9310-4598-91e4-1374b09ac0a7
+    Position: {x: 461, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_1
+    Duration: 0
+  - NodeGuid: 33fbe25f-19f8-47cb-9cf2-7755e552977d
+    Position: {x: 2145, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_6
+    Duration: 0
+  - NodeGuid: 32c160b3-bc2d-453f-ac7d-9313c5361c15
+    Position: {x: 2401, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_7
+    Duration: 0
+  - NodeGuid: 0f124b2e-4ef3-49a4-b664-8d0d91402431
+    Position: {x: 2772, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_5_N_MORT_GARDIENNE_2
+    Duration: 0
+  - NodeGuid: d6947c99-d226-4f71-9269-593e3c05f538
+    Position: {x: 3176, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_ACT_5_MORT_GARDIENNE_1
+    Duration: 0
+  - NodeGuid: 26b4a025-b6c3-41ba-bf4a-2463f4cb77f2
+    Position: {x: 699, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_2
+    Duration: 0
+  - NodeGuid: e286f320-51cd-4d91-b3b9-d69cf097e37d
+    Position: {x: 1897, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_5
+    Duration: 0
+  - NodeGuid: 831b265d-14bb-41cc-a28d-e137b36b773f
+    Position: {x: 1548, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_5_N_MORT_GARDIENNE_1
+    Duration: 0
+  - NodeGuid: 83dd7036-19bb-46db-8227-f447127b1e28
+    Position: {x: 1194, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_4
+    Duration: 0
+  - NodeGuid: 2801f225-d221-45ce-a222-2b8ec93707b9
+    Position: {x: 924, y: 272}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_MORT_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: c868b145-e3cb-4906-b98a-685ac73918af
+    Position: {x: 3434, y: 272}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: bdb6aa9f-6aa8-4d6f-8551-054324f7dbec
+    Position: {x: 318, y: 272}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-5042864154597958090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Mort_ACT_5_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 78d19029-2e0d-4dc4-979d-faea854276b7
+    TargetNodeGuid: 0a051054-018a-4429-b19f-2f821871947b
+  - BaseNodeGuid: 0a051054-018a-4429-b19f-2f821871947b
+    TargetNodeGuid: d0565158-0e7f-4a3a-83e5-9c9e13a8025f
+  - BaseNodeGuid: d0565158-0e7f-4a3a-83e5-9c9e13a8025f
+    TargetNodeGuid: e7cdb90d-0050-4505-b23e-cc6c96b695d4
+  - BaseNodeGuid: e7cdb90d-0050-4505-b23e-cc6c96b695d4
+    TargetNodeGuid: 11b7131a-7d59-44fa-a678-d4ee866ce4e8
+  - BaseNodeGuid: 11b7131a-7d59-44fa-a678-d4ee866ce4e8
+    TargetNodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
+  - BaseNodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
+    TargetNodeGuid: 003e9543-d349-46fb-8743-0c0d2d7d368d
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 0a051054-018a-4429-b19f-2f821871947b
+    Position: {x: 379, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_MORT_1
+    Duration: 0
+  - NodeGuid: d0565158-0e7f-4a3a-83e5-9c9e13a8025f
+    Position: {x: 609, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_MORT_2
+    Duration: 0
+  - NodeGuid: e7cdb90d-0050-4505-b23e-cc6c96b695d4
+    Position: {x: 850, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_MORT_3
+    Duration: 0
+  - NodeGuid: 11b7131a-7d59-44fa-a678-d4ee866ce4e8
+    Position: {x: 1096, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_MORT_4
+    Duration: 0
+  - NodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
+    Position: {x: 1352, y: 321}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_B_MORT_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 003e9543-d349-46fb-8743-0c0d2d7d368d
+    Position: {x: 1591, y: 321}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 78d19029-2e0d-4dc4-979d-faea854276b7
+    Position: {x: 246, y: 321}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &-4881393660330923447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48,15 +1043,1251 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
-  m_Name: GARDIENNE__Dialogue_2
+  m_Name: GARDIENNE_Dialogue_2_ACT_1
   m_EditorClassIdentifier: 
-  NodeLinkDatas: []
+  NodeLinkDatas:
+  - BaseNodeGuid: 7280b140-14da-43ad-b8d8-5b47900d09f0
+    TargetNodeGuid: a0a5a551-91a2-45bd-888b-7dceaa70231e
+  - BaseNodeGuid: a0a5a551-91a2-45bd-888b-7dceaa70231e
+    TargetNodeGuid: d7efd050-72e9-492a-9d36-bf77c2d1ea3b
+  - BaseNodeGuid: d7efd050-72e9-492a-9d36-bf77c2d1ea3b
+    TargetNodeGuid: a6fbcf90-d845-4847-a334-4a33d6cd1a98
+  - BaseNodeGuid: a6fbcf90-d845-4847-a334-4a33d6cd1a98
+    TargetNodeGuid: 340a60a2-bac7-4246-9648-b856d99eb0d7
+  - BaseNodeGuid: 340a60a2-bac7-4246-9648-b856d99eb0d7
+    TargetNodeGuid: 0427b0d3-3bf2-442e-8544-5fa5ac34bfd5
+  - BaseNodeGuid: 0427b0d3-3bf2-442e-8544-5fa5ac34bfd5
+    TargetNodeGuid: 70311dff-cf15-441f-b8d0-716a2b534100
   DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: a0a5a551-91a2-45bd-888b-7dceaa70231e
+    Position: {x: 386, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: d7efd050-72e9-492a-9d36-bf77c2d1ea3b
+    Position: {x: 620, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: a6fbcf90-d845-4847-a334-4a33d6cd1a98
+    Position: {x: 852, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: 340a60a2-bac7-4246-9648-b856d99eb0d7
+    Position: {x: 1076, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_2_4
+    Duration: 0
+  - NodeGuid: 0427b0d3-3bf2-442e-8544-5fa5ac34bfd5
+    Position: {x: 1304, y: 283}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_2_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 70311dff-cf15-441f-b8d0-716a2b534100
+    Position: {x: 1537, y: 283}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 7280b140-14da-43ad-b8d8-5b47900d09f0
+    Position: {x: 274, y: 283}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-3790521579029666820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: cbbb28df-6458-4a08-a0cb-e4ee70b68a2c
+    TargetNodeGuid: 5c4aaba4-673c-4da0-8119-33450166abad
+  - BaseNodeGuid: efb4918b-c291-4c8d-a983-08e72dc4fb39
+    TargetNodeGuid: cbbb28df-6458-4a08-a0cb-e4ee70b68a2c
+  - BaseNodeGuid: 863ff561-1dd9-4977-902f-f55a6dc12b78
+    TargetNodeGuid: efb4918b-c291-4c8d-a983-08e72dc4fb39
+  - BaseNodeGuid: b486e16b-7ceb-4a28-8209-501fd002f35e
+    TargetNodeGuid: a7f8d08d-d4d2-4c87-b577-79710bbcd7e3
+  - BaseNodeGuid: a7f8d08d-d4d2-4c87-b577-79710bbcd7e3
+    TargetNodeGuid: 9f709712-190c-4c4a-ba94-0ac47e5135d2
+  - BaseNodeGuid: 9f709712-190c-4c4a-ba94-0ac47e5135d2
+    TargetNodeGuid: 863ff561-1dd9-4977-902f-f55a6dc12b78
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: cbbb28df-6458-4a08-a0cb-e4ee70b68a2c
+    Position: {x: 1371, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 863ff561-1dd9-4977-902f-f55a6dc12b78
+    Position: {x: 869, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 9f709712-190c-4c4a-ba94-0ac47e5135d2
+    Position: {x: 621, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: a7f8d08d-d4d2-4c87-b577-79710bbcd7e3
+    Position: {x: 379, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: efb4918b-c291-4c8d-a983-08e72dc4fb39
+    Position: {x: 1120, y: 285}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_1_4
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 5c4aaba4-673c-4da0-8119-33450166abad
+    Position: {x: 1616, y: 285}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b486e16b-7ceb-4a28-8209-501fd002f35e
+    Position: {x: 244, y: 285}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-3693214306409923745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_2_ACT_5_N
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b3e56603-1f10-4b27-8cf3-8a2fee13c2e8
+    TargetNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+    TargetNodeGuid: 847ba10f-b6c5-4bab-b8d0-43c016eb9d4b
+  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+    TargetNodeGuid: 534c9f5b-d7f2-4ef9-9a5f-3766749e4d71
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+    Position: {x: 494, y: 367}
+    DialogueNodePorts:
+    - PortGuid: 47ec39ac-c81c-43ff-94e5-01de51789a02
+      InputGuid: 847ba10f-b6c5-4bab-b8d0-43c016eb9d4b
+      OutputGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_5_N_CHOICE_1_1
+    - PortGuid: 68e603ac-0365-4dc4-9327-20b287f3b3aa
+      InputGuid: 534c9f5b-d7f2-4ef9-9a5f-3766749e4d71
+      OutputGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_5_N_CHOICE_1_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_2_1
+    Duration: 0
   DialogueNodeDatas: []
   TimerChoiceNodeDatas: []
-  EndNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 534c9f5b-d7f2-4ef9-9a5f-3766749e4d71
+    Position: {x: 1090, y: 592}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  - NodeGuid: 847ba10f-b6c5-4bab-b8d0-43c016eb9d4b
+    Position: {x: 1116, y: 367}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
   EventNodeDatas: []
-  StartNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b3e56603-1f10-4b27-8cf3-8a2fee13c2e8
+    Position: {x: 389, y: 367}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: 89165309-51eb-42e1-87c0-3c3599188761
+    Position: {x: 816, y: 376}
+    commmand: OMG LE FIGHT CONTRE ELLE
+  IfNodeDatas: []
+--- !u!114 &-2452571459707364085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_5_N
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 3826649b-7afd-488f-b6e2-ec21fad20e54
+    TargetNodeGuid: bc814cda-de1c-4a2f-9884-797d15e21bf3
+  - BaseNodeGuid: bc814cda-de1c-4a2f-9884-797d15e21bf3
+    TargetNodeGuid: 7ee4ba38-d988-4fd3-9590-a80c2c37d24c
+  - BaseNodeGuid: 7ee4ba38-d988-4fd3-9590-a80c2c37d24c
+    TargetNodeGuid: 6d24a76f-4c0c-44ac-a7c0-ce8399adb8b7
+  - BaseNodeGuid: 6d24a76f-4c0c-44ac-a7c0-ce8399adb8b7
+    TargetNodeGuid: 0c8a7537-4f88-40de-a664-8b31417b3a21
+  - BaseNodeGuid: 0c8a7537-4f88-40de-a664-8b31417b3a21
+    TargetNodeGuid: 0aa5291b-75cd-4f4d-af3b-f85945408ce4
+  - BaseNodeGuid: 0aa5291b-75cd-4f4d-af3b-f85945408ce4
+    TargetNodeGuid: 9b5f9a57-7ba7-44ca-87a1-bedad914bb08
+  - BaseNodeGuid: 9b5f9a57-7ba7-44ca-87a1-bedad914bb08
+    TargetNodeGuid: ae1d15d5-51d4-496f-b019-a4172cb6f92c
+  - BaseNodeGuid: ae1d15d5-51d4-496f-b019-a4172cb6f92c
+    TargetNodeGuid: 7ffa76c2-fd76-435a-b23f-78d71bc7f629
+  - BaseNodeGuid: 7ffa76c2-fd76-435a-b23f-78d71bc7f629
+    TargetNodeGuid: 58d8c214-ef98-4856-87e6-74d5465ff046
+  - BaseNodeGuid: 58d8c214-ef98-4856-87e6-74d5465ff046
+    TargetNodeGuid: ba31ae5a-4b65-491b-82aa-7876db718021
+  - BaseNodeGuid: ba31ae5a-4b65-491b-82aa-7876db718021
+    TargetNodeGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+  - BaseNodeGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+    TargetNodeGuid: f3181c15-2aea-4fb8-b95e-d3e92a44d0cb
+  - BaseNodeGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+    TargetNodeGuid: a5b5815e-f619-4d81-a735-84f7df251cae
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+    Position: {x: 2968, y: 306}
+    DialogueNodePorts:
+    - PortGuid: 0e26df84-10a9-483d-a965-81b3571b824e
+      InputGuid: f3181c15-2aea-4fb8-b95e-d3e92a44d0cb
+      OutputGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_5_N_CHOICE_1_1
+    - PortGuid: 886e9de2-9948-4ed6-81ec-e72314711686
+      InputGuid: a5b5815e-f619-4d81-a735-84f7df251cae
+      OutputGuid: 3c036a99-6937-46e0-9e92-953505fa2e40
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_5_N_CHOICE_1_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_11
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: 7ee4ba38-d988-4fd3-9590-a80c2c37d24c
+    Position: {x: 561, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 0c8a7537-4f88-40de-a664-8b31417b3a21
+    Position: {x: 1037, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 0aa5291b-75cd-4f4d-af3b-f85945408ce4
+    Position: {x: 1277, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 9b5f9a57-7ba7-44ca-87a1-bedad914bb08
+    Position: {x: 1622, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: ae1d15d5-51d4-496f-b019-a4172cb6f92c
+    Position: {x: 1866, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 7ffa76c2-fd76-435a-b23f-78d71bc7f629
+    Position: {x: 2112, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: 58d8c214-ef98-4856-87e6-74d5465ff046
+    Position: {x: 2375, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: bc814cda-de1c-4a2f-9884-797d15e21bf3
+    Position: {x: 328, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: 6d24a76f-4c0c-44ac-a7c0-ce8399adb8b7
+    Position: {x: 799, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: ba31ae5a-4b65-491b-82aa-7876db718021
+    Position: {x: 2622, y: 306}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_N_DIALOGUE_1_10
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: f3181c15-2aea-4fb8-b95e-d3e92a44d0cb
+    Position: {x: 3686, y: 306}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  - NodeGuid: a5b5815e-f619-4d81-a735-84f7df251cae
+    Position: {x: 3686, y: 518}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 3826649b-7afd-488f-b6e2-ec21fad20e54
+    Position: {x: 196, y: 306}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas:
+  - NodeGuid: 7ab8a810-198d-497d-b71e-870120d2a714
+    Position: {x: 3355, y: 330}
+    commmand: LANCE LE FIGHT CONTRE ELLE
+  IfNodeDatas: []
+--- !u!114 &-1809769252749010458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_2_ACT_4_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 90855c5a-7040-4293-bedc-755dfd434053
+    TargetNodeGuid: 77c61557-50c3-4211-86a8-7e1d735461fe
+  - BaseNodeGuid: 18d86082-913d-49af-aa6d-a3cc47745646
+    TargetNodeGuid: 22bd0dd1-da4f-4fd9-8520-e66b100591d2
+  - BaseNodeGuid: 22bd0dd1-da4f-4fd9-8520-e66b100591d2
+    TargetNodeGuid: 77c61557-50c3-4211-86a8-7e1d735461fe
+  - BaseNodeGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+    TargetNodeGuid: 18d86082-913d-49af-aa6d-a3cc47745646
+  - BaseNodeGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+    TargetNodeGuid: 90855c5a-7040-4293-bedc-755dfd434053
+  - BaseNodeGuid: 8d7bcaad-2f34-4f11-a17a-47ed8a1004a0
+    TargetNodeGuid: 6788b0c4-4e9e-4b55-a90a-ab52c0020474
+  - BaseNodeGuid: 6788b0c4-4e9e-4b55-a90a-ab52c0020474
+    TargetNodeGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+  DialogueChoiceNodeDatas:
+  - NodeGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+    Position: {x: 660, y: 335}
+    DialogueNodePorts:
+    - PortGuid: 72f5bff5-60c8-41a8-84d7-ce79bbd850b2
+      InputGuid: 90855c5a-7040-4293-bedc-755dfd434053
+      OutputGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_4_G_CHOICE_2_1
+    - PortGuid: 5ace325e-3c0d-4187-94b0-0ae295b503d6
+      InputGuid: 18d86082-913d-49af-aa6d-a3cc47745646
+      OutputGuid: 4fc25b5c-e6b3-4e21-8cb9-9ee58794ca38
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: GARDIENNE_ACT_4_G_CHOICE_2_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_2_2
+    Duration: 0
+  DialogueNodeDatas:
+  - NodeGuid: 6788b0c4-4e9e-4b55-a90a-ab52c0020474
+    Position: {x: 423, y: 335}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: 18d86082-913d-49af-aa6d-a3cc47745646
+    Position: {x: 1059, y: 472}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_2_4
+    Duration: 0
+  - NodeGuid: 22bd0dd1-da4f-4fd9-8520-e66b100591d2
+    Position: {x: 1274, y: 472}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_2_5
+    Duration: 0
+  - NodeGuid: 90855c5a-7040-4293-bedc-755dfd434053
+    Position: {x: 1059, y: 49}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_G_DIALOGUE_2_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 77c61557-50c3-4211-86a8-7e1d735461fe
+    Position: {x: 1500, y: 236}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 8d7bcaad-2f34-4f11-a17a-47ed8a1004a0
+    Position: {x: 303, y: 335}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-800371466687693781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_5_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 1e267090-dbb5-476a-8889-58b9ebb05176
+    TargetNodeGuid: 782e591c-94e6-4438-838b-5947a10854eb
+  - BaseNodeGuid: 782e591c-94e6-4438-838b-5947a10854eb
+    TargetNodeGuid: e9601d09-3cb2-4ce3-ada4-2de59b4e0c06
+  - BaseNodeGuid: e9601d09-3cb2-4ce3-ada4-2de59b4e0c06
+    TargetNodeGuid: 21b35de5-504d-4c30-bd3b-77fe39e4f6f0
+  - BaseNodeGuid: 21b35de5-504d-4c30-bd3b-77fe39e4f6f0
+    TargetNodeGuid: ff652536-2c52-4615-95a5-55aa205e116c
+  - BaseNodeGuid: ff652536-2c52-4615-95a5-55aa205e116c
+    TargetNodeGuid: 39faa1b3-7188-498a-8c96-0e2367745ed1
+  - BaseNodeGuid: 39faa1b3-7188-498a-8c96-0e2367745ed1
+    TargetNodeGuid: 16950427-fec1-4cc4-8ddf-2dbe80b621a7
+  - BaseNodeGuid: 16950427-fec1-4cc4-8ddf-2dbe80b621a7
+    TargetNodeGuid: 9dc5ec38-b8fe-4a54-9ea0-7258858fefe4
+  - BaseNodeGuid: 9dc5ec38-b8fe-4a54-9ea0-7258858fefe4
+    TargetNodeGuid: e342f39b-46ed-4ee0-b7d6-d00cbdf9e8e5
+  - BaseNodeGuid: e342f39b-46ed-4ee0-b7d6-d00cbdf9e8e5
+    TargetNodeGuid: 35885707-0785-4af8-970d-4f2d170a1828
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 782e591c-94e6-4438-838b-5947a10854eb
+    Position: {x: 246, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: e9601d09-3cb2-4ce3-ada4-2de59b4e0c06
+    Position: {x: 479, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: ff652536-2c52-4615-95a5-55aa205e116c
+    Position: {x: 958, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 39faa1b3-7188-498a-8c96-0e2367745ed1
+    Position: {x: 1235, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 16950427-fec1-4cc4-8ddf-2dbe80b621a7
+    Position: {x: 1477, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 9dc5ec38-b8fe-4a54-9ea0-7258858fefe4
+    Position: {x: 1725, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 21b35de5-504d-4c30-bd3b-77fe39e4f6f0
+    Position: {x: 718, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: e342f39b-46ed-4ee0-b7d6-d00cbdf9e8e5
+    Position: {x: 1962, y: 228}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_1_9
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 35885707-0785-4af8-970d-4f2d170a1828
+    Position: {x: 2177, y: 228}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 1e267090-dbb5-476a-8889-58b9ebb05176
+    Position: {x: 131, y: 228}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-658755904598948172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_3_ACT_4_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 61d7d5b0-4551-4b76-90a6-c3f4b4f4f370
+    TargetNodeGuid: 40ca6a58-5a75-4f48-9fa4-7582ea06ae41
+  - BaseNodeGuid: 44c5ece9-a954-43ac-8f72-7d1c42b15b69
+    TargetNodeGuid: 61d7d5b0-4551-4b76-90a6-c3f4b4f4f370
+  - BaseNodeGuid: 17d014b8-c878-48d9-a6e9-a6cb066149f4
+    TargetNodeGuid: 44c5ece9-a954-43ac-8f72-7d1c42b15b69
+  - BaseNodeGuid: a6079363-2e97-4cf3-b379-441a60446819
+    TargetNodeGuid: 17d014b8-c878-48d9-a6e9-a6cb066149f4
+  - BaseNodeGuid: ba1c9e9c-2445-4a44-84b0-2c949f789480
+    TargetNodeGuid: a6079363-2e97-4cf3-b379-441a60446819
+  - BaseNodeGuid: f15b0ef5-b40d-42df-b0c3-c012362c7782
+    TargetNodeGuid: ba1c9e9c-2445-4a44-84b0-2c949f789480
+  - BaseNodeGuid: 0f685f3f-089a-4a5d-8488-0e74167ae4a3
+    TargetNodeGuid: f15b0ef5-b40d-42df-b0c3-c012362c7782
+  - BaseNodeGuid: 223980db-2ea3-494f-bf2a-5d7c742f5f08
+    TargetNodeGuid: 0f685f3f-089a-4a5d-8488-0e74167ae4a3
+  - BaseNodeGuid: 92634843-df8f-4c3c-b9e6-21f546c62bfd
+    TargetNodeGuid: 223980db-2ea3-494f-bf2a-5d7c742f5f08
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 223980db-2ea3-494f-bf2a-5d7c742f5f08
+    Position: {x: 414, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: 0f685f3f-089a-4a5d-8488-0e74167ae4a3
+    Position: {x: 646, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: f15b0ef5-b40d-42df-b0c3-c012362c7782
+    Position: {x: 883, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_3
+    Duration: 0
+  - NodeGuid: ba1c9e9c-2445-4a44-84b0-2c949f789480
+    Position: {x: 1124, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_4
+    Duration: 0
+  - NodeGuid: a6079363-2e97-4cf3-b379-441a60446819
+    Position: {x: 1476, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_5
+    Duration: 0
+  - NodeGuid: 17d014b8-c878-48d9-a6e9-a6cb066149f4
+    Position: {x: 1714, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_6
+    Duration: 0
+  - NodeGuid: 44c5ece9-a954-43ac-8f72-7d1c42b15b69
+    Position: {x: 1947, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_7
+    Duration: 0
+  - NodeGuid: 61d7d5b0-4551-4b76-90a6-c3f4b4f4f370
+    Position: {x: 2185, y: 193}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_3_8
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 40ca6a58-5a75-4f48-9fa4-7582ea06ae41
+    Position: {x: 2423, y: 193}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 92634843-df8f-4c3c-b9e6-21f546c62bfd
+    Position: {x: 297, y: 193}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &-228590467332464499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_3_ACT_1
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 730b4a45-dce5-49b8-95cf-09fd6c2e9d66
+    TargetNodeGuid: 5678d08c-5801-47f4-ba9d-b8ccf2d07c04
+  - BaseNodeGuid: 5678d08c-5801-47f4-ba9d-b8ccf2d07c04
+    TargetNodeGuid: bb02d2ac-27ee-4243-b5c3-0bb9b28e177f
+  - BaseNodeGuid: bb02d2ac-27ee-4243-b5c3-0bb9b28e177f
+    TargetNodeGuid: b9563f0b-67d3-4926-8db8-3d9bc257395c
+  - BaseNodeGuid: b9563f0b-67d3-4926-8db8-3d9bc257395c
+    TargetNodeGuid: e8d9deaa-a160-4d91-8551-3034bafadd92
+  - BaseNodeGuid: e8d9deaa-a160-4d91-8551-3034bafadd92
+    TargetNodeGuid: 190435a8-169a-4a6b-9a6d-1246ea2ac6fb
+  - BaseNodeGuid: 190435a8-169a-4a6b-9a6d-1246ea2ac6fb
+    TargetNodeGuid: a8109c1b-9f18-4551-903f-0b047ee9baba
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 5678d08c-5801-47f4-ba9d-b8ccf2d07c04
+    Position: {x: 544, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: bb02d2ac-27ee-4243-b5c3-0bb9b28e177f
+    Position: {x: 788, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: e8d9deaa-a160-4d91-8551-3034bafadd92
+    Position: {x: 1277, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_3_4
+    Duration: 0
+  - NodeGuid: 190435a8-169a-4a6b-9a6d-1246ea2ac6fb
+    Position: {x: 1528, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_3_5
+    Duration: 0
+  - NodeGuid: b9563f0b-67d3-4926-8db8-3d9bc257395c
+    Position: {x: 1040, y: 351}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_3_3
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: a8109c1b-9f18-4551-903f-0b047ee9baba
+    Position: {x: 1775, y: 351}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 730b4a45-dce5-49b8-95cf-09fd6c2e9d66
+    Position: {x: 411, y: 351}
+    startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
   IfNodeDatas: []
@@ -78,6 +2309,478 @@ MonoBehaviour:
   _allDialogue:
   - {fileID: 5092307133647520948}
   - {fileID: -4450407729511480810}
+  - {fileID: -228590467332464499}
+  - {fileID: -3790521579029666820}
+  - {fileID: 7447134850066130163}
+  - {fileID: 5945347010235014991}
+  - {fileID: -8382459716534417643}
+  - {fileID: -1809769252749010458}
+  - {fileID: 2652237525602054626}
+  - {fileID: 3044701556174982037}
+  - {fileID: -658755904598948172}
+  - {fileID: -800371466687693781}
+  - {fileID: 3065747689796950114}
+  - {fileID: -6865845715676418741}
+  - {fileID: -6266564984687502268}
+  - {fileID: -5042864154597958090}
+  - {fileID: -2452571459707364085}
+  - {fileID: -3693214306409923745}
+  - {fileID: -6165299909274272571}
+  _dialogueToRename: {fileID: -6165299909274272571}
+  _dialogueNewName: GARDIENNE_Mort_ACT_5_N
+--- !u!114 &2652237525602054626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_1_ACT_4_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 11955789-4005-4198-bdb7-61bb011dc04d
+    TargetNodeGuid: 2e77766b-f361-4893-b9df-4b2ea0a876e9
+  - BaseNodeGuid: 2e77766b-f361-4893-b9df-4b2ea0a876e9
+    TargetNodeGuid: b59742f9-5090-4495-a7bc-402b72dc1633
+  - BaseNodeGuid: b59742f9-5090-4495-a7bc-402b72dc1633
+    TargetNodeGuid: ad7604b3-1e6c-47da-a408-c21c5b792d27
+  - BaseNodeGuid: ad7604b3-1e6c-47da-a408-c21c5b792d27
+    TargetNodeGuid: 95672c0b-d1ff-45e7-953d-abe42c0a57bf
+  - BaseNodeGuid: 95672c0b-d1ff-45e7-953d-abe42c0a57bf
+    TargetNodeGuid: 1cb76438-60d0-497c-a820-d036cc51e361
+  - BaseNodeGuid: 1cb76438-60d0-497c-a820-d036cc51e361
+    TargetNodeGuid: 92122d3e-1287-46c8-b526-0d7d23d465e5
+  - BaseNodeGuid: 92122d3e-1287-46c8-b526-0d7d23d465e5
+    TargetNodeGuid: 834f71f9-6a99-4890-971e-80845522e7e8
+  - BaseNodeGuid: 834f71f9-6a99-4890-971e-80845522e7e8
+    TargetNodeGuid: b18714ed-d0ee-47fb-a313-4d00f5c5487a
+  - BaseNodeGuid: b18714ed-d0ee-47fb-a313-4d00f5c5487a
+    TargetNodeGuid: d3887d9a-a8b1-4870-a2c4-b16e8fb899e5
+  - BaseNodeGuid: d3887d9a-a8b1-4870-a2c4-b16e8fb899e5
+    TargetNodeGuid: f1bc7e52-ab9c-4c65-b988-5e2b9272bd8c
+  - BaseNodeGuid: f1bc7e52-ab9c-4c65-b988-5e2b9272bd8c
+    TargetNodeGuid: 7ac91d00-c7a5-4149-a954-ddd70bc2cac6
+  - BaseNodeGuid: 7ac91d00-c7a5-4149-a954-ddd70bc2cac6
+    TargetNodeGuid: 6663395f-b1cf-44b3-a69d-45dc9b472a06
+  - BaseNodeGuid: 6663395f-b1cf-44b3-a69d-45dc9b472a06
+    TargetNodeGuid: 7ce244fe-1e9c-469b-aaca-a286557d56b4
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: ad7604b3-1e6c-47da-a408-c21c5b792d27
+    Position: {x: 921, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_4_B_DIALOGUE_GARDIENNE_1_1
+    Duration: 0
+  - NodeGuid: 7ac91d00-c7a5-4149-a954-ddd70bc2cac6
+    Position: {x: 3370, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_4_B_DIALOGUE_GARDIENNE_1_1
+    Duration: 0
+  - NodeGuid: b18714ed-d0ee-47fb-a313-4d00f5c5487a
+    Position: {x: 2402, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 6663395f-b1cf-44b3-a69d-45dc9b472a06
+    Position: {x: 3707, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_9
+    Duration: 0
+  - NodeGuid: f1bc7e52-ab9c-4c65-b988-5e2b9272bd8c
+    Position: {x: 3006, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_8
+    Duration: 0
+  - NodeGuid: d3887d9a-a8b1-4870-a2c4-b16e8fb899e5
+    Position: {x: 2772, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 834f71f9-6a99-4890-971e-80845522e7e8
+    Position: {x: 2012, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 2e77766b-f361-4893-b9df-4b2ea0a876e9
+    Position: {x: 335, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_1
+    Duration: 0
+  - NodeGuid: b59742f9-5090-4495-a7bc-402b72dc1633
+    Position: {x: 561, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 95672c0b-d1ff-45e7-953d-abe42c0a57bf
+    Position: {x: 1276, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: 1cb76438-60d0-497c-a820-d036cc51e361
+    Position: {x: 1517, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 92122d3e-1287-46c8-b526-0d7d23d465e5
+    Position: {x: 1767, y: 240}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_1_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 7ce244fe-1e9c-469b-aaca-a286557d56b4
+    Position: {x: 3987, y: 240}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 11955789-4005-4198-bdb7-61bb011dc04d
+    Position: {x: 230, y: 240}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &3044701556174982037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_2_ACT_4_B
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 308cc20a-0d4d-4eaa-88c6-160d5eb2bd49
+    TargetNodeGuid: 697c3325-829a-4a0e-ba0f-a2c516ed952c
+  - BaseNodeGuid: ee432046-4d51-47f7-b7d7-06fba477430d
+    TargetNodeGuid: 308cc20a-0d4d-4eaa-88c6-160d5eb2bd49
+  - BaseNodeGuid: be202962-0886-46ff-a3d8-d19f895dc976
+    TargetNodeGuid: 84882289-8cf2-4bc0-a1ca-e0e1a3411a0a
+  - BaseNodeGuid: 84882289-8cf2-4bc0-a1ca-e0e1a3411a0a
+    TargetNodeGuid: c85beb34-711d-4a67-955a-d814036f15b0
+  - BaseNodeGuid: c85beb34-711d-4a67-955a-d814036f15b0
+    TargetNodeGuid: ee432046-4d51-47f7-b7d7-06fba477430d
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 84882289-8cf2-4bc0-a1ca-e0e1a3411a0a
+    Position: {x: 379, y: 263}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: c85beb34-711d-4a67-955a-d814036f15b0
+    Position: {x: 629, y: 263}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: ee432046-4d51-47f7-b7d7-06fba477430d
+    Position: {x: 873, y: 263}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_4_B_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: 308cc20a-0d4d-4eaa-88c6-160d5eb2bd49
+    Position: {x: 1118, y: 263}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 697c3325-829a-4a0e-ba0f-a2c516ed952c
+    Position: {x: 1352, y: 263}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: be202962-0886-46ff-a3d8-d19f895dc976
+    Position: {x: 252, y: 263}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &3065747689796950114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_2_ACT_5_G
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 144a615d-2955-4de7-8ae8-4b47027daab5
+    TargetNodeGuid: d5cd690d-5097-4ade-930b-e47dc803d5a7
+  - BaseNodeGuid: d5cd690d-5097-4ade-930b-e47dc803d5a7
+    TargetNodeGuid: cbb47b3b-150a-468f-aa5e-652927950bac
+  - BaseNodeGuid: cbb47b3b-150a-468f-aa5e-652927950bac
+    TargetNodeGuid: e3518f49-d151-414e-9fb5-c898a6889556
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: d5cd690d-5097-4ade-930b-e47dc803d5a7
+    Position: {x: 359, y: 311}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: cbb47b3b-150a-468f-aa5e-652927950bac
+    Position: {x: 606, y: 311}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_5_G_DIALOGUE_2_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: e3518f49-d151-414e-9fb5-c898a6889556
+    Position: {x: 841, y: 311}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 144a615d-2955-4de7-8ae8-4b47027daab5
+    Position: {x: 241, y: 311}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &5092307133647520948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +2823,7 @@ MonoBehaviour:
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 195f3f2b-84bf-42e9-a678-2d15dab9ac8a
-    Position: {x: 204, y: 198.4}
+    Position: {x: 204, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -138,7 +2841,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: a4a89868-6a11-4d18-8b0a-a646405096d3
-    Position: {x: 442.4, y: 198.4}
+    Position: {x: 442, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -156,7 +2859,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_2
     Duration: 0
   - NodeGuid: 1fadbfa4-ba22-4915-aefd-447eb98c7b26
-    Position: {x: 698.4, y: 198.4}
+    Position: {x: 698, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -174,7 +2877,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_3
     Duration: 0
   - NodeGuid: c75e90a2-2f8d-4452-b46c-e4f196ffb839
-    Position: {x: 951.2, y: 198.4}
+    Position: {x: 951, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -192,7 +2895,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_4
     Duration: 0
   - NodeGuid: c944f44a-749f-4dfe-9d36-9d63a280ab16
-    Position: {x: 1214.4, y: 198.4}
+    Position: {x: 1214, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -210,7 +2913,7 @@ MonoBehaviour:
       LanguageGenericType: EWEN_ACT_1_DIALOGUE_GARDIENNE_1
     Duration: 0
   - NodeGuid: cb7a6767-db27-4c77-9193-30db2ef45695
-    Position: {x: 1478.4, y: 198.4}
+    Position: {x: 1478, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -228,7 +2931,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_5
     Duration: 0
   - NodeGuid: db60a6f7-d2bc-4e08-bf1d-360d73652671
-    Position: {x: 1732.8, y: 198.4}
+    Position: {x: 1733, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -246,7 +2949,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_6
     Duration: 0
   - NodeGuid: 2d1043c8-2f42-4e50-9f8c-b24e1075bb1d
-    Position: {x: 3824.8, y: 198.4}
+    Position: {x: 3825, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -264,7 +2967,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_11
     Duration: 0
   - NodeGuid: bd1ab796-3f0a-4435-803c-134f4a0d935c
-    Position: {x: 2900.8, y: -68.8}
+    Position: {x: 2901, y: -69}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -282,7 +2985,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_9
     Duration: 0
   - NodeGuid: 84a36ed3-717a-4d39-979e-b4c63852b93a
-    Position: {x: 1996, y: 198.4}
+    Position: {x: 1996, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -300,7 +3003,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_7
     Duration: 0
   - NodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
-    Position: {x: 3538.4, y: 198.4}
+    Position: {x: 3538, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -318,7 +3021,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_1_DIALOGUE_1_10
     Duration: 0
   - NodeGuid: e683e6ff-f400-45fd-a66f-2e7d5870f0cc
-    Position: {x: 2258.4, y: 198.4}
+    Position: {x: 2258, y: 198}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -338,13 +3041,13 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e2a51431-7773-4f2d-b469-6096a7389dd7
-    Position: {x: 4108.8, y: 198.4}
+    Position: {x: 4109, y: 198}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas: []
   StartNodeDatas:
   - NodeGuid: aa6fa136-5a6e-4044-91c2-6ee34bea851a
-    Position: {x: 48.8, y: 198.4}
+    Position: {x: 49, y: 198}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas:
@@ -352,6 +3055,248 @@ MonoBehaviour:
     Position: {x: 2536, y: 288}
     commmand: apparaitre le souvenir
   - NodeGuid: 406e8d7e-2949-4974-aac1-c8be0c0e33cb
-    Position: {x: 3171.2, y: 288}
+    Position: {x: 3171, y: 288}
     commmand: faire le choix
+  IfNodeDatas: []
+--- !u!114 &5945347010235014991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_3_ACT_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: b4eb5c96-8fd1-43bb-b37b-3264b1071958
+    TargetNodeGuid: 2c2d967d-4244-4b4c-baf6-15fe9edebc05
+  - BaseNodeGuid: 2c2d967d-4244-4b4c-baf6-15fe9edebc05
+    TargetNodeGuid: d3fdf7a3-9e46-4c9d-ae19-0be21be633d4
+  - BaseNodeGuid: bb73cfe3-380c-4643-a954-31e3fe3b104b
+    TargetNodeGuid: d90253d8-f270-4586-9ab6-94fa45d57d3a
+  - BaseNodeGuid: 075fd6d9-ab69-4ec3-9b8c-2e0f905edbca
+    TargetNodeGuid: bb73cfe3-380c-4643-a954-31e3fe3b104b
+  - BaseNodeGuid: 95d570f3-9d32-4cc3-88ae-b427f2b94f7b
+    TargetNodeGuid: 075fd6d9-ab69-4ec3-9b8c-2e0f905edbca
+  - BaseNodeGuid: d3fdf7a3-9e46-4c9d-ae19-0be21be633d4
+    TargetNodeGuid: 95d570f3-9d32-4cc3-88ae-b427f2b94f7b
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 2c2d967d-4244-4b4c-baf6-15fe9edebc05
+    Position: {x: 430, y: 234}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_3_1
+    Duration: 0
+  - NodeGuid: d3fdf7a3-9e46-4c9d-ae19-0be21be633d4
+    Position: {x: 673, y: 234}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_3_2
+    Duration: 0
+  - NodeGuid: 95d570f3-9d32-4cc3-88ae-b427f2b94f7b
+    Position: {x: 915, y: 234}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_3_3
+    Duration: 0
+  - NodeGuid: 075fd6d9-ab69-4ec3-9b8c-2e0f905edbca
+    Position: {x: 1143, y: 234}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_3_4
+    Duration: 0
+  - NodeGuid: bb73cfe3-380c-4643-a954-31e3fe3b104b
+    Position: {x: 1376, y: 234}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -4881393660330923447}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_3_5
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: d90253d8-f270-4586-9ab6-94fa45d57d3a
+    Position: {x: 1603, y: 234}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: b4eb5c96-8fd1-43bb-b37b-3264b1071958
+    Position: {x: 298, y: 234}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &7447134850066130163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: GARDIENNE_Dialogue_2_ACT_3
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: d4da1b1d-080c-4cdd-b8bb-958996def8ff
+    TargetNodeGuid: 41da5d51-2bfd-4f41-ab32-1866e356fbad
+  - BaseNodeGuid: 41da5d51-2bfd-4f41-ab32-1866e356fbad
+    TargetNodeGuid: 4ac3e355-9580-4a47-b74b-cef1cb45e6bc
+  - BaseNodeGuid: 4ac3e355-9580-4a47-b74b-cef1cb45e6bc
+    TargetNodeGuid: 00d62688-a801-42c5-8d6f-540d60d7e2be
+  - BaseNodeGuid: 00d62688-a801-42c5-8d6f-540d60d7e2be
+    TargetNodeGuid: 41cda3a9-8578-4dea-ae8a-22de290fb4c6
+  - BaseNodeGuid: 41cda3a9-8578-4dea-ae8a-22de290fb4c6
+    TargetNodeGuid: ec272b9c-4073-418c-90f0-b569771da995
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 00d62688-a801-42c5-8d6f-540d60d7e2be
+    Position: {x: 903, y: 324}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_2_3
+    Duration: 0
+  - NodeGuid: 41da5d51-2bfd-4f41-ab32-1866e356fbad
+    Position: {x: 424, y: 324}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_2_1
+    Duration: 0
+  - NodeGuid: 4ac3e355-9580-4a47-b74b-cef1cb45e6bc
+    Position: {x: 658, y: 324}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_2_2
+    Duration: 0
+  - NodeGuid: 41cda3a9-8578-4dea-ae8a-22de290fb4c6
+    Position: {x: 1141, y: 324}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: GARDIENNE_ACT_3_DIALOGUE_2_4
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: ec272b9c-4073-418c-90f0-b569771da995
+    Position: {x: 1390, y: 324}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: d4da1b1d-080c-4cdd-b8bb-958996def8ff
+    Position: {x: 294, y: 324}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
   IfNodeDatas: []
