@@ -41,6 +41,6 @@ public class MirrorsManager : MonoBehaviour
     public Mirror GetRandomMirror() 
     {
         System.Random rnd = new System.Random();
-        return mirrors[rnd.Next(mirrors.Count)];
+        return mirrors[rnd.Next(1, mirrors.Count)];
     }
 }

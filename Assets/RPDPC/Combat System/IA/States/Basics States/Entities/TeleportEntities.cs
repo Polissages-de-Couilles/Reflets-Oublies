@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -89,9 +90,13 @@ public class TeleportEntities : StateEntityBase
         if (HaveToSeePlayer) 
         { 
             PlayerIsVisible piv = new PlayerIsVisible();
-            piv.viewAngle = 180;
+            piv.viewAngle = 360;
             piv.Init(parent, player, this);
-            if (!piv.isConditionFulfilled()) return;
+            if (!piv.isConditionFulfilled())
+            {
+                Debug.Log("HAVEN'T SEEN PLAYER");
+                return;
+            }
             parent.transform.rotation = Quaternion.LookRotation(player.transform.position - parent.transform.position, parent.transform.up);
         }
 
@@ -106,16 +111,12 @@ public class TeleportEntities : StateEntityBase
             yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[0]).length);
         }
 
-        Teleport();
+            Teleport();
 
         if (animator != null)
         {
             animator.Play(animationNames[1]);
             yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[1]).length);
-        }
-        else
-        {
-            yield return new WaitForSeconds(2);
         }
 
         ExitState();

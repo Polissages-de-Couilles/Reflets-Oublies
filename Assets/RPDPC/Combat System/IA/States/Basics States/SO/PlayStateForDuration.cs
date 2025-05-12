@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Game/IA/States/Base/PlayStateForDuration")]
 public class PlayStateForDuration : StateBase
 {
     [SerializeField] StateBase m_State;
