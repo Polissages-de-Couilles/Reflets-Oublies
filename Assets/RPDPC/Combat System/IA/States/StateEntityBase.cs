@@ -116,6 +116,12 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        StateBase State,   //PlayStateForDuration
+        float duration
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
