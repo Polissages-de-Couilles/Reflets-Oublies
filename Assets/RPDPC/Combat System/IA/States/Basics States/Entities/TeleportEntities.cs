@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class TeleportEntities : StateEntityBase
 {
@@ -53,7 +54,8 @@ public class TeleportEntities : StateEntityBase
         switch (teleportMode)
         {
             case TeleportMode.SymetricPoint:
-                teleportDestination = SymetricPoint - parent.transform.position;
+                teleportDestination = SymetricPoint - (parent.transform.position - SymetricPoint);
+                Debug.Log("TELEPORT " + teleportDestination);
                 break;
             case TeleportMode.SetPoint:
                 teleportDestination = SetPoint;
@@ -97,10 +99,12 @@ public class TeleportEntities : StateEntityBase
                 Debug.Log("HAVEN'T SEEN PLAYER");
                 return;
             }
-            parent.transform.rotation = Quaternion.LookRotation(player.transform.position - parent.transform.position, parent.transform.up);
         }
 
         parent.transform.position = teleportDestination;
+        Quaternion LookAtRotation = Quaternion.LookRotation(player.transform.position - parent.transform.position, parent.transform.up);
+        LookAtRotation = Quaternion.Euler(parent.transform.rotation.eulerAngles.x, LookAtRotation.eulerAngles.y, parent.transform.rotation.eulerAngles.z);
+        parent.transform.rotation = LookAtRotation;
     }
 
     IEnumerator DoTeleportation()

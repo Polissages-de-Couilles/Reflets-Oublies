@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc25d19570c62f544b8916054a9c3bce, type: 3}
   m_Name: TimeForEwenToAttack
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 3
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 1
   animationNames: []
-  m_State: {fileID: 11400000, guid: 67638432bbe05a240983aaaf98eb57f3, type: 2}
-  m_Duration: 10
+  isAttack: 0
+  m_State: {fileID: 11400000, guid: a9e59b12b8c95c943b3a0d37440f89fa, type: 2}
+  m_Duration: 4

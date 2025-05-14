@@ -9,10 +9,12 @@ public class OnlyDoNTime : ConditionBase
 {
     [SerializeField] int nTime;
     StateEntityBase seb;
+    GameObject parent;
 
     public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         this.seb = seb;
+        this.parent = parent;
     }
 
     public override bool isConditionFulfilled()

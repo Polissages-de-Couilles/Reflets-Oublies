@@ -11,7 +11,6 @@ public class MirrorLaser : MonoBehaviour
 
     public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm)
     {
-        //GetComponent<MeshRenderer>().enabled = false;
 
         Material material = new Material(Shader.Find("Universal Render Pipeline/Simple Lit"));
         material.SetFloat("_Surface", 1.0f);

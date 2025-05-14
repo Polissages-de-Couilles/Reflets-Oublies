@@ -38,7 +38,7 @@ public class PlayStateForDurationEntity : StateEntityBase
     {
         StateEntityBase seb = State.PrepareEntityInstance();
 
-        seb.InitGlobalVariables(manager, parent, player, State.conditions, -1, State.isHostileState, animator, State.animationNames);
+        seb.InitGlobalVariables(manager, parent, player, State.conditions, -1, State.isHostileState, animator, State.animationNames, State.isAttack);
         seb.AddHostileToPlayerState();
         seb.OnEnterState();
         yield return new WaitForSeconds(duration);

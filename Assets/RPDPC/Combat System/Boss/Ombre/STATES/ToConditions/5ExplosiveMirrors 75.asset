@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
+  m_Name: 5ExplosiveMirrors 75
+  m_EditorClassIdentifier: 
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
+  isHostileState: 1
+  animationNames: []
+  isAttack: 0
+  attacks:
+  - spawnerID: 0
+    prefabProjectiles:
+    - prefab: {fileID: 6347637203512908725, guid: afe988e07322129468f98ce8c2ff66f3, type: 3}
+      delayBeforeSpawn: 0
+      damageDetails:
+        damage: 10
+        doesStun: 1
+        stunDuration: 0.5
+        doesKnockback: 1
+        knockbackForce: 1
+        doNotDestroyAtTriggerEnter: 1
+    - prefab: {fileID: 6347637203512908725, guid: afe988e07322129468f98ce8c2ff66f3, type: 3}
+      delayBeforeSpawn: 0
+      damageDetails:
+        damage: 10
+        doesStun: 1
+        stunDuration: 0.5
+        doesKnockback: 1
+        knockbackForce: 1
+        doNotDestroyAtTriggerEnter: 1
+    - prefab: {fileID: 6347637203512908725, guid: afe988e07322129468f98ce8c2ff66f3, type: 3}
+      delayBeforeSpawn: 0
+      damageDetails:
+        damage: 10
+        doesStun: 1
+        stunDuration: 0.5
+        doesKnockback: 1
+        knockbackForce: 1
+        doNotDestroyAtTriggerEnter: 1
+    - prefab: {fileID: 6347637203512908725, guid: afe988e07322129468f98ce8c2ff66f3, type: 3}
+      delayBeforeSpawn: 0
+      damageDetails:
+        damage: 10
+        doesStun: 1
+        stunDuration: 0.5
+        doesKnockback: 1
+        knockbackForce: 1
+        doNotDestroyAtTriggerEnter: 1
+    - prefab: {fileID: 6347637203512908725, guid: afe988e07322129468f98ce8c2ff66f3, type: 3}
+      delayBeforeSpawn: 0
+      damageDetails:
+        damage: 10
+        doesStun: 1
+        stunDuration: 0.5
+        doesKnockback: 1
+        knockbackForce: 1
+        doNotDestroyAtTriggerEnter: 1
+    attackDuration: 3
+    animationID: 0
+    animationSpeed:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 0
+      m_PostInfinity: 0
+      m_RotationOrder: 0
+  doAllAttacks: 1
+  timeWithoutAttackAfter: {x: 0, y: 0}

@@ -12,18 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
   m_Name: TeleportMirrorsThenSmallProjectile
   m_EditorClassIdentifier: 
-  priority: 1
+  priority: 2
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     not: 0
     otherParts: []
-  - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 7ab9e24ee2c23d948bbd5ffd5c8b4865, type: 2}
-    not: 0
-    otherParts: []
   isHostileState: 1
   animationNames: []
+  isAttack: 1
   States:
   - delayBeforePlay: 0
     state: {fileID: 11400000, guid: 0aa852c04058c61489c1c071eec83ab1, type: 2}

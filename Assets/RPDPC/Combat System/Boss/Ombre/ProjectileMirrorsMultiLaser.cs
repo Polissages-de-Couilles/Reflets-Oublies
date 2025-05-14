@@ -19,6 +19,7 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
         for (int i = 1; i < mirrors.Count; i++)
         {
             GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+            capsule.GetComponent<CapsuleCollider>().enabled = false;
             capsule.GetComponent<CapsuleCollider>().isTrigger = true;
             AttackCollider ac = capsule.AddComponent<AttackCollider>();
             ac.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);

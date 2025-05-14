@@ -20,54 +20,55 @@ MonoBehaviour:
     otherParts: []
   isHostileState: 1
   animationNames: []
+  isAttack: 0
   attacks:
   - spawnerID: 0
     prefabProjectiles:
     - prefab: {fileID: 3682365054635134866, guid: bd9feb4c50b44f546a8032f3978c85a7, type: 3}
       delayBeforeSpawn: 0
       damageDetails:
-        damage: 0
+        damage: 5
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
+        doNotDestroyAtTriggerEnter: 1
     - prefab: {fileID: 3682365054635134866, guid: 7903b70e68b0b7f45a3c00fc76f4eb7e, type: 3}
       delayBeforeSpawn: 0.5
       damageDetails:
-        damage: 0
+        damage: 5
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
+        doNotDestroyAtTriggerEnter: 1
     - prefab: {fileID: 3682365054635134866, guid: 560a13d15d9139244900ab2710f2ab18, type: 3}
       delayBeforeSpawn: 1
       damageDetails:
-        damage: 0
+        damage: 5
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
+        doNotDestroyAtTriggerEnter: 1
     - prefab: {fileID: 3682365054635134866, guid: a61c5358449dc09468760b8f34a43bdb, type: 3}
       delayBeforeSpawn: 1.5
       damageDetails:
-        damage: 0
+        damage: 5
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
+        doNotDestroyAtTriggerEnter: 1
     - prefab: {fileID: 3682365054635134866, guid: cd3ca1408df6f4243827c60d6e584637, type: 3}
       delayBeforeSpawn: 2
       damageDetails:
-        damage: 0
+        damage: 5
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
+        doNotDestroyAtTriggerEnter: 1
     attackDuration: 2.5
     animationID: 0
     animationSpeed:
@@ -76,5 +77,5 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-  doAllAttacks: 0
+  doAllAttacks: 1
   timeWithoutAttackAfter: {x: 0, y: 0}

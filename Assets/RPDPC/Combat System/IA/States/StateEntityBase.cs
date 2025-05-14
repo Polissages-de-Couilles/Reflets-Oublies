@@ -11,11 +11,12 @@ public abstract class StateEntityBase
     protected GameObject player;
     protected Animator animator;
     protected List<string> animationNames;
+    public bool isAttack;
     public float priority;
     protected List<ConditionExpression> conditions;
     public bool isHostileState;
 
-    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator, List<string> animationNames)
+    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator, List<string> animationNames, bool isAttack)
     {
         this.manager = manager;
         this.parent = parent;
@@ -25,6 +26,7 @@ public abstract class StateEntityBase
         this.isHostileState = isHostileState;
         this.animator = animator;
         this.animationNames = new (animationNames);
+        this.isAttack = isAttack;
         foreach (ConditionExpression c in conditions)
         {
             c.baseCondition.Init(parent, player, this);

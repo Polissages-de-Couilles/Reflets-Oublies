@@ -8,22 +8,26 @@ public class BotStunAndKnockbackManager : StunAndKnockbackManagerBase
 
     [HideInInspector] public bool Stunned = false;
     [SerializeField] bool canBeStunned = true;
+    [SerializeField] bool canBeKnockbacked = true;
 
     public override void ApplyKnockback(float knockbackForce, KnockbackMode mode, GameObject attacker, GameObject attacked, Vector3 collisionPosWhenTouched)
     {
-        rb = GetComponent<Rigidbody>();
-        Vector3 finalPos = new Vector3();
-        switch (mode)
+        if (canBeKnockbacked)
         {
-            case KnockbackMode.MoveAwayFromAttackCollision:
-                finalPos = attacked.transform.position + (collisionPosWhenTouched - attacked.transform.position).normalized * knockbackForce;
-                break;
-            case KnockbackMode.MoveAwayFromAttacker:
-                finalPos = attacked.transform.position - (attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
-                break;
+            rb = GetComponent<Rigidbody>();
+            Vector3 finalPos = new Vector3();
+            switch (mode)
+            {
+                case KnockbackMode.MoveAwayFromAttackCollision:
+                    finalPos = attacked.transform.position + (collisionPosWhenTouched - attacked.transform.position).normalized * knockbackForce;
+                    break;
+                case KnockbackMode.MoveAwayFromAttacker:
+                    finalPos = attacked.transform.position - (attacker.transform.position - attacked.transform.position).normalized * knockbackForce;
+                    break;
+            }
+            Debug.Log(gameObject + " : Knockback from : " + attacked.transform.position + " to " + finalPos);
+            StartCoroutine(ApplyKnockbackEnum(finalPos, attacked.transform.position));
         }
-        Debug.Log(gameObject + " : Knockback from : " + attacked.transform.position + " to " + finalPos);
-        StartCoroutine(ApplyKnockbackEnum(finalPos, attacked.transform.position));
     }
 
     public override void ApplyStun(float stunDuration)

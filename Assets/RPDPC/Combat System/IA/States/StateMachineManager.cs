@@ -9,7 +9,7 @@ public class StateMachineManager : MonoBehaviour
     [SerializeField] StateBase[] states;
     List<StateEntityBase> stateEntities = new List<StateEntityBase>();
     StateEntityBase currentState;
-    bool prioritizeAttack = true;
+    [SerializeField] bool prioritizeAttack = true;
 
     Dictionary<StateEntityBase, int> numberOfTimeGoesIntoState = new Dictionary<StateEntityBase, int>();
 
@@ -19,6 +19,8 @@ public class StateMachineManager : MonoBehaviour
     [SerializeField] Animator animator;
     static List<StateMachineManager> alreadyStopedStateMachines = new List<StateMachineManager>();
 
+    float lastStopAttackDuration;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +29,7 @@ public class StateMachineManager : MonoBehaviour
         foreach (StateBase state in states)
         {
             StateEntityBase stateEntity = state.PrepareEntityInstance();
-            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator, state.animationNames);
+            stateEntity.InitGlobalVariables(this, gameObject, player, state.conditions, state.priority, state.isHostileState, animator, state.animationNames, state.isAttack);
             stateEntities.Add(stateEntity);
             numberOfTimeGoesIntoState.Add(stateEntity, 0);
         }
@@ -59,9 +61,9 @@ public class StateMachineManager : MonoBehaviour
         Dictionary<float, List<StateEntityBase>> listStateWithAbsolutePiority = new Dictionary<float, List<StateEntityBase>>();
         foreach (StateEntityBase state in stateEntities)
         {
-            if ((prioritizeAttack && (state is AttackEntity || state is ProjectileAttackEntity)) || state is StunEntity || state is TalkingEntity)
+            if ((prioritizeAttack && (state is AttackEntity || state is ProjectileAttackEntity || state.isAttack)) || state is StunEntity || state is TalkingEntity)
             {
-                if (currentState is AttackEntity || currentState is ProjectileAttackEntity || currentState is StunEntity || currentState is TalkingEntity)
+                if (currentState is AttackEntity || currentState is ProjectileAttackEntity || currentState is StunEntity || currentState is TalkingEntity || (currentState != null && currentState.isAttack))
                 {
                     if (state.priority > minExcluStatePrio && state.isStateValid())
                     {
@@ -87,7 +89,7 @@ public class StateMachineManager : MonoBehaviour
                     }
                 }
             }
-            else if (state is not AttackEntity && state is not ProjectileAttackEntity)
+            else if (state is not AttackEntity && state is not ProjectileAttackEntity && !state.isAttack)
             {
                 if (state.priority > minExcluStatePrio && state.isStateValid())
                 {
@@ -125,7 +127,7 @@ public class StateMachineManager : MonoBehaviour
                 currentState.OnEndState();
             }
             currentState = highestState;
-            numberOfTimeGoesIntoState[currentState] += 1;
+            numberOfTimeGoesIntoState[currentState] = numberOfTimeGoesIntoState[currentState] + 1;
             currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
@@ -158,7 +160,7 @@ public class StateMachineManager : MonoBehaviour
                 currentState.OnEndState();
             }
             currentState = foundedState;
-            numberOfTimeGoesIntoState[currentState] += 1;
+            numberOfTimeGoesIntoState[currentState] = numberOfTimeGoesIntoState[currentState] + 1;
             currentState.AddHostileToPlayerState();
             currentState.OnEnterState();
             currentState.onActionFinished += StateEnded;
@@ -195,6 +197,8 @@ public class StateMachineManager : MonoBehaviour
 
     public void StopPrioritizeAttack(float duration)
     {
+        StopCoroutine(StopPrioritizeAttackEnum(lastStopAttackDuration));
+        lastStopAttackDuration = duration;
         prioritizeAttack = false;
         StartCoroutine(StopPrioritizeAttackEnum(duration));
     }
