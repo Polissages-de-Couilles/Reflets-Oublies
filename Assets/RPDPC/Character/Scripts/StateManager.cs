@@ -69,17 +69,17 @@ public class StateManager : MonoBehaviour
 
     public void addHostileEnemy(GameObject enemy)
     {
-        Debug.Log("Add hostile State");
+        //Debug.Log("Add hostile State");
         hostileEnemies.Add(enemy);
         OnFightStateChanged?.Invoke(true);
     }
     public void removeHostileEnemy(GameObject enemy)
     {
-        Debug.Log("Remove hostile State");
+        //Debug.Log("Remove hostile State");
         hostileEnemies.Remove(enemy);
         if (hostileEnemies.Count == 0)
         {
-            Debug.Log("No hostile enemies");
+            //Debug.Log("No hostile enemies");
             OnFightStateChanged?.Invoke(false);
         }
     }
