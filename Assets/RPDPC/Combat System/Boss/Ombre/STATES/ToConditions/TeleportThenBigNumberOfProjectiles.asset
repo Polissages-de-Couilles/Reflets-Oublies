@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
   m_Name: TeleportThenBigNumberOfProjectiles
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 1
   animationNames: []
   isAttack: 1
@@ -21,4 +25,4 @@ MonoBehaviour:
   - delayBeforePlay: 0
     state: {fileID: 11400000, guid: c859451cd3971794789987450db24fc8, type: 2}
   - delayBeforePlay: 0
-    state: {fileID: 11400000}
+    state: {fileID: 11400000, guid: 3465f3faec76193478fac493c2110ea2, type: 2}

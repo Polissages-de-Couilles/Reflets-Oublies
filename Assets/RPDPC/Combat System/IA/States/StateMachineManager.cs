@@ -197,10 +197,13 @@ public class StateMachineManager : MonoBehaviour
 
     public void StopPrioritizeAttack(float duration)
     {
-        StopCoroutine(StopPrioritizeAttackEnum(lastStopAttackDuration));
-        lastStopAttackDuration = duration;
-        prioritizeAttack = false;
-        StartCoroutine(StopPrioritizeAttackEnum(duration));
+        if (duration != 0) 
+        {
+            StopCoroutine(StopPrioritizeAttackEnum(lastStopAttackDuration));
+            lastStopAttackDuration = duration;
+            prioritizeAttack = false;
+            StartCoroutine(StopPrioritizeAttackEnum(duration));
+        }
     }
 
     IEnumerator StopPrioritizeAttackEnum(float duration)

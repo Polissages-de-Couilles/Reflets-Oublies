@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ProjectileLaunchAtMirror : ProjectileBase
@@ -8,9 +9,17 @@ public class ProjectileLaunchAtMirror : ProjectileBase
     [SerializeField] int mirrorToAim;
     [SerializeField] int nbMaxOfBounces;
     [SerializeField] float speed;
+    
     int nbBounces = 0;
     Vector3 direction;
     MirrorsManager mm;
+
+    float timeWithoutReflect = 0f;
+
+    private void Update()
+    {
+        timeWithoutReflect += Time.deltaTime;
+    }
 
     protected override void LaunchProjectile()
     {
@@ -45,11 +54,21 @@ public class ProjectileLaunchAtMirror : ProjectileBase
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Mirror>() != null)
+        if (timeWithoutReflect > 0.2f)
         {
-            nbBounces++;
-            direction = Vector3.Reflect(direction, other.transform.forward);
-            direction.y = 0;
+            if (other.gameObject.GetComponent<Mirror>() != null)
+            {
+                nbBounces++;
+                direction = Vector3.Reflect(direction, other.transform.forward);
+                direction.y = 0;
+                timeWithoutReflect = 0f;
+            }
+            else if (other.gameObject.GetComponentInParent<ProjectileExplosiveMirror>() != null && !other.gameObject.GetComponentInParent<ProjectileExplosiveMirror>().IsDestroyed())
+            {
+                direction = Vector3.Reflect(direction, other.transform.forward);
+                direction.y = 0;
+                timeWithoutReflect = 0f;
+            }
         }
     }
 }
