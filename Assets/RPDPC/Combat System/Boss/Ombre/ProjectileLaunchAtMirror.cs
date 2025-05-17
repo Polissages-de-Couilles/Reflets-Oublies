@@ -39,6 +39,10 @@ public class ProjectileLaunchAtMirror : ProjectileBase
         {
             transform.position += direction * Time.deltaTime * speed;
             yield return new WaitForFixedUpdate();
+            if (Vector3.Distance(new Vector3(-230, 63, 584), transform.position) > 20)
+            {
+                Destroy(gameObject);
+            }
         }
         Destroy(gameObject);
     }

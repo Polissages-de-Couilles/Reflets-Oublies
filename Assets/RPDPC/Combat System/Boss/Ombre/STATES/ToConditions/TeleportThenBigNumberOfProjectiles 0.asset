@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc25d19570c62f544b8916054a9c3bce, type: 3}
-  m_Name: TimeForEwenToAttack
+  m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
+  m_Name: TeleportThenBigNumberOfProjectiles 0
   m_EditorClassIdentifier: 
-  priority: 6
+  priority: 2
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
@@ -20,6 +20,9 @@ MonoBehaviour:
     otherParts: []
   isHostileState: 1
   animationNames: []
-  isAttack: 0
-  m_State: {fileID: 11400000, guid: a9e59b12b8c95c943b3a0d37440f89fa, type: 2}
-  m_Duration: 4
+  isAttack: 1
+  States:
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: c859451cd3971794789987450db24fc8, type: 2}
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: 3465f3faec76193478fac493c2110ea2, type: 2}
