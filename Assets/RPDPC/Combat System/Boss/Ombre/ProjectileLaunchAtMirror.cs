@@ -39,7 +39,7 @@ public class ProjectileLaunchAtMirror : ProjectileBase
         {
             transform.position += direction * Time.deltaTime * speed;
             yield return new WaitForFixedUpdate();
-            if (Vector3.Distance(new Vector3(-230, 63, 584), transform.position) > 20)
+            if (Vector3.Distance(new Vector3(-230, 63, 584), transform.position) > 30)
             {
                 Destroy(gameObject);
             }
@@ -60,7 +60,7 @@ public class ProjectileLaunchAtMirror : ProjectileBase
     {
         if (timeWithoutReflect > 0.2f)
         {
-            if (other.gameObject.GetComponent<Mirror>() != null)
+            if (other.gameObject.GetComponent<Mirror>() != null && !other.gameObject.GetComponent<Mirror>().isBroken)
             {
                 nbBounces++;
                 direction = Vector3.Reflect(direction, other.transform.forward);

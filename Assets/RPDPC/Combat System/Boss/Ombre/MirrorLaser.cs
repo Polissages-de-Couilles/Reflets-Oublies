@@ -12,6 +12,9 @@ public class MirrorLaser : MonoBehaviour
     public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm)
     {
 
+        Mirror firstMirror = mm.GetMirror(firstMirrorID);
+        Mirror lastMirror = mm.GetMirror(lastMirrorID);
+
         Material material = new Material(Shader.Find("Universal Render Pipeline/Simple Lit"));
         material.SetFloat("_Surface", 1.0f);
         material.SetFloat("_Blend", 0.0f);
@@ -31,14 +34,6 @@ public class MirrorLaser : MonoBehaviour
 
         CapsuleCollider cc = gameObject.AddComponent<CapsuleCollider>();
         cc.enabled = false;
-
-        Mirror firstMirror = mm.GetMirror(firstMirrorID);
-        Mirror lastMirror = mm.GetMirror(lastMirrorID);
-
-        if(firstMirror == null || lastMirror == null)
-        {
-            Destroy(gameObject);
-        }
 
         transform.position = firstMirror.transform.position + (lastMirror.transform.position - firstMirror.transform.position) / 2;
         transform.rotation = Quaternion.LookRotation((lastMirror.transform.position - firstMirror.transform.position).normalized, Vector3.up);

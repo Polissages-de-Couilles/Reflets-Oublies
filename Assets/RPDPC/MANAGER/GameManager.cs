@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     public MoneyManager MoneyManager => _moneyManager;
     [SerializeField] private MoneyManager _moneyManager;
 
+    public MemoryManager MemoryManager => _memoryManager;
+    [SerializeField] private MemoryManager _memoryManager;
+
     public UIManager UIManager => _uiManager;
     [SerializeField] private UIManager _uiManager;
 
