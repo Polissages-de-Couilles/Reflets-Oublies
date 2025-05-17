@@ -11,11 +11,12 @@ public abstract class StateEntityBase
     protected GameObject player;
     protected Animator animator;
     protected List<string> animationNames;
+    public bool isAttack;
     public float priority;
     protected List<ConditionExpression> conditions;
     public bool isHostileState;
 
-    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator, List<string> animationNames)
+    public void InitGlobalVariables(StateMachineManager manager, GameObject parent, GameObject player, List<ConditionExpression> conditions, float priority, bool isHostileState, Animator animator, List<string> animationNames, bool isAttack)
     {
         this.manager = manager;
         this.parent = parent;
@@ -25,14 +26,20 @@ public abstract class StateEntityBase
         this.isHostileState = isHostileState;
         this.animator = animator;
         this.animationNames = new (animationNames);
+        this.isAttack = isAttack;
         foreach (ConditionExpression c in conditions)
         {
-            c.baseCondition.Init(parent, player);
+            c.baseCondition.Init(parent, player, this);
             foreach (ConditionCalculs cc in c.otherParts)
             {
-                cc.secondCondition.Init(parent, player);
+                cc.secondCondition.Init(parent, player, this);
             }
         }
+    }
+
+    public StateMachineManager GetStateManager()
+    {
+        return manager;
     }
 
     public virtual void Init(
@@ -111,17 +118,23 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        StateBase State,   //PlayStateForDuration
+        float duration
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
         foreach (ConditionExpression c in conditions)
         {
-            c.baseCondition.Init(parent, player);
+            c.baseCondition.Init(parent, player, this);
             bool currentExpressionResult = c.baseCondition.isConditionFulfilled() ^ c.not ;
 
             foreach (ConditionCalculs cc in c.otherParts)
             {
-                cc.secondCondition.Init(parent, player);
+                cc.secondCondition.Init(parent, player, this);
                 switch (cc.logicalGate)
                 {
                     case logicalGates.AND:

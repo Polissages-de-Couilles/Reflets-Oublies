@@ -7,7 +7,7 @@ public class OwnIsStunned : ConditionBase
 {
     GameObject parent;
     BotStunAndKnockbackManager stunAndKnockbackManager;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         stunAndKnockbackManager = parent.GetComponent<BotStunAndKnockbackManager>();
     }

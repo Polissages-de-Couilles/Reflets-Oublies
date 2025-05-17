@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Game/IA/Conditions/Base/AlwaysTrue")]
 public class AlwaysTrue : ConditionBase
 {
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
     }
 

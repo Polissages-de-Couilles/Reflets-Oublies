@@ -7,7 +7,7 @@ public class PlayerHpAbove : ConditionBase
 {
     public float hpPercentage;
     PlayerDamageable pd;
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         pd = player.GetComponent<PlayerDamageable>();
     }

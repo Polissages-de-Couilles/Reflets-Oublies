@@ -45,10 +45,11 @@ public class PlayManyStatesEntity : StateEntityBase
         {
             yield return new WaitForSeconds(sli.delayBeforePlay);
             currentState = sli.state.PrepareEntityInstance();
-            currentState.InitGlobalVariables(manager, parent, player, sli.state.conditions, -1, sli.state.isHostileState, animator, sli.state.animationNames);
+            Debug.Log($"Play Many States Played : {currentState}");
+            currentState.InitGlobalVariables(manager, parent, player, sli.state.conditions, -1, sli.state.isHostileState, animator, sli.state.animationNames, sli.state.isAttack);
             currentState.AddHostileToPlayerState();
-            currentState.OnEnterState();
             currentState.onActionFinished += OnActionInvoked;
+            currentState.OnEnterState();
             yield return new WaitUntil(() => actionInvoked);
             actionInvoked = false;
             currentState.onActionFinished -= OnActionInvoked;

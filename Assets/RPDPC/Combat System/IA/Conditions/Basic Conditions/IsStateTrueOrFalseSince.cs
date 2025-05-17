@@ -13,7 +13,7 @@ public class IsStateTrueOrFalseSince : ConditionBase
     float timer;
     float lastUpdate;
 
-    public override void Init(GameObject parent, GameObject player)
+    public override void Init(GameObject parent, GameObject player, StateEntityBase seb)
     {
         entity = state.PrepareEntityInstance();
     }

@@ -66,10 +66,14 @@ public class AttackEntity : StateEntityBase
     {
         foreach (SOAttack.AttackDetails attack in attacks)
         {
-            animator.SetFloat("AttackSpeed", 1f);
             currentAttackTimer = 0f;
-            float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
-            manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
+
+            if (animator != null)
+            {
+                animator.SetFloat("AttackSpeed", 1f);
+                float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
+                manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
+            }
 
             foreach (SOAttack.AttackColliderDetails collider in attack.colliders)
             {

@@ -11,6 +11,7 @@ public abstract class StateBase : ScriptableObject
     public List<ConditionExpression> conditions;
     public bool isHostileState;
     public List<string> animationNames;
+    public bool isAttack;
 
     public abstract StateEntityBase PrepareEntityInstance();
 }

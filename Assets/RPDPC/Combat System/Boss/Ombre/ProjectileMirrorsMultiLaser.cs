@@ -18,13 +18,20 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
 
         for (int i = 1; i < mirrors.Count; i++)
         {
-            GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
-            capsule.GetComponent<CapsuleCollider>().isTrigger = true;
-            AttackCollider ac = capsule.AddComponent<AttackCollider>();
-            ac.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
-            ac.OnDamageableEnterTrigger += TriggerEnter;
-            MirrorLaser ml = capsule.AddComponent<MirrorLaser>();
-            ml.InitLaser(mirrors[i - 1], mirrors[i], duration, durationBeforeSpawn, size, mm);
+            Mirror firstMirror = mm.GetMirror(mirrors[i - 1]);
+            Mirror lastMirror = mm.GetMirror(mirrors[i]);
+
+            if (!(firstMirror == null || lastMirror == null || firstMirror.isBroken || lastMirror.isBroken))
+            {
+                GameObject capsule = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+                capsule.GetComponent<CapsuleCollider>().enabled = false;
+                capsule.GetComponent<CapsuleCollider>().isTrigger = true;
+                AttackCollider ac = capsule.AddComponent<AttackCollider>();
+                ac.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
+                ac.OnDamageableEnterTrigger += TriggerEnter;
+                MirrorLaser ml = capsule.AddComponent<MirrorLaser>();
+                ml.InitLaser(mirrors[i - 1], mirrors[i], duration, durationBeforeSpawn, size, mm);
+            }
         }
 
         StartCoroutine(Kill());
