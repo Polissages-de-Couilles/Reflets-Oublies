@@ -54,7 +54,6 @@ namespace PDC.Localization
             _localization = loca;
             IsLocaReady = true;
             OnLocalizationReady?.Invoke();
-            Debug.Log("OnLocalizationReady");
         }
 
         public static void SetLanguage(List<string> languages)
@@ -163,7 +162,6 @@ namespace PDC.Localization
                 //Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')) + " | " + word.Length);
                 if(word.Contains('<') || word.Contains('>') || CheckIfKey() || word.Length == 0) continue;
 
-                Debug.Log(word.ToLower() + " | " + isTranslated + " | " + CheckIfKey());
                 if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
@@ -186,7 +184,6 @@ namespace PDC.Localization
                 }
             }
             
-            Debug.Log(text);
             return text;
         }
 

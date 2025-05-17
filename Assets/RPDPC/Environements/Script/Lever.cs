@@ -10,7 +10,10 @@ public class Lever : Interactible
 
     public override void OnInteraction()
     {
-        On = true;
-        LeverActivation?.Invoke();
+        if (!On)
+        {
+            On = true;
+            LeverActivation?.Invoke();
+        }
     }
 }
