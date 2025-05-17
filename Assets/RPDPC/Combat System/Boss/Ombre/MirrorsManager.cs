@@ -46,12 +46,12 @@ public class MirrorsManager : MonoBehaviour
                 Debug.Log("OPPOSITE MIRROR " + i + GetOppositeMirror(i).ID);
                 mirrors.Values.ToList()[GetOppositeMirror(i).ID-1].gameObject.SetActive(true);
 
-                System.Random rand = new System.Random();
-                if (rand.Next(2) == 0)
-                {
-                    mirrors.Values.ToList()[i-1].SetBroken();
-                    mirrors.Values.ToList()[GetOppositeMirror(i).ID-1].SetBroken();
-                }
+                //System.Random rand = new System.Random();
+                //if (rand.Next(2) == 0)
+                //{
+                //    mirrors.Values.ToList()[i-1].SetBroken();
+                //    mirrors.Values.ToList()[GetOppositeMirror(i).ID-1].SetBroken();
+                //}
             }
         }
 
