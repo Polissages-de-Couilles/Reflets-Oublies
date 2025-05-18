@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
-  m_Name: 4thLaserCombo
+  m_Name: 2ndLaserCombo
   m_EditorClassIdentifier: 
   priority: 100
   conditions:
@@ -18,16 +18,14 @@ MonoBehaviour:
     baseCondition: {fileID: 11400000, guid: 7ab9e24ee2c23d948bbd5ffd5c8b4865, type: 2}
     not: 0
     otherParts:
-    - logicalGate: 2
+    - logicalGate: 0
       not: 1
-      secondCondition: {fileID: 11400000, guid: 87ca2026e9817f647ab603b8ab790c05, type: 2}
+      secondCondition: {fileID: 11400000, guid: 299434e44fc4e4e489d2726c488f992f, type: 2}
   isHostileState: 1
   animationNames: []
   isAttack: 0
   States:
   - delayBeforePlay: 0
     state: {fileID: 11400000, guid: 49953802159b3ce4a8ba09c41150e605, type: 2}
-  - delayBeforePlay: 1
-    state: {fileID: 11400000, guid: 550bd922174c4074dba9cc0f23659512, type: 2}
   - delayBeforePlay: 0
     state: {fileID: 11400000, guid: 4992cfb2828b57d4d8c453c380f8e2ab, type: 2}
