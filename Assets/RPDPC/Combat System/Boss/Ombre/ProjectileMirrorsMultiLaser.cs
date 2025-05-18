@@ -16,6 +16,15 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
 
         gameObject.layer = 9;
 
+        foreach (ProjectileLaunchAtMirror pr in FindObjectsOfType<ProjectileLaunchAtMirror>())
+        {
+            Destroy(pr.gameObject);
+        }
+        foreach (ProjectileExplosiveMirror pm in FindObjectsOfType<ProjectileExplosiveMirror>())
+        {
+            Destroy(pm.gameObject);
+        }
+
         for (int i = 1; i < mirrors.Count; i++)
         {
             Mirror firstMirror = mm.GetMirror(mirrors[i - 1]);

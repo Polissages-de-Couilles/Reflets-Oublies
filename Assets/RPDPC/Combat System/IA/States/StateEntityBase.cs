@@ -105,6 +105,7 @@ public abstract class StateEntityBase
         TeleportMode teleportMode,  //Teleport
         Vector3 SetPoint,
         List<Vector3> RandomPointInZone,
+        float RandomPointInCircularZone,
         Vector3 SymetricPoint,
         float distanceWithPlayer,
         bool HateToSeePlayer,
