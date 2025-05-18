@@ -23,7 +23,7 @@ public class ObjectSeeThrough : MonoBehaviour
 
         if(Physics.Raycast(Camera.main.transform.position, (this.transform.position - Camera.main.transform.position).normalized, out hit, (this.transform.position - Camera.main.transform.position).sqrMagnitude, layer))
         {
-            //Debug.Log(hit.collider.gameObject.name);
+            Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.gameObject == target)
             {
                 this.transform.DOScale(0, 0.5f);
