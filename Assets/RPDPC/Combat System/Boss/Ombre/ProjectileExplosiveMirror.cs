@@ -11,6 +11,8 @@ public class ProjectileExplosiveMirror : ProjectileBase
 
     protected override void LaunchProjectile()
     {
+        Debug.Log("LAUNCH MIRROR");
+
         Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
         transform.position = centerPos + new Vector3(randomPoint.x, 0f, randomPoint.y); // for XZ plane
         Quaternion LookAtRotation = Quaternion.LookRotation(GameManager.Instance.Player.transform.position - transform.position, transform.up);
