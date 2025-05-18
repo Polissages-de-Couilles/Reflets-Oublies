@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 5498643400513061394}
   - component: {fileID: 1326615095634785687}
   - component: {fileID: 4058784784038897286}
+  - component: {fileID: 1526734621139972967}
   m_Layer: 3
   m_Name: Ewen
   m_TagString: Player
@@ -100,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de78e1740b87c849af9b0aa95a66a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 20
-  dashTime: 0.3
-  dashCooldown: 1
+  dashForce: 15
+  dashTime: 0.85
+  dashCooldown: 1.25
   states: 000000000100000002000000
 --- !u!114 &2979098239838289063
 MonoBehaviour:
@@ -217,6 +218,20 @@ MonoBehaviour:
   m_IgnoreFromBuild: 1
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!114 &1526734621139972967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559057447727064224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df82bf3be5cf7ba4da7e268901468f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rig: {fileID: 1550973401547619750}
+  animator: {fileID: 4856576686414555100}
 --- !u!1 &5428344182602542558
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +355,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ewen 3.0 rig
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: adb5debfc06d2524883d312bd111e072, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -348,6 +367,11 @@ PrefabInstance:
 --- !u!4 &1550973401547619750 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
+  m_PrefabInstance: {fileID: 1300576476448315981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &4856576686414555100 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
   m_PrefabInstance: {fileID: 1300576476448315981}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1582997050519216411
