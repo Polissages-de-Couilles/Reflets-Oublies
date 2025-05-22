@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace AfterimageSample
@@ -7,6 +8,7 @@ namespace AfterimageSample
         RenderParams[] _params;
         Mesh[] _meshes;
         Matrix4x4[] _matrices;
+        public int MaxFrameCount { get; set; }
 
         /// <summary>
         /// 描画された回数.
@@ -39,14 +41,15 @@ namespace AfterimageSample
         /// <param name="material">使用するマテリアル. </param>
         /// <param name="layer">描画するレイヤー.</param>
         /// <param name="renderers">記憶させるSkinnedMeshRendereの配列.</param>
-        public void Setup(Material material, int layer, SkinnedMeshRenderer[] renderers, Vector3 customScale)
+        public void Setup(Material material, int layer, Component[] renderers, Vector3 customScale)
         {
             for (int i = 0; i < renderers.Length; i++)
             {
                 // マテリアルにnullが渡されたらオブジェクトのマテリアルをそのまま使う.
                 if (material == null)
                 {
-                    material = renderers[i].material;
+                    if (renderers[i] is Renderer r)
+                        material = r.sharedMaterial;
                 }
                 if (_params[i].material != material)
                 {
@@ -62,7 +65,21 @@ namespace AfterimageSample
                 {
                     _meshes[i] = new Mesh();
                 }
-                renderers[i].BakeMesh(_meshes[i]);
+
+                if (renderers[i] is SkinnedMeshRenderer smr)
+                {
+                    smr.BakeMesh(_meshes[i]);
+                }
+                else if (renderers[i] is MeshRenderer)
+                {
+                    MeshFilter mf = renderers[i].GetComponent<MeshFilter>();
+                    if (mf)
+                    {
+                        // Copy the mesh if you need to modify it separately.
+                        _meshes[i] = Object.Instantiate(mf.sharedMesh);
+                    }
+                }
+
                 var transform = renderers[i].transform;
                 var scaleMatrix = Matrix4x4.Scale(customScale);
                 var matrix = transform.localToWorldMatrix;
@@ -75,10 +92,18 @@ namespace AfterimageSample
         /// </summary>
         public void RenderMeshes()
         {
+            //float alpha = 1f;
+            //if (MaxFrameCount > 0)
+            //    alpha = Mathf.Clamp01(1f - (float)FrameCount / MaxFrameCount);
+
             for (int i = 0; i < _meshes.Length; i++)
             {
+                //Debug.Log("COLOR " + _params[i].material.GetColor("_BaseColor"));
+                //_params[i].material.SetColor("_BaseColor", _params[i].material.GetColor("_BaseColor").WithAlpha(alpha));
+                //_params[i].material.SetColor("_EdgeColor", _params[i].material.GetColor("_EdgeColor").WithAlpha(alpha));
                 Graphics.RenderMesh(_params[i], _meshes[i], 0, _matrices[i]);
             }
+
             FrameCount++;
         }
     }

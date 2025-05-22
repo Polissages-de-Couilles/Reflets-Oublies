@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 // https://github.com/kr405/UnityAfterimageEffects/
@@ -12,13 +13,16 @@ namespace AfterimageSample
         [SerializeField] int _layer = 6;
         [SerializeField] Vector3 _scale = Vector3.one;
 
-        SkinnedMeshRenderer[] _renderers;
+        Component[] _renderers;
         Stack<AfterImage> _pool = new Stack<AfterImage>();
         Queue<AfterImage> _renderQueue = new Queue<AfterImage>();
 
         void Awake()
         {
-            _renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+            List<Component> list = new List<Component>();
+            list.AddRange(GetComponentsInChildren<SkinnedMeshRenderer>());
+            list.AddRange(GetComponentsInChildren<MeshRenderer>());
+            _renderers = list.ToArray();
         }
 
         void Update()
@@ -65,6 +69,7 @@ namespace AfterimageSample
                 afterimage = new AfterImage(_renderers.Length);
             }
             afterimage.Setup(_material, _layer, _renderers, _scale);
+            afterimage.MaxFrameCount = _duration;
             _renderQueue.Enqueue(afterimage);
         }        
     }
