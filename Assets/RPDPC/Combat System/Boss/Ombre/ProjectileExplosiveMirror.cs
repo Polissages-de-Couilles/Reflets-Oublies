@@ -18,6 +18,11 @@ public class ProjectileExplosiveMirror : ProjectileBase
     {
         Debug.Log("LAUNCH MIRROR");
 
+        var texture = new RenderTexture(new RenderTextureDescriptor(256, 256, RenderTextureFormat.ARGB32));
+        GetComponentInChildren<Camera>().targetTexture = texture;
+        GetComponentInChildren<MeshRenderer>().materials[1].SetTexture("_BaseMap", texture);
+
+
         Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
         transform.position = centerPos + new Vector3(randomPoint.x, 0f, randomPoint.y); // for XZ plane
         Quaternion LookAtRotation = Quaternion.LookRotation(GameManager.Instance.Player.transform.position - transform.position, transform.up);

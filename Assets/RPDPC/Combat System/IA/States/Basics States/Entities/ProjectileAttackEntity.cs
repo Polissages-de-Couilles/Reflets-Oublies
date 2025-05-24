@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using static UnityEngine.ParticleSystem;
 
 public class ProjectileAttackEntity : StateEntityBase
 {
@@ -12,6 +13,7 @@ public class ProjectileAttackEntity : StateEntityBase
 
     Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails> currentAttacks = new Dictionary<GameObject, SOProjectileAttack.ProjectileAttackDetails>();
     bool finishedSpawnAllAttacks = false;
+    
     public override void ExitState()
     {
         onActionFinished?.Invoke();
@@ -51,6 +53,25 @@ public class ProjectileAttackEntity : StateEntityBase
                 float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
                 manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));
             }
+
+            /// VFX
+            if (attack.VFX != null)
+            {
+                ProjectileSpawner ps = parent.GetComponentsInChildren<ProjectileSpawner>().ToList().Find(x => x.spawnerID == attack.spawnerID);
+                GameObject vfx = MonoBehaviour.Instantiate(attack.VFX, ps.gameObject.transform.position, Quaternion.identity);
+                List<ParticleSystem> particles = new List<ParticleSystem>();
+                particles.AddRange(vfx.GetComponents<ParticleSystem>());
+                particles.AddRange(vfx.GetComponentsInChildren<ParticleSystem>());
+
+                foreach (ParticleSystem particle in particles)
+                {
+                    var main = particle.main;
+                    main.duration = attack.attackDuration;
+                }
+                particles[0].Play();
+            }
+            /// 
+
 
             foreach (SOProjectileAttack.ProjectileAttackPrefabDetails collider in attack.prefabProjectiles)
             {
