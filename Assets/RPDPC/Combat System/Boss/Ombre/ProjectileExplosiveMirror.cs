@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class ProjectileExplosiveMirror : ProjectileBase
 {
@@ -12,15 +13,16 @@ public class ProjectileExplosiveMirror : ProjectileBase
     [SerializeField] GameObject enterexitSFX;
     [SerializeField] float groundLevel;
     [SerializeField] Mesh DestroyedMesh;
+    [SerializeField] GameObject ExplosionParticle;
     bool isDestroyed = false;
 
     protected override void LaunchProjectile()
     {
         Debug.Log("LAUNCH MIRROR");
 
-        var texture = new RenderTexture(new RenderTextureDescriptor(256, 256, RenderTextureFormat.ARGB32));
-        GetComponentInChildren<Camera>().targetTexture = texture;
-        GetComponentInChildren<MeshRenderer>().materials[1].SetTexture("_BaseMap", texture);
+        //var texture = new RenderTexture(new RenderTextureDescriptor(256, 256, RenderTextureFormat.ARGB32));
+        //GetComponentInChildren<Camera>().targetTexture = texture;
+        //GetComponentInChildren<MeshRenderer>().materials[1].SetTexture("_BaseMap", texture);
 
 
         Vector2 randomPoint = Random.insideUnitCircle * spawnRadius;
@@ -72,6 +74,7 @@ public class ProjectileExplosiveMirror : ProjectileBase
         GetComponent<Collider>().enabled = true;
         isDestroyed = true;
         GetComponentInChildren<MeshFilter>().mesh = DestroyedMesh;
+        Instantiate(ExplosionParticle, transform);
         yield return new WaitForSeconds(0.5f);
         GetComponent<Collider>().enabled = false;
         GameObject trans = Instantiate(enterexitSFX, new Vector3(transform.position.x, groundLevel, transform.position.z), Quaternion.Euler(new Vector3(-90, 0, 0)));
