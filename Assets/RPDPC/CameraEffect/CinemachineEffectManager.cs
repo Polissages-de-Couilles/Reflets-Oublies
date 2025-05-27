@@ -116,6 +116,17 @@ public class CinemachineEffectManager : MonoBehaviour
             StartCoroutine(EffectCoroutine());
         }
     }
+    public float VignetteIntensity
+    {
+        get
+        {
+            if (CamVolumeProfile.TryGet(out Vignette vignette))
+            {
+                return vignette.intensity.value;
+            }
+            return -1f;   
+        }
+    }
     public void Vignette(float intensity, float duration, bool snap = false, bool infini = false)
     {
         Vignette(Color.black, intensity, duration, snap, infini);
