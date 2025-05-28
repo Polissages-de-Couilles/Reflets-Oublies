@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -8,12 +9,15 @@ public class MirrorLaser : MonoBehaviour
 {
     Action<MirrorLaser> PlayerTouched;
     Vector3 wantedSize;
+    GameObject fx;
 
-    public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm)
+    public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm, GameObject LaserFX)
     {
 
         Mirror firstMirror = mm.GetMirror(firstMirrorID);
         Mirror lastMirror = mm.GetMirror(lastMirrorID);
+
+        fx = LaserFX;
 
         Material material = new Material(Shader.Find("Universal Render Pipeline/Simple Lit"));
         material.SetFloat("_Surface", 1.0f);
@@ -29,7 +33,6 @@ public class MirrorLaser : MonoBehaviour
         material.EnableKeyword("_ALPHABLEND_ON");
         material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
         material.renderQueue = 3000;
-
         GetComponent<MeshRenderer>().material = material;
 
         CapsuleCollider cc = gameObject.AddComponent<CapsuleCollider>();
@@ -41,7 +44,7 @@ public class MirrorLaser : MonoBehaviour
         wantedSize = new Vector3(size, Vector3.Distance(firstMirror.transform.position, lastMirror.transform.position)/2, 1);
 
         StartCoroutine(LaunchPreviewLaser(durationBeforeSpawn));
-        StartCoroutine(LaunchLaser(duration, durationBeforeSpawn));
+        StartCoroutine(LaunchLaser(duration, durationBeforeSpawn, firstMirror, lastMirror));
     }
 
     IEnumerator LaunchPreviewLaser(float durationBeforeSpawn)
@@ -56,13 +59,20 @@ public class MirrorLaser : MonoBehaviour
         }
     }
 
-    IEnumerator LaunchLaser(float duration, float durationBeforeSpawn)
+    IEnumerator LaunchLaser(float duration, float durationBeforeSpawn, Mirror firstMirror, Mirror lastMirror)
     {
         yield return new WaitForSeconds(durationBeforeSpawn);
         transform.localScale = wantedSize;
-        GetComponent<MeshRenderer>().material.SetColor("_BaseColor", Color.magenta);
         GetComponent<CapsuleCollider>().enabled = true;
+        GetComponent<MeshRenderer>().enabled = false;
+        fx = Instantiate(fx);
+        fx.GetComponent<LineRenderer>().startWidth = wantedSize.x;
+        fx.GetComponent<LineRenderer>().endWidth = wantedSize.x;
+        fx.transform.position = firstMirror.transform.position;
+        fx.transform.rotation = Quaternion.LookRotation((lastMirror.transform.position - firstMirror.transform.position).normalized, Vector3.up);
         yield return new WaitForSeconds(duration);
+        GetComponent<CapsuleCollider>().enabled = false;
+        Destroy(fx);
         Destroy(gameObject);
     }
 }

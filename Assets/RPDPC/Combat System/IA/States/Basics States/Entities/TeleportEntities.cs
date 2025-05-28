@@ -11,17 +11,19 @@ public class TeleportEntities : StateEntityBase
     TeleportMode teleportMode;
     Vector3 SetPoint;
     List<Vector3> RandomPointInZone;
+    float RandomPointInCircularZone;
     Vector3 SymetricPoint;
     float distanceWithPlayer;
     bool HaveToSeePlayer;
     bool IgnoreY;
     bool SnapToNavMesh;
 
-    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, Vector3 SymetricPoint, float distanceWithPlayer,bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh)
+    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, float RandomPointInCircularZone, Vector3 SymetricPoint, float distanceWithPlayer,bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh)
     { 
         this.teleportMode = teleportMode;
         this.SetPoint = SetPoint;
         this.RandomPointInZone = RandomPointInZone;
+        this.RandomPointInCircularZone = RandomPointInCircularZone;
         this.SymetricPoint = SymetricPoint;
         this.distanceWithPlayer = distanceWithPlayer;
         this.HaveToSeePlayer = HaveToSeePlayer;
@@ -62,6 +64,10 @@ public class TeleportEntities : StateEntityBase
                 break;
             case TeleportMode.RandomPointInZone:
                 teleportDestination = new Vector3(Random.Range(RandomPointInZone[0].x, RandomPointInZone[1].x), Random.Range(RandomPointInZone[0].y, RandomPointInZone[1].y), Random.Range(RandomPointInZone[0].z, RandomPointInZone[1].z));
+                break;
+            case TeleportMode.RandomPointInCircularZone:
+                Vector2 randomPoint = Random.insideUnitCircle * RandomPointInCircularZone;
+                teleportDestination = SymetricPoint + new Vector3(randomPoint.x, 0f, randomPoint.y);
                 break;
             case TeleportMode.RandomPointInSpawnedZone: 
                 FromSpawnerManager fsm = parent.GetComponent<FromSpawnerManager>();

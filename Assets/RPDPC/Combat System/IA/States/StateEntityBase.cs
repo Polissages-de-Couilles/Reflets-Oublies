@@ -66,7 +66,7 @@ public abstract class StateEntityBase
     public virtual void Init(
         List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter //ProjectileAttack
     )
-    {}
+    { }
 
     public virtual void Init(
         Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves //RandomMoveInRange
@@ -105,6 +105,7 @@ public abstract class StateEntityBase
         TeleportMode teleportMode,  //Teleport
         Vector3 SetPoint,
         List<Vector3> RandomPointInZone,
+        float RandomPointInCircularZone,
         Vector3 SymetricPoint,
         float distanceWithPlayer,
         bool HateToSeePlayer,

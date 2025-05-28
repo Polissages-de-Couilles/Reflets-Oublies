@@ -26,6 +26,7 @@ public class ProjectileLaunchAtMirror : ProjectileBase
         mm = FindFirstObjectByType<MirrorsManager>();
         direction = (mm.GetMirror(mirrorToAim).transform.position - transform.position).normalized;
         direction.y = 0;
+        transform.rotation = Quaternion.LookRotation(direction);
 
         gameObject.layer = 9;
         attackCollider.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
@@ -64,6 +65,7 @@ public class ProjectileLaunchAtMirror : ProjectileBase
             {
                 nbBounces++;
                 direction = Vector3.Reflect(direction, other.transform.forward);
+                transform.rotation = Quaternion.LookRotation(direction);
                 direction.y = 0;
                 timeWithoutReflect = 0f;
             }

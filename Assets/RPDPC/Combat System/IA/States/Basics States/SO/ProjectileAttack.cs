@@ -29,6 +29,7 @@ public class SOProjectileAttack : StateBase
         public float attackDuration;
         public int animationID;
         public AnimationCurve animationSpeed;
+        public GameObject VFX;
     }
 
     [Serializable]
