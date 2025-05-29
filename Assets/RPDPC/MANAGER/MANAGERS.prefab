@@ -144,7 +144,6 @@ Transform:
   - {fileID: 7902333967989278888}
   - {fileID: 3834361890020687955}
   - {fileID: 345708552662081786}
-  - {fileID: 5213472707578195007}
   - {fileID: 9055393639838354250}
   - {fileID: 3848982162114205583}
   - {fileID: 1891327441999058868}
@@ -176,7 +175,7 @@ MonoBehaviour:
   _potionManager: {fileID: 2102642984021036913}
   _relationManager: {fileID: 8905463871314371528}
   _pdcManager: {fileID: 5018291680400192581}
-  _audioDialogueGameObject: {fileID: 3177533989576197062}
+  _audioDialogueGameObject: {fileID: 0}
   _inputAction: {fileID: -944628639613478452, guid: e9080d0a56da9524aaf84d7cd2c878f1, type: 3}
   _vfxManager: {fileID: 3863974205218577994}
   _lockManager: {fileID: 0}
@@ -448,37 +447,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loader: {fileID: 2227902808444669194}
---- !u!1 &5551127767246354306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5213472707578195007}
-  m_Layer: 8
-  m_Name: WwiseGlobal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5213472707578195007
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551127767246354306}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3499364351182337576}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5652252739901132668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1035,7 +1003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3873527392245752195, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
       propertyPath: m_Name
-      value: AudioManager (1)
+      value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 3873527392245752195, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
       propertyPath: m_Layer
@@ -1086,17 +1054,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1430365920677514370, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
 --- !u!4 &1994049028299736927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8131936960901123542, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
-  m_PrefabInstance: {fileID: 7743438811155483273}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3177533989576197062 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5147305164231543119, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
   m_PrefabInstance: {fileID: 7743438811155483273}
   m_PrefabAsset: {fileID: 0}
