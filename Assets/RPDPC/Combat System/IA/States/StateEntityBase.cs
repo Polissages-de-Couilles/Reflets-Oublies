@@ -54,7 +54,9 @@ public abstract class StateEntityBase
     public virtual void Init(
         bool isIntelligent, //FollowPlayer
         bool shouldStopWhenNear,
-        float stopDistance
+        float stopNearDistance,
+        bool shouldStopWhenFar,
+        float stopFarDistance
     )
     {}
 

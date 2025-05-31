@@ -120,6 +120,8 @@ public class AttackEntity : StateEntityBase
         ac.gameObject.layer = 9;
         ac.OnDamageableEnterTrigger += DealDamage;
 
+        currentAttacks.Add(ac.gameObject, ad);
+
         acm.ActivateCollider();
 
         if(detail.VFX != null)
@@ -127,8 +129,6 @@ public class AttackEntity : StateEntityBase
             GameObject vfx = MonoBehaviour.Instantiate(detail.VFX, parent.transform);
             vfx.transform.localPosition = acm.gameObject.transform.localPosition;
         }
-
-        currentAttacks.Add(ac.gameObject, ad);
 
         //Pour décembre : Visuel PlaceHolder
         //attackCollider.AddComponent<MeshRenderer>();

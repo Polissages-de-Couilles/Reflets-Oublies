@@ -8,13 +8,17 @@ public class FollowPlayerEntity : StateEntityBase
     protected bool isIntelligent;
     protected Vector3 lastKnownPos;
     protected bool shouldStopWhenNear;
-    protected float stopDistance;
+    protected float stopNearDistance;
+    protected bool shouldStopWhenFar;
+    protected float stopFarDistance;
 
-    public override void Init(bool isIntelligent, bool shouldStopWhenNear, float stopDistance)
+    public override void Init(bool isIntelligent, bool shouldStopWhenNear, float stopNearDistance, bool shouldStopWhenFar, float stopFarDistance)
     {
         this.isIntelligent = isIntelligent;
         this.shouldStopWhenNear = shouldStopWhenNear;
-        this.stopDistance = stopDistance;
+        this.stopNearDistance = stopNearDistance;
+        this.shouldStopWhenFar = shouldStopWhenFar;
+        this.stopFarDistance = stopFarDistance;
     }
 
     public override void ExitState()
@@ -59,12 +63,20 @@ public class FollowPlayerEntity : StateEntityBase
 
         if (shouldStopWhenNear)
         {
-            if (Vector3.Distance(parent.transform.position, player.transform.position) < stopDistance)
+            if (Vector3.Distance(parent.transform.position, player.transform.position) < stopNearDistance)
             {
                 ExitState();
             }
         }
-        
+
+        if (shouldStopWhenFar)
+        {
+            if (Vector3.Distance(parent.transform.position, player.transform.position) > stopFarDistance)
+            {
+                ExitState();
+            }
+        }
+
         lastKnownPos = player.transform.position;
         agent.SetDestination(lastKnownPos);
     }
