@@ -18,6 +18,8 @@ public class doNothingEntity : StateEntityBase
 
     public override void OnEnterState()
     {
+        if(animationNames.Count != 0)
+        animator.Play(animationNames[0]);
     }
 
     public override void OnUpdate()
