@@ -40,8 +40,11 @@ public class SS : ProjectileBase
         while (timer < duration)
         {
             Vector3 temp = getClosestTransform(globaltimer - durationBetweenEwenPosAndSS);
-            temp.y -= 0.7f; 
-            Instantiate(Spear, temp, Quaternion.identity);
+            temp.y -= 0.7f;
+            Vector2 randomPosDif = UnityEngine.Random.insideUnitCircle * 1f;
+            temp = temp + new Vector3(randomPosDif.x, 0, randomPosDif.y);
+            GameObject go = Instantiate(Spear, temp, Quaternion.identity);
+            go.GetComponentInChildren<SpearOfSS>().projectileManager = manager;
             yield return new WaitForSeconds(delayBetweenSpears);
             timer += delayBetweenSpears;
         }
