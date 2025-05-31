@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8154983462193811881
+--- !u!1 &2302554252763317530
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8820162349237209875}
-  - component: {fileID: 5604828115198018742}
-  - component: {fileID: 7650681389445083260}
-  - component: {fileID: 660124766888486583}
-  - component: {fileID: 4928848696357612749}
-  - component: {fileID: 4434790631512673227}
+  - component: {fileID: 7134398886336135543}
+  - component: {fileID: 8596276177280646469}
+  - component: {fileID: 1245919429860644857}
   m_Layer: 0
-  m_Name: DagProjectile
+  m_Name: TrueDague
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8820162349237209875
+--- !u!4 &7134398886336135543
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154983462193811881}
+  m_GameObject: {fileID: 2302554252763317530}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0.75, y: -0.007481128, z: 0.0013191104}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0.7071068, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
---- !u!33 &5604828115198018742
+  m_Father: {fileID: 8820162349237209875}
+  m_LocalEulerAnglesHint: {x: 90, y: 180, z: 0}
+--- !u!33 &8596276177280646469
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154983462193811881}
+  m_GameObject: {fileID: 2302554252763317530}
   m_Mesh: {fileID: 1433348751706294317, guid: d7fc8d1732934a96891ec413d5fb1c84, type: 3}
---- !u!23 &7650681389445083260
+--- !u!23 &1245919429860644857
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154983462193811881}
+  m_GameObject: {fileID: 2302554252763317530}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,6 +83,41 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8154983462193811881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8820162349237209875}
+  - component: {fileID: 660124766888486583}
+  - component: {fileID: 4928848696357612749}
+  - component: {fileID: 4434790631512673227}
+  m_Layer: 0
+  m_Name: DagProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8820162349237209875
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154983462193811881}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: -0.007481128, z: 0.0013191104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 7134398886336135543}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &660124766888486583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,5 +172,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.5, y: 1.5, z: 0.5}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 0.5, y: 0.5, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0.5}

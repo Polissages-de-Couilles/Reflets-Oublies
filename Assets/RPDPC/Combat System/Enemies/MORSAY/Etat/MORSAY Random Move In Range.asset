@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a9065d1cd7e778418e997496e5db2c9, type: 3}
-  m_Name: MORSAY SO Random Move In Range
+  m_Name: MORSAY Random Move In Range
   m_EditorClassIdentifier: 
   priority: 0
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: cafef4fea32b47d499400a1d873e348c, type: 2}
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     not: 0
     otherParts: []
   isHostileState: 0
@@ -23,8 +23,8 @@ MonoBehaviour:
   - IdleNormal
   - WalkFWD
   isAttack: 0
-  searchCenter: {x: 0, y: 0, z: 0}
-  searchRange: 15
+  searchCenter: {x: -230, y: 45.5, z: 400}
+  searchRange: 5
   shouldOnlyMoveOnce: 0
   WaitForMoveToFinishBeforeEndOrSwitchingState: 0
-  rangeWaitBetweenMoves: {x: 2, y: 3}
+  rangeWaitBetweenMoves: {x: 0, y: 0}
