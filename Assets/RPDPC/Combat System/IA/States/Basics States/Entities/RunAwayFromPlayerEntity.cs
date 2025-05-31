@@ -12,7 +12,7 @@ public class RunAwayFromPlayerEntity : StateEntityBase
     {
     }
 
-    public override void Init(bool isIntelligent, bool shouldStopWhenNear, float stopDistance)
+    public override void Init(bool isIntelligent)
     {
         keepWatchingPlayer = isIntelligent;
     }
