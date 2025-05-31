@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc951884986dbf4aaca4bc4a8eebee6, type: 3}
   m_Name: Boo-Leverser Make Invisible
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 0
   animationNames: []
   isAttack: 0

@@ -12,9 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
   m_Name: Boo-Leverser Follow and Invisible
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
-  isHostileState: 0
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 31abf31615b903543836285b5ab9ab03, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: cef6c2c79fa5eab449c939f59a14fdc2, type: 2}
+  isHostileState: 1
   animationNames: []
   isAttack: 0
-  States: []
+  States:
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: 84bcdf92bab244a4588ec995a8f94915, type: 2}
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: 4e374ec19020ba045bcc98fbc34939d9, type: 2}

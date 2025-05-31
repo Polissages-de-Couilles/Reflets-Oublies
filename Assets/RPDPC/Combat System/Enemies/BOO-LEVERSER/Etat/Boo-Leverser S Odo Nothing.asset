@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Boo-Leverser S Odo Nothing
   m_EditorClassIdentifier: 
   priority: 0
-  conditions: []
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 0
   animationNames:
-  - 
+  - IdleNormal
   isAttack: 0

@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c07c5713963b5094792016b09b3c7f48, type: 3}
   m_Name: Boo-Leverser SO Follow Player
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 0
-  animationNames: []
+  animationNames:
+  - WalkFWD
   isAttack: 0
-  isIntelligent: 0
+  isIntelligent: 1

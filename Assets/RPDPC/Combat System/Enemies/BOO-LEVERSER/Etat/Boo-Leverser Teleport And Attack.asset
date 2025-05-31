@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
   m_Name: Boo-Leverser Teleport And Attack
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
-  isHostileState: 0
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: a452f24af97cfdb469fed667b13531e0, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+  isHostileState: 1
   animationNames: []
-  isAttack: 0
-  States: []
+  isAttack: 1
+  States:
+  - delayBeforePlay: 0.25
+    state: {fileID: 11400000, guid: 660cfc1e29f51ad4f8d4fa4695bc4fcd, type: 2}
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: a8e8a69094a304744a5ba5f6eea84985, type: 2}
