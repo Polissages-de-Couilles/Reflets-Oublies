@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5476cfec87d3134993342331694110d, type: 3}
+  m_Name: New SO Follow Player While Guarding
+  m_EditorClassIdentifier: 
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: b14b0e31412360548bcebcf563727a9b, type: 2}
+  - logicalGate: 2
+    baseCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: b14b0e31412360548bcebcf563727a9b, type: 2}
+    - logicalGate: 0
+      not: 1
+      secondCondition: {fileID: 11400000, guid: a4a5fd82f21631c40bdf0ed65b090c78, type: 2}
+  isHostileState: 1
+  animationNames:
+  - WalkFWD
+  isAttack: 0
+  isIntelligent: 0
+  shouldStopWhenNear: 0
+  stopNearDistance: 0
+  shouldStopWhenFar: 0
+  stopFarDistance: 0
+  guardAnim: Defense
+  guardHitAnim: DefenseGetHit
