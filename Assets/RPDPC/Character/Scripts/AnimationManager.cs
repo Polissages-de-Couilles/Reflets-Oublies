@@ -8,6 +8,8 @@ public class AnimationManager : MonoBehaviour
     [SerializeField] Transform rig;
     [SerializeField] Animator animator;
 
+    int currentAttackState = 0;
+
     public void SetSpeed(float speed, Vector3 dir)
     {
         animator.SetFloat("x", dir.x);
@@ -20,8 +22,15 @@ public class AnimationManager : MonoBehaviour
         animator.SetTrigger("Roll");
     }
 
-    public void Attack()
+    public void SetAttackState(int state)
     {
+        //Debug.Log($"AttackState : {state}");
+        currentAttackState = state;
+        animator.SetTrigger($"Attack{currentAttackState} Trigger");
+    }
 
+    public void ResetAttack()
+    {
+        currentAttackState = 0;
     }
 }
