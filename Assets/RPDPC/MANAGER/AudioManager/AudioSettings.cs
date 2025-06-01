@@ -13,6 +13,6 @@ public class AudioSettings : MonoBehaviour
         SFXVolume
     }
 
-    public AudioMixer Mixer => _mixer;
-    [SerializeField] AudioMixer _mixer;
+    public AudioMixer Mixer;
+    //[SerializeField] AudioMixer _mixer;
 }
