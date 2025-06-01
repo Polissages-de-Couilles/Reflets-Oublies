@@ -13,6 +13,7 @@ public class AttackManager : MonoBehaviour
     [SerializeField] float timeBetweenAttacks2;
     [SerializeField] float timeBetweenAttacks3;
     [SerializeField] float attackDamage;
+    [SerializeField] float bigAttackDamage;
 
     [SerializeField] AttackCollider collision1;
     [SerializeField] AttackCollider collision2;
@@ -20,6 +21,7 @@ public class AttackManager : MonoBehaviour
 
     StateManager stateManager;
     bool doNextAttack = false;
+    [SerializeField] private List<StateManager.States> states = new List<StateManager.States>();
 
     enum attackPhaseEnum
     {
@@ -166,11 +168,14 @@ public class AttackManager : MonoBehaviour
 
     void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)
     {
-        damageable.takeDamage(attackDamage, gameObject);
+        if (collider = collision3.gameObject)
+            damageable.takeDamage(bigAttackDamage, gameObject);
+        else 
+            damageable.takeDamage(attackDamage, gameObject);
     }
 
     bool isStateCompatible(StateManager.States state)
     {
-        return state != StateManager.States.dash && state != StateManager.States.stun && state != StateManager.States.talk;
+        return states.Contains(state);
     }
 }
