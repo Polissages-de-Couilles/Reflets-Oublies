@@ -11,7 +11,8 @@ public class StateManager : MonoBehaviour
         attack,
         dash,
         stun,
-        talk
+        talk,
+        death
     }
     public States playerState;
 
@@ -29,11 +30,13 @@ public class StateManager : MonoBehaviour
 
     public void SetPlayerState(States state)
     {
+        if (playerState == States.death) return;
         playerState = state;
     }
 
     public void SetPlayerState(States state, float duration)
     {
+        if (playerState == States.death) return;
         StartCoroutine(doSetPlayerState(state, duration));
     }
 
@@ -50,6 +53,7 @@ public class StateManager : MonoBehaviour
 
     void clearState()
     {
+        if (playerState == States.death) return;
         playerState = States.idle;
     }
 

@@ -33,4 +33,9 @@ public class AnimationManager : MonoBehaviour
     {
         currentAttackState = 0;
     }
+
+    public void Death()
+    {
+        animator.SetTrigger("Death");
+    }
 }
