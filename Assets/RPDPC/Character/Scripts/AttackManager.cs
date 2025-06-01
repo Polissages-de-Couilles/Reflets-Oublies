@@ -6,7 +6,12 @@ using UnityEngine.InputSystem;
 public class AttackManager : MonoBehaviour
 {
     PlayerInputEventManager PIE;
+    private AnimationManager animationManager;
+
     [SerializeField] float timeBetweenAttacks;
+    [SerializeField] float timeBetweenAttacks1;
+    [SerializeField] float timeBetweenAttacks2;
+    [SerializeField] float timeBetweenAttacks3;
     [SerializeField] float attackDamage;
 
     [SerializeField] AttackCollider collision1;
@@ -14,6 +19,7 @@ public class AttackManager : MonoBehaviour
     [SerializeField] AttackCollider collision3;
 
     StateManager stateManager;
+    bool doNextAttack = false;
 
     enum attackPhaseEnum
     {
@@ -27,6 +33,7 @@ public class AttackManager : MonoBehaviour
     private void Awake()
     {
         stateManager = GetComponent<StateManager>();
+        animationManager = GetComponent<AnimationManager>();
     }
 
     // Start is called before the first frame update
@@ -54,73 +61,107 @@ public class AttackManager : MonoBehaviour
 
     void OnAttack(InputAction.CallbackContext context)
     {
-        if (nextAttackPhase == nextAttackPhaseLate && isStateCompatible(stateManager.playerState))
+        if(nextAttackPhase != nextAttackPhaseLate)
         {
-            collision1.CharacterAlreadyAttacked.Clear();
-            collision2.CharacterAlreadyAttacked.Clear();
-            collision3.CharacterAlreadyAttacked.Clear();
-            stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks);
-            if (nextAttackPhase == attackPhaseEnum.Phase1)
+            doNextAttack = true;
+        }
+
+        if (isStateCompatible(stateManager.playerState))
+        {
+            if(nextAttackPhase == nextAttackPhaseLate)
             {
-                StartCoroutine(AttackPhase1());
-            }
-            else if (nextAttackPhase == attackPhaseEnum.Phase2)
-            {
-                StartCoroutine(AttackPhase2());
-            }
-            else
-            {
-                StartCoroutine(AttackPhase3());
+                collision1.CharacterAlreadyAttacked.Clear();
+                collision2.CharacterAlreadyAttacked.Clear();
+                collision3.CharacterAlreadyAttacked.Clear();
+                if (nextAttackPhase == attackPhaseEnum.Phase1)
+                {
+                    StartCoroutine(AttackPhase1());
+                }
+                else if (nextAttackPhase == attackPhaseEnum.Phase2)
+                {
+                    StartCoroutine(AttackPhase2());
+                }
+                else
+                {
+                    StartCoroutine(AttackPhase3());
+                }
             }
         }
     }
 
     IEnumerator AttackPhase1()
     {
-        Debug.Log("Attack 1");
+        //Debug.Log("Attack 1");
+        stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks1);
+        animationManager.SetAttackState(1);
         collision1.GetComponent<MeshRenderer>().enabled = true;
         collision1.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase2;
-        yield return new WaitForSeconds(timeBetweenAttacks);
+        yield return new WaitForSeconds(timeBetweenAttacks1);
         collision1.GetComponent<MeshRenderer>().enabled = false;
         collision1.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase2;
 
+        yield return null;
+        if (doNextAttack)
+        {
+            doNextAttack = false;
+            yield return AttackPhase2();
+            yield break;
+        }
+
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
         if (nextAttackPhase == attackPhaseEnum.Phase2)
         {
+            animationManager.ResetAttack();
             nextAttackPhase = attackPhaseEnum.Phase1;
             nextAttackPhaseLate = attackPhaseEnum.Phase1;
         }
     }
     IEnumerator AttackPhase2()
     {
-        Debug.Log("Attack 2");
+        //Debug.Log("Attack 2");
+        stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks2);
+        animationManager.SetAttackState(2);
         collision1.GetComponent<MeshRenderer>().enabled = true;
         collision2.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase3;
-        yield return new WaitForSeconds(timeBetweenAttacks);
+        yield return new WaitForSeconds(timeBetweenAttacks2);
         collision1.GetComponent<MeshRenderer>().enabled = false;
         collision2.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase3;
 
+        yield return null;
+        if (doNextAttack)
+        {
+            doNextAttack = false;
+            yield return AttackPhase3();
+            yield break;
+        }
+
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
         if (nextAttackPhase == attackPhaseEnum.Phase3)
         {
+            animationManager.ResetAttack();
             nextAttackPhase = attackPhaseEnum.Phase1;
             nextAttackPhaseLate = attackPhaseEnum.Phase1;
         }
     }
     IEnumerator AttackPhase3()
     {
-        Debug.Log("Attack 3");
+        //Debug.Log("Attack 3");
+        stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks3);
+        animationManager.SetAttackState(3);
         collision1.GetComponent<MeshRenderer>().enabled = true;
         collision3.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase1;
-        yield return new WaitForSeconds(timeBetweenAttacks);
+        yield return new WaitForSeconds(timeBetweenAttacks3);
         collision1.GetComponent<MeshRenderer>().enabled = false;
         collision3.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase1;
+
+        doNextAttack = false;
+        animationManager.ResetAttack();
     }
 
     void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)
