@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
+  m_Name: ADEPTE Turn and Gard
+  m_EditorClassIdentifier: 
+  priority: 3
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
+    not: 1
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: b3be16f81f2aa1c4c83500e5a4eee4d0, type: 2}
+  isHostileState: 0
+  animationNames: []
+  isAttack: 0
+  States:
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: 0e61e5e285e7b0846b6a7732ed86f72b, type: 2}
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: f3ef7aa6b8a8ce54f9b678460c1b88d6, type: 2}

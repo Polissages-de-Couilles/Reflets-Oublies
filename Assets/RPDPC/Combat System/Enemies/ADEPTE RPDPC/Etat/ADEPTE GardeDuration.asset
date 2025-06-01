@@ -9,20 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cebe10d9bb48ee4f84d7ce4beb2e777, type: 3}
-  m_Name: Boo-LeverserTurn To Player
+  m_Script: {fileID: 11500000, guid: fc25d19570c62f544b8916054a9c3bce, type: 3}
+  m_Name: ADEPTE GardeDuration
   m_EditorClassIdentifier: 
   priority: 2
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: d135a96051e8ce94e992633af1c3f688, type: 2}
+    baseCondition: {fileID: 11400000, guid: a4a5fd82f21631c40bdf0ed65b090c78, type: 2}
     not: 0
     otherParts:
     - logicalGate: 0
-      not: 1
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 36239ba96175a78408909a346d790ea5, type: 2}
+    - logicalGate: 0
+      not: 0
       secondCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
-  isHostileState: 1
-  animationNames:
-  - IdleBattle
+  isHostileState: 0
+  animationNames: []
   isAttack: 0
-  turnDuration: 1
+  m_State: {fileID: 11400000, guid: c444d4d845880dc43b2f0b043e9bf852, type: 2}
+  m_Duration: 1.5

@@ -10,12 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc25d19570c62f544b8916054a9c3bce, type: 3}
-  m_Name: New Play State For Duration
+  m_Name: ADEPTE GardeDurationMany
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 0
   animationNames: []
   isAttack: 0
-  m_State: {fileID: 0}
-  m_Duration: 0
+  m_State: {fileID: 11400000, guid: c444d4d845880dc43b2f0b043e9bf852, type: 2}
+  m_Duration: 1.5
