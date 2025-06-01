@@ -648,8 +648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 25}
-  m_SizeDelta: {x: 408.67, y: 200}
+  m_AnchoredPosition: {x: -250, y: 65.54999}
+  m_SizeDelta: {x: 408.67, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3083764006912856865
 MonoBehaviour:
@@ -731,8 +731,8 @@ MonoBehaviour:
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 8335467107858930921}
     m_SelectOnDown: {fileID: 861471242401724199}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnLeft: {fileID: 3220705355347649701}
+    m_SelectOnRight: {fileID: 3220705355347649701}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1449,7 +1449,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7749532401039637071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1466,9 +1466,9 @@ RectTransform:
   - {fileID: 6839177776490263102}
   m_Father: {fileID: 85837476333804422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 204.335, y: -182.52576}
   m_SizeDelta: {x: 408.67, y: 35.0103}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1006298994595581214
@@ -2159,7 +2159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2819900470995066346}
   - component: {fileID: 3220705355347649701}
-  - component: {fileID: 5963534321685928993}
+  - component: {fileID: 9121476672334194830}
   m_Layer: 5
   m_Name: SliderMusic
   m_TagString: Untagged
@@ -2202,12 +2202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 8335467107858930921}
+    m_SelectOnDown: {fileID: 4677685785309101354}
+    m_SelectOnLeft: {fileID: 4383405481202691904}
+    m_SelectOnRight: {fileID: 4383405481202691904}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2239,20 +2239,8 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5963534321685928993}
-        m_TargetAssemblyTypeName: sliderVolumeLevel, Assembly-CSharp
-        m_MethodName: SetSpecificVolume
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Music
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5963534321685928993
+      m_Calls: []
+--- !u!114 &9121476672334194830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2261,14 +2249,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1819698802201892688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac563bd1e0cbc224eba274ce572d4e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd0cca84b97f184fb288f80b44892f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSlider: {fileID: 3220705355347649701}
-  masterVolume: 0
-  vfxVolume: 0
-  voiceVolume: 0
-  musicVolume: 0
+  volume: 1
 --- !u!1 &1839152158119872021
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,12 +2537,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 4383405481202691904}
+    m_SelectOnDown: {fileID: 2105489771001837206}
+    m_SelectOnLeft: {fileID: 4677685785309101354}
+    m_SelectOnRight: {fileID: 4677685785309101354}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4180,7 +4164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5055440867470100916}
   - component: {fileID: 4677685785309101354}
-  - component: {fileID: 3914093111433922661}
+  - component: {fileID: 2662188120229118758}
   m_Layer: 5
   m_Name: SliderVoice
   m_TagString: Untagged
@@ -4223,12 +4207,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 3220705355347649701}
+    m_SelectOnDown: {fileID: 1279575048986593280}
+    m_SelectOnLeft: {fileID: 861471242401724199}
+    m_SelectOnRight: {fileID: 861471242401724199}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -4260,20 +4244,8 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3914093111433922661}
-        m_TargetAssemblyTypeName: sliderVolumeLevel, Assembly-CSharp
-        m_MethodName: SetSpecificVolume
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Voice
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3914093111433922661
+      m_Calls: []
+--- !u!114 &2662188120229118758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4282,14 +4254,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2920885506858135464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac563bd1e0cbc224eba274ce572d4e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd0cca84b97f184fb288f80b44892f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSlider: {fileID: 4677685785309101354}
-  masterVolume: 0
-  vfxVolume: 0
-  voiceVolume: 0
-  musicVolume: 0
+  volume: 2
 --- !u!1 &2938560830096381991
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,7 +5076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -139.7}
+  m_AnchoredPosition: {x: -250, y: -72.80003}
   m_SizeDelta: {x: 408.67, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3815008298818595743
@@ -7688,7 +7656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.037674, y: -275.4}
+  m_AnchoredPosition: {x: 0.037674, y: -239.6}
   m_SizeDelta: {x: 130, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7208460686193400858
@@ -7745,7 +7713,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 2105489771001837206}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnDown: {fileID: 8335467107858930921}
     m_SelectOnLeft: {fileID: 2105489771001837206}
     m_SelectOnRight: {fileID: 4186610019758980456}
   m_Transition: 1
@@ -7877,12 +7845,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 861471242401724199}
+    m_SelectOnDown: {fileID: 80312528565535268}
+    m_SelectOnLeft: {fileID: 1279575048986593280}
+    m_SelectOnRight: {fileID: 1279575048986593280}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -8507,7 +8475,7 @@ MonoBehaviour:
   firstSelected: {fileID: 6878024208739257086}
   resolutionDropdown: {fileID: 861471242401724199}
   languageDropdown: {fileID: 2105489771001837206}
-  OptionGameObject: {fileID: 5628460363015450982}
+  OptionGameObject: {fileID: 5968335852393835698}
   MenuGameObject: {fileID: 0}
 --- !u!1 &6107140913508992169
 GameObject:
@@ -9631,7 +9599,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
+    m_SelectOnUp: {fileID: 80312528565535268}
     m_SelectOnDown: {fileID: 4383405481202691904}
     m_SelectOnLeft: {fileID: 4383405481202691904}
     m_SelectOnRight: {fileID: 3220705355347649701}
@@ -10880,7 +10848,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4548524314321859145}
   - component: {fileID: 1279575048986593280}
-  - component: {fileID: 91984078894518931}
+  - component: {fileID: 6824268711232476924}
   m_Layer: 5
   m_Name: SliderVFX
   m_TagString: Untagged
@@ -10923,12 +10891,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 4677685785309101354}
+    m_SelectOnDown: {fileID: 4186610019758980456}
+    m_SelectOnLeft: {fileID: 2105489771001837206}
+    m_SelectOnRight: {fileID: 2105489771001837206}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -10960,20 +10928,8 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 91984078894518931}
-        m_TargetAssemblyTypeName: sliderVolumeLevel, Assembly-CSharp
-        m_MethodName: SetSpecificVolume
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: VFX
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &91984078894518931
+      m_Calls: []
+--- !u!114 &6824268711232476924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10982,14 +10938,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7667240055551795744}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac563bd1e0cbc224eba274ce572d4e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd0cca84b97f184fb288f80b44892f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSlider: {fileID: 1279575048986593280}
-  masterVolume: 0
-  vfxVolume: 0
-  voiceVolume: 0
-  musicVolume: 0
+  volume: 3
 --- !u!1 &7694375131342920623
 GameObject:
   m_ObjectHideFlags: 0
@@ -11334,7 +11286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -37.2}
+  m_AnchoredPosition: {x: 0, y: -21.650043}
   m_SizeDelta: {x: 3.828, y: 299.7984}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1992368688593279928
@@ -12625,7 +12577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9181782788043841043}
   - component: {fileID: 4186610019758980456}
-  - component: {fileID: 4528349498289666735}
+  - component: {fileID: 3127201347323635703}
   m_Layer: 5
   m_Name: SliderMasterVolume
   m_TagString: Untagged
@@ -12668,12 +12620,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 2
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnUp: {fileID: 1279575048986593280}
+    m_SelectOnDown: {fileID: 80312528565535268}
+    m_SelectOnLeft: {fileID: 2105489771001837206}
+    m_SelectOnRight: {fileID: 2105489771001837206}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -12705,20 +12657,8 @@ MonoBehaviour:
   m_Value: 100
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4528349498289666735}
-        m_TargetAssemblyTypeName: sliderVolumeLevel, Assembly-CSharp
-        m_MethodName: SetSpecificVolume
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Master
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4528349498289666735
+      m_Calls: []
+--- !u!114 &3127201347323635703
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12727,14 +12667,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9112264038919250227}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac563bd1e0cbc224eba274ce572d4e8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3bd0cca84b97f184fb288f80b44892f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisSlider: {fileID: 4186610019758980456}
-  masterVolume: 0
-  vfxVolume: 0
-  voiceVolume: 0
-  musicVolume: 0
+  volume: 0
 --- !u!1 &9131666789126465775
 GameObject:
   m_ObjectHideFlags: 0
@@ -12773,7 +12709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -32.34999}
+  m_AnchoredPosition: {x: 250, y: -16.8}
   m_SizeDelta: {x: 407.22, y: 314.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468444582695129792

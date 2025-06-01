@@ -74,6 +74,9 @@ public class GameManager : MonoBehaviour
     public StoryManager StoryManager => _storyManager;
     [SerializeField] private StoryManager _storyManager;
 
+    public AudioSettings AudioManager => _audioSettings;
+    [SerializeField] private AudioSettings _audioSettings;
+
     //Uniquement lÅEÅEbut de test, ne pas utiliser pour la version final
 
     public void Update()
