@@ -12,9 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
   m_Name: ELLESSARD TP and Attack
   m_EditorClassIdentifier: 
-  priority: 0
-  conditions: []
-  isHostileState: 0
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: b14b0e31412360548bcebcf563727a9b, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 4e845f282c5c2244cac91f0fafdd0017, type: 2}
+    - logicalGate: 2
+      not: 0
+      secondCondition: {fileID: 11400000, guid: c0ef0e598da77bd48961bb3a96858fa7, type: 2}
+  isHostileState: 1
   animationNames: []
-  isAttack: 0
-  States: []
+  isAttack: 1
+  States:
+  - delayBeforePlay: 0
+    state: {fileID: 11400000, guid: efaf7304fd95eeb43bfd17954a64b21d, type: 2}
+  - delayBeforePlay: 0.2
+    state: {fileID: 11400000, guid: ad00dd059c04b6c43ba256028b36954a, type: 2}

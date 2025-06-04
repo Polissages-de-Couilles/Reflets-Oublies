@@ -2,15 +2,14 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 
-public class ProjectileLaunchAtPlayer : ProjectileBase
+public class LaserEllessard : ProjectileBase
 {
     [SerializeField] float lifespan;
-    [SerializeField] float speed;
 
     protected override void LaunchProjectile()
     {
         gameObject.layer = 9;
-        gameObject.transform.Rotate(gameObject.transform.rotation.eulerAngles.x, manager.launcher.transform.rotation.eulerAngles.y, gameObject.transform.rotation.eulerAngles.z);
+        gameObject.transform.Rotate(gameObject.transform.rotation.eulerAngles.x,manager.launcher.transform.rotation.eulerAngles.y, gameObject.transform.rotation.eulerAngles.z);
         attackCollider.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
         attackCollider.OnDamageableEnterTrigger += TriggerEnter;
         StartCoroutine(MoveProjectile());
@@ -19,10 +18,8 @@ public class ProjectileLaunchAtPlayer : ProjectileBase
     IEnumerator MoveProjectile()
     {
         float timer = 0f;
-        Vector3 direction = (manager.target.transform.position - transform.position).normalized;
         while (timer < lifespan)
         {
-            transform.position += direction * Time.deltaTime * speed;
             yield return new WaitForFixedUpdate();
             timer += Time.deltaTime;
         }
