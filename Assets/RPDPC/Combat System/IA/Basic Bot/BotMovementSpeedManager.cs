@@ -4,7 +4,7 @@ using System.Linq;
 
 public class BotMovementSpeedManager : MonoBehaviour
 {
-    [SerializeField] AnimationCurve speedCurve;
+    [SerializeField] AnimationCurve speedCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(1,1));
     [SerializeField] NavMeshAgent agent;
     float timer = 0f;
     float baseSpeed;
