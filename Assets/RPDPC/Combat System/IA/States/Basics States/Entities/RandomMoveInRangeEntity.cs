@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class RandomMoveInRangeEntity : StateEntityBase
 {
+    RandomMode randomMode;
     Vector3 searchCenter;
     float searchRange;
     bool shouldOnlyMoveOnce;
@@ -16,8 +17,9 @@ public class RandomMoveInRangeEntity : StateEntityBase
     bool isMoving => Vector3.Distance(currentDestination, parent.transform.position) >= 0.1f;
     Vector3 currentDestination;
 
-    public override void Init(Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
+    public override void Init(RandomMode randMode, Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves)
     {
+        this.randomMode = randMode;
         this.searchCenter = searchCenter;
         this.searchRange = searchRange;
         this.shouldOnlyMoveOnce = shouldOnlyMoveOnce;
@@ -87,6 +89,19 @@ public class RandomMoveInRangeEntity : StateEntityBase
     private void goToRandomPos()
     {
         Vector3 randomPoint = searchCenter + Random.insideUnitSphere * searchRange;
+
+        if (randomMode == RandomMode.CROSS)
+        {
+            if (Random.value < 0.5f)
+            {
+                randomPoint = new Vector3(parent.transform.position.x + Random.Range(-searchRange, searchRange), parent.transform.position.y, parent.transform.position.z);
+            }
+            else
+            {
+                randomPoint = new Vector3(parent.transform.position.x, parent.transform.position.y, parent.transform.position.z + Random.Range(-searchRange, searchRange));
+            }
+        }
+
         NavMeshHit hit;
         if (NavMesh.SamplePosition(randomPoint, out hit, searchRange, NavMesh.AllAreas))
         {   

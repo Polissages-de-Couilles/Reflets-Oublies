@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
+using DG.Tweening;
 public abstract class StateEntityBase
 {
     public Action onActionFinished;
@@ -78,7 +78,7 @@ public abstract class StateEntityBase
     { }
 
     public virtual void Init(
-        Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves //RandomMoveInRange
+        RandomMode randomMode,Vector3 searchCenter, float searchRange, bool shouldOnlyMoveOnce, bool WaitForMoveToFinishBeforeEndOrSwitchingState, Vector2 rangeWaitBetweenMoves //RandomMoveInRange
     )
     { }
 
