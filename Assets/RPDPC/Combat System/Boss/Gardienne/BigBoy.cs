@@ -69,7 +69,7 @@ public class BigBoy : ProjectileBase
             if (timer < durationBeforeMaxAmplitude)
                 noise.m_AmplitudeGain = Mathf.Clamp(timer / durationBeforeMaxAmplitude, 0, 1) * cameraShakeMaxIntensity;
             else if (timer >= durationBeforeMaxAmplitude)
-                noise.m_AmplitudeGain =  (1 - Mathf.Clamp((timer - durationBeforeMaxAmplitude)/ (durationOfFall - durationBeforeMaxAmplitude), 0, 1)) * cameraShakeMaxIntensity * 3;
+                noise.m_AmplitudeGain =  (1 - Mathf.Clamp((timer - durationBeforeMaxAmplitude)/ (durationOfFall - durationBeforeMaxAmplitude), 0, 1)) * cameraShakeMaxIntensity * 5;
             yield return null;
             timer += Time.deltaTime;
         }

@@ -168,7 +168,7 @@ public class AttackManager : MonoBehaviour
 
     void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)
     {
-        if (collider = collision3.gameObject)
+        if (collider == collision3.gameObject)
             damageable.takeDamage(bigAttackDamage, gameObject);
         else 
             damageable.takeDamage(attackDamage, gameObject);
