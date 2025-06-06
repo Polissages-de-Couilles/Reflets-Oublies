@@ -16,8 +16,8 @@ public class ProjectileAttackEntity : StateEntityBase
     
     public override void ExitState()
     {
-        onActionFinished?.Invoke();
         manager.StopPrioritizeAttack(UnityEngine.Random.Range(timeWithoutAttackAfter.x, timeWithoutAttackAfter.y));
+        onActionFinished?.Invoke();
     }
 
     public override void Init(List<SOProjectileAttack.ProjectileAttackDetails> projectileAttacks, bool doAllAttacks, Vector2 timeWithoutAttackAfter)

@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca2a8ab07cfb554bb418276f2571d81, type: 3}
+  m_Name: Boo-Leverser SO Attack
+  m_EditorClassIdentifier: 
+  priority: 3
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: a4a5fd82f21631c40bdf0ed65b090c78, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
+  isHostileState: 1
+  animationNames:
+  - IdleBattle
+  - Attack01
+  isAttack: 1
+  attacks:
+  - colliders:
+    - delayBeforeColliderSpawn: 0.45
+      colliderID: 0
+      ColliderDuration: 0.25
+      DoesStun: 0
+      StunDuration: 0
+      DoesKnockback: 1
+      KnockForce: 1.5
+      KnockbackMode: 0
+      VFX: {fileID: 0}
+    attackDuration: 0.75
+    damage: 7
+    ShouldOnlyTookDamageFromOneCollision: 1
+    animationID: 1
+    animationSpeed:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    grabDetails:
+      grabID: 0
+      grabReleaseTime: 0
+      grabReleaseForce: {x: 0, y: 0, z: 0}
+      grabStunDuration: 0
+  doAllAttacks: 1
+  timeWithoutAttackAfter: {x: 1, y: 2}

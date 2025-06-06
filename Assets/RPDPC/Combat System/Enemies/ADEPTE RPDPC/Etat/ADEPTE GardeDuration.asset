@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc25d19570c62f544b8916054a9c3bce, type: 3}
+  m_Name: ADEPTE GardeDuration
+  m_EditorClassIdentifier: 
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: a4a5fd82f21631c40bdf0ed65b090c78, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 36239ba96175a78408909a346d790ea5, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 3a2a1d8f08c1480499d795a4de552e8e, type: 2}
+  isHostileState: 0
+  animationNames: []
+  isAttack: 0
+  m_State: {fileID: 11400000, guid: c444d4d845880dc43b2f0b043e9bf852, type: 2}
+  m_Duration: 1.5
