@@ -169,7 +169,26 @@ public class StateMachineManager : MonoBehaviour
             currentState.onActionFinished += StateEnded;
         }
     }
-    
+
+    public void forceState(StateEntityBase state)
+    {
+        //Debug.Log("FORCE STATE FOR " + gameObject + " : " + foundedState);
+        shouldSearchStates = true;
+        if (currentState != null)
+        {
+            currentState.onActionFinished -= StateEnded;
+            if (!state.isHostileState)
+            {
+                state.RemoveHostileFromPlayerState();
+            }
+            currentState.OnEndState();
+        }
+        currentState = state;
+        currentState.AddHostileToPlayerState();
+        currentState.OnEnterState();
+        currentState.onActionFinished += StateEnded;
+    }
+
     void forceDoNothing()
     {
         doNothingEntity nothing = new doNothingEntity();

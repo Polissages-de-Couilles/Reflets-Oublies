@@ -7,24 +7,24 @@ using UnityEngine;
 [RequireComponent(typeof(StateMachineManager))]
 public class BotDeathManager : MonoBehaviour
 {
-    const string DeathAnimName = "Die";
-    StateMachineManager stateMachine;
+    protected const string DeathAnimName = "Die";
+    protected StateMachineManager stateMachine;
     public Action OnBotDied;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         GetComponent<IDamageable>().OnDamageTaken += CallCheckBotHealth;
         stateMachine = GetComponent<StateMachineManager>();
     }
 
-    void CallCheckBotHealth(float damageTaken, float playerHealth)
+    protected void CallCheckBotHealth(float damageTaken, float playerHealth)
     {
         StartCoroutine(CheckBotHealth(damageTaken, playerHealth));
     }
 
     // Update is called once per frame
-    IEnumerator CheckBotHealth(float damageTaken, float playerHealth)
+    virtual protected IEnumerator CheckBotHealth(float damageTaken, float playerHealth)
     {
         if (playerHealth <= 0)
         {
