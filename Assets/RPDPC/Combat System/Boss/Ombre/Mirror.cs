@@ -17,7 +17,7 @@ public class Mirror : MonoBehaviour
         foreach (Material mat in GetComponentInChildren<MeshRenderer>().materials)
         {
             Debug.Log("COLOR " + mat.GetColor("_BaseColor"));
-            mat.SetColor("_BaseColor", mat.GetColor("_BaseColor").WithAlpha(0.5f));
+            mat.SetColor("_BaseColor", mat.GetColor("_BaseColor")/*.WithAlpha(0.5f)*/);
         }
         
     }

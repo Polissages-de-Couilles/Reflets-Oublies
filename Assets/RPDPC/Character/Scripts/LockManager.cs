@@ -22,6 +22,7 @@ public class LockManager : MonoBehaviour
     [SerializeField] Image vfxLock;
     [SerializeField] Image vfxLockable;
     float currentVignetteIntensity = -1f;
+    Tween t;
 
     private void Start()
     {
@@ -31,10 +32,19 @@ public class LockManager : MonoBehaviour
 
     private void OnLockPress(InputAction.CallbackContext context)
     {
-        currentVignetteIntensity = GameManager.Instance.CamManager.VignetteIntensity;
+        if(t != null && t.IsComplete())
+        {
+            t = null;
+        }
+
+        if(t == null)
+        {
+            currentVignetteIntensity = GameManager.Instance.CamManager.VignetteIntensity;
+        }
+
         GameManager.Instance.CamManager.Vignette(currentVignetteIntensity + (0.12f * (0.28f / currentVignetteIntensity)), 0.125f, false, true);
         GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(60, -45, 0), 0.5f);
-        DOTween.To(() =>
+        t = DOTween.To(() =>
             GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
             x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
             new Vector3(0, 0f, 0),

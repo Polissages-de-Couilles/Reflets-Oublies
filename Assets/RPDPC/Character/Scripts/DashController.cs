@@ -62,6 +62,7 @@ public class DashController : MonoBehaviour
         dashCount--;
         isDashing = true;
 
+        GameManager.Instance.FirebaseManager.UpdateAnim("Roll");
         animationManager.Roll();
         playerDamageable.BecameInvicible(dashTime);
 
@@ -104,6 +105,7 @@ public class DashController : MonoBehaviour
 
         isDashing = false;
         canDash = true;
+        GameManager.Instance.FirebaseManager.UpdateAnim("None");
     }
 
     IEnumerator RechargeDash()

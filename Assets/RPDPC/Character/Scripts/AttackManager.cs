@@ -92,6 +92,7 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase1()
     {
         //Debug.Log("Attack 1");
+        GameManager.Instance.FirebaseManager.UpdateAnim("Attack1 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks1);
         animationManager.SetAttackState(1);
         collision1.GetComponent<MeshRenderer>().enabled = true;
@@ -110,6 +111,8 @@ public class AttackManager : MonoBehaviour
             yield break;
         }
 
+        GameManager.Instance.FirebaseManager.UpdateAnim("None");
+
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
         if (nextAttackPhase == attackPhaseEnum.Phase2)
         {
@@ -121,6 +124,7 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase2()
     {
         //Debug.Log("Attack 2");
+        GameManager.Instance.FirebaseManager.UpdateAnim("Attack2 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks2);
         animationManager.SetAttackState(2);
         collision1.GetComponent<MeshRenderer>().enabled = true;
@@ -139,6 +143,8 @@ public class AttackManager : MonoBehaviour
             yield break;
         }
 
+        GameManager.Instance.FirebaseManager.UpdateAnim("None");
+
         yield return new WaitForSeconds(timeBetweenAttacks); //Reset combo if no input
         if (nextAttackPhase == attackPhaseEnum.Phase3)
         {
@@ -150,6 +156,7 @@ public class AttackManager : MonoBehaviour
     IEnumerator AttackPhase3()
     {
         //Debug.Log("Attack 3");
+        GameManager.Instance.FirebaseManager.UpdateAnim("Attack3 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks3);
         animationManager.SetAttackState(3);
         collision1.GetComponent<MeshRenderer>().enabled = true;
@@ -162,6 +169,7 @@ public class AttackManager : MonoBehaviour
 
         doNextAttack = false;
         animationManager.ResetAttack();
+        GameManager.Instance.FirebaseManager.UpdateAnim("None");
     }
 
     void OnTriggerDetectDamageable(IDamageable damageable, GameObject collider)

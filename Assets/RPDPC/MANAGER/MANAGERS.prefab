@@ -180,6 +180,8 @@ MonoBehaviour:
   _vfxManager: {fileID: 3863974205218577994}
   _lockManager: {fileID: 0}
   _storyManager: {fileID: 3709591564633512650}
+  _audioSettings: {fileID: 305886116226954079}
+  _firebaseManager: {fileID: 2476959512308383727}
 --- !u!1 &3014237739964329974
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,7 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c524043cea1834047b7d35d8849100b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ghost: {fileID: 1394353554722985831, guid: f9e8304531b608941aaa466969b4673d, type: 3}
+  _ghost: {fileID: 8652973734697951168, guid: f9e8304531b608941aaa466969b4673d, type: 3}
 --- !u!1 &5146027343029764900
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,10 +1059,31 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1430365920677514370, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3873527392245752195, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 305886116226954079}
   m_SourcePrefab: {fileID: 100100000, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
 --- !u!4 &1994049028299736927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8131936960901123542, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
   m_PrefabInstance: {fileID: 7743438811155483273}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6825117487158848266 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3873527392245752195, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
+  m_PrefabInstance: {fileID: 7743438811155483273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &305886116226954079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825117487158848266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ab4985b2f353b843a972305c6f6e0aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 9d7535b2653935041a8b40eafa689882, type: 2}

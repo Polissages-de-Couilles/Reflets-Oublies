@@ -50,7 +50,6 @@ namespace PDC
 
         [SerializeField] string Message;
         [SerializeField] string PdC;
-        [SerializeField] int Language;
 
         [Button]
         public void TestMessage()
