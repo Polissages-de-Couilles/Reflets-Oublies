@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StateMachineManager : MonoBehaviour
@@ -170,6 +171,12 @@ public class StateMachineManager : MonoBehaviour
     void forceDoNothing()
     {
         doNothingEntity nothing = new doNothingEntity();
+        ConditionExpression condition = new ConditionExpression();
+        condition.baseCondition = new AlwaysFalse();
+        condition.otherParts = new List<ConditionCalculs>();
+        List<ConditionExpression> conditions = new List<ConditionExpression>();
+        conditions.Add(condition);
+        nothing.InitGlobalVariables(this, gameObject, GameManager.Instance.Player, conditions, 0, false, animator, new List<string>(), false);
         nothing.priority = 0;
 
         shouldSearchStates = true;
@@ -214,6 +221,7 @@ public class StateMachineManager : MonoBehaviour
 
     public static void StopAllStateMachines()
     {
+        //Debug.Log("STOP ALL STATE MACHINES");
         alreadyStopedStateMachines.Clear();
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)

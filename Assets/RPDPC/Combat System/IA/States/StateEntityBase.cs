@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using MeetAndTalk;
 
 public abstract class StateEntityBase
 {
@@ -10,7 +11,7 @@ public abstract class StateEntityBase
     protected GameObject parent;
     protected GameObject player;
     protected Animator animator;
-    protected List<string> animationNames;
+    protected List<string> animationNames = new List<string>();
     public bool isAttack;
     public float priority;
     protected List<ConditionExpression> conditions;
@@ -131,6 +132,14 @@ public abstract class StateEntityBase
     public virtual void Init(
         StateBase State,   //PlayStateForDuration
         float duration
+    )
+    { }
+
+    public virtual void Init(
+        DialogueContainerSO dialogueGOOD, //Talk
+        DialogueContainerSO dialogueBAD,
+        DialogueContainerSO dialogueNEUTRAL,
+        List<string> ListOfTypesToDESTROY
     )
     { }
 
