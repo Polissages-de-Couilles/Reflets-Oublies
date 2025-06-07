@@ -22,6 +22,8 @@ public class StateMachineManager : MonoBehaviour
 
     float lastStopAttackDuration;
 
+    static public StateMachineManager machineToNotDestory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -226,14 +228,17 @@ public class StateMachineManager : MonoBehaviour
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            if (machine.enabled == false)
+            if (machine != machineToNotDestory)
             {
-                alreadyStopedStateMachines.Add(machine);
-            }
-            else
-            {
-                machine.forceDoNothing();
-                machine.enabled = false;
+                if (machine.enabled == false)
+                {
+                    alreadyStopedStateMachines.Add(machine);
+                }
+                else
+                {
+                    machine.forceDoNothing();
+                    machine.enabled = false;
+                }
             }
         }
     }
@@ -243,7 +248,7 @@ public class StateMachineManager : MonoBehaviour
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            if (!alreadyStopedStateMachines.Contains(machine)) machine.enabled = true;
+            if (!alreadyStopedStateMachines.Contains(machine) && machine != machineToNotDestory) machine.enabled = true;
         }
     }
 

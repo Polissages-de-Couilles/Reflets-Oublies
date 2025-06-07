@@ -24,6 +24,7 @@ public class TalkEntity : StateEntityBase
     public override void ExitState()
     {
         manager.shouldSearchStates = true;
+        StateMachineManager.machineToNotDestory = null;
         onActionFinished?.Invoke();
     }
 
@@ -33,6 +34,8 @@ public class TalkEntity : StateEntityBase
 
     public override void OnEnterState()
     {
+        StateMachineManager.machineToNotDestory = manager;
+
         foreach (string type in ListOfTypesToDESTROY)
         {
             foreach (Component comp in MonoBehaviour.FindObjectsOfType(Type.GetType(type)))
