@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
+  m_Name: Mr Krabs SO Projectile Attack
+  m_EditorClassIdentifier: 
+  priority: 2
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+    not: 0
+    otherParts:
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: c23fe3923fc85934bbd3e26ff4c63780, type: 2}
+    - logicalGate: 0
+      not: 0
+      secondCondition: {fileID: 11400000, guid: 34c9c8d1ef2051c46937f824deb29caa, type: 2}
+  isHostileState: 1
+  animationNames:
+  - IdleBattle
+  - Attack01
+  isAttack: 1
+  attacks:
+  - spawnerID: 0
+    prefabProjectiles:
+    - prefab: {fileID: 3514850094536339363, guid: fc88268d1a0087b4ab1227d73a51a818, type: 3}
+      delayBeforeSpawn: 0.3
+      damageDetails:
+        damage: 4
+        doesStun: 1
+        stunDuration: 0.2
+        doesKnockback: 0
+        knockbackForce: 0
+        doNotDestroyAtTriggerEnter: 0
+    attackDuration: 0.66
+    animationID: 1
+    animationSpeed:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    VFX: {fileID: 0}
+  doAllAttacks: 0
+  timeWithoutAttackAfter: {x: 2, y: 2.5}

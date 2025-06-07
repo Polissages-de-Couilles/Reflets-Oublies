@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcaa6e4572fabd74896c64c1b3587f85, type: 3}
+  m_Name: ELESSARD TP Behind
+  m_EditorClassIdentifier: 
+  priority: 1
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
+  isHostileState: 1
+  animationNames:
+  - TpEllessard
+  - TpEllessardOut
+  isAttack: 0
+  teleportMode: 5
+  SetPoint: {x: 0, y: 0, z: 0}
+  RandomPointInZone: []
+  RandomPointInCircularZone: 0
+  SymetricPoint: {x: 0, y: 0, z: 0}
+  behindPlayerDistance: 8
+  HaveToSeePlayer: 0
+  IgnoreY: 1
+  SnapToNavMesh: 1
