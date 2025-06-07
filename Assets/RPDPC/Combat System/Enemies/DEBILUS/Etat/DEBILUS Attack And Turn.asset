@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa005d7eebc1d834ebb5ee3a622bcaeb, type: 3}
+  m_Name: DEBILUS Attack And Turn
+  m_EditorClassIdentifier: 
+  priority: 0
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
+  isHostileState: 1
+  animationNames:
+  - Salamander_IdleNormal
+  - Salamander_Attack03
+  isAttack: 1
+  attacks:
+  - colliders:
+    - delayBeforeColliderSpawn: 0
+      colliderID: 0
+      ColliderDuration: 10
+      DoesStun: 0
+      StunDuration: 0
+      DoesKnockback: 0
+      KnockForce: 0
+      KnockbackMode: 0
+      VFX: {fileID: 0}
+    attackDuration: 10
+    damage: 5
+    ShouldOnlyTookDamageFromOneCollision: 0
+    animationID: 1
+    animationSpeed:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    grabDetails:
+      grabID: 0
+      grabReleaseTime: 0
+      grabReleaseForce: {x: 0, y: 0, z: 0}
+      grabStunDuration: 0
+  doAllAttacks: 1
+  timeWithoutAttackAfter: {x: 5, y: 5}
+  turnDuration: 10

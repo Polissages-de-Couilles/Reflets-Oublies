@@ -134,6 +134,14 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        List<SOAttack.AttackDetails> attacks,     //Attack and Turning 
+        bool doAllAttacks, 
+        Vector2 timeWithoutAttackAfter, 
+        float turnDuration
+        )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
