@@ -159,7 +159,7 @@ public class FirebaseManager : MonoBehaviour
 
         foreach (var user in _activeUsers)
         {
-            CreateGhost(user);
+            UnityMainThreadDispatcher.Instance().Enqueue(() => CreateGhost(user));
         }
     }
 
