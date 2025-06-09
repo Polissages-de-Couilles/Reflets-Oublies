@@ -17,6 +17,8 @@ public class AttackManager : MonoBehaviour
     [SerializeField] AttackCollider collision1;
     [SerializeField] AttackCollider collision2;
     [SerializeField] AttackCollider collision3;
+    [SerializeField] Transform vfxAttack3Pos;
+    [SerializeField] GameObject vfxAttack3;
 
     StateManager stateManager;
     bool doNextAttack = false;
@@ -42,17 +44,14 @@ public class AttackManager : MonoBehaviour
         PIE = GameManager.Instance.PlayerInputEventManager;
 
         collision1.SetCollisionState(false);
-        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision1.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision1.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision2.SetCollisionState(false);
-        collision2.GetComponent<MeshRenderer>().enabled = false;
         collision2.Init(true, 1, false, 0, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision2.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         collision3.SetCollisionState(false);
-        collision3.GetComponent<MeshRenderer>().enabled = false;
         collision3.Init(true, 1, true, 1f, KnockbackMode.MoveAwayFromAttacker, false, gameObject);
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
@@ -95,15 +94,14 @@ public class AttackManager : MonoBehaviour
         GameManager.Instance.FirebaseManager.UpdateAnim("Attack1 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks1);
         animationManager.SetAttackState(1);
-        collision1.GetComponent<MeshRenderer>().enabled = true;
-        collision1.SetCollisionState(true);
+        //collision1.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase2;
         yield return new WaitForSeconds(timeBetweenAttacks1);
-        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision1.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase2;
 
         yield return null;
+
         if (doNextAttack)
         {
             doNextAttack = false;
@@ -127,11 +125,9 @@ public class AttackManager : MonoBehaviour
         GameManager.Instance.FirebaseManager.UpdateAnim("Attack2 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks2);
         animationManager.SetAttackState(2);
-        collision1.GetComponent<MeshRenderer>().enabled = true;
-        collision2.SetCollisionState(true);
+        //collision2.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase3;
         yield return new WaitForSeconds(timeBetweenAttacks2);
-        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision2.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase3;
 
@@ -159,11 +155,9 @@ public class AttackManager : MonoBehaviour
         GameManager.Instance.FirebaseManager.UpdateAnim("Attack3 Trigger");
         stateManager.SetPlayerState(StateManager.States.attack, timeBetweenAttacks3);
         animationManager.SetAttackState(3);
-        collision1.GetComponent<MeshRenderer>().enabled = true;
-        collision3.SetCollisionState(true);
+        //collision3.SetCollisionState(true);
         nextAttackPhase = attackPhaseEnum.Phase1;
         yield return new WaitForSeconds(timeBetweenAttacks3);
-        collision1.GetComponent<MeshRenderer>().enabled = false;
         collision3.SetCollisionState(false);
         nextAttackPhaseLate = attackPhaseEnum.Phase1;
 
