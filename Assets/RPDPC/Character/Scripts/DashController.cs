@@ -18,6 +18,7 @@ public class DashController : MonoBehaviour
     [SerializeField] private float dashCooldown = 2f;
 
     public bool isDashing { get; private set; }
+    public bool CanDash { get; set; } = true;
     bool canDash = true;
     Vector3 gravity = new Vector3(0, -9.81f, 0);
 
@@ -49,7 +50,7 @@ public class DashController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(canDash && isStateCompatible(stateManager.playerState) && dashCount > 0)
+        if(canDash && CanDash && isStateCompatible(stateManager.playerState) && dashCount > 0)
         {
             StartCoroutine(Dash());
             stateManager.SetPlayerState(StateManager.States.dash, dashTime);
@@ -64,7 +65,7 @@ public class DashController : MonoBehaviour
 
         GameManager.Instance.FirebaseManager.UpdateAnim("Roll");
         animationManager.Roll();
-        playerDamageable.BecameInvicible(dashTime);
+        playerDamageable.BecameInvicible(dashTime, false);
 
         if (GameManager.Instance.UIManager != null)
         {

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using JetBrains.Annotations;
 using System;
 using System.Collections;
@@ -14,10 +15,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
     [SerializeField] float invicibleTime;
     public bool IsInvicible => isInvicible;
     private bool isInvicible = false;
+    private bool isBlink = false;
     private Dictionary<int, IEnumerator> _invicibleList = new();
     public Action<float, float> OnDamageTaken { get; set; }
 
     List<StateManager.States> incompatibleStates = new List<StateManager.States> { StateManager.States.talk };
+
+    [SerializeField] SkinnedMeshRenderer[] _renderer;
+    [SerializeField] MeshRenderer[] _meshrenderer;
 
     public float getCurrentHealth()
     {
@@ -50,7 +55,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         }
     }
 
-    public void BecameInvicible(float time)
+    public void BecameInvicible(float time, bool blink = true)
     {
         System.Random rng = new System.Random();
         int id = rng.Next(0, 9);
@@ -68,17 +73,19 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
                 Debug.LogError("Max id Reach");
             }
         }
-        var coroutine = InvicibleFrame(time, id);
+        var coroutine = InvicibleFrame(time, id, blink);
         _invicibleList.Add(id, coroutine);
         StartCoroutine(coroutine);
     }
-    IEnumerator InvicibleFrame(float time, int id)
+    IEnumerator InvicibleFrame(float time, int id, bool blink)
     {
         yield return null;
+        if (blink) isBlink = true;
         isInvicible = true;
         characterController.detectCollisions = false;
         yield return new WaitForSeconds(time);
         _invicibleList.Remove(id);
+        if (blink) isBlink = false;
         if(_invicibleList.Count <= 0)
         {
             characterController.detectCollisions = true;
@@ -91,12 +98,53 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         //StartCoroutine(testDamage());
         sm = GetComponent<StateManager>();
         characterController = GetComponent<CharacterController>();
+        StartCoroutine(BlinkIfInvisible());
+    }
+
+    IEnumerator BlinkIfInvisible()
+    {
+        //List<Material> materials = new List<Material>();
+        //foreach (var mat in _mesh.materials)
+        //{
+        //    if (!materials.Contains(mat))
+        //    {
+        //        materials.Add(mat);
+        //    }
+        //}
+
+        while (true) 
+        {
+            while (isInvicible && isBlink)
+            {
+                foreach (var rend in _renderer)
+                {
+                    rend.enabled = false;
+                }
+                foreach (var rend in _meshrenderer)
+                {
+                    rend.enabled = false;
+                }
+                yield return new WaitForSeconds(0.05f);
+
+                foreach (var rend in _renderer)
+                {
+                    rend.enabled = true;
+                }
+                foreach (var rend in _meshrenderer)
+                {
+                    rend.enabled = true;
+                }
+                yield return new WaitForSeconds(0.1f);
+            }
+            yield return null;
+        }
     }
 
     public void heal(float heal)
     {
         currentHealth += heal;
         if (maxHealth < currentHealth) currentHealth = maxHealth;
+        //VFX Heal
     }
 
     //IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }

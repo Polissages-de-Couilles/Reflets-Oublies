@@ -7,7 +7,6 @@ public class DeathManager : MonoBehaviour
     private StateManager stateManager;
     private AnimationManager animationManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         stateManager = GetComponent<StateManager>();
@@ -24,5 +23,12 @@ public class DeathManager : MonoBehaviour
             animationManager.Death();
             Debug.Log("The player is dead.");
         }
+    }
+
+    IEnumerator Respawn()
+    {
+        //Afficher Ecran de fin
+
+        yield return null;
     }
 }
