@@ -11,7 +11,7 @@ public class MirrorLaser : MonoBehaviour
     Vector3 wantedSize;
     GameObject fx;
 
-    public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm, GameObject LaserFX)
+    public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm, GameObject LaserFX, Material previewMat)
     {
 
         Mirror firstMirror = mm.GetMirror(firstMirrorID);
@@ -19,21 +19,7 @@ public class MirrorLaser : MonoBehaviour
 
         fx = LaserFX;
 
-        Material material = new Material(Shader.Find("Universal Render Pipeline/Simple Lit"));
-        material.SetFloat("_Surface", 1.0f);
-        material.SetFloat("_Blend", 0.0f);
-        Color baseColor = Color.red;
-        baseColor.a = 0.2f;
-        material.SetColor("_BaseColor", baseColor);
-        material.SetFloat("_ReceiveShadows", 0.0f);
-        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-        material.SetInt("_ZWrite", 0);
-        material.DisableKeyword("_ALPHATEST_ON");
-        material.EnableKeyword("_ALPHABLEND_ON");
-        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        material.renderQueue = 3000;
-        GetComponent<MeshRenderer>().material = material;
+        GetComponent<MeshRenderer>().material = previewMat;
 
         CapsuleCollider cc = gameObject.AddComponent<CapsuleCollider>();
         cc.enabled = false;
