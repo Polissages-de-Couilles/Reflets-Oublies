@@ -177,7 +177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   invicibleTime: 0.5
-  _mesh: {fileID: 336973964542248735}
+  _renderer: []
+  _meshrenderer: []
 --- !u!114 &4516370310655760648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,11 +208,11 @@ MonoBehaviour:
   timeBetweenAttacks2: 0.6
   timeBetweenAttacks3: 0.6
   attackDamage: 1
+  bigAttackDamage: 0
   collision1: {fileID: 1775810200797484823}
   collision2: {fileID: 8107927360739045534}
   collision3: {fileID: 4541379617625684428}
-  vfxAttack3Pos: {fileID: 8274088962664410729}
-  vfxAttack3: {fileID: 1040608886635896, guid: f5548ac03a592ae42b79865316270a91, type: 3}
+  states: 00000000
 --- !u!114 &5498643400513061394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1088,11 +1089,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1015844494120115882}
   m_SourcePrefab: {fileID: 100100000, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
---- !u!137 &336973964542248735 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1630794972795428178, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}
-  m_PrefabInstance: {fileID: 1300576476448315981}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &991942634048322342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6933144309664472725, guid: 8887157bc7b303f45afb3ecd51643647, type: 3}

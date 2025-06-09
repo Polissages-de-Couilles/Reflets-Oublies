@@ -18,8 +18,6 @@ public class AttackManager : MonoBehaviour
     [SerializeField] AttackCollider collision1;
     [SerializeField] AttackCollider collision2;
     [SerializeField] AttackCollider collision3;
-    [SerializeField] Transform vfxAttack3Pos;
-    [SerializeField] GameObject vfxAttack3;
 
     StateManager stateManager;
     bool doNextAttack = false;
@@ -40,7 +38,6 @@ public class AttackManager : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
@@ -62,6 +59,7 @@ public class AttackManager : MonoBehaviour
 
     void OnAttack(InputAction.CallbackContext context)
     {
+        Debug.Log("Interraction Attack");
         if(nextAttackPhase != nextAttackPhaseLate)
         {
             doNextAttack = true;
