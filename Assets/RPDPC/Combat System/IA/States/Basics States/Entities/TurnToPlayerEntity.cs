@@ -27,7 +27,7 @@ public class TurnToPlayerEntity : StateEntityBase
     public override void OnEnterState()
     {
         Coroutine = manager.StartCoroutine(DoLookAt());
-        animator.Play(animationNames[0], 0);
+        if (animationNames.Count > 0 ) animator.Play(animationNames[0], 0);
     }
 
     public override void OnUpdate()
