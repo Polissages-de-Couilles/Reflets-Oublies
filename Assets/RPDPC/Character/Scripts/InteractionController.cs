@@ -9,11 +9,13 @@ public class InteractionController : MonoBehaviour
 {
     private PlayerInputEventManager PIE;
     private Interactible currentInteraction;
+    private DashController dashController;
 
     public void Start()
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Interaction.performed += OnInteraction;
+        dashController = gameObject.GetComponent<DashController>();
     }
 
     private void FixedUpdate()
@@ -22,8 +24,17 @@ public class InteractionController : MonoBehaviour
         var atRange = interacibles.FindAll(x => x.IsAtRange);
         atRange = atRange.OrderBy(x => x.Distance - x.Priority).ToList();
 
-        if(atRange.Count > 0) currentInteraction = atRange[0];
-        else currentInteraction = null;
+        if (atRange.Count > 0) 
+        { 
+            currentInteraction = atRange[0];
+            dashController.CanDash = false;
+        }
+        else
+        {
+            currentInteraction = null;
+            dashController.CanDash = true;
+
+        } 
         //Debug.Log(currentInteraction);
 
         foreach (var i in interacibles)

@@ -2,11 +2,9 @@ using EditorCools;
 using Firebase;
 using Firebase.Database;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
+using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -27,8 +25,8 @@ public class FirebaseManager : MonoBehaviour
 
     bool isDataWriting = false;
 
-    [SerializeField] GameObject _ghost;
-    private Dictionary<int, GameObject> _ghostDic = new();
+    [SerializeField] GhostBehaviour _ghost;
+    private Dictionary<int, GhostBehaviour> _ghostDic = new();
 
     public void Start()
     {
@@ -89,7 +87,20 @@ public class FirebaseManager : MonoBehaviour
 
     private async void UpdateThisUserData()
     {
+        if (GameManager.Instance.Player == null) return;
         isDataWriting = true;
+        UserInstance.User.x = GameManager.Instance.Player.transform.position.x;
+        UserInstance.User.y = GameManager.Instance.Player.transform.position.y;
+        UserInstance.User.z = GameManager.Instance.Player.transform.position.z;
+        await SetUserData(UserInstance.User);
+        isDataWriting = false;
+    }
+
+    public async void UpdateAnim(string animName)
+    {
+        if (UserInstance.User == null) return;
+        isDataWriting = true;
+        UserInstance.User.anim = animName;
         UserInstance.User.x = GameManager.Instance.Player.transform.position.x;
         UserInstance.User.y = GameManager.Instance.Player.transform.position.y;
         UserInstance.User.z = GameManager.Instance.Player.transform.position.z;
@@ -148,16 +159,18 @@ public class FirebaseManager : MonoBehaviour
 
         foreach (var user in _activeUsers)
         {
-            CreateGhost(user);
+            UnityMainThreadDispatcher.Instance().Enqueue(() => CreateGhost(user));
         }
     }
 
     private void CreateGhost(UserData userData)
     {
-        if (userData.id == UserInstance.User.id || userData.id == -1 || UserInstance.User.id == UserInstance.OldId) return;
-        GameObject go;
-        _ghostDic.Add(userData.id, go = Instantiate(_ghost));
+        if (userData.id == UserInstance.User.id || userData.id == -1) return;
+        //Debug.Log(userData.ToString());
+        GhostBehaviour go = Instantiate(_ghost);
         go.transform.position = new Vector3(userData.x, userData.y, userData.z);
+        go.SetUpGhost(userData);
+        _ghostDic.Add(userData.id, go);
     }
 
     private void HandleChildAdded(object sender, ChildChangedEventArgs e)
@@ -166,7 +179,7 @@ public class FirebaseManager : MonoBehaviour
         {
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
             _activeUsers.Add(user);
-            //Debug.Log(user.id);
+            //Debug.Log(user);
             CreateGhost(user);
         }
     }
@@ -175,12 +188,28 @@ public class FirebaseManager : MonoBehaviour
     {
         if (Application.isPlaying)
         {
+            //var datas = await GetAllUserData();
+            //_activeUsers.Clear();
+            //_activeUsers = datas.ToList();
+
+            //var dic = new Dictionary<int, GhostBehaviour>(_ghostDic);
+            //foreach (var user in dic)
+            //{
+            //    if (!_activeUsers.Any(x => x.id == user.Key))
+            //    {
+            //        Destroy(_ghostDic[user.Key]);
+            //        _ghostDic.Remove(user.Key);
+            //    }
+            //}
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
             if (!_ghostDic.ContainsKey(user.id)) return;
             _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
-            //Debug.Log(user.id);
-            Destroy(_ghostDic[user.id]);
-            _ghostDic.Remove(user.id);
+            //Debug.LogError(user.id);
+            if (_ghostDic.ContainsKey(user.id))
+            {
+                Destroy(_ghostDic[user.id].gameObject);
+                _ghostDic.Remove(user.id);
+            }
         }
     }
 
@@ -189,9 +218,10 @@ public class FirebaseManager : MonoBehaviour
         if (Application.isPlaying)
         {
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-            if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id) || UserInstance.User.id == UserInstance.OldId) return;
-            Debug.Log(user.id + " | " + UserInstance.User.id + " | " + UserInstance.OldId + " | " + (UserInstance.User.id == UserInstance.OldId));
-            _ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
+            if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id)) return;
+            Debug.Log(user.id + " | " + UserInstance.User.id);
+            _ghostDic[user.id].UpdateGhost(user);
+            //_ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
         }
     }
 
@@ -223,37 +253,6 @@ public class FirebaseManager : MonoBehaviour
         return list;
     }
 
-    //private void AddUser(string name, float x, float y, float z)
-    //{
-    //    var user = new UserData(name, x, y, z);
-    //    RestClient.Put(GetURL($"USER/{name}"), user);
-    //}
-
-    //private async Task<UserData> GetUserData(string user)
-    //{
-    //    bool isDone = false;
-    //    int maxIteration = 1000;
-    //    int currentIteration = 0;
-
-    //    RestClient.Get<UserData>(GetURL($"USER/{user}")).Then(reponse =>
-    //    {
-    //        isDone = true;
-    //        return reponse;
-    //    });
-
-    //    while (!isDone && currentIteration < maxIteration)
-    //    {
-    //        currentIteration++;
-    //        await Task.Delay(10);
-    //    }
-
-    //    await Task.Delay(10);
-    //    if (!isDone)
-    //    {
-    //        Debug.LogError("Data is not receive");
-    //    }
-    //    return new("", 0, 0, 0);
-    //}
 }
 
 public class UserData
@@ -263,6 +262,10 @@ public class UserData
     public float y;
     public float z;
 
+    public string anim = "None";
+
+    public Vector3 position => new Vector3(x, y, z);
+
     public UserData(int id, float x, float y, float z)
     {
         this.id = id;
@@ -270,10 +273,14 @@ public class UserData
         this.y = y;
         this.z = z;
     }
+
+    public override string ToString()
+    {
+        return $"Id : {id} | Pos : {position}";
+    }
 }
 
 public static class UserInstance
 {
     public static UserData User;
-    public static int OldId;
 }

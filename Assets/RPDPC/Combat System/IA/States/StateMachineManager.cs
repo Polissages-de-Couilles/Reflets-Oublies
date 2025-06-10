@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class StateMachineManager : MonoBehaviour
@@ -20,6 +21,8 @@ public class StateMachineManager : MonoBehaviour
     static List<StateMachineManager> alreadyStopedStateMachines = new List<StateMachineManager>();
 
     float lastStopAttackDuration;
+
+    static public StateMachineManager machineToNotDestory;
 
     // Start is called before the first frame update
     void Start()
@@ -166,10 +169,35 @@ public class StateMachineManager : MonoBehaviour
             currentState.onActionFinished += StateEnded;
         }
     }
-    
+
+    public void forceState(StateEntityBase state)
+    {
+        //Debug.Log("FORCE STATE FOR " + gameObject + " : " + foundedState);
+        shouldSearchStates = true;
+        if (currentState != null)
+        {
+            currentState.onActionFinished -= StateEnded;
+            if (!state.isHostileState)
+            {
+                state.RemoveHostileFromPlayerState();
+            }
+            currentState.OnEndState();
+        }
+        currentState = state;
+        currentState.AddHostileToPlayerState();
+        currentState.OnEnterState();
+        currentState.onActionFinished += StateEnded;
+    }
+
     void forceDoNothing()
     {
         doNothingEntity nothing = new doNothingEntity();
+        ConditionExpression condition = new ConditionExpression();
+        condition.baseCondition = new AlwaysFalse();
+        condition.otherParts = new List<ConditionCalculs>();
+        List<ConditionExpression> conditions = new List<ConditionExpression>();
+        conditions.Add(condition);
+        nothing.InitGlobalVariables(this, gameObject, GameManager.Instance.Player, conditions, 0, false, animator, new List<string>(), false);
         nothing.priority = 0;
 
         shouldSearchStates = true;
@@ -214,18 +242,22 @@ public class StateMachineManager : MonoBehaviour
 
     public static void StopAllStateMachines()
     {
+        //Debug.Log("STOP ALL STATE MACHINES");
         alreadyStopedStateMachines.Clear();
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            if (machine.enabled == false)
+            if (machine != machineToNotDestory)
             {
-                alreadyStopedStateMachines.Add(machine);
-            }
-            else
-            {
-                machine.forceDoNothing();
-                machine.enabled = false;
+                if (machine.enabled == false)
+                {
+                    alreadyStopedStateMachines.Add(machine);
+                }
+                else
+                {
+                    machine.forceDoNothing();
+                    machine.enabled = false;
+                }
             }
         }
     }
@@ -235,7 +267,7 @@ public class StateMachineManager : MonoBehaviour
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {
-            if (!alreadyStopedStateMachines.Contains(machine)) machine.enabled = true;
+            if (!alreadyStopedStateMachines.Contains(machine) && machine != machineToNotDestory) machine.enabled = true;
         }
     }
 

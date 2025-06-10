@@ -77,6 +77,9 @@ public class GameManager : MonoBehaviour
     public AudioSettings AudioManager => _audioSettings;
     [SerializeField] private AudioSettings _audioSettings;
 
+    public FirebaseManager FirebaseManager => _firebaseManager;
+    [SerializeField] private FirebaseManager _firebaseManager;
+
     //Uniquement lEEbut de test, ne pas utiliser pour la version final
 
     public void Update()

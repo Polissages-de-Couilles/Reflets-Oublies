@@ -89,6 +89,15 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Validate"",
+                    ""type"": ""Button"",
+                    ""id"": ""5eba5024-bf93-45c2-b210-174d2dc3b671"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(pressPoint=0.9)"",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -238,7 +247,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6d5aa8df-d39f-42f2-b738-234f0a991262"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -260,7 +269,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""37b89a7e-5a71-4e0a-9005-b3fa88481666"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -282,7 +291,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9c068347-e6d6-4e3b-93ca-a4628592a034"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -331,6 +340,28 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Lock"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce5b6f75-243e-4821-a327-fb5b1ad3440d"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Validate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d1c65b9e-8956-4332-bc5f-aa9ade2a818e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Validate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -996,6 +1027,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         m_Player_Potion = m_Player.FindAction("Potion", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_Lock = m_Player.FindAction("Lock", throwIfNotFound: true);
+        m_Player_Validate = m_Player.FindAction("Validate", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1076,6 +1108,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Potion;
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_Lock;
+    private readonly InputAction m_Player_Validate;
     public struct PlayerActions
     {
         private @PlayerInputAction m_Wrapper;
@@ -1087,6 +1120,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         public InputAction @Potion => m_Wrapper.m_Player_Potion;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @Lock => m_Wrapper.m_Player_Lock;
+        public InputAction @Validate => m_Wrapper.m_Player_Validate;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1117,6 +1151,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Lock.started += instance.OnLock;
             @Lock.performed += instance.OnLock;
             @Lock.canceled += instance.OnLock;
+            @Validate.started += instance.OnValidate;
+            @Validate.performed += instance.OnValidate;
+            @Validate.canceled += instance.OnValidate;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1142,6 +1179,9 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
             @Lock.started -= instance.OnLock;
             @Lock.performed -= instance.OnLock;
             @Lock.canceled -= instance.OnLock;
+            @Validate.started -= instance.OnValidate;
+            @Validate.performed -= instance.OnValidate;
+            @Validate.canceled -= instance.OnValidate;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1313,6 +1353,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
         void OnPotion(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnLock(InputAction.CallbackContext context);
+        void OnValidate(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

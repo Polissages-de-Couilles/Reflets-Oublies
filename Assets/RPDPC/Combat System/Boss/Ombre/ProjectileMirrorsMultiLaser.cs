@@ -9,6 +9,7 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
     [SerializeField] float durationBeforeSpawn;
     [SerializeField] float size;
     [SerializeField] GameObject LaserFX;
+    [SerializeField] Material previewMat;
     MirrorsManager mm;
 
     protected override void LaunchProjectile()
@@ -17,14 +18,14 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
 
         gameObject.layer = 9;
 
-        foreach (ProjectileLaunchAtMirror pr in FindObjectsOfType<ProjectileLaunchAtMirror>())
-        {
-            Destroy(pr.gameObject);
-        }
-        foreach (ProjectileExplosiveMirror pm in FindObjectsOfType<ProjectileExplosiveMirror>())
-        {
-            Destroy(pm.gameObject);
-        }
+        //foreach (ProjectileLaunchAtMirror pr in FindObjectsOfType<ProjectileLaunchAtMirror>())
+        //{
+        //    Destroy(pr.gameObject);
+        //}
+        //foreach (ProjectileExplosiveMirror pm in FindObjectsOfType<ProjectileExplosiveMirror>())
+        //{
+        //    Destroy(pm.gameObject);
+        //}
 
         for (int i = 1; i < mirrors.Count; i++)
         {
@@ -40,7 +41,7 @@ public class ProjectileMirrorsMultiLaser : ProjectileBase
                 ac.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
                 ac.OnDamageableEnterTrigger += TriggerEnter;
                 MirrorLaser ml = capsule.AddComponent<MirrorLaser>();
-                ml.InitLaser(mirrors[i - 1], mirrors[i], duration, durationBeforeSpawn, size, mm, LaserFX);
+                ml.InitLaser(mirrors[i - 1], mirrors[i], duration, durationBeforeSpawn, size, mm, LaserFX, previewMat);
             }
         }
 

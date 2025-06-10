@@ -20,7 +20,7 @@ public class MainMenuManager : UIPanel
         base.Start();
         LocalizationManager.OnLocaReady(() =>
         {
-            UILoading.SetActive(false);
+            if(UILoading != null) UILoading.SetActive(false);
         });
 
         StartCoroutine(TextAnim());

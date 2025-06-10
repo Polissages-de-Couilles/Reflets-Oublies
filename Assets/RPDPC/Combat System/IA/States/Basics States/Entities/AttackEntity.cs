@@ -151,7 +151,8 @@ public class AttackEntity : StateEntityBase
 
     
 
-    void DealDamage(IDamageable damageable, GameObject collider) {
+    void DealDamage(IDamageable damageable, GameObject collider) 
+    {
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;

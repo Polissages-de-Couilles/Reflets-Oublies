@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AttackCollider : MonoBehaviour
@@ -17,6 +16,7 @@ public class AttackCollider : MonoBehaviour
     GameObject Attacker;
     bool isEnemy;
     public List<GameObject> CharacterAlreadyAttacked = new List<GameObject>();
+    public GameObject vfx = null;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attacker)
     {
@@ -40,6 +40,11 @@ public class AttackCollider : MonoBehaviour
             {
                 changeHasAlreadyTakeDamageValue = true;
                 OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
+
+                if(vfx != null)
+                {
+                    Instantiate(vfx, collider.ClosestPointOnBounds(Attacker.transform.position), Quaternion.identity);
+                }
             }
             if (SKManager != null && !CharacterAlreadyAttacked.Contains(collider.gameObject))
             {

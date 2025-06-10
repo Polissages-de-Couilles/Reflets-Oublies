@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9da5a4715071dbb4685fbd7aaae2521e, type: 3}
+  m_Name: TalkCombat1
+  m_EditorClassIdentifier: 
+  priority: 0
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
+  isHostileState: 1
+  animationNames: []
+  isAttack: 0
+  dialogueGOOD: {fileID: -3035803249590324334, guid: af0421691d975224daf5c10f3ad2d3c1, type: 2}
+  dialogueBAD: {fileID: -2805559786594680559, guid: af0421691d975224daf5c10f3ad2d3c1, type: 2}
+  dialogueNEUTRAL: {fileID: -6607250002360112474, guid: af0421691d975224daf5c10f3ad2d3c1, type: 2}
+  ListOfTypesToDESTROY:
+  - ProjectileBase
+  - MirrorLaser
