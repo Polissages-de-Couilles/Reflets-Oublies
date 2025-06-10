@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Rendering;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class PotionManager : MonoBehaviour
 {
@@ -25,6 +24,8 @@ public class PotionManager : MonoBehaviour
     private Vector3 lastPos;
 
     [SerializeField] GameObject vfx;
+    [SerializeField] List<DoubleImage> potionSprite;
+    Image imagePotion;
 
     private void Awake()
     {
@@ -35,8 +36,10 @@ public class PotionManager : MonoBehaviour
     {
         lastPos = Potion.transform.position;
 
-        maxMaxPotion = 10;
+        maxMaxPotion = 5;
         maxPotion = currentPotion;
+        imagePotion = Potion.GetComponent<Image>();
+        SetPotionImage(maxPotion, currentPotion > 0);
 
         text.text = currentPotion.ToString();
 
@@ -54,6 +57,7 @@ public class PotionManager : MonoBehaviour
             player.heal(player.maxHealth * HEAL_VALUE);
             currentPotion--;
             text.text = currentPotion.ToString();
+            SetPotionImage(maxPotion, currentPotion > 0);
 
             if (uiManager != null)
             {
@@ -62,7 +66,7 @@ public class PotionManager : MonoBehaviour
 
             var go = Instantiate(vfx, GameManager.Instance.Player.transform);
             go.transform.localPosition = new(0, -0.5f, 0);
-            Debug.Log("Heal : " + go.transform.localPosition);
+            //Debug.Log("Heal : " + go.transform.localPosition);
         }
         else if (currentPotion == 0)
         {
@@ -79,6 +83,7 @@ public class PotionManager : MonoBehaviour
             {
                 currentPotion = maxPotion;
                 text.text = currentPotion.ToString();
+                SetPotionImage(maxPotion, currentPotion > 0);
             }
             return true;
         }
@@ -94,6 +99,7 @@ public class PotionManager : MonoBehaviour
                 maxPotion++;
                 currentPotion++;
                 text.text = currentPotion.ToString();
+                SetPotionImage(maxPotion, currentPotion > 0);
             }
             return true;
         }
@@ -103,5 +109,20 @@ public class PotionManager : MonoBehaviour
     public void doShake()
     {
         Potion.transform.DOShakePosition(1, 2);
+    }
+
+    private void SetPotionImage(int maxPotion, bool isFill = true)
+    {
+        //Debug.Log("Set Potion Image : " + maxPotion);
+        imagePotion.sprite = isFill ? potionSprite[maxPotion - 1].Fill : potionSprite[maxPotion - 1].Empty;
+        (imagePotion.transform as RectTransform).sizeDelta = potionSprite[maxPotion - 1].Size;
+    }
+
+    [System.Serializable]
+    public struct DoubleImage
+    {
+        public Sprite Fill;
+        public Sprite Empty;
+        public Vector2 Size;
     }
 }

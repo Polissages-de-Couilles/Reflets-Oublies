@@ -61,6 +61,7 @@ public class PNJ : Interactible
             default:
                 break;
         }
+        base.OnInteraction();
     }
 
     private void OnNode(BaseNodeData data)

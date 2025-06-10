@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -27,5 +28,6 @@ public class MoneyManager : MonoBehaviour
     {
         _playerMonney += monney;
         text.text = _playerMonney.ToString();
+        text.transform.DOShakePosition(10, 0.2f);
     }
 }

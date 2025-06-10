@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Lockable : MonoBehaviour
 {
-    public bool CanBeLock { get; set; } = true;
+    public bool CanBeLock { 
+        get { return canBeLock; }
+        set { canBeLock = value; }
+    }
+    private bool canBeLock = true;
     public bool IsCurrentlyLock => isLock;
     private bool isLock = false;
-    private bool isLockable = false;
+    private bool isLockable = true;
 
     private void Update()
     {

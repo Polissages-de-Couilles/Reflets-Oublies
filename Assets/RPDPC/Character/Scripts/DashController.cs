@@ -50,7 +50,7 @@ public class DashController : MonoBehaviour
 
     private void OnDash(InputAction.CallbackContext context)
     {
-        if(canDash && CanDash && isStateCompatible(stateManager.playerState) && dashCount > 0)
+        if(canDash && (CanDash || PlayerInputEventManager.currentController == PlayerInputEventManager.ControllerType.Keyboard) && isStateCompatible(stateManager.playerState) && dashCount > 0)
         {
             StartCoroutine(Dash());
             stateManager.SetPlayerState(StateManager.States.dash, dashTime);

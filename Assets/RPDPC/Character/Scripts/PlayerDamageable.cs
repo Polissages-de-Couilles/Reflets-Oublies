@@ -52,6 +52,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
             Debug.Log("Player took damage. Their health is now at " + currentHealth);
             OnDamageTaken?.Invoke(damage, currentHealth);
             BecameInvicible(invicibleTime);
+            GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
         }
     }
 

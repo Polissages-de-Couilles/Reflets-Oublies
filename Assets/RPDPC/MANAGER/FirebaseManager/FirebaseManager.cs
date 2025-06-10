@@ -30,6 +30,8 @@ public class FirebaseManager : MonoBehaviour
 
     public void Start()
     {
+        _ghostDic.Clear();
+
         OnFirebaseInitialized += OnFirebaseInit;
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => 
         {
@@ -165,7 +167,7 @@ public class FirebaseManager : MonoBehaviour
 
     private void CreateGhost(UserData userData)
     {
-        if (userData.id == UserInstance.User.id || userData.id == -1) return;
+        if (userData.id == UserInstance.User.id || userData.id == -1 || _ghostDic.ContainsKey(userData.id)) return;
         //Debug.Log(userData.ToString());
         GhostBehaviour go = Instantiate(_ghost);
         go.transform.position = new Vector3(userData.x, userData.y, userData.z);
