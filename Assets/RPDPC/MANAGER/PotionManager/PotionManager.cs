@@ -24,6 +24,8 @@ public class PotionManager : MonoBehaviour
     public GameObject Potion;
     private Vector3 lastPos;
 
+    [SerializeField] GameObject vfx;
+
     private void Awake()
     {
         currentPotion = 1;
@@ -57,6 +59,10 @@ public class PotionManager : MonoBehaviour
             {
                 uiManager.UpdateSlider();
             }
+
+            var go = Instantiate(vfx, GameManager.Instance.Player.transform);
+            go.transform.localPosition = new(0, -0.5f, 0);
+            Debug.Log("Heal : " + go.transform.localPosition);
         }
         else if (currentPotion == 0)
         {

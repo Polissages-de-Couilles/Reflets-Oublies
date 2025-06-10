@@ -35,7 +35,7 @@ public class GhostBehaviour : MonoBehaviour
         if (_currentData.position == _oldData.position) return;
 
         var command = new Command(_oldData, _currentData);
-        Debug.Log(command);
+        //Debug.Log(command);
 
         commands.Enqueue(command);
     }
