@@ -23,8 +23,11 @@ public class RespawnManager : MonoBehaviour
     public void Start()
     {
         GameManager.Instance.ZoneManager.OnZoneChangeEvent += OnZoneChange;
-        _fade.gameObject.SetActive(true);
-        _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
+        if(_fade != null)
+        {
+            _fade.gameObject.SetActive(true);
+            _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
+        }
     }
 
     private void OnZoneChange(ZoneManager.Zone zone)

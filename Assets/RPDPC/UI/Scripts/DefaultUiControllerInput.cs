@@ -27,6 +27,12 @@ public class DefaultUiControllerInput : MonoBehaviour
 
     private void OnEnable()
     {
+        StartCoroutine(Enable());
+    }
+
+    IEnumerator Enable()
+    {
+        yield return null;
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Enable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Disable();
         PlayerInputEventManager.OnNewController += OnControllerChange;
