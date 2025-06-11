@@ -27,6 +27,8 @@ public class DefaultUiControllerInput : MonoBehaviour
 
     private void OnEnable()
     {
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Enable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Disable();
         PlayerInputEventManager.OnNewController += OnControllerChange;
         if (PlayerInputEventManager.currentController == PlayerInputEventManager.ControllerType.Gamepad)
         {
@@ -36,6 +38,8 @@ public class DefaultUiControllerInput : MonoBehaviour
 
     private void OnDisable()
     {
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Disable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Enable();
         UINavigation.SetSelectedGameObject(null);
         PlayerInputEventManager.OnNewController -= OnControllerChange;
     }

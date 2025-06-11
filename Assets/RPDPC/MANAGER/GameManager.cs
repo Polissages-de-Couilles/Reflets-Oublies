@@ -83,8 +83,8 @@ public class GameManager : MonoBehaviour
     public ZoneManager ZoneManager => _zoneManager;
     [SerializeField] private ZoneManager _zoneManager;
 
-    public GameObject DeathUi => _deathUi;
-    [SerializeField] GameObject _deathUi;
+    public RespawnManager RespawnManager => _respawnManager;
+    [SerializeField] private RespawnManager _respawnManager;
 
 
     //Uniquement lEEbut de test, ne pas utiliser pour la version final

@@ -37,9 +37,12 @@ public class DeathManager : MonoBehaviour
 
         float animationDuration = animationManager.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name.Contains("Death")).length;
         Instantiate(vfx, this.gameObject.transform);
+        GameManager.Instance.RespawnManager.VignetteIntensity = GameManager.Instance.CamManager.VignetteIntensity;
+        GameManager.Instance.CamManager.Vignette(1f, animationDuration, false, false);
 
         yield return new WaitForSeconds(animationDuration);
 
-        GameManager.Instance.DeathUi.SetActive(true);
+        GameManager.Instance.RespawnManager.DeathUi.SetActive(true);
+        Time.timeScale = 0f;
     }
 }

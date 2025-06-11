@@ -1,0 +1,61 @@
+using DG.Tweening;
+using MeetAndTalk;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class RespawnManager : MonoBehaviour
+{
+    public GameObject DeathUi => _deathUi;
+    [SerializeField] GameObject _deathUi;
+
+    [SerializeField] Transform _respawnPoint;
+    [SerializeField] DialogueContainerSO _dialogueRevive;
+    [SerializeField] Image _fade;
+
+    bool asBeenToVillage = false;
+    bool isRespawning = false;
+
+    public float VignetteIntensity { get; set; }
+
+    public void Start()
+    {
+        GameManager.Instance.ZoneManager.OnZoneChangeEvent += OnZoneChange;
+        _fade.gameObject.SetActive(true);
+        _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
+    }
+
+    private void OnZoneChange(ZoneManager.Zone zone)
+    {
+        if (zone.Name == ZoneManager.ZoneName.UI_ZONE_3) asBeenToVillage = true;
+    }
+
+    public void Respawn()
+    {
+        if (isRespawning) return;
+        isRespawning = true;
+        Time.timeScale = 1f;
+        StartCoroutine(RespawnCoroutine());
+    }
+
+    private IEnumerator RespawnCoroutine()
+    {
+        yield return null;
+        yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
+        //GameManager.Instance.CamManager.Vignette(VignetteIntensity, 1f, true, true);
+
+        if (asBeenToVillage)
+        {
+            SceneManager.LoadScene("GameScene");
+            isRespawning = false;
+            yield break;
+        }
+
+        _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
+        GameManager.Instance.Player.transform.position = _respawnPoint.position;
+        if(_dialogueRevive != null) GameManager.Instance.DialogueManager.StartDialogue(_dialogueRevive);
+        isRespawning = false;
+    }
+}

@@ -53,6 +53,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
             OnDamageTaken?.Invoke(damage, currentHealth);
             BecameInvicible(invicibleTime);
             GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
+            if(((damage / defence) / maxHealth) >= 0.15f)
+            {
+                Time.timeScale = 0.1f;
+                DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
+                    () =>
+                    DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1f, ((damage / defence) / maxHealth) * 1.5f).SetUpdate(UpdateType.Late)
+                    );
+            }
         }
     }
 

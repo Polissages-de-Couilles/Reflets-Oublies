@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using PDC.Localization;
 using TMPro;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class MainMenuManager : UIPanel
 {
@@ -14,6 +16,9 @@ public class MainMenuManager : UIPanel
     public GameObject UIMenu;
     public GameObject UILoading;
     public TextMeshProUGUI LoadingText;
+    [SerializeField] Image _fade;
+
+    bool isLoadScene = false;
 
     protected override void Start()
     {
@@ -24,6 +29,7 @@ public class MainMenuManager : UIPanel
         });
 
         StartCoroutine(TextAnim());
+        isLoadScene = false;
     }
 
     IEnumerator TextAnim()
@@ -48,17 +54,28 @@ public class MainMenuManager : UIPanel
 
     public void playButton()
     {
+        if (isLoadScene) return;
+        isLoadScene = true;
+        StartCoroutine(PlayButtonCoroutine());
+    }
+
+    IEnumerator PlayButtonCoroutine()
+    {
+        yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
         SceneManager.LoadScene(GameSceneName);
+        isLoadScene = false;
     }
 
     public void OptionButton()
     {
+        if (isLoadScene) return;
         UIMenu.SetActive(false);
         UIOption.SetActive(true);
     }
 
     public void quitButton()
     {
+        if (isLoadScene) return;
         Application.Quit();
     }
 }

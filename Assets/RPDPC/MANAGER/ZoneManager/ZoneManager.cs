@@ -1,5 +1,6 @@
 using DG.Tweening;
 using PDC.Localization;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -37,6 +38,7 @@ public class ZoneManager : MonoBehaviour
     Coroutine _displayZoneNameCoroutine;
     Vector3 defaultPos;
     List<Tween> _tweenList = new();
+    public Action<Zone> OnZoneChangeEvent;
 
     public void Start()
     {
@@ -52,6 +54,7 @@ public class ZoneManager : MonoBehaviour
     {
         if (zone.Name == CurrentZone.Name) return;
         CurrentZone = zone;
+        OnZoneChangeEvent?.Invoke(zone);
 
         DisplayZoneName(zone);
     }
