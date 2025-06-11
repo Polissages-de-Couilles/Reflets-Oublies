@@ -119,10 +119,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53659ef4be99ac240b18a9aec4fb75e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstSelected: {fileID: 5850749799305979982}
   GameSceneName: GameScene
   UIOption: {fileID: 0}
   UIMenu: {fileID: 8701897931227199919}
+  UILoading: {fileID: 0}
+  LoadingText: {fileID: 0}
 --- !u!1 &1744303667331525155
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +476,7 @@ GameObject:
   - component: {fileID: 8201928630090400492}
   - component: {fileID: 6340905659686660708}
   - component: {fileID: 6050369480716175514}
+  - component: {fileID: 3891555718467131791}
   m_Layer: 5
   m_Name: Jouer
   m_TagString: Untagged
@@ -667,6 +669,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _key: UI_BUTTON_PLAY
+--- !u!114 &3891555718467131791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850749799305979982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84de34dc144061e4ca7a745e9ab34cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8701897931227199919
 GameObject:
   m_ObjectHideFlags: 0

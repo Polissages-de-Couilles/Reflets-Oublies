@@ -1,4 +1,5 @@
 using DG.Tweening;
+using PDC.Localization;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,17 +10,17 @@ public class ZoneManager : MonoBehaviour
 {
     public enum ZoneName
     {
-        Ruine_Start,
-        Bosquet,
-        Village,
-        Plaine,
-        Cimetiere,
-        Vallee_des_Murmures,
-        Temple,
-        Foret_des_Reflets,
-        Ruines_de_l_Oubli,
-        Ecluse,
-        Temple_du_Reflet
+        UI_ZONE_1,
+        UI_ZONE_2,
+        UI_ZONE_3,
+        UI_ZONE_4,
+        UI_ZONE_5,
+        UI_ZONE_6,
+        UI_ZONE_7,
+        UI_ZONE_8,
+        UI_ZONE_9,
+        UI_ZONE_10,
+        UI_ZONE_11
     }
 
     [System.Serializable]
@@ -39,6 +40,11 @@ public class ZoneManager : MonoBehaviour
 
     public void Start()
     {
+        if(_ui == null)
+        {
+            this.enabled = false;
+            return;
+        }
         defaultPos = _ui.transform.parent.transform.localPosition;
     }
 
@@ -73,7 +79,7 @@ public class ZoneManager : MonoBehaviour
 
     IEnumerator DisplayZoneNameCoroutine(Zone zone)
     {
-        _ui.text = zone.Name.ToString().Replace("_", " ");
+        _ui.text = LocalizationManager.LocalizeText(zone.Name.ToString(), true);
         var pos = _ui.transform.parent.transform.localPosition;
 
         foreach (var image in _images)

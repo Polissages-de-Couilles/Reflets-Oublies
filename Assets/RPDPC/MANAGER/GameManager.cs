@@ -83,8 +83,11 @@ public class GameManager : MonoBehaviour
     public ZoneManager ZoneManager => _zoneManager;
     [SerializeField] private ZoneManager _zoneManager;
 
-    //Uniquement l・・but de test, ne pas utiliser pour la version final
+    public GameObject DeathUi => _deathUi;
+    [SerializeField] GameObject _deathUi;
 
+
+    //Uniquement l・・but de test, ne pas utiliser pour la version final
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
