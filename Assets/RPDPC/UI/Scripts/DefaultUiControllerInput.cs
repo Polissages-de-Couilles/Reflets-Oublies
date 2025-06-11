@@ -17,7 +17,7 @@ public class DefaultUiControllerInput : MonoBehaviour
     {
         if(type == PlayerInputEventManager.ControllerType.Gamepad)
         {
-            if (UINavigation.currentSelectedGameObject == null) UINavigation.SetSelectedGameObject(this.gameObject);
+            if (UINavigation.currentSelectedGameObject == null || !UINavigation.currentSelectedGameObject.activeSelf) UINavigation.SetSelectedGameObject(this.gameObject);
         }
         else
         {
@@ -30,12 +30,13 @@ public class DefaultUiControllerInput : MonoBehaviour
         PlayerInputEventManager.OnNewController += OnControllerChange;
         if (PlayerInputEventManager.currentController == PlayerInputEventManager.ControllerType.Gamepad)
         {
-            if (UINavigation.currentSelectedGameObject == null) UINavigation.SetSelectedGameObject(this.gameObject);
+            if (UINavigation.currentSelectedGameObject == null || !UINavigation.currentSelectedGameObject.activeSelf) UINavigation.SetSelectedGameObject(this.gameObject);
         }
     }
 
     private void OnDisable()
     {
+        UINavigation.SetSelectedGameObject(null);
         PlayerInputEventManager.OnNewController -= OnControllerChange;
     }
 }
