@@ -80,6 +80,9 @@ public class GameManager : MonoBehaviour
     public FirebaseManager FirebaseManager => _firebaseManager;
     [SerializeField] private FirebaseManager _firebaseManager;
 
+    public ZoneManager ZoneManager => _zoneManager;
+    [SerializeField] private ZoneManager _zoneManager;
+
     //Uniquement lEEbut de test, ne pas utiliser pour la version final
 
     public void Update()
