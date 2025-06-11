@@ -20,6 +20,8 @@ public abstract class Interactible : MonoBehaviour
     public bool UIShowAnyway => _uiShowAnyway;
     [SerializeField] protected bool _uiShowAnyway = false;
 
+    [SerializeField] protected bool _interactibleOnceOnly = false;
+
     private void Start()
     {
         LocalizationManager.OnLocaReady(() =>
@@ -28,7 +30,13 @@ public abstract class Interactible : MonoBehaviour
         });
     }
 
-    public abstract void OnInteraction();
+    public virtual void OnInteraction()
+    {
+        if (_interactibleOnceOnly)
+        {
+            this.enabled = false;
+        }
+    }
 
     public virtual void FixedUpdate()
     {

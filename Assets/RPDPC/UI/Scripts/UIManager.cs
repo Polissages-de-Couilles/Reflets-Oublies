@@ -70,7 +70,10 @@ public class UIManager : MonoBehaviour
     private void PointDeVie(float degatPrit, float vieActuel)
     {
         if (healthSlider != null)
+        {
             healthSlider.value = vieActuel;
+            healthSlider.transform.parent.parent.transform.DOShakePosition(0.2f, 10);
+        }
 
         UpdateOpacity();
     }

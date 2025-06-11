@@ -48,7 +48,6 @@ MonoBehaviour:
   _googleSheetManager: {fileID: 9140524450465451549}
   Message: Adorer
   PdC: entry.1535528696
-  Language: 0
 --- !u!114 &9140524450465451549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +149,7 @@ Transform:
   - {fileID: 8529987055895609538}
   - {fileID: 7825418140202390490}
   - {fileID: 1994049028299736927}
+  - {fileID: 7960523242915056220}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5483935419876891435
@@ -449,6 +449,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _loader: {fileID: 2227902808444669194}
+--- !u!1 &5511872690352658095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7960523242915056220}
+  - component: {fileID: 4912275265300467351}
+  m_Layer: 8
+  m_Name: UnityDispatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7960523242915056220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511872690352658095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3499364351182337576}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4912275265300467351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5511872690352658095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 692f42aab14791d4dbc9d0d6a85dce1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5652252739901132668
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +888,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5263948596439090914, guid: 78bef0a03062df742859970539f56b29, type: 3}
+      propertyPath: vfx
+      value: 
+      objectReference: {fileID: 3280519133390621005, guid: 00e43d4229025d045bbae10396e01f52, type: 3}
     - target: {fileID: 6995559367959054784, guid: 78bef0a03062df742859970539f56b29, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1590271

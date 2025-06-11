@@ -12,6 +12,7 @@ namespace PDC
         public override void OnInteraction()
         {
             StartCoroutine(OnInteractionCoroutine());
+            base.OnInteraction();
         }
 
         IEnumerator OnInteractionCoroutine()

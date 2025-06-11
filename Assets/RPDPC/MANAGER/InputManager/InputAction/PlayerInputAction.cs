@@ -280,7 +280,7 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0c5cc50a-8bb7-450b-9cb7-1bbc3240fe4a"",
-                    ""path"": ""<Keyboard>/#(&)"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",

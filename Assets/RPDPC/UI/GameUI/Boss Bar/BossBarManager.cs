@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -35,6 +36,7 @@ public class BossBarManager : MonoBehaviour
 
     void OnDamageTaken(float damage, float currentHealth)
     {
+        slider.transform.DOShakePosition(0.2f, 10);
         slider.value = currentHealth/maxHealth;
         if (currentHealth <= 0)
         {

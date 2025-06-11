@@ -710,7 +710,6 @@ Transform:
   - {fileID: 2059107174287338232}
   - {fileID: 3248949113334753902}
   - {fileID: 8309854366652055967}
-  - {fileID: 8909185391679672639}
   - {fileID: 2225009258756819867}
   - {fileID: 840283865189596182}
   m_Father: {fileID: 0}
@@ -805,6 +804,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3786e34613366194f8920cb74c708709, type: 2}
   - {fileID: 11400000, guid: 9988891f592a6be459a7d35d192f487f, type: 2}
   - {fileID: 11400000, guid: 429e8a58b70b5554488cc2cae743f74b, type: 2}
+  prioritizeAttack: 1
   shouldSearchStates: 1
   animator: {fileID: 1707091789596656906}
 --- !u!114 &-7988538864932358234
@@ -834,6 +834,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stunned: 0
   canBeStunned: 1
+  canBeKnockbacked: 1
 --- !u!114 &-3469737378997434832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,6 +860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
+  spawnerCollider: {fileID: 0}
 --- !u!114 &-5315232874052416244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1114,73 +1116,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1859007475659644083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4766381835379500281
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1711272759954934712}
-    m_Modifications:
-    - target: {fileID: 2102453396378941714, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 6749567980823191316}
-    - target: {fileID: 2102453396378941714, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: stateMachineManager
-      value: 
-      objectReference: {fileID: 3865065526223661735}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4744690157446792236, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-      propertyPath: m_Name
-      value: SeeThroughEnemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 854862dde4347d7489d2ae0260758394, type: 3}
---- !u!4 &8909185391679672639 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4145105989500270022, guid: 854862dde4347d7489d2ae0260758394, type: 3}
-  m_PrefabInstance: {fileID: 4766381835379500281}
-  m_PrefabAsset: {fileID: 0}

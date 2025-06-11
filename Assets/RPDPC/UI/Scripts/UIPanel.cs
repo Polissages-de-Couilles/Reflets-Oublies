@@ -21,7 +21,7 @@ public class UIPanel : MonoBehaviour
         Keyboard,
         Mouse
     }
-    private static ControllerType currentController = ControllerType.WirelessController;
+    public static ControllerType currentController = ControllerType.WirelessController;
     private Action<ControllerType> OnNewController;
 
     private InputActionMap map;

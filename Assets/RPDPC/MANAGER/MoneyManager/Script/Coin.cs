@@ -15,6 +15,12 @@ public class Coin : MonoBehaviour
     }
     private IEnumerator FollowPlayer()
     {
+        yield return null;
+
+        var rb = this.gameObject.GetComponent<Rigidbody>();
+        rb.AddForce(new Vector3(UnityEngine.Random.Range(-1f, 1f) * 1.5f, 5f, UnityEngine.Random.Range(-1f, 1f) * 1.5f), ForceMode.Impulse);
+        rb.AddTorque(new Vector3(UnityEngine.Random.Range(-1f, 1f) * 1.5f, UnityEngine.Random.Range(-1f, 1f) * 1.5f, UnityEngine.Random.Range(-1f, 1f) * 1.5f), ForceMode.Impulse);
+        
         yield return new WaitForSeconds(1.5f);
 
         //yield return transform.DOMoveInTargetLocalSpace(GameManager.Instance.Player.transform, Vector3.zero, DURATION).SetEase(animCurv).WaitForCompletion();
