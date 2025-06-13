@@ -18,7 +18,7 @@ public class TriggerDialogueZone : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter Dialogue" + this.name + " : " + other.gameObject);
+        //Debug.Log("Enter Dialogue" + this.name + " : " + other.gameObject);
         if(!isFirst || !other.CompareTag("Player")) return;
 
         GameManager.Instance.DialogueManager.OnNode += OnNode;

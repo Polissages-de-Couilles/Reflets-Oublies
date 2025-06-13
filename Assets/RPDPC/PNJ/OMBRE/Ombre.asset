@@ -1665,8 +1665,6 @@ MonoBehaviour:
     TargetNodeGuid: 7d40772f-37f6-4b23-8e0e-2d7feaecc593
   - BaseNodeGuid: 68de0372-ab1d-4025-af0d-e3a221c6dc98
     TargetNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
-  - BaseNodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
-    TargetNodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
   - BaseNodeGuid: 282129c1-e62d-45ca-b99e-ea6b8052334b
     TargetNodeGuid: 05e3441c-ff53-42fd-b324-a4f95e4070a9
   - BaseNodeGuid: f11cff5f-38cd-4ac3-b8ac-7e3264950364
@@ -1695,6 +1693,10 @@ MonoBehaviour:
     TargetNodeGuid: 6710ceb0-5e4a-4a40-a118-8a33b8de7547
   - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
     TargetNodeGuid: 602a6c7f-7614-44ad-966e-9fb13e402997
+  - BaseNodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
+    TargetNodeGuid: 3103d291-1a65-451c-9df6-897b1ab68339
+  - BaseNodeGuid: 3103d291-1a65-451c-9df6-897b1ab68339
+    TargetNodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
   DialogueChoiceNodeDatas:
   - NodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
     Position: {x: 1103, y: 398}
@@ -1903,24 +1905,6 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_10
     Duration: 0
-  - NodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
-    Position: {x: 652, y: 398}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -5295752730496985833}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_1
-    Duration: 0
   - NodeGuid: 282129c1-e62d-45ca-b99e-ea6b8052334b
     Position: {x: 1490, y: 226}
     DialogueNodePorts: []
@@ -2083,16 +2067,38 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_13
     Duration: 0
+  - NodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
+    Position: {x: 495, y: 398}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -5295752730496985833}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_1
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: be715a43-aa36-4678-b75a-aee5c96a6d2c
     Position: {x: 5794, y: 928}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 3103d291-1a65-451c-9df6-897b1ab68339
+    Position: {x: 746, y: 398}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 98fb89f299bd3034191055e38deba429, type: 2}
   StartNodeDatas:
   - NodeGuid: 2c703788-4ade-49e4-8aae-d8a1199ad1d5
-    Position: {x: 508, y: 398}
+    Position: {x: 339, y: 398}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
