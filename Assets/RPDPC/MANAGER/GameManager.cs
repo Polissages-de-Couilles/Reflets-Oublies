@@ -5,6 +5,7 @@ using PDC.Localization;
 using MeetAndTalk;
 using PDC;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -85,6 +86,9 @@ public class GameManager : MonoBehaviour
 
     public RespawnManager RespawnManager => _respawnManager;
     [SerializeField] private RespawnManager _respawnManager;
+
+    public Image FadeObject => _fadeObject;
+    [SerializeField] Image _fadeObject;
 
 
     //Uniquement lEEbut de test, ne pas utiliser pour la version final

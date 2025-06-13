@@ -10,18 +10,39 @@ public class DialogueEventCallStaging : DialogueEventTimeEvent
     public string _stagingID;
     public StagingEvent.StagingEventTypes _stagingType;
 
-    private StagingEvent staging;
+    private List<StagingEvent> staging;
 
     public override void RunEvent()
     {
-        staging = FindObjectsByType<StagingEvent>(FindObjectsSortMode.None).ToList().Find(x => x.ID == _stagingID && x.Type == _stagingType);
-        staging.OnEventFinished += EventEnd;
-        staging.PlayEvent();
+        staging = FindObjectsByType<StagingEvent>(FindObjectsSortMode.None).ToList().FindAll(x => x.ID == _stagingID/* && x.Type == _stagingType*/);
+        foreach (var stag in staging)
+        {
+            stag.OnEventFinished += CheckAllEventFinish;
+            stag.PlayEvent();
+        }
+    }
+
+    private void CheckAllEventFinish()
+    {
+        GameManager.Instance.StartCoroutine(WaitABitBeforeChecking());
+    }
+
+    IEnumerator WaitABitBeforeChecking()
+    {
+        yield return null;
+        Debug.Log("All Event Staging End : " + staging.TrueForAll(x => x.IsEventFinish));
+        if (staging.TrueForAll(x => x.IsEventFinish))
+        {
+            foreach (var stag in staging)
+            {
+                stag.OnEventFinished -= CheckAllEventFinish;
+            }
+            EventEnd();
+        }
     }
 
     protected override void EventEnd()
     {
         IsEventEnd = true;
-        staging.OnEventFinished -= EventEnd;
     }
 }
