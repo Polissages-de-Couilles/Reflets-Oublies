@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4164394147422382845}
   - component: {fileID: 3752923449586112358}
   - component: {fileID: 4019193956810873820}
+  - component: {fileID: 3650174777299083741}
+  - component: {fileID: 7237601733618332468}
   m_Layer: 0
   m_Name: Coin gauche grand
   m_TagString: Untagged
@@ -61,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 699573adf56f06f4f8ac7a0147952d46, type: 2}
+  - {fileID: 2100000, guid: d4c8c95caf8406e4295bdd4b057a79a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +85,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3650174777299083741
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287548445359572604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15, y: 0.01, z: 0.3}
+  m_Center: {x: 0.06, y: 0.02, z: 0.1}
+--- !u!65 &7237601733618332468
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7287548445359572604}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.019366536, y: 0.090264365, z: 0.31199998}
+  m_Center: {x: -0.0004496659, y: -0.018926328, z: 0.11737999}

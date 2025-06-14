@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6976627755302226815}
   - component: {fileID: 7369268421772042873}
   - component: {fileID: 695987981035005784}
+  - component: {fileID: 4933008145742299118}
   m_Layer: 0
   m_Name: Mur gauche moyen4
   m_TagString: Untagged
@@ -61,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 699573adf56f06f4f8ac7a0147952d46, type: 2}
+  - {fileID: 2100000, guid: d4c8c95caf8406e4295bdd4b057a79a9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,3 +84,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4933008145742299118
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4615416687604497873}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7881085738919751936, guid: 753fecc1250f4f8469929f27ce7317f9, type: 3}
