@@ -8,7 +8,6 @@ using System.Linq;
 public class DialogueEventCallStaging : DialogueEventTimeEvent
 {
     public string _stagingID;
-    public StagingEvent.StagingEventTypes _stagingType;
 
     private List<StagingEvent> staging;
 
