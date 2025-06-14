@@ -64,8 +64,13 @@ public class UIManager : MonoBehaviour
 
     public void SetHealthMax(float value)
     {
-        healthSliderHolder.sizeDelta = new Vector2(400 * (value / 100f), healthSliderHolder.sizeDelta.y);
-        healthSliderHolder.transform.DOShakePosition(0.5f, 100);
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = player.getMaxHealth();
+            healthSlider.value = player.getCurrentHealth();
+        }
+        healthSliderHolder.DOSizeDelta(new Vector2(400 * (value / 100f), healthSliderHolder.sizeDelta.y), 1f).SetEase(Ease.OutElastic);
+        //healthSliderHolder.transform.DOShakePosition(0.5f, 10);
     }
 
     private void InitializeBloodEffect()

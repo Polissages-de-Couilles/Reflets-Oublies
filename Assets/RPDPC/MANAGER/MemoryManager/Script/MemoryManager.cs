@@ -28,7 +28,7 @@ public class MemoryManager : MonoBehaviour
         
         if(GameManager.Instance.Player.TryGetComponent(out PlayerDamageable damageable))
         {
-            damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -20 : 20));
+            damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -10 : 20));
         }
 
         SetStoryRelationState();

@@ -5956,7 +5956,7 @@ GameObject:
   m_Layer: 8
   m_Name: Pos Ombre End
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13019,7 +13019,7 @@ PrefabInstance:
       objectReference: {fileID: 443770779}
     - target: {fileID: 2507781856439442180, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2511223132469065069, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
       propertyPath: m_Mesh
@@ -14397,22 +14397,6 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 604504387}
-    - target: {fileID: 7242276299456664710, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 30.203318
-      objectReference: {fileID: 0}
-    - target: {fileID: 7242276299456664710, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 215.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7242276299456664710, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 29.467024
-      objectReference: {fileID: 0}
-    - target: {fileID: 7242276299456664710, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7253697915092178629, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -14866,9 +14850,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 183911560}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 3548675619011960372, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
-    - {fileID: 2507781856439442180, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2782625432959297435, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
@@ -16016,6 +15998,56 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &968126580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968126581}
+  - component: {fileID: 968126582}
+  m_Layer: 8
+  m_Name: Pos Ewen 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &968126581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968126580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.35, y: 1.72, z: 12.18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 982962197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968126582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968126580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Act_1_Dialogue_1_1
+  CallFinishedEventAtStart: 0
+  objectToMove: {fileID: 1262012881}
+  speed: 5
+  stoppingDistance: 0.2
+  animationName: Walking
 --- !u!43 &970757362
 Mesh:
   m_ObjectHideFlags: 0
@@ -16575,6 +16607,11 @@ MonoBehaviour:
   m_IgnoreFromBuild: 0
   m_ApplyToChildren: 1
   m_AffectedAgents: ffffffff
+--- !u!4 &982962197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6682796822242865295, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
+  m_PrefabInstance: {fileID: 5370481541544446951}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1011498636
 Mesh:
   m_ObjectHideFlags: 0
@@ -16760,6 +16797,68 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1011897270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1011897271}
+  - component: {fileID: 1011897273}
+  - component: {fileID: 1011897272}
+  m_Layer: 8
+  m_Name: Pos Crystal 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1011897271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011897270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.43, y: 2.9, z: 14.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 982962197}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1011897272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011897270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6fbdbfde57d4a4fbcfdb70768adad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Act_1_Dialogue_1_3
+  CallFinishedEventAtStart: 0
+--- !u!114 &1011897273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011897270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f81b89a6304ce8f4db96fad626afdc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Act_1_Dialogue_1_2
+  CallFinishedEventAtStart: 0
+  vfx: {fileID: 9032099983082211636, guid: a49c6a9c4100a804eb07b2fd16cadd25, type: 3}
 --- !u!43 &1012200501
 Mesh:
   m_ObjectHideFlags: 0
@@ -22022,7 +22121,7 @@ GameObject:
   m_Layer: 8
   m_Name: Pos Ombre 1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37085,7 +37184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6682796822242865295, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 377.75
+      value: 374.42
       objectReference: {fileID: 0}
     - target: {fileID: 6736806783382819709, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
       propertyPath: m_SizeDelta.x
@@ -37616,6 +37715,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1611595393191936641, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 385653156}
+    - targetCorrespondingSourceObject: {fileID: 6682796822242865295, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 968126581}
+    - targetCorrespondingSourceObject: {fileID: 6682796822242865295, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1011897271}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3425473139051012788, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
       insertIndex: -1

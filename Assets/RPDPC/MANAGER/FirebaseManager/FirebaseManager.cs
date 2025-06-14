@@ -245,12 +245,12 @@ public class FirebaseManager : MonoBehaviour
 
     public async void OnChoiceInStory(Act act, bool asAccept)
     {
+        StoryChoice data = new StoryChoice(); ;
         var dataSnapshot = await _database.GetReference(STORY_KEY).Child(act.ToString()).GetValueAsync();
-        if (!dataSnapshot.Exists)
+        if (dataSnapshot.Exists)
         {
-            return;
+            data = JsonUtility.FromJson<StoryChoice>(dataSnapshot.GetRawJsonValue());
         }
-        var data = JsonUtility.FromJson<StoryChoice>(dataSnapshot.GetRawJsonValue());
 
         if (asAccept) data.accept++;
         else data.refuse--;
@@ -267,8 +267,6 @@ public class UserData
     public float z;
 
     public string anim = "None";
-
-    public float relation = 0f;
 
     public Vector3 position => new Vector3(x, y, z);
 
