@@ -151,6 +151,13 @@ public abstract class StateEntityBase
         List<string> ListOfTypesToDESTROY
     )
     { }
+    
+    public virtual void Init(
+        Vector3 direction, //PushPlayer
+        float force,
+        float duration
+    )
+    { }
 
     public bool isStateValid()
     {

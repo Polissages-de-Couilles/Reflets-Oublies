@@ -13,6 +13,7 @@ public class MobSpawner : MonoBehaviour
     bool doOnce = false;
     [HideInInspector] public List<GameObject> spawnedMobs = new List<GameObject>();
     List<Collider> colliders = new List<Collider>();
+    Dictionary<MobSpawnerCollider, bool> inColliders = new Dictionary<MobSpawnerCollider, bool>();
     List<MobSpawnerCollider> mscolliders = new List<MobSpawnerCollider>();
 
     float timeSinceLeaved;
@@ -26,7 +27,9 @@ public class MobSpawner : MonoBehaviour
         mscolliders = GetComponentsInChildren<MobSpawnerCollider>().ToList();
         foreach (MobSpawnerCollider msc in mscolliders)
         {
+            inColliders.Add(msc, false);
             msc.onPlayerEnterTrigger += OnPlayerEnterTrigger;
+            msc.onPlayerExitTrigger += OnPlayerExitTrigger;
         }
     }
 
@@ -43,17 +46,19 @@ public class MobSpawner : MonoBehaviour
         }
     }
 
-    private void OnPlayerEnterTrigger()
+    private void OnPlayerEnterTrigger(MobSpawnerCollider msc)
     {
-        if (timeSinceLeaved > secondsAfterLeavingAndReentiringToSpawn)
+        if (timeSinceLeaved > secondsAfterLeavingAndReentiringToSpawn && !isInOneCollider())
         {
             SpawnMobEvenly();
         }
+        inColliders[msc] = true;
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnPlayerExitTrigger(MobSpawnerCollider msc)
     {
-        if (other.gameObject == GameManager.Instance.Player)
+        inColliders[msc] = false;
+        if (!isInOneCollider())
         {
             timeSinceLeaved = 0f;
             doIncreaseTimer = true;
@@ -82,5 +87,17 @@ public class MobSpawner : MonoBehaviour
             spawnedMobs.Add(mob);
             mob.name = mob.name + " " + spawnedMobs.IndexOf(mob);
         }
+    }
+
+    bool isInOneCollider()
+    {
+        foreach (MobSpawnerCollider msc in mscolliders)
+        {
+            if (inColliders[msc])
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

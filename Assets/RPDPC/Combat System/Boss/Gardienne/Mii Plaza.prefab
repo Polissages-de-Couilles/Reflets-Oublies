@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 5687068460212523671}
   - component: {fileID: 5942599640463083906}
   - component: {fileID: 7987642133265921621}
-  - component: {fileID: 4214769728176731880}
   - component: {fileID: 721664234387714631}
   - component: {fileID: 7283449781242545344}
   - component: {fileID: 189861996983502563}
@@ -24,6 +23,7 @@ GameObject:
   - component: {fileID: 7888281257360438800}
   - component: {fileID: 2283997704365024118}
   - component: {fileID: 3990160843466121576}
+  - component: {fileID: -7121177408941132027}
   m_Layer: 0
   m_Name: Mii Plaza
   m_TagString: Untagged
@@ -183,18 +183,6 @@ MonoBehaviour:
   Stunned: 0
   canBeStunned: 1
   canBeKnockbacked: 1
---- !u!114 &4214769728176731880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7188776132260747419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb33ace85819ec4fa10c9282cda625d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &721664234387714631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +288,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2c5fc841028884fa585a00e9a629d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-7121177408941132027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188776132260747419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateToPlayAtDeath: {fileID: 0}
 --- !u!1 &8887880611629560797
 GameObject:
   m_ObjectHideFlags: 0
