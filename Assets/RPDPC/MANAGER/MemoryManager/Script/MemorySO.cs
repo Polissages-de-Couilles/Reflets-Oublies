@@ -19,12 +19,12 @@ public class MemorySO : ScriptableObject
         if (_isTaken == false)
         {
             GameManager.Instance.RelationManager.ChangeValue(-relationValue);
-            GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(-defenceValue);
+            //GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(-defenceValue);
         }
         else
         {
             GameManager.Instance.RelationManager.ChangeValue(relationValue);
-            GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(defenceValue);
+            //GameManager.Instance.Player.GetComponent<PlayerDamageable>().ChangeDefence(defenceValue);
             foreach (TranslatedWord word in translatedWords)
             {
                 if(!GameManager.Instance.LanguageManager.UnlockedWords.Find(x => x.Word == word.Word))
@@ -32,8 +32,7 @@ public class MemorySO : ScriptableObject
             }
         }
 
-
-
+        GameManager.Instance.MemoryManager.AddEncounteredMemory(this);
         _action?.Invoke(_isTaken);        
     }
 }

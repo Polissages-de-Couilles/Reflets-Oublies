@@ -1648,8 +1648,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 2c703788-4ade-49e4-8aae-d8a1199ad1d5
-    TargetNodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
+    TargetNodeGuid: 8f2f5916-3c49-4f2d-8a46-7ad81adc9c2a
   - BaseNodeGuid: 3103d291-1a65-451c-9df6-897b1ab68339
+    TargetNodeGuid: 072a3f37-49b9-40e6-9008-6e5753a5e412
+  - BaseNodeGuid: e3979027-2384-4cf1-8a72-6a83820b1ed8
+    TargetNodeGuid: a5cfcdf3-3992-4832-b729-28aefaba6b66
+  - BaseNodeGuid: 8f2f5916-3c49-4f2d-8a46-7ad81adc9c2a
+    TargetNodeGuid: e3979027-2384-4cf1-8a72-6a83820b1ed8
+  - BaseNodeGuid: a5cfcdf3-3992-4832-b729-28aefaba6b66
+    TargetNodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
+  - BaseNodeGuid: 072a3f37-49b9-40e6-9008-6e5753a5e412
     TargetNodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
   - BaseNodeGuid: 55c5c766-5684-402a-b3c8-4e219c7ec309
     TargetNodeGuid: 05e3441c-ff53-42fd-b324-a4f95e4070a9
@@ -1671,8 +1679,6 @@ MonoBehaviour:
     TargetNodeGuid: 05e3441c-ff53-42fd-b324-a4f95e4070a9
   - BaseNodeGuid: f11cff5f-38cd-4ac3-b8ac-7e3264950364
     TargetNodeGuid: 326fd4ed-d658-4d97-957b-dcc7f90a2f31
-  - BaseNodeGuid: b98f3d87-6024-45de-89a5-a730576e7f48
-    TargetNodeGuid: be715a43-aa36-4678-b75a-aee5c96a6d2c
   - BaseNodeGuid: 7fb54402-9ad2-4803-89fc-ecb05339d09a
     TargetNodeGuid: 93a80c1e-b2a7-438a-90fa-664699543aea
   - BaseNodeGuid: 602a6c7f-7614-44ad-966e-9fb13e402997
@@ -1697,6 +1703,14 @@ MonoBehaviour:
     TargetNodeGuid: 6710ceb0-5e4a-4a40-a118-8a33b8de7547
   - BaseNodeGuid: 2ad68691-4cb8-4ade-805e-f51dbe40fcbf
     TargetNodeGuid: 602a6c7f-7614-44ad-966e-9fb13e402997
+  - BaseNodeGuid: b98f3d87-6024-45de-89a5-a730576e7f48
+    TargetNodeGuid: 178ff2ff-ae70-4ae3-acf5-3e3f1f29bc76
+  - BaseNodeGuid: 178ff2ff-ae70-4ae3-acf5-3e3f1f29bc76
+    TargetNodeGuid: 61b7002c-4b83-4869-8806-a6157b1fcf7b
+  - BaseNodeGuid: 61b7002c-4b83-4869-8806-a6157b1fcf7b
+    TargetNodeGuid: e5a79cf5-5ee2-4277-a3e1-1fa82f5aabcb
+  - BaseNodeGuid: e5a79cf5-5ee2-4277-a3e1-1fa82f5aabcb
+    TargetNodeGuid: be715a43-aa36-4678-b75a-aee5c96a6d2c
   DialogueChoiceNodeDatas:
   - NodeGuid: cb87b1ce-f024-4197-be3d-19c007b11e30
     Position: {x: 1103, y: 398}
@@ -2068,7 +2082,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_1_DIALOGUE_1_13
     Duration: 0
   - NodeGuid: 551961a2-2b08-4fc9-b8f2-f7538e1b90bb
-    Position: {x: 495, y: 398}
+    Position: {x: 177, y: 398}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -2088,17 +2102,45 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: be715a43-aa36-4678-b75a-aee5c96a6d2c
-    Position: {x: 5794, y: 928}
+    Position: {x: 6411, y: 928}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
   - NodeGuid: 3103d291-1a65-451c-9df6-897b1ab68339
-    Position: {x: 746, y: 398}
+    Position: {x: 428, y: 398}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 98fb89f299bd3034191055e38deba429, type: 2}
+  - NodeGuid: e3979027-2384-4cf1-8a72-6a83820b1ed8
+    Position: {x: -463, y: 398}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 355f4ec10859d4940a82305d9f8ea18b, type: 2}
+  - NodeGuid: 8f2f5916-3c49-4f2d-8a46-7ad81adc9c2a
+    Position: {x: -793, y: 398}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 1d2c898636b90fc4383f10fa9c56100d, type: 2}
+  - NodeGuid: a5cfcdf3-3992-4832-b729-28aefaba6b66
+    Position: {x: -143, y: 398}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 5efc186e726e61341baacd0ccafa2be2, type: 2}
+  - NodeGuid: 072a3f37-49b9-40e6-9008-6e5753a5e412
+    Position: {x: 765, y: 398}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 7f41132a45d07824d808fc1845223b58, type: 2}
+  - NodeGuid: 61b7002c-4b83-4869-8806-a6157b1fcf7b
+    Position: {x: 5773, y: 928}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 3f1a3f1eb7ad3fb47b64ec0b4772293e, type: 2}
+  - NodeGuid: 178ff2ff-ae70-4ae3-acf5-3e3f1f29bc76
+    Position: {x: 5460, y: 928}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: c727c7e595e83bb43835e738c7f142ec, type: 2}
+  - NodeGuid: e5a79cf5-5ee2-4277-a3e1-1fa82f5aabcb
+    Position: {x: 6087, y: 928}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: f36c06950b1559444b6eb6436787cfa0, type: 2}
   StartNodeDatas:
   - NodeGuid: 2c703788-4ade-49e4-8aae-d8a1199ad1d5
-    Position: {x: 339, y: 398}
+    Position: {x: -899, y: 398}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

@@ -8,8 +8,10 @@ using UnityEngine;
 public class MemoryEvent : DialogueEventSO
 {
     public MemorySO memory;
+    public bool take;
+
     public override void RunEvent()
     {
-        memory.RunEvent(true);
+        memory.RunEvent(take);
     }
 }

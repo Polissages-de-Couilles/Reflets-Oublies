@@ -14,6 +14,11 @@ public class DialogueEventCallStaging : DialogueEventTimeEvent
     public override void RunEvent()
     {
         staging = FindObjectsByType<StagingEvent>(FindObjectsSortMode.None).ToList().FindAll(x => x.ID == _stagingID/* && x.Type == _stagingType*/);
+        if(staging.Count == 0)
+        {
+            EventEnd();
+            return;
+        }
         foreach (var stag in staging)
         {
             stag.OnEventFinished += CheckAllEventFinish;

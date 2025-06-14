@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     private PlayerDamageable player;
     public Slider healthSlider, dashSlider;
 
+    [SerializeField] RectTransform healthSliderHolder;
+
     // Effects
     [Header("Effects")]
     public GameObject bloodEffect;
@@ -60,6 +62,12 @@ public class UIManager : MonoBehaviour
         PointDeVie(0, player.getCurrentHealth());
     }
 
+    public void SetHealthMax(float value)
+    {
+        healthSliderHolder.sizeDelta = new Vector2(400 * (value / 100f), healthSliderHolder.sizeDelta.y);
+        healthSliderHolder.transform.DOShakePosition(0.5f, 100);
+    }
+
     private void InitializeBloodEffect()
     {
         bloodEffectImage = bloodEffect.GetComponent<Image>();
@@ -72,7 +80,7 @@ public class UIManager : MonoBehaviour
         if (healthSlider != null)
         {
             healthSlider.value = vieActuel;
-            healthSlider.transform.parent.parent.transform.DOShakePosition(0.2f, 10);
+            healthSliderHolder.transform.DOShakePosition(0.2f, 10);
         }
 
         UpdateOpacity();

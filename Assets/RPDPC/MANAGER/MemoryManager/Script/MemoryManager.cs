@@ -8,7 +8,7 @@ public class MemoryManager : MonoBehaviour
     [SerializeField] private List<MemorySO> _allMemory = new List<MemorySO>();
 
     public List<MemorySO> EncounteredMemory => encounteredMemory;
-    private List<MemorySO> encounteredMemory;
+    private List<MemorySO> encounteredMemory = new();
 
     public StoryRelationState storyRelationState = StoryRelationState.Neutral;
 
@@ -19,10 +19,18 @@ public class MemoryManager : MonoBehaviour
         }
     }
 
-    public void AddEncounteredMemory (MemorySO mem) 
+    public void AddEncounteredMemory(MemorySO mem)
     {
         encounteredMemory.Add(mem);
         GameManager.Instance.FirebaseManager.OnChoiceInStory(mem.Act, mem._isTaken);
+        var corruption = (float)encounteredMemory.FindAll(x => !x._isTaken).Count / (float)_allMemory.Count;
+        StartCoroutine(GameManager.Instance.CamManager.ColorCurves(corruption, 2f));
+        
+        if(GameManager.Instance.Player.TryGetComponent(out PlayerDamageable damageable))
+        {
+            damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -20 : 20));
+        }
+
         SetStoryRelationState();
     }
 
