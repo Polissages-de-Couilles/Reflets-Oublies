@@ -32,6 +32,7 @@ public class LockManager : MonoBehaviour
 
     private void OnLockPress(InputAction.CallbackContext context)
     {
+        if (GameManager.Instance.DialogueManager.isDialogueInProcess) return;
         if(t != null && t.IsComplete())
         {
             t = null;
