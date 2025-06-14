@@ -6,6 +6,7 @@ public class AnimationManager : MonoBehaviour
 {
     public Transform Rig => rig;
     [SerializeField] Transform rig;
+    public Animator Animator => animator;
     [SerializeField] Animator animator;
 
     int currentAttackState = 0;

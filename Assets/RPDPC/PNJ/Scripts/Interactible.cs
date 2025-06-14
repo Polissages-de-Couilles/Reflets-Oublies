@@ -20,6 +20,8 @@ public abstract class Interactible : MonoBehaviour
     public bool UIShowAnyway => _uiShowAnyway;
     [SerializeField] protected bool _uiShowAnyway = false;
 
+    [SerializeField] protected bool _interactibleOnceOnly = false;
+
     private void Start()
     {
         LocalizationManager.OnLocaReady(() =>
@@ -28,7 +30,13 @@ public abstract class Interactible : MonoBehaviour
         });
     }
 
-    public abstract void OnInteraction();
+    public virtual void OnInteraction()
+    {
+        if (_interactibleOnceOnly)
+        {
+            this.enabled = false;
+        }
+    }
 
     public virtual void FixedUpdate()
     {
@@ -42,13 +50,23 @@ public abstract class Interactible : MonoBehaviour
         }
     }
 
-    public void SetUI(bool active)
+    public void SetUI(bool active, bool prio = false)
     {
         if(textKey == string.Empty)
         {
             textUI.text = string.Empty;
             return;
         }
+
+        if (prio)
+        {
+            textUI.transform.parent.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        }
+        else
+        {
+            textUI.transform.parent.localScale = new Vector3(1, 1, 1);
+        }
+
         textUI.text = Text;
         textUI.gameObject.SetActive(active);
         worldUI.gameObject.SetActive(active);

@@ -21,7 +21,7 @@ public class InteractionController : MonoBehaviour
     private void FixedUpdate()
     {
         List<Interactible> interacibles = FindObjectsOfType<Interactible>().ToList();
-        var atRange = interacibles.FindAll(x => x.IsAtRange);
+        var atRange = interacibles.FindAll(x => x.IsAtRange && x.enabled);
         atRange = atRange.OrderBy(x => x.Distance - x.Priority).ToList();
 
         if (atRange.Count > 0) 
@@ -40,7 +40,7 @@ public class InteractionController : MonoBehaviour
         foreach (var i in interacibles)
         {
             if (i.Equals(currentInteraction) || (atRange.Contains(i) && i.UIShowAnyway))
-                i.SetUI(true);
+                i.SetUI(true, i.Equals(currentInteraction));
             else
                 i.SetUI(false);
         }

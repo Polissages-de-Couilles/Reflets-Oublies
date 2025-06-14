@@ -144,7 +144,7 @@ public class LockManager : MonoBehaviour
         foreach (var lockable in lockableList)
         {
             Vector3 viewPos = Camera.main.WorldToViewportPoint(lockable.transform.position);
-            if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0)
+            if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0 && lockable.CanBeLock)
             {
                 if (lockable.CanBeLock)
                     visibleLockableObject.Add(lockable);

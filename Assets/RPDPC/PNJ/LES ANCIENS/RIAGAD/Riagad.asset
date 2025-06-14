@@ -73,7 +73,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 024d9fea-df2a-4722-90ee-05816946ad17
+    TargetNodeGuid: 7d577e8e-5f61-4010-b4f9-b6e4521af192
+  - BaseNodeGuid: d6b60bf6-29dd-4fb4-9ca0-2695ca9f403d
+    TargetNodeGuid: 04bf6e04-6803-4bc0-a315-252dd69bddb7
+  - BaseNodeGuid: 9fbd9c4d-df2b-432b-9dc9-7e4e975db901
+    TargetNodeGuid: b694c8da-5a33-4b30-a984-947ed336ea74
+  - BaseNodeGuid: 0840d381-33ac-4730-8720-6a2be12f519a
+    TargetNodeGuid: 9fbd9c4d-df2b-432b-9dc9-7e4e975db901
+  - BaseNodeGuid: 5f6ebbf6-b14a-4c81-a933-19eeb59ce0ac
+    TargetNodeGuid: 0840d381-33ac-4730-8720-6a2be12f519a
+  - BaseNodeGuid: 13a33d13-51ba-41a0-9d6e-0b4c1e20ed11
+    TargetNodeGuid: 5f6ebbf6-b14a-4c81-a933-19eeb59ce0ac
+  - BaseNodeGuid: bafc6db2-d7c2-4992-b44e-d0619ec7c031
+    TargetNodeGuid: 513291fc-7964-4d38-a87b-1de9f81f75ad
+  - BaseNodeGuid: 513291fc-7964-4d38-a87b-1de9f81f75ad
+    TargetNodeGuid: b3ba4b6e-6b87-4d1b-9127-04b1ad0a820c
+  - BaseNodeGuid: b3ba4b6e-6b87-4d1b-9127-04b1ad0a820c
     TargetNodeGuid: f6aedca9-2251-4c4e-a83e-adb7e8ea59dd
+  - BaseNodeGuid: 7d577e8e-5f61-4010-b4f9-b6e4521af192
+    TargetNodeGuid: bafc6db2-d7c2-4992-b44e-d0619ec7c031
+  - BaseNodeGuid: 161c0b98-cb2a-4696-bc05-f057df75d6d1
+    TargetNodeGuid: 3fd5ae00-93b4-4d5e-a867-37680b99f20c
+  - BaseNodeGuid: 3fd5ae00-93b4-4d5e-a867-37680b99f20c
+    TargetNodeGuid: e1567f5d-f8e4-4cbb-9048-8978963ba567
+  - BaseNodeGuid: e1567f5d-f8e4-4cbb-9048-8978963ba567
+    TargetNodeGuid: 031f0342-9dd8-4d4c-96ed-640937255203
+  - BaseNodeGuid: 031f0342-9dd8-4d4c-96ed-640937255203
+    TargetNodeGuid: f9534960-043d-4c25-b34b-de9544ddf011
   - BaseNodeGuid: a5e0d068-b813-4c70-bd87-e768a752fa01
     TargetNodeGuid: 97139f8e-2287-46a3-94e1-c18bef3fc0ad
   - BaseNodeGuid: 97139f8e-2287-46a3-94e1-c18bef3fc0ad
@@ -99,7 +125,7 @@ MonoBehaviour:
   - BaseNodeGuid: 43f45c36-fe0f-4b61-afe8-a0936bffde96
     TargetNodeGuid: 158b6109-2f19-41dc-8914-ad0d81294239
   - BaseNodeGuid: b694c8da-5a33-4b30-a984-947ed336ea74
-    TargetNodeGuid: 04bf6e04-6803-4bc0-a315-252dd69bddb7
+    TargetNodeGuid: d6b60bf6-29dd-4fb4-9ca0-2695ca9f403d
   - BaseNodeGuid: 04bf6e04-6803-4bc0-a315-252dd69bddb7
     TargetNodeGuid: 3546f44d-ebf8-4665-980e-27e15ce8d37f
   - BaseNodeGuid: 3546f44d-ebf8-4665-980e-27e15ce8d37f
@@ -133,11 +159,11 @@ MonoBehaviour:
   - BaseNodeGuid: b30a8d93-ed2e-4ddc-b26b-714fc4c96866
     TargetNodeGuid: 3e3665b3-cb94-4333-a7e8-9fa5864e8c59
   - BaseNodeGuid: 3e3665b3-cb94-4333-a7e8-9fa5864e8c59
-    TargetNodeGuid: f9534960-043d-4c25-b34b-de9544ddf011
+    TargetNodeGuid: 161c0b98-cb2a-4696-bc05-f057df75d6d1
   - BaseNodeGuid: dba9e9a5-5956-475e-828c-0dcc314ef2d8
     TargetNodeGuid: a5e0d068-b813-4c70-bd87-e768a752fa01
   - BaseNodeGuid: 158b6109-2f19-41dc-8914-ad0d81294239
-    TargetNodeGuid: b694c8da-5a33-4b30-a984-947ed336ea74
+    TargetNodeGuid: 13a33d13-51ba-41a0-9d6e-0b4c1e20ed11
   - BaseNodeGuid: ec86b2f0-1950-4c3e-82c0-8af2e7aa486c
     TargetNodeGuid: c299f28c-0612-4915-bcac-d5160884ef9c
   DialogueChoiceNodeDatas: []
@@ -739,13 +765,65 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f9534960-043d-4c25-b34b-de9544ddf011
-    Position: {x: 7942, y: -126}
+    Position: {x: 9265, y: -128}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: d6b60bf6-29dd-4fb4-9ca0-2695ca9f403d
+    Position: {x: 3874, y: 305}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: fdc506ef564c9384a8c1c17815075308, type: 2}
+  - NodeGuid: 9fbd9c4d-df2b-432b-9dc9-7e4e975db901
+    Position: {x: 3843, y: -342}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b9bbc1f98e90bb64b805fd59bf30ba53, type: 2}
+  - NodeGuid: 0840d381-33ac-4730-8720-6a2be12f519a
+    Position: {x: 3843, y: -527}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 0b2792e37fbdff74fb18de6d0f21f89d, type: 2}
+  - NodeGuid: 5f6ebbf6-b14a-4c81-a933-19eeb59ce0ac
+    Position: {x: 3843, y: -732}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 03bb9351aa5b326429f9021f07abd5c1, type: 2}
+  - NodeGuid: 13a33d13-51ba-41a0-9d6e-0b4c1e20ed11
+    Position: {x: 3843, y: -948}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 237cb2477fbefa546bc9ff3246205167, type: 2}
+  - NodeGuid: bafc6db2-d7c2-4992-b44e-d0619ec7c031
+    Position: {x: -851, y: -116}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 3fd858806ccbe2c45b50d173ce06f03b, type: 2}
+  - NodeGuid: 513291fc-7964-4d38-a87b-1de9f81f75ad
+    Position: {x: -479, y: -116}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: f16fe13031df43a45ac0a3cdac58789f, type: 2}
+  - NodeGuid: b3ba4b6e-6b87-4d1b-9127-04b1ad0a820c
+    Position: {x: -110, y: -116}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 717ff4fb2728f7940b424a4fe0f17b56, type: 2}
+  - NodeGuid: 7d577e8e-5f61-4010-b4f9-b6e4521af192
+    Position: {x: -1214, y: -116}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 5ede8dee4f6a60644b96ba0300a9987d, type: 2}
+  - NodeGuid: 161c0b98-cb2a-4696-bc05-f057df75d6d1
+    Position: {x: 7962, y: -126}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 603baeec21d572147abbd3c0cdc0324e, type: 2}
+  - NodeGuid: 3fd5ae00-93b4-4d5e-a867-37680b99f20c
+    Position: {x: 8281, y: -126}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 497e5b20020ff5541a4e63f5ea130914, type: 2}
+  - NodeGuid: e1567f5d-f8e4-4cbb-9048-8978963ba567
+    Position: {x: 8608, y: -128}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 9f6bc55c7217fcf42a77fd0f8a5efd7c, type: 2}
+  - NodeGuid: 031f0342-9dd8-4d4c-96ed-640937255203
+    Position: {x: 8937, y: -128}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: aad7af9eff026ca4fa88a9631b123c35, type: 2}
   StartNodeDatas:
   - NodeGuid: 024d9fea-df2a-4722-90ee-05816946ad17
-    Position: {x: 233, y: -126}
+    Position: {x: -1382, y: -116}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

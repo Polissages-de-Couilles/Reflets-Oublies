@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 1326615095634785687}
   - component: {fileID: 4058784784038897286}
   - component: {fileID: 1526734621139972967}
+  - component: {fileID: 8256588449705559114}
   m_Layer: 3
   m_Name: Ewen
   m_TagString: Player
@@ -191,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f1954224174ed944b8afc6b44c1d146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vfx: {fileID: 0}
 --- !u!114 &1371861057814982002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ MonoBehaviour:
   timeBetweenAttacks2: 0.6
   timeBetweenAttacks3: 0.6
   attackDamage: 1
-  bigAttackDamage: 0
+  bigAttackDamage: 2
   collision1: {fileID: 1775810200797484823}
   collision2: {fileID: 8107927360739045534}
   collision3: {fileID: 4541379617625684428}
@@ -225,6 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27735e5359ebacc408ba7d78cc9f0df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StunVfx: {fileID: 0}
+  StunVfxLoop: {fileID: 0}
 --- !u!114 &1326615095634785687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,6 +276,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rig: {fileID: 1550973401547619750}
   animator: {fileID: 4856576686414555100}
+--- !u!195 &8256588449705559114
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559057447727064224}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.75
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 3
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1782002284987548142
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,9 +363,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4712011733334928352}
   - component: {fileID: 8349237517489952875}
+  - component: {fileID: 14778400882432299}
   m_Layer: 3
   m_Name: DialogueCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,6 +409,33 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.02, z: 0}
+--- !u!54 &14778400882432299
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5428344182602542558}
+  serializedVersion: 4
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1001 &854940119825123578
 PrefabInstance:
   m_ObjectHideFlags: 0

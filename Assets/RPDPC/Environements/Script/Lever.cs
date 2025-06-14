@@ -18,5 +18,6 @@ public class Lever : Interactible
             LeverActivation?.Invoke();
             if(animationLever != null) animationLever.SetBool("LeverUp", true);
         }
+        base.OnInteraction();
     }
 }

@@ -29,6 +29,12 @@ public class BotDeathManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             Debug.Log("The bot (" + gameObject + ") is dead.");
+            
+            if(TryGetComponent(out Lockable lockable))
+            {
+                lockable.CanBeLock = false;
+            }
+
             FromSpawnerManager FSM = GetComponent<FromSpawnerManager>();
             if (FSM.isFromSpawner())
             {

@@ -63,7 +63,7 @@ namespace MeetAndTalk
             if (dialogueContainer.StartNodeDatas.Count == 1) CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[0]));
             else { CheckNodeType(GetNextNode(dialogueContainer.StartNodeDatas[Random.Range(0, dialogueContainer.StartNodeDatas.Count)])); }
 
-            dialogueUIManager.dialogueCanvas .SetActive(true);
+            dialogueUIManager.dialogueCanvas.SetActive(true);
             isDialogueInProcess = true;
             StartDialogueEvent.Invoke();
         }
@@ -161,6 +161,7 @@ namespace MeetAndTalk
         }
         private void RunNode(DialogueNodeData _nodeData)
         {
+            dialogueUIManager.textBackground.SetActive(true);
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
             OnNode?.Invoke(currentDialogueNodeData);
@@ -222,6 +223,7 @@ namespace MeetAndTalk
         }
         private void RunNode(DialogueChoiceNodeData _nodeData)
         {
+            dialogueUIManager.textBackground.SetActive(true);
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
             OnNode?.Invoke(currentDialogueNodeData);
@@ -283,6 +285,7 @@ namespace MeetAndTalk
         }
         private void RunNode(EventNodeData _nodeData)
         {
+            dialogueUIManager.textBackground.SetActive(CheckIfNodeDialogueAfterThisNode(_nodeData));
             bool waitTillPassToNextNode = false;
             List<DialogueEventTimeEvent> list = new List<DialogueEventTimeEvent>();
             foreach (var item in _nodeData.EventScriptableObjects)
@@ -313,12 +316,39 @@ namespace MeetAndTalk
                 StartCoroutine(tmp());
             }
         }
+
+        private bool CheckIfNodeDialogueAfterThisNode(BaseNodeData _baseNodeData)
+        {
+            switch (_baseNodeData)
+            {
+                case StartNodeData nodeData:
+                    return false;
+                case DialogueNodeData nodeData:
+                    return true;
+                case DialogueChoiceNodeData nodeData:
+                    return true;
+                case TimerChoiceNodeData nodeData:
+                    return true;
+                case EventNodeData nodeData:
+                    return false;
+                case EndNodeData nodeData:
+                    return CheckIfNodeDialogueAfterThisNode(GetNextNode(nodeData));
+                case RandomNodeData nodeData:
+                    return CheckIfNodeDialogueAfterThisNode(GetNextNode(nodeData));
+                case IfNodeData nodeData:
+                    return CheckIfNodeDialogueAfterThisNode(GetNextNode(nodeData));
+                default:
+                    return false;
+            }
+        }
+
         private void RunNode(EndNodeData _nodeData)
         {
             switch (_nodeData.EndNodeType)
             {
                 case EndNodeType.End:
                     dialogueUIManager.dialogueCanvas.SetActive(false);
+                    dialogueUIManager.textBackground.SetActive(false);
                     isDialogueInProcess = false;
                     EndDialogueEvent.Invoke();
                     break;
@@ -340,6 +370,7 @@ namespace MeetAndTalk
         }
         private void RunNode(TimerChoiceNodeData _nodeData)
         {
+            dialogueUIManager.textBackground.SetActive(true);
             lastDialogueNodeData = currentDialogueNodeData;
             currentDialogueNodeData = _nodeData;
             OnNode?.Invoke(currentDialogueNodeData);

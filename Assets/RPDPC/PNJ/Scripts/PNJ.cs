@@ -13,7 +13,14 @@ public class PNJ : Interactible
     public override string Text => /*$"{LocalizationManager.LocalizeText("PNJ_UI_INTERACTION", true)} */$"{LocalizationManager.LocalizeText(_data.CharacterNameKey, true)}";
 
     [SerializeField] PNJData _data;
-    [SerializeField] List<ActDialogueSO> _dialogues = new();
+    //[SerializeField] List<ActDialogueSO> _dialogues = new();
+
+    public DialogueContainerSO First => _first;
+    [SerializeField] DialogueContainerSO _first;
+    public List<DialogueContainerSO> Poll => _poll;
+    [SerializeField] List<DialogueContainerSO> _poll;
+
+    bool _isFirstTimeDialogue = true;
 
     public enum State
     {
@@ -25,10 +32,10 @@ public class PNJ : Interactible
 
     public void Awake()
     {
-        foreach (var dialogue in _dialogues)
-        {
-            dialogue.isFirst = true;
-        }
+        //foreach (var dialogue in _dialogues)
+        //{
+        //    dialogue.isFirst = true;
+        //}
     }
 
     public override void OnInteraction()
@@ -38,7 +45,7 @@ public class PNJ : Interactible
         switch (state)
         {
             case State.Waiting:
-                if(_dialogues.Count <= 0) return;
+                if((_poll.Count <= 0 && _first == null) || (_poll.Count <= 0 && _first != null && !_isFirstTimeDialogue)) return;
                 GameManager.Instance.DialogueManager.OnNode += OnNode;
                 GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() => 
                 { 
@@ -47,8 +54,10 @@ public class PNJ : Interactible
                     EventSystem.current.SetSelectedGameObject(null);
                 }
                 );
-                var listDialogue = _dialogues.Find(x => x.Act == GameManager.Instance.StoryManager.CurrentAct);
-                GameManager.Instance.DialogueManager.StartDialogue(listDialogue.GetDialogue());
+                var dialogue = _isFirstTimeDialogue ? _first : _poll[UnityEngine.Random.Range(0, _poll.Count)];
+                _isFirstTimeDialogue = false;
+                //_dialogues.Find(x => x.Act == GameManager.Instance.StoryManager.CurrentAct);
+                GameManager.Instance.DialogueManager.StartDialogue(dialogue);
                 break;
 
             case State.Dialogue:
@@ -61,6 +70,7 @@ public class PNJ : Interactible
             default:
                 break;
         }
+        base.OnInteraction();
     }
 
     private void OnNode(BaseNodeData data)

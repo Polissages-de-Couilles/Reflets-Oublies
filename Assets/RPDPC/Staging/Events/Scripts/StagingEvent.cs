@@ -8,11 +8,19 @@ public class StagingEvent : MonoBehaviour
     public string ID;
     public StagingEventTypes Type;
     public Action OnEventFinished;
+    public bool IsEventFinish { get; protected set; } = false;
     [SerializeField] bool CallFinishedEventAtStart;
+
+    public virtual void Awake()
+    {
+        IsEventFinish = false;
+        OnEventFinished += () => IsEventFinish = true;
+    }
 
     public virtual void PlayEvent()
     {
-        if(CallFinishedEventAtStart) OnEventFinished?.Invoke();
+        IsEventFinish = false;
+        if (CallFinishedEventAtStart) OnEventFinished?.Invoke();
     }
 
     public enum StagingEventTypes

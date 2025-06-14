@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     private void OnPause(InputAction.CallbackContext context)
     {
         Debug.Log(Pause.activeSelf);
-        if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess)
+        if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess && !GameManager.Instance.RespawnManager.DeathUi.activeSelf)
         {
             Time.timeScale = 0f;
             Pause.SetActive(true);
@@ -70,7 +70,10 @@ public class UIManager : MonoBehaviour
     private void PointDeVie(float degatPrit, float vieActuel)
     {
         if (healthSlider != null)
+        {
             healthSlider.value = vieActuel;
+            healthSlider.transform.parent.parent.transform.DOShakePosition(0.2f, 10);
+        }
 
         UpdateOpacity();
     }

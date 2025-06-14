@@ -10,6 +10,10 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
     StateManager sm;
     List<StateManager.States> incompatibleStates = new List<StateManager.States> { StateManager.States.talk };
 
+    [SerializeField] GameObject StunVfx;
+    [SerializeField] GameObject StunVfxLoop;
+    //private GameObject StunVfxLoopInstance;
+
     private void Start()
     {
         sm = GetComponent<StateManager>();
@@ -42,6 +46,11 @@ public class PlayerStunAndKnockbackManager : StunAndKnockbackManagerBase
         if(playerDamageable.IsInvicible) return;
         if (!incompatibleStates.Contains(sm.playerState))
         {
+            if(stunDuration > 0.25f)
+            {
+                Instantiate(StunVfx, this.transform);
+                Destroy(Instantiate(StunVfxLoop, this.transform), stunDuration);
+            }
             sm.SetPlayerState(StateManager.States.stun, stunDuration);
         }
     }
