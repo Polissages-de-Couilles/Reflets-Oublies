@@ -2795,15 +2795,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: aa6fa136-5a6e-4044-91c2-6ee34bea851a
-    TargetNodeGuid: 195f3f2b-84bf-42e9-a678-2d15dab9ac8a
+    TargetNodeGuid: 7b2bb66f-fb7b-44e1-8bc3-0678d0d16c9d
   - BaseNodeGuid: b126865d-d062-43ee-89c0-352fbcac47a6
     TargetNodeGuid: bd1ab796-3f0a-4435-803c-134f4a0d935c
-  - BaseNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
-    TargetNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
   - BaseNodeGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
     TargetNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
   - BaseNodeGuid: 2b480fc6-5dac-41bb-b115-46db1c77a584
     TargetNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+  - BaseNodeGuid: 7b2bb66f-fb7b-44e1-8bc3-0678d0d16c9d
+    TargetNodeGuid: 195f3f2b-84bf-42e9-a678-2d15dab9ac8a
+  - BaseNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+    TargetNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
   - BaseNodeGuid: 195f3f2b-84bf-42e9-a678-2d15dab9ac8a
     TargetNodeGuid: a4a89868-6a11-4d18-8b0a-a646405096d3
   - BaseNodeGuid: a4a89868-6a11-4d18-8b0a-a646405096d3
@@ -3089,10 +3091,6 @@ MonoBehaviour:
     Position: {x: 2521, y: 121}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 06920d8801178c646a3f48549b224240, type: 2}
-  - NodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
-    Position: {x: 4064, y: 157}
-    EventScriptableObjects:
-    - DialogueEventSO: {fileID: 11400000, guid: 7679274c5f0509f40892fd294c185ec3, type: 2}
   - NodeGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
     Position: {x: 3558, y: 2}
     EventScriptableObjects:
@@ -3101,9 +3099,17 @@ MonoBehaviour:
     Position: {x: 3558, y: 241}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: e59f6d3cb9005fc47867f4dc1edbcdbb, type: 2}
+  - NodeGuid: 7b2bb66f-fb7b-44e1-8bc3-0678d0d16c9d
+    Position: {x: -379, y: 198}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: d3280775f9cd52149a7fc332df3c1edf, type: 2}
+  - NodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+    Position: {x: 4023, y: 157}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 7679274c5f0509f40892fd294c185ec3, type: 2}
   StartNodeDatas:
   - NodeGuid: aa6fa136-5a6e-4044-91c2-6ee34bea851a
-    Position: {x: 49, y: 198}
+    Position: {x: -719, y: 198}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas:
@@ -3111,7 +3117,7 @@ MonoBehaviour:
     Position: {x: 2536, y: 288}
     commmand: apparaitre le souvenir
   - NodeGuid: 406e8d7e-2949-4974-aac1-c8be0c0e33cb
-    Position: {x: 3481, y: 745}
+    Position: {x: 3594, y: 497}
     commmand: faire le choix
   IfNodeDatas: []
 --- !u!114 &5945347010235014991
