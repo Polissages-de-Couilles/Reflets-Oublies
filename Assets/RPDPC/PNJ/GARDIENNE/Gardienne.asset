@@ -2812,14 +2812,18 @@ MonoBehaviour:
     TargetNodeGuid: 84a36ed3-717a-4d39-979e-b4c63852b93a
   - BaseNodeGuid: 2d1043c8-2f42-4e50-9f8c-b24e1075bb1d
     TargetNodeGuid: e2a51431-7773-4f2d-b469-6096a7389dd7
-  - BaseNodeGuid: bd1ab796-3f0a-4435-803c-134f4a0d935c
-    TargetNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
   - BaseNodeGuid: 84a36ed3-717a-4d39-979e-b4c63852b93a
     TargetNodeGuid: e683e6ff-f400-45fd-a66f-2e7d5870f0cc
   - BaseNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
     TargetNodeGuid: 2d1043c8-2f42-4e50-9f8c-b24e1075bb1d
   - BaseNodeGuid: e683e6ff-f400-45fd-a66f-2e7d5870f0cc
+    TargetNodeGuid: b126865d-d062-43ee-89c0-352fbcac47a6
+  - BaseNodeGuid: b126865d-d062-43ee-89c0-352fbcac47a6
     TargetNodeGuid: bd1ab796-3f0a-4435-803c-134f4a0d935c
+  - BaseNodeGuid: bd1ab796-3f0a-4435-803c-134f4a0d935c
+    TargetNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+  - BaseNodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+    TargetNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 195f3f2b-84bf-42e9-a678-2d15dab9ac8a
@@ -3044,7 +3048,15 @@ MonoBehaviour:
     Position: {x: 4109, y: 198}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: b126865d-d062-43ee-89c0-352fbcac47a6
+    Position: {x: 2521, y: 121}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 06920d8801178c646a3f48549b224240, type: 2}
+  - NodeGuid: e7b3bb5f-3031-4363-8bda-2008fa53512c
+    Position: {x: 3171, y: 121}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 7679274c5f0509f40892fd294c185ec3, type: 2}
   StartNodeDatas:
   - NodeGuid: aa6fa136-5a6e-4044-91c2-6ee34bea851a
     Position: {x: 49, y: 198}
