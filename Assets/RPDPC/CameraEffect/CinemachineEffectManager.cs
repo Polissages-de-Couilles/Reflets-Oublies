@@ -20,9 +20,24 @@ public class CinemachineEffectManager : MonoBehaviour
     bool isChromaticAberration = false;
     bool isColorAdjustments = false;
 
+    List<Keyframe> colorCurvesParameter = new();
+    float colorCurvesIntensity = 0f;
+
     private void Awake()
     {
         Cam = GetComponent<CinemachineVirtualCamera>();
+
+        if (CamVolumeProfile.TryGet(out ColorCurves colorCurves))
+        {
+            for (int i = 0; i < colorCurves.hueVsSat.value.length; i++)
+            {
+                Keyframe key = colorCurves.hueVsSat.value[i];
+                colorCurvesParameter.Add(key);
+            }
+
+            ColorCurves(0f);
+            //StartCoroutine(ColorCurves(1f, 10f));
+        }
     }
 
     public void ShakeCamera(float intensity, float time)
@@ -282,6 +297,42 @@ public class CinemachineEffectManager : MonoBehaviour
             }
 
             StartCoroutine(EffectCoroutine());
+        }
+    }
+
+    public IEnumerator ColorCurves(float intensity, float duration)
+    {
+        float currentIntensity = colorCurvesIntensity;
+        float dif = (intensity - currentIntensity) / 100f;
+        for (int i = 0; i < 100; i++)
+        {
+            ColorCurves(currentIntensity + (i * dif));
+            yield return new WaitForSeconds(duration / 100f);
+        }
+        yield return null;
+        ColorCurves(intensity);
+    }
+
+    public void ColorCurves(float intensity)
+    {
+        if (CamVolumeProfile.TryGet(out ColorCurves colorCurves))
+        {
+            var parameter = colorCurves.hueVsSat;
+            colorCurvesIntensity = intensity;
+
+            var newParameter = new TextureCurveParameter(parameter.value, true);
+            for (int i = 0; i < parameter.value.length; i++)
+            {
+                Keyframe key = colorCurvesParameter[i];
+                //Debug.Log("Key : " + key.value + " | " + key.inTangent + ";" + key.outTangent);
+                key.value = ((key.value - 0.5f) * intensity) + 0.5f;
+                key.inTangent *= intensity;
+                key.outTangent *= intensity;
+                newParameter.value.MoveKey(i, key);
+            }
+            
+            colorCurves.hueVsSat.SetValue(newParameter);
+            Debug.Log("ColorCurves : " + intensity);
         }
     }
 }

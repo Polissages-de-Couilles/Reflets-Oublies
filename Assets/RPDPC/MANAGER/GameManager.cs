@@ -90,13 +90,14 @@ public class GameManager : MonoBehaviour
     public Image FadeObject => _fadeObject;
     [SerializeField] Image _fadeObject;
 
-
+#if UNITY_EDITOR
     //Uniquement lÅEÅEbut de test, ne pas utiliser pour la version final
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
+            //Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
         }
     }
+#endif
 }

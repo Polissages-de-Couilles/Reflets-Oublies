@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Memory", menuName = ("Game/Memory"), order =1)]
 public class MemorySO : ScriptableObject
 {
+    public Act Act;
     public Action<bool> _action;
     public bool _isTaken = false;
     public int relationValue;

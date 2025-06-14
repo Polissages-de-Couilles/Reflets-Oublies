@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class MemoryManager : MonoBehaviour
 {
-    [HideInInspector] public List<MemorySO> AllMemory => _allMemory;
-    [SerializeField]private List<MemorySO> _allMemory = new List<MemorySO>();
+    public List<MemorySO> AllMemory => _allMemory;
+    [SerializeField] private List<MemorySO> _allMemory = new List<MemorySO>();
 
+    public List<MemorySO> EncounteredMemory => encounteredMemory;
     private List<MemorySO> encounteredMemory;
 
     public StoryRelationState storyRelationState = StoryRelationState.Neutral;
@@ -19,8 +20,9 @@ public class MemoryManager : MonoBehaviour
     }
 
     public void AddEncounteredMemory (MemorySO mem) 
-    { 
+    {
         encounteredMemory.Add(mem);
+        GameManager.Instance.FirebaseManager.OnChoiceInStory(mem.Act, mem._isTaken);
         SetStoryRelationState();
     }
 
