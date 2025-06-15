@@ -28,6 +28,13 @@ public abstract class Interactible : MonoBehaviour
         {
             text = Text;
         });
+        if(worldUI != null)
+        {
+            if(worldUI.TryGetComponent(out Canvas canvas))
+            {
+                canvas.worldCamera = Camera.main;
+            }
+        }
     }
 
     public virtual void OnInteraction()
