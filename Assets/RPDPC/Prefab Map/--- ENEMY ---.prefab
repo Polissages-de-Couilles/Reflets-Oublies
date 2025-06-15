@@ -51,7 +51,6 @@ Transform:
   - {fileID: 4039473354896429867}
   - {fileID: 5613632461079331577}
   - {fileID: 38388868361297292}
-  - {fileID: 1763299136578860362}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147424563286657694
@@ -2540,8 +2539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monstersPrefabs:
   - {fileID: 5776946802249578138, guid: 222cc0ee963072e4495b9c3ce13e74f7, type: 3}
-  - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
-  nbMaxMonters: 4
+  - {fileID: 4658633162866129784, guid: 3f45e301f6c7c834492137f5656f1a81, type: 3}
+  nbMaxMonters: 3
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &6010253916090989993 stripped
@@ -2632,7 +2631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monstersPrefabs:
   - {fileID: 5776946802249578138, guid: 33bd631cd60d28e4ca747e05403d031e, type: 3}
-  nbMaxMonters: 3
+  nbMaxMonters: 4
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &5802948991342551910 stripped
@@ -2816,7 +2815,7 @@ MonoBehaviour:
   monstersPrefabs:
   - {fileID: 9160334484335390944, guid: 907489213bf2c7a49b43d4b6efdb66a1, type: 3}
   - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
-  nbMaxMonters: 4
+  nbMaxMonters: 5
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &4637951513499561207 stripped
@@ -3183,8 +3182,8 @@ MonoBehaviour:
   monstersPrefabs:
   - {fileID: 5776946802249578138, guid: 5975b19029c97b048a8436b16fd0848f, type: 3}
   - {fileID: 9160334484335390944, guid: 907489213bf2c7a49b43d4b6efdb66a1, type: 3}
-  - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
-  nbMaxMonters: 6
+  - {fileID: 4658633162866129784, guid: 8793fd13f8210924f803312b73284629, type: 3}
+  nbMaxMonters: 4
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &8149374677185087935 stripped
@@ -3645,7 +3644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monstersPrefabs:
   - {fileID: 7237178871622730094, guid: 498d0009ab1a6b04597ecdd72578feae, type: 3}
-  nbMaxMonters: 4
+  nbMaxMonters: 2
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &6968790009926987047 stripped
@@ -3811,9 +3810,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monstersPrefabs:
   - {fileID: 5776946802249578138, guid: 96008a1668abfc24683718de11494a1b, type: 3}
-  - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
+  - {fileID: 4658633162866129784, guid: f9d7fc707aaa60a44b66f62af7e53c72, type: 3}
   - {fileID: 9160334484335390944, guid: 907489213bf2c7a49b43d4b6efdb66a1, type: 3}
-  nbMaxMonters: 4
+  nbMaxMonters: 3
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!1001 &6595099802847658716
@@ -4092,72 +4091,10 @@ MonoBehaviour:
   monstersPrefabs:
   - {fileID: 7237178871622730094, guid: 45e365450be2053499fd98dfc38b5ac5, type: 3}
   - {fileID: 9160334484335390944, guid: 907489213bf2c7a49b43d4b6efdb66a1, type: 3}
-  - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
+  - {fileID: 4658633162866129784, guid: e4c0d61906edcdc48b97e3f1c2329c4b, type: 3}
   nbMaxMonters: 4
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
---- !u!1001 &6945291578942382614
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5051622558043387388}
-    m_Modifications:
-    - target: {fileID: 5776946802249578138, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_Name
-      value: AdepteRPDPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -56.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 303
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
---- !u!4 &1763299136578860362 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8654474671977551708, guid: 672a62c38ef95764ab3a9677a350bd4e, type: 3}
-  m_PrefabInstance: {fileID: 6945291578942382614}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7177998945690435213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5613,6 +5550,6 @@ MonoBehaviour:
   monstersPrefabs:
   - {fileID: 1557585983417840, guid: b431b0a7d7e9bb34283417b03f068754, type: 3}
   - {fileID: 4658633162866129784, guid: 298e63def440ec745b968359f1ccddbe, type: 3}
-  nbMaxMonters: 6
+  nbMaxMonters: 3
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
