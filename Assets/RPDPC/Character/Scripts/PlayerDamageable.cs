@@ -39,6 +39,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         defence = defence * (1 + _defenceChange);
     }
 
+    public void SetMaxHealth(float value)
+    {
+        var pourcentageHealth = currentHealth / maxHealth;
+        maxHealth = value;
+        currentHealth = pourcentageHealth * value;
+        GameManager.Instance.UIManager.SetHealthMax(value);
+    }
+
     public void takeDamage(float damage, GameObject attacker)
     {
         if(isInvicible) return;

@@ -8,13 +8,17 @@ using System.Linq;
 public class DialogueEventCallStaging : DialogueEventTimeEvent
 {
     public string _stagingID;
-    public StagingEvent.StagingEventTypes _stagingType;
 
     private List<StagingEvent> staging;
 
     public override void RunEvent()
     {
         staging = FindObjectsByType<StagingEvent>(FindObjectsSortMode.None).ToList().FindAll(x => x.ID == _stagingID/* && x.Type == _stagingType*/);
+        if(staging.Count == 0)
+        {
+            EventEnd();
+            return;
+        }
         foreach (var stag in staging)
         {
             stag.OnEventFinished += CheckAllEventFinish;

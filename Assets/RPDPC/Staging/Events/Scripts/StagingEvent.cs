@@ -6,7 +6,6 @@ using UnityEngine;
 public class StagingEvent : MonoBehaviour
 {
     public string ID;
-    public StagingEventTypes Type;
     public Action OnEventFinished;
     public bool IsEventFinish { get; protected set; } = false;
     [SerializeField] bool CallFinishedEventAtStart;
@@ -21,16 +20,6 @@ public class StagingEvent : MonoBehaviour
     {
         IsEventFinish = false;
         if (CallFinishedEventAtStart) OnEventFinished?.Invoke();
-    }
-
-    public enum StagingEventTypes
-    {
-        MoveToME,
-        PlayAnimatorState,
-        PlayVFXHere,
-        RotateToME,
-        PlayVFXToPlayer,
-        PlayVFXToMe
     }
 
     public void DebugError(string error)

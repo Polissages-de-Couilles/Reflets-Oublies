@@ -38,7 +38,7 @@ public class PlayerInputEventManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(playerInput.currentControlScheme);
+        //Debug.Log(playerInput.currentControlScheme);
         ChangeCurrentController((ControllerType)Enum.Parse(typeof(ControllerType), playerInput.currentControlScheme));
     }
 

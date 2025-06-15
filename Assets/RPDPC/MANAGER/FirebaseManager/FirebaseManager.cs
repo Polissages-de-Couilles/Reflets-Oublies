@@ -16,6 +16,7 @@ public class FirebaseManager : MonoBehaviour
     //private string GetURL(string url) => firebase_url + url + ".json";
 
     private const string USER_KEY = "USER";
+    private const string STORY_KEY = "STORY";
     private FirebaseDatabase _database;
     public Action OnFirebaseInitialized;
     bool isFirebaseInit = false;
@@ -190,19 +191,6 @@ public class FirebaseManager : MonoBehaviour
     {
         if (Application.isPlaying)
         {
-            //var datas = await GetAllUserData();
-            //_activeUsers.Clear();
-            //_activeUsers = datas.ToList();
-
-            //var dic = new Dictionary<int, GhostBehaviour>(_ghostDic);
-            //foreach (var user in dic)
-            //{
-            //    if (!_activeUsers.Any(x => x.id == user.Key))
-            //    {
-            //        Destroy(_ghostDic[user.Key]);
-            //        _ghostDic.Remove(user.Key);
-            //    }
-            //}
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
             if (!_ghostDic.ContainsKey(user.id)) return;
             _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
@@ -255,6 +243,20 @@ public class FirebaseManager : MonoBehaviour
         return list;
     }
 
+    public async void OnChoiceInStory(Act act, bool asAccept)
+    {
+        StoryChoice data = new StoryChoice(); ;
+        var dataSnapshot = await _database.GetReference(STORY_KEY).Child(act.ToString()).GetValueAsync();
+        if (dataSnapshot.Exists)
+        {
+            data = JsonUtility.FromJson<StoryChoice>(dataSnapshot.GetRawJsonValue());
+        }
+
+        if (asAccept) data.accept++;
+        else data.refuse--;
+
+        await _database.GetReference(STORY_KEY).Child(act.ToString()).SetRawJsonValueAsync(JsonUtility.ToJson(data));
+    }
 }
 
 public class UserData
@@ -280,6 +282,12 @@ public class UserData
     {
         return $"Id : {id} | Pos : {position}";
     }
+}
+
+public class StoryChoice
+{
+    public int accept;
+    public int refuse;
 }
 
 public static class UserInstance
