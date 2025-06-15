@@ -34,6 +34,7 @@ public abstract class Interactible : MonoBehaviour
     {
         if (_interactibleOnceOnly)
         {
+            worldUI.gameObject.SetActive(false);
             this.enabled = false;
         }
     }

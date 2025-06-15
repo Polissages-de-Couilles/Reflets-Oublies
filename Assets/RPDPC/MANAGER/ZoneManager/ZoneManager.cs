@@ -34,6 +34,7 @@ public class ZoneManager : MonoBehaviour
     [SerializeField] List<Zone> zones = new List<Zone>();
     [SerializeField] TextMeshProUGUI _ui;
     [SerializeField] List<Image> _images;
+    [SerializeField] Material _fog;
     public Zone CurrentZone { get; private set; }
     Coroutine _displayZoneNameCoroutine;
     Vector3 defaultPos;
@@ -48,6 +49,10 @@ public class ZoneManager : MonoBehaviour
             return;
         }
         defaultPos = _ui.transform.parent.transform.localPosition;
+        var color = _fog.GetColor("FogColor");
+        Debug.Log(color);
+        //_fog.SetColor("FogColor", new Color(color.r, color.g, color.b, 0f));
+        _fog.DOColor(new Color(color.r, color.g, color.b, 0f), "FogColor", 1f);
     }
 
     public void OnZoneChange(Zone zone)
@@ -57,6 +62,69 @@ public class ZoneManager : MonoBehaviour
         OnZoneChangeEvent?.Invoke(zone);
 
         DisplayZoneName(zone);
+
+        Color color;
+        switch (zone.Name)
+        {
+            //Ruine Start
+            case ZoneName.UI_ZONE_1:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, false);
+                break;
+
+            //Bosquet
+            case ZoneName.UI_ZONE_2:
+                break;
+
+            //Village
+            case ZoneName.UI_ZONE_3:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, false);
+                break;
+
+            //Plaine
+            case ZoneName.UI_ZONE_4:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, false);
+                break;
+
+            //Cimetiere
+            case ZoneName.UI_ZONE_5:
+                color = _fog.GetColor("FogColor");
+                _fog.DOColor(new Color(color.r, color.g, color.b, 0f), "FogColor", 1f);
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, true);
+                break;
+
+            //Vallee des murmures
+            case ZoneName.UI_ZONE_6:
+                color = _fog.GetColor("FogColor");
+                _fog.DOColor(new Color(color.r, color.g, color.b, 0.6666667f), "FogColor", 1f);
+                GameManager.Instance.CamManager.SetFog(0.35f, 1f, true);
+                break;
+
+            //Temple
+            case ZoneName.UI_ZONE_7:
+                break;
+
+            //Foret des reflets
+            case ZoneName.UI_ZONE_8:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, false);
+                break;
+
+            //Ruine de l'oublie
+            case ZoneName.UI_ZONE_9:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, true);
+                break;
+
+            //Ecluse
+            case ZoneName.UI_ZONE_10:
+                GameManager.Instance.CamManager.SetFog(0.1f, 1f, false);
+                break;
+
+            //Temple du reflet
+            case ZoneName.UI_ZONE_11:
+                break;
+
+            default:
+                break;
+        }
     }
 
     private void DisplayZoneName(Zone zone)

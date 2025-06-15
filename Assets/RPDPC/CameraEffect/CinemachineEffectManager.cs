@@ -5,6 +5,8 @@ using Cinemachine;
 using DG.Tweening;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using FlatKit;
+using System.Reflection;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CinemachineEffectManager : MonoBehaviour
@@ -23,6 +25,11 @@ public class CinemachineEffectManager : MonoBehaviour
     List<Keyframe> colorCurvesParameter = new();
     float colorCurvesIntensity = 0f;
 
+    [SerializeField] FogSettings fog;
+    [SerializeField] Gradient coldGradiant;
+    [SerializeField] Gradient hotGradiant;
+    UniversalRendererData data;
+
     private void Awake()
     {
         Cam = GetComponent<CinemachineVirtualCamera>();
@@ -38,6 +45,8 @@ public class CinemachineEffectManager : MonoBehaviour
             ColorCurves(0f);
             //StartCoroutine(ColorCurves(1f, 10f));
         }
+
+        SetFog(0.05f, 0.1f, false);
     }
 
     public void ShakeCamera(float intensity, float time)
@@ -299,7 +308,6 @@ public class CinemachineEffectManager : MonoBehaviour
             StartCoroutine(EffectCoroutine());
         }
     }
-
     public IEnumerator ColorCurves(float intensity, float duration)
     {
         float currentIntensity = colorCurvesIntensity;
@@ -312,7 +320,6 @@ public class CinemachineEffectManager : MonoBehaviour
         yield return null;
         ColorCurves(intensity);
     }
-
     public void ColorCurves(float intensity)
     {
         if (CamVolumeProfile.TryGet(out ColorCurves colorCurves))
@@ -335,4 +342,35 @@ public class CinemachineEffectManager : MonoBehaviour
             Debug.Log("ColorCurves : " + intensity);
         }
     }
+    public void SetFog(float intensity, float duration, bool isCold = false)
+    {
+        IEnumerator DoGradientColor(Gradient gradient, float dueation)
+        {
+            yield return null;
+            Color difOne = gradient.colorKeys[0].color - fog.heightGradient.colorKeys[0].color;
+            Color difTwo = gradient.colorKeys[1].color - fog.heightGradient.colorKeys[1].color;
+
+            for (int i = 0; i < 100; i++)
+            {
+                yield return new WaitForSeconds(duration / 100f);
+                Gradient targetGradient = new Gradient();
+                List<GradientColorKey> targetColors = new List<GradientColorKey>();
+
+                targetColors.Add(new GradientColorKey(fog.heightGradient.colorKeys[0].color + (difOne / 100f), fog.heightGradient.colorKeys[0].time));
+                targetColors.Add(new GradientColorKey(fog.heightGradient.colorKeys[1].color + (difTwo / 100f), fog.heightGradient.colorKeys[1].time));
+
+                targetGradient.SetKeys(targetColors.ToArray(), fog.heightGradient.alphaKeys);
+                fog.heightGradient = targetGradient;
+                fog.OnSettingsChanged?.Invoke();
+            }
+        }
+
+        var gradient = isCold ? coldGradiant : hotGradiant;
+        StartCoroutine(DoGradientColor(gradient, duration));
+        //fog.heightGradient.SetKeys(gradient.colorKeys, gradient.alphaKeys);
+
+        DOTween.To(() => fog.heightFogIntensity, x => fog.heightFogIntensity = x, intensity, duration).OnUpdate(() => fog.OnSettingsChanged?.Invoke());
+    }
+
+    
 }
