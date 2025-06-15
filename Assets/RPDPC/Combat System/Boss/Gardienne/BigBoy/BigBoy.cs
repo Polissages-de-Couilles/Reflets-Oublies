@@ -17,8 +17,9 @@ public class BigBoy : ProjectileBase
 
     protected override void LaunchProjectile()
     {
-        attackCollider.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
-        attackCollider.OnDamageableEnterTrigger += TriggerEnter;
+        AttackCollider ac = GetComponent<Collider>().gameObject.AddComponent<AttackCollider>();
+        ac.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
+        ac.OnDamageableEnterTrigger += TriggerEnter;
 
         Vector2 random = Random.insideUnitCircle * randomRadius;
         Vector3 randomPos = randomCenter + new Vector3(random.x, 0, random.y);

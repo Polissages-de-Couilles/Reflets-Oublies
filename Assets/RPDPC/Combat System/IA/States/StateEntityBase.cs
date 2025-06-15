@@ -155,7 +155,13 @@ public abstract class StateEntityBase
     public virtual void Init(
         Vector3 direction, //PushPlayer
         float force,
-        float duration
+        float duration,
+        float durationOfLiberation
+    )
+    { }
+    
+    public virtual void Init(
+        List<string> ListOfTypesToDESTROY //DestroyObjectOfType
     )
     { }
 

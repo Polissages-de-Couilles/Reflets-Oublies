@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
-  m_Name: SSTest
+  m_Name: PA LeftGW
   m_EditorClassIdentifier: 
   priority: 1
   conditions:
@@ -18,26 +18,22 @@ MonoBehaviour:
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     not: 0
     otherParts: []
-  - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 7ab9e24ee2c23d948bbd5ffd5c8b4865, type: 2}
-    not: 0
-    otherParts: []
   isHostileState: 1
   animationNames: []
   isAttack: 0
   attacks:
-  - spawnerID: 0
+  - spawnerID: 1
     prefabProjectiles:
-    - prefab: {fileID: 8636241007705187201, guid: 55fb886c614a16b42bfe24b82cac3b3d, type: 3}
+    - prefab: {fileID: 8119689125032024370, guid: 154d8b9700e50a1418015452289fc48a, type: 3}
       delayBeforeSpawn: 0
       damageDetails:
-        damage: 5
+        damage: 15
         doesStun: 0
         stunDuration: 0
-        doesKnockback: 0
-        knockbackForce: 0
-        doNotDestroyAtTriggerEnter: 0
-    attackDuration: 19
+        doesKnockback: 1
+        knockbackForce: 2
+        doNotDestroyAtTriggerEnter: 1
+    attackDuration: 0
     animationID: 0
     animationSpeed:
       serializedVersion: 2

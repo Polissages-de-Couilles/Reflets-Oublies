@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4559241893782171572
+--- !u!1 &8636241007705187201
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8577373844739301726}
-  - component: {fileID: -6014984969262289653}
-  - component: {fileID: 6164080939668730574}
+  - component: {fileID: 5813994827098722504}
+  - component: {fileID: 7698847160870281096}
+  - component: {fileID: -2340758390220693308}
   m_Layer: 0
-  m_Name: DK
+  m_Name: SS 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8577373844739301726
+--- !u!4 &5813994827098722504
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559241893782171572}
+  m_GameObject: {fileID: 8636241007705187201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -33,13 +33,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-6014984969262289653
+--- !u!114 &7698847160870281096
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559241893782171572}
+  m_GameObject: {fileID: 8636241007705187201}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: afccfbb1be916ce4da02f517433312c9, type: 3}
@@ -54,28 +54,19 @@ MonoBehaviour:
     doesKnockback: 0
     knockbackForce: 0
     doNotDestroyAtTriggerEnter: 0
---- !u!114 &6164080939668730574
+--- !u!114 &-2340758390220693308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4559241893782171572}
+  m_GameObject: {fileID: 8636241007705187201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c34e709bb481546b84d2c93c9e6216, type: 3}
+  m_Script: {fileID: 11500000, guid: f399027828250a943986e71bc7c4a2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spear: {fileID: 7226315478825534602, guid: b42462abb6697b943b545628f993ba43, type: 3}
-  spearSize: 1.2
-  speed: 5
-  startRadius: 6
-  numberOfLinePerSeconds: 0.5
+  Spear: {fileID: 3882856159048531606, guid: 52e7b220182d8f545a2d7dfbbefb126c, type: 3}
   duration: 23
-  holeValues:
-    mode: 0
-    randomStartAngle: {x: 45, y: 115}
-    randomAngleRange: {x: 20, y: 20}
-    randomNb: 2
-    setAngles:
-    - {x: 45, y: 135}
+  durationBetweenEwenPosAndSS: 0.7
+  delayBetweenSpears: 0.5

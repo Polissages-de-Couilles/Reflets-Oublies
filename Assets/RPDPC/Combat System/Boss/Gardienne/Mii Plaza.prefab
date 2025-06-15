@@ -1,5 +1,95 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3222977713412543097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2238610190615566579}
+  - component: {fileID: 7852185361089667143}
+  m_Layer: 0
+  m_Name: RightLance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2238610190615566579
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222977713412543097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.08, z: -10.55}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5565763489415302405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7852185361089667143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222977713412543097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af872083606282f4386d107ca41857e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerID: 2
+--- !u!1 &5159706624346235932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531266736399073811}
+  - component: {fileID: 2317160837793166940}
+  m_Layer: 0
+  m_Name: LeftLance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &531266736399073811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159706624346235932}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.08, z: -10.549999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5565763489415302405}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2317160837793166940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5159706624346235932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af872083606282f4386d107ca41857e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnerID: 1
 --- !u!1 &7188776132260747419
 GameObject:
   m_ObjectHideFlags: 0
@@ -24,6 +114,7 @@ GameObject:
   - component: {fileID: 2283997704365024118}
   - component: {fileID: 3990160843466121576}
   - component: {fileID: -7121177408941132027}
+  - component: {fileID: 454041072039327350}
   m_Layer: 0
   m_Name: Mii Plaza
   m_TagString: Untagged
@@ -46,6 +137,8 @@ Transform:
   m_Children:
   - {fileID: 8812986426653009911}
   - {fileID: 5648714592921438395}
+  - {fileID: 531266736399073811}
+  - {fileID: 2238610190615566579}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &7051630110460328632
@@ -83,10 +176,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10208a77b166eff42b07e7ca761cc77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wallsInfos: []
+  wallsInfos:
+  - absPos: {x: -230.43, y: 45.47, z: 380.5}
+    size: {x: 23.21, y: 10, z: 1.42}
   detectorsInfos:
-  - absPos: {x: -230.43, y: 45.47, z: 400.51}
-    size: {x: 10, y: 10, z: 10}
+  - absPos: {x: -230.43, y: 45.47, z: 383.4}
+    size: {x: 28.8, y: 10, z: 2}
   bossName: LA GARDIENNE
 --- !u!195 &5204777716663045124
 NavMeshAgent:
@@ -151,7 +246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   states:
   - {fileID: 11400000, guid: 67638432bbe05a240983aaaf98eb57f3, type: 2}
-  - {fileID: 11400000, guid: 703152676b7bae94abd6eb2b67465a5c, type: 2}
+  - {fileID: 11400000, guid: 6a67667f0f51d28438152fb569233046, type: 2}
+  - {fileID: 11400000, guid: d159c94223b6dd345a104eb093730495, type: 2}
+  - {fileID: 11400000, guid: 4ececb8bd99533341a974f37d4e51a2a, type: 2}
+  - {fileID: 11400000, guid: e831a14bffbd7174f96df7ca58ed059b, type: 2}
   prioritizeAttack: 1
   shouldSearchStates: 1
   animator: {fileID: 0}
@@ -167,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34d4af92b584948a644a2dfeae639e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 100
 --- !u!114 &7987642133265921621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,8 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Stunned: 0
-  canBeStunned: 1
-  canBeKnockbacked: 1
+  canBeStunned: 0
+  canBeKnockbacked: 0
 --- !u!114 &721664234387714631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +398,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateToPlayAtDeath: {fileID: 0}
+  stateToPlayAtDeath: {fileID: 11400000, guid: 6e85b517342efff4fa3c1bf0e68b63f3, type: 2}
+--- !u!114 &454041072039327350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7188776132260747419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f033197d157acf2448b7c8f999eb3928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normal: {fileID: 0}
+  wind: {fileID: 0}
+  strong: {fileID: 0}
 --- !u!1 &8887880611629560797
 GameObject:
   m_ObjectHideFlags: 0

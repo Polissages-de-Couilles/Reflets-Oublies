@@ -8,11 +8,12 @@ public class PushPlayer : StateBase
     [SerializeField] Vector3 direction;
     [SerializeField] float force;
     [SerializeField] float duration;
+    [SerializeField] float durationOfLiberation;
 
     public override StateEntityBase PrepareEntityInstance()
     {
         PushPlayerEntity pushPlayerEntity = new PushPlayerEntity();
-        pushPlayerEntity.Init(direction, force, duration);
+        pushPlayerEntity.Init(direction, force, duration, durationOfLiberation);
         return pushPlayerEntity;
     }
 }

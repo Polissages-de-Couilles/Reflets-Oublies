@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0481b9e4959ef124bbd1d726d5d3af7a, type: 3}
-  m_Name: SSTest
+  m_Name: DK1
   m_EditorClassIdentifier: 
   priority: 1
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
-    not: 0
-    otherParts: []
-  - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 7ab9e24ee2c23d948bbd5ffd5c8b4865, type: 2}
     not: 0
     otherParts: []
   isHostileState: 1
@@ -28,16 +24,16 @@ MonoBehaviour:
   attacks:
   - spawnerID: 0
     prefabProjectiles:
-    - prefab: {fileID: 8636241007705187201, guid: 55fb886c614a16b42bfe24b82cac3b3d, type: 3}
+    - prefab: {fileID: 4559241893782171572, guid: 17581717bc40ed24aa842c670177b7e2, type: 3}
       delayBeforeSpawn: 0
       damageDetails:
-        damage: 5
+        damage: 8
         doesStun: 0
         stunDuration: 0
         doesKnockback: 0
         knockbackForce: 0
         doNotDestroyAtTriggerEnter: 0
-    attackDuration: 19
+    attackDuration: 23
     animationID: 0
     animationSpeed:
       serializedVersion: 2
