@@ -2926,6 +2926,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &139025433 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5121713569430139186, guid: 1b20907f0e962554581bea5fc5ca2b97, type: 3}
+  m_PrefabInstance: {fileID: 255153987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &139701034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5051622558043387388, guid: dd00bb4105125074f975bdab6d0bb2b1, type: 3}
@@ -11359,6 +11364,7 @@ MonoBehaviour:
   ID: Ombre_Act_1_Dialogue_1_End
   CallFinishedEventAtStart: 0
   objectToMove: {fileID: 365277447}
+  useNavMesh: 0
 --- !u!1 &393236337
 GameObject:
   m_ObjectHideFlags: 0
@@ -11705,9 +11711,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 426366975}
-  - component: {fileID: 426366977}
   - component: {fileID: 426366976}
   - component: {fileID: 426366978}
+  - component: {fileID: 426366979}
   m_Layer: 8
   m_Name: Pos Millie 1
   m_TagString: Untagged
@@ -11747,24 +11753,6 @@ MonoBehaviour:
   objectToRotate: {fileID: 1179591114}
   objectToLookAt: {fileID: 1811073412}
   duration: 0.1
---- !u!114 &426366977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 426366974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Riagad_Act_1_Dialogue_1_3
-  CallFinishedEventAtStart: 0
-  objectToMove: {fileID: 1179591117}
-  speed: 1000
-  stoppingDistance: 0.2
-  animationName: 
 --- !u!114 &426366978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11780,6 +11768,22 @@ MonoBehaviour:
   ID: Riagad_Act_1_Dialogue_1_3
   CallFinishedEventAtStart: 0
   objectToFollow: {fileID: 1179591114}
+--- !u!114 &426366979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426366974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911b167f50e2e540aa5288205e4323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Riagad_Act_1_Dialogue_1_3
+  CallFinishedEventAtStart: 0
+  objectToMove: {fileID: 1179591114}
+  useNavMesh: 0
 --- !u!114 &428362242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2272072123386896547, guid: 742c7bab6936dab4c920b6e0d1340d81, type: 3}
@@ -17273,7 +17277,11 @@ Transform:
   m_LocalPosition: {x: -101.53, y: 13.85, z: 250.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1584661867}
+  - {fileID: 1837557951}
+  - {fileID: 1114841690}
+  - {fileID: 2100317233}
   m_Father: {fileID: 1456481539}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &800491315
@@ -25359,6 +25367,70 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8738659278221847128, guid: 742c7bab6936dab4c920b6e0d1340d81, type: 3}
   m_PrefabInstance: {fileID: 1602159388}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1114841689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1114841690}
+  - component: {fileID: 1114841692}
+  - component: {fileID: 1114841691}
+  m_Layer: 8
+  m_Name: Pos Sage 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1114841690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114841689}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.39, y: 4.2, z: 3.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800491314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114841691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114841689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae328eae7f2bd149b465ec2672b7270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_5
+  CallFinishedEventAtStart: 0
+  _clip: {fileID: 8300000, guid: 657fac5dbe19d2649bc79a32b6ca28f0, type: 3}
+--- !u!114 &1114841692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114841689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911b167f50e2e540aa5288205e4323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_5
+  CallFinishedEventAtStart: 0
+  objectToMove: {fileID: 53786487}
+  useNavMesh: 1
 --- !u!1 &1123288249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2420241449500347712, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
@@ -27689,6 +27761,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1227066284 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1266949239388500864, guid: e62dd1f28f4b628409572b7cfd5fa4f9, type: 3}
+  m_PrefabInstance: {fileID: 548123942}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1230711640
 Mesh:
   m_ObjectHideFlags: 0
@@ -30189,6 +30266,7 @@ MonoBehaviour:
   ID: Ombre_Act_1_Dialogue_1_0
   CallFinishedEventAtStart: 0
   objectToMove: {fileID: 365277447}
+  useNavMesh: 0
 --- !u!114 &1339535490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34338,6 +34416,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1575146210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5121713569430139186, guid: 1b20907f0e962554581bea5fc5ca2b97, type: 3}
+  m_PrefabInstance: {fileID: 1917509289}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1582748287
 Mesh:
   m_ObjectHideFlags: 0
@@ -34523,6 +34606,76 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1584661866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584661867}
+  - component: {fileID: 1584661869}
+  - component: {fileID: 1584661868}
+  m_Layer: 8
+  m_Name: "Barri\xE8re"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1584661867
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584661866}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800491314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1584661868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584661866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_End
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 2036351460}
+  - {fileID: 139025433}
+  - {fileID: 1575146210}
+  isActive: 0
+--- !u!114 &1584661869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584661866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_End
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 1227066284}
+  - {fileID: 1605868207}
+  isActive: 1
 --- !u!43 &1596988762
 Mesh:
   m_ObjectHideFlags: 0
@@ -35414,6 +35567,11 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2368792820411705730, guid: 742c7bab6936dab4c920b6e0d1340d81, type: 3}
   m_PrefabInstance: {fileID: 1602159388}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1605868207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1266949239388500864, guid: e62dd1f28f4b628409572b7cfd5fa4f9, type: 3}
+  m_PrefabInstance: {fileID: 2095195291}
   m_PrefabAsset: {fileID: 0}
 --- !u!43 &1631885585
 Mesh:
@@ -38320,6 +38478,126 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1837557950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1837557951}
+  - component: {fileID: 1837557952}
+  - component: {fileID: 1837557956}
+  - component: {fileID: 1837557955}
+  - component: {fileID: 1837557954}
+  - component: {fileID: 1837557953}
+  m_Layer: 8
+  m_Name: Pos Ewen 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1837557951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.7, y: 4.15, z: 3.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800491314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1837557952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_1
+  CallFinishedEventAtStart: 0
+  objectToMove: {fileID: 1262012881}
+  speed: 5
+  stoppingDistance: 0.2
+  animationName: Walking
+--- !u!114 &1837557953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd547241ddfde3429b5ea5eeeee8738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_4
+  CallFinishedEventAtStart: 0
+  type: 0
+  intensity: 5
+  duration: 0.15
+--- !u!114 &1837557954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd547241ddfde3429b5ea5eeeee8738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_3
+  CallFinishedEventAtStart: 0
+  type: 0
+  intensity: 5
+  duration: 0.15
+--- !u!114 &1837557955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd547241ddfde3429b5ea5eeeee8738, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_2
+  CallFinishedEventAtStart: 0
+  type: 0
+  intensity: 5
+  duration: 0.15
+--- !u!114 &1837557956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1837557950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae328eae7f2bd149b465ec2672b7270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_2
+  CallFinishedEventAtStart: 1
+  _clip: {fileID: 8300000, guid: a5a1871e480db6944b7d48b23d8beb31, type: 3}
 --- !u!43 &1840006978
 Mesh:
   m_ObjectHideFlags: 0
@@ -41101,6 +41379,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &2036351460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5121713569430139186, guid: 1b20907f0e962554581bea5fc5ca2b97, type: 3}
+  m_PrefabInstance: {fileID: 400294445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &2036455566
 Mesh:
   m_ObjectHideFlags: 0
@@ -41832,6 +42115,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1936208307446589754, guid: e62dd1f28f4b628409572b7cfd5fa4f9, type: 3}
   m_PrefabInstance: {fileID: 2095195291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2100317232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2100317233}
+  - component: {fileID: 2100317234}
+  m_Layer: 8
+  m_Name: Pos Ewen 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2100317233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100317232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.68, y: 4.2, z: 4.81}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800491314}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2100317234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100317232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7911b167f50e2e540aa5288205e4323c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_5
+  CallFinishedEventAtStart: 0
+  objectToMove: {fileID: 1262012865}
+  useNavMesh: 1
 --- !u!43 &2101427679
 Mesh:
   m_ObjectHideFlags: 0
