@@ -15,9 +15,11 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: 06e9bd7e-6662-428f-8a4c-1277f946e971
     TargetNodeGuid: 1f442377-9999-490d-8256-702ae782166e
-  - BaseNodeGuid: 695ec747-63b2-4766-a134-3031a6c8bec4
-    TargetNodeGuid: e9ebc617-32d9-4680-9859-b781c89f5362
   - BaseNodeGuid: 8556a9d4-19f2-48f7-b485-c479ed6ab120
+    TargetNodeGuid: b723a455-fb82-46eb-8073-b6e81828bb7b
+  - BaseNodeGuid: 695ec747-63b2-4766-a134-3031a6c8bec4
+    TargetNodeGuid: b723a455-fb82-46eb-8073-b6e81828bb7b
+  - BaseNodeGuid: b723a455-fb82-46eb-8073-b6e81828bb7b
     TargetNodeGuid: e9ebc617-32d9-4680-9859-b781c89f5362
   - BaseNodeGuid: 1f442377-9999-490d-8256-702ae782166e
     TargetNodeGuid: 8556a9d4-19f2-48f7-b485-c479ed6ab120
@@ -56,10 +58,14 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: e9ebc617-32d9-4680-9859-b781c89f5362
-    Position: {x: 1888, y: 610}
+    Position: {x: 2163, y: 610}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
+  - NodeGuid: b723a455-fb82-46eb-8073-b6e81828bb7b
+    Position: {x: 1797, y: 610}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 5481b35dcea94b4469704ff38bca51a7, type: 2}
   - NodeGuid: 8556a9d4-19f2-48f7-b485-c479ed6ab120
     Position: {x: 1445, y: 551}
     EventScriptableObjects:

@@ -76,6 +76,8 @@ MonoBehaviour:
     TargetNodeGuid: 940d464b-2d10-4311-9af3-beb52fad5e62
   - BaseNodeGuid: 940d464b-2d10-4311-9af3-beb52fad5e62
     TargetNodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
+  - BaseNodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
+    TargetNodeGuid: 2918b9c9-de0f-4625-a65e-9bd676c077e2
   - BaseNodeGuid: c52f0d82-e6ff-4521-8f54-4f17ecbb1d91
     TargetNodeGuid: fcf921dc-86c2-4157-b397-3b49e50714cc
   - BaseNodeGuid: fcf921dc-86c2-4157-b397-3b49e50714cc
@@ -88,15 +90,15 @@ MonoBehaviour:
     TargetNodeGuid: b8740453-b95e-47e4-a6d6-a00d92db7a7f
   - BaseNodeGuid: 7e9130dd-7ece-49d4-810f-d52c8f0402e6
     TargetNodeGuid: 8e90eb70-93f7-48b8-ad1d-d225ba5d536a
-  - BaseNodeGuid: 6648dad1-8788-4b37-abef-5c3cb26bff63
-    TargetNodeGuid: 2918b9c9-de0f-4625-a65e-9bd676c077e2
   - BaseNodeGuid: 2918b9c9-de0f-4625-a65e-9bd676c077e2
     TargetNodeGuid: 20974d0f-f016-457f-a328-98b09859300b
   - BaseNodeGuid: 2918b9c9-de0f-4625-a65e-9bd676c077e2
     TargetNodeGuid: 2be92e07-858f-401f-b9e6-661971efb80a
   - BaseNodeGuid: 20974d0f-f016-457f-a328-98b09859300b
-    TargetNodeGuid: f12267ef-4b12-46f1-955a-d7520534733f
+    TargetNodeGuid: 1dc5b194-e538-4792-bf1f-a2d28a88fea8
   - BaseNodeGuid: 2be92e07-858f-401f-b9e6-661971efb80a
+    TargetNodeGuid: 1dc5b194-e538-4792-bf1f-a2d28a88fea8
+  - BaseNodeGuid: 1dc5b194-e538-4792-bf1f-a2d28a88fea8
     TargetNodeGuid: f12267ef-4b12-46f1-955a-d7520534733f
   DialogueChoiceNodeDatas:
   - NodeGuid: 2918b9c9-de0f-4625-a65e-9bd676c077e2
@@ -347,7 +349,7 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f12267ef-4b12-46f1-955a-d7520534733f
-    Position: {x: 4207, y: 336}
+    Position: {x: 4478, y: 336}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
@@ -359,6 +361,10 @@ MonoBehaviour:
     Position: {x: 3825, y: 509}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 0065b5dca428fa54bbe74bd4b3975d9f, type: 2}
+  - NodeGuid: 1dc5b194-e538-4792-bf1f-a2d28a88fea8
+    Position: {x: 4163, y: 336}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 50b069c4e2c1ee349934de8be6ce9caf, type: 2}
   StartNodeDatas:
   - NodeGuid: b2328357-eb9a-4eb2-8a5c-fd470f8810ee
     Position: {x: 62, y: 336}
@@ -2666,10 +2672,6 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: bed839df-9231-42cf-81ab-a6197a23948a
     TargetNodeGuid: f03e3551-a6f6-4ad0-9638-62461f1b03d9
-  - BaseNodeGuid: 0417a056-419d-4e3c-bd7f-ad7d765f4d6d
-    TargetNodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
-  - BaseNodeGuid: 0673a78a-cdc6-43da-a078-1013c4b7f134
-    TargetNodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
   - BaseNodeGuid: f03e3551-a6f6-4ad0-9638-62461f1b03d9
     TargetNodeGuid: a43d9943-08d1-48a1-99f5-f19ad710ac68
   - BaseNodeGuid: a43d9943-08d1-48a1-99f5-f19ad710ac68
@@ -2694,6 +2696,12 @@ MonoBehaviour:
     TargetNodeGuid: 0417a056-419d-4e3c-bd7f-ad7d765f4d6d
   - BaseNodeGuid: 67ac4809-6c1c-4749-9036-6aeba2c0213b
     TargetNodeGuid: 0673a78a-cdc6-43da-a078-1013c4b7f134
+  - BaseNodeGuid: 0417a056-419d-4e3c-bd7f-ad7d765f4d6d
+    TargetNodeGuid: 72356493-cab8-4a4d-b020-c894ba02451a
+  - BaseNodeGuid: 0673a78a-cdc6-43da-a078-1013c4b7f134
+    TargetNodeGuid: 72356493-cab8-4a4d-b020-c894ba02451a
+  - BaseNodeGuid: 72356493-cab8-4a4d-b020-c894ba02451a
+    TargetNodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
   DialogueChoiceNodeDatas:
   - NodeGuid: 67ac4809-6c1c-4749-9036-6aeba2c0213b
     Position: {x: 2697, y: 171}
@@ -2907,7 +2915,7 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 0894b599-7051-4b52-8e9b-6725081dc263
-    Position: {x: 3389, y: 171}
+    Position: {x: 3716, y: 171}
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
@@ -2919,6 +2927,10 @@ MonoBehaviour:
     Position: {x: 3039, y: 347}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: 56b4c3c97f1933540ae2b6b24aa72dcc, type: 2}
+  - NodeGuid: 72356493-cab8-4a4d-b020-c894ba02451a
+    Position: {x: 3379, y: 171}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 3721827daaf0be044a715bf381a8479a, type: 2}
   StartNodeDatas:
   - NodeGuid: bed839df-9231-42cf-81ab-a6197a23948a
     Position: {x: 127, y: 171}
