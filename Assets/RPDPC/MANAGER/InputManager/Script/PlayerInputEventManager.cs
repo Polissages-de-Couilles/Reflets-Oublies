@@ -19,7 +19,7 @@ public class PlayerInputEventManager : MonoBehaviour
         Keyboard,
     }
     public static ControllerType currentController = ControllerType.Gamepad;
-    private Action<ControllerType> OnNewController;
+    public static Action<ControllerType> OnNewController;
 
     public void Awake()
     {
@@ -38,8 +38,16 @@ public class PlayerInputEventManager : MonoBehaviour
 
     public void Update()
     {
-        Debug.Log(playerInput.currentControlScheme);
-        currentController = (ControllerType)Enum.Parse(typeof(ControllerType), playerInput.currentControlScheme);
+        //Debug.Log(playerInput.currentControlScheme);
+        ChangeCurrentController((ControllerType)Enum.Parse(typeof(ControllerType), playerInput.currentControlScheme));
+    }
+
+    private void ChangeCurrentController(ControllerType controllerType)
+    {
+        if (controllerType == currentController) return;
+
+        currentController = controllerType;
+        OnNewController?.Invoke(currentController);
     }
 
     //private void CheckController(InputAction.CallbackContext context)

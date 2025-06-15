@@ -22,7 +22,7 @@ public class RotateToME : StagingEvent
 
     IEnumerator DoRotation()
     {
-        yield return objectToRotate.DOLookAt(new Vector3(transform.position.x, objectToRotate.position.y, transform.position.z), duration).WaitForCompletion();
+        yield return objectToRotate.DODynamicLookAt(new Vector3(transform.position.x, objectToRotate.position.y, transform.position.z), duration, AxisConstraint.Y).WaitForCompletion();
         OnEventFinished?.Invoke();
     }
 }

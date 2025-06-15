@@ -5,6 +5,7 @@ using PDC.Localization;
 using MeetAndTalk;
 using PDC;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -80,13 +81,23 @@ public class GameManager : MonoBehaviour
     public FirebaseManager FirebaseManager => _firebaseManager;
     [SerializeField] private FirebaseManager _firebaseManager;
 
-    //Uniquement l・・but de test, ne pas utiliser pour la version final
+    public ZoneManager ZoneManager => _zoneManager;
+    [SerializeField] private ZoneManager _zoneManager;
 
+    public RespawnManager RespawnManager => _respawnManager;
+    [SerializeField] private RespawnManager _respawnManager;
+
+    public Image FadeObject => _fadeObject;
+    [SerializeField] Image _fadeObject;
+
+#if UNITY_EDITOR
+    //Uniquement l・・but de test, ne pas utiliser pour la version final
     public void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
+            //Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
         }
     }
+#endif
 }

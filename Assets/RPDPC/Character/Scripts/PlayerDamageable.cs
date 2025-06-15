@@ -39,6 +39,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         defence = defence * (1 + _defenceChange);
     }
 
+    public void SetMaxHealth(float value)
+    {
+        var pourcentageHealth = currentHealth / maxHealth;
+        maxHealth = value;
+        currentHealth = pourcentageHealth * value;
+        GameManager.Instance.UIManager.SetHealthMax(value);
+    }
+
     public void takeDamage(float damage, GameObject attacker)
     {
         if(isInvicible) return;
@@ -53,6 +61,14 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
             OnDamageTaken?.Invoke(damage, currentHealth);
             BecameInvicible(invicibleTime);
             GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
+            if(((damage / defence) / maxHealth) >= 0.15f)
+            {
+                Time.timeScale = 0.1f;
+                DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
+                    () =>
+                    DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1f, ((damage / defence) / maxHealth) * 1.5f).SetUpdate(UpdateType.Late)
+                    );
+            }
         }
     }
 

@@ -50,13 +50,23 @@ public abstract class Interactible : MonoBehaviour
         }
     }
 
-    public void SetUI(bool active)
+    public void SetUI(bool active, bool prio = false)
     {
         if(textKey == string.Empty)
         {
             textUI.text = string.Empty;
             return;
         }
+
+        if (prio)
+        {
+            textUI.transform.parent.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        }
+        else
+        {
+            textUI.transform.parent.localScale = new Vector3(1, 1, 1);
+        }
+
         textUI.text = Text;
         textUI.gameObject.SetActive(active);
         worldUI.gameObject.SetActive(active);

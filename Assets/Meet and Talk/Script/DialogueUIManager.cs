@@ -43,6 +43,8 @@ namespace MeetAndTalk
         private List<TextMeshProUGUI> buttonsTexts = new List<TextMeshProUGUI>();
         public Action<int> OnButtonCreate;
 
+        public GameObject textBackground;
+
 
         private void Awake()
         {

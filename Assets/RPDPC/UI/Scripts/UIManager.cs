@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
     private PlayerDamageable player;
     public Slider healthSlider, dashSlider;
 
+    [SerializeField] RectTransform healthSliderHolder;
+
     // Effects
     [Header("Effects")]
     public GameObject bloodEffect;
@@ -39,7 +41,7 @@ public class UIManager : MonoBehaviour
     private void OnPause(InputAction.CallbackContext context)
     {
         Debug.Log(Pause.activeSelf);
-        if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess)
+        if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess && !GameManager.Instance.RespawnManager.DeathUi.activeSelf)
         {
             Time.timeScale = 0f;
             Pause.SetActive(true);
@@ -60,6 +62,17 @@ public class UIManager : MonoBehaviour
         PointDeVie(0, player.getCurrentHealth());
     }
 
+    public void SetHealthMax(float value)
+    {
+        if (healthSlider != null)
+        {
+            healthSlider.maxValue = player.getMaxHealth();
+            healthSlider.value = player.getCurrentHealth();
+        }
+        healthSliderHolder.DOSizeDelta(new Vector2(400 * (value / 100f), healthSliderHolder.sizeDelta.y), 1f).SetEase(Ease.OutElastic);
+        //healthSliderHolder.transform.DOShakePosition(0.5f, 10);
+    }
+
     private void InitializeBloodEffect()
     {
         bloodEffectImage = bloodEffect.GetComponent<Image>();
@@ -72,7 +85,7 @@ public class UIManager : MonoBehaviour
         if (healthSlider != null)
         {
             healthSlider.value = vieActuel;
-            healthSlider.transform.parent.parent.transform.DOShakePosition(0.2f, 10);
+            healthSliderHolder.transform.DOShakePosition(0.2f, 10);
         }
 
         UpdateOpacity();
