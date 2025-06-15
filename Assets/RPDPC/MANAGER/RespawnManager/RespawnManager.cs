@@ -50,7 +50,7 @@ public class RespawnManager : MonoBehaviour
         yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
         //GameManager.Instance.CamManager.Vignette(VignetteIntensity, 1f, true, true);
 
-        if (asBeenToVillage)
+        if (!asBeenToVillage)
         {
             SceneManager.LoadScene("GameScene");
             isRespawning = false;

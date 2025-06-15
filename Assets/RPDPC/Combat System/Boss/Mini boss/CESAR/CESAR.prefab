@@ -1905,6 +1905,7 @@ GameObject:
   - component: {fileID: 3386720701950491938}
   - component: {fileID: 8548472384111040057}
   - component: {fileID: 1690548433408178953}
+  - component: {fileID: 3375378964128550809}
   m_Layer: 0
   m_Name: CESAR
   m_TagString: Untagged
@@ -2041,7 +2042,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34d4af92b584948a644a2dfeae639e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 3
 --- !u!114 &-2204517421251130796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2279,6 +2280,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onDeathVFX: {fileID: 7083740825371661690, guid: 4b23a49fec9573c40ad0392d5f5f6d6c, type: 3}
   _delay: 0.8
+--- !u!114 &3375378964128550809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802286859466036053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ecb88f8a2a66748a7d1f0116093a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1802286859466036053}
+  ListOfTypesToDESTROY: []
 --- !u!1 &1802286859466036055
 GameObject:
   m_ObjectHideFlags: 0

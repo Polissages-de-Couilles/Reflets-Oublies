@@ -61,7 +61,6 @@ GameObject:
   - component: {fileID: 741032829566219749}
   - component: {fileID: 8557209285249846333}
   - component: {fileID: 905552217643351003}
-  - component: {fileID: 5623852738371277212}
   - component: {fileID: 7383978937584515727}
   - component: {fileID: 5956216585695737365}
   - component: {fileID: 5527296840473774250}
@@ -69,6 +68,7 @@ GameObject:
   - component: {fileID: 7967933800135679411}
   - component: {fileID: 6685722227159757480}
   - component: {fileID: 28695548726226953}
+  - component: {fileID: 3910788890483324281}
   m_Layer: 0
   m_Name: "St\xE9phane Plaza"
   m_TagString: Untagged
@@ -213,6 +213,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 98fd95d7ed402104c84de8f57633e689, type: 2}
   - {fileID: 11400000, guid: 482c1fbc0e0a751478748bd9a25f3503, type: 2}
   - {fileID: 11400000, guid: d318dceb8bdaec24d912a949ca959848, type: 2}
+  - {fileID: 11400000, guid: 301c784d763ddd64d8b5732a3eed7e45, type: 2}
   prioritizeAttack: 0
   shouldSearchStates: 1
   animator: {fileID: 0}
@@ -244,18 +245,6 @@ MonoBehaviour:
   Stunned: 0
   canBeStunned: 0
   canBeKnockbacked: 0
---- !u!114 &5623852738371277212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5504309440108332538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb33ace85819ec4fa10c9282cda625d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7383978937584515727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +350,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad2c5fc841028884fa585a00e9a629d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3910788890483324281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5504309440108332538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateToPlayAtDeath: {fileID: 11400000, guid: 301c784d763ddd64d8b5732a3eed7e45, type: 2}
 --- !u!1001 &4574148331810634489
 PrefabInstance:
   m_ObjectHideFlags: 0
