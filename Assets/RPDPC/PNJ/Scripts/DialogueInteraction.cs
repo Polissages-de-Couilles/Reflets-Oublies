@@ -7,8 +7,8 @@ using UnityEngine.EventSystems;
 
 public class DialogueInteraction : Interactible
 {
-    public DialogueContainerSO Dialogue => _dialogue;
-    [SerializeField] DialogueContainerSO _dialogue;
+    public DialogueContainerSO[] Dialogues => _dialogues;
+    [SerializeField] DialogueContainerSO[] _dialogues;
 
     public enum State
     {
@@ -20,7 +20,7 @@ public class DialogueInteraction : Interactible
 
     public override void OnInteraction()
     {
-        if (!LocalizationManager.IsLocaReady || GameManager.Instance.DialogueManager.isDialogueInProcess) return;
+        if (!LocalizationManager.IsLocaReady || GameManager.Instance.DialogueManager.isDialogueInProcess || _dialogues.Length <= 0) return;
 
         switch (state)
         {
@@ -34,7 +34,7 @@ public class DialogueInteraction : Interactible
                 }
                 );
                 //_dialogues.Find(x => x.Act == GameManager.Instance.StoryManager.CurrentAct);
-                GameManager.Instance.DialogueManager.StartDialogue(_dialogue);
+                GameManager.Instance.DialogueManager.StartDialogue(_dialogues[Random.Range(0, _dialogues.Length)]);
                 break;
 
             case State.Dialogue:
