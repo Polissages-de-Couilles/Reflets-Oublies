@@ -2,6 +2,7 @@ using DG.Tweening;
 using MeetAndTalk;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -56,9 +57,22 @@ public class RespawnManager : MonoBehaviour
             yield break;
         }
 
+        GameManager.Instance.RespawnManager.DeathUi.SetActive(false);
+
+        GameObject player = GameManager.Instance.Player;
+        player.transform.position = _respawnPoint.position;
+        player.GetComponent<StateManager>().FORCESetPlayerState(StateManager.States.idle);
+        PlayerDamageable pd = player.GetComponent<PlayerDamageable>();
+        pd.heal(pd.maxHealth);
+        player.GetComponent<CharacterController>().enabled = true;
+
+        GameManager.Instance.UIManager.GetComponent<BossBarManager>().ResetBar();
+
+        foreach (BossRespawn br in FindObjectsByType<BossRespawn>(FindObjectsSortMode.None)) br.Respawn();
+
         _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
-        GameManager.Instance.Player.transform.position = _respawnPoint.position;
-        if(_dialogueRevive != null) GameManager.Instance.DialogueManager.StartDialogue(_dialogueRevive);
+
+        if (_dialogueRevive != null) GameManager.Instance.DialogueManager.StartDialogue(_dialogueRevive);
         isRespawning = false;
     }
 }

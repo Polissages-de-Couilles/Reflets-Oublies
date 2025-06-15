@@ -429,6 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1974065838402618511}
+  - component: {fileID: 7602404805031010397}
   m_Layer: 0
   m_Name: "La St\xE9phane PLAZA"
   m_TagString: Untagged
@@ -453,6 +454,22 @@ Transform:
   - {fileID: 4586315761405679739}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7602404805031010397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3545894488808466514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ecb88f8a2a66748a7d1f0116093a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3545894488808466514}
+  ListOfTypesToDESTROY:
+  - ProjectileBase
+  - MirrorLaser
 --- !u!1 &3637098967918173747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,21 +1329,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 741032829566219749, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
+      propertyPath: states.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 741032829566219749, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
+      propertyPath: states.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 301c784d763ddd64d8b5732a3eed7e45, type: 2}
     - target: {fileID: 5504309440108332538, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
       propertyPath: m_Name
       value: "St\xE9phane Plaza"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5623852738371277212, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5504309440108332538, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1341867096306514922}
   m_SourcePrefab: {fileID: 100100000, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
 --- !u!114 &2537126182679843856 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2011145195144963397, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
   m_PrefabInstance: {fileID: 4097338002448118101}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8412609143488935087}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10208a77b166eff42b07e7ca761cc77b, type: 3}
@@ -1337,6 +1366,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 538592295616555310, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
   m_PrefabInstance: {fileID: 4097338002448118101}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8412609143488935087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5504309440108332538, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
+  m_PrefabInstance: {fileID: 4097338002448118101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1341867096306514922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8412609143488935087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateToPlayAtDeath: {fileID: 11400000, guid: 301c784d763ddd64d8b5732a3eed7e45, type: 2}
 --- !u!1001 &4816919523367404569
 PrefabInstance:
   m_ObjectHideFlags: 0

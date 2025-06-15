@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 618729207189350943}
+  - component: {fileID: 2583248396963704660}
   m_Layer: 0
   m_Name: La Mii Plaza
   m_TagString: Untagged
@@ -35,6 +36,27 @@ Transform:
   - {fileID: 8817822316528640848}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2583248396963704660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6626714459443268513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7ecb88f8a2a66748a7d1f0116093a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 6626714459443268513}
+  ListOfTypesToDESTROY:
+  - DKLine
+  - DKProjectile
+  - DKSpear
+  - SS
+  - SpearOfSS
+  - BigBoy
+  - GW
 --- !u!1001 &2675578837045472944
 PrefabInstance:
   m_ObjectHideFlags: 0

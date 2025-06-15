@@ -28,7 +28,7 @@ public class BossBarManager : MonoBehaviour
         maxHealth = damageable.getMaxHealth();
     }
 
-    void ResetBar()
+    public void ResetBar()
     {
         slider.value = 1;
         bar.SetActive(false); 

@@ -34,6 +34,11 @@ public class StateManager : MonoBehaviour
         playerState = state;
     }
 
+    public void FORCESetPlayerState(States state)
+    {
+        playerState = state;
+    }
+
     public void SetPlayerState(States state, float duration)
     {
         if (playerState == States.death) return;
