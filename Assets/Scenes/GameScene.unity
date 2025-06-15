@@ -25378,6 +25378,7 @@ GameObject:
   - component: {fileID: 1114841690}
   - component: {fileID: 1114841692}
   - component: {fileID: 1114841691}
+  - component: {fileID: 1114841693}
   m_Layer: 8
   m_Name: Pos Sage 1
   m_TagString: Untagged
@@ -25431,6 +25432,22 @@ MonoBehaviour:
   CallFinishedEventAtStart: 0
   objectToMove: {fileID: 53786487}
   useNavMesh: 1
+--- !u!114 &1114841693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114841689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8796e22ed9a00aa41bbb36f135f3f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_5
+  CallFinishedEventAtStart: 0
+  objectToRotate: {fileID: 1262012865}
+  duration: 0.1
 --- !u!1 &1123288249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2420241449500347712, guid: a7f1a1f460bb23e43aea2eac03a181fb, type: 3}
@@ -42125,6 +42142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2100317233}
   - component: {fileID: 2100317234}
+  - component: {fileID: 2100317235}
   m_Layer: 8
   m_Name: Pos Ewen 2
   m_TagString: Untagged
@@ -42141,7 +42159,7 @@ Transform:
   m_GameObject: {fileID: 2100317232}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.68, y: 4.2, z: 4.81}
+  m_LocalPosition: {x: -13.03, y: 4.2, z: 5.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42163,6 +42181,22 @@ MonoBehaviour:
   CallFinishedEventAtStart: 0
   objectToMove: {fileID: 1262012865}
   useNavMesh: 1
+--- !u!114 &2100317235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100317232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8796e22ed9a00aa41bbb36f135f3f46c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: SageParano_Dialogue_2_5
+  CallFinishedEventAtStart: 0
+  objectToRotate: {fileID: 53786487}
+  duration: 0.1
 --- !u!43 &2101427679
 Mesh:
   m_ObjectHideFlags: 0

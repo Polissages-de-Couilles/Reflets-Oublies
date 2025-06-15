@@ -19,19 +19,35 @@ public class MoveToSameValue : StagingEvent
             return;
         }
 
+        Vector3 pos = transform.position;
+
         if(useNavMesh)
         {
             NavMeshHit myNavHit;
             if (NavMesh.SamplePosition(transform.position, out myNavHit, 100, -1))
             {
-                objectToMove.transform.position = myNavHit.position;
+                pos = myNavHit.position;
             }
+        }
+        
+        if(objectToMove.TryGetComponent(out CharacterController controller))
+        {
+            StartCoroutine(MoveTo(controller, pos));
         }
         else
         {
-            objectToMove.position = this.transform.position;
+            objectToMove.position = pos;
+            OnEventFinished?.Invoke();
         }
+    }
 
+    private IEnumerator MoveTo(CharacterController controller, Vector3 pos)
+    {
+        controller.enabled = false;
+        yield return null;
+        objectToMove.transform.position = pos;
+        yield return null;
+        controller.enabled = true;
         OnEventFinished?.Invoke();
     }
 }

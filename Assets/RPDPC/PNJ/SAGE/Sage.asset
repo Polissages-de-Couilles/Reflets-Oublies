@@ -2134,14 +2134,20 @@ MonoBehaviour:
   m_Name: SAGE_Dialogue_2_ACT_1
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 7eb0a7ed-6844-4264-8ddc-5e9c8c51b386
-    TargetNodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
   - BaseNodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
     TargetNodeGuid: 5662b19a-3c2e-483c-813a-ad06430c9f91
   - BaseNodeGuid: 5662b19a-3c2e-483c-813a-ad06430c9f91
     TargetNodeGuid: 6a772f92-c75b-4550-abcd-8146e88a6f18
   - BaseNodeGuid: 6a772f92-c75b-4550-abcd-8146e88a6f18
     TargetNodeGuid: da9d4e88-1017-43ec-b70e-8d9cbd17bbe2
+  - BaseNodeGuid: 7eb0a7ed-6844-4264-8ddc-5e9c8c51b386
+    TargetNodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+  - BaseNodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+    TargetNodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+  - BaseNodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+    TargetNodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
+  - BaseNodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
+    TargetNodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
@@ -2204,10 +2210,22 @@ MonoBehaviour:
     Position: {x: 1211, y: 301}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
+    Position: {x: 181, y: 301}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: eb26f97c701508947a6eb8b2cad55382, type: 2}
+  - NodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+    Position: {x: -145, y: 301}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b3981d4edd19dc748aa2792d45260deb, type: 2}
+  - NodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+    Position: {x: -455, y: 301}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 71601043beba8aa49991ebd9814f36b2, type: 2}
   StartNodeDatas:
   - NodeGuid: 7eb0a7ed-6844-4264-8ddc-5e9c8c51b386
-    Position: {x: 400, y: 301}
+    Position: {x: -554, y: 301}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
