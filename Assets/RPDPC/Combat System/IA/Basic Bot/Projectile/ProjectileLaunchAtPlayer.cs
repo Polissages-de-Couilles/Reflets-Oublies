@@ -6,11 +6,12 @@ public class ProjectileLaunchAtPlayer : ProjectileBase
 {
     [SerializeField] float lifespan;
     [SerializeField] float speed;
+    [SerializeField] bool turntToPlayer;
 
     protected override void LaunchProjectile()
     {
         gameObject.layer = 9;
-        gameObject.transform.Rotate(gameObject.transform.rotation.eulerAngles.x, manager.launcher.transform.rotation.eulerAngles.y, gameObject.transform.rotation.eulerAngles.z);
+        gameObject.transform.Rotate(gameObject.transform.rotation.eulerAngles.x, manager.target.transform.rotation.eulerAngles.y, gameObject.transform.rotation.eulerAngles.z);
         attackCollider.Init(manager.damageDetail.doesStun, manager.damageDetail.stunDuration, manager.damageDetail.doesKnockback, manager.damageDetail.knockbackForce, KnockbackMode.MoveAwayFromAttackCollision, true, manager.launcher);
         attackCollider.OnDamageableEnterTrigger += TriggerEnter;
         StartCoroutine(MoveProjectile());
