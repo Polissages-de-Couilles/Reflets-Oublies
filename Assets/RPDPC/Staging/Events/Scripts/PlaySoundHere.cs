@@ -16,8 +16,12 @@ public class PlaySoundHere : StagingEvent
     IEnumerator PlaySound()
     {
         yield return null;
-        AudioSource.PlayClipAtPoint(_clip, this.transform.position);
+        var audio = Instantiate(GameManager.Instance.AudioManager.SfxPrefab, this.transform.position, Quaternion.identity, this.transform);
+        audio.transform.localPosition = Vector3.zero;
+        audio.clip = _clip;
+        audio.Play();
         yield return new WaitForSeconds(_clip.length);
+        Destroy(audio.gameObject);
         OnEventFinished?.Invoke();
     }
 }

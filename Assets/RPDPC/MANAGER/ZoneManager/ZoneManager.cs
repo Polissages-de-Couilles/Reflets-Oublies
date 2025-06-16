@@ -3,6 +3,7 @@ using PDC.Localization;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,6 +30,8 @@ public class ZoneManager : MonoBehaviour
     {
         public ZoneName Name;
         public List<Collider> Collider;
+        public AudioClip AmbianceSound;
+        public AudioClip Music;
     }
 
     [SerializeField] List<Zone> zones = new List<Zone>();
@@ -49,10 +52,11 @@ public class ZoneManager : MonoBehaviour
             return;
         }
         defaultPos = _ui.transform.parent.transform.localPosition;
-        var color = _fog.GetColor("FogColor");
-        Debug.Log(color);
-        //_fog.SetColor("FogColor", new Color(color.r, color.g, color.b, 0f));
-        _fog.DOColor(new Color(color.r, color.g, color.b, 0f), "FogColor", 1f);
+        //var color = _fog.GetColor("FogColor");
+        //Debug.Log(color);
+        ////_fog.SetColor("FogColor", new Color(color.r, color.g, color.b, 0f));
+        //_fog.DOColor(new Color(color.r, color.g, color.b, 0f), "FogColor", 1f);
+        OnZoneChange(zones.First());
     }
 
     public void OnZoneChange(Zone zone)
@@ -62,6 +66,8 @@ public class ZoneManager : MonoBehaviour
         OnZoneChangeEvent?.Invoke(zone);
 
         DisplayZoneName(zone);
+
+        GameManager.Instance.AudioManager.SwitchZone(zone);
 
         Color color;
         switch (zone.Name)
