@@ -18,6 +18,7 @@ public class MakeInvisibleEntity : StateEntityBase
     {
         if (parent.GetComponent<Renderer>() != null) parent.GetComponent<Renderer>().enabled = false;
         if (parent.GetComponent<Rigidbody>() != null) parent.GetComponent<Rigidbody>().useGravity = false;
+        if (parent.GetComponent<Lockable>() != null) parent.GetComponent<Lockable>().CanBeLock = false;
         Renderer[] rs = parent.GetComponentsInChildren<Renderer>();
         foreach (Renderer r in rs)
         {

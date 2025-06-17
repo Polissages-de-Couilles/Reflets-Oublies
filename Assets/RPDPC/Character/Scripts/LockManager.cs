@@ -129,7 +129,7 @@ public class LockManager : MonoBehaviour
             }
         }
         
-        vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject);
+        vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject && newLockableObject.CanBeLock);
         if(newLockableObject != null)
         {
             vfxLockable.transform.position = Camera.main.WorldToScreenPoint(newLockableObject.transform.position);
