@@ -63,6 +63,7 @@ public class StoryManager : MonoBehaviour
 
     public void Start()
     {
+        if(GameManager.Instance.Player == null) return;
         SwitchAct(Act.ACT_1);
     }
 }
