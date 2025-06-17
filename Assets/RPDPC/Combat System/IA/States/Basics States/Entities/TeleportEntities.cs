@@ -115,7 +115,7 @@ public class TeleportEntities : StateEntityBase
 
     IEnumerator DoTeleportation()
     {
-        if (animator != null)
+        if (animator != null && animationNames.Count != 0)
         {
             animator.Play(animationNames[0]);
             yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[0]).length);
@@ -123,7 +123,7 @@ public class TeleportEntities : StateEntityBase
 
             Teleport();
 
-        if (animator != null)
+        if (animator != null && animationNames.Count != 0)
         {
             animator.Play(animationNames[1]);
             yield return new WaitForSeconds(animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[1]).length);

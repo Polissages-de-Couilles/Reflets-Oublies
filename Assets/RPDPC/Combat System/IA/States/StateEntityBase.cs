@@ -165,6 +165,16 @@ public abstract class StateEntityBase
     )
     { }
 
+    public virtual void Init(
+        string animName,    //PlayAnimation
+        AnimationClip clip,
+        float setDuration,
+        int layer,
+        float speed,
+        string speedPararemerName
+    )
+    { }
+
     public bool isStateValid()
     {
         bool currentResult = false;
