@@ -86,6 +86,10 @@ namespace PDC.Localization
             { "[/u]", "</u>" },
             { "[/f]", "</font>" },
             { "[v]", "," },
+            { "[/$1]", "<font=rpdpcfont>" },
+            { "[/$2]", "<font=rpdpcfont>" },
+            { "[/$3]", "<font=rpdpcfont>" },
+            { "[/$4]", "<font=rpdpcfont>" }
         };
 
         private static string SimplifyText(string text)
@@ -104,6 +108,25 @@ namespace PDC.Localization
                 {
                     t = t.Replace(c, _simplifyDico[c]);
                     continue;
+                }
+
+                if(c.Contains("$") && !c.Contains('/'))
+                {
+                    Debug.Log("Memory Key : " + c);
+                    if(int.TryParse(c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("$", string.Empty), out int id))
+                    {
+                        Debug.Log("As Corresponding Memory : " + GameManager.Instance.MemoryManager.EncounteredMemory.Any(x => x._isTaken && x.Act == (Act)(id + 1)));
+                        if(GameManager.Instance.MemoryManager.EncounteredMemory.Any(x => x._isTaken && x.Act == (Act)(id - 1)))
+                        {
+                            t = t.Replace(c, "</font>");
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("$ key is not valid for : " + c);
+                    }
+
                 }
 
                 if (c.Contains('#') && !c.Contains('/'))

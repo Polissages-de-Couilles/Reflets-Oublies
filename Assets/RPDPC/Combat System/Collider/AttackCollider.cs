@@ -39,12 +39,13 @@ public class AttackCollider : MonoBehaviour
             if (damageable != null && !CharacterAlreadyAttacked.Contains(collider.gameObject))
             {
                 changeHasAlreadyTakeDamageValue = true;
-                OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
 
                 if(vfx != null)
                 {
                     Instantiate(vfx, collider.ClosestPointOnBounds(Attacker.transform.position), Quaternion.identity);
                 }
+                
+                OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
             }
             if (SKManager != null && !CharacterAlreadyAttacked.Contains(collider.gameObject))
             {
