@@ -18,25 +18,49 @@ public class AudioSettings : MonoBehaviour
     public AudioSource SfxPrefab;
     [SerializeField] AudioClip _combatMusic;
 
+    [SerializeField] float _musicVolume;
     [SerializeField] AudioSource _musicSourceOne;
     [SerializeField] AudioSource _musicSourceTwo;
     AudioSource _currentMusicSource;
 
+    [SerializeField] float _ambianceVolume;
     [SerializeField] AudioSource _ambianceSourceOne;
     [SerializeField] AudioSource _ambianceSourceTwo;
     AudioSource _currentAmbianceSource;
 
     ZoneManager.Zone _currentZone;
+    List<Tween> tweens = new List<Tween>();
 
     bool InCombat { get; set; } = false;
+
+    public void Awake()
+    {
+        _currentMusicSource = _musicSourceTwo;
+        _currentAmbianceSource = _ambianceSourceTwo;
+    }
 
     public void SwitchZone(ZoneManager.Zone zone)
     {
         _currentZone = zone;
+        Debug.Log(InCombat);
         if (InCombat) return;
         StopAllCoroutines();
-        if (zone.Music != null) StartCoroutine(TransitionAudio(zone.Music, _currentMusicSource, GetOppsiteMusicSource(_currentMusicSource), 2f, 0.5f));
-        if (zone.AmbianceSound != null) StartCoroutine(TransitionAudio(zone.AmbianceSound, _currentAmbianceSource, GetOppsiteAmbianceSource(_currentAmbianceSource), 2f, 0.2f));
+        for (int i = 0; i < tweens.Count; i++)
+        {
+            tweens[i].Pause();
+            tweens[i].Kill();
+        }
+        tweens.Clear();
+        if(zone.AmbianceSound != null)
+        {
+            StartCoroutine(TransitionAudio(zone.AmbianceSound, _currentAmbianceSource, GetOppsiteAmbianceSource(_currentAmbianceSource), 2f, _ambianceVolume));
+            _currentAmbianceSource = GetOppsiteAmbianceSource(_currentAmbianceSource);
+        }
+        if (zone.Music != null)
+        {
+            StartCoroutine(TransitionAudio(zone.Music, _currentMusicSource, GetOppsiteMusicSource(_currentMusicSource), 2f, _musicVolume));
+            _currentMusicSource = GetOppsiteMusicSource(_currentMusicSource);
+        }
     }
 
     public void EnterCombat() => EnterCombat(_combatMusic);
@@ -45,7 +69,7 @@ public class AudioSettings : MonoBehaviour
     {
         InCombat = true;
         StopAllCoroutines();
-        StartCoroutine(TransitionAudio(clip, _currentMusicSource, GetOppsiteMusicSource(_currentMusicSource), 1f, 0.5f));
+        StartCoroutine(TransitionAudio(clip, _currentMusicSource, GetOppsiteMusicSource(_currentMusicSource), 2f, _musicVolume));
     }
 
     public void ExitCombat()
@@ -59,10 +83,16 @@ public class AudioSettings : MonoBehaviour
         yield return null;
         if(from != null)
         {
-            from.DOFade(0, duration);
+            var tt = from.DOFade(0, duration * 0.75f).SetEase(Ease.Linear);
+            tt.Play();
+            tweens.Add(tt);
         }
+        yield return new WaitForSeconds(duration * 0.25f);
         to.clip = clip;
-        yield return to.DOFade(volume, duration).WaitForCompletion();
+        to.Play();
+        var t = to.DOFade(volume, duration * 0.75f).SetEase(Ease.Linear);
+        tweens.Add(t);
+        yield return t.WaitForCompletion();
     }
 
     AudioSource GetOppsiteMusicSource(AudioSource source) => source.Equals(_musicSourceOne) ? _musicSourceTwo : _musicSourceOne;
