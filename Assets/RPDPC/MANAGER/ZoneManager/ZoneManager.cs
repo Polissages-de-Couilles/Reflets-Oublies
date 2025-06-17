@@ -30,8 +30,9 @@ public class ZoneManager : MonoBehaviour
     {
         public ZoneName Name;
         public List<Collider> Collider;
-        public AudioClip AmbianceSound;
         public AudioClip Music;
+        public AudioSource AmbienceSource;
+        public AudioSource MusicSource;
     }
 
     [SerializeField] List<Zone> zones = new List<Zone>();
