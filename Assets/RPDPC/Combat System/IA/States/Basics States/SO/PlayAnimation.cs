@@ -11,12 +11,13 @@ public class PlayAnimationSO : StateBase
     [SerializeField] int layer;
     [SerializeField] float speed = 1;
     [SerializeField] string speedPararemerName;
+    [SerializeField] float crosstimeduration = 1;
 
 
     public override StateEntityBase PrepareEntityInstance()
     {
         PlayAnimationEntity pae = new PlayAnimationEntity();
-        pae.Init(animName, clip, setDuration, layer, speed, speedPararemerName);
+        pae.Init(animName, clip, setDuration, layer, speed, speedPararemerName, crosstimeduration);
         return pae;
     }
 }

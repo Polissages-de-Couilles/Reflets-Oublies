@@ -171,7 +171,8 @@ public abstract class StateEntityBase
         float setDuration,
         int layer,
         float speed,
-        string speedPararemerName
+        string speedPararemerName,
+        float crosstimeduration
     )
     { }
 

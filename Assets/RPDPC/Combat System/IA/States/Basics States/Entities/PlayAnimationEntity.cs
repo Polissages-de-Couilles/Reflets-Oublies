@@ -12,8 +12,9 @@ public class PlayAnimationEntity : StateEntityBase
     int layer;
     float speed;
     string speedPararemerName;
+    float crosstimeduration;
 
-    public override void Init(string animName, AnimationClip clip, float setDuration, int layer, float speed, string speedPararemerName)
+    public override void Init(string animName, AnimationClip clip, float setDuration, int layer, float speed, string speedPararemerName, float crosstimeduration)
     { 
         this.animName = animName;
         this.clip = clip;
@@ -21,6 +22,7 @@ public class PlayAnimationEntity : StateEntityBase
         this.layer = layer;
         this.speed = speed;
         this.speedPararemerName = speedPararemerName;
+        this.crosstimeduration = crosstimeduration;
     }
 
     public override void ExitState()
@@ -49,13 +51,13 @@ public class PlayAnimationEntity : StateEntityBase
         if (setDuration == -1)
         {
             animator.SetFloat(speedPararemerName, speed);
-            animator.CrossFade(animName, 1f, layer);
+            animator.CrossFade(animName, crosstimeduration, layer);
             yield return new WaitForSeconds(clip.length / speed);
         }
         else
         {
             animator.SetFloat(speedPararemerName, /*animDuration/setDuration*/ speed);
-            animator.CrossFade(animName, 1f ,layer);
+            animator.CrossFade(animName, crosstimeduration, layer);
             yield return new WaitForSeconds(setDuration);
         }
         ExitState();
