@@ -9,7 +9,7 @@ public class BossPlayerDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == GameManager.Instance.Player)
+        if (other.gameObject == GameManager.Instance.Player || other.transform.IsChildOf(GameManager.Instance.Player.transform))
         {
             PlayerDetected?.Invoke();
         }
