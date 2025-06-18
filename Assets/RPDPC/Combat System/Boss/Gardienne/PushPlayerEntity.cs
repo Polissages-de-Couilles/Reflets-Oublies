@@ -56,6 +56,7 @@ public class PushPlayerEntity : StateEntityBase
             yield return null;
             timer += Time.deltaTime;
         }
+        yield return null;
         parent.GetComponent<GardienneParticleHolder>().Unlock();
         parent.GetComponent<GardienneParticleHolder>().Switch(GardienneWind.Strong);
     }

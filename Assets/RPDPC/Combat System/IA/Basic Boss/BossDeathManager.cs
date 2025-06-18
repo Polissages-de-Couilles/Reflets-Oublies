@@ -26,7 +26,7 @@ public class BossDeathManager : BotDeathManager
             }
 
             float animationDuration = 0;
-            if (stateMachine.Animator != null)
+            if (stateMachine.Animator != null && DeathAnimName != null && DeathAnimName != "")
             {
                 stateMachine.Animator.Play(DeathAnimName);
                 animationDuration = stateMachine.Animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == DeathAnimName).length;
@@ -40,6 +40,11 @@ public class BossDeathManager : BotDeathManager
             if (TryGetComponent<MoneyDrop>(out MoneyDrop money))
             {
                 money.DropMonney();
+            }
+
+            if (GetComponent<GardienneParticleHolder>() != null)
+            {
+                GetComponent<GardienneParticleHolder>().Switch(GardienneWind.Static);
             }
 
             OnBotDied?.Invoke();
