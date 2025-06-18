@@ -3499,14 +3499,16 @@ MonoBehaviour:
   m_Name: OMBRE_Dialogue_1_ACT_6_B
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 435d14c9-d661-4ef8-8403-b81a861811fd
-    TargetNodeGuid: 5a57743d-7ff4-47f3-ace6-251490d7a706
+  - BaseNodeGuid: c2ab143f-345f-41dd-bfd0-e398b480cb2a
+    TargetNodeGuid: 17311d21-92b2-4a5e-933e-6a4304a64ba0
   - BaseNodeGuid: 5a57743d-7ff4-47f3-ace6-251490d7a706
     TargetNodeGuid: fd7e8a92-6ca2-4468-b3a4-532358a5eb57
   - BaseNodeGuid: fd7e8a92-6ca2-4468-b3a4-532358a5eb57
     TargetNodeGuid: 45fd1f11-6e7c-461e-8e26-8c9af5122d42
   - BaseNodeGuid: 45fd1f11-6e7c-461e-8e26-8c9af5122d42
     TargetNodeGuid: 390816ed-a109-4e08-aa8f-959232b5b106
+  - BaseNodeGuid: 17311d21-92b2-4a5e-933e-6a4304a64ba0
+    TargetNodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
   - BaseNodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
     TargetNodeGuid: d613f3be-65d6-4794-8e24-37ee98d4a33b
   - BaseNodeGuid: d613f3be-65d6-4794-8e24-37ee98d4a33b
@@ -3533,10 +3535,8 @@ MonoBehaviour:
     TargetNodeGuid: e3613491-9c06-4837-8083-95076422601b
   - BaseNodeGuid: e3613491-9c06-4837-8083-95076422601b
     TargetNodeGuid: 520745e4-5e11-4be1-a1a0-2b2da5d2b157
-  - BaseNodeGuid: c2ab143f-345f-41dd-bfd0-e398b480cb2a
-    TargetNodeGuid: 17311d21-92b2-4a5e-933e-6a4304a64ba0
-  - BaseNodeGuid: 17311d21-92b2-4a5e-933e-6a4304a64ba0
-    TargetNodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
+  - BaseNodeGuid: 435d14c9-d661-4ef8-8403-b81a861811fd
+    TargetNodeGuid: 5a57743d-7ff4-47f3-ace6-251490d7a706
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 576b59bf-fd8b-4d6f-a8c2-ade03af2e638
@@ -3785,10 +3785,11 @@ MonoBehaviour:
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: e8fc91da1377c9349b315e97bf70a98c, type: 2}
     - DialogueEventSO: {fileID: 11400000, guid: 8e6970c15a336274dbfd355d156cf502, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: dce96b74d2c2e7a4898d2c8d4ddf898c, type: 2}
   - NodeGuid: 5a57743d-7ff4-47f3-ace6-251490d7a706
     Position: {x: 3417, y: 293}
     EventScriptableObjects:
-    - DialogueEventSO: {fileID: 11400000, guid: c33d64ad98808e54cb2cdcf29f03c1de, type: 2}
+    - DialogueEventSO: {fileID: 11400000, guid: cc3fd61269586334faef39015bd5cfdb, type: 2}
   - NodeGuid: fd7e8a92-6ca2-4468-b3a4-532358a5eb57
     Position: {x: 3768, y: 293}
     EventScriptableObjects:
@@ -3978,8 +3979,6 @@ MonoBehaviour:
   m_Name: OMBRE_Dialogue_1_ACT_6_G
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: fb76d897-9c08-4a88-8eae-88e7e40597ad
-    TargetNodeGuid: 46b265b2-7131-4591-b7c1-b902b2e1c004
   - BaseNodeGuid: a035d892-f8aa-418a-9dc9-904f51739156
     TargetNodeGuid: ef765b39-68dc-4782-ba7f-16aadf1ef85a
   - BaseNodeGuid: ef765b39-68dc-4782-ba7f-16aadf1ef85a
@@ -4002,6 +4001,10 @@ MonoBehaviour:
     TargetNodeGuid: 6b7ef3d7-70dd-4ba9-9d78-0a7d68c1c43b
   - BaseNodeGuid: 6b7ef3d7-70dd-4ba9-9d78-0a7d68c1c43b
     TargetNodeGuid: 74ca3b5d-42b8-4769-8645-e888a0fbe765
+  - BaseNodeGuid: fb76d897-9c08-4a88-8eae-88e7e40597ad
+    TargetNodeGuid: e2827db7-0cbf-422b-bb9c-516ce1981ac3
+  - BaseNodeGuid: e2827db7-0cbf-422b-bb9c-516ce1981ac3
+    TargetNodeGuid: 46b265b2-7131-4591-b7c1-b902b2e1c004
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: a035d892-f8aa-418a-9dc9-904f51739156
@@ -4208,10 +4211,14 @@ MonoBehaviour:
     Position: {x: 3494, y: 211}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: e2827db7-0cbf-422b-bb9c-516ce1981ac3
+    Position: {x: -53, y: 211}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 1e16439ebb002f74992500624a55d77e, type: 2}
   StartNodeDatas:
   - NodeGuid: fb76d897-9c08-4a88-8eae-88e7e40597ad
-    Position: {x: 140, y: 211}
+    Position: {x: -155, y: 211}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
