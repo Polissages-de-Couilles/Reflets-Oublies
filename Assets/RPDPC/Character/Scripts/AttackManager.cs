@@ -1,3 +1,5 @@
+using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +40,20 @@ public class AttackManager : MonoBehaviour
         animationManager = GetComponent<AnimationManager>();
     }
 
+    private void HitFrame(IDamageable damageable, GameObject @object)
+    {
+        Time.timeScale = 0.05f;
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
+            () => Time.timeScale = 1f);
+    }
+
+    private void HitFrame3(IDamageable damageable, GameObject @object)
+    {
+        Time.timeScale = 0.05f;
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
+            () => Time.timeScale = 1f);
+    }
+
     void Start()
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
@@ -55,6 +71,10 @@ public class AttackManager : MonoBehaviour
         collision3.OnDamageableEnterTrigger += OnTriggerDetectDamageable;
 
         PIE.PlayerInputAction.Player.Attack.performed += OnAttack;
+
+        collision1.OnDamageableEnterTrigger += HitFrame;
+        collision2.OnDamageableEnterTrigger += HitFrame;
+        collision3.OnDamageableEnterTrigger += HitFrame3;
     }
 
     void OnAttack(InputAction.CallbackContext context)

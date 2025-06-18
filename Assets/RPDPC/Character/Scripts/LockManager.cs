@@ -19,8 +19,12 @@ public class LockManager : MonoBehaviour
     private Lockable newLockableObject;
     private bool isSearchingLock = false;
 
-    [SerializeField] Image vfxLock;
-    [SerializeField] Image vfxLockable;
+    [SerializeField] GameObject vfxLock;
+    [SerializeField] GameObject vfxLockable;
+    [SerializeField] Slider enemyHealth;
+    [SerializeField] GameObject enemyHealthHolder;
+    [SerializeField] GameObject enemyHealthFillStart;
+
     float currentVignetteIntensity = -1f;
     Tween t;
 
@@ -28,6 +32,8 @@ public class LockManager : MonoBehaviour
     {
         PIE = GameManager.Instance.PlayerInputEventManager;
         PIE.PlayerInputAction.Player.Lock.performed += OnLockPress;
+
+        CinemachineCore.CameraUpdatedEvent.AddListener(OnCameraUpdate);
     }
 
     private void OnLockPress(InputAction.CallbackContext context)
@@ -55,28 +61,26 @@ public class LockManager : MonoBehaviour
 
     private void Lock()
     {
+        if(currentLockObject != null && currentLockObject.Damageable != null) currentLockObject.Damageable.OnDamageTaken -= UpdateHealth;
         currentLockObject = newLockableObject;
         currentLockObject.IsLock();
 
-        //GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(60, -45, 0), 0.5f);
-        //DOTween.To(() => 
-        //    GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset, 
-        //    x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x, 
-        //    new Vector3(0, 0f, 0), 
-        //    0.5f);
+        var damageable = currentLockObject.Damageable;
+        enemyHealthHolder.SetActive(currentLockObject.DisplayHealth && damageable != null);
+        if(currentLockObject.DisplayHealth && damageable != null)
+        {
+            enemyHealth.maxValue = damageable.getMaxHealth();
+            enemyHealth.value = damageable.getCurrentHealth();
+            enemyHealthFillStart.SetActive(damageable.getCurrentHealth() > 0);
+            damageable.OnDamageTaken += UpdateHealth;
+        }
     }
 
     private void Unlock()
     {
         currentLockObject.IsUnlock();
+        if(currentLockObject != null && currentLockObject.Damageable != null) currentLockObject.Damageable.OnDamageTaken -= UpdateHealth;
         currentLockObject = null;
-
-        //GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(45, -45, 0), 0.5f);
-        //DOTween.To(() =>
-        //    GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
-        //    x => GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset = x,
-        //    new Vector3(0, 0.5f, 0),
-        //    0.5f);
     }
 
     public void OnUnLock()
@@ -111,6 +115,26 @@ public class LockManager : MonoBehaviour
         }
     }
 
+    private void OnCameraUpdate(CinemachineBrain arg0)
+    {
+        vfxLock.gameObject.SetActive(currentLockObject != null);
+        if(currentLockObject != null)
+        {
+            Vector3 pos = currentLockObject.transform.position;
+            if(currentLockObject.center != null)
+            {
+                pos = currentLockObject.center.position;
+            }
+            vfxLock.transform.position = Camera.main.WorldToScreenPoint(pos);
+        }
+
+        vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject);
+        if(newLockableObject != null)
+        {
+            vfxLockable.transform.position = Camera.main.WorldToScreenPoint(newLockableObject.transform.position);
+        }
+    }
+
     private void Update()
     {
         if (PIE.PlayerInputAction.Player.Lock.WasReleasedThisFrame())
@@ -118,23 +142,12 @@ public class LockManager : MonoBehaviour
             OnLockRelease();
         }
         FindLockableObject();
-        
-        vfxLock.gameObject.SetActive(currentLockObject != null);
-        if(currentLockObject != null)
-        {
-            vfxLock.transform.position = Camera.main.WorldToScreenPoint(currentLockObject.transform.position);
-            var mesh = currentLockObject.GetComponentInChildren<SkinnedMeshRenderer>();
-            if(mesh != null)
-            {
-                Debug.Log(mesh.localBounds.extents);
-            }
-        }
-        
-        vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject);
-        if(newLockableObject != null)
-        {
-            vfxLockable.transform.position = Camera.main.WorldToScreenPoint(newLockableObject.transform.position);
-        }
+    }
+
+    private void UpdateHealth(float arg1, float arg2)
+    {
+        enemyHealth.value = arg2;
+        enemyHealthFillStart.SetActive(arg2 > 0);
     }
 
     void FindLockableObject()
@@ -173,7 +186,7 @@ public class LockManager : MonoBehaviour
 
         if (visibleLockableObject.Count > 0)
         {
-            newLockableObject = visibleLockableObject.OrderBy(x => Vector3.Distance(this.transform.position, x.transform.position)).FirstOrDefault();
+            newLockableObject = visibleLockableObject.OrderBy(x => Vector3.Distance(GameManager.Instance.Player.transform.position, x.transform.position)).FirstOrDefault();
             if (isSearchingLock && currentLockObject == null)
             {
                 Lock();
