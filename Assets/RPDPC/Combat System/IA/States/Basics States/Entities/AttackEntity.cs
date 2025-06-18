@@ -153,6 +153,7 @@ public class AttackEntity : StateEntityBase
 
     void DealDamage(IDamageable damageable, GameObject collider) 
     {
+        if(!currentAttacks.ContainsKey(collider) || !attackAlreadyDealtDamage.ContainsKey(currentAttacks[collider])) return;
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;

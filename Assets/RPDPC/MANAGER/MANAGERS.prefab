@@ -62,6 +62,7 @@ MonoBehaviour:
   _currentMessageText: {fileID: 0}
   _messagesHolder: {fileID: 0}
   _messagePrefab: {fileID: 6857205063847052617, guid: 9360c3c198e4fd8418a0e9f4f1e06c15, type: 3}
+  _pdcHolder: {fileID: 0}
 --- !u!114 &9140524450465451549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3107569779228620510, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
-  m_audioClip: {fileID: 8300000, guid: b33f179258bfacd4f8ebee4558331fcf, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 66bde15b6856f2546a0a5f218a9d46b4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -545,6 +546,134 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3107569779228620510, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
   m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &3764867189151276602
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7354237394051679217}
+  - component: {fileID: 4998684520064655561}
+  m_Layer: 8
+  m_Name: Music Vallee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7354237394051679217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764867189151276602}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1994049028299736927}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &4998684520064655561
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3764867189151276602}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -3107569779228620510, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c8e1ba89dc2f6c74e86ea13d31ef946b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -1155,7 +1284,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3107569779228620510, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
-  m_audioClip: {fileID: 8300000, guid: f86559aaacbc6de4f876639e387b1c36, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c1caa2a0e165f0241aae55cbe7b716c9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -1283,7 +1412,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3107569779228620510, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
-  m_audioClip: {fileID: 8300000, guid: eaedd8e05c62d444588082a9249a9c09, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5236d9534b96d3341ab87ab14d063a7e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -2358,6 +2487,9 @@ PrefabInstance:
       addedObject: {fileID: 38912305716435479}
     - targetCorrespondingSourceObject: {fileID: 8131936960901123542, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 7354237394051679217}
+    - targetCorrespondingSourceObject: {fileID: 8131936960901123542, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1351465429121318238}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3873527392245752195, guid: 413c07a029a67ce48a9173d4ba9a0410, type: 3}
@@ -2388,7 +2520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24100000, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
   SfxPrefab: {fileID: 1797787993950093809, guid: efc0199d7af4f0e4b8fa62138337ff2f, type: 3}
-  _combatMusic: {fileID: 8300000, guid: 6cd94be02f0958648b2bb178bc1554db, type: 3}
+  _combatMusic: {fileID: 8300000, guid: 67ae8873881ff334ea7cf1c61a127466, type: 3}
   _otherSource: {fileID: 4322674206469227628}
   _musicVolume: 0.0075
   _AmbienceVolume: 0.15
@@ -2400,3 +2532,4 @@ MonoBehaviour:
   - {fileID: 3658031406664996499}
   - {fileID: 3069752590441537874}
   - {fileID: 4322674206469227628}
+  - {fileID: 4998684520064655561}
