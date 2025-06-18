@@ -30,8 +30,9 @@ public class ZoneManager : MonoBehaviour
     {
         public ZoneName Name;
         public List<Collider> Collider;
-        public AudioClip AmbianceSound;
         public AudioClip Music;
+        public AudioSource AmbienceSource;
+        public AudioSource MusicSource;
     }
 
     [SerializeField] List<Zone> zones = new List<Zone>();
@@ -56,6 +57,7 @@ public class ZoneManager : MonoBehaviour
         //Debug.Log(color);
         ////_fog.SetColor("FogColor", new Color(color.r, color.g, color.b, 0f));
         //_fog.DOColor(new Color(color.r, color.g, color.b, 0f), "FogColor", 1f);
+        CurrentZone = zones.Last();
         OnZoneChange(zones.First());
     }
 
