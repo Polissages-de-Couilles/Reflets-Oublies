@@ -34,6 +34,11 @@ public class StateManager : MonoBehaviour
         playerState = state;
     }
 
+    public void FORCESetPlayerState(States state)
+    {
+        playerState = state;
+    }
+
     public void SetPlayerState(States state, float duration)
     {
         if (playerState == States.death) return;
@@ -80,7 +85,7 @@ public class StateManager : MonoBehaviour
     public void removeHostileEnemy(GameObject enemy)
     {
         //Debug.Log("Remove hostile State");
-        hostileEnemies.Remove(enemy);
+        if (hostileEnemies.Contains(enemy)) hostileEnemies.Remove(enemy);
         if (hostileEnemies.Count == 0)
         {
             Debug.Log("No hostile enemies");

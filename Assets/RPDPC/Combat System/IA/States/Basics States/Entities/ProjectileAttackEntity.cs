@@ -48,7 +48,7 @@ public class ProjectileAttackEntity : StateEntityBase
     {
         foreach (SOProjectileAttack.ProjectileAttackDetails attack in attacks)
         {
-            if (animator != null)
+            if (animator != null && animationNames.Count != 0)
             {
                 float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
                 manager.StartCoroutine(PlayAnimationSpeed(animationDuration, attack));

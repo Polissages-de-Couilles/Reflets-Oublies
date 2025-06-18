@@ -68,7 +68,7 @@ public class AttackEntity : StateEntityBase
         {
             currentAttackTimer = 0f;
 
-            if (animator != null)
+            if (animator != null && animationNames.Count != 0)
             {
                 animator.SetFloat("AttackSpeed", 1f);
                 float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;

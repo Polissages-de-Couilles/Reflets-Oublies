@@ -19,7 +19,7 @@ public class SpearOfSS : MonoBehaviour
     {
         float randSize = Random.Range(randomSize.x, randomSize.y) * 3;
 
-        GetComponent<AttackCollider>().Init(true, 0.5f, false, 2, KnockbackMode.MoveAwayFromAttackCollision, true, gameObject);
+        GetComponent<AttackCollider>().Init(false, 0.5f, false, 2, KnockbackMode.MoveAwayFromAttackCollision, true, gameObject);
         GetComponent<AttackCollider>().OnDamageableEnterTrigger += TriggerEnter;
         transform.SetLocalPositionAndRotation(new Vector3(0, -(randSize * 1.5f / 2), 0), Quaternion.Euler(Random.Range(-randomDegree, randomDegree), 0, Random.Range(-randomDegree, randomDegree)));
 
