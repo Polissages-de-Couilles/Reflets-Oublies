@@ -85,7 +85,7 @@ public class StateManager : MonoBehaviour
     public void removeHostileEnemy(GameObject enemy)
     {
         //Debug.Log("Remove hostile State");
-        hostileEnemies.Remove(enemy);
+        if (hostileEnemies.Contains(enemy)) hostileEnemies.Remove(enemy);
         if (hostileEnemies.Count == 0)
         {
             //Debug.Log("No hostile enemies");
