@@ -13533,6 +13533,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1687418146}
     m_Modifications:
+    - target: {fileID: 305886116226954079, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
+      propertyPath: _combatMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: 67ae8873881ff334ea7cf1c61a127466, type: 3}
     - target: {fileID: 1926450230106935916, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
       propertyPath: text
       value: 
@@ -13549,6 +13553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MANAGERS
       objectReference: {fileID: 0}
+    - target: {fileID: 3069752590441537874, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 66bde15b6856f2546a0a5f218a9d46b4, type: 3}
     - target: {fileID: 3499364351182337576, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -13589,6 +13597,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3658031406664996499, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5236d9534b96d3341ab87ab14d063a7e, type: 3}
     - target: {fileID: 3709591564633512650, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
       propertyPath: _actObject.Array.data[0]
       value: 
@@ -13829,6 +13841,10 @@ PrefabInstance:
       propertyPath: _wordsHolders.Array.data[9]
       value: 
       objectReference: {fileID: 2046648204}
+    - target: {fileID: 5110876195678665765, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1caa2a0e165f0241aae55cbe7b716c9, type: 3}
     - target: {fileID: 5483935419876891435, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
       propertyPath: _player
       value: 
@@ -25894,6 +25910,7 @@ MonoBehaviour:
   ID: SageParano_Dialogue_2_5
   CallFinishedEventAtStart: 0
   _clip: {fileID: 8300000, guid: 657fac5dbe19d2649bc79a32b6ca28f0, type: 3}
+  _volume: 0.1
 --- !u!114 &1114841692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34850,6 +34867,7 @@ MonoBehaviour:
   ID: SageParano_Dialogue_1_1
   CallFinishedEventAtStart: 1
   _clip: {fileID: 8300000, guid: a5a1871e480db6944b7d48b23d8beb31, type: 3}
+  _volume: 0.1
 --- !u!114 &1511427295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41555,6 +41573,7 @@ MonoBehaviour:
   ID: SageParano_Dialogue_2_2
   CallFinishedEventAtStart: 1
   _clip: {fileID: 8300000, guid: a5a1871e480db6944b7d48b23d8beb31, type: 3}
+  _volume: 0.1
 --- !u!43 &1838604778
 Mesh:
   m_ObjectHideFlags: 0
@@ -44816,6 +44835,7 @@ MonoBehaviour:
   ID: SageParano_Dialogue_1_1
   CallFinishedEventAtStart: 1
   _clip: {fileID: 8300000, guid: a5a1871e480db6944b7d48b23d8beb31, type: 3}
+  _volume: 0.1
 --- !u!43 &2025680487
 Mesh:
   m_ObjectHideFlags: 0
@@ -48709,6 +48729,10 @@ PrefabInstance:
     - target: {fileID: 8170419041186044286, guid: dd00bb4105125074f975bdab6d0bb2b1, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.43610215
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170419041186137450, guid: dd00bb4105125074f975bdab6d0bb2b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8812663382179310102, guid: dd00bb4105125074f975bdab6d0bb2b1, type: 3}
       propertyPath: m_LocalRotation.w
