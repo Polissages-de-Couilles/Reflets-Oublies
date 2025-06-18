@@ -1516,7 +1516,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c6d7a7b6f23b40bd8f67031e4d202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: []
+  dropRate:
+  - min: 3
+    max: 6
+    coinSO: {fileID: 11400000, guid: 0360068b692914840a45e46f235490d5, type: 2}
+  - min: 0
+    max: 2
+    coinSO: {fileID: 11400000, guid: 8da46b36e080ce14097b8ea970cae5c1, type: 2}
 --- !u!114 &4221791920540256480
 MonoBehaviour:
   m_ObjectHideFlags: 0
