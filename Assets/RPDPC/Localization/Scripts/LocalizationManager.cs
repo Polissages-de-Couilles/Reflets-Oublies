@@ -112,10 +112,8 @@ namespace PDC.Localization
 
                 if(c.Contains("$") && !c.Contains('/'))
                 {
-                    Debug.Log("Memory Key : " + c);
                     if(int.TryParse(c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("$", string.Empty), out int id))
                     {
-                        Debug.Log("As Corresponding Memory : " + GameManager.Instance.MemoryManager.EncounteredMemory.Any(x => x._isTaken && x.Act == (Act)(id + 1)));
                         if(GameManager.Instance.MemoryManager.EncounteredMemory.Any(x => x._isTaken && x.Act == (Act)(id - 1)))
                         {
                             t = t.Replace(c, "</font>");
@@ -191,7 +189,7 @@ namespace PDC.Localization
                 }
                 else if(!word.Equals(string.Empty))
                 {
-                    Debug.Log(word.ToLower());
+                    //Debug.Log(word.ToLower());
                     if(text.Contains($" {word}"))
                     {
                         text = text.Replace($" {word}", $" {word}", StringComparison.OrdinalIgnoreCase);
