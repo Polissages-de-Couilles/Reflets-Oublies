@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class TriggerDialogueZone : MonoBehaviour
 {
     [SerializeField] DialogueContainerSO _dialogue;
+    [SerializeField] int _startId = -1;
     [SerializeField] bool _isRepeatable;
     private bool isFirst = true;
 
@@ -28,7 +29,16 @@ public class TriggerDialogueZone : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
         }
         );
-        GameManager.Instance.DialogueManager.StartDialogue(_dialogue);
+
+        if(_startId >= 0)
+        {
+            GameManager.Instance.DialogueManager.SetupDialogue(_dialogue);
+            GameManager.Instance.DialogueManager.StartDialogue(_startId.ToString());
+        }
+        else
+        {
+            GameManager.Instance.DialogueManager.StartDialogue(_dialogue);
+        }
 
         if(!_isRepeatable)
         {

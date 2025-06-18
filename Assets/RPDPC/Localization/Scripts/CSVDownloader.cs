@@ -23,7 +23,7 @@ namespace PDC.Localization
                 Debug.Log("Starting Download...");
                 yield return webRequest.SendWebRequest();
                 //int equalsIndex = ExtractEqualsIndex(webRequest.downloadHandler);
-                if (webRequest.isNetworkError)
+                if (webRequest.result == UnityWebRequest.Result.ConnectionError)
                 {
                     Debug.Log("...Download Error: " + webRequest.error);
                     downloadData = PlayerPrefs.GetString("LastDataDownloaded", null);
@@ -58,7 +58,7 @@ namespace PDC.Localization
                 //Debug.Log("Starting Download...");
                 yield return webRequest.SendWebRequest();
                 //int equalsIndex = ExtractEqualsIndex(webRequest.downloadHandler);
-                if (webRequest.isNetworkError)
+                if (webRequest.result == UnityWebRequest.Result.ConnectionError)
                 {
                     Debug.Log("...Download Error: " + webRequest.error);
                     downloadData = PlayerPrefs.GetString("LastGoogleDataDownloaded", null);

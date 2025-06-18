@@ -81,6 +81,7 @@ public class FogSettings : ScriptableObject {
     [HideInInspector]
     public Material effectMaterial;
 
+        public Action OnSettingsChanged => onSettingsChanged;
     internal Action onSettingsChanged;
     internal Action onReset;
 

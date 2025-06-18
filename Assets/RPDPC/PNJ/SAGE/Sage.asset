@@ -12,12 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
   m_Name: SAGE
   m_EditorClassIdentifier: 
-  characterName: []
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: SAGE_NAME
   CustomizedName:
     ValueName: 
   UseGlobalValue: 0
   textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-  Avatars: []
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
 --- !u!114 &-3790889314785855490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,7 +52,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: f768b481-9f35-4312-93fc-553f3bda4ef8
+    TargetNodeGuid: fd9978f8-9ac0-4d17-886d-7bf8c6adc95f
+  - BaseNodeGuid: fd9978f8-9ac0-4d17-886d-7bf8c6adc95f
+    TargetNodeGuid: 4989be76-8aca-4a1a-a1bd-61933aa5bd45
+  - BaseNodeGuid: 9109dd09-9f5c-4db9-a210-59107f203602
     TargetNodeGuid: 1b40af7d-e046-4547-873f-d5d5f7d9b2e2
+  - BaseNodeGuid: 4989be76-8aca-4a1a-a1bd-61933aa5bd45
+    TargetNodeGuid: 9109dd09-9f5c-4db9-a210-59107f203602
   - BaseNodeGuid: 1b40af7d-e046-4547-873f-d5d5f7d9b2e2
     TargetNodeGuid: 9c745439-c3c4-4f03-844b-db4cddcae105
   - BaseNodeGuid: 9c745439-c3c4-4f03-844b-db4cddcae105
@@ -42,7 +68,7 @@ MonoBehaviour:
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 1b40af7d-e046-4547-873f-d5d5f7d9b2e2
-    Position: {x: 309, y: 283}
+    Position: {x: 308.8, y: 283.2}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -60,7 +86,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_1_DIALOGUE_1_1
     Duration: 0
   - NodeGuid: 9c745439-c3c4-4f03-844b-db4cddcae105
-    Position: {x: 531, y: 283}
+    Position: {x: 531.2, y: 283.2}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -78,7 +104,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_1_DIALOGUE_1_2
     Duration: 0
   - NodeGuid: 1fa36c65-e908-4fd1-8ecd-9bcdcd2d0ecf
-    Position: {x: 753, y: 283}
+    Position: {x: 752.8, y: 283.2}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -98,13 +124,25 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: c2f704e5-03d4-47d2-acaf-8ee1a3e1e8db
-    Position: {x: 984, y: 283}
+    Position: {x: 984, y: 283.2}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: fd9978f8-9ac0-4d17-886d-7bf8c6adc95f
+    Position: {x: -988.8, y: 283.2}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 18b1929ec4560c747857ccc64ef8bdbd, type: 2}
+  - NodeGuid: 9109dd09-9f5c-4db9-a210-59107f203602
+    Position: {x: -351.2, y: 283.2}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 0a0d3e068befd454a9ea660c0e15926c, type: 2}
+  - NodeGuid: 4989be76-8aca-4a1a-a1bd-61933aa5bd45
+    Position: {x: -667.2, y: 283.2}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 26f24177d27616c43a5aecc5fb48c677, type: 2}
   StartNodeDatas:
   - NodeGuid: f768b481-9f35-4312-93fc-553f3bda4ef8
-    Position: {x: 198, y: 283}
+    Position: {x: -1100, y: 283.2}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
@@ -123,61 +161,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 564d46cd-3216-4df7-a1ac-5576e02bb6b1
-    TargetNodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
-  - BaseNodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
-    TargetNodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
-  - BaseNodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
-    TargetNodeGuid: 9d730b2e-f01b-4d4d-94c8-0fc48063db7e
-  - BaseNodeGuid: 31dd58b1-db7e-4add-8430-8a890042d7c7
-    TargetNodeGuid: 9f0cb40e-a83d-400f-8115-59ff1124043d
-  - BaseNodeGuid: 9cd03642-6fde-42a2-b6a3-2c3920e2a2b8
-    TargetNodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
-  - BaseNodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
-    TargetNodeGuid: e66b4358-1405-4791-bfbc-4cbbd78115f2
-  - BaseNodeGuid: 50a2b5fa-31c9-48d7-8700-25f9199dc8c1
-    TargetNodeGuid: 4ff2d9d6-8dd4-48e4-aae1-d9ed6d93da06
-  - BaseNodeGuid: d5f3de79-1755-4596-9c04-e0574db0e519
-    TargetNodeGuid: 04928b33-9bbe-429b-9c4b-a5060fc8e770
-  - BaseNodeGuid: a8bb08a8-6e06-45e7-9bf7-dc2dad9a67ec
-    TargetNodeGuid: fb89825c-5731-4bf7-94b1-bfa752e7dd84
-  - BaseNodeGuid: 5db6763e-cd73-4f06-8a3d-0f16606d7d28
-    TargetNodeGuid: d9407d84-86f2-4513-b154-60e6c664cff0
-  - BaseNodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
-    TargetNodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
-  - BaseNodeGuid: 11624ed5-5ab2-4488-b503-158663d66879
+    TargetNodeGuid: e3ca910d-46a6-4641-9241-851b255eb7b4
+  - BaseNodeGuid: 498e14e8-262b-472a-8ab7-1155b7c44fff
+    TargetNodeGuid: 145b299b-1288-4736-b666-9e9fd3804256
+  - BaseNodeGuid: 145b299b-1288-4736-b666-9e9fd3804256
+    TargetNodeGuid: bdc986dd-b127-4507-bdd5-616b0bd0b994
+  - BaseNodeGuid: bdc986dd-b127-4507-bdd5-616b0bd0b994
     TargetNodeGuid: f5bc3d42-1962-47b3-a3f8-440ea40c67a5
-  - BaseNodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
-    TargetNodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
-  - BaseNodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
+  - BaseNodeGuid: 36cfd246-687c-4bf8-a1fe-76458236f15a
+    TargetNodeGuid: 42346407-8e35-4197-89f5-f0e99f7c0727
+  - BaseNodeGuid: 42346407-8e35-4197-89f5-f0e99f7c0727
+    TargetNodeGuid: ba197109-25ca-4f1c-80e4-ff5a03cc4359
+  - BaseNodeGuid: ba197109-25ca-4f1c-80e4-ff5a03cc4359
+    TargetNodeGuid: f4cdd534-7ede-413d-a291-21b7c91401d8
+  - BaseNodeGuid: f4cdd534-7ede-413d-a291-21b7c91401d8
+    TargetNodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
+  - BaseNodeGuid: e3ca910d-46a6-4641-9241-851b255eb7b4
+    TargetNodeGuid: 36cfd246-687c-4bf8-a1fe-76458236f15a
+  - BaseNodeGuid: 851868a2-4e53-4a50-a691-a54de4952788
     TargetNodeGuid: 1b6fb429-1017-47c0-9fe3-ea7cbc202c53
-  - BaseNodeGuid: 1b6fb429-1017-47c0-9fe3-ea7cbc202c53
-    TargetNodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
-  - BaseNodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
-    TargetNodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
-  - BaseNodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
-    TargetNodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
+  - BaseNodeGuid: 3238d75d-efac-420e-a7dc-f60e031852f7
+    TargetNodeGuid: 851868a2-4e53-4a50-a691-a54de4952788
+  - BaseNodeGuid: 4bf4074c-8223-4006-8f8b-6d865fc3e7e7
+    TargetNodeGuid: 3238d75d-efac-420e-a7dc-f60e031852f7
   - BaseNodeGuid: 9d730b2e-f01b-4d4d-94c8-0fc48063db7e
     TargetNodeGuid: 0b186c22-9e71-4241-86da-7c4e3df9b30b
   - BaseNodeGuid: 0b186c22-9e71-4241-86da-7c4e3df9b30b
     TargetNodeGuid: 31dd58b1-db7e-4add-8430-8a890042d7c7
+  - BaseNodeGuid: 31dd58b1-db7e-4add-8430-8a890042d7c7
+    TargetNodeGuid: 9f0cb40e-a83d-400f-8115-59ff1124043d
   - BaseNodeGuid: 9f0cb40e-a83d-400f-8115-59ff1124043d
     TargetNodeGuid: aa12535f-a954-47d3-8722-3df99dd8a513
   - BaseNodeGuid: aa12535f-a954-47d3-8722-3df99dd8a513
     TargetNodeGuid: 9cd03642-6fde-42a2-b6a3-2c3920e2a2b8
+  - BaseNodeGuid: 9cd03642-6fde-42a2-b6a3-2c3920e2a2b8
+    TargetNodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
+  - BaseNodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
+    TargetNodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
+  - BaseNodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
+    TargetNodeGuid: e66b4358-1405-4791-bfbc-4cbbd78115f2
   - BaseNodeGuid: e66b4358-1405-4791-bfbc-4cbbd78115f2
     TargetNodeGuid: 50a2b5fa-31c9-48d7-8700-25f9199dc8c1
+  - BaseNodeGuid: 50a2b5fa-31c9-48d7-8700-25f9199dc8c1
+    TargetNodeGuid: 4ff2d9d6-8dd4-48e4-aae1-d9ed6d93da06
   - BaseNodeGuid: 4ff2d9d6-8dd4-48e4-aae1-d9ed6d93da06
     TargetNodeGuid: ebb71397-4695-4bd6-aecf-6e7a5fcce117
   - BaseNodeGuid: ebb71397-4695-4bd6-aecf-6e7a5fcce117
     TargetNodeGuid: d5f3de79-1755-4596-9c04-e0574db0e519
+  - BaseNodeGuid: d5f3de79-1755-4596-9c04-e0574db0e519
+    TargetNodeGuid: 04928b33-9bbe-429b-9c4b-a5060fc8e770
   - BaseNodeGuid: 04928b33-9bbe-429b-9c4b-a5060fc8e770
     TargetNodeGuid: 48805bb3-273d-4aa1-8996-c6541697fc06
   - BaseNodeGuid: 48805bb3-273d-4aa1-8996-c6541697fc06
     TargetNodeGuid: a8bb08a8-6e06-45e7-9bf7-dc2dad9a67ec
+  - BaseNodeGuid: a8bb08a8-6e06-45e7-9bf7-dc2dad9a67ec
+    TargetNodeGuid: fb89825c-5731-4bf7-94b1-bfa752e7dd84
   - BaseNodeGuid: fb89825c-5731-4bf7-94b1-bfa752e7dd84
     TargetNodeGuid: 5db6763e-cd73-4f06-8a3d-0f16606d7d28
+  - BaseNodeGuid: 5db6763e-cd73-4f06-8a3d-0f16606d7d28
+    TargetNodeGuid: d9407d84-86f2-4513-b154-60e6c664cff0
   - BaseNodeGuid: d9407d84-86f2-4513-b154-60e6c664cff0
     TargetNodeGuid: 5bd91a29-3498-477a-a395-05f3c5dba1a7
+  - BaseNodeGuid: 5bd91a29-3498-477a-a395-05f3c5dba1a7
+    TargetNodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
+  - BaseNodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
+    TargetNodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
+  - BaseNodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
+    TargetNodeGuid: c0d00265-7abe-401a-b60b-1af56a87cc69
   - BaseNodeGuid: c0d00265-7abe-401a-b60b-1af56a87cc69
     TargetNodeGuid: c93cff12-0d7f-4987-ac9c-2325f986e33c
   - BaseNodeGuid: c93cff12-0d7f-4987-ac9c-2325f986e33c
@@ -186,304 +236,26 @@ MonoBehaviour:
     TargetNodeGuid: 3ae949c0-1fcd-4e8f-8664-d1ae9cda6f6c
   - BaseNodeGuid: 3ae949c0-1fcd-4e8f-8664-d1ae9cda6f6c
     TargetNodeGuid: 11624ed5-5ab2-4488-b503-158663d66879
-  - BaseNodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
-    TargetNodeGuid: c0d00265-7abe-401a-b60b-1af56a87cc69
-  - BaseNodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
-    TargetNodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
-  - BaseNodeGuid: 5bd91a29-3498-477a-a395-05f3c5dba1a7
-    TargetNodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
+  - BaseNodeGuid: 11624ed5-5ab2-4488-b503-158663d66879
+    TargetNodeGuid: 498e14e8-262b-472a-8ab7-1155b7c44fff
+  - BaseNodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
+    TargetNodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
+  - BaseNodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
+    TargetNodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
+  - BaseNodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
+    TargetNodeGuid: 4bf4074c-8223-4006-8f8b-6d865fc3e7e7
+  - BaseNodeGuid: 1b6fb429-1017-47c0-9fe3-ea7cbc202c53
+    TargetNodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
+  - BaseNodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
+    TargetNodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
+  - BaseNodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
+    TargetNodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
+  - BaseNodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
+    TargetNodeGuid: 9d730b2e-f01b-4d4d-94c8-0fc48063db7e
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
-  - NodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
-    Position: {x: 641, y: 245}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_DIALOGUE_0_1
-    Duration: 0
-  - NodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
-    Position: {x: 2155, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_DIALOGUE_0_1
-    Duration: 0
-  - NodeGuid: 31dd58b1-db7e-4add-8430-8a890042d7c7
-    Position: {x: 3237, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_DIALOGUE_0_1
-    Duration: 0
-  - NodeGuid: 9cd03642-6fde-42a2-b6a3-2c3920e2a2b8
-    Position: {x: 4314, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_1
-    Duration: 0
-  - NodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
-    Position: {x: 5180, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_2
-    Duration: 0
-  - NodeGuid: 50a2b5fa-31c9-48d7-8700-25f9199dc8c1
-    Position: {x: 5904, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_3
-    Duration: 0
-  - NodeGuid: d5f3de79-1755-4596-9c04-e0574db0e519
-    Position: {x: 7054, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_4
-    Duration: 0
-  - NodeGuid: a8bb08a8-6e06-45e7-9bf7-dc2dad9a67ec
-    Position: {x: 8183, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_5
-    Duration: 0
-  - NodeGuid: 5db6763e-cd73-4f06-8a3d-0f16606d7d28
-    Position: {x: 9010, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_6
-    Duration: 0
-  - NodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
-    Position: {x: 10105, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_7
-    Duration: 0
-  - NodeGuid: 11624ed5-5ab2-4488-b503-158663d66879
-    Position: {x: 12195, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_9
-    Duration: 0
-  - NodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
-    Position: {x: 326, y: 245}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -8653670816600422834}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_1
-    Duration: 0
-  - NodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
-    Position: {x: 1027, y: 245}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -8653670816600422834}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_2
-    Duration: 0
-  - NodeGuid: 1b6fb429-1017-47c0-9fe3-ea7cbc202c53
-    Position: {x: 1269, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -8653670816600422834}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_3
-    Duration: 0
-  - NodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
-    Position: {x: 1512, y: 236}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -8653670816600422834}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_4
-    Duration: 0
-  - NodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
-    Position: {x: 1762, y: 245}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: -8653670816600422834}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_5
-    Duration: 0
   - NodeGuid: 9d730b2e-f01b-4d4d-94c8-0fc48063db7e
-    Position: {x: 2575, y: 236}
+    Position: {x: 2575.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -501,7 +273,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_6
     Duration: 0
   - NodeGuid: 0b186c22-9e71-4241-86da-7c4e3df9b30b
-    Position: {x: 2831, y: 236}
+    Position: {x: 2832.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -518,8 +290,26 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_7
     Duration: 0
+  - NodeGuid: 31dd58b1-db7e-4add-8430-8a890042d7c7
+    Position: {x: 3238.4, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
   - NodeGuid: 9f0cb40e-a83d-400f-8115-59ff1124043d
-    Position: {x: 3629, y: 236}
+    Position: {x: 3620, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -537,7 +327,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_8
     Duration: 0
   - NodeGuid: aa12535f-a954-47d3-8722-3df99dd8a513
-    Position: {x: 3887, y: 236}
+    Position: {x: 3888.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -554,8 +344,62 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_9
     Duration: 0
+  - NodeGuid: 9cd03642-6fde-42a2-b6a3-2c3920e2a2b8
+    Position: {x: 4260, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_1
+    Duration: 0
+  - NodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
+    Position: {x: 4700, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_10
+    Duration: 0
+  - NodeGuid: 397cbae8-fe22-46b8-a92f-2ac12eb65c6f
+    Position: {x: 5176.8, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_2
+    Duration: 0
   - NodeGuid: e66b4358-1405-4791-bfbc-4cbbd78115f2
-    Position: {x: 5542, y: 236}
+    Position: {x: 5543.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -572,8 +416,26 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_11
     Duration: 0
+  - NodeGuid: 50a2b5fa-31c9-48d7-8700-25f9199dc8c1
+    Position: {x: 5906.4, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_3
+    Duration: 0
   - NodeGuid: 4ff2d9d6-8dd4-48e4-aae1-d9ed6d93da06
-    Position: {x: 6337, y: 236}
+    Position: {x: 6336.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -591,7 +453,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_12
     Duration: 0
   - NodeGuid: ebb71397-4695-4bd6-aecf-6e7a5fcce117
-    Position: {x: 6601, y: 236}
+    Position: {x: 6607.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -608,8 +470,26 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_13
     Duration: 0
+  - NodeGuid: d5f3de79-1755-4596-9c04-e0574db0e519
+    Position: {x: 7054.4, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_4
+    Duration: 0
   - NodeGuid: 04928b33-9bbe-429b-9c4b-a5060fc8e770
-    Position: {x: 7462, y: 236}
+    Position: {x: 7462.4, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -627,7 +507,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_14
     Duration: 0
   - NodeGuid: 48805bb3-273d-4aa1-8996-c6541697fc06
-    Position: {x: 7732, y: 236}
+    Position: {x: 7738.4, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -644,8 +524,26 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_15
     Duration: 0
+  - NodeGuid: a8bb08a8-6e06-45e7-9bf7-dc2dad9a67ec
+    Position: {x: 8184, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_5
+    Duration: 0
   - NodeGuid: fb89825c-5731-4bf7-94b1-bfa752e7dd84
-    Position: {x: 8599, y: 236}
+    Position: {x: 8604.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -662,8 +560,26 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_16
     Duration: 0
+  - NodeGuid: 5db6763e-cd73-4f06-8a3d-0f16606d7d28
+    Position: {x: 9014.4, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_6
+    Duration: 0
   - NodeGuid: d9407d84-86f2-4513-b154-60e6c664cff0
-    Position: {x: 9415, y: 236}
+    Position: {x: 9415.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -680,8 +596,62 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_17
     Duration: 0
+  - NodeGuid: 5bd91a29-3498-477a-a395-05f3c5dba1a7
+    Position: {x: 9680, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_18
+    Duration: 0
+  - NodeGuid: a6d53985-142b-4534-aaba-2082ba73de38
+    Position: {x: 10107.2, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_7
+    Duration: 0
+  - NodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
+    Position: {x: 10576, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_19
+    Duration: 0
   - NodeGuid: c0d00265-7abe-401a-b60b-1af56a87cc69
-    Position: {x: 10992, y: 236}
+    Position: {x: 10996.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -699,7 +669,7 @@ MonoBehaviour:
       LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_8
     Duration: 0
   - NodeGuid: c93cff12-0d7f-4987-ac9c-2325f986e33c
-    Position: {x: 11385, y: 236}
+    Position: {x: 11380.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -717,7 +687,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_20
     Duration: 0
   - NodeGuid: 6ae41b97-c2d3-46ec-b35e-08f12c6f2921
-    Position: {x: 11615, y: 236}
+    Position: {x: 11615.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -735,7 +705,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_21
     Duration: 0
   - NodeGuid: 3ae949c0-1fcd-4e8f-8664-d1ae9cda6f6c
-    Position: {x: 11853, y: 236}
+    Position: {x: 11858.4, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -752,8 +722,8 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_22
     Duration: 0
-  - NodeGuid: ae1665a1-812b-4bf3-a4e7-47e61e394471
-    Position: {x: 10571, y: 236}
+  - NodeGuid: 11624ed5-5ab2-4488-b503-158663d66879
+    Position: {x: 12196.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -763,15 +733,15 @@ MonoBehaviour:
       LanguageGenericType: 
     CantBeSkip: 0
     CanMove: 0
-    Character: {fileID: -8653670816600422834}
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
     AvatarPos: 0
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_19
+      LanguageGenericType: EWEN_ACT_3_DIALOGUE_SAGE_1_9
     Duration: 0
-  - NodeGuid: 5b8bc427-1c94-4aa3-bfef-0756a49f1ac1
-    Position: {x: 4730, y: 236}
+  - NodeGuid: 05523417-1552-43cb-a062-bfa4a193adc3
+    Position: {x: -176.8, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -786,10 +756,28 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_10
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_1
     Duration: 0
-  - NodeGuid: 5bd91a29-3498-477a-a395-05f3c5dba1a7
-    Position: {x: 9676, y: 236}
+  - NodeGuid: b3f1ab53-cbd8-43ce-88c4-aae3c783d641
+    Position: {x: 68.8, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
+    Duration: 0
+  - NodeGuid: 29f8c03d-1a59-42e6-b086-df8337cd4b21
+    Position: {x: 327.2, y: 245.59999}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -804,18 +792,134 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_18
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: 1b6fb429-1017-47c0-9fe3-ea7cbc202c53
+    Position: {x: 1530.4, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: c88e5392-af52-4fcd-a58d-2270af4789e2
+    Position: {x: 1772.8, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: bdf5f433-11e1-4897-a583-babb23fd4379
+    Position: {x: 2023.2, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -8653670816600422834}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: SAGE_ACT_3_DIALOGUE_1_5
+    Duration: 0
+  - NodeGuid: 74b8206f-d737-42c8-8a39-009789e5acb3
+    Position: {x: 2292.8, y: 245.59999}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: EWEN_DIALOGUE_0_1
     Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: f5bc3d42-1962-47b3-a3f8-440ea40c67a5
-    Position: {x: 12436, y: 236}
+    Position: {x: 13524, y: 245.59999}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 498e14e8-262b-472a-8ab7-1155b7c44fff
+    Position: {x: 12447.2, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: e5ff0d9036a910d46ac8fb683bb500d3, type: 2}
+  - NodeGuid: 145b299b-1288-4736-b666-9e9fd3804256
+    Position: {x: 12800.8, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 6cb9288cdb0ff4947886c57326270a3d, type: 2}
+  - NodeGuid: bdc986dd-b127-4507-bdd5-616b0bd0b994
+    Position: {x: 13160, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: f368fecf7fb57b8438eb5d3068587410, type: 2}
+  - NodeGuid: 36cfd246-687c-4bf8-a1fe-76458236f15a
+    Position: {x: -1497.6, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 6fca6bb31bea7be45a4fcf62e75217f0, type: 2}
+  - NodeGuid: 42346407-8e35-4197-89f5-f0e99f7c0727
+    Position: {x: -1161.6, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: ef711234a84890d4792cd97b23fbb51c, type: 2}
+  - NodeGuid: ba197109-25ca-4f1c-80e4-ff5a03cc4359
+    Position: {x: -840, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: e6203282cace4f649bbcc5f632057a84, type: 2}
+  - NodeGuid: f4cdd534-7ede-413d-a291-21b7c91401d8
+    Position: {x: -501.6, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: df4afdc933bfa2d4a8a7f32d571ad580, type: 2}
+  - NodeGuid: e3ca910d-46a6-4641-9241-851b255eb7b4
+    Position: {x: -1864, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 87a5d49f1ec38754883c55b61508fbf5, type: 2}
+  - NodeGuid: 851868a2-4e53-4a50-a691-a54de4952788
+    Position: {x: 1194.4, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: a6f7453a2423eba46bf85b9e66413b9b, type: 2}
+  - NodeGuid: 3238d75d-efac-420e-a7dc-f60e031852f7
+    Position: {x: 868, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: a186c909838d0114db73969aa2e24e51, type: 2}
+  - NodeGuid: 4bf4074c-8223-4006-8f8b-6d865fc3e7e7
+    Position: {x: 536.8, y: 245.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 6279c60316855554aa80c4f2df5de835, type: 2}
   StartNodeDatas:
   - NodeGuid: 564d46cd-3216-4df7-a1ac-5576e02bb6b1
-    Position: {x: 216, y: 245}
+    Position: {x: -2009.6, y: 245.59999}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
@@ -2031,6 +2135,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 7eb0a7ed-6844-4264-8ddc-5e9c8c51b386
+    TargetNodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+  - BaseNodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+    TargetNodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
+  - BaseNodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+    TargetNodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+  - BaseNodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
     TargetNodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
   - BaseNodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
     TargetNodeGuid: 5662b19a-3c2e-483c-813a-ad06430c9f91
@@ -2041,7 +2151,7 @@ MonoBehaviour:
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 439f0e12-1a58-416c-8614-2455304af10c
-    Position: {x: 514, y: 301}
+    Position: {x: 514.4, y: 301.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -2059,7 +2169,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_1_DIALOGUE_2_1
     Duration: 0
   - NodeGuid: 5662b19a-3c2e-483c-813a-ad06430c9f91
-    Position: {x: 748, y: 301}
+    Position: {x: 748, y: 301.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -2077,7 +2187,7 @@ MonoBehaviour:
       LanguageGenericType: SAGE_ACT_1_DIALOGUE_2_2
     Duration: 0
   - NodeGuid: 6a772f92-c75b-4550-abcd-8146e88a6f18
-    Position: {x: 979, y: 301}
+    Position: {x: 979.2, y: 301.6}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -2097,13 +2207,25 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: da9d4e88-1017-43ec-b70e-8d9cbd17bbe2
-    Position: {x: 1211, y: 301}
+    Position: {x: 1211.2, y: 301.6}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 935aed02-2ffc-417a-8b51-d045a4e54a46
+    Position: {x: -144.8, y: 301.6}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b3981d4edd19dc748aa2792d45260deb, type: 2}
+  - NodeGuid: 8f33003e-3d81-4f44-825d-a46ed095c310
+    Position: {x: -455.2, y: 301.6}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 71601043beba8aa49991ebd9814f36b2, type: 2}
+  - NodeGuid: 3b3815e5-0abf-4342-a376-76bcafc5b1e7
+    Position: {x: 180.8, y: 301.6}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: eb26f97c701508947a6eb8b2cad55382, type: 2}
   StartNodeDatas:
   - NodeGuid: 7eb0a7ed-6844-4264-8ddc-5e9c8c51b386
-    Position: {x: 400, y: 301}
+    Position: {x: -553.6, y: 301.6}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []

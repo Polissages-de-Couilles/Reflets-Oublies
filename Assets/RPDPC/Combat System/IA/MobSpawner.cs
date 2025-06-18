@@ -76,7 +76,7 @@ public class MobSpawner : MonoBehaviour
 
     void SpawnMob(Collider col)
     {
-        Vector3 RandomPoint = new Vector3(Random.Range(col.bounds.min.x, col.bounds.max.x), 0, Random.Range(col.bounds.min.z, col.bounds.max.z));
+        Vector3 RandomPoint = new Vector3(Random.Range(col.bounds.min.x, col.bounds.max.x), col.bounds.max.y, Random.Range(col.bounds.min.z, col.bounds.max.z));
         NavMeshHit hit;
         if (NavMesh.SamplePosition(RandomPoint, out hit, Mathf.Infinity, NavMesh.AllAreas))
         {
