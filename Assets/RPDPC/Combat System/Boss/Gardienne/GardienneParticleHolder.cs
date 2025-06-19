@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,16 @@ public class GardienneParticleHolder : MonoBehaviour
     public GameObject wind;
     public GameObject strong;
     bool forced;
+
+    private void Start()
+    {
+        GetComponent<BossDeathManager>().OnBotDied += OnBossDied;
+    }
+
+    private void OnBossDied()
+    {
+        Switch(GardienneWind.Static, true);
+    }
 
     public void Switch(GardienneWind windForce, bool force = false)
     {
