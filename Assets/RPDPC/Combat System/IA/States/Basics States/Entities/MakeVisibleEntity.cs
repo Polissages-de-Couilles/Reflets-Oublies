@@ -17,6 +17,7 @@ public class MakeVisibleEntity : StateEntityBase
     {
         if (parent.GetComponent<MeshRenderer>() != null) parent.GetComponent<MeshRenderer>().enabled = true;
         if (parent.GetComponent<Rigidbody>() != null) parent.GetComponent<Rigidbody>().useGravity = true;
+        if (parent.GetComponent<Lockable>() != null) parent.GetComponent<Lockable>().CanBeLock = true;
         Renderer[] rs = parent.GetComponentsInChildren<Renderer>();
         foreach (Renderer r in rs)
         {

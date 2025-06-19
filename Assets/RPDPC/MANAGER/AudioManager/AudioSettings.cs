@@ -29,10 +29,14 @@ public class AudioSettings : MonoBehaviour
     [SerializeField] List<AudioSource> _audioSources;
 
     ZoneManager.Zone _currentZone;
-    List<Tween> tweens = new List<Tween>();
-    List<Coroutine> coroutines = new List<Coroutine>();
+    List<Tween> tweensMusic = new List<Tween>();
+    List<Tween> tweensAmbiance = new List<Tween>();
+    List<Coroutine> coroutinesAmbiance = new List<Coroutine>();
+    List<Coroutine> coroutinesMusic = new List<Coroutine>();
 
     bool InCombat { get; set; } = false;
+    bool inCombat = true;
+    bool lastMusicWasCombat = false;
 
     public void Awake()
     {
@@ -47,36 +51,75 @@ public class AudioSettings : MonoBehaviour
         {
             source.Pause();
         }
+        if(GameManager.Instance.Player.TryGetComponent(out StateManager manager))
+        {
+            manager.OnFightStateChanged += OnCombatEnter;
+        }
     }
 
-    public void SwitchZone(ZoneManager.Zone zone)
+    public void SwitchZone(ZoneManager.Zone zone, bool ignoreCombat = false)
     {
         _currentZone = zone;
         Debug.Log(InCombat);
 
+        for(int i = 0; i < coroutinesAmbiance.Count; i++)
+        {
+            if(coroutinesAmbiance[i] != null) StopCoroutine(coroutinesAmbiance[i]);
+        }
+        coroutinesAmbiance.Clear();
+        for(int i = 0; i < tweensAmbiance.Count; i++)
+        {
+            tweensAmbiance[i].Pause();
+            tweensAmbiance[i].Kill();
+        }
+        tweensAmbiance.Clear();
         if(zone.AmbienceSource != null && (_currentAmbienceSource == null || !_currentAmbienceSource.Equals(zone.AmbienceSource)))
         {
-            coroutines.Add(StartCoroutine(TransitionAudio(null, _currentAmbienceSource, zone.AmbienceSource, 2f, _AmbienceVolume)));
+            coroutinesAmbiance.Add(StartCoroutine(TransitionAudio(null, _currentAmbienceSource, zone.AmbienceSource, 2f, _AmbienceVolume)));
             _currentAmbienceSource = zone.AmbienceSource;
         }
 
-        if (InCombat) return;
-        for(int i = 0; i < coroutines.Count; i++)
+        if (InCombat && !ignoreCombat) return;
+        for(int i = 0; i < coroutinesMusic.Count; i++)
         {
-            if(coroutines[i] != null) StopCoroutine(coroutines[i]);
+            if(coroutinesMusic[i] != null) StopCoroutine(coroutinesMusic[i]);
         }
-        coroutines.Clear();
-        for (int i = 0; i < tweens.Count; i++)
+        coroutinesMusic.Clear();
+
+        if(!ignoreCombat && lastMusicWasCombat)
         {
-            tweens[i].Pause();
-            tweens[i].Kill();
+            lastMusicWasCombat = false;
+            for(int i = 0; i < tweensMusic.Count; i++)
+            {
+                tweensMusic[i].Complete();
+            }
         }
-        tweens.Clear();
+        for (int i = 0; i < tweensMusic.Count; i++)
+        {
+            tweensMusic[i].Pause();
+            tweensMusic[i].Kill();
+        }
+        tweensMusic.Clear();
         
         if(zone.MusicSource != null && (_currentMusicSource == null || !_currentMusicSource.Equals(zone.MusicSource)))
         {
-            coroutines.Add(StartCoroutine(TransitionAudio(zone.Music, _currentMusicSource, zone.MusicSource, 2f, _musicVolume)));
+            coroutinesMusic.Add(StartCoroutine(TransitionAudio(zone.Music, _currentMusicSource, zone.MusicSource, 2f, _musicVolume, true)));
             _currentMusicSource = zone.MusicSource;
+        }
+    }
+
+    private void OnCombatEnter(bool combat)
+    {
+        Debug.Log("Combat : " +  combat);
+        inCombat = combat;
+        if(combat && !InCombat)
+        {
+            EnterCombat();
+        }
+
+        if(!combat)
+        {
+            ExitCombat();
         }
     }
 
@@ -85,30 +128,56 @@ public class AudioSettings : MonoBehaviour
     public void EnterCombat(AudioClip clip)
     {
         InCombat = true;
-        StopAllCoroutines();
-        StartCoroutine(TransitionAudio(clip, _currentMusicSource, _otherSource, 2f, _musicVolume));
+        for(int i = 0; i < coroutinesMusic.Count; i++)
+        {
+            if(coroutinesMusic[i] != null) StopCoroutine(coroutinesMusic[i]);
+        }
+        coroutinesMusic.Clear();
+        for(int i = 0; i < tweensMusic.Count; i++)
+        {
+            tweensMusic[i].Pause();
+            tweensMusic[i].Kill();
+        }
+        tweensMusic.Clear();
+        StartCoroutine(TransitionAudio(clip, _currentMusicSource, _otherSource, 1f, _musicVolume, true));
+        _currentMusicSource = _otherSource;
     }
 
     public void ExitCombat()
     {
+        if(!InCombat) return;
         InCombat = false;
-        SwitchZone(_currentZone);
+        StartCoroutine(WaitBeforeExitCombat());
     }
 
-    IEnumerator TransitionAudio(AudioClip clip, AudioSource from, AudioSource to, float duration, float volume = 1f)
+    IEnumerator WaitBeforeExitCombat()
+    {
+        yield return new WaitForSeconds(2f);
+        InCombat = inCombat;
+        if(!inCombat)
+        {
+            SwitchZone(_currentZone, true);
+            lastMusicWasCombat = true;
+        }
+    }
+
+    IEnumerator TransitionAudio(AudioClip clip, AudioSource from, AudioSource to, float duration, float volume = 1f, bool isMusic = false)
     {
         if(to == null) yield break;
         yield return null;
         if(from != null)
         {
-            var tt = from.DOFade(0, duration * 0.5f).SetEase(Ease.Linear);
+            var tt = from.DOFade(0, duration * 0.5f).SetEase(Ease.Linear).OnComplete(() => from.volume = 0);
             tt.Play();
-            tweens.Add(tt);
+            if(isMusic) tweensMusic.Add(tt);
+            else tweensAmbiance.Add(tt);
         }
         yield return new WaitForSeconds(duration * 0.5f);
+        if(clip != null) to.clip = clip;
         if(!to.isPlaying) to.Play();
-        var t = to.DOFade(volume, duration * 0.5f).SetEase(Ease.Linear);
-        tweens.Add(t);
+        var t = to.DOFade(volume, duration * 0.5f).SetEase(Ease.Linear).OnComplete(() => to.volume = volume);
+        if(isMusic) tweensMusic.Add(t);
+        else tweensAmbiance.Add(t);
         yield return t.WaitForCompletion();
     }
 

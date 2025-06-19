@@ -42,15 +42,23 @@ public class AttackManager : MonoBehaviour
 
     private void HitFrame(IDamageable damageable, GameObject @object)
     {
-        Time.timeScale = 0.05f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
+        if(@object.TryGetComponent(out GuardManager guardManager))
+        {
+            if(guardManager.isGuarding) return;
+        }
+        Time.timeScale = 0.1f;
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 
     private void HitFrame3(IDamageable damageable, GameObject @object)
     {
+        if(@object.TryGetComponent(out GuardManager guardManager))
+        {
+            if(guardManager.isGuarding) return;
+        }
         Time.timeScale = 0.05f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.075f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 

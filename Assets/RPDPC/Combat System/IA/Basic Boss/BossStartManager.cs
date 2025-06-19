@@ -60,7 +60,7 @@ public class BossStartManager : MonoBehaviour
         GetComponent<StateMachineManager>().enabled = true;
     }
 
-    void OnBotDied()
+    public void OnBotDied()
     {
         foreach (GameObject wG in walls)
         {

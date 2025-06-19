@@ -159,8 +159,10 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
 
     public void heal(float heal)
     {
+        Debug.Log("HEAL " + heal);
         currentHealth += heal;
         if (maxHealth < currentHealth) currentHealth = maxHealth;
+        OnDamageTaken?.Invoke(-heal, currentHealth);
         //VFX Heal
     }
 

@@ -27,8 +27,8 @@ public class DKSpear : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation( -new Vector3(direction.x, 0, direction.y), Vector3.up);
 
-        child = GetComponentInChildren<CapsuleCollider>().gameObject;
-        AttackCollider ac = child.AddComponent<AttackCollider>();
+        child = GetComponentInChildren<MeshRenderer>().gameObject;
+        AttackCollider ac = GetComponentInChildren<Collider>().gameObject.AddComponent<AttackCollider>();
         ac.Init(false, 0, false, 0, KnockbackMode.MoveAwayFromAttackCollision, true, gameObject);
         ac.OnDamageableEnterTrigger += TriggerEnter;
 

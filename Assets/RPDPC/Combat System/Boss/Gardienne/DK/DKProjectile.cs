@@ -21,7 +21,7 @@ public class DKProjectile : ProjectileBase
 
     protected override void LaunchProjectile()
     {
-        manager.launcher.GetComponent<GardienneParticleHolder>().Switch(GardienneWind.Strong);
+        //manager.launcher.GetComponent<GardienneParticleHolder>().Switch(GardienneWind.Strong);
         sm = GameManager.Instance.Player.GetComponent<StateManager>();
         playerTransform = GameManager.Instance.Player.transform;
         lastPos = playerTransform.position;
@@ -32,6 +32,7 @@ public class DKProjectile : ProjectileBase
     {
         if (sm.playerState == StateManager.States.dash)
         {
+            manager.launcher.GetComponent<GardienneParticleHolder>().Switch(GardienneWind.ReallyStrong);
             Vector3 currentPos = playerTransform.position;
             if (Vector3.Distance(currentPos, transform.position) < Vector3.Distance(lastPos, transform.position))
             {
@@ -46,6 +47,7 @@ public class DKProjectile : ProjectileBase
         }
         else if (sm.playerState == StateManager.States.idle)
         {
+            manager.launcher.GetComponent<GardienneParticleHolder>().Switch(GardienneWind.Strong);
             Vector3 currentPos = playerTransform.position;
             if (Vector3.Distance(currentPos, transform.position) < Vector3.Distance(lastPos, transform.position))
             {

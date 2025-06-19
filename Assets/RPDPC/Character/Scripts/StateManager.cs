@@ -17,7 +17,7 @@ public class StateManager : MonoBehaviour
     public States playerState;
 
     List<GameObject> hostileEnemies = new List<GameObject>();
-    Action<bool> OnFightStateChanged;
+    public Action<bool> OnFightStateChanged;
     private CharacterController characterController;
 
     public void Start()
@@ -31,6 +31,11 @@ public class StateManager : MonoBehaviour
     public void SetPlayerState(States state)
     {
         if (playerState == States.death) return;
+        playerState = state;
+    }
+
+    public void FORCESetPlayerState(States state)
+    {
         playerState = state;
     }
 
@@ -80,10 +85,10 @@ public class StateManager : MonoBehaviour
     public void removeHostileEnemy(GameObject enemy)
     {
         //Debug.Log("Remove hostile State");
-        hostileEnemies.Remove(enemy);
+        if (hostileEnemies.Contains(enemy)) hostileEnemies.Remove(enemy);
         if (hostileEnemies.Count == 0)
         {
-            //Debug.Log("No hostile enemies");
+            Debug.Log("No hostile enemies");
             OnFightStateChanged?.Invoke(false);
         }
     }
