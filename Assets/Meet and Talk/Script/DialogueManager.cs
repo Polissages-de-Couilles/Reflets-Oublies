@@ -204,7 +204,7 @@ namespace MeetAndTalk
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if(audioSource.isPlaying) audioSource.Pause();
+                if(audioSource.isPlaying) audioSource.Stop();
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
             }
 
@@ -271,7 +271,7 @@ namespace MeetAndTalk
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if (audioSource.isPlaying) audioSource.Pause();
+                if (audioSource.isPlaying) audioSource.Stop();
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
             }
 
@@ -418,7 +418,7 @@ namespace MeetAndTalk
 
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if (audioSource.isPlaying) audioSource.Pause();
+                if (audioSource.isPlaying) audioSource.Stop();
                 audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
             }
 
