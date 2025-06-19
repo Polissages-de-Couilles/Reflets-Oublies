@@ -65,6 +65,7 @@ public class RespawnManager : MonoBehaviour
         PlayerDamageable pd = player.GetComponent<PlayerDamageable>();
         pd.heal(pd.maxHealth);
         player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponentInChildren<Animator>().Play("Walk");
 
         GameManager.Instance.UIManager.GetComponent<BossBarManager>().ResetBar();
 
