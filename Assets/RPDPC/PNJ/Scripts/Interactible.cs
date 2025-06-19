@@ -74,8 +74,7 @@ public abstract class Interactible : MonoBehaviour
         {
             textUI.transform.parent.localScale = new Vector3(1, 1, 1);
         }
-
-        textUI.text = Text;
+        if(active) textUI.text = Text;
         textUI.gameObject.SetActive(active);
         worldUI.gameObject.SetActive(active);
     }

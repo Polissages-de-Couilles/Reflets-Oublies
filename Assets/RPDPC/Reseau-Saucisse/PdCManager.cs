@@ -43,7 +43,7 @@ namespace PDC
         public const string PdC8 = "entry.188076372";
         public const string PdC9 = "entry.1113729072";
 
-        public enum PdC
+        public enum PdCType
         {
             PdC1,
             PdC2, 
@@ -55,7 +55,7 @@ namespace PDC
             PdC8,
             PdC9,
         }
-        public PdC CurrentPdC {  get; private set; }
+        public PdCType CurrentPdC {  get; private set; }
 
         public void SendMessage()
         {
@@ -64,31 +64,31 @@ namespace PDC
 
             switch(CurrentPdC)
             {
-                case PdC.PdC1:
+                case PdCType.PdC1:
                     id = PdC1;
                     break;
-                case PdC.PdC2:
+                case PdCType.PdC2:
                     id = PdC2;
                     break;
-                case PdC.PdC3:
+                case PdCType.PdC3:
                     id = PdC3;
                     break;
-                case PdC.PdC4:
+                case PdCType.PdC4:
                     id = PdC4;
                     break;
-                case PdC.PdC5:
+                case PdCType.PdC5:
                     id = PdC5;
                     break;
-                case PdC.PdC6:
+                case PdCType.PdC6:
                     id = PdC6;
                     break;
-                case PdC.PdC7:
+                case PdCType.PdC7:
                     id = PdC7;
                     break;
-                case PdC.PdC8:
+                case PdCType.PdC8:
                     id = PdC8;
                     break;
-                case PdC.PdC9:
+                case PdCType.PdC9:
                     id = PdC9;
                     break;
                 default:
@@ -97,13 +97,15 @@ namespace PDC
 
             for(int i = 0; i < _currentWords.Count; i++)
             {
-                message += _currentWords[i].Key + " ";
+                message += $"[{_currentWords[i].Key}] ";
             }
 
             StartCoroutine(PostMessage($"{message}", id));
+            _currentWords.Clear();
+            _currentMessageText.text = "";
         }
 
-        public void SendMessage(string message, string PdC)
+        private void SendMessage(string message, string PdC)
         {
             StartCoroutine(PostMessage($"{message}", PdC));
         }
@@ -120,6 +122,52 @@ namespace PDC
                 if (www.result == UnityWebRequest.Result.Success)
                 {
                     Debug.Log("Send Sucess");
+                    PdCType type = PdCType.PdC1;
+
+                    switch(PdC)
+                    {
+                        case PdC1:
+                            type = PdCType.PdC1;
+                            break;
+
+                        case PdC2:
+                            type = PdCType.PdC2;
+                            break;
+
+                        case PdC3:
+                            type = PdCType.PdC3;
+                            break;
+
+                        case PdC4:
+                            type = PdCType.PdC4;
+                            break;
+
+                        case PdC5:
+                            type = PdCType.PdC5;
+                            break;
+
+                        case PdC6:
+                            type = PdCType.PdC6;
+                            break;
+
+                        case PdC7:
+                            type = PdCType.PdC7;
+                            break;
+
+                        case PdC8:
+                            type = PdCType.PdC8;
+                            break;
+
+                        case PdC9:
+                            type = PdCType.PdC9;
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    yield return DisplayMessage(type);
+
                 }
                 else
                 {
@@ -142,6 +190,8 @@ namespace PDC
 
         private List<PdCWord> _messagesObjects = new();
 
+        [SerializeField] GameObject _pdcHolder;
+
         public IEnumerator Start()
         {
             yield return null;
@@ -152,7 +202,7 @@ namespace PDC
         public void AddWord(TranslatedWord word)
         {
             _currentWords.Add(word);
-            _currentMessageText.text += word.Word + " ";
+            _currentMessageText.text += $"{word.Word} ";
         }
 
         public void RemoveLastWord(InputAction.CallbackContext context)
@@ -168,11 +218,15 @@ namespace PDC
             _currentWords.RemoveAt(_currentWords.Count - 1);
         }
 
-        public IEnumerator Setup(PdC Pdc)
+        public IEnumerator DisplayMessage(PdCType Pdc)
         {
-            CurrentPdC = Pdc;
-            _currentMessageText.text = "";
+            for(int i = 0; i < _messagesObjects.Count; i++)
+            {
+                Destroy(_messagesObjects[i].gameObject);
+            }
+            _messagesObjects.Clear();
 
+            yield return null;
             var t = _googleSheetManager.GetMessages((int)Pdc);
             yield return t;
 
@@ -180,14 +234,39 @@ namespace PDC
 
             for(int i = 0; i < messages.Count; i++)
             {
-                Debug.Log("Message " +  (messages[i] == null));
                 if(messages[i] == null || messages[i] == string.Empty) continue;
-                Debug.Log("Message " + i + " : " + messages[i] + " | Prefab : " + (_messagePrefab == null));
                 var m = Instantiate(_messagePrefab, _messagesHolder);
-                m.SetText(messages[i], -1);
+
+                string text = messages[i];
+                text = Localization.LocalizationManager.LocalizeText("<font=rpdpcfont>" + text);
+                Debug.Log(text);
+
+                m.SetText(text, -1);
                 _messagesObjects.Add(m);
                 yield return null;
             }
+        }
+
+        public IEnumerator Setup(PdCType Pdc)
+        {
+            _pdcHolder.SetActive(true);
+            for(int i = 0; i < _wordsButton.Count; i++)
+            {
+                Destroy(_wordsButton[i].gameObject);
+            }
+            _wordsButton.Clear();
+
+            for(int i = 0; i < _messagesObjects.Count; i++)
+            {
+                Destroy(_messagesObjects[i].gameObject);
+            }
+            _messagesObjects.Clear();
+
+            CurrentPdC = Pdc;
+            _currentWords.Clear();
+            _currentMessageText.text = "";
+
+            yield return DisplayMessage(Pdc);
 
             yield return null;
             var listWords = GameManager.Instance.LanguageManager.UnlockedWords;
@@ -214,6 +293,11 @@ namespace PDC
 
             yield return null;
             LayoutRebuilder.ForceRebuildLayoutImmediate(_wordsHoldersHolder.transform as RectTransform);
+        }
+
+        public void ExitPdC()
+        {
+            _pdcHolder.SetActive(false);
         }
     }
 }

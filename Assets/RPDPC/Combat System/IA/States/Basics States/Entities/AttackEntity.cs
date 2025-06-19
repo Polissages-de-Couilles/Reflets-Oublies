@@ -68,7 +68,7 @@ public class AttackEntity : StateEntityBase
         {
             currentAttackTimer = 0f;
 
-            if (animator != null)
+            if (animator != null && animationNames.Count != 0)
             {
                 animator.SetFloat("AttackSpeed", 1f);
                 float animationDuration = animator.runtimeAnimatorController.animationClips.ToList().Find(x => x.name == animationNames[attack.animationID]).length;
@@ -153,6 +153,7 @@ public class AttackEntity : StateEntityBase
 
     void DealDamage(IDamageable damageable, GameObject collider) 
     {
+        if(!currentAttacks.ContainsKey(collider) || !attackAlreadyDealtDamage.ContainsKey(currentAttacks[collider])) return;
         if (!attackAlreadyDealtDamage[currentAttacks[collider]])
         {
             attackAlreadyDealtDamage[currentAttacks[collider]] = true;
