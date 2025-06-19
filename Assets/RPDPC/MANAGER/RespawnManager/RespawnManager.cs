@@ -70,6 +70,8 @@ public class RespawnManager : MonoBehaviour
 
         foreach (BossRespawn br in FindObjectsByType<BossRespawn>(FindObjectsSortMode.None)) br.Respawn();
 
+        GameManager.Instance.PotionManager.RefillPotion(true);
+
         _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
 
         if (_dialogueRevive != null) GameManager.Instance.DialogueManager.StartDialogue(_dialogueRevive);
