@@ -86,6 +86,7 @@ namespace PDC.Localization
             { "[/u]", "</u>" },
             { "[/f]", "</font>" },
             { "[v]", "," },
+            { "[V]", "," },
             { "[/$1]", "<font=rpdpcfont>" },
             { "[/$2]", "<font=rpdpcfont>" },
             { "[/$3]", "<font=rpdpcfont>" },
