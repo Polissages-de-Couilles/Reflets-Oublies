@@ -12,6 +12,7 @@ public class AttackAnimTrigger : MonoBehaviour
     [SerializeField] GameObject vfxAttack3;
 
     [SerializeField] AudioClip sfxAttack1 = null;
+    [SerializeField] AudioClip sfxAttack2 = null;
     [SerializeField] AudioClip sfxAttack3 = null;
     [SerializeField] AudioSource sfxSource;
 
@@ -22,13 +23,13 @@ public class AttackAnimTrigger : MonoBehaviour
         {
             case 1: 
                 collider = collision1;
-                sfxSource.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
+                sfxSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
                 sfxSource.PlayOneShot(sfxAttack1);
                 break;
             case 2: 
                 collider = collision2;
-                sfxSource.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
-                sfxSource.PlayOneShot(sfxAttack1);
+                sfxSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+                sfxSource.PlayOneShot(sfxAttack2);
                 break;
             case 3: 
                 collider = collision3;

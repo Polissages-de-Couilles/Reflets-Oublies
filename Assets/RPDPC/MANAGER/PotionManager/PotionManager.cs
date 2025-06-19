@@ -24,6 +24,8 @@ public class PotionManager : MonoBehaviour
     private Vector3 lastPos;
 
     [SerializeField] GameObject vfx;
+    [SerializeField] AudioClip sfx;
+    [SerializeField] AudioSource sfxSource;
     [SerializeField] List<DoubleImage> potionSprite;
     Image imagePotion;
 
@@ -65,6 +67,7 @@ public class PotionManager : MonoBehaviour
             }
 
             var go = Instantiate(vfx, GameManager.Instance.Player.transform);
+            sfxSource.PlayOneShot(sfx);
             go.transform.localPosition = new(0, -0.5f, 0);
             //Debug.Log("Heal : " + go.transform.localPosition);
         }

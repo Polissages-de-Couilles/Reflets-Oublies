@@ -17,6 +17,7 @@ public class AttackCollider : MonoBehaviour
     bool isEnemy;
     public List<GameObject> CharacterAlreadyAttacked = new List<GameObject>();
     public GameObject vfx = null;
+    public AudioClip sfx = null;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attacker)
     {
@@ -43,6 +44,12 @@ public class AttackCollider : MonoBehaviour
                 if(vfx != null)
                 {
                     Instantiate(vfx, collider.ClosestPointOnBounds(Attacker.transform.position), Quaternion.identity);
+                }
+
+                if(sfx != null && this.TryGetComponent(out AudioSource source))
+                {
+                    source.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
+                    source.PlayOneShot(sfx);
                 }
                 
                 OnDamageableEnterTrigger?.Invoke(damageable, gameObject);
