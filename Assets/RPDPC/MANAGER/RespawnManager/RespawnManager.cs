@@ -12,7 +12,8 @@ public class RespawnManager : MonoBehaviour
     public GameObject DeathUi => _deathUi;
     [SerializeField] GameObject _deathUi;
 
-    [SerializeField] Transform _respawnPoint;
+    public Transform _respawnPoint;
+    public ZoneManager.ZoneName _respawnZone;
     [SerializeField] DialogueContainerSO _dialogueRevive;
     [SerializeField] Image _fade;
 
@@ -72,6 +73,8 @@ public class RespawnManager : MonoBehaviour
         foreach (BossRespawn br in FindObjectsByType<BossRespawn>(FindObjectsSortMode.None)) br.Respawn();
 
         GameManager.Instance.PotionManager.RefillPotion(true);
+
+        GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone));
 
         _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
 
