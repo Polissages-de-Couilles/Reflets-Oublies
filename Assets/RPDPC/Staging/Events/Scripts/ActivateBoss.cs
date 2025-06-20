@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,13 @@ public class ActivateBoss : StagingEvent
     public override void PlayEvent()
     {
         base.PlayEvent();
-        bossStartManager.OnPlayerDetected();
+        GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(DOActivateBoss);
         OnEventFinished?.Invoke();
+    }
+
+    private void DOActivateBoss()
+    {
+        GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(DOActivateBoss);
+        bossStartManager.OnPlayerDetected();
     }
 }
