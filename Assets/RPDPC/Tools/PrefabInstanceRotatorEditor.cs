@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(PrefabInstanceRotator))]
@@ -16,3 +17,4 @@ public class PrefabInstanceRotatorEditor : Editor
         }
     }
 }
+#endif

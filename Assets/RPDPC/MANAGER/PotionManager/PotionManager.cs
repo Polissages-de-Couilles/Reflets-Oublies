@@ -1,4 +1,5 @@
 using DG.Tweening;
+using MeetAndTalk.GlobalValue;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -29,6 +30,7 @@ public class PotionManager : MonoBehaviour
     [SerializeField] AudioSource sfxSource;
     [SerializeField] List<DoubleImage> potionSprite;
     Image imagePotion;
+    public GlobalValueInt CanBuyPotion { get; set; }
 
     private void Awake()
     {
@@ -51,6 +53,12 @@ public class PotionManager : MonoBehaviour
         PIE.PlayerInputAction.Player.Potion.performed += HealPlayer;
 
         uiManager = GameManager.Instance.UIManager;
+
+        var manager = Resources.Load<GlobalValueManager>("GlobalValue");
+        manager.LoadFile();
+        //CanBuyPotion = manager.IntValues.Find(x => x.ValueName.Equals("CAN_BUY_POTION_NB"));
+        bool canBuy = Mathf.Clamp(GameManager.Instance.MemoryManager.EncounteredMemory.FindAll(x => x._isTaken).Count + 1, 0, 5) > GameManager.Instance.PotionManager.MaxPotion;
+        manager.Set("CAN_BUY_POTION_NB", (canBuy ? 1 : 0).ToString());
     }
 
     private void HealPlayer(InputAction.CallbackContext context)

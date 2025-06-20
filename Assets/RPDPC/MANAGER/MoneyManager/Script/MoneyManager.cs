@@ -10,6 +10,7 @@ public class MoneyManager : MonoBehaviour
 
     public TextMeshProUGUI text;
     GlobalValueInt goldGlobalValue;
+    GlobalValueManager manager;
 
 
     private void Awake()
@@ -23,16 +24,19 @@ public class MoneyManager : MonoBehaviour
         {
             text.text = _playerMonney.ToString();
         }
-        var manager = Resources.Load<GlobalValueManager>("GlobalValue");
+        manager = Resources.Load<GlobalValueManager>("GlobalValue");
         manager.LoadFile();
-        goldGlobalValue = manager.IntValues.Find(x => x.ValueName.Equals("GOLD"));
-        goldGlobalValue.Value = _playerMonney;
+        manager.Set("GOLD", _playerMonney.ToString());
+        //goldGlobalValue = manager.IntValues.Find(x => x.ValueName.Equals("GOLD"));
+        //goldGlobalValue.Value = _playerMonney;
     }
 
     public void ChangePlayerMonney(int monney)
     {
         _playerMonney += monney;
-        goldGlobalValue.Value = _playerMonney;
+        manager.LoadFile();
+        manager.Set("GOLD", _playerMonney.ToString());
+        //goldGlobalValue.Value = _playerMonney;
         text.text = _playerMonney.ToString();
         text.transform.DOShakePosition(10, 0.2f);
     }
