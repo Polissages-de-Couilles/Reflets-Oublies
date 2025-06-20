@@ -7795,6 +7795,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1338846732}
+        m_TargetAssemblyTypeName: RespawnManager, Assembly-CSharp
+        m_MethodName: set_isInFinalTemple
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &426366974
 GameObject:
   m_ObjectHideFlags: 0
@@ -9265,6 +9277,10 @@ PrefabInstance:
       propertyPath: _respawnPoint
       value: 
       objectReference: {fileID: 1494482315}
+    - target: {fileID: 4469869961000937705, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
+      propertyPath: _respawnPointFinalTemple
+      value: 
+      objectReference: {fileID: 1545948347}
     - target: {fileID: 5002317196248493013, guid: c823158918b8cac40abbcb1dd5b24c63, type: 3}
       propertyPath: _ui
       value: 
@@ -30203,7 +30219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494482315}
   m_Layer: 0
-  m_Name: --- Respawn ---
+  m_Name: --- Respawn Village ---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31309,6 +31325,37 @@ MonoBehaviour:
   CallFinishedEventAtStart: 0
   objectToRotate: {fileID: 1262012865}
   duration: 0.25
+--- !u!1 &1545948346
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545948347}
+  m_Layer: 0
+  m_Name: --- Respawn Final Temple---
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545948347
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545948346}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -230.4, y: 49.83, z: 443.71002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559922127 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5622264896360836780, guid: 7ac7192c0b1f36a48ae900b49b3742d5, type: 3}
@@ -48559,3 +48606,4 @@ SceneRoots:
   - {fileID: 1794857809}
   - {fileID: 2144732404}
   - {fileID: 1494482315}
+  - {fileID: 1545948347}

@@ -20,6 +20,9 @@ public class RespawnManager : MonoBehaviour
     bool asBeenToVillage = false;
     bool isRespawning = false;
 
+    public bool isInFinalTemple { get; set; } = false;
+    public Transform _respawnPointFinalTemple;
+
     public float VignetteIntensity { get; set; }
 
     public void Start()
@@ -61,7 +64,7 @@ public class RespawnManager : MonoBehaviour
         GameManager.Instance.RespawnManager.DeathUi.SetActive(false);
 
         GameObject player = GameManager.Instance.Player;
-        player.transform.position = _respawnPoint.position;
+        player.transform.position = isInFinalTemple ? _respawnPointFinalTemple.position : _respawnPoint.position;
         player.GetComponent<StateManager>().FORCESetPlayerState(StateManager.States.idle);
         PlayerDamageable pd = player.GetComponent<PlayerDamageable>();
         pd.heal(pd.maxHealth);
@@ -74,7 +77,7 @@ public class RespawnManager : MonoBehaviour
 
         GameManager.Instance.PotionManager.RefillPotion(true);
 
-        GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone));
+        if(!isInFinalTemple) GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone));
 
         ResetPV();
 
