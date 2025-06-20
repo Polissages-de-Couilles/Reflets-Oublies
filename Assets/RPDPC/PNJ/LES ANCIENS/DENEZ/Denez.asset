@@ -465,8 +465,7 @@ MonoBehaviour:
   - {fileID: 7484110119402428468}
   - {fileID: -2237118716846467262}
   - {fileID: 5266406442048261873}
-  - {fileID: 6410530447157797674}
-  _dialogueToRename: {fileID: 6410530447157797674}
+  _dialogueToRename: {fileID: 0}
   _dialogueNewName: DENEZ_Dialogue_2_ACT_2_G
 --- !u!114 &528416713236581029
 MonoBehaviour:
@@ -763,8 +762,6 @@ MonoBehaviour:
   m_Name: DENEZ_Dialogue_1_ACT_2_G
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: 1a019932-1eb1-49ad-bf20-d27abdcd172c
-    TargetNodeGuid: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
   - BaseNodeGuid: 067234c7-9795-4573-980e-5683142b2c70
     TargetNodeGuid: 40d18e27-4b1a-4b04-bdd0-0687a3165be0
   - BaseNodeGuid: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
@@ -775,7 +772,63 @@ MonoBehaviour:
     TargetNodeGuid: 4807fa8b-d751-4f43-83f9-e74b26c846ba
   - BaseNodeGuid: 4807fa8b-d751-4f43-83f9-e74b26c846ba
     TargetNodeGuid: 4fcd0ead-4107-40e6-8a9f-dd90f2c3616e
-  DialogueChoiceNodeDatas: []
+  - BaseNodeGuid: 1a019932-1eb1-49ad-bf20-d27abdcd172c
+    TargetNodeGuid: ef240d2c-b039-4304-a8e3-0681fe39985e
+  - BaseNodeGuid: ef240d2c-b039-4304-a8e3-0681fe39985e
+    TargetNodeGuid: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
+  - BaseNodeGuid: b07c31e6-e93e-4320-952e-4e27c258f011
+    TargetNodeGuid: 61712fda-2261-4115-8b43-8513d9180358
+  - BaseNodeGuid: 61712fda-2261-4115-8b43-8513d9180358
+    TargetNodeGuid: b8961344-ff3e-48db-8e47-9997831c9abf
+  - BaseNodeGuid: b8961344-ff3e-48db-8e47-9997831c9abf
+    TargetNodeGuid: cf0add5f-6152-4d7f-9401-1fa26e4cfcae
+  - BaseNodeGuid: cf0add5f-6152-4d7f-9401-1fa26e4cfcae
+    TargetNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+  - BaseNodeGuid: ef240d2c-b039-4304-a8e3-0681fe39985e
+    TargetNodeGuid: 4be6e681-3469-441a-941e-921dd77a4b8c
+  - BaseNodeGuid: 4be6e681-3469-441a-941e-921dd77a4b8c
+    TargetNodeGuid: b07c31e6-e93e-4320-952e-4e27c258f011
+  - BaseNodeGuid: 4be6e681-3469-441a-941e-921dd77a4b8c
+    TargetNodeGuid: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
+  - BaseNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+    TargetNodeGuid: ef58e64f-1c36-47f8-8a80-995571be5b1e
+  - BaseNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+    TargetNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+  - BaseNodeGuid: 27581e2f-80ed-47db-963d-0681df22fd9c
+    TargetNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+  - BaseNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+    TargetNodeGuid: b6f9873b-b6f9-47f3-9198-74206b20a161
+  - BaseNodeGuid: b6f9873b-b6f9-47f3-9198-74206b20a161
+    TargetNodeGuid: 27581e2f-80ed-47db-963d-0681df22fd9c
+  DialogueChoiceNodeDatas:
+  - NodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+    Position: {x: 2996.8, y: 365.59998}
+    DialogueNodePorts:
+    - PortGuid: 7b6a88e5-eba3-4903-89bc-1e5815f1da72
+      InputGuid: b6f9873b-b6f9-47f3-9198-74206b20a161
+      OutputGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: DENEZ_ACT2_G_CHOICE_1_1
+    - PortGuid: ec09f9c3-1da0-4b27-9b02-4ae9a23ae8e1
+      InputGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+      OutputGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: DENEZ_ACT2_G_CHOICE_1_2
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_5
+    Duration: 0
   DialogueNodeDatas:
   - NodeGuid: 067234c7-9795-4573-980e-5683142b2c70
     Position: {x: 2375.2, y: 777.6}
@@ -829,7 +882,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_2
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_8
     Duration: 0
   - NodeGuid: 4b1f630c-3051-4ba3-9d85-f74d9b52d7d5
     Position: {x: 2775.2, y: 777.6}
@@ -847,7 +900,7 @@ MonoBehaviour:
     AvatarType: 0
     TextType:
     - languageEnum: 0
-      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_3
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_9
     Duration: 0
   - NodeGuid: 4807fa8b-d751-4f43-83f9-e74b26c846ba
     Position: {x: 2975.2, y: 777.6}
@@ -867,42 +920,150 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: EWEN_ACT_2_G_DIALOGUE_DENEZ_1_2
     Duration: 0
+  - NodeGuid: 61712fda-2261-4115-8b43-8513d9180358
+    Position: {x: 2375.2, y: 365.59998}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7895757859592579796, guid: 3364d75373502044bb172cbf181bede5, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: 
+    Duration: 0
+  - NodeGuid: b07c31e6-e93e-4320-952e-4e27c258f011
+    Position: {x: 2175.2, y: 365.59998}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_2
+    Duration: 0
+  - NodeGuid: b8961344-ff3e-48db-8e47-9997831c9abf
+    Position: {x: 2575.2, y: 365.59998}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_3
+    Duration: 0
+  - NodeGuid: cf0add5f-6152-4d7f-9401-1fa26e4cfcae
+    Position: {x: 2775.2, y: 365.59998}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_4
+    Duration: 0
+  - NodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+    Position: {x: 4003.2, y: 730.39996}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_7
+    Duration: 0
+  - NodeGuid: 27581e2f-80ed-47db-963d-0681df22fd9c
+    Position: {x: 3752, y: 365.59998}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 0}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_6
+    Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 4fcd0ead-4107-40e6-8a9f-dd90f2c3616e
     Position: {x: 3206.4, y: 777.6}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  - NodeGuid: ef58e64f-1c36-47f8-8a80-995571be5b1e
+    Position: {x: 4255.2, y: 730.39996}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas:
+  - NodeGuid: b6f9873b-b6f9-47f3-9198-74206b20a161
+    Position: {x: 3377.6, y: 365.59998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 18aab7454588ba947ab794fab9313ab3, type: 2}
   StartNodeDatas:
   - NodeGuid: 1a019932-1eb1-49ad-bf20-d27abdcd172c
-    Position: {x: 2099.2, y: 777.6}
+    Position: {x: 1496, y: 658.39996}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
-  IfNodeDatas: []
---- !u!114 &6410530447157797674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
-  m_Name: DENEZ__Dialogue_8
-  m_EditorClassIdentifier: 
-  NodeLinkDatas: []
-  DialogueChoiceNodeDatas: []
-  DialogueNodeDatas: []
-  TimerChoiceNodeDatas: []
-  EndNodeDatas: []
-  EventNodeDatas: []
-  StartNodeDatas: []
-  RandomNodeDatas: []
-  CommandNodeDatas: []
-  IfNodeDatas: []
+  IfNodeDatas:
+  - NodeGuid: ef240d2c-b039-4304-a8e3-0681fe39985e
+    Position: {x: 1588.8, y: 658.39996}
+    ValueName: CAN_BUY_POTION
+    Operations: 0
+    OperationValue: 
+    TrueGUID: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
+    FalseGUID: 4be6e681-3469-441a-941e-921dd77a4b8c
+  - NodeGuid: 4be6e681-3469-441a-941e-921dd77a4b8c
+    Position: {x: 1846.4, y: 658.39996}
+    ValueName: GOLD
+    Operations: 4
+    OperationValue: 115
+    TrueGUID: b07c31e6-e93e-4320-952e-4e27c258f011
+    FalseGUID: ee5a3b31-7d40-4c74-81ca-1f341d3a7c1f
 --- !u!114 &7216387281662996451
 MonoBehaviour:
   m_ObjectHideFlags: 0
