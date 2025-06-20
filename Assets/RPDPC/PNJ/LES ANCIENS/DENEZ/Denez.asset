@@ -792,10 +792,10 @@ MonoBehaviour:
     TargetNodeGuid: cf0add5f-6152-4d7f-9401-1fa26e4cfcae
   - BaseNodeGuid: cf0add5f-6152-4d7f-9401-1fa26e4cfcae
     TargetNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
-  - BaseNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
-    TargetNodeGuid: ef58e64f-1c36-47f8-8a80-995571be5b1e
   - BaseNodeGuid: 27581e2f-80ed-47db-963d-0681df22fd9c
     TargetNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+  - BaseNodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+    TargetNodeGuid: ef58e64f-1c36-47f8-8a80-995571be5b1e
   - BaseNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
     TargetNodeGuid: b6f9873b-b6f9-47f3-9198-74206b20a161
   - BaseNodeGuid: ed4a8662-ed31-4b7f-ae6f-963578b9c5c3
@@ -992,24 +992,6 @@ MonoBehaviour:
     - languageEnum: 0
       LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_4
     Duration: 0
-  - NodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
-    Position: {x: 4003.2, y: 730.4}
-    DialogueNodePorts: []
-    AudioClips:
-    - languageEnum: 0
-      LanguageGenericType: {fileID: 0}
-    AudioName:
-    - languageEnum: 0
-      LanguageGenericType: 
-    CantBeSkip: 0
-    CanMove: 0
-    Character: {fileID: 0}
-    AvatarPos: 0
-    AvatarType: 0
-    TextType:
-    - languageEnum: 0
-      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_7
-    Duration: 0
   - NodeGuid: 27581e2f-80ed-47db-963d-0681df22fd9c
     Position: {x: 3752, y: 365.6}
     DialogueNodePorts: []
@@ -1027,6 +1009,24 @@ MonoBehaviour:
     TextType:
     - languageEnum: 0
       LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_6
+    Duration: 0
+  - NodeGuid: 9eb5c7ae-d0ae-43ea-9294-f3dea040bae5
+    Position: {x: 4003.2, y: 730.4}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: 7546228857376511551}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: DENEZ_ACT_2_G_DIALOGUE_1_7
     Duration: 0
   TimerChoiceNodeDatas: []
   EndNodeDatas:
@@ -1464,4 +1464,4 @@ MonoBehaviour:
   - type: 5
     LeftPosition: {fileID: 0}
     RightPosition: {fileID: 0}
-  audioVolume: 0.2
+  audioVolume: 0.5
