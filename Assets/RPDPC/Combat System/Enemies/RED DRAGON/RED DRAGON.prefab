@@ -273,6 +273,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 042f866d76ece9941acabdc9b25be255, type: 2}
   - {fileID: 11400000, guid: 6def2b8265fd8f14e88555ad3a8acc4e, type: 2}
   - {fileID: 11400000, guid: 7b1a03c0721eb3044ba96afdfda77fd4, type: 2}
+  prioritizeAttack: 1
   shouldSearchStates: 1
   animator: {fileID: 5611543388560993443}
 --- !u!114 &-624484789455723525
@@ -302,6 +303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Stunned: 0
   canBeStunned: 1
+  canBeKnockbacked: 1
 --- !u!114 &2983110488086302910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawner: {fileID: 0}
+  spawnerCollider: {fileID: 0}
 --- !u!114 &3697477162378850029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,8 +343,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropRate:
-  - min: 2
-    max: 5
+  - min: 3
+    max: 7
     coinSO: {fileID: 11400000, guid: 0360068b692914840a45e46f235490d5, type: 2}
 --- !u!114 &-3612657521886095412
 MonoBehaviour:
@@ -417,6 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859d514061ac1634d9a784c7bc9504f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayHealth: 1
+  center: {fileID: 0}
 --- !u!114 &-1509399832662221795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,6 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _onDeathVFX: {fileID: 8942575455857307612, guid: a153b896da35e3041a219985adfffff1, type: 3}
+  _delay: 0
 --- !u!1 &5611543388551634693
 GameObject:
   m_ObjectHideFlags: 0

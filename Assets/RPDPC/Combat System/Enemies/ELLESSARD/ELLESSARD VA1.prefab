@@ -1152,7 +1152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0c6d7a7b6f23b40bd8f67031e4d202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropRate: []
+  dropRate:
+  - min: 3
+    max: 5
+    coinSO: {fileID: 11400000, guid: 0360068b692914840a45e46f235490d5, type: 2}
+  - min: 2
+    max: 4
+    coinSO: {fileID: 11400000, guid: 8da46b36e080ce14097b8ea970cae5c1, type: 2}
 --- !u!114 &7797252031703604696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1218,6 +1224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859d514061ac1634d9a784c7bc9504f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayHealth: 1
+  center: {fileID: 0}
 --- !u!114 &2108999121017617299
 MonoBehaviour:
   m_ObjectHideFlags: 0
