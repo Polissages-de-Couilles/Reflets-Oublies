@@ -1350,16 +1350,16 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: b3e56603-1f10-4b27-8cf3-8a2fee13c2e8
     TargetNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
-  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
-    TargetNodeGuid: 534c9f5b-d7f2-4ef9-9a5f-3766749e4d71
-  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
-    TargetNodeGuid: d79c134e-ab11-442f-8e9d-a2e3b7735b48
   - BaseNodeGuid: d79c134e-ab11-442f-8e9d-a2e3b7735b48
     TargetNodeGuid: 19265b20-c3cd-4ae1-b680-48231aaa891f
   - BaseNodeGuid: 19265b20-c3cd-4ae1-b680-48231aaa891f
     TargetNodeGuid: d729a4b4-b46d-4a57-a947-46b7df6a90e8
   - BaseNodeGuid: d729a4b4-b46d-4a57-a947-46b7df6a90e8
     TargetNodeGuid: 847ba10f-b6c5-4bab-b8d0-43c016eb9d4b
+  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+    TargetNodeGuid: d79c134e-ab11-442f-8e9d-a2e3b7735b48
+  - BaseNodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
+    TargetNodeGuid: 534c9f5b-d7f2-4ef9-9a5f-3766749e4d71
   DialogueChoiceNodeDatas:
   - NodeGuid: 1d3aaaea-d03a-450d-87b1-2f0e6cbd9920
     Position: {x: 494.4, y: 367.19998}
@@ -1401,10 +1401,6 @@ MonoBehaviour:
     EndNodeType: 0
     Dialogue: {fileID: 0}
   EventNodeDatas:
-  - NodeGuid: d79c134e-ab11-442f-8e9d-a2e3b7735b48
-    Position: {x: 833.6, y: 367.19998}
-    EventScriptableObjects:
-    - DialogueEventSO: {fileID: 11400000, guid: bd35036523350de4782450ff62a604fc, type: 2}
   - NodeGuid: 19265b20-c3cd-4ae1-b680-48231aaa891f
     Position: {x: 1148, y: 367.19998}
     EventScriptableObjects:
@@ -1413,6 +1409,10 @@ MonoBehaviour:
     Position: {x: 1462.4, y: 367.19998}
     EventScriptableObjects:
     - DialogueEventSO: {fileID: 11400000, guid: f9f38666d9f771b4e8ad7c6e006e4050, type: 2}
+  - NodeGuid: d79c134e-ab11-442f-8e9d-a2e3b7735b48
+    Position: {x: 833.6, y: 367.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: bd35036523350de4782450ff62a604fc, type: 2}
   StartNodeDatas:
   - NodeGuid: b3e56603-1f10-4b27-8cf3-8a2fee13c2e8
     Position: {x: 388.8, y: 367.19998}
