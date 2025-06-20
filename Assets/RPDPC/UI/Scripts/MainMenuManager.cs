@@ -63,8 +63,8 @@ public class MainMenuManager : UIPanel
     IEnumerator PlayButtonCoroutine()
     {
         yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
-        SceneManager.LoadScene(GameSceneName);
         isLoadScene = false;
+        SceneManager.LoadScene(GameSceneName);
     }
 
     public void OptionButton()
@@ -84,8 +84,8 @@ public class MainMenuManager : UIPanel
     IEnumerator CreditButtonCoroutine()
     {
         yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
-        SceneManager.LoadScene(CreditSceneName);
         isLoadScene = false;
+        SceneManager.LoadScene(CreditSceneName);
     }
 
     public void quitButton()

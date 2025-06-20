@@ -201,6 +201,7 @@ namespace PDC
 
         public void AddWord(TranslatedWord word)
         {
+            if(_currentWords.Count >= 5) return;
             _currentWords.Add(word);
             _currentMessageText.text += $"{word.Word} ";
         }
@@ -249,6 +250,7 @@ namespace PDC
 
         public IEnumerator Setup(PdCType Pdc)
         {
+            StateMachineManager.StopAllStateMachines();
             _pdcHolder.SetActive(true);
             for(int i = 0; i < _wordsButton.Count; i++)
             {
@@ -297,6 +299,7 @@ namespace PDC
 
         public void ExitPdC()
         {
+            StateMachineManager.RestartAllStateMachines();
             _pdcHolder.SetActive(false);
         }
     }

@@ -49,7 +49,7 @@ public class AttackManager : MonoBehaviour
             if(guardManager.isGuarding) return;
         }
         Time.timeScale = 0.1f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.025f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 
@@ -59,8 +59,8 @@ public class AttackManager : MonoBehaviour
         {
             if(guardManager.isGuarding) return;
         }
-        Time.timeScale = 0.05f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.075f).SetUpdate(UpdateType.Late).OnComplete(
+        Time.timeScale = 0.1f;
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 
