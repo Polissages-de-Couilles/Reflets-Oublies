@@ -25,14 +25,15 @@ public class MirrorsManager : MonoBehaviour
     void InitMirror()
     {
         MemoryManager memoryManager = GameManager.Instance.MemoryManager;
-        if (memoryManager.AllMemory.Count == 6)
+        if (memoryManager.AllMemory.Count == 5)
         {
             int i = 1;
+            foreach (Mirror mirror in mirrorList)
+            {
+                mirror.gameObject.SetActive(true);
+            }
             foreach (MemorySO mem in memoryManager.AllMemory)
             {
-                mirrors.Values.ToList()[i - 1].gameObject.SetActive(true);
-                mirrors.Values.ToList()[GetOppositeMirror(i).ID - 1].gameObject.SetActive(true);
-
                 if (mem._isTaken)
                 {
                     mirrors.Values.ToList()[i - 1].SetBroken();
@@ -41,22 +42,22 @@ public class MirrorsManager : MonoBehaviour
                 i++;
             }
         }
-        else // FOR TEST PURPOSES
-        {
-            for (int i = 1; i < 7; i++)
-            {
-                mirrors.Values.ToList()[i-1].gameObject.SetActive(true);
-                Debug.Log("OPPOSITE MIRROR " + i + GetOppositeMirror(i).ID);
-                mirrors.Values.ToList()[GetOppositeMirror(i).ID-1].gameObject.SetActive(true);
+        //else // FOR TEST PURPOSES
+        //{
+        //    for (int i = 1; i < 6; i++)
+        //    {
+        //        mirrors.Values.ToList()[i-1].gameObject.SetActive(true);
+        //        Debug.Log("OPPOSITE MIRROR " + i + GetOppositeMirror(i).ID);
+        //        mirrors.Values.ToList()[GetOppositeMirror(i).ID-1].gameObject.SetActive(true);
 
-                //System.Random rand = new System.Random();
-                //if (rand.Next(2) == 0)
-                //{
-                //    mirrors.Values.ToList()[i - 1].SetBroken();
-                //    mirrors.Values.ToList()[GetOppositeMirror(i).ID - 1].SetBroken();
-                //}
-            }
-        }
+        //        //System.Random rand = new System.Random();
+        //        //if (rand.Next(2) == 0)
+        //        //{
+        //        //    mirrors.Values.ToList()[i - 1].SetBroken();
+        //        //    mirrors.Values.ToList()[GetOppositeMirror(i).ID - 1].SetBroken();
+        //        //}
+        //    }
+        //}
 
         
     }
