@@ -41,7 +41,9 @@ public class BotDamageable : MonoBehaviour, IDamageable
 
     public void heal(float heal)
     {
-
+        currentHealth += heal;
+        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        OnDamageTaken?.Invoke(0, currentHealth);
     }
 
     void Start()

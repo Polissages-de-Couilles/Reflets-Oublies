@@ -18,6 +18,11 @@ public class BossStartManager : MonoBehaviour
     {
         GetComponent<BotDeathManager>().OnBotDied += OnBotDied;
 
+        SpawnDetectors();
+    }
+
+    public void SpawnDetectors()
+    {
         foreach (WallsInfo d in detectorsInfos)
         {
             GameObject dG = new GameObject("BossPlayerDetector");
