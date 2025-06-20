@@ -31,7 +31,7 @@ public class BossStartManager : MonoBehaviour
         }
     }
 
-    void OnPlayerDetected()
+    public void OnPlayerDetected()
     {
         Debug.Log("ACTIVATE BOSS");
 
