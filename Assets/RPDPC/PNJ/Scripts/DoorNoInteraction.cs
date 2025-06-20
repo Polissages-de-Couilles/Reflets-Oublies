@@ -10,4 +10,9 @@ public class DoorNoInteraction : MonoBehaviour
     {
         DoorAnimator.SetTrigger("Ouvre");
     }
+
+    public void CloseDoor()
+    {
+        DoorAnimator.SetTrigger("Ferme");
+    }
 }

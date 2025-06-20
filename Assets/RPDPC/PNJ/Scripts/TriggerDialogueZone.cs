@@ -11,6 +11,8 @@ public class TriggerDialogueZone : MonoBehaviour
     [SerializeField] int _startId = -1;
     [SerializeField] bool _isRepeatable;
     private bool isFirst = true;
+    [SerializeField] bool useStoryRelation = false;
+    [SerializeField] StoryRelationState state;
 
     private void Awake()
     {
@@ -21,6 +23,8 @@ public class TriggerDialogueZone : MonoBehaviour
     {
         //Debug.Log("Enter Dialogue" + this.name + " : " + other.gameObject);
         if(!isFirst || !other.CompareTag("Player")) return;
+
+        if(useStoryRelation && state != GameManager.Instance.MemoryManager.storyRelationState) return;
 
         GameManager.Instance.DialogueManager.OnNode += OnNode;
         GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(() =>

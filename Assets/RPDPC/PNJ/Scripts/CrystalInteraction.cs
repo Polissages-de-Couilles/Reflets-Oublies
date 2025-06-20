@@ -77,4 +77,16 @@ public class CrystalInteraction : Interactible
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(GameManager.Instance.DialogueUIManager.ButtonContainer.transform.GetChild(0).gameObject);
     }
+
+    public void DesableCrystal()
+    {
+        if(TryGetComponent(out AudioSource source))
+        {
+            source.Stop();
+        }
+        for(int i = 0; i < this.transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
+    }
 }

@@ -92,7 +92,7 @@ public class RespawnManager : MonoBehaviour
         {
             if (mem._isTaken)
             {
-                desiredHealth -= 30;
+                desiredHealth -= 10;
             }
             else
             {
