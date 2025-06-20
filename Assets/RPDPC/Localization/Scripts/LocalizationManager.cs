@@ -14,7 +14,7 @@ namespace PDC.Localization
     {
         [SerializeField] Loader _loader;
         private static string _fontName = "";
-        public static int languageID = 0;
+        public static int languageID = 2;
         public static List<string> _languages = new List<string>();
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
@@ -175,17 +175,20 @@ namespace PDC.Localization
                     return false;
                 }
                 var word = words[i];
+                //Debug.Log(word);
                 
                 if(CheckIfKey() && (word == "/font" || word == "font=rpdpcfont"))
                 {
                     isTranslated = word == "/font" ? false : word == "font=rpdpcfont";
+                    continue;
                 }
 
                 //Debug.Log(word + " : " + (word.Contains('<') || word.Contains('>')) + " | " + word.Length);
-                if(word.Contains('<') || word.Contains('>') || CheckIfKey() || word.Length == 0) continue;
+                if(word.Contains('<') || word.Contains('>')/* || word.Contains("/color") || word.Contains("color=") */|| CheckIfKey() || word.Length == 0) continue;
+
 
                 //Debug.Log("Word : " + word + " | " + GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) + " | " + isTranslated);
-                if(!GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
+                if(GameManager.Instance != null && !GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.ToLower()) && !word.Equals(string.Empty) && isTranslated)
                 {
                     text = text.Replace(word, GetTranslatedWord(word), StringComparison.OrdinalIgnoreCase);
                 }
@@ -205,13 +208,26 @@ namespace PDC.Localization
                         text = text.Replace($"{word}", $"{word}", StringComparison.OrdinalIgnoreCase);
                     }
 
-                    if(GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.Replace(" ", string.Empty).ToLower()) && isTranslated)
+                    if(GameManager.Instance != null && GameManager.Instance.LanguageManager.UnlockedWords.Any(x => x.Word.ToLower() == word.Replace(" ", string.Empty).ToLower()) && isTranslated)
                     {
                         text = text.Replace(word, $"</font>{word} <font=rpdpcfont>");
                     }
                 }
+
+                //Debug.Log(text);
             }
-            
+
+            for(int i = 0; i < words.Length; i++)
+            {
+                if(i > 0 && i < words.Length - 2)
+                {
+                    if(words[i - 1].Contains('<') && words[i + 1].Contains('>'))
+                    {
+                        text = text.Replace($"{words[i]}", $"{words[i]}", StringComparison.OrdinalIgnoreCase);
+                    }
+                }
+            }
+
             return text;
         }
 
@@ -251,6 +267,8 @@ namespace PDC.Localization
             t.Replace($"\r\n", string.Empty);
             //Debug.Log(t);
             t = SimplifyText(t);
+            //Debug.Log(t);
+            t = RemoveDiacritics(t);
             //Debug.Log(t);
             t = TranslateWord(t);
             //Debug.Log(t);
