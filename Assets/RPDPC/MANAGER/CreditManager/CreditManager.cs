@@ -26,6 +26,7 @@ public class CreditManager : MonoBehaviour
 
     private void ExitCredit(InputAction.CallbackContext context)
     {
+        playerInputAction.Player.Pause.performed -= ExitCredit;
         SceneManager.LoadScene(0);
     }
 

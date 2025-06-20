@@ -8,10 +8,13 @@ public class FromSpawnerManager : MonoBehaviour
 
     private void Start()
     {
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position, out hit, Mathf.Infinity, NavMesh.AllAreas))
+        if(GetComponent<NavMeshAgent>() != null)
         {
-            GetComponent<NavMeshAgent>().Warp(hit.position);
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(transform.position, out hit, Mathf.Infinity, NavMesh.AllAreas))
+            {
+                GetComponent<NavMeshAgent>().Warp(hit.position);
+            }
         }
         foreach (FromSpawnerManager fsm in GetComponentsInChildren<FromSpawnerManager>())
         {

@@ -104,4 +104,9 @@ public class RespawnManager : MonoBehaviour
         }
         if(pd.maxHealth != desiredHealth) pd.SetMaxHealth(desiredHealth);
     }
+
+    public void GoToCredit()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

@@ -202,11 +202,11 @@ namespace MeetAndTalk
             dialogueUIManager.SkipButton.SetActive(!_nodeData.CantBeSkip);
             MakeButtons(new List<DialogueNodePort>());
 
+            if(audioSource.isPlaying) audioSource.Stop();
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if(audioSource.isPlaying) audioSource.Stop();
                 audioSource.volume = _nodeData.Character.audioVolume;
-                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType, _nodeData.Character.audioVolume);
             }
 
             string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
@@ -270,11 +270,11 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSeconds(_nodeData.Duration); ChoiceNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
+            if (audioSource.isPlaying) audioSource.Stop();
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if (audioSource.isPlaying) audioSource.Stop();
                 audioSource.volume = _nodeData.Character.audioVolume;
-                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType, _nodeData.Character.audioVolume);
             }
 
             string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;
@@ -349,6 +349,7 @@ namespace MeetAndTalk
             switch (_nodeData.EndNodeType)
             {
                 case EndNodeType.End:
+                    if(audioSource.isPlaying) audioSource.Stop();
                     dialogueUIManager.dialogueCanvas.SetActive(false);
                     dialogueUIManager.textBackground.SetActive(false);
                     isDialogueInProcess = false;
@@ -418,11 +419,11 @@ namespace MeetAndTalk
             IEnumerator tmp() { yield return new WaitForSecondsRealtime(_nodeData.Duration); TimerNode_GenerateChoice(); }
             StartCoroutine(tmp());
 
+            if (audioSource.isPlaying) audioSource.Stop();
             if (_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType != null)
             {
-                if (audioSource.isPlaying) audioSource.Stop();
                 audioSource.volume = _nodeData.Character.audioVolume;
-                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType);
+                audioSource.PlayOneShot(_nodeData.AudioClips.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType, _nodeData.Character.audioVolume);
             }
 
             string _audioName = _nodeData.AudioName.Find(clip => clip.languageEnum == localizationManager.SelectedLang()).LanguageGenericType;

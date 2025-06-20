@@ -255,7 +255,7 @@ namespace MeetAndTalk.GlobalValue
                 label = "Glabal Value Manager",
                 guiHandler = (searchContext) =>
                 {
-                    EditorGUILayout.HelpBox("Tu dam jakiú opis", MessageType.Info, true);
+                    EditorGUILayout.HelpBox("Tu dam jakiÅEopis", MessageType.Info, true);
                     var settings = GlobalValueManager.GetSerializedSettings();
 
                     ShowArray(settings, "IntValues", "Int");

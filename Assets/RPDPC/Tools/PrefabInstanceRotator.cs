@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using System.Collections.Generic;
 
@@ -57,3 +58,4 @@ public class PrefabInstanceRotator : MonoBehaviour
         obj.transform.rotation = Quaternion.Euler(0f, randomY, 0f);
     }
 }
+#endif

@@ -1049,18 +1049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32bef724dc8ee1746be61dae99410230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unlockedWords:
-  - {fileID: 11400000, guid: e5dc69c80430bfb498c5f33f3d55e7a3, type: 2}
-  - {fileID: 11400000, guid: ff62ac45153f71a40bc025660fbdbc20, type: 2}
-  - {fileID: 11400000, guid: bd5463b7f0e44ec4fa2b77655f31622b, type: 2}
-  - {fileID: 11400000, guid: 943d3624037a5904a862093f0b41c707, type: 2}
-  - {fileID: 11400000, guid: bb813c41b5423a1418c0553d445729ca, type: 2}
-  - {fileID: 11400000, guid: 1bd05f917b856be49b9fe90fc181365c, type: 2}
-  - {fileID: 11400000, guid: 63e7b7c1f10dd6e45b6f0abba2f00498, type: 2}
-  - {fileID: 11400000, guid: 28b318e40ecf3434e8afbfb84f67df40, type: 2}
-  - {fileID: 11400000, guid: 8544a639a85ec5e48bd43e7a9c6fb297, type: 2}
-  - {fileID: 11400000, guid: c87b603efd74bba4e87e352f4ece0a6e, type: 2}
-  - {fileID: 11400000, guid: 3a43b83e0d22d3d499f8bbce4d4fb1b2, type: 2}
+  _unlockedWords: []
 --- !u!1 &5179735403974734202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,6 +1730,7 @@ MonoBehaviour:
   _respawnZone: 2
   _dialogueRevive: {fileID: 0}
   _fade: {fileID: 0}
+  _respawnPointFinalTemple: {fileID: 0}
 --- !u!1 &7945319932073855265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,7 +1909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 3
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionId
@@ -1930,12 +1920,132 @@ PrefabInstance:
       value: 68b273f0-93a3-4f65-bfe1-33c818c5774f
       objectReference: {fileID: 0}
     - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionId
+      value: 8e9f686b-733c-4208-98ed-ae4d83ba9691
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionId
+      value: 3a7630b0-7af9-4625-9b27-07e203f831b5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionId
+      value: 9708e605-dd42-4efb-9228-c17999f15f5e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionId
+      value: fbb4e630-0cd8-42c5-8196-72d48b1e4cd2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 5eba5024-bf93-45c2-b210-174d2dc3b671
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionId
+      value: b882c93b-94cd-4e0b-bc64-b33b84a7e996
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionId
+      value: 3afffa10-c09a-4766-aee8-17acf3c184d1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionId
+      value: 9b0f18f1-24b4-4e5c-9a0d-6221d65c5e13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionId
+      value: c05310ec-dded-49e2-b8a1-2602fb5b45f4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: afabd0e9-4591-4f5e-8e70-a97e08974a4b
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: ee9ff91b-9393-42f7-ae7a-ba655b8b2846
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: c2099937-1ba6-45d0-b97f-aca9b34ab55e
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 880bcaa7-158c-4e19-89bb-f847e21bbf75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: edf7940d-49a1-4f68-9832-44af6de99bd2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: 1e3679f7-ed7b-443f-aa98-1b4566d0f925
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
       propertyPath: m_ActionEvents.Array.data[1].m_ActionName
       value: Player/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d,/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/leftStick/right]
       objectReference: {fileID: 0}
     - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
       propertyPath: m_ActionEvents.Array.data[2].m_ActionName
       value: Player/Dash[/Keyboard/shift,/DualShock4GamepadHID/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_ActionName
+      value: Player/Attack[/Mouse/leftButton,/DualShock4GamepadHID/buttonWest]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_ActionName
+      value: Player/Potion[/Keyboard/q,/DualShock4GamepadHID/buttonNorth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_ActionName
+      value: Player/Pause[/Keyboard/escape,/DualShock4GamepadHID/start]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[6].m_ActionName
+      value: Player/Lock[/Mouse/rightButton,/DualShock4GamepadHID/leftShoulder,/DualShock4GamepadHID/leftTrigger]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Player/Validate[/DualShock4GamepadHID/buttonEast,/Keyboard/e]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[8].m_ActionName
+      value: UI/Navigate[/DualShock4GamepadHID/leftStick/up,/DualShock4GamepadHID/rightStick/up,/DualShock4GamepadHID/leftStick/down,/DualShock4GamepadHID/rightStick/down,/DualShock4GamepadHID/leftStick/left,/DualShock4GamepadHID/rightStick/left,/DualShock4GamepadHID/leftStick/right,/DualShock4GamepadHID/rightStick/right,/DualShock4GamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[9].m_ActionName
+      value: UI/Submit[/Keyboard/enter,/DualShock4GamepadHID/buttonSouth,/Keyboard/space]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[10].m_ActionName
+      value: UI/Cancel[/Keyboard/escape,/DualShock4GamepadHID/buttonEast]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_ActionName
+      value: UI/Point[/Mouse/position]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: UI/Click[/Mouse/leftButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: UI/ScrollWheel[/Mouse/scroll]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: UI/MiddleClick[/Mouse/middleButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: UI/RightClick[/Mouse/rightButton]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: UI/TrackedDevicePosition
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205416670056715292, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: UI/TrackedDeviceOrientation
       objectReference: {fileID: 0}
     - target: {fileID: 8192021251773286537, guid: 4a39fbfbe5f717a4d817b6749ffa92d4, type: 3}
       propertyPath: m_Name
@@ -2176,7 +2286,7 @@ PrefabInstance:
     - target: {fileID: 5263948596439090914, guid: 78bef0a03062df742859970539f56b29, type: 3}
       propertyPath: sfxSource
       value: 
-      objectReference: {fileID: 1814864504434852560}
+      objectReference: {fileID: 6154624827523743812}
     - target: {fileID: 5263948596439090914, guid: 78bef0a03062df742859970539f56b29, type: 3}
       propertyPath: potionSprite.Array.size
       value: 5
@@ -2309,6 +2419,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 587327409561791335, guid: 78bef0a03062df742859970539f56b29, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1814864504434852560}
+    - targetCorrespondingSourceObject: {fileID: 587327409561791335, guid: 78bef0a03062df742859970539f56b29, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6154624827523743812}
   m_SourcePrefab: {fileID: 100100000, guid: 78bef0a03062df742859970539f56b29, type: 3}
 --- !u!114 &2102642984021036913 stripped
 MonoBehaviour:
@@ -2332,6 +2445,102 @@ GameObject:
   m_PrefabInstance: {fileID: 6062790663519439251}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &1814864504434852560
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630918052993458932}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -4841154879767122746, guid: 9d7535b2653935041a8b40eafa689882, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 0.05
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &6154624827523743812
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2635,7 +2844,7 @@ MonoBehaviour:
   SfxPrefab: {fileID: 1797787993950093809, guid: efc0199d7af4f0e4b8fa62138337ff2f, type: 3}
   _combatMusic: {fileID: 8300000, guid: 67ae8873881ff334ea7cf1c61a127466, type: 3}
   _otherSource: {fileID: 4322674206469227628}
-  _musicVolume: 0.0075
+  _musicVolume: 0.05
   _AmbienceVolume: 0.1
   _audioSources:
   - {fileID: 6888790459108736913}

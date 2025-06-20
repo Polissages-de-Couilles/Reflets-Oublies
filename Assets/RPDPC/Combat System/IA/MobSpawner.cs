@@ -84,7 +84,7 @@ public class MobSpawner : MonoBehaviour
             //mob.GetComponent<NavMeshAgent>().Warp(hit.position);
             mob.GetComponent<FromSpawnerManager>().spawner = gameObject;
             mob.GetComponent<FromSpawnerManager>().spawnerCollider = col;
-            spawnedMobs.Add(mob);
+            foreach (StateMachineManager smm in mob.GetComponentsInChildren<StateMachineManager>()) spawnedMobs.Add(smm.gameObject);
             mob.name = mob.name + " " + spawnedMobs.IndexOf(mob);
         }
     }

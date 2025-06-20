@@ -25,6 +25,8 @@ public class AttackManager : MonoBehaviour
     bool doNextAttack = false;
     [SerializeField] private List<StateManager.States> states = new List<StateManager.States>();
 
+    public bool canAttack;
+
     enum attackPhaseEnum
     {
         Phase1,
@@ -47,7 +49,7 @@ public class AttackManager : MonoBehaviour
             if(guardManager.isGuarding) return;
         }
         Time.timeScale = 0.1f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.025f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 
@@ -57,8 +59,8 @@ public class AttackManager : MonoBehaviour
         {
             if(guardManager.isGuarding) return;
         }
-        Time.timeScale = 0.05f;
-        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 0.075f).SetUpdate(UpdateType.Late).OnComplete(
+        Time.timeScale = 0.1f;
+        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.05f).SetUpdate(UpdateType.Late).OnComplete(
             () => Time.timeScale = 1f);
     }
 
@@ -87,30 +89,33 @@ public class AttackManager : MonoBehaviour
 
     void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Interraction Attack");
-        if(nextAttackPhase != nextAttackPhaseLate)
+        if (canAttack)
         {
-            doNextAttack = true;
-        }
-
-        if (isStateCompatible(stateManager.playerState))
-        {
-            if(nextAttackPhase == nextAttackPhaseLate)
+            Debug.Log("Interraction Attack");
+            if (nextAttackPhase != nextAttackPhaseLate)
             {
-                collision1.CharacterAlreadyAttacked.Clear();
-                collision2.CharacterAlreadyAttacked.Clear();
-                collision3.CharacterAlreadyAttacked.Clear();
-                if (nextAttackPhase == attackPhaseEnum.Phase1)
+                doNextAttack = true;
+            }
+
+            if (isStateCompatible(stateManager.playerState))
+            {
+                if (nextAttackPhase == nextAttackPhaseLate)
                 {
-                    StartCoroutine(AttackPhase1());
-                }
-                else if (nextAttackPhase == attackPhaseEnum.Phase2)
-                {
-                    StartCoroutine(AttackPhase2());
-                }
-                else
-                {
-                    StartCoroutine(AttackPhase3());
+                    collision1.CharacterAlreadyAttacked.Clear();
+                    collision2.CharacterAlreadyAttacked.Clear();
+                    collision3.CharacterAlreadyAttacked.Clear();
+                    if (nextAttackPhase == attackPhaseEnum.Phase1)
+                    {
+                        StartCoroutine(AttackPhase1());
+                    }
+                    else if (nextAttackPhase == attackPhaseEnum.Phase2)
+                    {
+                        StartCoroutine(AttackPhase2());
+                    }
+                    else
+                    {
+                        StartCoroutine(AttackPhase3());
+                    }
                 }
             }
         }
