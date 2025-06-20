@@ -15,12 +15,16 @@ MonoBehaviour:
   NodeLinkDatas:
   - BaseNodeGuid: c303143e-663d-4deb-8c5a-9cd139d3e36d
     TargetNodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
-  - BaseNodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
+  - BaseNodeGuid: 3b01e490-0f77-4462-90c2-985573c918a4
+    TargetNodeGuid: 57e5695c-4f67-46c4-a325-b90d4fbae063
+  - BaseNodeGuid: 57e5695c-4f67-46c4-a325-b90d4fbae063
     TargetNodeGuid: 889cfddf-3ee1-48b3-94a6-3f34e5967e38
+  - BaseNodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
+    TargetNodeGuid: 3b01e490-0f77-4462-90c2-985573c918a4
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 9f02c4e3-a83b-49c4-b47a-ac3522de4c93
-    Position: {x: 392, y: 285}
+    Position: {x: 392, y: 284.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -40,13 +44,21 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 889cfddf-3ee1-48b3-94a6-3f34e5967e38
-    Position: {x: 640, y: 285}
+    Position: {x: 1249.6, y: 284.8}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 3b01e490-0f77-4462-90c2-985573c918a4
+    Position: {x: 609.6, y: 284.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 632fa78d76bc99b449a1cc00d4b35ffe, type: 2}
+  - NodeGuid: 57e5695c-4f67-46c4-a325-b90d4fbae063
+    Position: {x: 921.6, y: 284.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b56ad6cece31c9a489ab44924f5879e0, type: 2}
   StartNodeDatas:
   - NodeGuid: c303143e-663d-4deb-8c5a-9cd139d3e36d
-    Position: {x: 272, y: 285}
+    Position: {x: 272, y: 284.8}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
@@ -1516,16 +1528,26 @@ MonoBehaviour:
   m_Name: OMBRE_Mort_ACT_6_N
   m_EditorClassIdentifier: 
   NodeLinkDatas:
-  - BaseNodeGuid: eddf87b4-ad26-47e5-b465-d6152aaa1736
-    TargetNodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
   - BaseNodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
     TargetNodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
   - BaseNodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
+    TargetNodeGuid: baa9412c-9f35-40a3-b574-f985d66fd009
+  - BaseNodeGuid: baa9412c-9f35-40a3-b574-f985d66fd009
+    TargetNodeGuid: da7999b1-a7cc-4b24-83df-31186c349089
+  - BaseNodeGuid: da7999b1-a7cc-4b24-83df-31186c349089
     TargetNodeGuid: 58de677c-62d9-4f87-9e45-de179bd2d9bd
+  - BaseNodeGuid: eddf87b4-ad26-47e5-b465-d6152aaa1736
+    TargetNodeGuid: 69b9932f-d869-4607-86d6-e9523eaa89af
+  - BaseNodeGuid: 69b9932f-d869-4607-86d6-e9523eaa89af
+    TargetNodeGuid: 3745104f-e7dc-47f1-b74b-9c6207a776fa
+  - BaseNodeGuid: 3745104f-e7dc-47f1-b74b-9c6207a776fa
+    TargetNodeGuid: 9436e156-520c-4d83-9c9c-158a0a2b41a7
+  - BaseNodeGuid: 9436e156-520c-4d83-9c9c-158a0a2b41a7
+    TargetNodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: c4b8b35a-6826-4c4d-8088-ef22ca9d61e0
-    Position: {x: 445, y: 283}
+    Position: {x: 444.8, y: 283.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1543,7 +1565,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_6_N_MORT_1
     Duration: 0
   - NodeGuid: 3dca2a88-b2a6-46e4-aa2c-9bbf9bc750ff
-    Position: {x: 678, y: 283}
+    Position: {x: 678.4, y: 283.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1563,13 +1585,33 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 58de677c-62d9-4f87-9e45-de179bd2d9bd
-    Position: {x: 935, y: 292}
+    Position: {x: 1540.8, y: 283.19998}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: baa9412c-9f35-40a3-b574-f985d66fd009
+    Position: {x: 890.4, y: 283.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b297557bd68400844957aea9edddfced, type: 2}
+  - NodeGuid: 9436e156-520c-4d83-9c9c-158a0a2b41a7
+    Position: {x: 123.2, y: 283.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 79541a55347c27946afe3c94052f23f2, type: 2}
+  - NodeGuid: 3745104f-e7dc-47f1-b74b-9c6207a776fa
+    Position: {x: -190.4, y: 283.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: c5d8eed46c40e4f49909f87fb7d7a19a, type: 2}
+  - NodeGuid: 69b9932f-d869-4607-86d6-e9523eaa89af
+    Position: {x: -516.8, y: 283.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 19b41ff00e1bc9d49a0599c2b66f4a77, type: 2}
+  - NodeGuid: da7999b1-a7cc-4b24-83df-31186c349089
+    Position: {x: 1208.8, y: 283.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 2cfae658f8f2ec34489725772e496192, type: 2}
   StartNodeDatas:
   - NodeGuid: eddf87b4-ad26-47e5-b465-d6152aaa1736
-    Position: {x: 293, y: 292}
+    Position: {x: -608, y: 283.19998}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas: []
@@ -3317,7 +3359,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NodeLinkDatas:
   - BaseNodeGuid: 3f24d1f3-d695-4bd5-b14b-fae9f8c71c33
+    TargetNodeGuid: 59cfa6a8-423e-47c3-a7cf-b3538ab1ed54
+  - BaseNodeGuid: 5d382267-f7fb-47ec-a14a-071af3b35a8a
+    TargetNodeGuid: d1fa3782-7e0a-4895-b08e-50a38e8c7633
+  - BaseNodeGuid: d1fa3782-7e0a-4895-b08e-50a38e8c7633
+    TargetNodeGuid: 611b1f60-5737-4d47-9d35-2cb8fb4aa2fd
+  - BaseNodeGuid: 11fd7ef6-8115-4c5c-b724-9ba6aaab8fde
+    TargetNodeGuid: 5d382267-f7fb-47ec-a14a-071af3b35a8a
+  - BaseNodeGuid: 59cfa6a8-423e-47c3-a7cf-b3538ab1ed54
+    TargetNodeGuid: d3c8ccf5-307c-431e-8828-bdce4eef6842
+  - BaseNodeGuid: e9d293d4-9152-4615-8f03-796655d5662a
     TargetNodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
+  - BaseNodeGuid: d3c8ccf5-307c-431e-8828-bdce4eef6842
+    TargetNodeGuid: e9d293d4-9152-4615-8f03-796655d5662a
   - BaseNodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
     TargetNodeGuid: 05927847-853a-4c64-837b-809ba7e07582
   - BaseNodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
@@ -3325,13 +3379,13 @@ MonoBehaviour:
   - BaseNodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
     TargetNodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
   - BaseNodeGuid: 05927847-853a-4c64-837b-809ba7e07582
-    TargetNodeGuid: 611b1f60-5737-4d47-9d35-2cb8fb4aa2fd
+    TargetNodeGuid: 11fd7ef6-8115-4c5c-b724-9ba6aaab8fde
   - BaseNodeGuid: 8d1a65b7-7ae2-48b6-bdbc-b442a2720355
     TargetNodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 1bdb9de9-deed-46a2-bc4b-b5e79fa38789
-    Position: {x: 1186, y: 291}
+    Position: {x: 1186.4, y: 291.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -3349,7 +3403,7 @@ MonoBehaviour:
       LanguageGenericType: EWEN_DIALOGUE_0_1
     Duration: 0
   - NodeGuid: 65b596ff-adb7-45ca-93e9-e0c25990d41e
-    Position: {x: 383, y: 291}
+    Position: {x: 383.2, y: 291.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -3367,7 +3421,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_6_B_MORT_1
     Duration: 0
   - NodeGuid: 97eb0af6-c923-4285-b5d6-6ae3015bcb17
-    Position: {x: 863, y: 291}
+    Position: {x: 863.2, y: 291.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -3385,7 +3439,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_6_B_MORT_3
     Duration: 0
   - NodeGuid: 05927847-853a-4c64-837b-809ba7e07582
-    Position: {x: 1485, y: 291}
+    Position: {x: 1484.8, y: 291.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -3403,7 +3457,7 @@ MonoBehaviour:
       LanguageGenericType: OMBRE_ACT_6_B_MORT_4
     Duration: 0
   - NodeGuid: 8d1a65b7-7ae2-48b6-bdbc-b442a2720355
-    Position: {x: 622, y: 291}
+    Position: {x: 622.4, y: 291.19998}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -3423,18 +3477,42 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 611b1f60-5737-4d47-9d35-2cb8fb4aa2fd
-    Position: {x: 1767, y: 291}
+    Position: {x: 2637.6, y: 291.19998}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 5d382267-f7fb-47ec-a14a-071af3b35a8a
+    Position: {x: 2009.6, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 22af6d1add2f6fb4092476fabc159b18, type: 2}
+  - NodeGuid: d1fa3782-7e0a-4895-b08e-50a38e8c7633
+    Position: {x: 2318.4, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: cb734491f7aa996499e9ce7ad6a3b96c, type: 2}
+  - NodeGuid: 11fd7ef6-8115-4c5c-b724-9ba6aaab8fde
+    Position: {x: 1692.8, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 29489e464d3d0f646a3af5e90c93033d, type: 2}
+  - NodeGuid: 59cfa6a8-423e-47c3-a7cf-b3538ab1ed54
+    Position: {x: -692.8, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: ed48f8e2c6fea164e915416ec61299d5, type: 2}
+  - NodeGuid: e9d293d4-9152-4615-8f03-796655d5662a
+    Position: {x: 25.6, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b1c97ca4bff198c4aa2dfb1b70d1d875, type: 2}
+  - NodeGuid: d3c8ccf5-307c-431e-8828-bdce4eef6842
+    Position: {x: -344.8, y: 291.19998}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: b26d601be1bb1e94bb78ee13a48133c9, type: 2}
   StartNodeDatas:
   - NodeGuid: 3f24d1f3-d695-4bd5-b14b-fae9f8c71c33
-    Position: {x: 249, y: 291}
+    Position: {x: -780.8, y: 291.19998}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas:
   - NodeGuid: fdf57e03-629a-4df4-95c7-e1560c840bd9
-    Position: {x: 1737, y: 443}
+    Position: {x: 1992.8, y: 643.2}
     commmand: PTDR A LA FIN EWEN MEURT
   IfNodeDatas: []
 --- !u!114 &6951266592987921972
