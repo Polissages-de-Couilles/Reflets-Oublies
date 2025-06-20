@@ -76,9 +76,29 @@ public class RespawnManager : MonoBehaviour
 
         GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone));
 
+        ResetPV();
+
         _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 0f), 3f);
 
         if (_dialogueRevive != null) GameManager.Instance.DialogueManager.StartDialogue(_dialogueRevive);
         isRespawning = false;
+    }
+
+    void ResetPV()
+    {
+        PlayerDamageable pd = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
+        float desiredHealth = 100;
+        foreach (MemorySO mem in GameManager.Instance.MemoryManager.EncounteredMemory)
+        {
+            if (mem._isTaken)
+            {
+                desiredHealth -= 30;
+            }
+            else
+            {
+                desiredHealth += 20;
+            }
+        }
+        if(pd.maxHealth != desiredHealth) pd.SetMaxHealth(desiredHealth);
     }
 }
