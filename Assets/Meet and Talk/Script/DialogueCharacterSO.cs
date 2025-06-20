@@ -17,6 +17,8 @@ namespace MeetAndTalk
         public Color textColor = new Color(.8f, .8f, .8f, 1);
         [Header("Avatars")]
         public List<CharacterSprite> Avatars;
+        [Header("Audio Volume"), Range(0, 1)]
+        public float audioVolume = 1f;
 
         public string HexColor()
         {

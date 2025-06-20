@@ -554,6 +554,7 @@ public class DialogueCharacterSOInspector : Editor
         }
 
         EditorGUILayout.PropertyField(serializedObject.FindProperty("textColor"), new GUIContent("Character Text Color"), true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("audioVolume"), new GUIContent("Volume Dialogue"), true);
         EditorGUILayout.EndVertical();
 
         // Name
