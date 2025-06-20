@@ -13,6 +13,11 @@ public class FromSpawnerManager : MonoBehaviour
         {
             GetComponent<NavMeshAgent>().Warp(hit.position);
         }
+        foreach (FromSpawnerManager fsm in GetComponentsInChildren<FromSpawnerManager>())
+        {
+            fsm.spawner = spawner;
+            fsm.spawnerCollider = spawnerCollider;
+        }
     }
 
     public bool isFromSpawner()

@@ -39,9 +39,10 @@ public class CreditManager : MonoBehaviour
 
         playerInputAction.Player.Pause.performed += ExitCredit;
 
-        while(_creditHolder.position.y < (1080 + 280 + _listHolder.sizeDelta.y))
+        while(_creditHolder.position.y < ((Screen.height * 1.5f) + _listHolder.sizeDelta.y))
         {
             yield return null;
+            //Debug.Log(_listHolder.sizeDelta.y + " | " + (_creditHolder as RectTransform).localPosition.y + " | " + (1080 + 540 + _listHolder.sizeDelta.y) + " | " + (_creditHolder as RectTransform).position.y);
             var speed = _speed;
             if(playerInputAction.Player.Validate.IsPressed()) speed *= 10;
             _creditHolder.position += Vector3.up * Time.deltaTime * speed;
