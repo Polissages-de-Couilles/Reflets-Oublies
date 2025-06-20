@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9de1e246e5efa9046bf12a2ee7b21f30, type: 3}
-  m_Name: Death
+  m_Script: {fileID: 11500000, guid: 9da5a4715071dbb4685fbd7aaae2521e, type: 3}
+  m_Name: DeathDialogue
   m_EditorClassIdentifier: 
   priority: 0
-  conditions: []
+  conditions:
+  - logicalGate: 0
+    baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
+    not: 0
+    otherParts: []
   isHostileState: 0
   animationNames: []
   isAttack: 0
-  States:
-  - delayBeforePlay: 0
-    state: {fileID: 11400000, guid: 00bf59aab3471e84390e97026bb74070, type: 2}
-  - delayBeforePlay: 0
-    state: {fileID: 11400000, guid: 0b7d1a68ae6309a4787b7b6d979287ba, type: 2}
+  dialogueGOOD: {fileID: 0}
+  dialogueBAD: {fileID: 0}
+  dialogueNEUTRAL: {fileID: 0}
+  ListOfTypesToDESTROY: []
