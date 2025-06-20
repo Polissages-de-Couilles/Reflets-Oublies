@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class PotionManager : MonoBehaviour
 {
     private int maxMaxPotion;
+    public int MaxPotion => maxPotion;
     private int maxPotion = 1;
     public int currentPotion = 1;
 
