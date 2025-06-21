@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6116768128098964030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: TOMBE1
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: TOMBE6_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  audioVolume: 1
+--- !u!114 &-46201052523352885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Tombe6_Dial
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 4e4397a5-ee22-40aa-b62b-ac8653c82a50
+    TargetNodeGuid: 7eaa25d6-e0c2-43e4-8580-29f9f3d7fcd6
+  - BaseNodeGuid: 7eaa25d6-e0c2-43e4-8580-29f9f3d7fcd6
+    TargetNodeGuid: a16909b6-1e09-4e3e-a751-d2d8018cc257
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 7eaa25d6-e0c2-43e4-8580-29f9f3d7fcd6
+    Position: {x: 383, y: 226}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -6116768128098964030}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: TOMBE6_DIALOGUE
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: a16909b6-1e09-4e3e-a751-d2d8018cc257
+    Position: {x: 650, y: 226}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 4e4397a5-ee22-40aa-b62b-ac8653c82a50
+    Position: {x: 224, y: 214}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: Tombe6
+  m_EditorClassIdentifier: 
+  _character: {fileID: -6116768128098964030}
+  _characterNameKey: TOMBE6_NAME
+  _dialogueToAdd: {fileID: 0}
+  _allDialogue:
+  - {fileID: -46201052523352885}
+  _dialogueToRename: {fileID: -46201052523352885}
+  _dialogueNewName: Tombe6_Dial
