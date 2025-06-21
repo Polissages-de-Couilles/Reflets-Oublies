@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -54,6 +55,20 @@ public class AudioSettings : MonoBehaviour
         if(GameManager.Instance.Player.TryGetComponent(out StateManager manager))
         {
             manager.OnFightStateChanged += OnCombatEnter;
+        }
+
+        var volumeNames = Enum.GetNames(typeof(Volume));
+        foreach (var volumeName in volumeNames)
+        {
+            if(PlayerPrefs.HasKey(volumeName))
+            {
+                GameManager.Instance.AudioManager.Mixer.SetFloat(volumeName, Mathf.Clamp(Mathf.Log10(PlayerPrefs.GetFloat(volumeName)) * 20, -80, 20));
+            }
+            else
+            {
+                GameManager.Instance.AudioManager.Mixer.SetFloat(volumeName, Mathf.Clamp(Mathf.Log10(0.5f) * 20, -80, 20));
+                PlayerPrefs.SetFloat(volumeName, 0.5f);
+            }
         }
     }
 
