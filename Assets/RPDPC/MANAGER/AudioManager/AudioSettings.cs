@@ -35,7 +35,7 @@ public class AudioSettings : MonoBehaviour
     List<Coroutine> coroutinesAmbiance = new List<Coroutine>();
     List<Coroutine> coroutinesMusic = new List<Coroutine>();
 
-    bool InCombat { get; set; } = false;
+    public bool InCombat { get; private set; } = false;
     bool inCombat = true;
     bool lastMusicWasCombat = false;
 

@@ -77,7 +77,8 @@ public class RespawnManager : MonoBehaviour
 
         GameManager.Instance.PotionManager.RefillPotion(true);
 
-        if(!isInFinalTemple) GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone));
+        //GameManager.Instance.AudioManager.ForceExitCombat();
+        if(!isInFinalTemple) GameManager.Instance.ZoneManager.OnZoneChange(GameManager.Instance.ZoneManager.GetZone(_respawnZone), true);
 
         ResetPV();
 
