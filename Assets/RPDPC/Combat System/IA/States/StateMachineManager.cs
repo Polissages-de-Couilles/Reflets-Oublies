@@ -126,7 +126,7 @@ public class StateMachineManager : MonoBehaviour
             if (currentState != null)
             {
                 currentState.onActionFinished -= StateEnded;
-                currentState.RemoveHostileFromPlayerState();
+                if (!highestState.isHostileState) currentState.RemoveHostileFromPlayerState();
                 currentState.OnEndState();
             }
             currentState = highestState;
@@ -264,6 +264,7 @@ public class StateMachineManager : MonoBehaviour
 
     public static void RestartAllStateMachines()
     {
+        Debug.Log("RESTART ALL");
         List<StateMachineManager> smm = FindObjectsByType<StateMachineManager>(FindObjectsSortMode.None).ToList();
         foreach (StateMachineManager machine in smm)
         {

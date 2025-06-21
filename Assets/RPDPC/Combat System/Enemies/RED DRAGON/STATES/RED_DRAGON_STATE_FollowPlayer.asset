@@ -15,19 +15,29 @@ MonoBehaviour:
   priority: 2
   conditions:
   - logicalGate: 0
-    baseCondition: {fileID: 11400000, guid: 367a3f7abf27649439175afe35ec2593, type: 2}
+    baseCondition: {fileID: 11400000, guid: d135a96051e8ce94e992633af1c3f688, type: 2}
+    not: 0
     otherParts:
     - logicalGate: 4
+      not: 0
       secondCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: cef6c2c79fa5eab449c939f59a14fdc2, type: 2}
+    not: 0
     otherParts:
     - logicalGate: 4
+      not: 0
       secondCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 17d9f375c833ef448bc5ffdebbbd45b7, type: 2}
+    not: 0
     otherParts: []
   isHostileState: 1
   animationNames:
   - FlyFWD
+  isAttack: 0
   isIntelligent: 0
+  shouldStopWhenNear: 0
+  stopNearDistance: 0
+  shouldStopWhenFar: 0
+  stopFarDistance: 0
