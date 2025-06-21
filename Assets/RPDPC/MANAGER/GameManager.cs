@@ -90,6 +90,11 @@ public class GameManager : MonoBehaviour
     public Image FadeObject => _fadeObject;
     [SerializeField] Image _fadeObject;
 
+    public void Start()
+    {
+        //Application.ForceCrash(0);
+    }
+
 #if UNITY_EDITOR
     //Uniquement lÅEÅEbut de test, ne pas utiliser pour la version final
     public void Update()

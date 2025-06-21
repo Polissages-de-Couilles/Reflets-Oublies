@@ -11,6 +11,7 @@ public class SimpleLaunchDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //UnityEngine.Diagnostics.Utils.ForceCrash(0);
         LocalizationManager.OnLocaReady(() =>
         {
             DialogueManager.Instance.StartDialogue(Dialogue);

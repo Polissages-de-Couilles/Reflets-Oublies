@@ -53,11 +53,11 @@ public class PlayerIsVisible : ConditionBase
 
     bool CheckRayCast(Vector3 direction)
     {
-        if(parent.TryGetComponent(out NavMeshAgent agent))
-        {
-            NavMeshPath navMeshPath = new NavMeshPath();
-            if(!agent.CalculatePath(player.transform.position, navMeshPath)) return false;
-        }
+        //if(parent.TryGetComponent(out NavMeshAgent agent))
+        //{
+        //    NavMeshPath navMeshPath = new NavMeshPath();
+        //    if(!agent.CalculatePath(player.transform.position, navMeshPath)) return false;
+        //}
 
         RaycastHit hit;
         float RayHeight = 0f;
