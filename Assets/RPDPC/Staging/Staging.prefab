@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6683679857129679624}
   - component: {fileID: 826281372248815273}
   - component: {fileID: 7522858578108537771}
+  - component: {fileID: 8725615311641905881}
   m_Layer: 8
   m_Name: Gardienne Pos 2
   m_TagString: Untagged
@@ -104,6 +105,23 @@ MonoBehaviour:
   CallFinishedEventAtStart: 0
   character: 3
   isActive: 0
+--- !u!114 &8725615311641905881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 737431256677899482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Act_5_N_BACK
+  CallFinishedEventAtStart: 0
+  musicClip: {fileID: 0}
+  musicVolume: 0
+  _returnToPreviousMusic: 1
 --- !u!1 &761331206760523125
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,6 +263,110 @@ MonoBehaviour:
   _isRepeatable: 1
   useStoryRelation: 1
   state: 2
+--- !u!1 &2759914729531239488
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3253486875710129324}
+  - component: {fileID: 3127050936831384706}
+  - component: {fileID: 4969075886023631974}
+  - component: {fileID: 8008854502174538966}
+  - component: {fileID: 4781637180791083863}
+  m_Layer: 0
+  m_Name: Gardienne Death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3253486875710129324
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759914729531239488}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5191748161969444636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3127050936831384706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759914729531239488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f04949851e9dc848a0b71de8b51fbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Death_1
+  CallFinishedEventAtStart: 0
+  character: 3
+  isActive: 0
+--- !u!114 &4969075886023631974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759914729531239488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Death_1
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 1956558886076349077}
+  - {fileID: 6764971609272005647}
+  - {fileID: 5353145941325919586}
+  isActive: 0
+--- !u!114 &8008854502174538966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759914729531239488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Death_1
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 1201317664292962056}
+  isActive: 1
+--- !u!114 &4781637180791083863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2759914729531239488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Death_1
+  CallFinishedEventAtStart: 0
+  musicClip: {fileID: 0}
+  musicVolume: 0
+  _returnToPreviousMusic: 1
 --- !u!1 &3017056887950787379
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +381,7 @@ GameObject:
   - component: {fileID: 2079899632533530472}
   - component: {fileID: 491724154909599522}
   - component: {fileID: 4011595964296143673}
+  - component: {fileID: 4858532541569891629}
   m_Layer: 8
   m_Name: Gardienne Pos 1
   m_TagString: Untagged
@@ -364,6 +487,25 @@ MonoBehaviour:
   CallFinishedEventAtStart: 0
   character: 3
   isActive: 1
+--- !u!114 &4858532541569891629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3017056887950787379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_DeActive_Trigger
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 1956558886076349077}
+  - {fileID: 6764971609272005647}
+  - {fileID: 5353145941325919586}
+  isActive: 0
 --- !u!1 &3044022391812793413
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +665,8 @@ Transform:
   - {fileID: 851723654859997983}
   - {fileID: 4229716389192015410}
   - {fileID: 1946194936324265244}
+  - {fileID: 3253486875710129324}
+  - {fileID: 3669133427048376716}
   m_Father: {fileID: 8596251076572464506}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4189764573670267640
@@ -576,6 +720,74 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 0.2
   animationName: Walking
+--- !u!1 &4717601441331538455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3669133427048376716}
+  - component: {fileID: 8866949359298398546}
+  - component: {fileID: 8922213986654188070}
+  m_Layer: 0
+  m_Name: Gardienne Wait
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3669133427048376716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717601441331538455}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5191748161969444636}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8866949359298398546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717601441331538455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f04949851e9dc848a0b71de8b51fbed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Wait
+  CallFinishedEventAtStart: 0
+  character: 3
+  isActive: 0
+--- !u!114 &8922213986654188070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717601441331538455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0c4bba520427d94f82509a81ea29370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Gardienne_Wait
+  CallFinishedEventAtStart: 0
+  objectsToSet:
+  - {fileID: 1956558886076349077}
+  - {fileID: 6764971609272005647}
+  - {fileID: 5353145941325919586}
+  isActive: 0
 --- !u!1 &5118927686777543351
 GameObject:
   m_ObjectHideFlags: 0
