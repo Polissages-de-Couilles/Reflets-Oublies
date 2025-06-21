@@ -1033,17 +1033,6 @@ public partial class @PlayerInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""d8a2e6a0-15eb-4453-8fc9-82252a6c8c80"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Validate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""a0367b24-b6d3-4b5d-a311-110f27748b88"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",

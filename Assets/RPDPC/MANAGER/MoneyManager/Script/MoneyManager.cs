@@ -15,7 +15,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-        _playerMonney = 100;
+
         
     }
     public void Start()
