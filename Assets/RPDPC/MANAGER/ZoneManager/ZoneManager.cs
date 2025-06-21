@@ -61,7 +61,7 @@ public class ZoneManager : MonoBehaviour
         OnZoneChange(zones.First());
     }
 
-    public void OnZoneChange(Zone zone)
+    public void OnZoneChange(Zone zone, bool forceMusic = false)
     {
         if (zone.Name == CurrentZone.Name) return;
         CurrentZone = zone;
@@ -69,7 +69,7 @@ public class ZoneManager : MonoBehaviour
 
         DisplayZoneName(zone);
 
-        GameManager.Instance.AudioManager.SwitchZone(zone);
+        GameManager.Instance.AudioManager.SwitchZone(zone, forceMusic);
 
         Color color;
         switch (zone.Name)

@@ -16,6 +16,7 @@ public class StateManager : MonoBehaviour
     }
     public States playerState;
 
+    public bool IsHostileEnemies => hostileEnemies.Count > 0;
     List<GameObject> hostileEnemies = new List<GameObject>();
     public Action<bool> OnFightStateChanged;
     private CharacterController characterController;
