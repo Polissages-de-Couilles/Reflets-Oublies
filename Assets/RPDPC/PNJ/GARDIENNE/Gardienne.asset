@@ -964,11 +964,17 @@ MonoBehaviour:
   - BaseNodeGuid: 11b7131a-7d59-44fa-a678-d4ee866ce4e8
     TargetNodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
   - BaseNodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
+    TargetNodeGuid: 4283d21b-f770-472f-abf8-6b7075e4d0da
+  - BaseNodeGuid: 4283d21b-f770-472f-abf8-6b7075e4d0da
+    TargetNodeGuid: 75c3a099-a9f4-422e-9b91-c93345a323d4
+  - BaseNodeGuid: 75c3a099-a9f4-422e-9b91-c93345a323d4
+    TargetNodeGuid: d3358348-56b0-416a-b58b-54d504dce9b7
+  - BaseNodeGuid: d3358348-56b0-416a-b58b-54d504dce9b7
     TargetNodeGuid: 003e9543-d349-46fb-8743-0c0d2d7d368d
   DialogueChoiceNodeDatas: []
   DialogueNodeDatas:
   - NodeGuid: 0a051054-018a-4429-b19f-2f821871947b
-    Position: {x: 379.2, y: 320.80002}
+    Position: {x: 379.2, y: 320.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -986,7 +992,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_5_B_MORT_1
     Duration: 0
   - NodeGuid: d0565158-0e7f-4a3a-83e5-9c9e13a8025f
-    Position: {x: 608.8, y: 320.80002}
+    Position: {x: 608.8, y: 320.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1004,7 +1010,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_5_B_MORT_2
     Duration: 0
   - NodeGuid: e7cdb90d-0050-4505-b23e-cc6c96b695d4
-    Position: {x: 850.4, y: 320.80002}
+    Position: {x: 850.4, y: 320.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1022,7 +1028,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_5_B_MORT_3
     Duration: 0
   - NodeGuid: 11b7131a-7d59-44fa-a678-d4ee866ce4e8
-    Position: {x: 1096, y: 320.80002}
+    Position: {x: 1096, y: 320.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1040,7 +1046,7 @@ MonoBehaviour:
       LanguageGenericType: GARDIENNE_ACT_5_B_MORT_4
     Duration: 0
   - NodeGuid: 89107f02-b390-4ffe-a57c-3987459e9e3c
-    Position: {x: 1352, y: 320.80002}
+    Position: {x: 1352, y: 320.8}
     DialogueNodePorts: []
     AudioClips:
     - languageEnum: 0
@@ -1060,18 +1066,30 @@ MonoBehaviour:
   TimerChoiceNodeDatas: []
   EndNodeDatas:
   - NodeGuid: 003e9543-d349-46fb-8743-0c0d2d7d368d
-    Position: {x: 1968, y: 320.80002}
+    Position: {x: 2589.6, y: 320.8}
     EndNodeType: 0
     Dialogue: {fileID: 0}
-  EventNodeDatas: []
+  EventNodeDatas:
+  - NodeGuid: 4283d21b-f770-472f-abf8-6b7075e4d0da
+    Position: {x: 1572.8, y: 320.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: fb028e4f4f4b06044a00fb3af9f4699f, type: 2}
+  - NodeGuid: 75c3a099-a9f4-422e-9b91-c93345a323d4
+    Position: {x: 1900.8, y: 320.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 78cf398387e7ad643ac0be5e3ec929d4, type: 2}
+  - NodeGuid: d3358348-56b0-416a-b58b-54d504dce9b7
+    Position: {x: 2249.6, y: 320.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 1af2d347f3aca23449b1ab7d6de8d841, type: 2}
   StartNodeDatas:
   - NodeGuid: 78d19029-2e0d-4dc4-979d-faea854276b7
-    Position: {x: 246.4, y: 320.80002}
+    Position: {x: 246.4, y: 320.8}
     startID: 
   RandomNodeDatas: []
   CommandNodeDatas:
   - NodeGuid: f8c2b143-62c5-49c2-82c7-0459a72f3c1f
-    Position: {x: 1626.4, y: 418.40002}
+    Position: {x: 1916, y: 89.600006}
     commmand: Faire spawn Souvenir 5
   IfNodeDatas: []
 --- !u!114 &-4881393660330923447
