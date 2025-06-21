@@ -15,9 +15,81 @@ MonoBehaviour:
   _character: {fileID: 7895757859592579796}
   _characterNameKey: EWEN_NAME
   _dialogueToAdd: {fileID: 0}
-  _allDialogue: []
-  _dialogueToRename: {fileID: 0}
-  _dialogueNewName: 
+  _allDialogue:
+  - {fileID: 4872537459045863510}
+  _dialogueToRename: {fileID: 4872537459045863510}
+  _dialogueNewName: EWEN_INTRO
+--- !u!114 &4872537459045863510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: EWEN_INTRO
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: f2697891-5123-4220-913e-890067b4c6e6
+    TargetNodeGuid: 581b744a-9bac-45be-8d49-a63b59051e73
+  - BaseNodeGuid: 581b744a-9bac-45be-8d49-a63b59051e73
+    TargetNodeGuid: d907ea2f-b5cf-4f8f-8f12-1f4b0c1a637a
+  - BaseNodeGuid: d907ea2f-b5cf-4f8f-8f12-1f4b0c1a637a
+    TargetNodeGuid: 3e264d66-e5a2-4438-9a31-a2167aa2c818
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: 581b744a-9bac-45be-8d49-a63b59051e73
+    Position: {x: 782.4, y: 416}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_INTRO_1
+    Duration: 0
+  - NodeGuid: d907ea2f-b5cf-4f8f-8f12-1f4b0c1a637a
+    Position: {x: 1020, y: 416}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -1807582336371313080, guid: 0ec793186c4bf5c4c90159d46751c56e, type: 2}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: NARRATEUR_INTRO_2
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 3e264d66-e5a2-4438-9a31-a2167aa2c818
+    Position: {x: 1264.8, y: 416}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: f2697891-5123-4220-913e-890067b4c6e6
+    Position: {x: 664.8, y: 416}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
 --- !u!114 &7895757859592579796
 MonoBehaviour:
   m_ObjectHideFlags: 0
