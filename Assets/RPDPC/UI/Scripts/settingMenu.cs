@@ -85,7 +85,7 @@ public class settingMenu : UIPanel
     protected override void OnEnable()
     {
         base.OnEnable();
-        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed += GoMenu;
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed += GoMenu;
     }
 
     private void GoMenu(InputAction.CallbackContext context)
@@ -95,6 +95,6 @@ public class settingMenu : UIPanel
 
     protected override void OnDisable()
     {
-        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed -= GoMenu;
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed -= GoMenu;
     }
 }

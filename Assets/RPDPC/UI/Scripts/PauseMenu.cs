@@ -37,7 +37,7 @@ public class PauseMenu : UIPanel
         base.OnEnable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Enable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Disable();
-        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed += playButton;
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed += playButton;
     }
 
     private void playButton(InputAction.CallbackContext context)
@@ -48,6 +48,6 @@ public class PauseMenu : UIPanel
     protected override void OnDisable()
     {
         base.OnDisable();
-        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed -= playButton;
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed -= playButton;
     }
 }
