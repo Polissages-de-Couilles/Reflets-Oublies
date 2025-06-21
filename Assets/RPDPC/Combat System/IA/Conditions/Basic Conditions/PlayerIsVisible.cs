@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 [CreateAssetMenu(menuName = "Game/IA/Conditions/Base/Player/PlayerIsVisible")]
@@ -36,7 +37,7 @@ public class PlayerIsVisible : ConditionBase
             playerCollider.bounds.center + new Vector3(0, -playerCollider.height / 2 + 0.1f, 0),
             playerCollider.bounds.center + new Vector3(playerCollider.radius- 0.1f, 0, 0),
             playerCollider.bounds.center + new Vector3(-playerCollider.radius + 0.1f, 0, 0),
-            //player.transform.position + new Vector3(-playerCollider.radius/ 2, playerCollider.height / 4, 0),          Points formant un losange, que j'ai jugÈs inutiles, mais je les laisse au cas o˘ en fait Áa l'est
+            //player.transform.position + new Vector3(-playerCollider.radius/ 2, playerCollider.height / 4, 0),          Points formant un losange, que j'ai jugÈs inutiles, mais je les laisse au cas oÅEen fait Áa l'est
             //player.transform.position + new Vector3(-playerCollider.radius/ 2, -playerCollider.height / 4, 0),
             //player.transform.position + new Vector3(playerCollider.radius / 2, playerCollider.height / 4, 0),
             //player.transform.position + new Vector3(playerCollider.radius/ 2, -playerCollider.height / 4, 0),
@@ -45,13 +46,19 @@ public class PlayerIsVisible : ConditionBase
         Quaternion quat = Quaternion.FromToRotation(new Vector3(0, 0, 1), new Vector3(player.transform.forward.x,0, player.transform.forward.z));
         foreach (Vector3 d in directions)
         {
-            if (CheckRayCast( d)) { return true; }
+            if (CheckRayCast(d)) { return true; }
         }
         return false;
     }
 
     bool CheckRayCast(Vector3 direction)
     {
+        if(parent.TryGetComponent(out NavMeshAgent agent))
+        {
+            NavMeshPath navMeshPath = new NavMeshPath();
+            if(!agent.CalculatePath(player.transform.position, navMeshPath)) return false;
+        }
+
         RaycastHit hit;
         float RayHeight = 0f;
         if (parentCollider != null) 
