@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : UIPanel
@@ -35,10 +37,17 @@ public class PauseMenu : UIPanel
         base.OnEnable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Enable();
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Disable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed += playButton;
+    }
+
+    private void playButton(InputAction.CallbackContext context)
+    {
+        playButton();
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed -= playButton;
     }
 }

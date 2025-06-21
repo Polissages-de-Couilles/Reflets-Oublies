@@ -32,6 +32,7 @@ MonoBehaviour:
   animationNames:
   - IdleBattle
   - Attack02
+  isAttack: 0
   attacks:
   - colliders:
     - delayBeforeColliderSpawn: 2.3
@@ -131,4 +132,4 @@ MonoBehaviour:
       grabReleaseForce: {x: 0, y: 0, z: 0}
       grabStunDuration: 0
   doAllAttacks: 1
-  timeWithoutAttackAfter: {x: 3, y: 10}
+  timeWithoutAttackAfter: {x: 3, y: 5}

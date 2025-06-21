@@ -262,10 +262,7 @@ public abstract class StateEntityBase
     }
     public void RemoveHostileFromPlayerState()
     {
-        if (isHostileState)
-        {
-            player.GetComponent<StateManager>().removeHostileEnemy(parent);
-        }
+        player.GetComponent<StateManager>().removeHostileEnemy(parent);
     }
 
     public abstract void OnEnterState();

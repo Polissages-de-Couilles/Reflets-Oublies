@@ -16,14 +16,17 @@ MonoBehaviour:
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: d135a96051e8ce94e992633af1c3f688, type: 2}
+    not: 0
     otherParts: []
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 0dd1e7c8ad721254cac28f61136bf963, type: 2}
+    not: 0
     otherParts: []
   isHostileState: 1
   animationNames:
   - IdleBattle
   - Attack02
+  isAttack: 0
   attacks:
   - colliders:
     - delayBeforeColliderSpawn: 0.3
@@ -87,4 +90,4 @@ MonoBehaviour:
       grabReleaseForce: {x: 0, y: 0, z: 0}
       grabStunDuration: 0
   doAllAttacks: 0
-  timeWithoutAttackAfter: {x: 3, y: 10}
+  timeWithoutAttackAfter: {x: 2, y: 3}

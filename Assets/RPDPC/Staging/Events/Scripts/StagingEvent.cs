@@ -5,6 +5,14 @@ using UnityEngine;
 
 public class StagingEvent : MonoBehaviour
 {
+    public enum Perso
+    {
+        None,
+        Player,
+        Ombre,
+        Gardienne
+    }
+
     public string ID;
     public Action OnEventFinished;
     public bool IsEventFinish { get; protected set; } = false;
