@@ -6,12 +6,19 @@ using UnityEngine.AI;
 public class MoveToSameValue : StagingEvent
 {
     [SerializeField] Transform objectToMove;
+    [SerializeField] Perso character = Perso.None;
     [SerializeField] bool useNavMesh = false;
     //[SerializeField] float duration = 1f;
 
     public override void PlayEvent()
     {
         base.PlayEvent();
+
+        if(objectToMove == null && character != Perso.None && GameObject.FindGameObjectWithTag(character.ToString()).TryGetComponent(out Transform comp))
+        {
+            objectToMove = comp;
+        }
+
         if (objectToMove == null)
         {
             DebugError("Invalid Transform");

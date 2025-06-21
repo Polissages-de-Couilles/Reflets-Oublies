@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using PDC.Localization;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
 
 public class settingMenu : UIPanel
 {
@@ -10,6 +13,8 @@ public class settingMenu : UIPanel
 
     public GameObject OptionGameObject;
     public GameObject MenuGameObject;
+
+    public Button returnButton;
 
     Resolution[] resolutions;
 
@@ -75,5 +80,21 @@ public class settingMenu : UIPanel
     {
         OptionGameObject.SetActive(false);
         MenuGameObject.SetActive(true);
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed += GoMenu;
+    }
+
+    private void GoMenu(InputAction.CallbackContext context)
+    {
+        GoMenu();
+    }
+
+    protected override void OnDisable()
+    {
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed -= GoMenu;
     }
 }

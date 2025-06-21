@@ -3,12 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.TextCore.Text;
 
 public class MoveToME : StagingEvent
 {
     public static Dictionary<NavMeshAgent, Action> _allMovementInProcess = new Dictionary<NavMeshAgent, Action>();
 
     [SerializeField] NavMeshAgent objectToMove;
+    [SerializeField] Perso character = Perso.None;
     [SerializeField] float speed;
     [SerializeField] float stoppingDistance;
     [SerializeField] string animationName;
@@ -23,6 +25,12 @@ public class MoveToME : StagingEvent
     public override void PlayEvent()
     {
         base.PlayEvent();
+
+        if(objectToMove == null && character != Perso.None && GameObject.FindGameObjectWithTag(character.ToString()).TryGetComponent(out NavMeshAgent comp))
+        {
+            objectToMove = comp;
+        }
+
         if (objectToMove == null)
         {
             DebugError("Invalid Agent");
