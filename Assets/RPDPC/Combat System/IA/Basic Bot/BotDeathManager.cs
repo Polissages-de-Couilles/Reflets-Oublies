@@ -29,6 +29,7 @@ public class BotDeathManager : MonoBehaviour
         if (playerHealth <= 0)
         {
             GetComponent<IDamageable>().OnDamageTaken -= CallCheckBotHealth;
+            GetComponent<StateMachineManager>().StopAllCoroutines();
             Debug.Log("The bot (" + gameObject + ") is dead.");
 
             GameManager.Instance.Player.GetComponent<StateManager>().removeHostileEnemy(gameObject);
