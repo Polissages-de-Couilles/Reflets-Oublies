@@ -268,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2987539382525459377}
   - component: {fileID: 4509409688033232103}
+  - component: {fileID: 1203152773978186570}
   - component: {fileID: 2926329681502596354}
   m_Layer: 0
   m_Name: Rub
@@ -315,6 +316,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &1203152773978186570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246881585171106210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb4bc2f91ac2e1b478c05925f44f857c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  priority: 0
+  range: 7
+  textKey: LEVER_UI_INTERACTION
+  textUI: {fileID: 8733598524501553549}
+  worldUI: {fileID: 872078401327673203}
+  _uiShowAnyway: 0
+  _interactibleOnceOnly: 0
+  _dialogues:
+  - {fileID: 11400000, guid: 263eb1f3dc31ff64c8deb68cf76ca517, type: 2}
+  state: 0
 --- !u!114 &2926329681502596354
 MonoBehaviour:
   m_ObjectHideFlags: 0

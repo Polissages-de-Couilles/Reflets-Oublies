@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: LeverInteraction
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 3b458eae-7b43-4c29-a3af-71418623d40e
+    TargetNodeGuid: 439b4ff5-6e55-4680-a3f4-f3576bf33043
+  - BaseNodeGuid: 439b4ff5-6e55-4680-a3f4-f3576bf33043
+    TargetNodeGuid: 670f94e4-04aa-43e4-92d4-0567baf788a6
+  - BaseNodeGuid: 670f94e4-04aa-43e4-92d4-0567baf788a6
+    TargetNodeGuid: b1a99d7d-a05e-4331-a048-c3e9fdd39923
+  - BaseNodeGuid: b1a99d7d-a05e-4331-a048-c3e9fdd39923
+    TargetNodeGuid: e240bb0e-d9cf-4976-bb90-80194a348626
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas: []
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: e240bb0e-d9cf-4976-bb90-80194a348626
+    Position: {x: 1612.8, y: 197.59999}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas:
+  - NodeGuid: 439b4ff5-6e55-4680-a3f4-f3576bf33043
+    Position: {x: 636.8, y: 200.8}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 938d60d7050b56c46b7dac9ee91a22a9, type: 2}
+  - NodeGuid: 670f94e4-04aa-43e4-92d4-0567baf788a6
+    Position: {x: 936.8, y: 202.4}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 2da2783d6e3966548bd7c51af5399a43, type: 2}
+  - NodeGuid: b1a99d7d-a05e-4331-a048-c3e9fdd39923
+    Position: {x: 1236.8, y: 197.59999}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 2527697c6c3318845baeefdc345db485, type: 2}
+  StartNodeDatas:
+  - NodeGuid: 3b458eae-7b43-4c29-a3af-71418623d40e
+    Position: {x: 442.4, y: 200.8}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
