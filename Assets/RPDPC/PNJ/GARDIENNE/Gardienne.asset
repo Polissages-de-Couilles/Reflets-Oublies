@@ -3091,25 +3091,25 @@ MonoBehaviour:
   - BaseNodeGuid: 34e4c2d8-b1c8-4e32-af9d-76cbff747daf
     TargetNodeGuid: 2d1043c8-2f42-4e50-9f8c-b24e1075bb1d
   - BaseNodeGuid: f3e74533-b959-40e8-8579-c0b409c12baa
-    TargetNodeGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
-  - BaseNodeGuid: f3e74533-b959-40e8-8579-c0b409c12baa
     TargetNodeGuid: 2b480fc6-5dac-41bb-b115-46db1c77a584
+  - BaseNodeGuid: f3e74533-b959-40e8-8579-c0b409c12baa
+    TargetNodeGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
   DialogueChoiceNodeDatas:
   - NodeGuid: f3e74533-b959-40e8-8579-c0b409c12baa
     Position: {x: 3158.4, y: -1.5999985}
     DialogueNodePorts:
     - PortGuid: 728242b5-0fee-47ad-a7c7-97cd4c6ccffb
-      InputGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
-      OutputGuid: f3e74533-b959-40e8-8579-c0b409c12baa
-      TextLanguage:
-      - languageEnum: 0
-        LanguageGenericType: NARRATEUR_MEMORY_CHOICE_TAKE
-    - PortGuid: 070eadf6-4c89-4f9c-b599-b51252d44f97
       InputGuid: 2b480fc6-5dac-41bb-b115-46db1c77a584
       OutputGuid: f3e74533-b959-40e8-8579-c0b409c12baa
       TextLanguage:
       - languageEnum: 0
         LanguageGenericType: NARRATEUR_MEMORY_CHOICE_SKIP
+    - PortGuid: 070eadf6-4c89-4f9c-b599-b51252d44f97
+      InputGuid: 83b0d5f4-9440-4e0d-810b-4125370b49b2
+      OutputGuid: f3e74533-b959-40e8-8579-c0b409c12baa
+      TextLanguage:
+      - languageEnum: 0
+        LanguageGenericType: NARRATEUR_MEMORY_CHOICE_TAKE
     AudioClips:
     - languageEnum: 0
       LanguageGenericType: {fileID: 0}
