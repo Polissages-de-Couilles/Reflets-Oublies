@@ -16,7 +16,14 @@ public class StateManager : MonoBehaviour
     }
     public States playerState;
 
-    public bool IsHostileEnemies => hostileEnemies.Count > 0;
+    public bool IsHostileEnemies
+    {
+        get 
+        {
+            clearNullHostile();
+            return hostileEnemies.Count > 0; 
+        }
+    }
     List<GameObject> hostileEnemies = new List<GameObject>();
     public Action<bool> OnFightStateChanged;
     private CharacterController characterController;
@@ -99,11 +106,16 @@ public class StateManager : MonoBehaviour
         clearNullHostile();
     }
 
-    void clearNullHostile()
+    public void clearNullHostile()
     {
+        var list = new List<GameObject>();
         foreach (GameObject go in hostileEnemies)
         {
-            if (go != null) hostileEnemies.Remove(go);
+            if (go == null) list.Add(go);
+        }
+        foreach(var go in list)
+        {
+            hostileEnemies.Remove(go);
         }
     }
 }
