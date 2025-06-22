@@ -13,6 +13,11 @@ public class MemoryManager : MonoBehaviour
 
     public StoryRelationState storyRelationState = StoryRelationState.Neutral;
 
+    [SerializeField] AudioClip _buff;
+    [SerializeField] AudioClip _debuff;
+    [SerializeField] AudioSource _source;
+
+
     private void Awake()
     {
         foreach (MemorySO mem in _allMemory) {
@@ -26,7 +31,16 @@ public class MemoryManager : MonoBehaviour
         GameManager.Instance.FirebaseManager.OnChoiceInStory(mem.Act, mem._isTaken);
         var corruption = (float)encounteredMemory.FindAll(x => !x._isTaken).Count / (float)_allMemory.Count;
         StartCoroutine(GameManager.Instance.CamManager.ColorCurves(corruption, 2f));
-        
+
+        if(mem._isTaken)
+        {
+            _source.PlayOneShot(_debuff);
+        }
+        else
+        {
+            _source.PlayOneShot(_buff);
+        }
+
         if(GameManager.Instance.Player.TryGetComponent(out PlayerDamageable damageable))
         {
             damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -10 : 20));

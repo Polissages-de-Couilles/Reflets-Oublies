@@ -25,6 +25,7 @@ public class OnDeathVFX : MonoBehaviour
         IEnumerator VFXCoroutine()
         {
             yield return new WaitForSeconds(_delay);
+            GameManager.Instance.AudioManager.PlayDeathBot();
             Instantiate(_onDeathVFX, this.transform.position, Quaternion.Euler(-90, 0, 0));
         }
         StartCoroutine(VFXCoroutine());

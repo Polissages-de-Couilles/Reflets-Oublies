@@ -233,4 +233,17 @@ public class AudioSettings : MonoBehaviour
 
     //AudioSource GetOppsiteMusicSource(AudioSource source) => source.Equals(_musicSourceOne) ? _musicSourceTwo : _musicSourceOne;
     //AudioSource GetOppsiteAmbienceSource(AudioSource source) => source.Equals(_AmbienceSourceOne) ? _AmbienceSourceTwo : _AmbienceSourceOne;
+
+    [SerializeField] List<AudioClip> _deathMonstres;
+    [SerializeField] float _deathVolume;
+
+    public void PlayDeathBot()
+    {
+        var clip = _deathMonstres[UnityEngine.Random.Range(0, _deathMonstres.Count)];
+        var sfx = Instantiate(SfxPrefab);
+        sfx.clip = clip;
+        sfx.volume = _deathVolume;
+        sfx.Play();
+        Destroy(sfx, clip.length);
+    }
 }
