@@ -14,6 +14,7 @@ public class Teleport : StateBase
     [SerializeField] bool HaveToSeePlayer;
     [SerializeField] bool IgnoreY = true;
     [SerializeField] bool SnapToNavMesh = true;
+    [SerializeField] Vector2 timeWithoutAttackAfter;
     public override StateEntityBase PrepareEntityInstance()
     {
         TeleportEntities teleportEntities = new TeleportEntities();

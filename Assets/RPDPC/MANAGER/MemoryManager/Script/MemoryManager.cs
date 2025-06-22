@@ -51,11 +51,6 @@ public class MemoryManager : MonoBehaviour
             else { nbBad++; }
         }
 
-        if ((nbGood != 0 && nbBad != 0) || nbBad == nbGood)
-        {
-            storyRelationState = StoryRelationState.Neutral;
-            return;
-        }
         if (nbGood > nbBad)
         {
             storyRelationState = StoryRelationState.Good;
@@ -66,6 +61,9 @@ public class MemoryManager : MonoBehaviour
             storyRelationState = StoryRelationState.Bad;
             return;
         }
+
+        storyRelationState = StoryRelationState.Neutral;
+        return;
     }
 }
 

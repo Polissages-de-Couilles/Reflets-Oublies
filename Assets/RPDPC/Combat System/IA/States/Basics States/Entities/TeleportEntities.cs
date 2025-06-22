@@ -17,8 +17,9 @@ public class TeleportEntities : StateEntityBase
     bool HaveToSeePlayer;
     bool IgnoreY;
     bool SnapToNavMesh;
+    Vector2 TimeWithoutAttack;
 
-    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, float RandomPointInCircularZone, Vector3 SymetricPoint, float distanceWithPlayer,bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh)
+    public override void Init(TeleportMode teleportMode, Vector3 SetPoint, List<Vector3> RandomPointInZone, float RandomPointInCircularZone, Vector3 SymetricPoint, float distanceWithPlayer,bool HaveToSeePlayer, bool IgnoreY, bool SnapToNavMesh, Vector2 timeWithoutAttack)
     { 
         this.teleportMode = teleportMode;
         this.SetPoint = SetPoint;
@@ -29,10 +30,12 @@ public class TeleportEntities : StateEntityBase
         this.HaveToSeePlayer = HaveToSeePlayer;
         this.IgnoreY = IgnoreY;
         this.SnapToNavMesh = SnapToNavMesh;
+        this.TimeWithoutAttack = timeWithoutAttack;
     }
 
     public override void ExitState()
     {
+        manager.StopPrioritizeAttack(UnityEngine.Random.Range(TimeWithoutAttack.x, TimeWithoutAttack.y));
         onActionFinished?.Invoke();
     }
 

@@ -6,6 +6,7 @@ using MeetAndTalk;
 using PDC;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -95,14 +96,17 @@ public class GameManager : MonoBehaviour
         //Application.ForceCrash(0);
     }
 
-#if UNITY_EDITOR
     //Uniquement lÅEÅEbut de test, ne pas utiliser pour la version final
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.P))
         {
-            //Player.GetComponent<PlayerDamageable>().takeDamage(20, null);
+            Player.GetComponent<PlayerDamageable>().takeDamage(200, null);
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene(1);
         }
     }
-#endif
 }

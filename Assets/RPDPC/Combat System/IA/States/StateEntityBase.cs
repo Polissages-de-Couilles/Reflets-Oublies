@@ -126,6 +126,20 @@ public abstract class StateEntityBase
     { }
 
     public virtual void Init(
+        TeleportMode teleportMode,  //Teleport
+        Vector3 SetPoint,
+        List<Vector3> RandomPointInZone,
+        float RandomPointInCircularZone,
+        Vector3 SymetricPoint,
+        float distanceWithPlayer,
+        bool HateToSeePlayer,
+        bool IgnoreY,
+        bool SnapToNavMesh,
+        Vector2 timeWithoutAttack
+    )
+    { }
+
+    public virtual void Init(
         List<StateListItem> States   //PlayManyStates
     )
     { }

@@ -10,26 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcaa6e4572fabd74896c64c1b3587f85, type: 3}
-  m_Name: (VA1) ELESSARD Random TP
+  m_Name: ELESSARD TP Behind Not Attack
   m_EditorClassIdentifier: 
-  priority: 0
+  priority: 1
   conditions:
   - logicalGate: 0
     baseCondition: {fileID: 11400000, guid: 70b5ba494f1dbaf409c4bd59f66aa68d, type: 2}
     not: 0
     otherParts: []
-  isHostileState: 0
+  isHostileState: 1
   animationNames:
   - TpEllessard
   - TpEllessardOut
-  isAttack: 1
-  teleportMode: 3
-  SetPoint: {x: 122, y: -15, z: 300}
+  isAttack: 0
+  teleportMode: 5
+  SetPoint: {x: 0, y: 0, z: 0}
   RandomPointInZone: []
-  RandomPointInCircularZone: 3
+  RandomPointInCircularZone: 0
   SymetricPoint: {x: 0, y: 0, z: 0}
-  behindPlayerDistance: 0
+  behindPlayerDistance: 8
   HaveToSeePlayer: 0
   IgnoreY: 1
   SnapToNavMesh: 1
-  timeWithoutAttackAfter: {x: 2, y: 3}
