@@ -13,6 +13,7 @@ public class BossDeathManager : BotDeathManager
     {
         if (playerHealth <= 0)
         {
+            GetComponent<IDamageable>().OnDamageTaken -= CallCheckBotHealth;
             Debug.Log("The boss (" + gameObject + ") is dead.");
 
             if (stateToPlayAtDeath != null)
