@@ -15,18 +15,24 @@ public class PlayManyStatesEntity : StateEntityBase
 
     public override void ExitState()
     {
-        onActionFinished?.Invoke();
+        Debug.Log("EXIT STATE MII PLAZA");
+        manager.FORCEDONOTSEARCH = false;
         manager.shouldSearchStates = true;
+        onActionFinished?.Invoke();
     }
 
     public override void OnEndState()
     {
+        Debug.Log("END STATE MII PLAZA");
+        manager.StopCoroutine(PlayStates());
     }
 
     public override void OnEnterState()
     {
+        Debug.Log("ON ENTER PLAY MANY STATES MII PLAZA");
         actionInvoked = false;
         manager.shouldSearchStates = false;
+        manager.FORCEDONOTSEARCH = true;
         manager.StartCoroutine(PlayStates());
     }
 

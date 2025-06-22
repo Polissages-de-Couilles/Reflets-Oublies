@@ -24,6 +24,8 @@ public class StateMachineManager : MonoBehaviour
 
     static public StateMachineManager machineToNotDestory;
 
+    public bool FORCEDONOTSEARCH = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,14 +45,16 @@ public class StateMachineManager : MonoBehaviour
     void Update()
     {
         currentState.OnUpdate();
-        if (shouldSearchStates)
+        if (shouldSearchStates && !FORCEDONOTSEARCH)
         {
             if (currentState.isStateValid())
             {
+                Debug.Log("SERACH STATE" + gameObject);
                 setNewCurrentState(currentState.priority);
             }
             else
             {
+                Debug.Log("SERACH DEFAULT STATE" + gameObject);
                 setNewCurrentState(-1f);
             }
         }

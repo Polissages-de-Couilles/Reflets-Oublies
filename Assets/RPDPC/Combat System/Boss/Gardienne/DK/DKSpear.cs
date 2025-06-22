@@ -40,6 +40,7 @@ public class DKSpear : MonoBehaviour
     void Update()
     {
         transform.position += new Vector3(direction.x, 0, direction.y) * speed * Time.deltaTime;
+        if (line == null) Destroy(gameObject);
         if (!blockUpdate)
         {
             NavMeshHit hit;

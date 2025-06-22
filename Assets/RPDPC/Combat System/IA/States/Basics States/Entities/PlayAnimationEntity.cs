@@ -28,11 +28,11 @@ public class PlayAnimationEntity : StateEntityBase
     public override void ExitState()
     {
         onActionFinished?.Invoke();
+        manager.shouldSearchStates = true;
     }
 
     public override void OnEndState()
     {
-        manager.shouldSearchStates = true;
     }
 
     public override void OnEnterState()
