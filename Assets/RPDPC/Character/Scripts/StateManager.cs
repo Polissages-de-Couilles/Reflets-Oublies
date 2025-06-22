@@ -85,6 +85,7 @@ public class StateManager : MonoBehaviour
             hostileEnemies.Add(enemy);
             OnFightStateChanged?.Invoke(true);
         }
+        clearNullHostile();
     }
     public void removeHostileEnemy(GameObject enemy)
     {
@@ -94,6 +95,15 @@ public class StateManager : MonoBehaviour
         {
             Debug.Log("No hostile enemies");
             OnFightStateChanged?.Invoke(false);
+        }
+        clearNullHostile();
+    }
+
+    void clearNullHostile()
+    {
+        foreach (GameObject go in hostileEnemies)
+        {
+            if (go != null) hostileEnemies.Remove(go);
         }
     }
 }
