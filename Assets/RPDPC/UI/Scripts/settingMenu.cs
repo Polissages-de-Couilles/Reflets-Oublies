@@ -16,6 +16,8 @@ public class settingMenu : UIPanel
 
     public Button returnButton;
 
+    public Toggle translateToggle;
+
     Resolution[] resolutions;
 
     void Start()
@@ -85,6 +87,7 @@ public class settingMenu : UIPanel
     protected override void OnEnable()
     {
         base.OnEnable();
+        translateToggle.isOn = LocalizationManager.Translate;
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed += GoMenu;
     }
 
@@ -96,5 +99,10 @@ public class settingMenu : UIPanel
     protected override void OnDisable()
     {
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Return.performed -= GoMenu;
+    }
+
+    public void SetTranslated(bool translate)
+    {
+        LocalizationManager.Translate = translate;
     }
 }

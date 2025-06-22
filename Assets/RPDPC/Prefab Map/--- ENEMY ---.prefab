@@ -733,173 +733,6 @@ MonoBehaviour:
   animator: {fileID: 8180634619977569774}
   stateName: Walk
   waitAnim: 0
---- !u!1 &1739550205180664654
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8798815585157724169}
-  - component: {fileID: 3287192874880745558}
-  - component: {fileID: 8695269440527797520}
-  - component: {fileID: 5340232847532088478}
-  - component: {fileID: 136010891159611534}
-  - component: {fileID: 9014021556702080713}
-  m_Layer: 8
-  m_Name: Gardienne Pos 1 (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8798815585157724169
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5799956, y: 0.099998474, z: 51.840015}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1944932627812528724}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3287192874880745558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7911b167f50e2e540aa5288205e4323c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Gardienne_Act_5_N_End_2
-  CallFinishedEventAtStart: 0
-  objectToMove: {fileID: 4552779379060624310}
-  character: 3
-  useNavMesh: 0
---- !u!114 &8695269440527797520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87ac868a5e182fc4086b8e0cbe6b20df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Gardienne_Act_5_N_End_2
-  CallFinishedEventAtStart: 0
-  bossStartManager: {fileID: 7619482852540138415}
-  character: 3
---- !u!114 &5340232847532088478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Gardienne_Act_5_N_End_2
-  CallFinishedEventAtStart: 0
-  musicClip: {fileID: 8300000, guid: 9ce09cab646e3ae4fb4479a66abe30d5, type: 3}
-  musicVolume: 0.3
-  _returnToPreviousMusic: 0
---- !u!114 &136010891159611534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f04949851e9dc848a0b71de8b51fbed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Gardienne_Act_5_N_End_2
-  CallFinishedEventAtStart: 0
-  character: 3
-  isActive: 1
---- !u!114 &9014021556702080713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1739550205180664654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c8dbf9fe9fbc654487db875bfec4abb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Gardienne_Act_5_N_End_2
-  CallFinishedEventAtStart: 0
-  _event:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8980739875543529878}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5400993260777838995}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5489058088270312626}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 5984948264965233233}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &2428005482571953695
 GameObject:
   m_ObjectHideFlags: 0
@@ -4771,6 +4604,10 @@ PrefabInstance:
       propertyPath: objectToMove
       value: 
       objectReference: {fileID: 4190666657951124151}
+    - target: {fileID: 1131598138582849341, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: CallFinishedEventAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1469391083309489025, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4843,6 +4680,10 @@ PrefabInstance:
       propertyPath: objectToMove
       value: 
       objectReference: {fileID: 4190666657951124151}
+    - target: {fileID: 2164867875528104191, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: CallFinishedEventAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2175846629041583813, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       propertyPath: range
       value: 8
@@ -4988,6 +4829,10 @@ PrefabInstance:
       value: 28.19
       objectReference: {fileID: 0}
     - target: {fileID: 5389303243322400399, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: useNavMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5389303243322400399, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       propertyPath: objectToMove
       value: 
       objectReference: {fileID: 4552779379060624310}
@@ -5047,6 +4892,10 @@ PrefabInstance:
       propertyPath: objectToMove
       value: 
       objectReference: {fileID: 4190666657951124151}
+    - target: {fileID: 8177630084568591685, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: CallFinishedEventAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8201095322879385743, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       propertyPath: musicVolume
       value: 0.3
@@ -5129,9 +4978,6 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 7835227521956212267, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7264288512675743064, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 8798815585157724169}
     - targetCorrespondingSourceObject: {fileID: 7264288512675743064, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4354914073588724900}

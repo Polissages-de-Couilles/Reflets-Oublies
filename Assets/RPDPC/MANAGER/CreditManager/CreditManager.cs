@@ -48,6 +48,9 @@ public class CreditManager : MonoBehaviour
             if(playerInputAction.Player.Validate.IsPressed()) speed *= 10;
             _creditHolder.position += Vector3.up * Time.deltaTime * speed;
         }
+
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(0);
     }
 
     void RebuildLayout(Transform parent)

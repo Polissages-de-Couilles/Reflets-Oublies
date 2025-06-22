@@ -10,7 +10,15 @@ public class StaggingEventleverTDR : StagingEvent
     {
         base.PlayEvent();
         activateLever++;
-        if (activateLever == 2) OpenDoor.OpenDoor();
+        if(activateLever == 2) StartCoroutine(OpenDoorCoroutine());
+        else OnEventFinished?.Invoke();
+    }
+
+    IEnumerator OpenDoorCoroutine()
+    {
+        yield return new WaitForSeconds(1f);
+        OpenDoor.OpenDoor();
+        yield return new WaitForSeconds(1f);
         OnEventFinished?.Invoke();
     }
 

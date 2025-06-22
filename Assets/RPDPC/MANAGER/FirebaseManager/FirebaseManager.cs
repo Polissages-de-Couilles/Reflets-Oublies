@@ -1,6 +1,7 @@
 using EditorCools;
 using Firebase;
 using Firebase.Database;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -168,7 +169,7 @@ public class FirebaseManager : MonoBehaviour
 
     private void CreateGhost(UserData userData)
     {
-        if (userData.id == UserInstance.User.id || userData.id == -1 || _ghostDic.ContainsKey(userData.id)) return;
+        if (userData.id == UserInstance.User.id || userData.id == -1 || _ghostDic.ContainsKey(userData.id) || _ghostDic[userData.id] == null) return;
         //Debug.Log(userData.ToString());
         GhostBehaviour go = Instantiate(_ghost);
         go.transform.position = new Vector3(userData.x, userData.y, userData.z);
@@ -192,10 +193,10 @@ public class FirebaseManager : MonoBehaviour
         if (Application.isPlaying)
         {
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-            if (!_ghostDic.ContainsKey(user.id)) return;
+            if (!_ghostDic.ContainsKey(user.id) || _ghostDic[user.id] == null) return;
             _activeUsers.Remove(_activeUsers.Find(x => x.id == user.id));
             //Debug.LogError(user.id);
-            if (_ghostDic.ContainsKey(user.id))
+            if (_ghostDic.ContainsKey(user.id) && _ghostDic[user.id] != null)
             {
                 Destroy(_ghostDic[user.id].gameObject);
                 _ghostDic.Remove(user.id);
@@ -208,7 +209,7 @@ public class FirebaseManager : MonoBehaviour
         if (Application.isPlaying)
         {
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
-            if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id)) return;
+            if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id) || _ghostDic[user.id] == null) return;
             //Debug.Log(user.id + " | " + UserInstance.User.id);
             _ghostDic[user.id].UpdateGhost(user);
             //_ghostDic[user.id].transform.position = new(user.x, user.y, user.z);

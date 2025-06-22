@@ -58,7 +58,7 @@ public class AudioSettings : MonoBehaviour
         {
             source.Pause();
         }
-        if(GameManager.Instance.Player.TryGetComponent(out StateManager manager))
+        if(GameManager.Instance.Player != null && GameManager.Instance.Player.TryGetComponent(out StateManager manager))
         {
             playerStateManager = manager;
             manager.OnFightStateChanged += OnCombatEnter;
@@ -79,7 +79,7 @@ public class AudioSettings : MonoBehaviour
             }
         }
 
-        while(true)
+        while(GameManager.Instance.Player != null)
         {
             yield return new WaitForSeconds(2f);
             if(!playerStateManager.IsHostileEnemies && _otherSource.volume > 0) ForceExitCombat();

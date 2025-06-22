@@ -19,6 +19,7 @@ namespace PDC.Localization
         private static Dictionary<string, string[]> _localization = new Dictionary<string, string[]>();
         public static Action OnLocalizationReady;
         public static bool IsLocaReady = false;
+        public static bool Translate = false;
 
         public void Awake()
         {
@@ -138,7 +139,14 @@ namespace PDC.Localization
                 if (c.Contains('f') && !c.Contains('/'))
                 {
                     //var value = c.Replace("[", string.Empty).Replace("]", string.Empty).Replace("f", string.Empty);
-                    t = t.Replace(c, $"<font=rpdpcfont>");
+                    if(Translate)
+                    {
+                        t = t.Replace(c, $"</font>");
+                    }
+                    else
+                    {
+                        t = t.Replace(c, $"<font=rpdpcfont>");
+                    }
                     continue;
                 }
 
@@ -176,7 +184,7 @@ namespace PDC.Localization
                 }
                 var word = words[i];
                 //Debug.Log(word);
-                
+
                 if(CheckIfKey() && (word == "/font" || word == "font=rpdpcfont"))
                 {
                     isTranslated = word == "/font" ? false : word == "font=rpdpcfont";
