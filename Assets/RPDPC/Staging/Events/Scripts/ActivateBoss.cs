@@ -11,6 +11,21 @@ public class ActivateBoss : StagingEvent
     public override void PlayEvent()
     {
         base.PlayEvent();
+        StartCoroutine(WaitABit());
+    }
+
+    private void DOActivateBoss()
+    {
+        GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(DOActivateBoss);
+        bossStartManager.OnPlayerDetected();
+    }
+
+    IEnumerator WaitABit()
+    {
+        yield return null;
+        yield return null;
+        yield return null;
+
         if(character != Perso.None && character != Perso.Player && bossStartManager == null)
         {
             var obj = GameObject.FindGameObjectWithTag(character.ToString());
@@ -21,11 +36,5 @@ public class ActivateBoss : StagingEvent
         }
         GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(DOActivateBoss);
         OnEventFinished?.Invoke();
-    }
-
-    private void DOActivateBoss()
-    {
-        GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(DOActivateBoss);
-        bossStartManager.OnPlayerDetected();
     }
 }

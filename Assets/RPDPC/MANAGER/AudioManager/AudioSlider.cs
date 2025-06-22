@@ -13,24 +13,24 @@ public class AudioSlider : MonoBehaviour
     public void Awake()
     {
         slider = GetComponent<Slider>();
+        if(PlayerPrefs.HasKey(volume.ToString()))
+        {
+            GameManager.Instance.AudioManager.Mixer.SetFloat(volume.ToString(), Mathf.Clamp(Mathf.Log10(PlayerPrefs.GetFloat(volume.ToString())) * 20, -80, 20));
+        }
+        else
+        {
+            GameManager.Instance.AudioManager.Mixer.SetFloat(volume.ToString(), Mathf.Clamp(Mathf.Log10(0.5f) * 20, -80, 20));
+        }
         if (GameManager.Instance.AudioManager.Mixer.GetFloat(volume.ToString(), out float v))
         {
             slider.value = Mathf.Pow(10, v);
         }
         slider.onValueChanged.AddListener(OnVolumeChange);
-        if(PlayerPrefs.HasKey(volume.ToString()))
-        {
-            slider.value = Mathf.Pow(10, PlayerPrefs.GetFloat(volume.ToString()));
-        }
-        else
-        {
-            slider.value = 0.5f;
-        }
     }
 
     private void OnVolumeChange(float v)
     {
-        Debug.Log($"ChangeVolume : {volume.ToString()} | {v} = {Mathf.Log10(v) * 20}");
+        //Debug.Log($"ChangeVolume : {volume.ToString()} | {v} = {Mathf.Log10(v) * 20}");
         GameManager.Instance.AudioManager.Mixer.SetFloat(volume.ToString(), Mathf.Clamp(Mathf.Log10(v) * 20, -80, 20));
         PlayerPrefs.SetFloat(volume.ToString(), v);
     }
