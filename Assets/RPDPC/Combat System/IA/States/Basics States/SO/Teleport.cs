@@ -18,7 +18,7 @@ public class Teleport : StateBase
     public override StateEntityBase PrepareEntityInstance()
     {
         TeleportEntities teleportEntities = new TeleportEntities();
-        teleportEntities.Init(teleportMode, SetPoint, RandomPointInZone, RandomPointInCircularZone, SymetricPoint, behindPlayerDistance, HaveToSeePlayer, IgnoreY, SnapToNavMesh);
+        teleportEntities.Init(teleportMode, SetPoint, RandomPointInZone, RandomPointInCircularZone, SymetricPoint, behindPlayerDistance, HaveToSeePlayer, IgnoreY, SnapToNavMesh, timeWithoutAttackAfter);
         return teleportEntities;
     }
 }
