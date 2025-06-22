@@ -23,6 +23,8 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
 
     [SerializeField] SkinnedMeshRenderer[] _renderer;
     [SerializeField] MeshRenderer[] _meshrenderer;
+    [SerializeField] AudioClip _sfxTakeDamageClip;
+    [SerializeField] AudioSource _sfxTakeDamageSource;
 
     public float getCurrentHealth()
     {
@@ -60,6 +62,7 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
             Debug.Log("Player took damage. Their health is now at " + currentHealth);
             OnDamageTaken?.Invoke(damage, currentHealth);
             BecameInvicible(invicibleTime);
+            _sfxTakeDamageSource.PlayOneShot(_sfxTakeDamageClip);
             GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
             if(((damage / defence) / maxHealth) >= 0.15f)
             {
