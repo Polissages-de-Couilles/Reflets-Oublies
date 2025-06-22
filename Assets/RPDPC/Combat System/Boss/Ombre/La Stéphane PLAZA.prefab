@@ -452,8 +452,6 @@ Transform:
   m_Children:
   - {fileID: 4293508795457259717}
   - {fileID: 4586315761405679739}
-  - {fileID: 1014855445104589990}
-  - {fileID: 3360999089514033592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7602404805031010397
@@ -1042,75 +1040,6 @@ MonoBehaviour:
   ID: 3
   isBroken: 0
   destroyedMesh: {fileID: 8027672903339827207, guid: 5389ed81c13553a4a8fffa53ba554c3e, type: 3}
---- !u!1 &7478975045569075518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3360999089514033592}
-  - component: {fileID: 7375894302128847637}
-  - component: {fileID: 7515971130865976236}
-  m_Layer: 0
-  m_Name: WalkToCenterEvent2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3360999089514033592
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7478975045569075518}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1974065838402618511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7375894302128847637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7478975045569075518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: O6M2
-  CallFinishedEventAtStart: 0
-  objectToMove: {fileID: 4263162612719273363}
-  character: 0
-  speed: 3
-  stoppingDistance: 0.1
-  animationName: Walking
---- !u!114 &7515971130865976236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7478975045569075518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67480dcb73c122a4eb5bd0654dd5af0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: O6A
-  CallFinishedEventAtStart: 1
-  animator: {fileID: 5975483059628114506}
-  stateName: Walk
-  waitAnim: 0
 --- !u!1 &8750971950554032411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,57 +1110,6 @@ MonoBehaviour:
   ID: 8
   isBroken: 0
   destroyedMesh: {fileID: 8027672903339827207, guid: 5389ed81c13553a4a8fffa53ba554c3e, type: 3}
---- !u!1 &8887696436239832958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1014855445104589990}
-  - component: {fileID: 4559149657448977796}
-  m_Layer: 0
-  m_Name: WalkToCenterEVent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1014855445104589990
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8887696436239832958}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1974065838402618511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4559149657448977796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8887696436239832958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: O6M
-  CallFinishedEventAtStart: 0
-  objectToMove: {fileID: 0}
-  character: 0
-  speed: 5
-  stoppingDistance: 0.1
-  animationName: Walking
 --- !u!1001 &290938827397370154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2086,19 +1964,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10208a77b166eff42b07e7ca761cc77b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!195 &4263162612719273363 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 285240784682955974, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
-  m_PrefabInstance: {fileID: 4097338002448118101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4586315761405679739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 538592295616555310, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
-  m_PrefabInstance: {fileID: 4097338002448118101}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &5975483059628114506 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7652043590924727071, guid: 58b62671df82db54795f4ac7608fdb48, type: 3}
   m_PrefabInstance: {fileID: 4097338002448118101}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4816919523367404569

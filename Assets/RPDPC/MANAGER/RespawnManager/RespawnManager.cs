@@ -38,6 +38,7 @@ public class RespawnManager : MonoBehaviour
     private void OnZoneChange(ZoneManager.Zone zone)
     {
         if (zone.Name == ZoneManager.ZoneName.UI_ZONE_3) asBeenToVillage = true;
+        if (zone.Name == ZoneManager.ZoneName.UI_ZONE_11) isInFinalTemple = true;
     }
 
     public void Respawn()
