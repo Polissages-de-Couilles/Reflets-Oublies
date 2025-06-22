@@ -1496,6 +1496,7 @@ GameObject:
   - component: {fileID: 3840292787676571195}
   - component: {fileID: 4810389769972731205}
   - component: {fileID: 2494618337254329008}
+  - component: {fileID: 2578258124228304714}
   m_Layer: 0
   m_Name: WalkToCenterEVent
   m_TagString: Untagged
@@ -1607,6 +1608,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: DoorInteraction, Assembly-CSharp
+        m_MethodName: ForceClose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!114 &2578258124228304714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562363426167848430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: O6M
+  CallFinishedEventAtStart: 0
+  musicClip: {fileID: 8300000, guid: 6761578fb76b6ed43ab7b2ef1211ced1, type: 3}
+  musicVolume: 0.3
+  _returnToPreviousMusic: 0
 --- !u!1 &4921348387532663178
 GameObject:
   m_ObjectHideFlags: 0

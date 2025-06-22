@@ -12,4 +12,9 @@ public class DoorInteraction : Interactible
 
         base.OnInteraction();
     }
+
+    public void ForceClose()
+    {
+        DoorAnimator.SetTrigger("Ferme");
+    }
 }
