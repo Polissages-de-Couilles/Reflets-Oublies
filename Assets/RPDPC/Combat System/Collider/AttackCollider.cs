@@ -18,6 +18,7 @@ public class AttackCollider : MonoBehaviour
     public List<GameObject> CharacterAlreadyAttacked = new List<GameObject>();
     public GameObject vfx = null;
     public AudioClip sfx = null;
+    public float sfxVolume = 0.2f;
 
     public void Init(bool DoesStun, float StunDuration, bool DoesKnockback, float KnockForce, KnockbackMode KnockbackMode, bool isEnemy, GameObject Attacker)
     {
@@ -49,7 +50,7 @@ public class AttackCollider : MonoBehaviour
                 if(sfx != null && this.TryGetComponent(out AudioSource source))
                 {
                     source.pitch = UnityEngine.Random.Range(0.75f, 1.25f);
-                    source.PlayOneShot(sfx);
+                    source.PlayOneShot(sfx, sfxVolume);
                 }
                 
                 OnDamageableEnterTrigger?.Invoke(damageable, gameObject);

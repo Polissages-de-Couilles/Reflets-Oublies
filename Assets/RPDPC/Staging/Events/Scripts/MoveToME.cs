@@ -69,18 +69,28 @@ public class MoveToME : StagingEvent
         }
 
         NavMeshPath navMeshPath = new NavMeshPath();
-        if (objectToMove.CalculatePath(transform.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+        NavMeshHit myNavHit;
+        if(NavMesh.SamplePosition(transform.position, out myNavHit, 100, -1))
         {
-            oldSpeed = objectToMove.speed;
-            objectToMove.speed = speed;
-            objectToMove.SetPath(navMeshPath);
-            coroutine = StartCoroutine(CheckIfDestinationReached());
+            if(objectToMove.CalculatePath(myNavHit.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
+            {
+                oldSpeed = objectToMove.speed;
+                objectToMove.speed = speed;
+                objectToMove.SetPath(navMeshPath);
+                coroutine = StartCoroutine(CheckIfDestinationReached());
+            }
+            else
+            {
+                DebugError("Destination is unreachable for this agent");
+                OnEventFinished?.Invoke();
+            }
         }
         else
         {
             DebugError("Destination is unreachable for this agent");
             OnEventFinished?.Invoke();
         }
+
     }
 
     private void Stop()

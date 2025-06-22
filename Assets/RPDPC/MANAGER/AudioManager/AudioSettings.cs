@@ -67,6 +67,7 @@ public class AudioSettings : MonoBehaviour
         var volumeNames = Enum.GetNames(typeof(Volume));
         foreach (var volumeName in volumeNames)
         {
+            Debug.Log(volumeName);
             if(PlayerPrefs.HasKey(volumeName))
             {
                 GameManager.Instance.AudioManager.Mixer.SetFloat(volumeName, Mathf.Clamp(Mathf.Log10(PlayerPrefs.GetFloat(volumeName)) * 20, -80, 20));

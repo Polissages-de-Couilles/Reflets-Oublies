@@ -14,6 +14,7 @@ public class DialogueEventCallStaging : DialogueEventTimeEvent
     public override void RunEvent()
     {
         staging = FindObjectsByType<StagingEvent>(FindObjectsSortMode.None).ToList().FindAll(x => x.ID == _stagingID && x.enabled && x.gameObject.activeInHierarchy);
+        Debug.Log($"Staging {_stagingID} find : " +  staging.Count);
         if(staging.Count == 0)
         {
             EventEnd();

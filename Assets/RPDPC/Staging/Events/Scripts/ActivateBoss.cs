@@ -19,13 +19,23 @@ public class ActivateBoss : StagingEvent
                 bossStartManager = boss;
             }
         }
-        GameManager.Instance.DialogueManager.EndDialogueEvent.AddListener(DOActivateBoss);
+        Debug.Log("Set Active Boss");
+        GameManager.Instance.DialogueManager.OnEndDialogue += DOActivateBoss;
         OnEventFinished?.Invoke();
     }
 
     private void DOActivateBoss()
     {
-        GameManager.Instance.DialogueManager.EndDialogueEvent.RemoveListener(DOActivateBoss);
+        StartCoroutine(WaitABit());
+    }
+
+    IEnumerator WaitABit()
+    {
+        yield return null;
+
+        Debug.Log("Staging Active Boss");
+
+        GameManager.Instance.DialogueManager.OnEndDialogue -= DOActivateBoss;
         bossStartManager.OnPlayerDetected();
     }
 }

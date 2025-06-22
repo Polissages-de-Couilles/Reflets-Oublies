@@ -49,7 +49,7 @@ public class LockManager : MonoBehaviour
             currentVignetteIntensity = GameManager.Instance.CamManager.VignetteIntensity;
         }
 
-        GameManager.Instance.CamManager.Vignette(currentVignetteIntensity + (0.12f * (0.28f / currentVignetteIntensity)), 0.125f, false, true);
+        GameManager.Instance.CamManager.Vignette(0.5f, 0.125f, false, true);
         GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(60, -45, 0), 0.5f);
         t = DOTween.To(() =>
             GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
@@ -101,7 +101,7 @@ public class LockManager : MonoBehaviour
     public void OnLockRelease()
     {
         isSearchingLock = false;
-        GameManager.Instance.CamManager.Vignette(currentVignetteIntensity, 0.125f, false, true);
+        GameManager.Instance.CamManager.Vignette(0.28f, 0.125f, false, true);
         GameManager.Instance.CamManager.VirtualCamera.transform.DOLocalRotate(new Vector3(45, -45, 0), 0.5f);
         DOTween.To(() =>
             GameManager.Instance.CamManager.VirtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_TrackedObjectOffset,
