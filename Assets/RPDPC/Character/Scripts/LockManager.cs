@@ -141,6 +141,15 @@ public class LockManager : MonoBehaviour
         {
             OnLockRelease();
         }
+
+        if(isSearchingLock && GameManager.Instance.CamManager.VignetteIntensity != 0.5f)
+        {
+            GameManager.Instance.CamManager.Vignette(0.5f, 0.125f, false, true);
+        }
+        if(!isSearchingLock && GameManager.Instance.CamManager.VignetteIntensity != 0.28f)
+        {
+            GameManager.Instance.CamManager.Vignette(0.28f, 0.125f, false, true);
+        }
         FindLockableObject();
     }
 

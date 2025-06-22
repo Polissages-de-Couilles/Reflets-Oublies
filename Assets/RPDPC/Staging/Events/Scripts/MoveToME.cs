@@ -70,7 +70,7 @@ public class MoveToME : StagingEvent
 
         NavMeshPath navMeshPath = new NavMeshPath();
         NavMeshHit myNavHit;
-        if(NavMesh.SamplePosition(transform.position, out myNavHit, 100, -1))
+        if(NavMesh.SamplePosition(transform.position, out myNavHit, 1000, -1))
         {
             if(objectToMove.CalculatePath(myNavHit.position, navMeshPath) && navMeshPath.status == NavMeshPathStatus.PathComplete)
             {

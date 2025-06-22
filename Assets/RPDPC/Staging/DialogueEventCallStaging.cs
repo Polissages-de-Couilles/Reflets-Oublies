@@ -22,6 +22,7 @@ public class DialogueEventCallStaging : DialogueEventTimeEvent
         }
         foreach (var stag in staging)
         {
+            Debug.Log($"Staging {_stagingID} find : " + staging.Count + " | " + stag.GetType().ToString());
             stag.OnEventFinished += CheckAllEventFinish;
             stag.PlayEvent();
         }
@@ -43,6 +44,14 @@ public class DialogueEventCallStaging : DialogueEventTimeEvent
                 stag.OnEventFinished -= CheckAllEventFinish;
             }
             EventEnd();
+        }
+        else
+        {
+            foreach(var stag in staging)
+            {
+                if(stag.IsEventFinish) continue;
+                Debug.Log($"Not Work Staging {_stagingID} find : " + staging.Count + " | " + stag.GetType().ToString());
+            }
         }
     }
 
