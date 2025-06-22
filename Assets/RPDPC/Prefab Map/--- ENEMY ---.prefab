@@ -4578,6 +4578,30 @@ PrefabInstance:
       propertyPath: objectToMove
       value: 
       objectReference: {fileID: 4552779379060624310}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: OpenDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DoorNoInteraction, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6636996773101322674, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      propertyPath: _event.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8177630084568591685, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       propertyPath: objectToMove
       value: 
@@ -4638,10 +4662,37 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9177663995191712728, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4143483192064944472}
     - targetCorrespondingSourceObject: {fileID: 4717601441331538455, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7751730248829453086}
   m_SourcePrefab: {fileID: 100100000, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+--- !u!1 &103506679011962068 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9177663995191712728, guid: 399868b8a71239b468e6c37776c361f5, type: 3}
+  m_PrefabInstance: {fileID: 9093372385753052940}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4143483192064944472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103506679011962068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!4 &684022464317223542 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8596251076572464506, guid: 399868b8a71239b468e6c37776c361f5, type: 3}

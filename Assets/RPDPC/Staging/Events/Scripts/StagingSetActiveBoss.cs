@@ -15,7 +15,7 @@ public class StagingSetActiveBoss : StagingEvent
             var obj = GameObject.FindGameObjectWithTag(character.ToString());
             if(obj != null)
             {
-                obj.transform.parent.gameObject.SetActive(isActive);
+                obj/*.transform.parent.gameObject*/.SetActive(isActive);
             }
         }
         OnEventFinished?.Invoke();
