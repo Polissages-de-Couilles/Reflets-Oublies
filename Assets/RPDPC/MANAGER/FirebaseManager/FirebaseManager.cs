@@ -209,7 +209,7 @@ public class FirebaseManager : MonoBehaviour
         {
             var user = JsonUtility.FromJson<UserData>(e.Snapshot.GetRawJsonValue());
             if (user.id == UserInstance.User.id || user.id == -1 || !_ghostDic.ContainsKey(user.id)) return;
-            Debug.Log(user.id + " | " + UserInstance.User.id);
+            //Debug.Log(user.id + " | " + UserInstance.User.id);
             _ghostDic[user.id].UpdateGhost(user);
             //_ghostDic[user.id].transform.position = new(user.x, user.y, user.z);
         }

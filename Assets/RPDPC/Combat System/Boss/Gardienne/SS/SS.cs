@@ -14,6 +14,8 @@ public class SS : ProjectileBase
     Dictionary<float, Vector3> ewenPos = new Dictionary<float, Vector3>();
     float globaltimer;
     GameObject ewen;
+    [SerializeField] AudioClip _sfx;
+    [SerializeField] float _sfxVolume = 0.3f;
 
     protected override void LaunchProjectile()
     {
@@ -36,6 +38,11 @@ public class SS : ProjectileBase
     {
         yield return new WaitForSeconds(durationBetweenEwenPosAndSS);
 
+        var sfx = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
+        sfx.clip = _sfx;
+        sfx.volume = _sfxVolume;
+        sfx.Play();
+        Destroy(sfx, _sfx.length);
         float timer = 0;
         while (timer < duration)
         {
@@ -55,7 +62,7 @@ public class SS : ProjectileBase
         if (ewenPos == null || ewenPos.Count == 0)
             throw new ArgumentException("Le dictionnaire est vide ou nul.");
 
-        // Trouve la clé la plus proche
+        // Trouve la clEla plus proche
         float closestKey = ewenPos.Keys.Aggregate((x, y) =>
             Math.Abs(x - time) < Math.Abs(y - time) ? x : y);
 

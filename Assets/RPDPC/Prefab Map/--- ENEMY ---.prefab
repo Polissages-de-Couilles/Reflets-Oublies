@@ -725,7 +725,7 @@ Transform:
   m_GameObject: {fileID: 1387738114274856381}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -230, y: 64.22, z: 582.84}
+  m_LocalPosition: {x: -230, y: 64.97, z: 586.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -748,7 +748,7 @@ MonoBehaviour:
   objectToMove: {fileID: 1748406255759839799}
   character: 2
   speed: 3
-  stoppingDistance: 0.1
+  stoppingDistance: 0.2
   animationName: Walking
 --- !u!114 &4171649768037811791
 MonoBehaviour:
@@ -1513,11 +1513,10 @@ Transform:
   m_GameObject: {fileID: 4562363426167848430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -230, y: 64.22, z: 580.8}
+  m_LocalPosition: {x: -230, y: 65.78, z: 580.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5211551461256632321}
+  m_Children: []
   m_Father: {fileID: 3609391388998197513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3840292787676571195
@@ -1537,7 +1536,7 @@ MonoBehaviour:
   objectToMove: {fileID: 0}
   character: 1
   speed: 5
-  stoppingDistance: 0.1
+  stoppingDistance: 0.2
   animationName: Walking
 --- !u!114 &4810389769972731205
 MonoBehaviour:
@@ -2784,57 +2783,6 @@ MonoBehaviour:
   speed: 5
   stoppingDistance: 0.2
   animationName: Walking
---- !u!1 &8049321310172158019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5211551461256632321}
-  - component: {fileID: 6942886276849996544}
-  m_Layer: 0
-  m_Name: Ewen Pos 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5211551461256632321
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049321310172158019}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.28, y: 0.71, z: -2.96}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7011013270983684880}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6942886276849996544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049321310172158019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96830b39e1d5ee4e83a6afce435d643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: O6M
-  CallFinishedEventAtStart: 0
-  objectToMove: {fileID: 0}
-  character: 1
-  speed: 5
-  stoppingDistance: 0.2
-  animationName: Walking
 --- !u!1 &8487134320067929059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2900,8 +2848,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 27.849682, y: 3, z: 26.068737}
-  m_Center: {x: 1.7900465, y: 0, z: -1.1800917}
+  m_Size: {x: 17.404905, y: 3, z: 22.710249}
+  m_Center: {x: -1.0760497, y: 0, z: 1.1469344}
 --- !u!65 &6516849675787116834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2921,8 +2869,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.165236, y: 3, z: 17.707579}
-  m_Center: {x: 10.63227, y: 0, z: 12.390165}
+  m_Size: {x: 10.165236, y: 3, z: 15.947645}
+  m_Center: {x: 10.63227, y: 0, z: 11.5102}
 --- !u!1 &8549460663454882152
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,8 +4378,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monstersPrefabs:
-  - {fileID: 7237178871622730094, guid: 498d0009ab1a6b04597ecdd72578feae, type: 3}
-  nbMaxMonters: 2
+  - {fileID: 1846694298297762704, guid: 259c460312a73f24098714d40c1dbb26, type: 3}
+  - {fileID: 1846694298297762704, guid: ba41913c71dc36d4c8be54cad405c185, type: 3}
+  - {fileID: 9160334484335390944, guid: 907489213bf2c7a49b43d4b6efdb66a1, type: 3}
+  nbMaxMonters: 3
   secondsAfterLeavingAndReentiringToSpawn: 30
   spawnedMobs: []
 --- !u!4 &6968790009926987047 stripped
