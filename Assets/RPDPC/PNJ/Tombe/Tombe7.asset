@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6116768128098964030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c76bf2ff3652a68438d37775da7ebe79, type: 3}
+  m_Name: TOMBE1
+  m_EditorClassIdentifier: 
+  characterName:
+  - languageEnum: 0
+    LanguageGenericType: TOMBE7_NAME
+  CustomizedName:
+    ValueName: 
+  UseGlobalValue: 0
+  textColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
+  Avatars:
+  - type: 0
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 1
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 2
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 3
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 4
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  - type: 5
+    LeftPosition: {fileID: 0}
+    RightPosition: {fileID: 0}
+  audioVolume: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c606ee58f6435e4c988452cee36d698, type: 3}
+  m_Name: Tombe7
+  m_EditorClassIdentifier: 
+  _character: {fileID: -6116768128098964030}
+  _characterNameKey: TOMBE7_NAME
+  _dialogueToAdd: {fileID: 0}
+  _allDialogue:
+  - {fileID: 1995741843296369623}
+  _dialogueToRename: {fileID: 1995741843296369623}
+  _dialogueNewName: Tombe7_Dial
+--- !u!114 &1995741843296369623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Tombe7_Dial
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 6110c8e9-77f8-41a7-bcb2-7e259c2fb10d
+    TargetNodeGuid: c57a5970-6a54-48d4-bd5a-b650cb4bfb0e
+  - BaseNodeGuid: c57a5970-6a54-48d4-bd5a-b650cb4bfb0e
+    TargetNodeGuid: 395368ab-fd4c-45ba-abf8-b4d81dbd2f5f
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas:
+  - NodeGuid: c57a5970-6a54-48d4-bd5a-b650cb4bfb0e
+    Position: {x: 353, y: 267}
+    DialogueNodePorts: []
+    AudioClips:
+    - languageEnum: 0
+      LanguageGenericType: {fileID: 0}
+    AudioName:
+    - languageEnum: 0
+      LanguageGenericType: 
+    CantBeSkip: 0
+    CanMove: 0
+    Character: {fileID: -6116768128098964030}
+    AvatarPos: 0
+    AvatarType: 0
+    TextType:
+    - languageEnum: 0
+      LanguageGenericType: TOMBE7_DIALOGUE
+    Duration: 0
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 395368ab-fd4c-45ba-abf8-b4d81dbd2f5f
+    Position: {x: 633, y: 267}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas: []
+  StartNodeDatas:
+  - NodeGuid: 6110c8e9-77f8-41a7-bcb2-7e259c2fb10d
+    Position: {x: 206, y: 267}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []
