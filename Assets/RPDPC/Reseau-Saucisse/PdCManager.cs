@@ -100,6 +100,7 @@ namespace PDC
                 message += $"[{_currentWords[i].Key}] ";
             }
 
+            Debug.Log("PDC Message : " +  message + " | Id : " + id);
             StartCoroutine(PostMessage($"{message}", id));
             _currentWords.Clear();
             _currentMessageText.text = "";

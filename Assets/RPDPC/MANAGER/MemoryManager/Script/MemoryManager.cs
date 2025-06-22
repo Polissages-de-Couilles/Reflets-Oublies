@@ -9,7 +9,7 @@ public class MemoryManager : MonoBehaviour
     [SerializeField] private List<MemorySO> _allMemory = new List<MemorySO>();
 
     public List<MemorySO> EncounteredMemory => encounteredMemory;
-    private List<MemorySO> encounteredMemory = new();
+    [SerializeField] List<MemorySO> encounteredMemory = new();
 
     public StoryRelationState storyRelationState = StoryRelationState.Neutral;
 

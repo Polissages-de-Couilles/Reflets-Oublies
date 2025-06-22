@@ -53,7 +53,7 @@ public class RespawnManager : MonoBehaviour
     {
         yield return null;
         yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
-        //GameManager.Instance.CamManager.Vignette(VignetteIntensity, 1f, true, true);
+        GameManager.Instance.CamManager.Vignette(0.28f, 1f, false, true);
 
         if (!asBeenToVillage)
         {
