@@ -22,6 +22,7 @@ namespace MeetAndTalk
 
         public UnityEvent StartDialogueEvent;
         public UnityEvent EndDialogueEvent;
+        public Action OnEndDialogue;
         public bool isDialogueInProcess;
 
         public Action<BaseNodeData> OnNode;
@@ -345,6 +346,7 @@ namespace MeetAndTalk
                     dialogueUIManager.textBackground.SetActive(false);
                     isDialogueInProcess = false;
                     EndDialogueEvent.Invoke();
+                    OnEndDialogue?.Invoke();
                     break;
                 case EndNodeType.Repeat:
                     CheckNodeType(GetNodeByGuid(currentDialogueNodeData.NodeGuid));
@@ -521,6 +523,7 @@ namespace MeetAndTalk
             dialogueUIManager.dialogueCanvas.SetActive(false);
             isDialogueInProcess = false;
             EndDialogueEvent.Invoke();
+            OnEndDialogue?.Invoke();
         }
     }
 }

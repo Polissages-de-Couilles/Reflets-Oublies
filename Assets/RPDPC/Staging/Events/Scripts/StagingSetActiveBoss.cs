@@ -12,7 +12,7 @@ public class StagingSetActiveBoss : StagingEvent
         base.PlayEvent();
         if(character != Perso.None && character != Perso.Player)
         {
-            var obj = GameObject.FindGameObjectWithTag(character.ToString());
+            var obj = GameManager.Instance.StoryManager._perso[character];
             if(obj != null)
             {
                 obj/*.transform.parent.gameObject*/.SetActive(isActive);

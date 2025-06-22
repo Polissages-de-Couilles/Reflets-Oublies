@@ -14,8 +14,11 @@ public class TriggerDialogueZone : MonoBehaviour
     [SerializeField] bool useStoryRelation = false;
     [SerializeField] StoryRelationState state;
 
+    Collider collider;
+
     private void Awake()
     {
+        collider = GetComponent<Collider>();
         isFirst = true;
     }
 
@@ -31,9 +34,28 @@ public class TriggerDialogueZone : MonoBehaviour
         {
             GameManager.Instance.DialogueManager.OnNode -= OnNode;
             EventSystem.current.SetSelectedGameObject(null);
+            //var triggers = GameObject.FindGameObjectsWithTag("Trigger");
+            //foreach(var trigger in triggers)
+            //{
+            //    if(trigger.TryGetComponent(out Collider col))
+            //    {
+            //        col.enabled = true;
+            //    }
+            //}
+            //collider.enabled = true;
+            isFirst = _isRepeatable;
         }
         );
 
+        //var triggers = GameObject.FindGameObjectsWithTag("Trigger");
+        //foreach(var trigger in triggers)
+        //{
+        //    if(trigger.TryGetComponent(out Collider col))
+        //    {
+        //        col.enabled = false;
+        //    }
+        //}
+        //collider.enabled = false;
         if(_startId >= 0)
         {
             GameManager.Instance.DialogueManager.SetupDialogue(_dialogue);
@@ -44,10 +66,7 @@ public class TriggerDialogueZone : MonoBehaviour
             GameManager.Instance.DialogueManager.StartDialogue(_dialogue);
         }
 
-        if(!_isRepeatable)
-        {
-            isFirst = false;
-        }
+        isFirst = false;
     }
 
     private void OnNode(BaseNodeData data)
