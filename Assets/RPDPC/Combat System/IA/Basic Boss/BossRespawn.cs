@@ -16,7 +16,7 @@ public class BossRespawn : MonoBehaviour
             {
                 foreach (Component comp in MonoBehaviour.FindObjectsOfType(Type.GetType(type)))
                 {
-                    if (comp.gameObject != null)
+                    if (comp != null && comp.gameObject != null)
                     {
                         MonoBehaviour.Destroy(comp.gameObject);
                     }
