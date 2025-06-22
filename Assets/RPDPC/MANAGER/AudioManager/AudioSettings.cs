@@ -82,7 +82,7 @@ public class AudioSettings : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(2f);
-            if(!playerStateManager.IsHostileEnemies && InCombat) ForceExitCombat();
+            if(!playerStateManager.IsHostileEnemies && _otherSource.volume > 0) ForceExitCombat();
         }
     }
 

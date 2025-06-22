@@ -44,6 +44,7 @@ public class MemoryManager : MonoBehaviour
         if(GameManager.Instance.Player.TryGetComponent(out PlayerDamageable damageable))
         {
             damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -10 : 20));
+            if(!mem._isTaken) StartCoroutine(Heal(damageable));
         }
 
         Debug.Log(Mathf.Clamp(GameManager.Instance.MemoryManager.EncounteredMemory.FindAll(x => x._isTaken).Count + 1, 0, 5) + " > " + GameManager.Instance.PotionManager.MaxPotion);
@@ -53,6 +54,12 @@ public class MemoryManager : MonoBehaviour
         manager.Set("CAN_BUY_POTION_NB", (canBuy ? 1 : 0).ToString());
 
         SetStoryRelationState();
+    }
+
+    IEnumerator Heal(PlayerDamageable damageable)
+    {
+        yield return new WaitForSeconds(_buff.length);
+        damageable.heal(damageable.getMaxHealth() - damageable.getCurrentHealth());
     }
 
     void SetStoryRelationState()

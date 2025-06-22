@@ -24,10 +24,6 @@ public class PotionManager : MonoBehaviour
     public TextMeshProUGUI text;
     public GameObject Potion;
     private Vector3 lastPos;
-
-    [SerializeField] GameObject vfx;
-    [SerializeField] AudioClip sfx;
-    [SerializeField] AudioSource sfxSource;
     [SerializeField] List<DoubleImage> potionSprite;
     Image imagePotion;
     public GlobalValueInt CanBuyPotion { get; set; }
@@ -75,9 +71,9 @@ public class PotionManager : MonoBehaviour
                 uiManager.UpdateSlider();
             }
 
-            var go = Instantiate(vfx, GameManager.Instance.Player.transform);
-            sfxSource.PlayOneShot(sfx);
-            go.transform.localPosition = new(0, -0.5f, 0);
+            //var go = Instantiate(vfx, GameManager.Instance.Player.transform);
+            //sfxSource.PlayOneShot(sfx);
+            //go.transform.localPosition = new(0, -0.5f, 0);
             //Debug.Log("Heal : " + go.transform.localPosition);
         }
         else if (currentPotion == 0)

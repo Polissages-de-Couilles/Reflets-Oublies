@@ -15,7 +15,7 @@ public class SS : ProjectileBase
     float globaltimer;
     GameObject ewen;
     [SerializeField] AudioClip _sfx;
-    [SerializeField] float _sfxVolume = 0.3f;
+    float _sfxVolume = 0.15f;
 
     protected override void LaunchProjectile()
     {

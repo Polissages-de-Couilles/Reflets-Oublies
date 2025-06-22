@@ -16,6 +16,9 @@ public class ProjectileExplosiveMirror : ProjectileBase
     [SerializeField] GameObject ExplosionParticle;
     bool isDestroyed = false;
 
+    [SerializeField] AudioClip _sfx;
+    float _sfxVolume = 0.15f;
+
     protected override void LaunchProjectile()
     {
         Debug.Log("LAUNCH MIRROR");
@@ -78,6 +81,11 @@ public class ProjectileExplosiveMirror : ProjectileBase
         yield return new WaitForSeconds(0.5f);
         GetComponent<Collider>().enabled = false;
         GameObject trans = Instantiate(enterexitSFX, new Vector3(transform.position.x, groundLevel, transform.position.z), Quaternion.Euler(new Vector3(-90, 0, 0)));
+        var sfx = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
+        sfx.clip = _sfx;
+        sfx.volume = _sfxVolume;
+        sfx.Play();
+        Destroy(sfx, _sfx.length);
         yield return transform.DOMove(transform.position - new Vector3(0, 4.3f, 0), 1.5f).WaitForCompletion();
         //Destroy(trans);
         Destroy(gameObject);

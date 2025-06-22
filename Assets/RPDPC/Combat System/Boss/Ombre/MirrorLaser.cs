@@ -11,6 +11,9 @@ public class MirrorLaser : MonoBehaviour
     Vector3 wantedSize;
     GameObject fx;
 
+    [SerializeField] AudioClip _sfx;
+    float _sfxVolume = 0.15f;
+
     public void InitLaser(int firstMirrorID, int lastMirrorID, float duration, float durationBeforeSpawn, float size, MirrorsManager mm, GameObject LaserFX, Material previewMat)
     {
 
@@ -48,6 +51,11 @@ public class MirrorLaser : MonoBehaviour
     IEnumerator LaunchLaser(float duration, float durationBeforeSpawn, Mirror firstMirror, Mirror lastMirror)
     {
         yield return new WaitForSeconds(durationBeforeSpawn);
+        //var sfx = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
+        //sfx.clip = _sfx;
+        //sfx.volume = _sfxVolume;
+        //sfx.Play();
+        //Destroy(sfx, _sfx.length);
         transform.localScale = wantedSize;
         GetComponent<CapsuleCollider>().enabled = true;
         GetComponent<MeshRenderer>().enabled = false;

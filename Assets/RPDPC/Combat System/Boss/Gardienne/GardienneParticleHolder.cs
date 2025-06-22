@@ -9,6 +9,8 @@ public class GardienneParticleHolder : MonoBehaviour
     public GameObject wind;
     public GameObject strong;
     bool forced;
+    public AudioSource sourceWindStrong;
+    public AudioSource sourceWindReallyStrong;
 
     private void Start()
     {
@@ -27,16 +29,22 @@ public class GardienneParticleHolder : MonoBehaviour
             switch (windForce)
             {
                 case GardienneWind.Static:
+                    sourceWindStrong.volume = 0f;
+                    sourceWindReallyStrong.volume = 0f;
                     normal.SetActive(true);
                     wind.SetActive(false);
                     strong.SetActive(false);
                     break;
                 case GardienneWind.Strong:
+                    sourceWindStrong.volume = 0.1f;
+                    sourceWindReallyStrong.volume = 0f;
                     normal.SetActive(false);
                     wind.SetActive(true);
                     strong.SetActive(false);
                     break;
                 case GardienneWind.ReallyStrong:
+                    sourceWindStrong.volume = 0f;
+                    sourceWindReallyStrong.volume = 0.1f;
                     normal.SetActive(false);
                     wind.SetActive(false);
                     strong.SetActive(true);

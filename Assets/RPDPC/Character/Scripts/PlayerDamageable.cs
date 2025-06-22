@@ -26,6 +26,8 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
     [SerializeField] AudioClip _sfxTakeDamageClip;
     [SerializeField] AudioSource _sfxTakeDamageSource;
 
+    [SerializeField] AudioClip sfxHeal;
+
     public float getCurrentHealth()
     {
         return currentHealth;
@@ -167,6 +169,8 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
         if (maxHealth < currentHealth) currentHealth = maxHealth;
         OnDamageTaken?.Invoke(-heal, currentHealth);
         //VFX Heal
+        var go = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
+        go.PlayOneShot(sfxHeal, 0.05f);
     }
 
     //IEnumerator testDamage() { yield return new WaitForSeconds(2); takeDamage(maxHealth); }
