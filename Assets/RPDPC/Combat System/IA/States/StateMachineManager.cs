@@ -49,12 +49,10 @@ public class StateMachineManager : MonoBehaviour
         {
             if (currentState.isStateValid())
             {
-                Debug.Log("SERACH STATE" + gameObject);
                 setNewCurrentState(currentState.priority);
             }
             else
             {
-                Debug.Log("SERACH DEFAULT STATE" + gameObject);
                 setNewCurrentState(-1f);
             }
         }
