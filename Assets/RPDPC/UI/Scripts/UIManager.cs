@@ -38,9 +38,15 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Enable();
     }
 
+    public void OnDestroy()
+    {
+        GameManager.Instance.PlayerInputEventManager.PlayerInputAction.Player.Pause.performed -= OnPause;
+    }
+
     private void OnPause(InputAction.CallbackContext context)
     {
-        Debug.Log(Pause.activeSelf);
+        //Debug.Log(Pause.activeSelf);
+        if(Pause == null) return;
         if (!Pause.activeSelf && !GameManager.Instance.DialogueManager.isDialogueInProcess && !GameManager.Instance.RespawnManager.DeathUi.activeSelf)
         {
             Time.timeScale = 0f;

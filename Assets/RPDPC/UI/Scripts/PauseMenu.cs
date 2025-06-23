@@ -1,3 +1,4 @@
+using PDC;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -29,7 +30,8 @@ public class PauseMenu : UIPanel
 
     public void quitButton()
     {
-        SceneManager.LoadScene(MainMenuScene);
+        LoadSceneManager.Instance.LoadScene(MainMenuScene);
+        //SceneManager.LoadScene(MainMenuScene);
     }
 
     protected override void OnEnable()

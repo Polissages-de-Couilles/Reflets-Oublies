@@ -12,7 +12,7 @@ namespace PDC.Localization
 
         public void Load()
         {
-            StartCoroutine(CSVDownloader.DownloadData(AfterDownload));
+            if(!LocalizationManager.IsLocaReady) StartCoroutine(CSVDownloader.DownloadData(AfterDownload));
         }
 
         public void AfterDownload(string data)

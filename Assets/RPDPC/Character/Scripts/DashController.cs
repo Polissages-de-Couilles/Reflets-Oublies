@@ -48,6 +48,11 @@ public class DashController : MonoBehaviour
         StartCoroutine(RechargeDash());
     }
 
+    public void OnDestroy()
+    {
+        PIE.PlayerInputAction.Player.Dash.performed -= OnDash;
+    }
+
     private void OnDash(InputAction.CallbackContext context)
     {
         if(canDash && (CanDash || PlayerInputEventManager.currentController == PlayerInputEventManager.ControllerType.Keyboard) && isStateCompatible(stateManager.playerState) && dashCount > 0)

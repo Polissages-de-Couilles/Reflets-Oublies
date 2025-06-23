@@ -7,6 +7,7 @@ using PDC.Localization;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class MainMenuManager : UIPanel
 {
@@ -20,17 +21,24 @@ public class MainMenuManager : UIPanel
     [SerializeField] Image _fade;
 
     [SerializeField] List<Button> _buttons;
+    Action<string> OnLoadScene;
 
     protected override void Start()
     {
         base.Start();
+
         LocalizationManager.OnLocaReady(() =>
         {
             if(UILoading != null) UILoading.SetActive(false);
         });
 
-        StartCoroutine(TextAnim());
+        if(!LocalizationManager.IsLocaReady) StartCoroutine(TextAnim());
         SetInteractibleAllButton(true);
+    }
+
+    public void OnDestroy()
+    {
+
     }
 
     IEnumerator TextAnim()
@@ -55,14 +63,19 @@ public class MainMenuManager : UIPanel
 
     public void playButton()
     {
+        Debug.Log("Play");
         SetInteractibleAllButton(false);
-        StartCoroutine(PlayButtonCoroutine());
+        PDC.LoadSceneManager.Instance.LoadScene(GameSceneName);
+        //StartCoroutine(PlayButtonCoroutine());
     }
 
     IEnumerator PlayButtonCoroutine()
     {
+        yield return null;
         yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
-        SceneManager.LoadScene(GameSceneName);
+        SetInteractibleAllButton(true);
+        OnLoadScene?.Invoke(GameSceneName);
+        //yield return SceneManager.LoadSceneAsync(GameSceneName);
     }
 
     public void OptionButton()
@@ -73,14 +86,19 @@ public class MainMenuManager : UIPanel
 
     public void CreditButton()
     {
+        Debug.Log("Credit"); 
         SetInteractibleAllButton(false);
-        StartCoroutine(CreditButtonCoroutine());
+        PDC.LoadSceneManager.Instance.LoadScene(CreditSceneName);
+        //StartCoroutine(CreditButtonCoroutine());
     }
 
     IEnumerator CreditButtonCoroutine()
     {
-        yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
-        SceneManager.LoadScene(CreditSceneName);
+        yield return null;
+        if(_fade != null) yield return _fade.DOColor(new Color(_fade.color.r, _fade.color.g, _fade.color.b, 1f), 1.5f).WaitForCompletion();
+        SetInteractibleAllButton(true);
+        OnLoadScene?.Invoke(CreditSceneName);
+        //yield return SceneManager.LoadSceneAsync(2);
     }
 
     public void quitButton()

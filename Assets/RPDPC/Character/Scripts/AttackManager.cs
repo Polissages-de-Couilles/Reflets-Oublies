@@ -87,6 +87,11 @@ public class AttackManager : MonoBehaviour
         collision3.OnDamageableEnterTrigger += HitFrame3;
     }
 
+    public void OnDestroy()
+    {
+        PIE.PlayerInputAction.Player.Attack.performed -= OnAttack;
+    }
+
     void OnAttack(InputAction.CallbackContext context)
     {
         if (canAttack)

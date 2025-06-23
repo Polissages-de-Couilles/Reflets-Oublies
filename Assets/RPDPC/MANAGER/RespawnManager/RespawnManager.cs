@@ -1,5 +1,6 @@
 using DG.Tweening;
 using MeetAndTalk;
+using PDC;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -57,8 +58,8 @@ public class RespawnManager : MonoBehaviour
 
         if (!asBeenToVillage)
         {
-            SceneManager.LoadScene("GameScene");
             isRespawning = false;
+            LoadSceneManager.Instance.LoadScene("GameScene");
             yield break;
         }
 

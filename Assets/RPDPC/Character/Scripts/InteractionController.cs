@@ -18,6 +18,11 @@ public class InteractionController : MonoBehaviour
         dashController = gameObject.GetComponent<DashController>();
     }
 
+    public void OnDestroy()
+    {
+        PIE.PlayerInputAction.Player.Interaction.performed -= OnInteraction;
+    }
+
     private void FixedUpdate()
     {
         List<Interactible> interacibles = FindObjectsOfType<Interactible>().ToList();

@@ -57,6 +57,12 @@ public class PotionManager : MonoBehaviour
         manager.Set("CAN_BUY_POTION_NB", (canBuy ? 1 : 0).ToString());
     }
 
+    public void OnDestroy()
+    {
+
+        PIE.PlayerInputAction.Player.Potion.performed -= HealPlayer;
+    }
+
     private void HealPlayer(InputAction.CallbackContext context)
     {
         if (currentPotion != 0 && player.getCurrentHealth() != player.maxHealth)

@@ -46,6 +46,14 @@ public class MovementController : MonoBehaviour
         oldPosition = currentPosition = transform.position;
     }
 
+    public void OnDestroy()
+    {
+
+        PIE.PlayerInputAction.Player.Movement.started -= OnMovement;
+        PIE.PlayerInputAction.Player.Movement.performed -= OnMovement;
+        PIE.PlayerInputAction.Player.Movement.canceled -= OnMovement;
+    }
+
     private void OnMovement(InputAction.CallbackContext context)
     {
         currentMovementInput = context.ReadValue<Vector2>();

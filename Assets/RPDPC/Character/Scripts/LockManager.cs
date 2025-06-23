@@ -36,6 +36,12 @@ public class LockManager : MonoBehaviour
         CinemachineCore.CameraUpdatedEvent.AddListener(OnCameraUpdate);
     }
 
+    public void OnDestroy()
+    {
+
+        PIE.PlayerInputAction.Player.Lock.performed -= OnLockPress;
+    }
+
     private void OnLockPress(InputAction.CallbackContext context)
     {
         if (GameManager.Instance.DialogueManager.isDialogueInProcess) return;
