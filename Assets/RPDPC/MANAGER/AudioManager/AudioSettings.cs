@@ -79,11 +79,11 @@ public class AudioSettings : MonoBehaviour
             }
         }
 
-        while(GameManager.Instance.Player != null)
-        {
-            yield return new WaitForSeconds(2f);
-            if(!playerStateManager.IsHostileEnemies && _otherSource.volume > 0) ForceExitCombat();
-        }
+        //while(GameManager.Instance.Player != null)
+        //{
+        //    yield return new WaitForSeconds(2f);
+        //    if(!playerStateManager.IsHostileEnemies && _otherSource.volume > 0) ForceExitCombat();
+        //}
     }
 
     public void SwitchZone(ZoneManager.Zone zone, bool ignoreCombat = false)
@@ -150,12 +150,12 @@ public class AudioSettings : MonoBehaviour
         Debug.Log("Combat : " +  combat);
         if(combat)
         {
-            EnterCombat();
+            //EnterCombat();
         }
 
         if(!combat)
         {
-            ExitCombat();
+            //ExitCombat();
         }
     }
 

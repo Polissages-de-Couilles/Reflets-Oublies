@@ -15,7 +15,7 @@ public class SS : ProjectileBase
     float globaltimer;
     GameObject ewen;
     [SerializeField] AudioClip _sfx;
-    float _sfxVolume = 0.15f;
+    float _sfxVolume = 0.1f;
 
     protected override void LaunchProjectile()
     {
@@ -38,14 +38,14 @@ public class SS : ProjectileBase
     {
         yield return new WaitForSeconds(durationBetweenEwenPosAndSS);
 
-        var sfx = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
-        sfx.clip = _sfx;
-        sfx.volume = _sfxVolume;
-        sfx.Play();
-        Destroy(sfx, _sfx.length);
         float timer = 0;
         while (timer < duration)
         {
+            var sfx = Instantiate(GameManager.Instance.AudioManager.SfxPrefab);
+            sfx.clip = _sfx;
+            sfx.volume = _sfxVolume;
+            sfx.Play();
+            Destroy(sfx, _sfx.length);
             Vector3 temp = getClosestTransform(globaltimer - durationBetweenEwenPosAndSS);
             temp.y -= 0.7f;
             Vector2 randomPosDif = UnityEngine.Random.insideUnitCircle * 1f;

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1946feaec865d344dabf0419b1c94973, type: 3}
+  m_Name: Enter_Cesar
+  m_EditorClassIdentifier: 
+  NodeLinkDatas:
+  - BaseNodeGuid: 4213cb54-3c13-4eec-9619-62f05582158d
+    TargetNodeGuid: 2c417452-b9b9-43de-8347-d25880b6430e
+  - BaseNodeGuid: 2c417452-b9b9-43de-8347-d25880b6430e
+    TargetNodeGuid: 4509cd5e-24b9-43cd-8628-892422d79bbf
+  DialogueChoiceNodeDatas: []
+  DialogueNodeDatas: []
+  TimerChoiceNodeDatas: []
+  EndNodeDatas:
+  - NodeGuid: 4509cd5e-24b9-43cd-8628-892422d79bbf
+    Position: {x: 1026.4, y: 384.80002}
+    EndNodeType: 0
+    Dialogue: {fileID: 0}
+  EventNodeDatas:
+  - NodeGuid: 2c417452-b9b9-43de-8347-d25880b6430e
+    Position: {x: 696, y: 384.80002}
+    EventScriptableObjects:
+    - DialogueEventSO: {fileID: 11400000, guid: 192636276e0299144947265d844e72da, type: 2}
+  StartNodeDatas:
+  - NodeGuid: 4213cb54-3c13-4eec-9619-62f05582158d
+    Position: {x: 579.2, y: 384.80002}
+    startID: 
+  RandomNodeDatas: []
+  CommandNodeDatas: []
+  IfNodeDatas: []

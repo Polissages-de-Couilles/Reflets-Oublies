@@ -21,7 +21,7 @@ public class StateManager : MonoBehaviour
         get 
         {
             clearNullHostile();
-            return hostileEnemies.Count > 0; 
+            return hostileEnemies.Count > 0;
         }
     }
     List<GameObject> hostileEnemies = new List<GameObject>();
