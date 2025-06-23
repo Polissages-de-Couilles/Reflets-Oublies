@@ -1894,7 +1894,6 @@ GameObject:
   - component: {fileID: 4408477971736994047}
   - component: {fileID: 1164989809389280087}
   - component: {fileID: -2204517421251130796}
-  - component: {fileID: -7115979189952701153}
   - component: {fileID: -1220361571210381292}
   - component: {fileID: -7823151690519353977}
   - component: {fileID: 3069500263598587848}
@@ -1906,6 +1905,7 @@ GameObject:
   - component: {fileID: 8548472384111040057}
   - component: {fileID: 1690548433408178953}
   - component: {fileID: 3375378964128550809}
+  - component: {fileID: 6488240390432230701}
   m_Layer: 0
   m_Name: CESAR 1
   m_TagString: Untagged
@@ -2060,18 +2060,6 @@ MonoBehaviour:
   Stunned: 0
   canBeStunned: 0
   canBeKnockbacked: 1
---- !u!114 &-7115979189952701153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802286859466036053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb33ace85819ec4fa10c9282cda625d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1220361571210381292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2309,6 +2297,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1802286859466036053, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
   ListOfTypesToDESTROY: []
+--- !u!114 &6488240390432230701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802286859466036053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateToPlayAtDeath: {fileID: 11400000, guid: b677cb4dc1e80e14d923913fa7949710, type: 2}
 --- !u!1 &1802286859466036055
 GameObject:
   m_ObjectHideFlags: 0
@@ -2633,7 +2634,6 @@ GameObject:
   - component: {fileID: 2850356862492119521}
   - component: {fileID: 271269660230845632}
   - component: {fileID: 5456157723448890757}
-  - component: {fileID: 4468634021906023795}
   m_Layer: 8
   m_Name: Trigger Dialogue Neutre
   m_TagString: Untagged
@@ -2711,23 +2711,6 @@ MonoBehaviour:
   musicClip: {fileID: 8300000, guid: 67ae8873881ff334ea7cf1c61a127466, type: 3}
   musicVolume: 0.2
   _returnToPreviousMusic: 0
---- !u!114 &4468634021906023795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5310824671294819269}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: Cesar_2
-  CallFinishedEventAtStart: 0
-  musicClip: {fileID: 0}
-  musicVolume: 0
-  _returnToPreviousMusic: 1
 --- !u!1 &5566538403950375647
 GameObject:
   m_ObjectHideFlags: 0

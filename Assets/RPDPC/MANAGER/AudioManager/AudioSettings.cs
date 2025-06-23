@@ -108,7 +108,7 @@ public class AudioSettings : MonoBehaviour
             _currentAmbienceSource = zone.AmbienceSource;
         }
 
-        if (InCombat && !ignoreCombat) return;
+        //if (InCombat && !ignoreCombat) return;
 
         foreach(var coroutine in coroutinesCombat)
         {
@@ -186,9 +186,9 @@ public class AudioSettings : MonoBehaviour
 
     public void ForceExitCombat()
     {
-        InCombat = false;
-        SwitchZone(_currentZone, true);
-        lastMusicWasCombat = true;
+        //InCombat = false;
+        SwitchZone(_currentZone);
+        //lastMusicWasCombat = true;
     }
 
     IEnumerator WaitBeforeExitCombat()

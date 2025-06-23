@@ -1130,6 +1130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2112445470643153223}
+  - component: {fileID: 7317939234894613720}
   m_Layer: 0
   m_Name: Graveyard
   m_TagString: Untagged
@@ -1153,6 +1154,23 @@ Transform:
   - {fileID: 8170419041186044234}
   m_Father: {fileID: 5051622558043387388}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7317939234894613720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4071815261579824774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb140c2e1b269b44adf4fe1c1914b52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ID: Cesar_2
+  CallFinishedEventAtStart: 0
+  musicClip: {fileID: 0}
+  musicVolume: 0
+  _returnToPreviousMusic: 1
 --- !u!1 &4118372139273153313
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ac868a5e182fc4086b8e0cbe6b20df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: O6M
+  ID: Ombre_Activate
   CallFinishedEventAtStart: 0
   bossStartManager: {fileID: 27007462481626036}
   character: 2
@@ -4482,16 +4500,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7115979189952701153, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1802286859466036053, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7687996412720799978}
   m_SourcePrefab: {fileID: 100100000, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
 --- !u!4 &8170419041186044234 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1802286859466067829, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
   m_PrefabInstance: {fileID: 7521058166246676031}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8170419041186137450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1802286859466036053, guid: 1fa9808106b455749b2bf666e875e2ea, type: 3}
+  m_PrefabInstance: {fileID: 7521058166246676031}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7687996412720799978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8170419041186137450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbdfb5c17029cd6488bd0692df07f1ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateToPlayAtDeath: {fileID: 11400000, guid: b677cb4dc1e80e14d923913fa7949710, type: 2}
 --- !u!1001 &7692539557076341117
 PrefabInstance:
   m_ObjectHideFlags: 0

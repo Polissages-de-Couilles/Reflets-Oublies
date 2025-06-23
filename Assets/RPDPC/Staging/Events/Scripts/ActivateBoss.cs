@@ -13,7 +13,7 @@ public class ActivateBoss : StagingEvent
         base.PlayEvent();
         if(character != Perso.None && character != Perso.Player && bossStartManager == null)
         {
-            var obj = GameObject.FindGameObjectWithTag(character.ToString());
+            var obj = GameManager.Instance.StoryManager._perso[character];
             if(obj != null && obj.TryGetComponent(out BossStartManager boss))
             {
                 bossStartManager = boss;
