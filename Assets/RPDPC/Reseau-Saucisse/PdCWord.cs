@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class PdCWord : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI _text;
-    public TranslatedWord Word {  get; private set; }
+    public string Word {  get; private set; }
+    public string Key {  get; private set; }
     public void SetText(string text, int id)
     {
         _text.text = text;
@@ -17,10 +18,11 @@ public class PdCWord : MonoBehaviour
     {
         if(TryGetComponent(out Button button))
         {
-            button.onClick.AddListener(() => GameManager.Instance.PdCManager.AddWord(Word));
+            button.onClick.AddListener(() => GameManager.Instance.PdCManager.AddWord(Key));
         }
         _text.text = text.Word;
-        Word = text;
+        Word = text.GetTranslatedWord();
+        Key = text.Key;
         if(id == 0)
         {
             GetComponent<DefaultUiControllerInput>().enabled = true;

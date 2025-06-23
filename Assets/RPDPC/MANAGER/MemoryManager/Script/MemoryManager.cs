@@ -72,12 +72,12 @@ public class MemoryManager : MonoBehaviour
             else { nbBad++; }
         }
 
-        if (nbGood > nbBad)
+        if (nbBad == 0 && nbGood > 0)
         {
             storyRelationState = StoryRelationState.Good;
             return;
         }
-        if (nbBad > nbGood)
+        if (nbGood == 0 && nbBad > 0)
         {
             storyRelationState = StoryRelationState.Bad;
             return;

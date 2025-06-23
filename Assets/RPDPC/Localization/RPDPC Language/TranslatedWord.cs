@@ -35,4 +35,11 @@ public class TranslatedWord : ScriptableObject
 
         return trad;
     }
+
+    public static string GetTranslatedWord(string key)
+    {
+        var w = LocalizationManager.GetLocalizedText(key);
+        w = LocalizationManager.LocalizeText(w);
+        return w;
+    }
 }

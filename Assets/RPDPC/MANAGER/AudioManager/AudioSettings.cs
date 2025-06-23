@@ -140,8 +140,8 @@ public class AudioSettings : MonoBehaviour
         
         if(zone.MusicSource != null && (_currentMusicSource == null || !_currentMusicSource.Equals(zone.MusicSource)))
         {
-            coroutinesMusic.Add(StartCoroutine(TransitionAudio(zone.Music, _musicSources, zone.MusicSource, 2f, _musicVolume, true)));
             _currentMusicSource = zone.MusicSource;
+            coroutinesMusic.Add(StartCoroutine(TransitionAudio(zone.Music, _musicSources, zone.MusicSource, 2f, _musicVolume, true)));
         }
     }
 
@@ -175,8 +175,8 @@ public class AudioSettings : MonoBehaviour
             tweensMusic[i].Kill();
         }
         tweensMusic.Clear();
-        StartCoroutine(TransitionAudio(clip, _musicSources, _otherSource, 1f, volume, true));
         _currentMusicSource = _otherSource;
+        StartCoroutine(TransitionAudio(clip, _musicSources, _otherSource, 1f, volume, true));
     }
 
     public void ExitCombat()
@@ -187,7 +187,7 @@ public class AudioSettings : MonoBehaviour
     public void ForceExitCombat()
     {
         //InCombat = false;
-        SwitchZone(_currentZone);
+        SwitchZone(_currentZone, true);
         //lastMusicWasCombat = true;
     }
 

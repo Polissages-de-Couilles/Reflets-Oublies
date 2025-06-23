@@ -20,7 +20,12 @@ public class PlayMusic : StagingEvent
         {
             GameManager.Instance.AudioManager.EnterCombat(musicClip, musicVolume);
         }
+        StartCoroutine(WaitAFrame());
+    }
 
+    IEnumerator WaitAFrame()
+    {
+        yield return null;
         OnEventFinished?.Invoke();
     }
 }

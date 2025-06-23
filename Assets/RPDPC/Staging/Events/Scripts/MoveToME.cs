@@ -26,7 +26,7 @@ public class MoveToME : StagingEvent
     {
         base.PlayEvent();
 
-        if(objectToMove == null && character != Perso.None && GameManager.Instance.StoryManager._perso[character].TryGetComponent(out NavMeshAgent comp))
+        if(objectToMove == null && character != Perso.None && GameObject.FindGameObjectWithTag(character.ToString()).TryGetComponent(out NavMeshAgent comp))
         {
             objectToMove = comp;
         }

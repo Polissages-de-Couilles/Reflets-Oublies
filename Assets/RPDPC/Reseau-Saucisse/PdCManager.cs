@@ -57,6 +57,22 @@ namespace PDC
         }
         public PdCType CurrentPdC {  get; private set; }
 
+        [Space(20), SerializeField] List<HorizontalLayoutGroup> _wordsHolders;
+        [SerializeField] VerticalLayoutGroup _wordsHoldersHolder;
+        [SerializeField] PdCWord _wordPrefab;
+
+        private List<PdCWord> _wordsButton = new();
+
+        [SerializeField] TextMeshProUGUI _currentMessageText;
+        List<string> _currentWords = new();
+
+        [SerializeField] Transform _messagesHolder;
+        [SerializeField] PdCWord _messagePrefab;
+
+        private List<PdCWord> _messagesObjects = new();
+
+        [SerializeField] GameObject _pdcHolder;
+
         public void SendMessage()
         {
             string message = "";
@@ -97,12 +113,12 @@ namespace PDC
 
             for(int i = 0; i < _currentWords.Count; i++)
             {
-                message += $"[{_currentWords[i].Key}] ";
+                message += $"[{_currentWords[i]}] ";
             }
 
-            Debug.Log("PDC Message : " +  message + " | Id : " + id);
+            Debug.Log("PDC Message : " +  message + " | Id : " + id + " | " + _currentWords.Count);
             StartCoroutine(PostMessage($"{message}", id));
-            _currentWords.Clear();
+            _currentWords = new();
             _currentMessageText.text = "";
         }
 
@@ -123,51 +139,62 @@ namespace PDC
                 if (www.result == UnityWebRequest.Result.Success)
                 {
                     Debug.Log("Send Sucess");
-                    PdCType type = PdCType.PdC1;
+                    //PdCType type = PdCType.PdC9;
 
-                    switch(PdC)
-                    {
-                        case PdC1:
-                            type = PdCType.PdC1;
-                            break;
+                    //if(PdC == PdC1) type = PdCType.PdC1;
+                    //if(PdC == PdC2) type = PdCType.PdC2;
+                    //if(PdC == PdC3) type = PdCType.PdC3;
+                    //if(PdC == PdC4) type = PdCType.PdC4;
+                    //if(PdC == PdC5) type = PdCType.PdC5;
+                    //if(PdC == PdC6) type = PdCType.PdC6;
+                    //if(PdC == PdC7) type = PdCType.PdC7;
+                    //if(PdC == PdC8) type = PdCType.PdC8;
+                    //if(PdC == PdC9) type = PdCType.PdC9;
 
-                        case PdC2:
-                            type = PdCType.PdC2;
-                            break;
+                    //switch(PdC)
+                    //{
+                    //    case PdC1:
+                    //        type = PdCType.PdC1;
+                    //        break;
 
-                        case PdC3:
-                            type = PdCType.PdC3;
-                            break;
+                    //    case PdC2:
+                    //        type = PdCType.PdC2;
+                    //        break;
 
-                        case PdC4:
-                            type = PdCType.PdC4;
-                            break;
+                    //    case PdC3:
+                    //        type = PdCType.PdC3;
+                    //        break;
 
-                        case PdC5:
-                            type = PdCType.PdC5;
-                            break;
+                    //    case PdC4:
+                    //        type = PdCType.PdC4;
+                    //        break;
 
-                        case PdC6:
-                            type = PdCType.PdC6;
-                            break;
+                    //    case PdC5:
+                    //        type = PdCType.PdC5;
+                    //        break;
 
-                        case PdC7:
-                            type = PdCType.PdC7;
-                            break;
+                    //    case PdC6:
+                    //        type = PdCType.PdC6;
+                    //        break;
 
-                        case PdC8:
-                            type = PdCType.PdC8;
-                            break;
+                    //    case PdC7:
+                    //        type = PdCType.PdC7;
+                    //        break;
 
-                        case PdC9:
-                            type = PdCType.PdC9;
-                            break;
+                    //    case PdC8:
+                    //        type = PdCType.PdC8;
+                    //        break;
 
-                        default:
-                            break;
-                    }
+                    //    case PdC9:
+                    //        type = PdCType.PdC9;
+                    //        break;
 
-                    yield return DisplayMessage(type);
+                    //    default:
+                    //        break;
+                    //}
+
+                    Debug.Log(CurrentPdC);
+                    yield return DisplayMessage(CurrentPdC);
 
                 }
                 else
@@ -177,42 +204,28 @@ namespace PDC
             }
         }
 
-        [Space(20), SerializeField] List<HorizontalLayoutGroup> _wordsHolders;
-        [SerializeField] VerticalLayoutGroup _wordsHoldersHolder;
-        [SerializeField] PdCWord _wordPrefab;
-
-        private List<PdCWord> _wordsButton = new();
-
-        [SerializeField] TextMeshProUGUI _currentMessageText;
-        List<TranslatedWord> _currentWords = new();
-
-        [SerializeField] Transform _messagesHolder;
-        [SerializeField] PdCWord _messagePrefab;
-
-        private List<PdCWord> _messagesObjects = new();
-
-        [SerializeField] GameObject _pdcHolder;
-
         public IEnumerator Start()
         {
             yield return null;
-            GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed += RemoveLastWord;
+            //GameManager.Instance.PlayerInputEventManager.PlayerInputAction.UI.Cancel.performed += RemoveLastWord;
             //yield return Setup(PdC.PdC1);
         }
 
-        public void AddWord(TranslatedWord word)
+        public void AddWord(string key)
         {
             if(_currentWords.Count >= 5) return;
-            _currentWords.Add(word);
-            _currentMessageText.text += $"{word.Word} ";
+            _currentWords.Add(key);
+            Debug.Log("Add Word PDC " + key + " | " + _currentWords.Count);
+            _currentMessageText.text += $"{TranslatedWord.GetTranslatedWord(key)} ";
         }
 
         public void RemoveLastWord(InputAction.CallbackContext context)
         {
             if(_currentWords.Count <= 0) return;
+            Debug.Log("Remove PDC Word");
             var word = _currentWords.Last();
             string newText = _currentMessageText.text;
-            for(int i = 0; i < word.Word.Length + 1; i++)
+            for(int i = 0; i < TranslatedWord.GetTranslatedWord(word).Length + 1; i++)
             {
                 newText.TrimLastCharacter();
             }
@@ -222,6 +235,7 @@ namespace PDC
 
         public IEnumerator DisplayMessage(PdCType Pdc)
         {
+            Debug.Log("Display Messages PDC " + Pdc);
             for(int i = 0; i < _messagesObjects.Count; i++)
             {
                 Destroy(_messagesObjects[i].gameObject);
@@ -251,6 +265,7 @@ namespace PDC
 
         public IEnumerator Setup(PdCType Pdc)
         {
+            Debug.Log("PDC Setup");
             StateMachineManager.StopAllStateMachines();
             _pdcHolder.SetActive(true);
             for(int i = 0; i < _wordsButton.Count; i++)
@@ -266,7 +281,7 @@ namespace PDC
             _messagesObjects.Clear();
 
             CurrentPdC = Pdc;
-            _currentWords.Clear();
+            _currentWords = new();
             _currentMessageText.text = "";
 
             yield return DisplayMessage(Pdc);
