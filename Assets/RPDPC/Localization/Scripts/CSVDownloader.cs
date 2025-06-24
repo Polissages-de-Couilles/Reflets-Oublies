@@ -26,7 +26,7 @@ namespace PDC.Localization
                 if (webRequest.result == UnityWebRequest.Result.ConnectionError)
                 {
                     Debug.Log("...Download Error: " + webRequest.error);
-                    downloadData = PlayerPrefs.GetString("LastDataDownloaded", null);
+                    downloadData = string.Empty;
                     //string versionText = PlayerPrefs.GetString("LastDataDownloadedVersion", null);
                     Debug.Log("Using stale data");
                 }

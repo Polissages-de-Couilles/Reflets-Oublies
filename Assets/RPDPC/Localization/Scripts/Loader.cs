@@ -18,7 +18,7 @@ namespace PDC.Localization
         public void AfterDownload(string data)
         {
             Debug.Log("data == null" + (null == data));
-            if (null == data)
+            if (data == string.Empty)
             {
                 Debug.LogError("Was not able to download data or retrieve stale data.");
                 // TODO: Display a notification that this is likely due to poor internet connectivity
