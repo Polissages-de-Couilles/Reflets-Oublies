@@ -807,6 +807,7 @@ MonoBehaviour:
   prioritizeAttack: 1
   shouldSearchStates: 1
   animator: {fileID: 1707091789596656906}
+  FORCEDONOTSEARCH: 0
 --- !u!114 &-7988538864932358234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,7 +820,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e34d4af92b584948a644a2dfeae639e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
+  maxHealth: 2
 --- !u!114 &-2596385921737274625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -949,6 +950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 859d514061ac1634d9a784c7bc9504f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayHealth: 1
+  center: {fileID: 0}
 --- !u!114 &1037456700249007985
 MonoBehaviour:
   m_ObjectHideFlags: 0

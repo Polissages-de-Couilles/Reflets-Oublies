@@ -14,6 +14,8 @@ namespace PDC.Localization
         public string Key => _key;
         public Action OnLanguageChange { get; set; }
 
+        [SerializeField] int nbParentToRebuild = 0;
+
         public void Start()
         {
             m_TextMeshProUGUI = GetComponent<TextMeshProUGUI>();
@@ -22,12 +24,14 @@ namespace PDC.Localization
             if (LocalizationManager.IsLocaReady)
             {
                 m_TextMeshProUGUI.text = GetLocalizedText(Key);
+                RebuildUI();
             }
             else
             {
                 LocalizationManager.OnLocalizationReady += () =>
                 {
                     m_TextMeshProUGUI.text = GetLocalizedText(Key);
+                    RebuildUI();
                 };
             }
         }
@@ -37,6 +41,16 @@ namespace PDC.Localization
             var t = LocalizationManager.GetLocalizedText(key);
             //[#VALUE]
             return LocalizationManager.LocalizeText(t);
+        }
+
+        private void RebuildUI()
+        {
+            var parent = this.transform;
+            for(int i = 0; i < nbParentToRebuild; i++)
+            {
+                parent = parent.parent;
+            }
+            GameManager.Instance.RebuildLayout(parent);
         }
     }
 }

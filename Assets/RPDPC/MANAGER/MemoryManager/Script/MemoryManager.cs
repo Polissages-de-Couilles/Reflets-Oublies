@@ -1,7 +1,9 @@
+using DG.Tweening;
 using MeetAndTalk.GlobalValue;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static ZoneManager;
 
 public class MemoryManager : MonoBehaviour
 {
@@ -16,6 +18,8 @@ public class MemoryManager : MonoBehaviour
     [SerializeField] AudioClip _buff;
     [SerializeField] AudioClip _debuff;
     [SerializeField] AudioSource _source;
+
+    [SerializeField] RectTransform _newWordHolder;
 
 
     private void Awake()
@@ -35,6 +39,7 @@ public class MemoryManager : MonoBehaviour
         if(mem._isTaken)
         {
             _source.PlayOneShot(_debuff);
+            StartCoroutine(DisplayNewWord());
         }
         else
         {
@@ -43,9 +48,12 @@ public class MemoryManager : MonoBehaviour
 
         if(GameManager.Instance.Player.TryGetComponent(out PlayerDamageable damageable))
         {
-            damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -10 : 20));
+            damageable.SetMaxHealth(damageable.getMaxHealth() + (mem._isTaken ? -5 : 20));
             if(!mem._isTaken) StartCoroutine(Heal(damageable));
         }
+
+        GameManager.Instance.PotionManager.AddMaxPotion(true);
+        GameManager.Instance.PotionManager.RefillPotion(true);
 
         Debug.Log(Mathf.Clamp(GameManager.Instance.MemoryManager.EncounteredMemory.FindAll(x => x._isTaken).Count + 1, 0, 5) + " > " + GameManager.Instance.PotionManager.MaxPotion);
         bool canBuy = Mathf.Clamp(GameManager.Instance.MemoryManager.EncounteredMemory.FindAll(x => x._isTaken).Count + 1, 0, 5) > GameManager.Instance.PotionManager.MaxPotion;
@@ -85,6 +93,16 @@ public class MemoryManager : MonoBehaviour
 
         storyRelationState = StoryRelationState.Neutral;
         return;
+    }
+
+    IEnumerator DisplayNewWord()
+    {
+        var pos = _newWordHolder.localPosition;
+        var t = _newWordHolder.DOLocalMove(pos - new Vector3(0, 175f, 0), 1f);
+        yield return t.WaitForCompletion();
+        yield return new WaitForSeconds(1f);
+        t = _newWordHolder.DOLocalMove(pos, 1f);
+        yield return t.WaitForCompletion();
     }
 }
 

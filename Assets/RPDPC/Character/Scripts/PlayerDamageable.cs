@@ -62,17 +62,20 @@ public class PlayerDamageable : MonoBehaviour, IDamageable
                 currentHealth = 0;
             }
             Debug.Log("Player took damage. Their health is now at " + currentHealth);
-            OnDamageTaken?.Invoke(damage, currentHealth);
-            BecameInvicible(invicibleTime);
             _sfxTakeDamageSource.PlayOneShot(_sfxTakeDamageClip);
-            GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
-            if(((damage / defence) / maxHealth) >= 0.15f)
+            OnDamageTaken?.Invoke(damage, currentHealth);
+            if(getCurrentHealth() > 0)
             {
-                Time.timeScale = 0.1f;
-                DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
-                    () =>
-                    DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1f, ((damage / defence) / maxHealth) * 1.5f).SetUpdate(UpdateType.Late)
-                    );
+                BecameInvicible(invicibleTime);
+                GameManager.Instance.CamManager.ShakeCamera(((damage / defence) / maxHealth) * 20, 0.25f);
+                if(((damage / defence) / maxHealth) >= 0.15f)
+                {
+                    Time.timeScale = 0.1f;
+                    DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.15f, 0.1f).SetUpdate(UpdateType.Late).OnComplete(
+                        () =>
+                        DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 1f, ((damage / defence) / maxHealth) * 1.5f).SetUpdate(UpdateType.Late)
+                        );
+                }
             }
         }
     }

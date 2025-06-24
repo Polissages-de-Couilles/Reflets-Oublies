@@ -49,9 +49,9 @@ public class MovementController : MonoBehaviour
     public void OnDestroy()
     {
 
-        PIE.PlayerInputAction.Player.Movement.started -= OnMovement;
-        PIE.PlayerInputAction.Player.Movement.performed -= OnMovement;
-        PIE.PlayerInputAction.Player.Movement.canceled -= OnMovement;
+        if(PIE != null) PIE.PlayerInputAction.Player.Movement.started -= OnMovement;
+        if(PIE != null) PIE.PlayerInputAction.Player.Movement.performed -= OnMovement;
+        if(PIE != null) PIE.PlayerInputAction.Player.Movement.canceled -= OnMovement;
     }
 
     private void OnMovement(InputAction.CallbackContext context)

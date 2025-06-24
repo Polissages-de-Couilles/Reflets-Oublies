@@ -13,10 +13,13 @@ public class settingMenu : UIPanel
 
     public GameObject OptionGameObject;
     public GameObject MenuGameObject;
+    public GameObject GeneralGameObject;
+    public GameObject ControllerGameObject;
 
     public Button returnButton;
 
     public Toggle translateToggle;
+
 
     Resolution[] resolutions;
 
@@ -104,5 +107,11 @@ public class settingMenu : UIPanel
     public void SetTranslated(bool translate)
     {
         LocalizationManager.Translate = translate;
+    }
+
+    public void SwitchPanel(bool isController)
+    {
+        GeneralGameObject.SetActive(!isController);
+        ControllerGameObject.SetActive(isController);
     }
 }

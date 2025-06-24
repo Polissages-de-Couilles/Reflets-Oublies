@@ -20,7 +20,7 @@ public class InteractionController : MonoBehaviour
 
     public void OnDestroy()
     {
-        PIE.PlayerInputAction.Player.Interaction.performed -= OnInteraction;
+        if(PIE != null) PIE.PlayerInputAction.Player.Interaction.performed -= OnInteraction;
     }
 
     private void FixedUpdate()

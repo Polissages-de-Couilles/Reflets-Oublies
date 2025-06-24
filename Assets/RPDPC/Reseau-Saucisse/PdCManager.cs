@@ -296,7 +296,7 @@ namespace PDC
                 var word = Instantiate(_wordPrefab, currentRows.transform);
                 word.SetText(listWords[i], i);
                 LayoutRebuilder.ForceRebuildLayoutImmediate(_wordsHoldersHolder.transform as RectTransform);
-                yield return null;
+                //yield return null;
                 //Debug.Log((currentRows.transform as RectTransform).sizeDelta.x + " | " + (_wordsHoldersHolder.transform as RectTransform).sizeDelta.x);
                 if((currentRows.transform as RectTransform).sizeDelta.x > (_wordsHoldersHolder.transform as RectTransform).sizeDelta.x)
                 {

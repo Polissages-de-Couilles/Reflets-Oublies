@@ -39,6 +39,7 @@ public abstract class Interactible : MonoBehaviour
 
     public virtual void OnInteraction()
     {
+        GameManager.Instance.AudioManager.PlayInteractSound();
         if (_interactibleOnceOnly)
         {
             worldUI.gameObject.SetActive(false);

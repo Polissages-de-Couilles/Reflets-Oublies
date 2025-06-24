@@ -41,6 +41,14 @@ public class AudioSettings : MonoBehaviour
     public bool InCombat { get; private set; } = false;
     bool lastMusicWasCombat = false;
 
+    [SerializeField] AudioSource _interactSource;
+
+    public void PlayInteractSound()
+    {
+        _interactSource.volume = 0.2f;
+        _interactSource.Play();
+    }
+
     public void Awake()
     {
         _currentMusicSource = null;

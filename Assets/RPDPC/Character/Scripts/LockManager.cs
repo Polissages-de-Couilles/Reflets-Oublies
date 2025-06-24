@@ -1,5 +1,6 @@
 using Cinemachine;
 using DG.Tweening;
+using MeetAndTalk;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,6 +25,9 @@ public class LockManager : MonoBehaviour
     [SerializeField] Slider enemyHealth;
     [SerializeField] GameObject enemyHealthHolder;
     [SerializeField] GameObject enemyHealthFillStart;
+    [SerializeField] GameObject vfxControl;
+
+    bool canLock = true;
 
     float currentVignetteIntensity = -1f;
     Tween t;
@@ -34,12 +38,25 @@ public class LockManager : MonoBehaviour
         PIE.PlayerInputAction.Player.Lock.performed += OnLockPress;
 
         CinemachineCore.CameraUpdatedEvent.AddListener(OnCameraUpdate);
+        DialogueManager.Instance.StartDialogueEvent.AddListener(DisableLock);
+        DialogueManager.Instance.EndDialogueEvent.AddListener(EnableLock);
+    }
+
+    void DisableLock()
+    {
+        canLock = false;
+        vfxLock.SetActive(false);
+        vfxLockable.SetActive(false);
+    }
+
+    void EnableLock()
+    {
+        canLock = true;
     }
 
     public void OnDestroy()
     {
-
-        PIE.PlayerInputAction.Player.Lock.performed -= OnLockPress;
+        if(PIE != null) PIE.PlayerInputAction.Player.Lock.performed -= OnLockPress;
     }
 
     private void OnLockPress(InputAction.CallbackContext context)
@@ -123,6 +140,7 @@ public class LockManager : MonoBehaviour
 
     private void OnCameraUpdate(CinemachineBrain arg0)
     {
+        if(!canLock) return;
         vfxLock.gameObject.SetActive(currentLockObject != null);
         if(currentLockObject != null)
         {
@@ -135,6 +153,7 @@ public class LockManager : MonoBehaviour
         }
 
         vfxLockable.gameObject.SetActive(newLockableObject != null && newLockableObject != currentLockObject && newLockableObject.CanBeLock);
+        vfxControl.SetActive(currentLockObject.DisplayControl && newLockableObject != null && newLockableObject != currentLockObject && newLockableObject.CanBeLock);
         if(newLockableObject != null)
         {
             vfxLockable.transform.position = Camera.main.WorldToScreenPoint(newLockableObject.transform.position);

@@ -59,8 +59,7 @@ public class PotionManager : MonoBehaviour
 
     public void OnDestroy()
     {
-
-        PIE.PlayerInputAction.Player.Potion.performed -= HealPlayer;
+        if(PIE != null) PIE.PlayerInputAction.Player.Potion.performed -= HealPlayer;
     }
 
     private void HealPlayer(InputAction.CallbackContext context)
@@ -128,6 +127,7 @@ public class PotionManager : MonoBehaviour
     private void SetPotionImage(int maxPotion, bool isFill = true)
     {
         //Debug.Log("Set Potion Image : " + maxPotion);
+        if(maxPotion - 1 >= potionSprite.Count) return;
         imagePotion.sprite = isFill ? potionSprite[maxPotion - 1].Fill : potionSprite[maxPotion - 1].Empty;
         (imagePotion.transform as RectTransform).sizeDelta = potionSprite[maxPotion - 1].Size;
     }

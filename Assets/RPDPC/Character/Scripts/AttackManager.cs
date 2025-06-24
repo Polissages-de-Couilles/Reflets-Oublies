@@ -89,7 +89,7 @@ public class AttackManager : MonoBehaviour
 
     public void OnDestroy()
     {
-        PIE.PlayerInputAction.Player.Attack.performed -= OnAttack;
+        if(PIE != null) PIE.PlayerInputAction.Player.Attack.performed -= OnAttack;
     }
 
     void OnAttack(InputAction.CallbackContext context)

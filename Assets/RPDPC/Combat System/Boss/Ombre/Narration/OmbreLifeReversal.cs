@@ -14,18 +14,19 @@ public class OmbreLifeReversal : MonoBehaviour
     private void OnBossActivated()
     {
         PlayerDamageable pd = GameManager.Instance.Player.GetComponent<PlayerDamageable>();
-        float maxhealth = pd.maxHealth;
-        foreach (MemorySO mem in GameManager.Instance.MemoryManager.AllMemory)
+
+        float desiredHealth = 100;
+        foreach(MemorySO mem in GameManager.Instance.MemoryManager.EncounteredMemory)
         {
-            if (mem._isTaken)
+            if(mem._isTaken)
             {
-                maxhealth += 30;
+                desiredHealth += 20;
             }
             else
             {
-                maxhealth -= 30;
+                desiredHealth -= 5;
             }
         }
-        pd.SetMaxHealth(maxhealth);
+        if(pd.maxHealth != desiredHealth) pd.SetMaxHealth(desiredHealth);
     }
 }

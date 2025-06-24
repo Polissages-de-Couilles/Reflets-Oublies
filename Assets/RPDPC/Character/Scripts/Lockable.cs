@@ -13,6 +13,7 @@ public class Lockable : MonoBehaviour
     private bool isLock = false;
     private bool isLockable = true;
     public bool DisplayHealth = true;
+    public bool DisplayControl = true;
     public BotDamageable Damageable => GetComponent<BotDamageable>();
     public Transform center;
 

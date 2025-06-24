@@ -50,7 +50,7 @@ public class DashController : MonoBehaviour
 
     public void OnDestroy()
     {
-        PIE.PlayerInputAction.Player.Dash.performed -= OnDash;
+        if(PIE != null) PIE.PlayerInputAction.Player.Dash.performed -= OnDash;
     }
 
     private void OnDash(InputAction.CallbackContext context)

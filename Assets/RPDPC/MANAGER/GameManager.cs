@@ -101,12 +101,32 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.P))
         {
-            Player.GetComponent<PlayerDamageable>().takeDamage(200, null);
+            var p = Player.GetComponent<PlayerDamageable>();
+            p.takeDamage(p.getCurrentHealth(), null);
         }
 
-        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.O))
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            SceneManager.LoadScene(0);
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene(1);
+        }
+
+        if(Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene(2);
+        }
+    }
+
+    public void RebuildLayout(Transform parent)
+    {
+        for(int i = 0; i < parent.childCount; i++)
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(parent.GetChild(i) as RectTransform);
+            if(parent.GetChild(i).childCount > 0) RebuildLayout(parent.GetChild(i));
         }
     }
 }
