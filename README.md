@@ -1,6 +1,6 @@
 # RPDPC
  
-Copyright (c) 2025 PtiteMadeleine
+Copyright (c) 2025 RPDPC
 
 Titre du projet : Reflets Oubliés
 
