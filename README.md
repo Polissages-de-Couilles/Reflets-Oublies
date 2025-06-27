@@ -19,5 +19,5 @@ Vous **n’êtes pas autorisé à** :
 
 Ce projet est fourni "tel quel", sans garantie d’aucune sorte.
 
-Pour toute demande d’utilisation, veuillez contacter : raph.madelin@gmail.com
+Pour toute demande d’utilisation, veuillez contacter : polissagedecouille@gmail.com
 
